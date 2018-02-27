@@ -1,8 +1,8 @@
 // ############################# ROCKETS ################################
 
-// document.querySelector(".blocks").addEventListener("click", (event) => {
-//   document.querySelector(".blocks").removeChild(event.target);
-//   document.querySelector(".blocks").prepend(event.target); });
+document.querySelector(".blocks").addEventListener("click", (event) => {
+  document.querySelector(".blocks").removeChild(event.target);
+  document.querySelector(".blocks").prepend(event.target); });
 
 // ############################ TRAVELERS ###############################
 
@@ -18,18 +18,19 @@ function moveRight(event) {
   let margin = 2;
   console.log(event);
   const rightInterval = setInterval(() => {
-    event.target.style.marginLeft = `${++margin}%`;
     if (margin === 80) clearInterval(rightInterval);
-  },100);
+    event.target.style.marginLeft = `${++margin}%`;
+    
+  },1);
 
   function moveLeft() {
     if (event.target === container) return null;
     clearInterval(rightInterval);
     console.log(event);
     const leftInterval = setInterval(() => {
-      event.target.style.marginLeft = `${--margin}%`;
+      if (margin != 2) event.target.style.marginLeft = `${--margin}%`;
       if (margin <= 2) clearInterval(leftInterval);
-    },100);
+    },1);
   }
 
 
