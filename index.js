@@ -1,4 +1,5 @@
 const allBlocks = document.querySelectorAll(".block");
+const blockDiv = document.querySelectorAll(".blocks");
 
 allBlocks.forEach(function(x){
     x.addEventListener("mousedown", moveRight);
@@ -10,34 +11,35 @@ function moveTop() {
 
 function moveRight(event) {
     let box = event.target
-    let pad = window.getComputedStyle(box, null).getPropertyValue('padding-left');
-    pad = +pad.substring(0, pad.length - 2);
+    let marg = window.getComputedStyle(box, null).getPropertyValue('margin-left');
+    marg = +marg.substring(0, marg.length - 2);
     let move = setInterval(frame, 10);
     function frame() {
-        if (pad == 350) {
+        if (marg == 350) {
             clearInterval(move);
         } else {
-            pad = pad + 5;
-            box.style.padding = `0 0 0 ${pad}px`;
+            marg = marg + 5;
+            box.style.margin = `10px 10px 10px ${marg}px`;
         }
     }
-    box.addEventListener("mouseup", function() {
+    blockDiv[0].addEventListener("mouseup", function() {
         clearInterval(move);
         moveLeft(event);
     });
 }
 
 function moveLeft(event) {
+ 
     let box = event.target
-    let pad = window.getComputedStyle(box, null).getPropertyValue('padding-left');
-    pad = +pad.substring(0, pad.length - 2);
+    let marg = window.getComputedStyle(box, null).getPropertyValue('margin-left');
+    marg = +marg.substring(0, marg.length - 2);
     let move = setInterval(frame, 10);
     function frame() {
-        if (pad == 0) {
+        if (marg === 10) {
             clearInterval(move);
         } else {
-            pad = pad - 5;
-            box.style.padding = `0 0 0 ${pad}px`;
+            marg = marg - 5;
+            box.style.margin = `10px 10px 10px ${marg}px`;
         }
     }
     box.addEventListener("mousedown", function() {
