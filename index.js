@@ -24,3 +24,10 @@ function down(e) {
 function up(e) {
   e.target.style.marginLeft = '10px';
 }
+
+redBlock.addEventListener('mousedown', down);
+blueBlock.addEventListener('mousedown', down);
+greenBlock.addEventListener('mousedown', down);
+pinkBlock.addEventListener('mousedown', down);
+grayBlock.addEventListener('mousedown', down);
+
