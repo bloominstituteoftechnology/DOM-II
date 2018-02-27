@@ -22,11 +22,11 @@ Topics:
 
 ## Project Description
  You will have two separate commits for this lab
- 
+
  rockets:
   * When a block is clicked, it should go to the top of the stack
 
- yo-yos:
+ travelers:
   * While a mouse is clicked down on a box, it should move to the right
   * When the mouse button is released, it should travel back to its original position
   * A mouse down that occurs during a transition back to the original position should send it traveling to the right agian from its current position
