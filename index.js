@@ -18,7 +18,7 @@ d.addEventListener('click', rocket);
 e.addEventListener('click', rocket);
 
 function down(e) {
-    e.target.style.marginLeft = '40px';
+    e.target.setAttribute('style', 'transition-property: margin-left; margin-left: 900px; transition-duration: 6s');
 }
 
 function up(e) {
