@@ -6,3 +6,14 @@ let grayBlock = document.getElementsByClassName('block--gray')[0];
 
 let count = -1;
 
+function rocket(e) {
+  e.target.style.order = count;
+  count--;
+}
+
+redBlock.addEventListener('click', rocket);
+blueBlock.addEventListener('click', rocket);
+greenBlock.addEventListener('click', rocket);
+pinkBlock.addEventListener('click', rocket);
+grayBlock.addEventListener('click', rocket);
+
