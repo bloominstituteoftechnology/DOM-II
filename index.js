@@ -32,11 +32,13 @@ function travelers() {
      Array.from(blocks.children).forEach(block => {
          block.style.marginLeft = "0px";
      });
+     left =0;
  }
 let left = 0;
 function toRight(arg) {
-    //init();
-    arg.style.marginLeft = ;
+    init();
+    left +=50;
+    arg.style.marginLeft = `${left}px` ;
 }
  
 const timerInterval = setInterval (travelers(),10);
