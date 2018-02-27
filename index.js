@@ -28,16 +28,18 @@ function travelers() {
     });
 }
 
+let left = 0;
+
  function init () {
      Array.from(blocks.children).forEach(block => {
          block.style.marginLeft = "0px";
      });
-     left =0;
+     left = 0;
  }
-let left = 0;
+
 function toRight(arg) {
     init();
-    left +=50;
+    left += 50;
     arg.style.marginLeft = `${left}px` ;
 }
  
