@@ -40,4 +40,6 @@ function toTop(arg) {
 }
  
 const timerInterval = setInterval (rocket(),10);
-// init function
+
+//-----------------------------------------------------//
+
