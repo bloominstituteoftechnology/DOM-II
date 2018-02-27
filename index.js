@@ -4,3 +4,5 @@ let greenBlock = document.getElementsByClassName('block--green')[0];
 let pinkBlock = document.getElementsByClassName('block--pink')[0];
 let grayBlock = document.getElementsByClassName('block--gray')[0];
 
+let count = -1;
+
