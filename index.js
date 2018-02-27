@@ -5,16 +5,19 @@ const blocks = document.querySelector('.blocks');
 //       lowestOrder--;
 //       e.target.style.order  = lowestOrder;
 // });
-
-blocks.addEventListener('mousedown', moveToRight);
+//blocks.children.addEventListener('click', moveToRight, false);
+Array.from(blocks.children).forEach(child => {
+     child.addEventListener('click', moveToRight, false);
+});
 
 function moveToRight(e) {
-      console.log(this);
-      console.log(e.target);
-      e.target.style.right="0px";
-
+       // transition starts
+       e.target.style.marginLeft=  "80%";
+       window.setTimeout(() => {
+            e.target.style.marginLeft=  "1rem";
+       }, 6000);
+       //end transition fire moveTo left
 }
-
 
 // when mouse click down send element to the right
 // when mouse is released start setInterval function making
