@@ -43,3 +43,4 @@ box5.addEventListener('click', (event) => {
     box4.style.order = 0;
     box5.style.order = -1;
 })
+
