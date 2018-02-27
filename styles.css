@@ -1,3 +1,5 @@
+/*@yellow = 'yellow';*/
+
 body {
   display: flex;
   /*justify-content: center;*/
@@ -33,4 +35,13 @@ body {
 
 .block--gray {
   background-color: gray;
+}
+
+/*.block--red {
+  background-color:gray;
+}*/
+
+#clicked {
+  /*background-color: yellow;*/
+  order: -1;
 }
