@@ -8,7 +8,9 @@ blocks.insertBefore(this, blocks.childNodes[0])
 }
 */
 
-// Travelers - work in progress
+// Travelers - work in progress 
+// Will refactor and figure out mouse release "mouseup"
+// To return rocket to original position
 
 let redRocket = document.querySelector('.block--red');
 redRocket.addEventListener("mousedown", function() {
