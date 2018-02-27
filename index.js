@@ -13,9 +13,25 @@ red.addEventListener('click', (event) => {
     firstBlock = document.getElementsByClassName('block')[0];
 });
 
+red.addEventListener('mousedown', (event) => {
+    red.style.margin = '0 0 10px 100px';
+});
+
+window.addEventListener('mouseup', (event) => {
+    red.style.margin = '10px';
+});
+
 blue.addEventListener('click', (event) => {
     blocksDiv.insertBefore(blue, firstBlock);
     firstBlock = document.getElementsByClassName('block')[0];
+});
+
+blue.addEventListener('mousedown', (event) => {
+    blue.style.margin = '0 0 10px 100px';
+});
+
+window.addEventListener('mouseup', (event) => {
+    blue.style.margin = '10px';
 });
 
 green.addEventListener('click', (event) => {
@@ -23,12 +39,36 @@ green.addEventListener('click', (event) => {
     firstBlock = document.getElementsByClassName('block')[0];
 });
 
+green.addEventListener('mousedown', (event) => {
+    green.style.margin = '0 0 10px 100px';
+});
+
+window.addEventListener('mouseup', (event) => {
+    green.style.margin = '10px';
+});
+
 pink.addEventListener('click', (event) => {
     blocksDiv.insertBefore(pink, firstBlock);
     firstBlock = document.getElementsByClassName('block')[0];
 });
 
+pink.addEventListener('mousedown', (event) => {
+    pink.style.margin = '0 0 10px 100px';
+});
+
+window.addEventListener('mouseup', (event) => {
+    pink.style.margin = '10px';
+});
+
 gray.addEventListener('click', (event) => {
     blocksDiv.insertBefore(gray, firstBlock);
     firstBlock = document.getElementsByClassName('block')[0];
+});
+
+gray.addEventListener('mousedown', (event) => {
+    gray.style.margin = '0 0 10px 100px';
+});
+
+window.addEventListener('mouseup', (event) => {
+    gray.style.margin = '10px';
 });
