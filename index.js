@@ -12,7 +12,9 @@ function rocket(e) {
 }
 
 function down(e) {
-    e.target.setAttribute('style', 'transition-property: margin-left; margin-left: 900px; transition-duration: 6s');
+    e.target.style.transitionProperty = 'margin-left';
+    e.target.style.marginLeft = '900px';
+    e.target.style.transitionDuration = '8s';
 }
 
 function up(e) {
