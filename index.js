@@ -8,21 +8,19 @@ const pink = document.querySelector(".block--pink");
 const empty = document.querySelector(".empty");
 
 red.addEventListener("mousedown", (event) => {
-  // add 20px to margin-right;
-  // margin-left: 20px;
-  //$(this).after("<div style = 'margin-left: 20px;'></div>")
   console.log("red is pressed");
-  red.style.marginLeft = "30px";
-  
+  let margin = 30;
+  const right = window.setInterval(() => {
+    red.style.marginLeft = `${margin++}px`;
+    //red.style.marginLeft = `${margin + 30}px`;
+  }, 10);
 });
 
 
 red.addEventListener("mouseup", (event) => {
-  // add 20px to margin-right;
-  // margin-left: 20px;
-  //$(this).after("<div style = 'margin-left: 20px;'></div>")
   console.log("red is released");
   red.style.marginLeft = "10px";
+  clearInterval(red);
 });
 
 
