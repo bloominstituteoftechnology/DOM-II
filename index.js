@@ -1,38 +1,53 @@
-let redBlock = document.getElementsByClassName('block--red')[0];
-let blueBlock = document.getElementsByClassName('block--blue')[0];
-let greenBlock = document.getElementsByClassName('block--green')[0];
-let pinkBlock = document.getElementsByClassName('block--pink')[0];
-let grayBlock = document.getElementsByClassName('block--gray')[0];
+const redBlock = document.querySelector(".block--red");
+const blueBlock = document.querySelector(".block--blue");
+const greenBlock = document.querySelector(".block--green");
+const pinkBlock = document.querySelector(".block--pink");
+const grayBlock = document.querySelector(".block--gray");
 
-let count = -1;
 
-function rocket(e) {
-  e.target.style.order = count;
-  count--;
-}
+grayBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "1";
+    redBlock.style.order = "5";
+    pinkBlock.style.order = "4";
+    greenBlock.style.order = "3";
+    blueBlock.style.order = "2";
+});
 
-redBlock.addEventListener('click', rocket);
-blueBlock.addEventListener('click', rocket);
-greenBlock.addEventListener('click', rocket);
-pinkBlock.addEventListener('click', rocket);
-grayBlock.addEventListener('click', rocket);
+pinkBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "4";
+    redBlock.style.order = "5";
+    pinkBlock.style.order = "1";
+    greenBlock.style.order = "3";
+    blueBlock.style.order = "2";
+});
 
-function down(e) {
-  e.target.setAttribute('style', 'transition-property: margin-left: 900px; transition-duration: 6s');
-}
+greenBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "3";
+    redBlock.style.order = "5";
+    pinkBlock.style.order = "4";
+    greenBlock.style.order = "1";
+    blueBlock.style.order = "2";
+});
 
-function up(e) {
-  e.target.style.marginLeft = '10px';
-}
+pinkBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "4";
+    redBlock.style.order = "5";
+    pinkBlock.style.order = "1";
+    greenBlock.style.order = "3";
+    blueBlock.style.order = "2";
+});
 
-redBlock.addEventListener('mousedown', down);
-blueBlock.addEventListener('mousedown', down);
-greenBlock.addEventListener('mousedown', down);
-pinkBlock.addEventListener('mousedown', down);
-grayBlock.addEventListener('mousedown', down);
-
-redBlock.addEventListener('mouseup', up);
-blueBlock.addEventListener('mouseup', up);
-greenBlock.addEventListener('mouseup', up);
-pinkBlock.addEventListener('mouseup', up);
-grayBlock.addEventListener('mouseup', up);
+redBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "5";
+    redBlock.style.order = "1";
+    pinkBlock.style.order = "4";
+    greenBlock.style.order = "3";
+    blueBlock.style.order = "2";
+});
+blueBlock.addEventListener("click", (event) =>{
+    grayBlock.style.order = "5";
+    redBlock.style.order = "2";
+    pinkBlock.style.order = "4";
+    greenBlock.style.order = "3";
+    blueBlock.style.order = "1";
+});
