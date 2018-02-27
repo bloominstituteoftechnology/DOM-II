@@ -8,7 +8,7 @@ let count = -1;
 
 function rocket(e) {
     e.target.style.order = count;
-    count -= 1;
+    count--;
 }
 
 a.addEventListener('click', rocket);
@@ -16,3 +16,23 @@ b.addEventListener('click', rocket);
 c.addEventListener('click', rocket);
 d.addEventListener('click', rocket);
 e.addEventListener('click', rocket);
+
+function down(e) {
+    e.target.style.marginLeft = '40px';
+}
+
+function up(e) {
+    e.target.style.marginLeft = '10px';
+}
+
+a.addEventListener('mousedown', down);
+b.addEventListener('mousedown', down);
+c.addEventListener('mousedown', down);
+d.addEventListener('mousedown', down);
+e.addEventListener('mousedown', down);
+
+a.addEventListener('mouseup', up);
+b.addEventListener('mouseup', up);
+c.addEventListener('mouseup', up);
+d.addEventListener('mouseup', up);
+e.addEventListener('mouseup', up);
