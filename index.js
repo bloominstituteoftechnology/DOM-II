@@ -11,12 +11,6 @@ function rocket(e) {
     count--;
 }
 
-a.addEventListener('click', rocket);
-b.addEventListener('click', rocket);
-c.addEventListener('click', rocket);
-d.addEventListener('click', rocket);
-e.addEventListener('click', rocket);
-
 function down(e) {
     e.target.setAttribute('style', 'transition-property: margin-left; margin-left: 900px; transition-duration: 6s');
 }
@@ -24,6 +18,12 @@ function down(e) {
 function up(e) {
     e.target.style.marginLeft = '10px';
 }
+
+a.addEventListener('click', rocket);
+b.addEventListener('click', rocket);
+c.addEventListener('click', rocket);
+d.addEventListener('click', rocket);
+e.addEventListener('click', rocket);
 
 a.addEventListener('mousedown', down);
 b.addEventListener('mousedown', down);
