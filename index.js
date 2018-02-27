@@ -9,13 +9,17 @@ const blockArray = Array.from(block);
 
 //shift block to right when clicked down
 Array.from(block).forEach(function(element) {
-    //console.log(allBlocks);
-    //element.addEventListener('mousedown', shiftRight(blockArray[blockArray.indexOf(element)]));
-    //element.addEventListener('mousedown', shiftRight(element));
+
     element.addEventListener('mousedown', function () {
         this.style.marginLeft = "30px";
     });
     element.addEventListener('mouseup', function () {
         this.style.marginLeft = "10px";
+    })
+    element.addEventListener('mouseout', function () {
+        this.style.marginLeft = "10px";
+    })
+    element.addEventListener('click', function () {
+        element.parentElement.prepend(element);
     })
 });
