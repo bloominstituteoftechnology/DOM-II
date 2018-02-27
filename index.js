@@ -31,3 +31,8 @@ greenBlock.addEventListener('mousedown', down);
 pinkBlock.addEventListener('mousedown', down);
 grayBlock.addEventListener('mousedown', down);
 
+redBlock.addEventListener('mouseup', up);
+blueBlock.addEventListener('mouseup', up);
+greenBlock.addEventListener('mouseup', up);
+pinkBlock.addEventListener('mouseup', up);
+grayBlock.addEventListener('mouseup', up);
