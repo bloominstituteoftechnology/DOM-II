@@ -21,3 +21,6 @@ function down(e) {
   e.target.setAttribute('style', 'transition-property: margin-left: 900px; transition-duration: 6s');
 }
 
+function up(e) {
+  e.target.style.marginLeft = '10px';
+}
