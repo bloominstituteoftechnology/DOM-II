@@ -70,6 +70,6 @@ blocks.addEventListener("click", (event) => {
 
 
 
-//---
+// some comment
 
 
