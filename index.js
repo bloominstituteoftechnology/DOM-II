@@ -1,42 +1,42 @@
-const blocks = document.getElementsByClassName(".blocks");
-const redBlock = document.getElementsByClassName(".block block--red");
-const blueBlock = document.getElementsByClassName(".block block--blue");
-const greenBlock = document.getElementsByClassName(".block block--green");
-const pinkBlock = document.getElementsByClassName(".block block--pink");
-const grayBlock = document.getElementsByClassName(".block block--gray");
+const blocks = document.getElementsByClassName("blocks")[0];
+const redBlock = document.getElementsByClassName("block--red")[0];
+const blueBlock = document.getElementsByClassName("block--blue")[0];
+const greenBlock = document.getElementsByClassName("block--green")[0];
+const pinkBlock = document.getElementsByClassName("block--pink")[0];
+const grayBlock = document.getElementsByClassName("block--gray")[0];
 
 
-for (let i = 0; i < blocks.length; i++) {
-  blocks[i].addEventListener("click", (event) => {
-    if(event.target.nodeName === redBlock) {
-      console.log("red");
-    }
-  })
-}
-//
-// blocks.addEventListener("click", (event) => {
-//     if(event.target.className === red) {
-//         console.log("red");
+// for (let i = 0; i < blocks.length; i++) {
+//   blocks[i].addEventListener("click", (event) => {
+//     if(event.target.classList.contains === redBlock) {
+//       console.log("red");
 //     }
-// });
-//
-// redBlock.addEventListener("click", (event) => {
-//   event.color = 'red';
-//
-// });
-//
-// blueBlock.addEventListener("click", (event) => {
-//     event.color = 'blue';
-// });
-//
-// greenBlock.addEventListener("click", (event) => {
-//     event.color = 'green';
-// });
-//
-// pinkBlock.addEventListener("click", (event) => {
-//     event.color = 'pink';
-// });
-//
-// grayBlock.addEventListener("click", (event) => {
-//     event.color = 'gray';
-// });
+//   })
+// }
+
+blocks.addEventListener("click", (event) => {
+    
+});
+
+redBlock.addEventListener("click", (event) => {
+  event.target.style.order = -1;
+  
+});
+
+blueBlock.addEventListener("click", (event) => {
+ event.target.style.order = -2;
+});
+
+greenBlock.addEventListener("click", (event) => {
+  event.target.style.order = -3;
+});
+
+pinkBlock.addEventListener("click", (event) => {
+  event.target.style.order = -4;
+});
+
+grayBlock.addEventListener("click", (event) => {
+  event.target.style.order = -5;
+});
+
+
