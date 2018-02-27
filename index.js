@@ -17,3 +17,7 @@ greenBlock.addEventListener('click', rocket);
 pinkBlock.addEventListener('click', rocket);
 grayBlock.addEventListener('click', rocket);
 
+function down(e) {
+  e.target.setAttribute('style', 'transition-property: margin-left: 900px; transition-duration: 6s');
+}
+
