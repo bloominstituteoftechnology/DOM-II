@@ -6,40 +6,39 @@ const pinkBlock = document.getElementsByClassName("block--pink")[0];
 const grayBlock = document.getElementsByClassName("block--gray")[0];
 const blocks = document.getElementsByClassName("blocks")[0];
 
-function rocket () {
-    grayBlock.addEventListener("click", (event) => {
-        toTop(event.target);
+function travelers() {
+    grayBlock.addEventListener("mousedown", (event) => {
+        toRight(event.target);
     });
 
-    redBlock.addEventListener("click", (event) => {
-        toTop(event.target);
+    redBlock.addEventListener("mousedown", (event) => {
+        toRight(event.target);
     });
 
-    blueBlock.addEventListener("click", (event) => {
-        toTop(event.target);
+    blueBlock.addEventListener("mousedown", (event) => {
+        toRight(event.target);
     });
 
-    greenBlock.addEventListener("click", (event) => {
-        toTop(event.target);
+    greenBlock.addEventListener("mousedown", (event) => {
+        toRight(event.target);
     });
 
-    pinkBlock.addEventListener("click", (event) => {
-        toTop(event.target);
+    pinkBlock.addEventListener("mousedown", (event) => {
+        toRight(event.target);
     });
 }
 
  function init () {
      Array.from(blocks.children).forEach(block => {
-         block.style.order = 0;
+         block.style.marginLeft = "0px";
      });
  }
-
-function toTop(arg) {
-    init();
-    arg.style.order--;
+let left = 0;
+function toRight(arg) {
+    //init();
+    arg.style.marginLeft = ;
 }
  
-const timerInterval = setInterval (rocket(),10);
+const timerInterval = setInterval (travelers(),10);
 
 //-----------------------------------------------------//
-
