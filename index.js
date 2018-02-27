@@ -28,15 +28,19 @@ grayBlock.addEventListener("click", (event) => {
 })*/
 
 
-
-
 const allBlocks = document.querySelectorAll(".block");
     for (let i = 0; i < allBlocks.length; i++) {
-        allBlocks[i].addEventListener("click", event)  
+        allBlocks[i].addEventListener("click", function moveUp(event) {
+            let firstChild = event.target.parentNode.firstChild; 
+            event.target.parentNode.insertBefore(event.target, firstChild);  
+            } ) 
     }
 
-    function event() {
-        console.log(0);
-    }
 
+
+    
+       
+
+    
+        
 
