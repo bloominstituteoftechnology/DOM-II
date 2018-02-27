@@ -2,6 +2,7 @@
 
 body {
   display: flex;
+  width: 100%;
   /*justify-content: center;*/
 }
 
@@ -41,7 +42,7 @@ body {
   background-color:gray;
 }*/
 
-#clicked {
+#toRight {
   /*background-color: yellow;*/
-  order: -1;
+  margin-left: 100%;
 }
