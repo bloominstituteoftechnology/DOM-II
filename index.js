@@ -5,18 +5,15 @@ const pinkBlock = document.getElementsByClassName("block--pink")[0];
 const grayBlock = document.getElementsByClassName("block--gray")[0];
 
 
-blueBlock.addEventListener("click", event => {
-    blueBlock.style.order = "-1";
-});
-greenBlock.addEventListener("click", event => {
-    greenBlock.style.order = "-2";
-});
-pinkBlock.addEventListener("click", event => {
-    pinkBlock.style.order = "-3";
-});
-grayBlock.addEventListener("click", event => {
-    grayBlock.style.order = "-4";
-});
-redBlock.addEventListener("click", event => {
-    redBlock.style.order = "-5";
-});
+let rocket = -1;
+
+function topper(e) {
+    e.target.style.order = rocket;
+    rocket -= 1;
+}
+
+blueBlock.addEventListener("click", topper);
+greenBlock.addEventListener("click", topper);
+pinkBlock.addEventListener("click", topper);
+grayBlock.addEventListener("click", topper);
+redBlock.addEventListener("click", topper);
