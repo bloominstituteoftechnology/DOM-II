@@ -5,6 +5,7 @@ const greenBlock = document.getElementsByClassName("block--green")[0];
 const pinkBlock = document.getElementsByClassName("block--pink")[0];
 const grayBlock = document.getElementsByClassName("block--gray")[0];
 const blocks = document.getElementsByClassName("blocks")[0];
+let left = 0;
 
 function travelers() {
     grayBlock.addEventListener("mousedown", (event) => {
@@ -26,11 +27,29 @@ function travelers() {
     pinkBlock.addEventListener("mousedown", (event) => {
         toRight(event.target);
     });
+
+    grayBlock.addEventListener("mouseup", (event) => {
+        reset();
+    });
+
+    redBlock.addEventListener("mouseup", (event) => {
+        reset();
+    });
+
+    blueBlock.addEventListener("mouseup", (event) => {
+        reset();
+    });
+
+    pinkBlock.addEventListener("mouseup", (event) => {
+        reset();
+    });
+
+    greenBlock.addEventListener("mouseup", (event) => {
+        reset();
+    });
 }
 
-let left = 0;
-
- function init () {
+ function reset () {
      Array.from(blocks.children).forEach(block => {
          block.style.marginLeft = "0px";
      });
@@ -38,9 +57,9 @@ let left = 0;
  }
 
 function toRight(arg) {
-    init();
+    //init();
     left += 50;
-    arg.style.marginLeft = `${left}px` ;
+    arg.style.marginLeft = `${left}px`;
 }
  
 const timerInterval = setInterval (travelers(),10);
