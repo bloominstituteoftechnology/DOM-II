@@ -5,38 +5,35 @@ const greenBlock = document.getElementsByClassName("block--green")[0];
 const pinkBlock = document.getElementsByClassName("block--pink")[0];
 const grayBlock = document.getElementsByClassName("block--gray")[0];
 
+// perhaps use event.target.style.property or event.target.style.setAttribute
 
 // for (let i = 0; i < blocks.length; i++) {
 //   blocks[i].addEventListener("click", (event) => {
-//     if(event.target.classList.contains === redBlock) {
-//       console.log("red");
-//     }
-//   })
-// }
+//       event.target.style.order = -1;
+//     })
+//   }
 
-blocks.addEventListener("click", (event) => {
-    
-});
+// blocks.addEventListener("click", (event) => {
+//
+// });
 
-redBlock.addEventListener("click", (event) => {
-  event.target.style.order = -1;
-  
-});
-
+// redBlock.addEventListener("click", (event) => {
+//   event.target.style.order = -1;
+//
+// });
+//
 blueBlock.addEventListener("click", (event) => {
- event.target.style.order = -2;
+ event.target.style.order = -5;
 });
-
+//
 greenBlock.addEventListener("click", (event) => {
-  event.target.style.order = -3;
+  event.target.style.order = -6;
 });
 
 pinkBlock.addEventListener("click", (event) => {
-  event.target.style.order = -4;
+  event.target.style.order = -7;
 });
 
 grayBlock.addEventListener("click", (event) => {
-  event.target.style.order = -5;
+  event.target.style.order = -8;
 });
-
-
