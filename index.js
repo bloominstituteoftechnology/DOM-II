@@ -26,12 +26,18 @@ blue.addEventListener('click', (event) => {
     firstBlock = document.getElementsByClassName('block')[0];
 });
 
+function blueUp() {
+    blocksDiv.insertBefore(blue, firstBlock);
+    firstBlock = document.getElementsByClassName('block')[0];
+}
+
 blue.addEventListener('mousedown', (event) => {
     blue.style.margin = '0 0 10px 100px';
 });
 
 window.addEventListener('mouseup', (event) => {
     blue.style.margin = '10px';
+    blueUp();
 });
 
 green.addEventListener('click', (event) => {
