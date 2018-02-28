@@ -42,21 +42,13 @@ body {
   background-color:gray;
 }*/
 
-<<<<<<< HEAD
 #clicked {
   background-color: yellow;
   /*order: -1; */
-  
 
   margin-left: 100%;
 }
 #toRight {
   /*background-color: yellow;*/
   margin-left: 100%;
- }
-=======
-#toRight {
-  /*background-color: yellow;*/
-  margin-left: 50px;
 }
->>>>>>> d9af9a356aea700c8bec4e8c8d51fb94e8647530
