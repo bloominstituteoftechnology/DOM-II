@@ -5,47 +5,31 @@ const greenBlock = document.getElementsByClassName("block--green")[0];
 const pinkBlock = document.getElementsByClassName("block--pink")[0];
 const grayBlock = document.getElementsByClassName("block--gray")[0];
 const blockParent = document.getElementsByClassName("blocks")[0];
-redBlock.addEventListener("click", (event) => {
-    redBlock.style.order = -1;
-    blueBlock.style.order = 0;
-    greenBlock.style.order = 0;
-    pinkBlock.style.order = 0;
-    grayBlock.style.order = 0;
+
+blockParent.style.width = "100%";
+
+/*redBlock.addEventListener("mousedown" , (event) => {
+    document.getElementById("block--red").style.alignSelf;
+})*/
+
+blockParent.addEventListener("mousedown", (event) => {
+    function Brett(blockX) {
+        blockX.style.alignSelf = "center";
+    }
     
-    
+    redBlock.addEventListener("mousedown" , (event) => {
+        Brett(redBlock);
+    })
+    blueBlock.addEventListener("mousedown" , (event) => {
+        Brett(blueBlock);
+    })    
+    greenBlock.addEventListener("mousedown" , (event) => {
+        Brett(greenBlock);
+    })  
+    pinkBlock.addEventListener("mousedown" , (event) => {
+        Brett(pinkBlock);
+    })  
+    grayBlock.addEventListener("mousedown" , (event) => {
+        Brett(grayBlock);
+    })  
 })
-blueBlock.addEventListener("click", (event) => {
-    redBlock.style.order = 0;
-    blueBlock.style.order = -1;
-    greenBlock.style.order = 0;
-    pinkBlock.style.order = 0;
-    grayBlock.style.order = 0;
-    
-    
-})
-greenBlock.addEventListener("click", (event) => {
-    redBlock.style.order = 0;
-    blueBlock.style.order = 0;
-    greenBlock.style.order = -1;
-    pinkBlock.style.order = 0;
-    grayBlock.style.order = 0;
-    
-    
-})
-pinkBlock.addEventListener("click", (event) => {
-    redBlock.style.order = 0;
-    blueBlock.style.order = 0;
-    greenBlock.style.order = 0;
-    pinkBlock.style.order = -1;
-    grayBlock.style.order = 0;
-    
-    
-})
-grayBlock.addEventListener("click", (event) => {
-    redBlock.style.order = 0;
-    blueBlock.style.order = 0;
-    greenBlock.style.order = 0;
-    pinkBlock.style.order = 0;
-    grayBlock.style.order = -1;
-    
- })
