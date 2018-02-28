@@ -2,7 +2,7 @@
 
 body {
   display: flex;
-  width: 100%;
+  width: 880px;
   /*justify-content: center;*/
 }
 
@@ -44,5 +44,5 @@ body {
 
 #toRight {
   /*background-color: yellow;*/
-  margin-left: 100%;
+  margin-left: 50px;
 }
