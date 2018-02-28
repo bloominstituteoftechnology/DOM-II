@@ -2,6 +2,7 @@
 
 body {
   display: flex;
+  width: 100%;
   /*justify-content: center;*/
 }
 
@@ -41,6 +42,7 @@ body {
   background-color:gray;
 }*/
 
+<<<<<<< HEAD
 #clicked {
   background-color: yellow;
   /*order: -1; */
@@ -52,3 +54,9 @@ body {
   /*background-color: yellow;*/
   margin-left: 100%;
  }
+=======
+#toRight {
+  /*background-color: yellow;*/
+  margin-left: 100%;
+}
+>>>>>>> d9af9a356aea700c8bec4e8c8d51fb94e8647530
