@@ -1,6 +1,9 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  /* justify-content: center; */
+}
+.empty {
+  display: none;
 }
 
 .blocks {
@@ -10,8 +13,8 @@ body {
 }
 
 .block {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 10px;
 }
 
