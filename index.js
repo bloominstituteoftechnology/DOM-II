@@ -6,12 +6,16 @@
 const rockets = document.getElementsByClassName("block");
 Array.from(rockets).forEach(rocket => { // add an event listener to each of the elements.
     rocket.addEventListener("click", () => {
-        const parent = rocket.parentNode; // this just makes up for the below code.
-        // rocket.parentNode.removeChild(rocket); // removes rocket from the parent node.
-        parent.removeChild(rocket);
-        parent.prepend(rocket);
+        
+        // const parent = rocket.parentNode; // this just makes up for the below code.
+        // // rocket.parentNode.removeChild(rocket); // removes rocket from the parent node.
+        // parent.removeChild(rocket);
+        // parent.prepend(rocket);
+
+        rocket.parentNode.prepend(rocket); // does all the above steps automatically.
 
     });
 });
 
 // Ivan's solution
+
