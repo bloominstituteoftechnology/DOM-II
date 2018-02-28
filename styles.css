@@ -17,20 +17,31 @@ body {
 
 .block--red {
   background-color: red;
+  background-image: url("rocketship.png");
+  background-size: cover;
+
 }
 
 .block--blue {
   background-color: blue;
+  background-image: url("rocketblue.png");
+  background-size: cover;
 }
 
 .block--green {
   background-color: green;
+  background-image: url("rocketgreen.png");
+  background-size: cover;
 }
 
 .block--pink {
   background-color: pink;
+  background-image: url("rocketpink.png");
+  background-size: cover;
 }
 
 .block--gray {
   background-color: gray;
+  background-image: url("rocketgray.png");
+  background-size: cover;
 }
