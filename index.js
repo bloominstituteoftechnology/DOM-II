@@ -6,8 +6,8 @@ let gray = document.getElementsByClassName('block--gray')[0];
 
 let count = -1;
 
-function bubble(red) {
-    red.target.style.order = count;
+function bubble(element) {
+    element.target.style.order = count;
     count -= 1;
 }
 
