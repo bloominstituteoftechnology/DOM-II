@@ -27,20 +27,26 @@ grayBlock.addEventListener("click", (event) => {
     
 })*/
 
+//Rockets Code
 
-const allBlocks = document.querySelectorAll(".block");
-    for (let i = 0; i < allBlocks.length; i++) {
+    /*for (let i = 0; i < allBlocks.length; i++) {
         allBlocks[i].addEventListener("click", function moveUp(event) {
             let firstChild = event.target.parentNode.firstChild; 
             event.target.parentNode.insertBefore(event.target, firstChild);  
             } ) 
-    }
+    }*/
 
+const allBlocks = document.querySelectorAll('.block');
+const eachBlock = document.querySelectorAll('.blocks');
+eachBlock.forEach(moveBlock => {
+    moveBlock.addEventListener("mousedown", (event => {
+        distance = 10;
+        slideRight = setInterval(() => {
+            distance += 1;
+            event.target.style.marginLeft = `${distance}px`;
 
+        }, 10)
+    }))
+})
 
-    
-       
-
-    
-        
 
