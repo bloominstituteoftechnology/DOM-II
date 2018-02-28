@@ -36,8 +36,9 @@ grayBlock.addEventListener("click", (event) => {
             } ) 
     }*/
 
-const allBlocks = document.querySelectorAll('.block');
+const allBlocks = document.querySelectorAll('.blocks');
 const eachBlock = document.querySelectorAll('.blocks');
+for (let i = 0; i < allBlocks.length; i++) {
 eachBlock.forEach(moveBlock => {
     moveBlock.addEventListener("mousedown", (event => {
         distance = 10;
@@ -47,6 +48,15 @@ eachBlock.forEach(moveBlock => {
 
         }, 10)
     }))
+    for (let i = 0; i < allBlocks.length; i++) {
+    moveBlock.addEventListener("mouseup", (event => {
+        distance = 0;
+        slideRight = setInterval(() => {
+            distance -= 1;
+            event.target.style.marginLeft = `${distance}px`;        
+        }, 10)
+    }))
+} 
 })
-
+}
 
