@@ -4,50 +4,15 @@ const greenBlock = document.querySelector(".block--green");
 const pinkBlock = document.querySelector(".block--pink");
 const grayBlock = document.querySelector(".block--gray");
 
+let grayBlockTraveler = grayBlock.style.marginLeft;
 
-grayBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "1";
-    redBlock.style.order = "5";
-    pinkBlock.style.order = "4";
-    greenBlock.style.order = "3";
-    blueBlock.style.order = "2";
+grayBlock.addEventListener("mousedown", (event) =>{
+    window.setInterval(function() {
+        grayBlock.style.transform = "translate(900px, 0%)"
+    }, 10);
 });
-
-pinkBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "4";
-    redBlock.style.order = "5";
-    pinkBlock.style.order = "1";
-    greenBlock.style.order = "3";
-    blueBlock.style.order = "2";
+grayBlock.addEventListener("mouseup", (event) =>{
+    grayBlock.style.transform = null;
+   
 });
 
-greenBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "3";
-    redBlock.style.order = "5";
-    pinkBlock.style.order = "4";
-    greenBlock.style.order = "1";
-    blueBlock.style.order = "2";
-});
-
-pinkBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "4";
-    redBlock.style.order = "5";
-    pinkBlock.style.order = "1";
-    greenBlock.style.order = "3";
-    blueBlock.style.order = "2";
-});
-
-redBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "5";
-    redBlock.style.order = "1";
-    pinkBlock.style.order = "4";
-    greenBlock.style.order = "3";
-    blueBlock.style.order = "2";
-});
-blueBlock.addEventListener("click", (event) =>{
-    grayBlock.style.order = "5";
-    redBlock.style.order = "2";
-    pinkBlock.style.order = "4";
-    greenBlock.style.order = "3";
-    blueBlock.style.order = "1";
-});
