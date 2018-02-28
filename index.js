@@ -4,11 +4,11 @@ let green = document.getElementsByClassName('block--green')[0];
 let pink = document.getElementsByClassName('block--pink')[0];
 let gray = document.getElementsByClassName('block--gray')[0];
 
-let count = -1;
+let count = 0;
 
 function bubble(element) {
     element.target.style.order = count;
-    count -= 1;
+    count--;
 }
 
 red.addEventListener('click', bubble);
