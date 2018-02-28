@@ -42,6 +42,13 @@ body {
 }*/
 
 #clicked {
-  /*background-color: yellow;*/
-  order: -1;
+  background-color: yellow;
+  /*order: -1; */
+  
+
+  margin-left: 100%;
 }
+#toRight {
+  /*background-color: yellow;*/
+  margin-left: 100%;
+ }
