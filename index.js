@@ -45,7 +45,7 @@ block.forEach((item) => {  //forEach loop to iterate over NodeList of block item
     item.addEventListener('click', () => {
 
     const parent = item.parentElement; // accessing parent element ('blocks')
-    parent.removeChild(item); // removes child
+//    parent.removeChild(item); // removes child
     parent.prepend(item);    // inserts new child before the existing first child of the parentElement
 });
 });
