@@ -1,6 +1,6 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  justify-content: center;
 }
 
 .blocks {
@@ -15,7 +15,7 @@ body {
   margin: 10px;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 1s;
-  font-size: 500%;
+  font-size: 6rem;
   border-radius: 50px;
 }
 

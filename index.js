@@ -1,7 +1,7 @@
 const blocks = document.querySelectorAll(".block");
 blocks.forEach((block) =>  {
     block.addEventListener("mousedown", () => {
-        block.style.transform = "translate(100px)"
+        block.style.transform = "translate(70px)"
     });
     block.addEventListener("mouseup", () => {
         block.style.transform = "translate(0px)"
@@ -29,3 +29,4 @@ blocks.forEach((block) =>  {
 //         parent.prepend(blocks[i]);
 //     });
 // }
+
