@@ -7,31 +7,6 @@
 //   });
 // });
 
-// let intervalRight;
-// let intervalLeft;
-// const blocks = document.querySelectorAll('.block');
-// let moveMarginLeft = 10;
-// blocks.forEach(block => {
-//   block.addEventListener('mousedown', () => {
-//     clearInterval(intervalLeft);
-//     intervalRight = setInterval(function() {
-//       clearInterval(intervalLeft);
-//       console.log('down', moveMarginLeft);
-//       moveMarginLeft += 20;
-//       block.style.marginLeft = moveMarginLeft.toString() + '%';
-//     }, 10);
-//   });
-//   window.addEventListener('mouseup', () => {
-//     clearInterval(intervalRight);
-//     let intervalLeft = setInterval(function() {
-//       console.log('up', moveMarginLeft);
-//       if (moveMarginLeft <= 10) clearInterval(intervalLeft);
-//       if (moveMarginLeft > 10) moveMarginLeft -= 20;
-//       block.style.marginLeft = moveMarginLeft.toString() + '%';
-//     }, 10);
-//   });
-// });
-
 const red = document.getElementsByClassName('block block--red');
 const blue = document.getElementsByClassName('block block--blue');
 const green = document.getElementsByClassName('block block--green');
