@@ -1,27 +1,43 @@
 //get array from .block class HTML list object
-const blocks = Array.from(document.getElementsByClassName('block'));
-//get element from HTML list object for each color block class
-const redBlock = blocks[0];
-const blueBlock = blocks[1];
-const greenBlock = blocks[2];
-const pinkBlock = blocks[3];
-const grayBlock = blocks[4];
+const blocksArray = Array.from(document.getElementsByClassName('block'));
 
-//set attribute "style", "order: -1" to clicked
-//set attribute "style", "order: null" to all unclicked
-const blastOff = (index) => {
-    blocks[index].setAttribute('style', 'order: -1');
-    for(let i = 0; i < blocks.length; i++) {
-        if (i !== index) {
-            blocks[i].setAttribute('style', 'order: null')
-        }
-    }
+let margin = 25;
+let upInterval;
+let downInterval;
+
+//creat a function for incrementing margin-left
+const travelForth = (i) => {
+    clearInterval(downInterval);
+    document.documentElement.addEventListener('mouseup', () => {
+        travelBack(i);
+    });
+    upInterval = setInterval(() => {
+        margin = margin + 10;
+        blocksArray[i].style.marginLeft = `${margin}px`;
+    }, 100);
 }
 
+//create a function for decrementing the margin-left
+const travelBack = (i) => {
+    clearInterval(upInterval);
+    downInterval = setInterval(() => {
+        if (margin < 25) {
+            clearInterval(downInterval);
+            return;
+        }
+        margin -= 10 ;
+        blocksArray[i].style.marginLeft = `${margin}px`;
+    }, 100);
+}
 
-//set event listener for click on each color box
-blocks.forEach(function(content, index) {
-    blocks[index].addEventListener("click", () => {
-        blastOff(index);
+//set event listener for mousdown and mouseup
+const addListeners = (i) => {
+    blocksArray[i].addEventListener('mousedown', () => {
+        travelForth(i);
     });
+}
+
+//apply both functions to each block
+blocksArray.forEach((element, number) => {
+    addListeners(number);
 });
