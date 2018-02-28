@@ -4,6 +4,7 @@ let c = document.getElementsByClassName('block--green')[0];
 let d = document.getElementsByClassName('block--pink')[0];
 let e = document.getElementsByClassName('block--gray')[0];
 
+let bA = [a, b, c, d, e];
 let count = -1;
 
 function rocket(e) {
@@ -21,20 +22,8 @@ function up(e) {
     e.target.style.marginLeft = '10px';
 }
 
-a.addEventListener('click', rocket);
-b.addEventListener('click', rocket);
-c.addEventListener('click', rocket);
-d.addEventListener('click', rocket);
-e.addEventListener('click', rocket);
+bA.forEach((item) => item.addEventListener('click', rocket));
 
-a.addEventListener('mousedown', down);
-b.addEventListener('mousedown', down);
-c.addEventListener('mousedown', down);
-d.addEventListener('mousedown', down);
-e.addEventListener('mousedown', down);
+bA.forEach((item) => item.addEventListener('mousedown', down));
 
-a.addEventListener('mouseup', up);
-b.addEventListener('mouseup', up);
-c.addEventListener('mouseup', up);
-d.addEventListener('mouseup', up);
-e.addEventListener('mouseup', up);
+bA.forEach((item) => item.addEventListener('mouseup', up));
