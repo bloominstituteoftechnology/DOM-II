@@ -7,9 +7,7 @@ const grayBlock = document.querySelector(".block--gray");
 let grayBlockTraveler = grayBlock.style.marginLeft;
 
 grayBlock.addEventListener("mousedown", (event) =>{
-    window.setInterval(function() {
         grayBlock.style.transform = "translate(900px, 0%)"
-    }, 10);
 });
 grayBlock.addEventListener("mouseup", (event) =>{
     grayBlock.style.transform = null;
