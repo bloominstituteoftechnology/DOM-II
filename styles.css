@@ -1,6 +1,9 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  /* justify-content: center; */
+}
+.empty {
+  display: none;
 }
 
 .blocks {
