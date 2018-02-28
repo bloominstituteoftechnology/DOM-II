@@ -4,11 +4,16 @@ const blueBlock = document.querySelector(".block--blue");
 const greenBlock = document.querySelector(".block--green");
 const pinkBlock = document.querySelector(".block--pink");
 const grayBlock = document.querySelector(".block--gray");
+
+
 // const redBlockAppend = document.getElementsByClassName("blocks")[0].appendChild(redBlock);
-// when clicked, margin-left to 100px;
+
+let hasBeenClicked = false;
 
 redBlock.addEventListener("mousedown", (event) => {
-    redBlock.classList.add("blockDownClick");
+  console.log(event);
+  redBlock.style.marginLeft = "50px";
+  hasBeenClicked = true;
  });
  
  blueBlock.addEventListener("mousedown", (event) => {
@@ -27,22 +32,37 @@ redBlock.addEventListener("mousedown", (event) => {
    grayBlock.classList.add("blockDownClick");
  });
 
- redBlock.addEventListener("mouseup", (event) => {
-    redBlock.classList.remove("blockDownClick");
- });
+redBlock.addEventListener("mouseup", (event) => {
+  // redBlock.classList.remove("blockDownClick");
+  if(hasBeenClicked) {
+    const twoSecsInterval = window.setTimeout(() => {
+      console.log('hiUP');
+      redBlock.style.marginLeft = "10px";
+    
+    }, 2000);
+  }
+});
  
  blueBlock.addEventListener("mouseup", (event) => {
-    blueBlock.classList.remove("blockDownClick");
+  const twoSecsInterval = window.setTimeout(() => {
+		redBlock.classList.remove("blockDownClick");
+    }, 2000);
  });
  
  greenBlock.addEventListener("mouseup", (event) => {
-   greenBlock.classList.remove("blockDownClick");
+  const twoSecsInterval = window.setInterval(() => {
+		redBlock.classList.remove("blockDownClick");
+    }, 2000);
  });
  
  pinkBlock.addEventListener("mouseup", (event) => {
-   pinkBlock.classList.remove("blockDownClick");
+  const twoSecsInterval = window.setInterval(() => {
+		redBlock.classList.remove("blockDownClick");
+    }, 2000);
  });
  
  grayBlock.addEventListener("mouseup", (event) => {
-   grayBlock.classList.remove("blockDownClick");
+  const twoSecsInterval = window.setInterval(() => {
+		redBlock.classList.remove("blockDownClick");
+    }, 2000);
  });
