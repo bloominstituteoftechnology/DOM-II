@@ -1,5 +1,3 @@
-// STILL YANYAN AND RINNRINN!
-
 # DOM II
 
 Topics:
