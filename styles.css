@@ -13,10 +13,9 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
-  transition: cubic-bezier(1, 0, 0, 1);
-  transition: 1s;
   font-size: 6em;
   border-radius: 50%;
+  transition: cubic-bezier(1, 0, 0, 1);
 }
 
 .block--red {
