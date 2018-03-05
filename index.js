@@ -16,18 +16,5 @@ for (let i = 0; i < block.length; i++) {
 
 for (let i = 0; i < block.length; i++) {
   block[i].addEventListener("click", () => {
-
-    // old class order removed
-    for (let j = 0; j < block.length; j++) {
-      block[j].classList.remove(boxClass[j]);
-    }
-
-    boxClass.splice(0, 0, boxClass[i]);
-    boxClass.splice(i + 1, 1);
-
-    // new class order added
-    for (let j = 0; j < block.length; j++) {
-      block[j].classList.add(boxClass[j]);
-    }
   })
 }
