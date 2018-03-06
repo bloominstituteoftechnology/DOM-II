@@ -152,8 +152,5 @@ function travelLeft5() {
   }
   box5.style.marginLeft = move5 + 'px';
 }
-// Basic implementation complete.
-// I'm sure I could implement the boxes in an array format
-// Should cut down code by 4/5
-// If time allows I'll come back 
-// and implement return to location (Extra Credit)
+// TODO: shrink code by 4/5
+// Options: Class approach, Array approach, Function approach
