@@ -19,7 +19,4 @@
      obj.addEventListener('mouseout', function (){
          this.style.marginLeft = "10px";
      });
-     obj.addEventListener('click', function (){
-         obj.parentElement.prepared(obj);
-     });
  })
