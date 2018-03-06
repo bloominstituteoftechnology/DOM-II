@@ -49,7 +49,7 @@ box4.addEventListener("mousedown", () => {
 })
 
 box5.addEventListener("mousedown", () => {
-  box5travel = setInterval(travelRight5,500);
+  box5travel = setInterval(travelRight5,10);
 })
 
 // Stop moving on mouseup, anywhere in window
@@ -76,7 +76,7 @@ window.addEventListener("mouseup", () => {
     box4travelL = setInterval(travelLeft4, 10)
   }
   if (move5 !== 10 && box5travelL === null) {
-    box5travelL = setInterval(travelLeft5, 500)
+    box5travelL = setInterval(travelLeft5, 10)
   }
 })
 
