@@ -1,4 +1,4 @@
-const blocks = document.querySelector(".blocks").childNodes;
+const blocks = document.querySelectorAll(".block");
 console.log(blocks);
 let orderValue = -1;
 
