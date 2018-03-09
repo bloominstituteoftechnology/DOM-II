@@ -1,6 +1,10 @@
-let blocks = document.querySelector('.blocks');
-let orderCount = -1;
-blocks.addEventListener('click', (e) => {
-	e.target.style.order = orderCount;
-	orderCount--;
+const block = document.querySelectorAll('.block');
+
+block.forEach((e) => {
+	e.addEventListener('mousedown', () => {
+		e.classList.add('blockRight');
+	});
+	e.addEventListener('mouseup', () => {
+		e.classList.remove('blockRight');
+	});
 });
