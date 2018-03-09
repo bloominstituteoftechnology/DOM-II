@@ -30,7 +30,7 @@ body {
 	-ms-transition: 10s;
 	-o-transition: 10s;
 	transition: 10s;
-	margin-left: 95% !important;
+	margin-left: 95%;
 }
 
 .block--red {
