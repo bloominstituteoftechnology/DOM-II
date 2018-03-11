@@ -7,7 +7,7 @@ function moveToTop(event) {
 }
 
 // Move to Right using CSS property
-function moveToRight(event) {
+function moveToRightCSS(event) {
   event.target.style.transition = "margin-left 2s linear 1s";
   event.target.style.marginLeft = "788px";
 }
@@ -43,6 +43,6 @@ function moveToRight(element) {
 // Associate click event listener with each block.
 blocks.forEach((block) => {
   block.addEventListener('click', moveToTop);
-  block.addEventListener('click', moveToRight);
+  block.addEventListener('click', moveToRightCSS);
   block.addEventListener('click', traveler);
 });
