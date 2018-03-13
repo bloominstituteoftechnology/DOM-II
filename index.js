@@ -1,3 +1,11 @@
+// const block = document.querySelectorAll('.block');
+
+// block.forEach((e) => {
+// 	e.addEventListener('click', () => {
+// 		e.parentElement.prepend(e);
+// 	})
+// });
+
 const block = document.querySelectorAll('.block');
 
 block.forEach((e) => {
