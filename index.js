@@ -16,7 +16,7 @@ nodeList.addEventListener('mousedown', (event) => {
             event.target.style.marginLeft = '0px'}
         console.log('working')
         event.target.style.marginLeft = parseInt(event.target.style.marginLeft) + 1 + 'px';
-        },100)  
+        },10)  
     }
 });
 
@@ -28,7 +28,7 @@ nodeList.addEventListener('mouseup', (event) => {
             clearInterval(timer); }
         console.log('working')
         event.target.style.marginLeft = parseInt(event.target.style.marginLeft) + -1 + 'px';
-        },100)  
+        },10)  
     }
 });
 
