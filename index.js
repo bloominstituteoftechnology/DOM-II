@@ -1,18 +1,18 @@
 // ================== ROCKET ================== //
 
-const blocksArray = Array.from(document.querySelectorAll('.block'));
+const blocksArray = document.querySelectorAll('.block');
 
-// blocksArray.forEach( (e) => {
-//   e.addEventListener("click", function() {
-//     e.parentElement.prepend(e);
-//   });
-// });
+blocksArray.forEach( (e) => {
+  e.addEventListener("click", function() {
+    e.parentElement.prepend(e);
+  });
+});
 
 // ================== TRAVELERS ================== //
 
-blocksArray.forEach( (e) => {
+// blocksArray.forEach( (e) => {
   
-  e.addEventListener("mousedown", () => {
-  e.style.marginLeft = "1500px";
-  });
-});
+//   e.addEventListener("mousedown", () => {
+//   e.style.marginLeft = "1500px";
+//   });
+// });
