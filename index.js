@@ -18,7 +18,7 @@ function mouseDown(e) {
 };
 
 function mouseUp(e) {
-    e.target.style.left = "0";
+    e.target.classList.add("mouseRelease");
     console.log('test')
 };
 

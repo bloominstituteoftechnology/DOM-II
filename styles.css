@@ -34,3 +34,20 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.mouseRelease {
+  position: relative;
+  animation: move 2s;
+}
+
+@keyframes move {
+  33%  {
+    left: 0px;
+  }
+  66%  {
+    right: 15rem;
+  }
+  99% {
+    left: 15em;
+  }
+}
