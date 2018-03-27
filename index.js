@@ -26,38 +26,46 @@ const gray = document.querySelector('.block--gray');
 
 
 // travelers
-let marginPX = 0;
 const block = document.getElementsByClassName('block');
 
+// let marginPX = 10;
+
 const moveRight = (event) => {
+	let marginPX = 10;
     window.setInterval( function() {
     	// when margin is smaller than 1000 [1 screen length]
-        if (marginPX < 1000) {
+        if (marginPX < 300) {
             marginPX++; 
             event.target.style.marginLeft = marginPX + 'px';
-        } 
-        // margin reaches 100px
-        else {
-        	clearInterval(moveRight);
         }
+        // margin reaches 100px
+        // else {
+        // 	clearInterval(moveRight);
+        // }
     }, 5);
 }
 
-red.addEventListener('click', moveRight);
-blue.addEventListener('click', moveRight);
-green.addEventListener('click', moveRight);
-pink.addEventListener('click', moveRight);
-gray.addEventListener('click', moveRight);
+red.addEventListener('mousedown', moveRight);
+blue.addEventListener('mousedown', moveRight);
+green.addEventListener('mousedown', moveRight);
+pink.addEventListener('mousedown', moveRight);
+gray.addEventListener('mousedown', moveRight);
+
+// clearInterval(moveRight);
 
 const moveBack = (event) => {
+	let marginPX = 300;
 	window.setInterval(function() {
-		if (marginPX > 0) {
+		event.stopImmediatePropagation();
+		clearInterval(moveRight);
+		if (marginPX > 10) {
 			marginPX--;
-			event.target.style.marginLeft = marginPX + 'px';
-		} else {
+			event.target.style.marginRight = marginPX + 'px';
+		}
+		else {
 			clearInterval(moveBack);
 		}
-	})
+	}, 5);
 }
 
 red.addEventListener('mouseup', moveBack);
@@ -65,7 +73,5 @@ blue.addEventListener('mouseup', moveBack);
 green.addEventListener('mouseup', moveBack);
 pink.addEventListener('mouseup', moveBack);
 gray.addEventListener('mouseup', moveBack);
-
-
 
 
