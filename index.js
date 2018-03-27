@@ -31,40 +31,35 @@ const gray = document.querySelector('.block--gray');
 let interval;
 
 const begin = (e) => {
-    e.stopPropagation();
     clearInterval(interval);
-    interval = window.setInterval(moveRight, 10, e);
+    interval = window.setInterval(increment, 100, e);
 }
 
 const end = (e) => {
-    e.stopPropagation();
     clearInterval(interval);
-    while (e.target.style.marginLeft !== '') {
-        interval = window.setInterval(goBack, 10, e);
-    }
-    if (e.target.style.marginLeft === '') clearInterval(interval);
+    interval = window.setInterval(decrement, 100, e);
 }
 
-const moveRight = (e) => {
-    e.target.style.marginLeft = increment(e.target.style.marginLeft);
-};
+const increment = (targ) => {
+    let targLength = targ.target.style.marginLeft.length;
+    let value;
 
-const goBack = (e) => {
-    e.target.style.marginLeft = decrement(e.target.style.marginLeft);
-};
-
-const increment = (string) => {
-    let value = parseInt(string);
-    if (value === NaN) value = 0;
-    value += 10;
-    return (String(value) + "px");
+    if (targLength > 0) {
+        let value = parseInt(targ.target.style.marginLeft);
+        value += 10;
+        targ.target.style.marginLeft = String(value) + 'px';
+    } else targ.target.style.marginLeft = '10px';
 }
 
-const decrement = (string) => {
-    let value = parseInt(string);
+const decrement = (targ) => {
+    let value = parseInt(targ.target.style.marginLeft);
     value -= 10;
-    if (value === 0) return ''
-    return (String(value) + "px");
+    if (value < 10) {
+        targ.target.style.marginLeft = '';
+        clearInterval(interval);
+        return;
+    }
+    targ.target.style.marginLeft = (String(value) + "px");
 }
 
 red.addEventListener('mousedown', begin);
@@ -78,3 +73,5 @@ blue.addEventListener('mouseup', end);
 green.addEventListener('mouseup', end);
 pink.addEventListener('mouseup', end);
 gray.addEventListener('mouseup', end);
+
+blocks.addEventListener('mouseup', clearInterval(interval));
