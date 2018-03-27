@@ -5,18 +5,21 @@ nodeList.addEventListener('click', (event) => {
       event.target.parentNode.insertBefore(event.target, event.target.parentNode.childNodes[0]);
     }
 });
-
+let counter =0;
 nodeList.addEventListener('mousedown', (event) => {
     timer = window.setInterval(function(){
-    //if (event.target.parentNode.className === "blocks") {
+    if (event.target.parentNode.className === "blocks") {
         console.log('working')
-        
-        event.target.style.right ="1px";
+counter ++
+counter +='px'
+        event.target.style.marginRight ="";
 
 
    
-   // }
+    }
 
 },10)
+
+
 });
 
