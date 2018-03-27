@@ -123,7 +123,7 @@ const increment3 = () => {
 }
 
 const decrement3 = () => {
-    ml3++;
+    ml3--;
     pinkElement.style.marginLeft = ml3 + 'px';
 }
 
@@ -136,3 +136,30 @@ pinkElement.addEventListener('mouseup', () => {
     clearInterval(incID3);
     decID3 = setInterval(decrement3, 10);
 });
+
+
+//  GRAY ELEMENT  //
+const grayElement = document.querySelector('.block--gray');
+
+let ml4 = 10;
+let decID4, incID4;
+
+const increment4 = () => {
+    ml4++;
+    grayElement.style.marginLeft = ml4 + 'px';
+}
+
+const decrement4 = () => {
+    ml4--;
+    grayElement.style.marginLeft = ml4 + 'px';
+}
+
+grayElement.addEventListener('mousedown'), () => {
+    clearInterval(decID4);
+    incID4 = setInterval(increment4, 10);
+}
+
+grayElement.addEventListener('mouseup'), () => {
+    clearInterval(incID4);
+    decID4 = setInterval(decrement4, 10);
+}
