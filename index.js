@@ -17,23 +17,25 @@ function orderSet() {
 // makes it so whatever block you click jumps to the top (super archaic method)
 let count = 0;
 const changeOrder = (event) => {
-   // event.stopPropagation();
-   event.target.style.order = count--;
+  // event.stopPropagation();
+  event.target.style.order = count--;
 }
 
 
+let holdingDown = false;
 const pushtoRight = (event) => {
   let currentX = 0
-  if (event.type == "mousedown") {
-    currentX = currentX+10;
+  if (holdingDown === true) {
+    currentX = currentX + 10;
     event.target.style.right = currentX + "px";
   }
+
 }
 
 // when you click on blocks, it changes order!
 // probably a better way to make it so it clicks all buttons instead of making a listener to each one
 // will work on that later
-
+//uncomment to test Rocket
 // redBlock.addEventListener('click', changeOrder);
 // blueBlock.addEventListener('click', changeOrder);
 // greenBlock.addEventListener('click', changeOrder);
@@ -42,7 +44,8 @@ const pushtoRight = (event) => {
 
 
 
-//travelng
+// travelng
+// comment out when testing rocket
 redBlock.addEventListener('mousedown', pushtoRight);
 blueBlock.addEventListener('mousedown', pushtoRight);
 greenBlock.addEventListener('mousedown', pushtoRight);
