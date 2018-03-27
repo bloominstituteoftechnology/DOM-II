@@ -14,11 +14,13 @@ childrenArr.map(child => {
   child.addEventListener('click', toTop)
 })
 
+let interval
 let mouse = false
 // While a mouse is clicked down on a box, it should move to the right
 // TRAVELERS
+
 const moveToRight = node => {
-    setInterval(() => {
+   interval = setInterval(() => {
       (node.style.marginLeft = `${(parseInt(node.style.marginLeft) || 0) + 1}px`)
     }, 100)
 }
@@ -35,11 +37,9 @@ childrenArr.map(child => child.addEventListener('mousedown', moveRight))
 
 // When the mouse button is released, it should travel back to its original position
 const moveLeft = e => {
-  mouse = false
   clearInterval(interval)
   interval = setInterval(() => {
-    if(parsInt(e.target.style.marginLeft) === 0) clearInterval(interval)
-    e.target.style.marginLeft = `${(parsInt(e.target.style.marginLeft) || 0) - 1}px`
+    e.target.style.marginLeft = `${(parseInt(e.target.style.marginLeft) || 0) - 1}px`
   }, 100)
   e.stopPropagation()
 }
