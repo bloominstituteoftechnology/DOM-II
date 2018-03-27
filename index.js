@@ -5,15 +5,14 @@ const greenBlock = document.querySelector('.block--green');
 const pinkBlock = document.querySelector('.block--pink');
 const grayBlock = document.querySelector('.block--gray');
 
-const makeRed = (event) => {
-    event.target.style.backgroundColor = 'red';
-  }
+let position = 0; // may require double-click/ x2 double-clicks
+const moveToTop = (event) => {
+    event.target.style.order = position;
+    position--;
+  };
 
-  const swapColor = (event) => {
-      event.target.style.backgroundColor = '';
-  }
-
-  blueBlock.addEventListener('click', makeRed);
-  greenBlock.addEventListener('click', makeRed);
-  pinkBlock.addEventListener('click', makeRed);
-  grayBlock.addEventListener('click', makeRed);
+  blueBlock.addEventListener('click', moveToTop);
+  greenBlock.addEventListener('click', moveToTop);
+  pinkBlock.addEventListener('click', moveToTop);
+  grayBlock.addEventListener('click', moveToTop);
+  redBlock.addEventListener('click', moveToTop);
