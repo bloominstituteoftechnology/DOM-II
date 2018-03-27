@@ -13,8 +13,19 @@ const rockets = (event) => {
   }
 }
 
+
+
 for (let i = 0; i < group.children.length; i++) {
   group.children[i].addEventListener('click', rockets);
+  group.children[i].addEventListener('mousedown', () => {
+    group.children[i].style.marginLeft = '50px';
+  });
+  group.children[i].addEventListener('mouseup', () => {
+    group.children[i].style.marginLeft = '10px';
+  });
 }
 
+
+
 console.log(group.children);
+
