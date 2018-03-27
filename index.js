@@ -1,0 +1,1 @@
+const red = document.querySelector('.block--red');
