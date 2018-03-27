@@ -1,19 +1,18 @@
 body {
   display: flex;
-  /*justify-content: center;*/
 }
 
 .blocks {
   margin-top: 5%;
   display: flex;
-  flex-direction: column;
-  border: 5px solid red; 
+  flex-direction: column; 
 }
 
 .block {
   width: 100px;
   height: 100px;
   margin: 10px;
+  
 }
 
 .block--red {
@@ -36,8 +35,5 @@ body {
   background-color: gray;
   /* position: fixed ; */
   display: flex; 
-  border: 5px solid blue;
-  /* order: -1; */
-
   
 }
