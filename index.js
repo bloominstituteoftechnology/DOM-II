@@ -35,4 +35,3 @@ clickBottomBlock = () => {
   blockList[blockList.length - 1].dispatchEvent(mouseDown);
   setTimeout(() => document.dispatchEvent(mouseUp), 20);
 }
-
