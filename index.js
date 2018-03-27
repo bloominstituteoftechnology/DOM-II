@@ -29,6 +29,7 @@
 // Increase margin overtime in set interval
 // Increase margin on mousedown & return to original position on mouseup
 
+/* TRAVELERS */
 
 //  RED ELEMENT  //
 const redElement = document.querySelector('.block--red');
@@ -154,12 +155,12 @@ const decrement4 = () => {
     grayElement.style.marginLeft = ml4 + 'px';
 }
 
-grayElement.addEventListener('mousedown'), () => {
+grayElement.addEventListener('mousedown', () => {
     clearInterval(decID4);
     incID4 = setInterval(increment4, 10);
-}
+});
 
-grayElement.addEventListener('mouseup'), () => {
+grayElement.addEventListener('mouseup', () => {
     clearInterval(incID4);
     decID4 = setInterval(decrement4, 10);
-}
+});
