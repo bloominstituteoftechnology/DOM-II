@@ -74,5 +74,3 @@ blue.addEventListener('mouseup', end);
 green.addEventListener('mouseup', end);
 pink.addEventListener('mouseup', end);
 gray.addEventListener('mouseup', end);
-
-blocks.addEventListener('mouseup', clearInterval(interval));
