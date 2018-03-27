@@ -16,14 +16,14 @@ body {
   align-items: center;
 }
 body .blocks {
-  margin-top: 5%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
 body .blocks .block {
   width: 10rem;
   height: 10rem;
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 body .blocks .block--red {
   background: red;
