@@ -16,6 +16,16 @@ childrenArr.map(child => {
 
 // While a mouse is clicked down on a box, it should move to the right
 // TRAVELERS
-const toRight = (event) => {
-  let childToMove = 
+const moveToRight = node => {
+  let curLeft = parseInt(node.style.left)
+  curLeft = `${curleft + 1}px`
 }
+
+const moveRight = e => {
+  let childToMove = e.target
+  // move right every 100ms
+  setInterval(moveToRight(childToMove), 100)
+  stopPropagation() 
+}
+
+childrenArr.map(child => child.addEventListener('mousedown', moveRight))
