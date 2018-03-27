@@ -1,7 +1,7 @@
 function moveGrayBlock() {
     console.log('This is working!')
     let grayBox = document.getElementsByClassName('block--gray');
-   const  newbox = grayBox[0].style.order = '-1';
+   const  newbox = grayBox[0].style.order--;
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
@@ -9,28 +9,28 @@ function moveGrayBlock() {
   function movePinkBlock() {
     console.log('This is working!')
     let grayBox = document.getElementsByClassName('block--pink');
-   const  newbox = grayBox[0].style.order = '-1';
+   const  newbox = grayBox[0].style.order--;
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
   function moveGreenBlock() {
     console.log('This is working!')
     let grayBox = document.getElementsByClassName('block--green');
-   const  newbox = grayBox[0].style.order = '-1';
+   const  newbox = grayBox[0].style.order--;
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
   function moveBlueBlock() {
     console.log('This is working!')
     let grayBox = document.getElementsByClassName('block--blue');
-   const  newbox = grayBox[0].style.order = '-1';
+   const  newbox = grayBox[0].style.order--;
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
   function moveRedBlock() {
     console.log('This is working!')
     let grayBox = document.getElementsByClassName('block--red');
-   const  newbox = grayBox[0].style.order = '-1';
+   const  newbox = grayBox[0].style.order--;
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
@@ -69,7 +69,17 @@ function moveGrayBlock() {
   function moveRedRight() {
     console.log('This is moving  right!')
     let grayBox = document.getElementsByClassName('block--red');
-   const  newbox = grayBox[0].style.marginLeft = '700%';
+
+   const  moveright = grayBox[0].style.marginLeft = '700%';
+   
+   // this is the x and y cordinate
+   let rect = grayBox.getBoundingClientRect();
+
+   //grayBox.style.top = rect.top + '50px';
+   grayBox.style.left = rec.left+ '50px';
+
+
+
   //  const newboxs = grayBox[0].style.color = 'red';
   //   console.log(newbox);
   }
