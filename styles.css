@@ -34,3 +34,19 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.move-right {
+  margin-left: 100px;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+#hint {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
