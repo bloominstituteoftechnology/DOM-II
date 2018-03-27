@@ -20,10 +20,9 @@
 const block = document.querySelectorAll('.block');
 // let offset = document.querySelectorAll('.block').style.width;
 
-let moveBy = window.innerWidth - 100;
-
 const moveRight = (event) => {
-    event.target.style.transform = 'translate('+moveBy+'%)';
+    console.log(event.target.offsetWidth);
+    event.target.style.transform = 'translate('+(window.innerWidth-event.target.offsetWidth)+'px)';
 }
 
 const moveLeft = (event) => {
@@ -35,6 +34,9 @@ for (let i = 0; i < block.length; i++) {
     block[i].addEventListener('mousedown', moveRight);
     block[i].addEventListener('mouseenter', moveRight);
     block[i].addEventListener('mouseenter', moveLeft);
-    block[i].addEventListener('mouseleave', moveLeft);
+    // block[i].addEventListener('mouseleave', moveLeft);
     block[i].addEventListener('mouseup', moveLeft);
 }
+
+
+// let moveBy = window.innerWidth - target.offsetWidth;
