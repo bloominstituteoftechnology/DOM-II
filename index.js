@@ -9,10 +9,8 @@ item.addEventListener('click', (event) => {
     
     // access parent div 'blocks'
     const parent = item.parentElement;
-    // remove clicked 'block' from parent
-    // parent.removeChild(item);
 
-    // prepend attaches any item or in this case 'block' to the parent as the parent's first child element
+    // prepend detaches and then inserts clicked 'block' before the parent's first child element
     parent.prepend(item);
 });
 });
@@ -26,9 +24,9 @@ block.forEach((item) => {
         event.target.style.transform = 'translate(600px)';       
 });
 
-item.addEventListener('mouseout', (event) => {
-    event.target.style.position = 'relative';
-    event.target.style.transform = 'translate(0)'; 
+    item.addEventListener('mouseout', (event) => {
+        event.target.style.position = 'relative';
+        event.target.style.transform = 'translate(0)'; 
 });
 });
 
