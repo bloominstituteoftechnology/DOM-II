@@ -21,21 +21,30 @@ const changeOrder = (event) => {
    event.target.style.order = count--;
 }
 
+
 const pushtoRight = (event) => {
-  event.target.style.marginLeft = "300px";
-}
-
-const pushtoLeft = (event) => {
- event.target.style.marginLeft = "0px";
-
+  let currentX = 0
+  if (event.type == "mousedown") {
+    currentX = currentX+10;
+    event.target.style.right = currentX + "px";
+  }
 }
 
 // when you click on blocks, it changes order!
+// probably a better way to make it so it clicks all buttons instead of making a listener to each one
+// will work on that later
 
-blocks.addeventListener('click', changeOrder);
-//
 // redBlock.addEventListener('click', changeOrder);
 // blueBlock.addEventListener('click', changeOrder);
 // greenBlock.addEventListener('click', changeOrder);
 // pinkBlock.addEventListener('click', changeOrder);
 // grayBlock.addEventListener('click', changeOrder);
+
+
+
+//travelng
+redBlock.addEventListener('mousedown', pushtoRight);
+blueBlock.addEventListener('mousedown', pushtoRight);
+greenBlock.addEventListener('mousedown', pushtoRight);
+pinkBlock.addEventListener('mousedown', pushtoRight);
+grayBlock.addEventListener('mousedown', pushtoRight);
