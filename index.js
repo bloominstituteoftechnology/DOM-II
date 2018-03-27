@@ -7,15 +7,33 @@ let blocks = document.querySelector('.blocks');
 
 let order = -1;
 
-function blockClicked(e) {
-    order--
-    e.target.style.order = order;
-};
+// function blockClicked(e) {
+//     order--
+//     e.target.style.order = order;
+// };
 
 function mouseDown(e) {
     e.target.style.position = "relative";
     e.target.style.left = "15rem";
-}
+};
 
-blocks.addEventListener('click', blockClicked);
-blocks.addEventListener('mousedown', mouseDown);
+function mouseUp(e) {
+    e.target.style.left = "0";
+    console.log('test')
+};
+
+// blocks.addEventListener('click', blockClicked);
+red.addEventListener('mouseup', mouseUp);
+red.addEventListener('mousedown', mouseDown);
+
+blue.addEventListener('mouseup', mouseUp);
+blue.addEventListener('mousedown', mouseDown);
+
+green.addEventListener('mouseup', mouseUp);
+green.addEventListener('mousedown', mouseDown);
+
+pink.addEventListener('mouseup', mouseUp);
+pink.addEventListener('mousedown', mouseDown);
+
+gray.addEventListener('mouseup', mouseUp);
+gray.addEventListener('mousedown', mouseDown);
