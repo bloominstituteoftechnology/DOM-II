@@ -1,22 +1,31 @@
 // Refernces to DOM elements
+const body = document.querySelector('body');
 const blockDiv = document.querySelector('.blocks');
-const blockList = document.querySelectorAll('.block');
+// blockList will be in flux
+let blockList = document.querySelectorAll('.block');
+// Mouse events
+const mouseDown = new MouseEvent('mousedown');
+const mouseUp = new MouseEvent('mouseup');
+
+// Is this page going crazy?
+let goCrazy; // Initialize here to reach during seperate event calls
+let goingCrazy = false;
+// Track last clicked box
 let lastBlockClicked;
 
 // Give event listener to all elements in blockList
 for (let i = 0; i < blockList.length; i++) {
-  // Move to right on mouse down
   blockList[i].addEventListener('mousedown', function() {
+    // Moves to top of stack
     this.remove();
     blockDiv.prepend(this);
+    // Moves to right
     this.classList.add('move-right');
     lastBlockClicked = this;
   });
 }
-
 // Move back to left on mouse up
-document.addEventListener('mouseup', function() {
+document.addEventListener('mouseup', () => {
   lastBlockClicked.classList.remove('move-right');
 });
 
-console.log();
