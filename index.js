@@ -10,12 +10,6 @@ let gyblock = document.querySelector(".block--gray")
 gyblock.style.border = '2px solid blue';
 
 let count = 0;
-
-
-
-const array = document.querySelectorAll(".block")
-console.log(typeof array);
-console.log(array);
 const orderB = (event) => {
 event.target.style.order = --count;
 }
