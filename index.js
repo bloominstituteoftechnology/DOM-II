@@ -30,10 +30,12 @@ document.addEventListener('mouseup', () => {
 });
 
 // Set up auto click function for interval
-clickBottomBlock = () => {
+crazyTime = () => {
   blockList = document.querySelectorAll('.block');
   blockList[blockList.length - 1].dispatchEvent(mouseDown);
+  blockList[blockList.length - 1].classList.toggle('rounded');
   setTimeout(() => document.dispatchEvent(mouseUp), 20);
+  setTimeout(() => blockList[blockList.length - 1].classList.toggle('rounded'), Math.floor(Math.random() * Math.floor(1000)));
 }
 
 // When body is clicked GO CRAZY!!!... or not?
@@ -42,7 +44,7 @@ body.addEventListener('click', () => {
     clearInterval(goCrazy);
     goingCrazy = false;
   } else if (!goingCrazy) { // Go crazy
-    goCrazy = setInterval(clickBottomBlock, 200);
+    goCrazy = setInterval(crazyTime, 200);
     goingCrazy = true;
   }
 })
