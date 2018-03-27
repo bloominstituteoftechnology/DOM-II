@@ -21,9 +21,21 @@ const changeOrder = (event) => {
    event.target.style.order = count--;
 }
 
+const pushtoRight = (event) => {
+  event.target.style.marginLeft = "300px";
+}
+
+const pushtoLeft = (event) => {
+ event.target.style.marginLeft = "0px";
+
+}
+
 // when you click on blocks, it changes order!
-redBlock.addEventListener('click', changeOrder);
-blueBlock.addEventListener('click', changeOrder);
-greenBlock.addEventListener('click', changeOrder);
-pinkBlock.addEventListener('click', changeOrder);
-grayBlock.addEventListener('click', changeOrder);
+
+blocks.addeventListener('click', changeOrder);
+//
+// redBlock.addEventListener('click', changeOrder);
+// blueBlock.addEventListener('click', changeOrder);
+// greenBlock.addEventListener('click', changeOrder);
+// pinkBlock.addEventListener('click', changeOrder);
+// grayBlock.addEventListener('click', changeOrder);
