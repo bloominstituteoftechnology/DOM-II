@@ -16,3 +16,6 @@ childrenArr.map(child => {
 
 // While a mouse is clicked down on a box, it should move to the right
 // TRAVELERS
+const toRight = (event) => {
+  let childToMove = 
+}
