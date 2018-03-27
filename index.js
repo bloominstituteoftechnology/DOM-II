@@ -4,9 +4,9 @@ const blocks = document.querySelector('.blocks')
 const childrenArr = [...blocks.childNodes]
 
 const toTop = (event) => {
-  event.stopPropagation()
   let childToMove = blocks.removeChild(event.target)
-  blocks.insertBefore(blocks.firstChild)
+  blocks.insertBefore(childToMove,blocks.firstChild)
+  event.stopPropagation()
 }
 
 // add event listener to each child
