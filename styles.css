@@ -34,3 +34,7 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.move-right {
+  margin-left: 100px;
+}
