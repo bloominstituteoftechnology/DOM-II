@@ -28,16 +28,17 @@ const gray = document.querySelector('.block--gray');
 // gray.addEventListener('click', first);
 
 // // -------- Part 1 is above ---------
+// // -------- Part 2 is below ---------
 let interval;
 
 const begin = (e) => {
     clearInterval(interval);
-    interval = window.setInterval(increment, 100, e);
+    interval = window.setInterval(increment, 75, e);
 }
 
 const end = (e) => {
     clearInterval(interval);
-    interval = window.setInterval(decrement, 100, e);
+    interval = window.setInterval(decrement, 75, e);
 }
 
 const increment = (targ) => {
@@ -46,7 +47,7 @@ const increment = (targ) => {
 
     if (targLength > 0) {
         let value = parseInt(targ.target.style.marginLeft);
-        value += 10;
+        if (value <300) value += 10;
         targ.target.style.marginLeft = String(value) + 'px';
     } else targ.target.style.marginLeft = '10px';
 }
