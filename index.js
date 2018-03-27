@@ -21,3 +21,25 @@ parent.addEventListener('click', rocket);
 // redblock.addEventListener('click', rocket);
 // pinkblock.addEventListener('click', rocket)
 // grayblock.addEventListener('click', rocket);
+ 
+
+const moveRigth = (event) => {
+    event.target.style.marginLeft = "50px";
+}
+
+greenblock.addEventListener('mousedown', moveRigth);
+blueblock.addEventListener('mousedown', moveRigth);
+redblock.addEventListener('mousedown', moveRigth);
+pinkblock.addEventListener('mousedown', moveRigth);
+grayblock.addEventListener('mousedown', moveRigth);
+
+const moveLeft = (event) => {
+    event.target.style.marginLeft = '10px';
+}
+
+greenblock.addEventListener('mouseup', moveLeft);
+blueblock.addEventListener('mouseup', moveLeft);
+redblock.addEventListener('mouseup', moveLeft);
+pinkblock.addEventListener('mouseup', moveLeft);
+grayblock.addEventListener('mouseup', moveLeft);
+
