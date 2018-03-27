@@ -25,3 +25,29 @@ greenElement.addEventListener('click', lower);
 pinkElement.addEventListener('click', lower);
 grayElement.addEventListener('click', lower);
 */
+
+
+const redElement = document.querySelector('.block--red');
+
+let ml = 10;
+let decID, incID;
+
+const increment = () => {
+    ml++;
+    redElement.style.marginLeft = ml + 'px';
+}
+
+const decrement = () => {
+    ml--;
+    redElement.style.marginLeft = ml + 'px';
+}
+
+redElement.addEventListener('mousedown', () => {
+    clearInterval(decID);
+    incID = setInterval(increment, 10);
+});
+
+redElement.addEventListener('mouseup', () => {
+    clearInterval(incID);
+    decID = setInterval(decrement, 10);
+});
