@@ -13,6 +13,8 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  display: flex;
+  transition-property: margin-left;
 }
 
 .block--red {
