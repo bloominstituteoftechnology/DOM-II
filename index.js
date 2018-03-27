@@ -17,8 +17,9 @@ childrenArr.map(child => {
 // While a mouse is clicked down on a box, it should move to the right
 // TRAVELERS
 const moveToRight = node => {
-  let curLeft = parseInt(node.style.left)
-  curLeft = `${curleft + 1}px`
+  let curLeft = parseInt(node.style.left) || 0
+  curLeft = `${curLeft + 1}px`
+  node.style.marginLeft = curLeft
 }
 
 const moveRight = e => {
@@ -28,4 +29,4 @@ const moveRight = e => {
   stopPropagation() 
 }
 
-childrenArr.map(child => child.addEventListener('mousedown', moveRight))
+childrenArr.map(child => child.addEventListener('mousedown', moveRight)) 
