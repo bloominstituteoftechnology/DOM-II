@@ -26,3 +26,5 @@ blue.addEventListener('click', first);
 green.addEventListener('click', first);
 pink.addEventListener('click', first);
 gray.addEventListener('click', first);
+
+// -------- Part 1 is above ---------
