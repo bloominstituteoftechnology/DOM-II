@@ -1,14 +1,9 @@
-// const red = document.querySelector('.block--red');
-// const blue = document.querySelector('.block--blue');
-// const green = document.querySelector('.block--green');
-// const pink = document.querySelector('.block--pink');
-// const gray = document.querySelector('.block--gray');
-
 const blocks = document.querySelectorAll('.block');
 
 blocks.forEach(block => {
    block.addEventListener('click', goToTop); 
    block.addEventListener('mousedown', goRight); 
+   block.addEventListener('mouseup', goHome); 
 });
 
 function goToTop(event) {
@@ -21,10 +16,14 @@ function goToTop(event) {
   });
 }
 
+let goRightIntervalId;
+let goHomeIntervalId;
+
 function goRight(event) {
   let marginLeft = event.target.style.marginLeft;
+  clearInterval(goHomeIntervalId);
 
-  let intervalId = setInterval(() => {
+  goRightIntervalId = setInterval(() => {
     if (marginLeft === '') {
       marginLeft = 15;
     } else {
@@ -32,7 +31,19 @@ function goRight(event) {
     }
     event.target.style.marginLeft = marginLeft + 'px';
 
-    if (marginLeft > 400) clearInterval(intervalId);
-  }); 
+    if (marginLeft > 300) clearInterval(goRightIntervalId);
+  }, 50); 
 }
 
+
+function goHome(event) {
+  let marginLeft = event.target.style.marginLeft;
+  clearInterval(goRightIntervalId)
+
+  goHomeIntervalId = setInterval(() => {
+    marginLeft = parseInt(event.target.style.marginLeft, 10) - 5; 
+    event.target.style.marginLeft = marginLeft + 'px';
+
+    if (marginLeft <= 10) clearInterval(goHomeIntervalId);
+  }, 50); 
+}
