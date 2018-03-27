@@ -43,5 +43,6 @@ const moveLeft = e => {
   }, 100)
   e.stopPropagation()
 }
+
 // A mouse down that occurs during a transition back to the original position should send it traveling to the right agian from its current position
 childrenArr.map(child => child.addEventListener('mouseup', moveLeft))
