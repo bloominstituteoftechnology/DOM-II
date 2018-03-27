@@ -24,7 +24,7 @@ Topics:
  You will have two separate commits for this lab
 
  rockets:
-  * When a block is clicked, it should go to the top of the stack
+  * When a block is clicked, it should go to the top of the stack DONE
 
  travelers:
   * While a mouse is clicked down on a box, it should move to the right
