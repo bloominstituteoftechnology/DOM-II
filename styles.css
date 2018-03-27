@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   /*position: absolute;*/
-  width: 80%;
+  width: 100%;
 }
 
 .block {
@@ -37,4 +37,18 @@ body {
 
 .block--gray {
   background-color: gray;
+}
+
+.go-right {
+  margin-left: 1000px;
+  transition-property: margin-left;
+  transition-duration: 10s;
+  transition-timing-function: linear;
+}
+
+.go-left {
+  margin-left: 0px;
+  transition-property: margin-left;
+  transition-duration: 3s;
+  transition-timing-function: linear;
 }

@@ -1,11 +1,12 @@
-// variables
-const red = document.getElementById('red');
-const blue = document.getElementById('blue');
-const green = document.getElementById('green');
-const pink = document.getElementById('pink');
-const gray = document.getElementById('gray');
-
 /****************************************************************/
+//ROCKETS________________________________________________________
+
+// const red = document.getElementById('red');
+// const blue = document.getElementById('blue');
+// const green = document.getElementById('green');
+// const pink = document.getElementById('pink');
+// const gray = document.getElementById('gray');
+
 // commit one
 // move child to top of list
 // const move2top = function(x) {
@@ -28,31 +29,61 @@ const gray = document.getElementById('gray');
 // clicker(gray);
 
 /****************************************************************/
-// commit two
-const ogPosition = (event) => {
-	event.style.marginLeft = '10px';
-};
+//TRAVELERS______________________________________________________
 
-const moveRight = (event) => {
-	event.style.marginLeft = '555px';
-};
+// const red = document.getElementById('red');
+// const blue = document.getElementById('blue');
+// const green = document.getElementById('green');
+// const pink = document.getElementById('pink');
+// const gray = document.getElementById('gray');
 
-const mouseDown = (x) => {
-	x.addEventListener('mousedown', function() {
-		moveRight(x);
-	});
+// const ogPosition = (event) => {
+// 	event.style.marginLeft = '10px';
+// };
 
-	document.body.addEventListener('mouseup', function() {
-		ogPosition(x);
-		x.addEventListener('mousedown', function() {
-			moveRight(x);
-		});
-	});
-};
+// const moveRight = (event) => {
+// 	event.style.marginLeft = '555px';
+// };
 
-// invoke moveright
-mouseDown(red);
-mouseDown(blue);
-mouseDown(green);
-mouseDown(pink);
-mouseDown(gray);
+// const mouseDown = (x) => {
+// 	x.addEventListener('mousedown', function() {
+// 		moveRight(x);
+// 	});
+
+// 	document.body.addEventListener('mouseup', function() {
+// 		ogPosition(x);
+// 	});
+// };
+
+// mouseDown(red);
+// mouseDown(blue);
+// mouseDown(green);
+// mouseDown(pink);
+// mouseDown(gray);
+
+/****************************************************************/
+//STRETCH_________________________________________________________
+
+// const red = document.getElementById('red');
+// const blue = document.getElementById('blue');
+// const green = document.getElementById('green');
+// const pink = document.getElementById('pink');
+// const gray = document.getElementById('gray');
+
+// const mouseDown = (x) => {
+// 	x.addEventListener('mousedown', function() {
+// 		x.classList.add('go-right');
+// 		x.classList.remove('go-left');
+// 	});
+
+// 	document.body.addEventListener('mouseup', function() {
+// 		x.classList.remove('go-right');
+// 		x.classList.add('go-left');
+// 	});
+// };
+
+// mouseDown(red);
+// mouseDown(blue);
+// mouseDown(green);
+// mouseDown(pink);
+// mouseDown(gray);
