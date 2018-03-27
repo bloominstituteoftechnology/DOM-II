@@ -8,11 +8,15 @@ nodeList.addEventListener('click', (event) => {
 
 nodeList.addEventListener('mousedown', (event) => {
     timer = window.setInterval(function(){
-    if (event.target.parentNode.className === "blocks") {
+    //if (event.target.parentNode.className === "blocks") {
+        console.log('working')
+        
+        event.target.style.right ="1px";
+
 
    
-    }
+   // }
 
-},10000)
+},10)
 });
 
