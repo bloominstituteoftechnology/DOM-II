@@ -29,9 +29,35 @@ const gray = document.querySelector('.block--gray');
 
 
 // Move block along cross-axis on click
-red.addEventListener('mousedown', move);
-blue.addEventListener('mousedown', move);
-green.addEventListener('mousedown', move);
-pink.addEventListener('mousedown', move);
-gray.addEventListener('mousedown', move);
+// red.addEventListener('click', moveRight);
+// blue.addEventListener('click', moveRight);
+// green.addEventListener('click', moveRight);
+// pink.addEventListener('click', moveRight);
+// gray.addEventListener('click', moveRight);
+
+// red.addEventListener('mouseup', moveBack);
+// blue.addEventListener('mouseup', moveBack);
+// green.addEventListener('mouseup', moveBack);
+// pink.addEventListener('mouseup', moveBack);
+// gray.addEventListener('mouseup', moveBack);
+
+// Counter variable
+
+let marginPX = 0;
+const block = getElementsByClass('block');
+block.stopPropogation();
+block.addEventListener('click', moveRight);
+block.addEventListener('mouseup', moveBack);
+
+const moveRight = (event) => {
+    if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        elem.style.left = pos + 'px'; 
+      }
+    }
+
+
+const moveBack = (event) => {
 
