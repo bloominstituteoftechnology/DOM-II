@@ -8,6 +8,7 @@ const blocks = document.querySelectorAll('.block');
 
 blocks.forEach(block => {
    block.addEventListener('click', goToTop); 
+   block.addEventListener('mousedown', goRight); 
 });
 
 function goToTop(event) {
@@ -20,4 +21,16 @@ function goToTop(event) {
   });
 }
 
+function goRight(event) {
+  let marginLeft = event.target.style.marginLeft;
+
+  setInterval(() => {
+    if (marginLeft === '') {
+      marginLeft = 15;
+    } else {
+      marginLeft = parseInt(event.target.style.marginLeft, 10) + 5; 
+    }
+    event.target.style.marginLeft = marginLeft + 'px';
+  }); 
+}
 
