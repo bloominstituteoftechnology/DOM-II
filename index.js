@@ -12,4 +12,10 @@ function blockClicked(e) {
     e.target.style.order = order;
 };
 
+function mouseDown(e) {
+    e.target.style.position = "relative";
+    e.target.style.left = "15rem";
+}
+
 blocks.addEventListener('click', blockClicked);
+blocks.addEventListener('mousedown', mouseDown);
