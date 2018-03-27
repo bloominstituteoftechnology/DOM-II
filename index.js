@@ -5,13 +5,10 @@ let lastBlockClicked;
 
 // Give event listener to all elements in blockList
 for (let i = 0; i < blockList.length; i++) {
-  // Move to top of stack on click
-  blockList[i].addEventListener('click', function() {
-    this.remove();
-    blockDiv.prepend(this);
-  });
   // Move to right on mouse down
   blockList[i].addEventListener('mousedown', function() {
+    this.remove();
+    blockDiv.prepend(this);
     this.classList.add('move-right');
     lastBlockClicked = this;
   });
@@ -22,3 +19,4 @@ document.addEventListener('mouseup', function() {
   lastBlockClicked.classList.remove('move-right');
 });
 
+console.log();
