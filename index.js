@@ -29,6 +29,7 @@
 // Increase margin overtime in set interval
 // Increase margin on mousedown & return to original position on mouseup
 
+
 //  RED ELEMENT  //
 const redElement = document.querySelector('.block--red');
 
@@ -54,6 +55,7 @@ redElement.addEventListener('mouseup', () => {
     clearInterval(incID);
     decID = setInterval(decrement, 10);
 });
+
 
 //  BLUE ELEMENT  //
 const blueElement = document.querySelector('.block--blue');
@@ -81,6 +83,7 @@ blueElement.addEventListener('mouseup', () => {
     decID1 = setInterval(decrement1, 10);
 });
 
+
 //  GREEN ELEMENT  //
 const greenElement = document.querySelector('.block--green');
 
@@ -106,6 +109,7 @@ greenElement.addEventListener('mouseup', () => {
     clearInterval(incID2);
     decID2 = setInterval(decrement2, 10);
 });
+
 
 //  PINK ELEMENT  //
 const pinkElement = document.querySelector('.block--pink');
