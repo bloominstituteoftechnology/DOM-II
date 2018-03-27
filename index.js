@@ -8,7 +8,7 @@ function onTheMove() {
       } else {
         pos++; 
         elem.style.top = pos + 'px'; 
-        elem.style.botto = pos + 'px'; 
+        elem.style.bottom = pos + 'px'; 
       }
     }
   }
