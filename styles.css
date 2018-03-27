@@ -38,3 +38,11 @@ body {
 .move-right {
   margin-left: 100px;
 }
+
+#hint {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
