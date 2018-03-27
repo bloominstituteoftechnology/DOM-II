@@ -7,24 +7,20 @@ let redBlock = document.getElementsByClassName('block--red')
 
 // ROCKET =============
 
-// let orderValue = -1;
+let orderValue = -1;
 
-// const reposition = (event) => {
-//     event.stopPropagation();
-//     event.target.style.order = orderValue;
-//     orderValue--; // newer item will have order value lower than the previous
-// };
+const reposition = (event) => {
+    event.stopPropagation();
+    event.target.style.order = orderValue;
+    orderValue--; // newer item will have order value lower than the previous
+};
 
-// // run reposition function when clicked on children of blockList
-// blockList.forEach((block) => {
-//     block.addEventListener('click', reposition);
-// });
+// run reposition function when clicked on children of blockList
+blockList.forEach((block) => {
+    block.addEventListener('click', reposition);
+});
 
 // Travellers ===========
-
-
-
-// define what happens on mousedown and mouseup
 
 const right = (event) => {
     event.target.style = 'transition: width, 2s; width: 800px';
