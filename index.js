@@ -8,6 +8,18 @@ const moveToTop = (event) => {
     orderValue--;
 };
 
+const goRight = (event) => {
+    let dist = window.innerWidth - 130;
+    event.target.style = 'transition:margin-left, 2s; margin-left:'+ dist + 'px';
+};
+
+let goleft = (e) => {
+    e.target.style = 'transition:margin-right, 3s; margin-right:10px';
+};
+
 bockList.forEach( (block) =>{
-    block.addEventListener('click', moveToTop);
+    //block.addEventListener('click', moveToTop);
+    block.addEventListener('mousedown', goRight);
+    block.addEventListener('mouseup', goleft);
 });
+
