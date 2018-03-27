@@ -29,3 +29,10 @@ document.addEventListener('mouseup', () => {
   lastBlockClicked.classList.remove('move-right');
 });
 
+// Set up auto click function for interval
+clickBottomBlock = () => {
+  blockList = document.querySelectorAll('.block');
+  blockList[blockList.length - 1].dispatchEvent(mouseDown);
+  setTimeout(() => document.dispatchEvent(mouseUp), 20);
+}
+
