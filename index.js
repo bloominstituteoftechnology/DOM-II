@@ -6,9 +6,11 @@ const rockets = (event) => {
   event.target.style.order = -1;
 
   // Set everything else to 0
-
-  
-  if (event.target === -1) event.target.style.order = -1;
+  for (let i = 0; i < group.children.length; i++) {
+    if (group.children[i] !== event.target){
+      group.children[i].style.order = 0;
+    } 
+  }
 }
 
 for (let i = 0; i < group.children.length; i++) {
