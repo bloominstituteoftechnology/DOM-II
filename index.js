@@ -24,7 +24,7 @@ window.onload = function() {
       if (parseInt(event.target.style.marginLeft) === 0) {
         clearInterval(x);
       }
-    }, 10);
+    }, 1);
   }
   blockContainer.addEventListener('mousedown', (event) => {
     clearInterval(x);
