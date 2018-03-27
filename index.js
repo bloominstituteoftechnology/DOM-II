@@ -56,7 +56,7 @@ gray.addEventListener('mousedown', moveRight);
 const moveBack = (event) => {
 	let marginPX = 300;
 	window.setInterval(function() {
-		event.stopImmediatePropagation();
+		event.stopPropagation();
 		clearInterval(moveRight);
 		if (marginPX > 10) {
 			marginPX--;
