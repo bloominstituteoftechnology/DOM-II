@@ -38,3 +38,11 @@ body {
 .topDog {
   order: -1; 
 }
+
+.move {
+  margin-left: 10rem;
+}
+
+.pad {
+  padding-left: 10rem;
+}
