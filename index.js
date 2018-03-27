@@ -16,14 +16,11 @@ childrenArr.map(child => {
 
 let mouse = false
 // While a mouse is clicked down on a box, it should move to the right
-// A mouse down that occurs during a transition back to the original position should send it traveling to the right agian from its current position
 // TRAVELERS
 const moveToRight = node => {
-  if (mouse) {
     setInterval(() => {
-      (node.style.marginLeft = `${(parseInt(node.style.marginLeft)|| 0) +10}px`)
+      (node.style.marginLeft = `${(parseInt(node.style.marginLeft) || 0) + 1}px`)
     }, 100)
-  }
 }
 
 const moveRight = e => {
@@ -35,3 +32,16 @@ const moveRight = e => {
 }
 
 childrenArr.map(child => child.addEventListener('mousedown', moveRight)) 
+
+// When the mouse button is released, it should travel back to its original position
+const moveLeft = e => {
+  mouse = false
+  clearInterval(interval)
+  interval = setInterval(() => {
+    if(parsInt(e.target.style.marginLeft) === 0) clearInterval(interval)
+    e.target.style.marginLeft = `${(parsInt(e.target.style.marginLeft) || 0) - 1}px`
+  }, 100)
+  e.stopPropagation()
+}
+// A mouse down that occurs during a transition back to the original position should send it traveling to the right agian from its current position
+childrenArr.map(child => child.addEventListener('mouseup', moveLeft))
