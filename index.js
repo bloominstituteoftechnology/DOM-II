@@ -1,7 +1,7 @@
 // When a block is clicked, it should go to the top of the stack
 
 const blocks = document.querySelector('.blocks')
-const childrenArr = [...blocks.childNodes]
+const childrenArr = [...blocks.childNodes]// spread syntax, not an array 
 
 const toTop = (event) => {
   let childToMove = blocks.removeChild(event.target)
