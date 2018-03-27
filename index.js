@@ -24,13 +24,15 @@ function goToTop(event) {
 function goRight(event) {
   let marginLeft = event.target.style.marginLeft;
 
-  setInterval(() => {
+  let intervalId = setInterval(() => {
     if (marginLeft === '') {
       marginLeft = 15;
     } else {
       marginLeft = parseInt(event.target.style.marginLeft, 10) + 5; 
     }
     event.target.style.marginLeft = marginLeft + 'px';
+
+    if (marginLeft > 400) clearInterval(intervalId);
   }); 
 }
 
