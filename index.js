@@ -10,10 +10,13 @@ const grayBox = document.getElementsByClassName('.block--gray')
 const moveTop = (event) =>{
 event.stopPropagation();
 
-for (let i = 0; i < blocks.length; i++) {
-
+for (let i = 0; i < nodeList.length; i++) {
+    if(nodeList[i] === blueBox) {
+        blueBox = nodeList[0];
+    }
     
 }
 
 }
 nodeList.addEventListener('click', moveTop);
+
