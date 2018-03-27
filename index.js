@@ -35,3 +35,14 @@ clickBottomBlock = () => {
   blockList[blockList.length - 1].dispatchEvent(mouseDown);
   setTimeout(() => document.dispatchEvent(mouseUp), 20);
 }
+
+// When body is clicked GO CRAZY!!!... or not?
+body.addEventListener('click', () => {
+  if (goingCrazy) { // Chill out
+    clearInterval(goCrazy);
+    goingCrazy = false;
+  } else if (!goingCrazy) { // Go crazy
+    goCrazy = setInterval(clickBottomBlock, 200);
+    goingCrazy = true;
+  }
+})
