@@ -16,11 +16,6 @@ const reduce = () => {
     for (let i = 0; i < allBlocks.length; i++) {
         allBlocks[i].style.order = 1;
     }
-    // red.style.order += 1;
-    // blue.style.order += 1;
-    // green.style.order += 1;
-    // pink.style.order += 1;
-    // gray.style.order += 1;
 }
 
 red.addEventListener('click', first);
