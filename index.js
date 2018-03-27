@@ -34,7 +34,7 @@ const ogPosition = (event) => {
 };
 
 const moveRight = (event) => {
-	event.style.marginLeft = '133px';
+	event.style.marginLeft = '555px';
 };
 
 const mouseDown = (x) => {
@@ -44,7 +44,9 @@ const mouseDown = (x) => {
 
 	document.body.addEventListener('mouseup', function() {
 		ogPosition(x);
-		mouseDown(x);
+		x.addEventListener('mousedown', function() {
+			moveRight(x);
+		});
 	});
 };
 
