@@ -26,28 +26,19 @@ const gray = document.querySelector('.block--gray');
 
 
 // travelers
-
-
-// Move block along cross-axis on click
-
-
-// red.addEventListener('mouseup', moveBack);
-// blue.addEventListener('mouseup', moveBack);
-// green.addEventListener('mouseup', moveBack);
-// pink.addEventListener('mouseup', moveBack);
-// gray.addEventListener('mouseup', moveBack);
-
-// Counter variable
-
 let marginPX = 0;
 const block = document.getElementsByClassName('block');
 
 const moveRight = (event) => {
     window.setInterval( function() {
+    	// when margin is smaller than 1000 [1 screen length]
         if (marginPX < 1000) {
             marginPX++; 
             event.target.style.marginLeft = marginPX + 'px';
-            console.log('hey');
+        } 
+        // margin reaches 100px
+        else {
+        	clearInterval(moveRight);
         }
     }, 5);
 }
@@ -57,8 +48,24 @@ blue.addEventListener('click', moveRight);
 green.addEventListener('click', moveRight);
 pink.addEventListener('click', moveRight);
 gray.addEventListener('click', moveRight);
-// block.addEventListener('mouseup', moveBack);
 
-// const moveBack = (event) => {
-// }
+const moveBack = (event) => {
+	window.setInterval(function() {
+		if (marginPX > 0) {
+			marginPX--;
+			event.target.style.marginLeft = marginPX + 'px';
+		} else {
+			clearInterval(moveBack);
+		}
+	})
+}
+
+red.addEventListener('mouseup', moveBack);
+blue.addEventListener('mouseup', moveBack);
+green.addEventListener('mouseup', moveBack);
+pink.addEventListener('mouseup', moveBack);
+gray.addEventListener('mouseup', moveBack);
+
+
+
 
