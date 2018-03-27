@@ -30,7 +30,6 @@
 // Increase margin on mousedown & return to original position on mouseup
 
 //  RED ELEMENT  //
-
 const redElement = document.querySelector('.block--red');
 
 let ml = 10;
@@ -48,7 +47,7 @@ const decrement = () => {
 
 redElement.addEventListener('mousedown', () => {
     clearInterval(decID);
-    incID = setInterval(increment, 20);
+    incID = setInterval(increment, 10);
 });
 
 redElement.addEventListener('mouseup', () => {
@@ -80,4 +79,56 @@ blueElement.addEventListener('mousedown', () => {
 blueElement.addEventListener('mouseup', () => {
     clearInterval(incID1);
     decID1 = setInterval(decrement1, 10);
+});
+
+//  GREEN ELEMENT  //
+const greenElement = document.querySelector('.block--green');
+
+let ml2 = 10;
+let decID2, incID2;
+
+const increment2 = () => {
+    ml2++;
+    greenElement.style.marginLeft = ml2 + 'px';
+}
+
+const decrement2 = () => {
+    ml2--;
+    greenElement.style.marginLeft = ml2 + 'px';
+}
+
+greenElement.addEventListener('mousedown', () => {
+    clearInterval(decID2);
+    incID2 = setInterval(increment2, 10);
+});
+
+greenElement.addEventListener('mouseup', () => {
+    clearInterval(incID2);
+    decID2 = setInterval(decrement2, 10);
+});
+
+//  PINK ELEMENT  //
+const pinkElement = document.querySelector('.block--pink');
+
+let ml3 = 10;
+let decID3, incID3;
+
+const increment3 = () => {
+    ml3++;
+    pinkElement.style.marginLeft = ml3 + 'px';
+}
+
+const decrement3 = () => {
+    ml3++;
+    pinkElement.style.marginLeft = ml3 + 'px';
+}
+
+pinkElement.addEventListener('mousedown', () => {
+    clearInterval(decID3);
+    incID3 = setInterval(increment3, 10);
+});
+
+pinkElement.addEventListener('mouseup', () => {
+    clearInterval(incID3);
+    decID3 = setInterval(decrement3, 10);
 });
