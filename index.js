@@ -60,7 +60,7 @@ const moveBack = (event) => {
 		clearInterval(moveRight);
 		if (marginPX > 10) {
 			marginPX--;
-			event.target.style.marginRight = marginPX + 'px';
+			event.target.style.marginLeft = marginPX + 'px';
 		}
 		else {
 			clearInterval(moveBack);
