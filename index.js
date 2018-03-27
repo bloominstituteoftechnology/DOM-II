@@ -16,3 +16,9 @@ for (let i = 0; i < blockList.length; i++) {
     lastBlockClicked = this;
   });
 }
+
+// Move back to left on mouse up
+document.addEventListener('mouseup', function() {
+  lastBlockClicked.classList.remove('move-right');
+});
+
