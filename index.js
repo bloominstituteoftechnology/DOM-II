@@ -61,5 +61,3 @@ blue.addEventListener('mouseup', moveBack);
 green.addEventListener('mouseup', moveBack);
 pink.addEventListener('mouseup', moveBack);
 gray.addEventListener('mouseup', moveBack);
-
-
