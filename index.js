@@ -29,29 +29,55 @@
 // Increase margin overtime in set interval
 // Increase margin on mousedown & return to original position on mouseup
 
-const elements = document.querySelector('.blocks').children;
+//  RED ELEMENT  //
+
+const redElement = document.querySelector('.block--red');
 
 let ml = 10;
-let decID = {};
-let incID = {};
+let decID, incID;
 
-const increment = (x) => {
+const increment = () => {
     ml++;
-    x.style.marginLeft = ml + 'px';
+    redElement.style.marginLeft = ml + 'px';
 }
 
-const decrement = (x) => {
+const decrement = () => {
     ml--;
-    x.style.marginLeft = ml + 'px';
+    redElement.style.marginLeft = ml + 'px';
 }
-Array.from(elements).forEach(x => {
-    x.addEventListener('mousedown', () => {
-        clearInterval(decID.x);
-        incID.x = setInterval(increment(x), 10);
-    });
-    
-    x.addEventListener('mouseup', () => {
-        clearInterval(incID.x);
-        decID.x = setInterval(decrement(x), 10);
-    });
-})
+
+redElement.addEventListener('mousedown', () => {
+    clearInterval(decID);
+    incID = setInterval(increment, 20);
+});
+
+redElement.addEventListener('mouseup', () => {
+    clearInterval(incID);
+    decID = setInterval(decrement, 10);
+});
+
+//  BLUE ELEMENT  //
+const blueElement = document.querySelector('.block--blue');
+
+let ml1 = 10;
+let decID1, incID1;
+
+const increment1 = () => {
+    ml1++;
+    blueElement.style.marginLeft = ml1 + 'px';
+}
+
+const decrement1 = () => {
+    ml1--;
+    blueElement.style.marginLeft = ml1 + 'px';
+}
+
+blueElement.addEventListener('mousedown', () => {
+    clearInterval(decID1);
+    incID1 = setInterval(increment1, 10);
+});
+
+blueElement.addEventListener('mouseup', () => {
+    clearInterval(incID1);
+    decID1 = setInterval(decrement1, 10);
+});
