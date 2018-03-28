@@ -1,6 +1,7 @@
 
 // ROCKET BLOCKS ==================================================================================================
 
+
 // const rocketBlocks = document.querySelectorAll('.block'); // using querySelectorAll to select all block classes from the parent node blocks
 
 // rocketBlocks.forEach((element) => { // using forEach so that 'click' is executed for each element
@@ -11,16 +12,34 @@
 // });
 
 
+
+
+
+
 // TRANSFER BLOCKS =================================================================================================
 
-const nodeList = document.getElementsByClassName('blocks');
-let timer;
 
-nodeList.addEventListener('mousedown', (event) => {
-	timer = window.setInterval(function() {
-	if (event.target.parentNode.className === 'blocks') {
-			console.log('working')
-			event.target.style.right = "10px";
-	}
-}, 10)
-});
+const transferBlocks = document.querySelector('.blocks');
+let timer;
+let moving = 0;
+
+const moveRight = (event) => {
+
+	timer = setInterval(function() {
+	moving += 1;
+    event.target.style.marginLeft = `${moving}px`;
+	}, 10)
+};
+
+const moveBack = (event) => {
+	clearInterval(timer);
+	timer = setInterval(function() {
+		moving -= 1;
+	    event.target.style.marginLeft = `${moving}px`;
+	}, 10)
+};
+
+
+
+transferBlocks.addEventListener('mousedown', moveRight);
+transferBlocks.addEventListener('mouseup', moveBack);
