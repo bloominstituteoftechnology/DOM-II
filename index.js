@@ -13,9 +13,13 @@ const rocketEvent = (event) => {
 
 const travelerEvent = (e) => {
     let distance = 0
+    let maxDistance = 800;
     const moveRight = () => {
-        distance += 10
-        e.target.style.marginLeft = `${distance}px`;
+        if(distance <= maxDistance){
+            distance += 10
+            e.target.style.marginLeft = `${distance}px`;
+        }
+  
     }
     setInterval(moveRight, 10);
 }
