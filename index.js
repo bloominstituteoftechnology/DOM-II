@@ -18,25 +18,37 @@
 // traveller code
 
 const block = document.querySelectorAll('.block');
-// let offset = document.querySelectorAll('.block').style.width;
 
 const moveRight = (event) => {
-    console.log(event.target.offsetWidth);
-    event.target.style.transform = 'translate('+(window.innerWidth-event.target.offsetWidth)+'px)';
+    rightInterval = window.setInterval(() => {
+        console.log(event.target['rightShift']);
+        if (event.target['rightShift'] > 10){
+            event.target.addEventListener('mouseleave', moveLeft);
+        }
+        if (event.target['rightShift'] >= window.innerWidth - event.target.offsetWidth - 10) {
+            clearInterval(rightInterval);
+        }
+        event.target['rightShift'] += 10;
+        event.target.style.transform = 'translate(' + event.target['rightShift'] + 'px)';
+    }, 100);
 }
 
 const moveLeft = (event) => {
-    event.target.style.transform = 'translate(0px)';
+    clearInterval(rightInterval);
+    let leftInterval = window.setInterval(() => {
+        if (event.target['rightShift'] === 10) {
+            clearInterval(leftInterval);
+        }
+        if (event.target['rightShift'] >= 10){
+            event.target['rightShift'] -= 10;
+            event.target.style.transform = 'translate(' + event.target['rightShift'] + 'px)';
+        }
+        else clearInterval(leftInterval);
+    }, 100);
 }
 
 for (let i = 0; i < block.length; i++) {
-    block[i].style.transitionDuration = '6s';
+    block[i].rightShift = 10;
     block[i].addEventListener('mousedown', moveRight);
-    block[i].addEventListener('mouseenter', moveRight);
-    block[i].addEventListener('mouseenter', moveLeft);
-    // block[i].addEventListener('mouseleave', moveLeft);
     block[i].addEventListener('mouseup', moveLeft);
 }
-
-
-// let moveBy = window.innerWidth - target.offsetWidth;
