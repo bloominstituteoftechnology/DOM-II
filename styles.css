@@ -40,9 +40,10 @@ body {
 }
 
 .move {
-  margin-left: 10rem;
+  margin-left: 50rem;
+  transition: 5s;
 }
 
-.pad {
-  padding-left: 10rem;
+.reset {
+  transition: 5s;
 }

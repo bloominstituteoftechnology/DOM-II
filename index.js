@@ -30,10 +30,9 @@ const toTop = (event) => {
 
 const moveRight = (event) => {
     event.stopPropagation();
-    event.target.classList.add('move');
+    event.target.classList.add('move')  ;
 }
 
-//is there a way for me to combine this into a single line?
 const removeRight = (event) => {
     event.stopPropagation();
     box1.classList.remove('move');
@@ -41,6 +40,11 @@ const removeRight = (event) => {
     box3.classList.remove('move');
     box4.classList.remove('move');
     box5.classList.remove('move');
+    box1.classList.add('reset');
+    box2.classList.add('reset');
+    box3.classList.add('reset');
+    box4.classList.add('reset');
+    box5.classList.add('reset');
 }
 
 // //Mouse Click Event Listeners
@@ -52,3 +56,4 @@ box5.addEventListener("mousedown", moveRight);
 
 //Mouse Release Event Listeners
 document.addEventListener("mouseup", removeRight);
+
