@@ -5,8 +5,7 @@ let odr = 0;
 
 const rocket = (event) => {
   event.stopPropagation();
-  // event.target.style.order = '0';
- event.target.style.order = odr--;
+  event.target.style.order = odr--;
 }
 
 const travelers = (event) => {
