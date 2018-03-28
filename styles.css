@@ -34,3 +34,16 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.topDog {
+  order: -1; 
+}
+
+.move {
+  margin-left: 50rem;
+  transition: 5s;
+}
+
+.reset {
+  transition: 5s;
+}
