@@ -9,6 +9,11 @@ const rocket = (event) => {
  event.target.style.order = odr--;
 }
 
+const travelers = (event) => {
+  event.target.style.marginLeft = '50px';
+}
+
 for(let i = 0; i < blocks.children.length; i++){
   blocks.children[i].addEventListener('click', rocket);
+  blocks.children[i].addEventListener('mousedown', travelers);
 }
