@@ -34,3 +34,17 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.go-right {
+  margin-left: 1000px;
+  transition-property: margin-left;
+  transition-duration: 10s;
+  transition-timing-function: linear;
+}
+
+.go-left {
+  margin-left: 10px;
+  transition-property: margin-left;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
