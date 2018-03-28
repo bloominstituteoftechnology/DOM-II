@@ -36,6 +36,7 @@ const moveRight = (event) => {
 const moveLeft = (event) => {
     clearInterval(rightInterval);
     let leftInterval = window.setInterval(() => {
+        console.log(event.target['rightShift']);
         if (event.target['rightShift'] === 10) {
             clearInterval(leftInterval);
         }
@@ -48,7 +49,7 @@ const moveLeft = (event) => {
 }
 
 for (let i = 0; i < block.length; i++) {
-    block[i].rightShift = 10;
+    block[i].rightShift = 0;
     block[i].addEventListener('mousedown', moveRight);
     block[i].addEventListener('mouseup', moveLeft);
 }
