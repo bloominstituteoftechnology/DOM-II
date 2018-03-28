@@ -22,66 +22,52 @@ for (i = 0; i < blocks.children.length; i++) {
     blocks.children[i].style.transition = '.5s';
 }
 
-// red.addEventListener('click', first);
-// blue.addEventListener('click', first);
-// green.addEventListener('click', first);
-// pink.addEventListener('click', first);
-// gray.addEventListener('click', first);
-
 // // -------- Part 1 is above ---------
 // // -------- Part 2 is below ---------
 
-// let interval;
-// let lastTarg;
+let interval;
+let lastTarg;
 
-// const begin = (e) => {
-//     lastTarg = e;
+const begin = (e) => {
+    lastTarg = e;
+    clearInterval(interval);
+    interval = window.setInterval(increment, 150, e);
+}
+
+const specEnd = lastTarg => {
+    clearInterval(interval);
+    interval = window.setInterval(decrement, 150, lastTarg);
+}
+
+// const end = (e) => {
 //     clearInterval(interval);
-//     interval = window.setInterval(increment, 150, e);
+//     interval = window.setInterval(decrement, 75, e);
 // }
 
-// const specEnd = lastTarg => {
-//     clearInterval(interval);
-//     interval = window.setInterval(decrement, 150, lastTarg);
-// }
+const increment = (targ) => {
+    let targLength = targ.target.style.marginLeft.length;
+    let value;
 
-// // const end = (e) => {
-// //     clearInterval(interval);
-// //     interval = window.setInterval(decrement, 75, e);
-// // }
+    if (targLength > 0) {
+        let value = parseInt(targ.target.style.marginLeft);
+        if (value <300) value += 20;
+        targ.target.style.marginLeft = String(value) + 'px';
+    } else targ.target.style.marginLeft = '10px';
+}
 
-// const increment = (targ) => {
-//     let targLength = targ.target.style.marginLeft.length;
-//     let value;
+const decrement = (targ) => {
+    let value = parseInt(targ.target.style.marginLeft);
+    value -= 20;
+    if (value < 10) {
+        targ.target.style.marginLeft = '';
+        clearInterval(interval);
+        return;
+    }
+    targ.target.style.marginLeft = (String(value) + "px");
+}
 
-//     if (targLength > 0) {
-//         let value = parseInt(targ.target.style.marginLeft);
-//         if (value <300) value += 20;
-//         targ.target.style.marginLeft = String(value) + 'px';
-//     } else targ.target.style.marginLeft = '10px';
-// }
+for (i = 0; i < blocks.children.length; i++) {
+    blocks.children[i].addEventListener('mousedown', begin);
+}
 
-// const decrement = (targ) => {
-//     let value = parseInt(targ.target.style.marginLeft);
-//     value -= 20;
-//     if (value < 10) {
-//         targ.target.style.marginLeft = '';
-//         clearInterval(interval);
-//         return;
-//     }
-//     targ.target.style.marginLeft = (String(value) + "px");
-// }
-
-// red.addEventListener('mousedown', begin);
-// blue.addEventListener('mousedown', begin);
-// green.addEventListener('mousedown', begin);
-// pink.addEventListener('mousedown', begin);
-// gray.addEventListener('mousedown', begin);
-
-// body.addEventListener('mouseup', specEnd);
-
-// // red.addEventListener('mouseup', end);
-// // blue.addEventListener('mouseup', end);
-// // green.addEventListener('mouseup', end);
-// // pink.addEventListener('mouseup', end);
-// // gray.addEventListener('mouseup', end);
+body.addEventListener('mouseup', specEnd);
