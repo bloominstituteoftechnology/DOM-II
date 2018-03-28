@@ -19,6 +19,7 @@ const first = (e) => {
 
 for (i = 0; i < blocks.children.length; i++) {
     blocks.children[i].addEventListener('click', first);
+    blocks.children[i].style.transition = '.5s';
 }
 
 // red.addEventListener('click', first);
