@@ -3,7 +3,7 @@ const blue = document.querySelector('.block--blue');
 const green = document.querySelector('.block--green');
 const pink = document.querySelector('.block--pink');
 const gray = document.querySelector('.block--gray');
-const blocks = document.querySelector('block');
+const blocks = document.querySelector('blocks');
 
 // Rockets
 
@@ -27,7 +27,7 @@ const travelerEvent = (e) => {
 
     const moveRight = () => {
       distance += 10
-      e.target.style.marginLeft = `${distance}px`;
+      e.target.style.borderLeft = `${distance}px solid white`;
     }
     setInterval(moveRight, 10);
   }
