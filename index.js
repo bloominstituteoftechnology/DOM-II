@@ -1,16 +1,10 @@
-let blockLoop = document.getElementsByClassName("block")
+let blocks = document.querySelector('.blocks');
 
-function mouseDown(e) {
-    e.target.style.position = "relative"; //pushes box to right on mousedown
-    e.target.style.left = "15rem";
+let order = -1;
+
+function blockClicked(e) {
+    order--
+    e.target.style.order = order; //changes order of flexbox to the top
 };
 
-function mouseUp(e) {
-    e.target.classList.add("mouseRelease"); //releasing on block causes it to transition to 
-    console.log('test')                    //the left and be shot back to the right
-};
-
-for(let i = 0; i<blockLoop.length; i++) {
-    blockLoop[i].addEventListener('mouseup', mouseUp); //looping through each index/block to give it an event listener
-    blockLoop[i].addEventListener('mousedown', mouseDown);
-}
+blocks.addEventListener('click', blockClicked);
