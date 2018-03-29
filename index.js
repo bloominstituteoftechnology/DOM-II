@@ -1,3 +1,25 @@
+class RunAway {
+	constructor(element) {
+		this.element = element;
+		this.distance = 0;
+		this.element.addEventListener('mousedown', () => {this.eventHandler()});
+	}
+
+	eventHandler() {
+		this.interval = setInterval(() => {
+			this.distance += 10;
+			this.element.style.marginLeft = `${this.distance}px`;
+			if (this.distance >= 2000) clearInterval(this.interval);
+		}, 10);
+	}
+}
+
+const elements = Array.from(document.querySelectorAll('.block')).map(item => {
+	return new RunAway(item);
+});
+
+// console.log(test);
+
 /****************************************************************/
 //ROCKETS________________________________________________________
 
@@ -87,3 +109,12 @@
 // mouseDown(green);
 // mouseDown(pink);
 // mouseDown(gray);
+
+/****************************************************************/
+//JQUERY__________________________________________________________
+
+// $(document).ready(function() {
+// 	$(this).mousedown(function() {
+// 		$(this).
+// 	})
+// })
