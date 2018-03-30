@@ -1,17 +1,54 @@
 
-    const blocks = document.querySelector('.blocks');
+    // const blocks = document.querySelector('.blocks');
     
 
-    const ourFunction = (event) => {
-        event.stopPropagation();
-        let parent = event.target.parentNode;
-        parent.removeChild(event.target);
-        parent.prepend(event.target);
-    };
+    // const ourFunction = (event) => {
+    //     event.stopPropagation();
+    //     let parent = event.target.parentNode;
+    //     parent.removeChild(event.target);
+    //     parent.prepend(event.target);
+    // };
     
-    for (i = 0; i < blocks.children.length; i++) {
-    blocks.children[i].addEventListener('click', ourFunction);
+    // for (i = 0; i < blocks.children.length; i++) {
+    // blocks.children[i].addEventListener('click', ourFunction);
+    // }
+
+
+    // const blocks = document.querySelector('.blocks');
+    
+
+    // const ourFunction = (event) => {
+    //     event.stopPropagation();
+    //     let parent = event.target.parentNode;
+    //     parent.removeChild(event.target);
+    //     parent.prepend(event.target);
+    // };
+    
+    // for (i = 0; i < blocks.children.length; i++) {
+    // blocks.children[i].addEventListener('click', ourFunction);
+    // }
+
+    let blocks = document.querySelectorAll('.blocks');
+
+    const ourFunction = (event) => {
+      let distance = 0;
+      
+      const moveRight = () => {
+        distance += 10;
+        event.target.style.marginLeft = `${distance}px`;
+      }
+      setInterval(moveRight, 100);
     }
+    
+    
+    blocks = Array.from(blocks).map( item => {
+      item.addEventListener('click', ourFunction);  
+    })
+    
+    // for (let i = 0; i < blocks.children.length; i++) {
+    //   blocks.children[i].addEventListener('click', ourFunction);
+    // }
+
 
 
 // const blocks = document.querySelector('.blocks');
