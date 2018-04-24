@@ -50,7 +50,7 @@ middleImg.setAttribute("src", "img/mid-page-accent.jpg")
 let services = document.getElementsByTagName("a")[0];
 services.innerHTML = "Services";
 
-services.addEventListener('mouseup', () => {
+services.addEventListener('dblclick', () => { //dblclick used here.
   alert("Check out our cool services!");
 });
 
@@ -65,28 +65,44 @@ about.innerHTML = "About"
 let contact = document.getElementsByTagName("a")[5];
 contact.innerHTML = "Contact";
 
-contact.addEventListener('mouseover', () => {
+contact.addEventListener('mouseover', () => { //mouseover used here
     alert("are you sure?");
 });
 
 let greatIdea = document.querySelector("#logo-img")
-TweenMax.to("#logo-img", 6, {x:100, rotation:360, scale:0.5});
+TweenMax.to("#logo-img", 6, {y:200, rotation:360, scale:0.5});//animation used here
 
 //CTA
 let h1Message = document.getElementsByTagName("h1")[0];
 h1Message.innerHTML = "DOM Is Awesome";
 
+h1Message.addEventListener('select', () =>{//alert used here(not working however)
+  alert("You must really like me");
+});
+
 let button = document.getElementsByTagName("button")[0];
 button.innerHTML = "Get Started";
 
+let askQuestion = document.getElementsByTagName("inspect")[0];
+askQuestion.innerText = "TEll ME WHY";
+
+askQuestion.addEventListener('click', () => { //click used here
+  prompt();
+});
+
 let codePic = document.querySelector("#cta-img")
-TweenMax.to("#cta-img", 2, {x:5, rotation:360, scale: 0.5});
+TweenMax.to("#cta-img", 2, {x:0, rotation:360, scale: 0.5});//animation used here
 
 //Main content 
 let featuresH4 = document.getElementsByTagName('h4')[0];
 featuresH4.innerHTML = "Features";
 let featureContent = document.getElementsByTagName('p')[0];
 featureContent.innerHTML = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+
+featureContent.addEventListener('copy', () => { //copy used here
+  alert("You trying to steal my words, yo?");
+})
+
 let aboutH4 = document.getElementsByTagName('h4')[1];
 aboutH4.innerHTML = "About";
 let aboutContent = document.getElementsByTagName('p')[1];

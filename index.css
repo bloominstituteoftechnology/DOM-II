@@ -131,6 +131,15 @@ header .logo {
     color: white;
 }
 
+.cta .cta-text inspect {
+    border: 1px double black;
+    font-size: 16px;
+    background: white;
+    width: 170px;
+    height: 32px;
+    margin-top: 10px;
+    cursor: pointer;
+}
 /* Main Content Styles */
 
 .main-content {
