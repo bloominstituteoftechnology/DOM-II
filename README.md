@@ -9,7 +9,7 @@
  * You can update the HTML/CSS/JS for this project.
 
 ## Task: Create Event Listeners
- * Create 10 unique event listeners based on the reference file in the objective.  
+ * Create 10 unique event listeners based on the reference file in the objective.
  * Using the 10 unique events, find ways to update the DOM in creative ways.  For example you could change colors, animate objects, remove objects, etc.
 
 ## Stretch Task:
@@ -17,3 +17,5 @@
 
 ## Stretch assignment
  * Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
+
+ * Xang Added this
