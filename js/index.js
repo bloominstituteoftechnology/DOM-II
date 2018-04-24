@@ -37,6 +37,8 @@ const siteContent = {
   },
 };
 
+// let cont = document.getElementsByClassName('container');
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -125,23 +127,23 @@ navLinkOne[7].style.color = 'green';
 //   // });
 // });
 
-// Used keydown event
-navLinkOne[2].addEventListener('keydown', () => {
-  alert('I have been selected!');
+//Used click event
+navLinkOne[0].addEventListener('click', () => {
+  navLinkOne[0].style.color = 'red';
 });
 
 navLinkOne[1].addEventListener('keyup', () => {
   alert('I have been released!');
 });
 
-//Used click event
-navLinkOne[0].addEventListener('click', () => {
-  navLinkOne[0].style.color = 'red';
+// Used keydown event
+navLinkOne[2].addEventListener('keydown', () => {
+  alert('I have been selected!');
 });
 
-//Used mouseover event
-navLinkOne[7].addEventListener('mouseover', () => {
-  navLinkOne[7].style.color = 'blue';
+// Used keydown event
+navLinkOne[3].addEventListener('auxclick', () => {
+  navLineOne[3].style.color = 'teal';
 });
 
 //Used dblclick event
@@ -149,9 +151,20 @@ navLinkOne[4].addEventListener('dblclick', () => {
   navLinkOne[4].style.color = 'orange';
 });
 
-// Window.addEventListener('resize', () => {
-//   body.style.backgroundColor = blue;
+// navLineOne[5].addEventListener('drag', event {
+//   event.target.style.backgroundColor = 'blue';
 // });
 
+// cont.addEventListener("resize", () => {
+//   cont.style.background = "purple";
+// });
 
+//Used mouseover event
+navLinkOne[7].addEventListener('mouseover', () => {
+  navLinkOne[7].style.color = 'blue';
+});
 
+//Used mouseleave event
+navLinkOne[7].addEventListener('mouseleave', () => {
+  navLinkOne[7].style.color = 'green';
+});
