@@ -102,10 +102,42 @@ email.innerHTML = "sales@greatidea.io";
 let footer = document.getElementsByTagName("p")[9];
 footer.innerHTML = "Copyright Great Idea! 2018";
 
+
+//Event Listeners
 window.addEventListener("resize", ()=>{
   alert("woah...")
 })
 
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  alert("HEEEEEYYY!");
+});
+
 window.addEventListener('wheel',() =>{
 alert("weeeee!!!")
 })
+
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("dateEvent").innerHTML = Date();
+}
+let featuresH4 = document.getElementsByTagName("h4")[0];
+featuresH4.addEventListener("mouseenter", function(event){
+  event.target.style.color = "pink";
+  setTimeout(function() {
+    event.target.style.color = "";
+}, 700);
+}, false);
+
+let aboutH4 = document.getElementsByTagName("h4")[1];
+aboutH4.addEventListener("mouseover", function(event){
+  event.target.style.color = "purple";
+  setTimeout(function() {
+    event.target.style.color = "";
+}, 700);
+}, false);
+
+/*let ProductH4 = document.getElementsByTagName("h4")[3];
+aboutH4.addEventListener("mouseover", function(event){
+  event.target.style.fontsize = 50px;*/
