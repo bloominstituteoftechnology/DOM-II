@@ -109,6 +109,8 @@ pElement[8].innerHTML = siteContent["footer"]["copyright"];
 
 
 let container = document.querySelector('.container');
+let myVideo = document.querySelector('.queenPuppet');
+let myMiddleImg = document.querySelector('.middle-img');
 let body = document.querySelector('body');
 
 buttonElement.addEventListener('mouseover', () => {
@@ -130,4 +132,34 @@ document.addEventListener('keydown', () => {
 aElement[0].addEventListener('dblclick', () => {
   container.style.display = "none";
 });
+
+
+window.addEventListener("resize", function() {
+  setTimeout(function(){ alert("i am irritating "); }, 3000);
+});
+
+
+window.addEventListener("mousemove", function() {
+  body.style.backgroundColor = "gray";
+});
+
+
+myMiddleImg.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+  myMiddleImg.innerHTML = `<iframe id = 'ik_player_iframe' width="100%" height="315" class="queenPuppet"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
+                          </iframe>`
+});
+
+myMiddleImg.addEventListener("dragstart", function() {
+  body.style.backgroundColor = "black";
+});
+
+
+
+
+myMiddleImg.addEventListener("dragend", function() {
+  body.style.backgroundColor = "blue";
+});
+
 
