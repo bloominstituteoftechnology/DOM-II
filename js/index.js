@@ -46,13 +46,6 @@ cta.setAttribute('src', siteContent["cta"]["img-src"]);
 let middleImg = document.getElementById(“middle-img”);
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-
-let dateButton = document.querySelector('.custom-button');
-
-dateButton.addEventListener('click', (displayDate) => {
-  window.getElementById("dateEvent").innerHTML = Date();
-}
-
 let services = document.getElementsByTagName("a")[0];
 services.innerHTML = "Services";
 let product = document.getElementsByTagName("a")[1];
@@ -64,11 +57,13 @@ features.innerHTML = "Features";
 let contact = document.getElementsByTagName("a")[4];
 contact.innerHTML = "Contact";
 
-
 let ctaH1 = document.getElementsByTagName("h1")[0];
 ctaH1.innerHTML = "Dom is Awesome";
 let button = document.getElementsByTagName("button")[0];
 button.innerHTML = "Get Started";
+
+let textContent = document.getElementsByClassName("text-content");// tried to change color
+textContent.addEventListener("mouseover", function(){textContent.style.background = "pink"});
 
 let featuresH4 = document.getElementsByTagName("h4")[0];
 featuresH4.innerHTML = "Features";
