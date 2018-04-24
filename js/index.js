@@ -73,7 +73,7 @@ navigation.append(aTagTwo);
 
 //CTA Text and Button
 let ctaText = document.getElementsByTagName('h1');
-let ctaButton = document.getElementsByTagName('button');
+let ctaButton = document.getElementsByClassName('buttonOne');
 ctaText[0].innerHTML = siteContent['cta']['h1']
 ctaButton[0].innerHTML = siteContent['cta']['button']
 
@@ -116,5 +116,42 @@ navLinkOne[4].style.color = 'green';
 navLinkOne[5].style.color = 'green';
 navLinkOne[6].style.color = 'green';
 navLinkOne[7].style.color = 'green';
+
+// ctaButton.addEventListener('click', () => {
+//   ctaButton.style.color = 'red';
+//   // TweenMax.to(".buttonOne", 1, {
+//   //   marginLeft:600,
+//   //   rotation: 360,
+//   // });
+// });
+
+// Used keydown event
+navLinkOne[2].addEventListener('keydown', () => {
+  alert('I have been selected!');
+});
+
+navLinkOne[1].addEventListener('keyup', () => {
+  alert('I have been released!');
+});
+
+//Used click event
+navLinkOne[0].addEventListener('click', () => {
+  navLinkOne[0].style.color = 'red';
+});
+
+//Used mouseover event
+navLinkOne[7].addEventListener('mouseover', () => {
+  navLinkOne[7].style.color = 'blue';
+});
+
+//Used dblclick event
+navLinkOne[4].addEventListener('dblclick', () => {
+  navLinkOne[4].style.color = 'orange';
+});
+
+// Window.addEventListener('resize', () => {
+//   body.style.backgroundColor = blue;
+// });
+
 
 
