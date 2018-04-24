@@ -135,10 +135,6 @@ const siteContent = {
   ctaH1.style.color = "white";
   ctaH1.style.textShadow = "5px 5px black";
 
-  ctaButton.addEventListener("click", function(){  /// added click eventListener to the cta button
-
-  });
-
   setInterval(function(){            // added a setInterval to toggle color green and white every second
     if(ctaH1.style.color === "green") {
       ctaH1.style.color = "white";
@@ -146,3 +142,13 @@ const siteContent = {
     ctaH1.style.color = "green";
     }
   }, 1000);
+
+  // DOM II starts here
+ctaButton.addEventListener("click", function(){  /// added click eventListener to the cta button
+  TweenMax.from(ctaImg, 3, {
+    marginLeft: 400,
+    rotation: 720
+  });
+});
+
+
