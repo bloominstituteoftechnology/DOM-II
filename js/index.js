@@ -46,6 +46,13 @@ cta.setAttribute('src', siteContent["cta"]["img-src"]);
 let middleImg = document.getElementById(“middle-img”);
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
+
+let dateButton = document.querySelector('.custom-button');
+
+dateButton.addEventListener('click', (displayDate) => {
+  window.getElementById("dateEvent").innerHTML = Date();
+}
+
 let services = document.getElementsByTagName("a")[0];
 services.innerHTML = "Services";
 let product = document.getElementsByTagName("a")[1];

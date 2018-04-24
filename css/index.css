@@ -97,6 +97,9 @@ header .logo {
     margin: 28px 0 0 91px;
 }
 
+p {
+	font-size: 20px;
+}
 /* Call To Action (CTA) Styles */
 
 .cta {
@@ -296,4 +299,5 @@ footer {
     .contact {
         margin: 20px;
     }
+
 }

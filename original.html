@@ -36,6 +36,8 @@
             <div class="cta-text">
                 <h1>DOM<br> Is<br> Awesome</h1>
                 <button>Get Started</button>
+                <button id="myBtn"  class="custom-button">Click Me</button>
+                <p style = 20px id="dateEvent"></p>
             </div>
             <img id="cta-img" src="img/header-img.png" alt="Image of a code snippet.">
         </section>
@@ -90,5 +92,13 @@
         </footer>
 
     </div><!-- container -->
+<script>
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("dateEvent").innerHTML = Date();
+}
+</script>
+
 </body>
 </html>
