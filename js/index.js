@@ -49,8 +49,17 @@ logo.addEventListener('click', () => {
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', "img/header-img.png");
 
+ctaImg.addEventListener('click', () => {
+  ctaImg.style.height = '500px';
+  ctaImg.style.width = '500px';
+});
+
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute('src', "img/mid-page-accent.jpg")
+
+middleImage.addEventListener('click', () => {
+  middleImage.style.height = '150px';  
+});
 
 
 //Nav Header
@@ -90,7 +99,9 @@ let ctaText = document.querySelector("h1");
 console.log(ctaText.innerHTML);
 ctaText.innerHTML = siteContent["cta"]["h1"]
 
-ctaText.style.flexDirection = 'column' ;
+ctaText.addEventListener('click', () => {
+  ctaText.innerHTML = "You're awesome too!";
+});     
 
 let ctaButton = document.getElementsByTagName("button")[0];
 ctaButton.innerHTML = "Get Started";
@@ -108,19 +119,33 @@ ctaButton.addEventListener('click', () => {
 let topFeatures = document.getElementsByTagName("h4")[0];
 topFeatures.innerHTML = siteContent ["main-content"]["features-h4"];
 
+topFeatures.addEventListener('mouseover', () => {
+  topFeatures.style.color = 'pink'
+  topFeatures.style.fontSize = '30px';
+});
+
 let featureContent = document.getElementsByTagName("p")[0];
 featureContent.innerHTML = siteContent ["main-content"]["features-content"];
 
 let about = document.getElementsByTagName("h4")[1];
 about.innerHTML = siteContent ["main-content"]["about-h4"];
 
+about.addEventListener('mouseover', () => {
+  about.style.color = 'pink';
+  about.style.fontSize = '30px';
+});
+
 let aboutContent = document.getElementsByTagName("p")[1];
 aboutContent.innerHTML = siteContent ["main-content"]["about-content"];
-
 
 //bottom-content
 let services = document.getElementsByTagName("h4")[2];
 services.innerHTML = siteContent ["main-content"]["services-h4"];
+
+services.addEventListener('mouseover', () => {
+  services.style.color = 'pink';
+  services.style.fontSize = '30px';
+});
 
 let servicesContent = document.getElementsByTagName("p")[2];
 servicesContent.innerHTML = siteContent ["main-content"]["services-content"];
@@ -128,11 +153,21 @@ servicesContent.innerHTML = siteContent ["main-content"]["services-content"];
 let product = document.getElementsByTagName("h4")[3];
 product.innerHTML = siteContent ["main-content"]["product-h4"];
 
+product.addEventListener('mouseover', () => {
+  product.style.color = 'pink';
+  product.style.fontSize = '30px';
+});
+
 let productContent = document.getElementsByTagName("p")[3];
 productContent.innerHTML = siteContent ["main-content"]["product-content"];
 
 let vision = document.getElementsByTagName("h4")[4];
 vision.innerHTML = siteContent ["main-content"]["vision-h4"];
+
+vision.addEventListener('mouseover', () => {
+  vision.style.color = 'pink';
+  vision.style.fontSize = '30px';
+});
 
 let visionContent = document.getElementsByTagName("p")[4];
 visionContent.innerHTML = siteContent ["main-content"]["vision-content"];
@@ -140,6 +175,10 @@ visionContent.innerHTML = siteContent ["main-content"]["vision-content"];
 //contact 
 let contactInfo  = document.getElementsByTagName("h4")[5];
 contactInfo.innerHTML = siteContent ["contact"]["contact-h4"];
+
+contactInfo.addEventListener('mouseover', () => {
+  contactInfo.style.color = 'pink'
+});
 
 let addressInfo = document.getElementsByTagName("p")[5];
 addressInfo.innerHTML = siteContent ["contact"]["address"];
