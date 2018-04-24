@@ -179,6 +179,12 @@ footerSizeChange.addEventListener('dblclick', () => {
 footerSizeChange.style.fontSize = '100px';
 });
 
+//tenth event
+let footerColorChange = document.querySelector('footer');
+footerColorChange.addEventListener('copy', () => {
+footerColorChange.style.color = 'white';
+});
+
 
 
 
