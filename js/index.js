@@ -6,12 +6,12 @@ const colors = ["red", "blue", "orange", "green", "purple", "yellow", "aqua", "p
 
 
 window.addEventListener("click", (event) => {
-  TweenLite.to(ctaText, 1, {color:colors[Math.floor(Math.random() * colors.length)]});
+  TweenLite.to(ctaText, 2, {color:colors[Math.floor(Math.random() * colors.length)]});
 });
 
 
 startButton.addEventListener("click", (event) => {
-  console.log("Button got clicked")
+  TweenLite.to(startButton, 1, {margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`});
   event.stopPropagation();
 });
 
@@ -51,9 +51,6 @@ logoImg.addEventListener("mouseenter", (event) => {
   console.log("Mouse is over picture");
 });
 
-console.log(ctaText);
-
 window.addEventListener("keyup", (event) => {
-  console.log(event.key);
   ctaText.innerHTML = `D${event.key}M\<br> Is\<br> Awesome`
 });
