@@ -26,3 +26,31 @@ for(let i =0; i < allP.length ; i++) {
 middleImg.addEventListener("pointerover", () => {
   TweenMax.to(ctaImg, 2, {rotation:360, repeat:1, yoyo: true});
 });
+
+
+
+//Scroll Event - rotates Dom Is Awesome
+var last_known_scroll_position = 0;
+var ticking = false;
+
+function rotateDomAwesome(scroll_pos) {
+  console.log(scroll_pos)
+  document.getElementById("domAwesome").style.transform = `rotate(${scroll_pos}deg)`;
+
+}
+
+window.addEventListener('scroll', function(e) {
+
+  last_known_scroll_position = window.scrollY;
+  if (!ticking) {
+
+    window.requestAnimationFrame(function() {
+      rotateDomAwesome(last_known_scroll_position);
+      ticking = false;
+    });
+     
+    ticking = true;
+
+  }
+  
+});
