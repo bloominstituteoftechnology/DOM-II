@@ -21,3 +21,14 @@ let theButton = document.querySelector("#button");
 theButton.addEventListener('click', () => {
     alert("London Is My Home");
 });
+
+let firstbutton = document.querySelector(".j1");
+firstbutton.addEventListener('mouseover', () => {
+    alert("This is the first Button");
+});
+
+let testarticle = document.querySelector(".j2");
+testarticle.addEventListener('mouseover', () => {
+    alert("This is our first test article");
+
+});
