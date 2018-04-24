@@ -179,7 +179,7 @@ ctaButton.addEventListener('click', toggleMainContent);
  * DOM-II ASSIGMENT CODE
  * ADD 10 Event Listeners
  */
-let body = document.querySelector('.body');
+let body = document.querySelector('body');
 let bodyContainer = document.querySelector('.container');
 let bodyHtml = bodyContainer.innerHTML;
 // console.log(bodyHtml);
@@ -194,4 +194,24 @@ bodyContainer,addEventListener('online', () => {
 })
 
 /** DOMContentLoaded : Alert && console.log the time the DOM takes to get loaded */
-// 3. 'DOMContentLoaded' ALERT: The code was added in <head> of the index.html file.
+// 3. ALERT: The code was added in <head> of the index.html file.
+
+/** 'beforeprint' and 'afterprint': play with font-size */
+const bodyFontSize = body.style.fontSize;
+const mainTopFontSize = mainTop.style.fontSize;
+const mainMiddleFontSize = mainMiddle.style.fontSize;
+const mainBottomFontSize = mainBottom.style.fontSize;
+window.addEventListener('beforeprint', (e) => {
+  // console.log(e);
+  body.style.fontSize = "0.1%";
+  mainTop.style.fontSize = "0.1%";
+  mainMiddle.style.fontSize = "0.1%";
+  mainBottom.style.fontSize = "0.1%";
+})
+window.addEventListener('afterprint', (e) => {
+  // console.log(e);
+  body.style.fontSize = bodyFontSize;
+  mainTop.style.fontSize = mainTopFontSize;
+  mainMiddle.style.fontSize = mainMiddleFontSize;
+  mainBottom.style.fontSize = mainBottomFontSize;
+})
