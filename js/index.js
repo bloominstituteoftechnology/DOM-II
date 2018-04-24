@@ -46,7 +46,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
  */
 let nav = document.querySelector('nav');
 // console.log(nav);
-let nav_a = Array.from(   nav.getElementsByTagName('a')    );
+let nav_a = Array.from( nav.getElementsByTagName('a') );
 // console.log(nav_a);
 nav_a_length = nav_a.length;
 nav_a.forEach( (a, index) => {
@@ -174,3 +174,17 @@ function toggleMainContent () {
 ctaButton.textContent = "Play with me!";
 ctaButton.style.width = '200px';
 ctaButton.addEventListener('click', toggleMainContent);
+
+/**
+ * DOM-II ASSIGMENT CODE
+ */
+let body = document.querySelector('.body');
+let bodyContainer = document.querySelector('.container');
+let bodyHtml = bodyContainer.innerHTML;
+console.log(bodyHtml);
+bodyContainer,addEventListener('offline', () => {
+  bodyContainer.classList.add('offline');
+})
+bodyContainer,addEventListener('online', () => {
+  bodyContainer.classList.remove('offline');
+})
