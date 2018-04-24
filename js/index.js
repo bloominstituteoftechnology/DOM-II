@@ -88,7 +88,25 @@ let ctaText = document.getElementsByTagName('h1');
 ctaText[0].innerHTML = 'Dom is Awesome';
 
 let buttons = document.getElementsByTagName('button');
-buttons[0].innerHTML = 'Get Started';
+ buttons[0].innerHTML = 'Get Started';
+buttons[0].addEventListerner('click', () => {
+    console.log("click");
+}
+
+// let body = document.querySelector('body');
+// body.addEventListener('click', () => {
+
+//     buttons.style.backgroundColor = 'red';
+//     buttons.style.color = 'white';
+//     body.style.backgroundColor = 'pink';
+    
+// });
+
+// buttons.addEventListener('mouseover', () => {
+//     console.log("By the Power of DOM");
+// });
+
+// 
 
 let headers = document.querySelectorAll('h4');
 headers[0].innerHTML = 'Features';
@@ -119,3 +137,8 @@ paragraphs[7].innerHTML = 'sales@greatidea.io';
 
 let footer = document.querySelectorAll('footer');
 footer[0].innerHTML = 'Copyright Great Idea! 2018';
+
+
+// window.addEventListener("optimizedResize", () => {
+//     console.log("Resize me Yall");
+// };
