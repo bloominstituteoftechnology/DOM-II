@@ -81,6 +81,41 @@ document.addEventListener("keydown", (e) => {
   audio.currentTime = 0; //If an audio file is already playing, go to the beginning of it.
   audio.play();
 })
+// Double click the Copyright notice for insight into my mental status
+const footer = document.querySelector("footer");
+footer.addEventListener("dblclick", () => {
+  const original = siteContent["footer"]["copyright"];
+  const modified = "Ronald is running out of bloody ideas.";
+  if (footer.innerText === original) {
+    footer.innerText = modified;
+  } else {
+    footer.innerText = original;
+  }
+});
+// Keep your mouse over the Contact header
+const contactHead = document.querySelector(".contact h4");
+let fontSize = 14;
+contactHead.addEventListener("mouseover", () => {
+  let incrementSize = setInterval(() => {
+    if (fontSize >= 64) {
+      fontSize = 64;
+      clearInterval(incrementSize);
+    } else {
+      fontSize++;
+    }
+    contactHead.style["font-size"] = `${fontSize}px`;
+  }, 100);
+});
+// Scroll Wheel Fun is in the Header Section Below
+// A little message for copycats. Look in the CTA Section
+// ------
+// Change background color of container upon resize
+// ---A joyous result of collobration between
+// --- Calvin Tirrell, Herbert Hodgeson, and me
+const cont = document.querySelector(".container");
+window.addEventListener("resize", () => {
+  cont.style["background-color"] = "lightgrey";
+});
 //---------End vent Listeners (Project Dom 2)
 
 //---Header 
@@ -102,12 +137,21 @@ nav.prepend(frontElem);
 const backElem = newElem(`a`);
 backElem.appendChild(newText('Back'));
 nav.appendChild(backElem);
-// // To make all the <a> elements (light) green
-// navItem = document.querySelectorAll("nav a");
-// navItem.forEach(element => element.style.color = "lightgreen");
-// // Let's add a background color to complement that green
-// nav.style["background-color"] = "#369C9C";
-// nav.style.padding = "16px";
+// Scroll Wheel Fun (DOM 2 Project)
+navItem = document.querySelectorAll("nav a");
+let wheelIndex = 0;
+document.addEventListener("wheel", () => {
+  wheelIndex++;
+  if (wheelIndex >= 8) {
+    wheelIndex = 0;
+  }
+  navItem[wheelIndex].classList.add("bordered");
+  if (wheelIndex === 0) {
+    navItem[7].classList.remove("bordered");
+  } else {
+    navItem[wheelIndex - 1].classList.remove("bordered");
+  }
+});
 //---------End Header  
 
 //---CTA
@@ -119,12 +163,23 @@ ctaHeading[0].lastElementChild.innerHTML = siteContent.cta["button"];
 // This variable is initialized in the Event Listener Section
 ctaLogo.src = 'img/header-img.png';
 
+// Button Counter
 const buttonCounter = newElem("p");
 buttonCounter.appendChild(newText(`The button yearns for your click.`));
 buttonCounter.setAttribute("id","buttonCounter");
-buttonCounter.style["font-size"] = "16px";
+buttonCounter.style["font-size"] = "14px";
 buttonCounter.style["margin-top"] = "16px";
 ctaHeading[0].appendChild(buttonCounter);
+// Copy Message
+// A little message for copycats. 
+document.addEventListener("copy", function() {
+  console.log('copying');
+  const copyMessage = newElem("p");
+  copyMessage.appendChild(newText("Copy with care! :)"));
+  copyMessage.style["font-size"] = "24px";
+  copyMessage.style["margin-top"] = "16px";
+  ctaHeading[0].appendChild(copyMessage);
+})
 //---------End CTA 
 
 //---Main-Content 
@@ -133,32 +188,6 @@ topContent.children[0].firstElementChild.innerHTML = siteContent["main-content"]
 topContent.children[0].lastElementChild.innerHTML = siteContent["main-content"]["features-content"];
 topContent.children[1].firstElementChild.innerHTML = siteContent["main-content"]["about-h4"];
 topContent.children[1].lastElementChild.innerHTML = siteContent["main-content"]["about-content"];
-
-// Exploratory Laboratory
-
-// (function(index = null) {
-//   for (let property in siteContent["main-content"]["top-content"]) {
-//     if (property.includes("h4")) { index = 0; }
-//     else { index = 1; }
-//     console.log(property, index);
-//   }
-// })();
-
-// const textContent = document.querySelector(".main-content");
-
-// function insertInnerText(selector, elemName, text) {
-//   for (let child of selector.children) {
-//     console.log("Node name", child);
-//     if (child.nodeName.includes(elemName)) {
-//       child.innerText = text;
-//       console.log(true);
-//     } else {
-//       insertInnerText(child, elemName, text);
-//     }
-//   }
-// }
-
-// insertInnerText(textContent, "P", "IN YOUR FACE");
 
 const middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"];
@@ -173,7 +202,8 @@ bottomContent.children[2].lastElementChild.innerHTML = siteContent["main-content
 //---------End Main-Content 
 
 //---Contact 
-const contactHead = document.querySelector(".contact h4");
+// const contactHead = document.querySelector(".contact h4");
+// Above var declared in Event Listener Section.
 contactHead.innerHTML = siteContent["contact"]["contact-h4"];
 
 const contactBody = document.querySelectorAll(".contact p");
@@ -183,6 +213,7 @@ contactBody[2].innerHTML = siteContent["contact"]["email"];
 //---------End Contact 
 
 //---Footer 
-const footer = document.querySelector("footer");
-footer.innerHTML = siteContent["footer"]["copyright"];
+// const footer = document.querySelector("footer");
+// Above var declared in Event Listener Section.
+footer.innerText = siteContent["footer"]["copyright"];
 //---------End Footer 
