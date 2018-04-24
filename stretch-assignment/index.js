@@ -16,3 +16,8 @@ staggerBtn.addEventListener('click', () => {
         marginLeft: 100
     }, 1);
 });
+
+let theButton = document.querySelector("#button");
+theButton.addEventListener('click', () => {
+    alert("London Is My Home");
+});
