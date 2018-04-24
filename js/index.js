@@ -42,7 +42,7 @@ const siteContent = {
 const logo = document.querySelector("#logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-//---Stretch: Button
+//---Stretch: Button (Project Dom 1)
 // We'll hide a lot of the page until the button is clicked.
 const bottomHalf = document.querySelectorAll(".main-content, .contact");
 bottomHalf.forEach(element => element.style.display = "none");
@@ -59,6 +59,29 @@ button.addEventListener("click", function() {
   document.querySelector("#buttonCounter").innerHTML = `The button has been clicked ${siteContent["contact"]["count"]} time${siteContent["contact"]["count"] > 1 ? `s`:``}.`;
 })
 //---------End Stretch: Button
+
+//---Event Listeners (Project Dom 2)
+// Simple (annoying) modal when your right click anywhere in the viewport
+document.addEventListener("contextmenu", (e) => {
+  alert('I see you right-clickin\'');
+  e.preventDefault(); // Prevents Context Menu from Opening
+});
+// Change the CTA image to a picture of Patrick the Starfish
+const ctaLogo = document.querySelector("section img");
+ctaLogo.addEventListener("mouseenter", () => {
+  ctaLogo.src = 'img/header-alt.jpg';
+});
+ctaLogo.addEventListener("mouseleave", () => {
+  ctaLogo.src = 'img/header-img.png';
+});
+// Learned below from Wes Bos' Javascript 30
+document.addEventListener("keydown", (e) => {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}`);
+  if (!audio) return; //If the keydown doesn't corresponed to an assigned keycode, immediately end the function
+  audio.currentTime = 0; //If an audio file is already playing, go to the beginning of it.
+  audio.play();
+})
+//---------End vent Listeners (Project Dom 2)
 
 //---Header 
 // Insert Nav Items into Nav Bar
@@ -79,12 +102,12 @@ nav.prepend(frontElem);
 const backElem = newElem(`a`);
 backElem.appendChild(newText('Back'));
 nav.appendChild(backElem);
-// To make all the <a> elements (light) green
-navItem = document.querySelectorAll("nav a");
-navItem.forEach(element => element.style.color = "lightgreen");
-// Let's add a background color to complement that green
-nav.style["background-color"] = "#369C9C";
-nav.style.padding = "16px";
+// // To make all the <a> elements (light) green
+// navItem = document.querySelectorAll("nav a");
+// navItem.forEach(element => element.style.color = "lightgreen");
+// // Let's add a background color to complement that green
+// nav.style["background-color"] = "#369C9C";
+// nav.style.padding = "16px";
 //---------End Header  
 
 //---CTA
@@ -92,8 +115,16 @@ const ctaHeading = document.querySelectorAll(".cta-text")
 ctaHeading[0].firstElementChild.innerHTML = siteContent.cta["h1"];
 ctaHeading[0].lastElementChild.innerHTML = siteContent.cta["button"];
 
-const ctaLogo = document.querySelector("section img");
+// const ctaLogo = document.querySelector("section img");
+// This variable is initialized in the Event Listener Section
 ctaLogo.src = 'img/header-img.png';
+
+const buttonCounter = newElem("p");
+buttonCounter.appendChild(newText(`The button yearns for your click.`));
+buttonCounter.setAttribute("id","buttonCounter");
+buttonCounter.style["font-size"] = "16px";
+buttonCounter.style["margin-top"] = "16px";
+ctaHeading[0].appendChild(buttonCounter);
 //---------End CTA 
 
 //---Main-Content 
@@ -149,11 +180,6 @@ const contactBody = document.querySelectorAll(".contact p");
 contactBody[0].innerHTML = siteContent["contact"]["address"];
 contactBody[1].innerHTML = siteContent["contact"]["phone"];
 contactBody[2].innerHTML = siteContent["contact"]["email"];
-
-const buttonCounter = newElem("p");
-buttonCounter.appendChild(newText(`The button yearns for your click.`));
-buttonCounter.setAttribute("id","buttonCounter");
-document.querySelector(".contact").appendChild(buttonCounter);
 //---------End Contact 
 
 //---Footer 
