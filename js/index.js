@@ -78,6 +78,8 @@ ctaImg.setAttribute('src', siteContent.cta["img-src"])
  * Selectors to <section.main-content>
  */
 /** TOP CONTENT */
+let mainContent = document.querySelector('.main-content');
+console.log(mainContent);
 let mainTop = document.getElementsByClassName('top-content').item(0);
 // console.log(mainTop);
 /** MIDDLE CONTENT */
@@ -196,11 +198,12 @@ bodyContainer,addEventListener('online', () => {
 /** DOMContentLoaded : Alert && console.log the time the DOM takes to get loaded */
 // 3. ALERT: The code was added in <head> of the index.html file.
 
-/** 'beforeprint' and 'afterprint': play with font-size */
+/** 'beforeprint' and 'afterprint': Beforeprinting the font-size decreases to 0.1%. Afterprint the font-size returns to its original size */
 const bodyFontSize = body.style.fontSize;
 const mainTopFontSize = mainTop.style.fontSize;
 const mainMiddleFontSize = mainMiddle.style.fontSize;
 const mainBottomFontSize = mainBottom.style.fontSize;
+// 'beforeprint'
 window.addEventListener('beforeprint', (e) => {
   // console.log(e);
   body.style.fontSize = "0.1%";
@@ -208,10 +211,15 @@ window.addEventListener('beforeprint', (e) => {
   mainMiddle.style.fontSize = "0.1%";
   mainBottom.style.fontSize = "0.1%";
 })
+// afterprint
 window.addEventListener('afterprint', (e) => {
   // console.log(e);
   body.style.fontSize = bodyFontSize;
   mainTop.style.fontSize = mainTopFontSize;
   mainMiddle.style.fontSize = mainMiddleFontSize;
   mainBottom.style.fontSize = mainBottomFontSize;
+})
+/** EVENT DELEGATION: Set an event in a high Node that listen for events in child Nodes */
+mainContent.addEventListener('dblclick', e => {
+  console.log(e.target.tagName, 'was double clicked');
 })
