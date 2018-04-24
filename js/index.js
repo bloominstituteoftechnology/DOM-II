@@ -45,7 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 //nav bar
-let navBar = document.querySelectorAll("nav");
+let navBar = document.getElementsByTagName('nav');
 
 //nav link
 
@@ -55,7 +55,7 @@ navLink[1].innerText = siteContent.nav["nav-item-2"];
 navLink[2].innerText = siteContent.nav["nav-item-3"];
 navLink[3].innerText = siteContent.nav["nav-item-4"];
 navLink[4].innerText = siteContent.nav["nav-item-5"];
-navLink[5].innerText = siteContent.nav["nav-item-6"];
+
 
 
 // append 'About' to nav bar
@@ -129,17 +129,23 @@ button1.addEventListener('click', () => {
 });
 
 //second event
-logo.addEventListener('click', () => {
+logo.addEventListener('mouseover', () => {
   alert("It's great you're here!")
  });
 
-
-let c = document.getElementById("middle-img");
-c.addEventListener('mouseover', () => {
-//let ctx = c.getContext("2d");
-ctx.rotate(20*Math.PI/180);
-ctx.fillRect(50,20,100,50);
+//third event
+let imgDisapear = document.getElementById("middle-img");
+imgDisapear.addEventListener('mouseout', () => {
+imgDisapear.style.display = 'none';
 });
+
+//fourth event
+let imgShrink = document.getElementById("cta-img");
+imgShrink.addEventListener('mouseout', () => {
+imgShrink.style.height = '150px';
+});
+
+
 
 
 
