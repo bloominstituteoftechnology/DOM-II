@@ -36,4 +36,9 @@ const moveRight = (event) => {
             event.target.style.marginLeft = marginPX + 'px';
         }
     }, 5);
-}
+};
+
+// sets event listeners for mousedown on all blocks
+for (let i = 0; i < blockClsList.length; i++) {
+    document.querySelector('.' + blockClsList[i]).addEventListener('mousedown', moveRight);
+};
