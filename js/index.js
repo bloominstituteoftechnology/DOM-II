@@ -30,7 +30,7 @@ mainHeader.addEventListener('click', (event) => {
     console.log('You clicked the header!');
 });
 
-let textContent = document.querySelector('h4', 'p');
+let textContent = document.querySelector('h4');
 
 textContent.addEventListener('mouseover', (event) => {
     event.currentTarget.classList.add("copy");
