@@ -1,6 +1,6 @@
 const startButton = document.getElementById("start-button");
 const ctaText = document.getElementById("big-text");
-const navLinks = document.querySelectorAll(".nav");
+const navLinks = Array.from(document.querySelectorAll(".nav"));
 const logoImg = document.getElementById("logo-img");
 const colors = ["red", "blue", "orange", "green", "purple", "yellow", "aqua", "pink"]
 
@@ -17,12 +17,12 @@ startButton.addEventListener("click", (event) => {
 
 
 navLinks[0].addEventListener("click", (event) => {
-  console.log("I got clicked");
+  TweenMax.to(navLinks, 2, {rotation:180});
   event.stopPropagation();
 });
 
 navLinks[1].addEventListener("click", (event) => {
-  console.log("I got clicked 2");
+  TweenMax.to(navLinks, 2, {rotation:0});
   event.stopPropagation();
 });
 
