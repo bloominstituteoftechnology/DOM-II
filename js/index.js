@@ -135,3 +135,27 @@ textContents.forEach(x => {
     event.currentTarget.innerHTML = event.dataTransfer.getData('text'); 
   });
 });
+
+// Event: Double Click -- turns element into an editable element
+textContents.forEach(x => {
+  x.addEventListener('dblclick', (event) => {
+    console.log('Double click');
+    
+    let srcEle = event.target,
+        editEle = createNewElement('textarea', srcEle.innerHTML, 'edit-content');
+    
+    event.target.parentNode.replaceChild(editEle, srcEle);
+  });
+});
+
+// Event: Click -- find any editable elements and convert back
+window.addEventListener('click', (event) => {
+  console.log('click');
+
+  let editContentEle = document.querySelectorAll('.edit-content');
+  
+  editContentEle.forEach(x => {
+    let staticEle = createNewElement('p', x.innerHTML, '');
+    x.parentNode.replaceChild(staticEle, x);
+  });
+});
