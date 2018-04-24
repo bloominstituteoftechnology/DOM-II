@@ -51,6 +51,9 @@ logoImg.addEventListener("mouseenter", (event) => {
   console.log("Mouse is over picture");
 });
 
+console.log(ctaText);
+
 window.addEventListener("keyup", (event) => {
   console.log(event.key);
+  ctaText.innerHTML = `D${event.key}M\<br> Is\<br> Awesome`
 });
