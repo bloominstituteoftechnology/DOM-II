@@ -11,7 +11,7 @@ window.addEventListener("click", (event) => {
 
 
 startButton.addEventListener("click", (event) => {
-  TweenLite.to(startButton, 1, {margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`});
+  TweenLite.to(startButton, 1, {margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`, ease:Bounce.easeInOut});
   event.stopPropagation();
 });
 
