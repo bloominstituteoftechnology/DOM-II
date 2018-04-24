@@ -8,12 +8,13 @@
   <title>Great Idea!</title>
 
   <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="index.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
-  <script src="js/index.js" async></script>
+  <script src="../greensock-js/src/minified/TweenMax.min.js" async></script>
+  <script src="index.js" async></script>
 </head>
 
 <body>
@@ -38,11 +39,17 @@
                 <h1></h1>
                 <button></button>
             </div>
+         
             <img id="cta-img" src="" alt="Image of a code snippet.">
         </section>
-
+    <form>
+        <div>
+            <label for="cats"> Do you like cats? </label>
+                <input id = "cats" type="text" name="Do you like cats?">
+                <input id = "submit" type="submit">   
+        </div>
         <section class="main-content">
-
+        </form>
             <div class="top-content">
                 <div class="text-content">
                     <h4></h4>
@@ -53,7 +60,9 @@
                     <p></p>
                 </div>
             </div>
-
+            <br>
+            <br>
+            <textarea name="randomtext" rows="10" cols="142">Why don't you take this opportunity to write something?</textarea>
             <img class="middle-img" id="middle-img" src="" alt="Image of code snippets across the screen">
 
             <div class="bottom-content">

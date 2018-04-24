@@ -36,15 +36,18 @@ const siteContent = {
   },
 };
 
+
+// Code from DOM-I 
+
 // Example: Update the img src for the logo
 let logoImg = document.getElementById("logo-img");
-logoImg.setAttribute("src", "img/logo.png");
+logoImg.setAttribute("src", "../DOM-I/img/logo.png");
 
 let headerImg = document.getElementById("cta-img");
-headerImg.setAttribute("src", "img/header-img.png")
+headerImg.setAttribute("src", "../DOM-I/img/header-img.png")
 
 let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute("src", "img/mid-page-accent.jpg")
+middleImg.setAttribute("src", "../DOM-I/img/mid-page-accent.jpg")
 
 //Navigation
 let services = document.getElementsByTagName("a")[0];
@@ -139,9 +142,43 @@ robertLazarus.addEventListener('mouseover', haveAnotherCat);
 
 // Back to seriousness
 function reality() {
-  headerImg.setAttribute('src', 'img/header-img.png');
+  headerImg.setAttribute('src', '../DOM-I/img/header-img.png');
   h1Message.innerHTML = "DOM Is awesome";
   button.innerHTML = "Get started";
 }
 dylanThomas.addEventListener('mouseout', reality);
 robertLazarus.addEventListener('mouseout', reality);
+
+// Additions for DOM-II
+
+// Event listener #1 - dbclick
+button.addEventListener('dblclick', (event) => {
+  const keyName = event.key;
+  alert(`Why'd you go and do that?`)
+});
+// Event listener #2 - click
+button.addEventListener('click', () =>
+  TweenMax.to(headerImg, 4, {ease: SlowMo.ease.config(0.7, 0.7, false), rotation: 360}))
+
+// Event listener #3 - scroll
+window.addEventListener('scroll', () => {
+document.body.style.backgroundColor = "lavender"
+});
+
+// Event listener #4 - 
+let cats = document.getElementById('cats');
+let form = document.querySelector('form');
+let submit = document.getElementById('submit');
+form.onsubmit = function(e) {
+  if (cats.value !== 'yes' && cats.value !== 'YES') {
+    e.preventDefault();
+    alert('How can you not love cats?')
+  }
+}
+
+// Event listener #5 - keypress
+cats.addEventListener('keypress', (event) => {
+  const keyName = event.key;
+  if (keyName === 'n' || keyName === 'N') {
+  alert(`Did you just hit 'n' for no?  What kind of monster *are* you?`)
+}});
