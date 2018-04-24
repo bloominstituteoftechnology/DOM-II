@@ -96,3 +96,42 @@ updateHTML(createArray(siteContent['footer'], ''), footerEle);
 headerLogo.src = siteContent['nav']['img-src'];
 ctaImg.src = siteContent['cta']['img-src'];
 mainContentImg.src = siteContent['main-content']['middle-img-src'];
+
+
+// Playing around with drag and drop events
+let textContents = document.querySelectorAll('.text-content'),
+    dragSource;
+
+textContents.forEach(x => {
+  // Add draggable attribute to text-content divs
+  x.setAttribute('draggable', 'true');
+
+  // Event: Drag Start
+  x.addEventListener('dragstart', (event) => {
+    console.log('Drag start');
+    event.target.style = 'opacity: 0.4';
+    event.dataTransfer.setData('text', event.target.innerHTML); // Define drag data
+    dragSource = event.srcElement; // Save source data
+  });
+
+  // Event: Drag End
+  x.addEventListener('dragend', (event) => {
+    console.log('Drag end');
+    event.target.style = 'opacity: 1';
+    event.dataTransfer.clearData(); // Remove drag data
+  });
+
+  // Event: Drag Over -- turns element into a drop zone
+  x.addEventListener('dragover', (event) => {
+    console.log('Drag over');
+    event.preventDefault(); // Necessary to allow drop
+  });
+
+  // Event: Drop -- turns element into a drop zone
+  x.addEventListener('drop', (event) => {
+    console.log('Dropped');
+    event.preventDefault(); // Necessary to allow drop
+    dragSource.innerHTML = event.currentTarget.innerHTML; // Swap innerHTML for source and destination
+    event.currentTarget.innerHTML = event.dataTransfer.getData('text'); 
+  });
+});
