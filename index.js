@@ -42,3 +42,14 @@ const moveRight = (event) => {
 for (let i = 0; i < blockClsList.length; i++) {
     document.querySelector('.' + blockClsList[i]).addEventListener('mousedown', moveRight);
 };
+
+const moveBack = (event) => {
+    let marginPX = 300;
+    window.setInterval(function () {
+        clearInterval(moveRight);
+        if (marginPX > 10) {
+            marginPX--;
+            event.target.style.marginLeft = marginPX + 'px';
+        }
+    }, 5);
+}
