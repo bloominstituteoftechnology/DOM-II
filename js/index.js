@@ -38,6 +38,7 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
 let logoImg = document.getElementById("logo-img");
 logoImg.setAttribute("src", "img/logo.png");
 
@@ -83,7 +84,7 @@ contact.innerHTML = "Contact";
 // Event Listener: Mouseover
 
 services.addEventListener('mouseover', () => {
-  services.style.backgroundColor = "red";
+  services.style.backgroundColor = "orange";
 }); 
 
 product.addEventListener('mouseover', () => {
