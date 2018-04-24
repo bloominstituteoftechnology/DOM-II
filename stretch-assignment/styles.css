@@ -3,10 +3,17 @@ body {
   /*justify-content: center;*/
 }
 
+.navbar {
+  width: 100%;
+  border: 1px solid red;
+}
+
 .blocks {
   margin-top: 5%;
   display: flex;
   flex-direction: column;
+  border: 1px solid red;
+  flex-wrap: wrap;
 }
 
 .block {

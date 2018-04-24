@@ -3,7 +3,7 @@
 let runBtn = document.querySelector(".run");
 
 runBtn.addEventListener('click', () => {
-    TweenMax.to(".block", 3, { marginLeft: 600 });
+    TweenMax.to(".block", 3, { marginLeft: 1000 });
 });
 
 
@@ -13,13 +13,13 @@ let staggerBtn = document.querySelector(".stagger");
 staggerBtn.addEventListener('click', () => {
     TweenMax.staggerTo(".block", 1, {
         rotation: 360,
-        marginLeft: 100
+        marginLeft: 1000
     }, 1);
 });
 
 let theButton = document.querySelector("#button");
 theButton.addEventListener('click', () => {
-    alert("London Is My Home");
+    alert("London Is My Home    ");
 });
 
 let firstbutton = document.querySelector(".j1");
@@ -28,7 +28,7 @@ firstbutton.addEventListener('mouseover', () => {
 });
 
 let testarticle = document.querySelector(".j2");
-testarticle.addEventListener('mouseover', () => {
+testarticle.addEventListener('mousedown', () => {
     alert("This is our first test article");
 
 });
