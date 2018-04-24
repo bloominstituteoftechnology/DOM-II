@@ -95,6 +95,9 @@ header nav a:hover {
 header .logo {
     align-self: flex-end;
     margin: 28px 0 0 91px;
+    position: relative;
+    /* left: 600px; */
+    /* top: 600; */
 }
 
 /* Call To Action (CTA) Styles */

@@ -4,9 +4,20 @@ let getStartedBtnText = document.querySelector(".cta-text .post-button")
 let iLaughAtYourFeatures = document.querySelectorAll(".top-content .text-content")[0];
 let ctaImg = document.getElementById("cta-img");
 let iLaughAtYourAbout = document.querySelectorAll(".top-content .text-content")[1];
-
-
+let selectEvent = document.querySelector("#select-event")
+let logo = document.querySelector("#logo-img")
 // iLaughAtYourFeatures.firstElementChild.innerHTML = 'test'
+
+//GreenSock stuff
+TweenMax.to(".logo", 3, {x:200, ease:Bounce.easeOut, yoyoEase:true,  repeat:5, repeatDelay:0.1});
+
+
+// Normal Events
+selectEvent.addEventListener('mousedown', (e) => {
+  alert('you selected text!')
+  // e.preventDefault();
+});
+
 iLaughAtYourFeatures.firstElementChild.addEventListener('mouseover' , () => {
   iLaughAtYourFeatures.firstElementChild.innerHTML = 'All your Features are worthless'
   ctaImg.setAttribute('src', "img/nope.jpg")
