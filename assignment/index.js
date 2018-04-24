@@ -6,19 +6,19 @@ const siteContent = {
         "nav-item-4": "Features",
         "nav-item-5": "About",
         "nav-item-6": "Contact",
-        "img-src": "img/logo.png"
+        "img-src": "./images/logo.png"
     },
     "cta": {
         "h1": "DOM Is Awesome",
         "button": "Get Started",
-        "img-src": "img/header-img.png"
+        "img-src": "./images/header-img.png"
     },
     "main-content": {
         "features-h4": "Features",
         "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
         "about-h4": "About",
         "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-        "middle-img-src": "img/mid-page-accent.jpg",
+        "middle-img-src": "./images/mid-page-accent.jpg",
         "services-h4": "Services",
         "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
         "product-h4": "Product",
@@ -86,3 +86,72 @@ for (let i = 0; i < contactItems.length; i++) {
 }
 
 document.querySelector('footer').querySelector('p').innerHTML = siteContent.footer.copyright;
+
+// ---------------------------------DOM II ------------------------
+
+window.addEventListener('resize', () => {
+    console.log("resized!")
+});
+
+let awesome = document.querySelector('.cta-text').getElementsByTagName('h1')[0]
+let button = document.querySelector('.cta-text').getElementsByTagName('button')[0]
+awesome.addEventListener('mouseover', () => {
+    console.log("Ain' it?")
+})
+
+var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+var currentIndex = 0;
+
+button.addEventListener('click', () => {
+    setInterval(function () {
+        document.querySelector('.cta').style.cssText = "background-color: " + colors[currentIndex];
+        currentIndex++;
+        if (currentIndex == undefined || currentIndex >= colors.length) {
+            currentIndex = 0;
+        }
+    }, 1000);
+});
+
+let inter = {};
+let codeImage = document.querySelector('#cta-img')
+codeImage.addEventListener('mouseover', () => {
+    console.log(inter)
+    window.clearInterval(inter[`${codeImage}`]);
+    inter[`${codeImage}`] = setInterval(function () {
+        codeImage.style.transform = "rotate(2520deg)";
+    }, 500);
+    codeImage.style.transform = 'rotate(0deg)'
+});
+
+// ---
+
+let ctaText = document.querySelector('.top-content')
+ctaText.addEventListener('click', () => {
+    ctaText.style.width = '50%'
+})
+
+// ----
+
+ctaText.addEventListener('dblclick', () => {
+    ctaText.style.width = '100%'
+})
+
+// ===
+
+let ctaTextBottom = document.querySelector('.bottom-content')
+ctaTextBottom.addEventListener('mouseover', () => {
+    ctaTextBottom.style.transform = 'rotate(180deg)'
+})
+
+//---
+
+ctaTextBottom.addEventListener('mouseleave', () => {
+    ctaTextBottom.style.transform = 'rotate(0deg)'
+})
+
+//----
+
+let phone = document.querySelector('.contact').children[2]
+phone.addEventListener('click', () => {
+    phone.style.fontSize = '80px'
+})
