@@ -108,7 +108,7 @@ topTextContent.forEach( (item, index) => {
 // ADD content to Middle Content
 mainMiddle.setAttribute('src', JSONMainContent["middle-img-src"]);
 // ADD content to Bottom Content
-const bottomTextContent = Array.from( mainBottom.getElementsByClassName('text-content') )
+let bottomTextContent = Array.from( mainBottom.getElementsByClassName('text-content') )
 bottomTextContent.forEach( (item, i) => {
   item.innerHTML = bottomContent[i];
 });
@@ -188,11 +188,13 @@ let bodyHtml = bodyContainer.innerHTML;
 /** A mix with 'ofline' and 'online' that hide contend and display new one according to available internet conection */
 // 1. 'ofline' event.
 bodyContainer,addEventListener('offline', () => {
-  bodyContainer.classList.add('offline');
+  bodyContainer.classList.toggle('offline');
+  document.querySelector('.off-container').classList.toggle('offline');
 })
 // 2. 'online' event.
 bodyContainer,addEventListener('online', () => {
   bodyContainer.classList.remove('offline');
+  document.querySelector('.off-container').classList.toggle('offline');
 })
 
 /** DOMContentLoaded : Alert && console.log the time the DOM takes to get loaded */
@@ -220,6 +222,25 @@ window.addEventListener('afterprint', (e) => {
   mainBottom.style.fontSize = mainBottomFontSize;
 })
 /** EVENT DELEGATION: Set an event in a high Node that listen for events in child Nodes */
+// 'double click'
 mainContent.addEventListener('dblclick', e => {
   console.log(e.target.tagName, 'was double clicked');
 })
+
+/** 'select' Then reverse text node. */
+mainContent.addEventListener('focus', e => {
+  console.log(e.target.tagName);
+  console.log(`Document get focus on a ${e.target.nodeName}`);
+})
+
+/** 'keydown' reverse <p> content */
+
+document.addEventListener("keydown", function(e) {
+  let allP = document.querySelectorAll('p');
+  allP.forEach( (p) => {
+    p.textContent = p.textContent.split('')
+                                 .reverse()
+                                 .join('');
+  })
+}, false);
+
