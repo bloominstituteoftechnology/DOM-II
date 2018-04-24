@@ -96,20 +96,3 @@ updateHTML(createArray(siteContent['footer'], ''), footerEle);
 headerLogo.src = siteContent['nav']['img-src'];
 ctaImg.src = siteContent['cta']['img-src'];
 mainContentImg.src = siteContent['main-content']['middle-img-src'];
-
-// Add new content
-const homeLink = createNewElement('a', 'Home'),
-  blogLink = createNewElement('a', 'Blog');
-
-homeLink.href = '#';
-blogLink.href = '#';
-
-nav.appendChild(blogLink);
-nav.prepend(homeLink);
-
-// Change nav text color
-const navText = nav.children;
-
-for (let i = 0; i < navText.length; i++) {
-  navText[i].style = 'color:green';
-}
