@@ -46,9 +46,12 @@ navLinks[5].addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
-console.log(logoImg);
 logoImg.addEventListener("mouseenter", (event) => {
   console.log("Mouse is over picture");
+});
+
+logoImg.addEventListener("mouseleave", (event) => {
+  console.log("Mouse is not over picture");
 });
 
 window.addEventListener("keyup", (event) => {
