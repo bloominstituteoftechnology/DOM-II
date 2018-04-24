@@ -96,13 +96,13 @@ document.querySelector('nav').style.backgroundColor = 'green'
 window.addEventListener('resize', () => {
   console.log("resized!")
 });
-
+//----
 let awesome = document.querySelector('.cta-text').getElementsByTagName('h1')[0]
 let button = document.querySelector('.cta-text').getElementsByTagName('button')[0]
 awesome.addEventListener('mouseover', () => {
   console.log("Ain' it?")
 })
-
+//----
 var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 var currentIndex = 0;
 
@@ -114,6 +114,18 @@ button.addEventListener('click', () => {
       currentIndex = 0;
     }
   }, 1000);
+})
+
+//----
+let inter = {};
+let codeImage = document.querySelector('#cta-img')
+codeImage.addEventListener('mouseover', () => {
+  console.log(inter)
+  window.clearInterval(inter[`${codeImage}`]);
+  inter[`${codeImage}`] = setInterval(function() {
+    codeImage.style.transform = "rotate(2520deg)"; 
+  }, 500);
+  codeImage.style.transform = 'rotate(0deg)'
 })
 
 

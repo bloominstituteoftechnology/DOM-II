@@ -104,7 +104,6 @@ header .logo {
     margin-top: 72px;
     justify-content: flex-end;
     transition: background-color 2s cubic-bezier(1, 1, 1, 1);
-	transition-delay: 0s;
 }
 
 .cta .cta-text {
@@ -126,6 +125,10 @@ header .logo {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.cta #cta-img {
+    transition: transform 3s;
 }
 
 .cta .cta-text button:hover {
