@@ -99,7 +99,7 @@ let firstNav = document.createElement("A");
 firstNav.innerHTML = "First";
 navNav.prepend(firstNav);
 
-//*************** window Event Listener ****************
+//******************* Event Listener *******************
 
 //********************* Wheel **************************
 window.addEventListener('wheel', () => {
@@ -107,25 +107,25 @@ window.addEventListener('wheel', () => {
 
 })
 
-//********************* Double Click ********************
-button.addEventListener('dblclick', () => {
+//********************* Double Click *******************
+ctaOther[0].addEventListener('dblclick', () => {
     event.target.style.border = "75px solid black"
     alert("How dare you double click me!!!")
 })
 
-//********************* Mouseenter **********************
+//********************* Mouseenter *********************
 
 let logoImg = document.getElementById("logo-img");
 logoImg.addEventListener("mouseenter", () => {
     event.target.style.border = "2px solid black";
 });
 
-//*********************** Resize *************************
+//*********************** Resize ***********************
 
 window.addEventListener("resize", () => {
     alert("Still trying to navigate this page huh?")
 })
-//*********************** Click *************************
+//*********************** Click ************************
 
 ctaOther.addEventListener("click", () => {
     ctaOther.innerHTML = siteContent["cta"]["button"];
