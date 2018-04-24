@@ -1,4 +1,5 @@
 const startButton = document.getElementById("start-button");
 const ctaText = document.getElementById("big-text");
-console.log(ctaText);
-startButton.addEventListener("click", () => ctaText.setAttribute("style", "color:red"));
+const colors = ["red", "blue", "orange", "green", "purple", "yellow", "aqua", "pink"]
+
+startButton.addEventListener("click", () => TweenLite.to(ctaText, 1, {color:colors[Math.floor(Math.random() * colors.length)]}));
