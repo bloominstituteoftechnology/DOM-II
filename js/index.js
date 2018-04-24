@@ -41,10 +41,10 @@ const siteContent = {
 let logoImg = document.getElementById("logo-img");
 logoImg.setAttribute("src", "img/logo.png");
 
-// Event Listener: Click
+// Event Listener: Double Click
 
-logoImg.addEventListener('click', () => {
-  alert("This is not a link!")
+logoImg.addEventListener('dblclick', () => {
+  alert("Sorry, this is not a link!")
 }); 
 
 // IMAGES
@@ -54,6 +54,16 @@ headerImage.setAttribute("src", "img/header-img.png")
 
 let middleImage = document.getElementById("middle-img");
 middleImage.setAttribute("src", "img/mid-page-accent.jpg")
+
+// Event Listener: Double Click
+
+headerImage.addEventListener('dblclick', () => {
+  alert("Sorry, this is not a link!")
+});
+
+middleImage.addEventListener('dblclick', () => {
+  alert("Sorry, this is not a link!")
+});
 
 // NAVIGATION
 
@@ -99,11 +109,17 @@ contact.addEventListener('mouseover', () => {
 
 // CTA
 
-let h1Message = document.getElementsByTagName("h1")[0];
-h1Message.innerHTML = "DOM Is Awesome";
+let ctaText = document.getElementsByTagName("h1")[0];
+ctaText.innerHTML = "DOM Is Awesome";
 
 let button = document.getElementsByTagName("button")[0];
 button.innerHTML = "Get Started";
+
+// Event Listener: Double Click
+
+ctaText.addEventListener('dblclick', () => {
+  alert("Sorry, this is not a link!")
+});
 
 // Event Listener: Click
 
