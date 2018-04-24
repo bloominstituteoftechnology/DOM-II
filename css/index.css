@@ -47,6 +47,7 @@ table {
 	border-spacing: 0;
 }
 
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
@@ -160,6 +161,12 @@ header .logo {
 .main-content .bottom-content p {
     padding-right: 20px;
 }
+
+.main-content .bottom-content .form h3 {
+    text-align: center;
+    color: green;
+}
+
 
 /* Contact Styles */
 
@@ -296,4 +303,12 @@ footer {
     .contact {
         margin: 20px;
     }
+}
+
+
+
+/* js styles */
+
+.btnHover {
+    transform: skew(10deg);
 }

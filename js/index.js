@@ -37,6 +37,48 @@ const siteContent = {
   },
 };
 
+// // scroll
+// let scrl = document.getElementsByClassName('top-content');
+
+// window.addEventListener('scroll', function() {
+
+//   if (this.scrollTop > 0) {
+//     alert("hi")
+//   }
+
+// });
+let head3 = document.querySelector("h3");
+head3.addEventListener('select', function() {
+  alert('you found me!');
+});
+
+//focus
+let formed = document.querySelector("form");
+formed.addEventListener("focus", function( event ) {
+  event.target.style.background = "lightgreen";    
+}, true);
+
+//blur
+formed.addEventListener("blur", function( event ) {
+  event.target.style.background = "";    
+}, true);
+
+//contextmenu
+formed.addEventListener("contextmenu", () => {alert('User Name Here')});
+
+//keydown
+document.addEventListener('keydown', (e) => {
+  const keyName = e.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+})
+
+// mouseover
+let hey = document.getElementById('cta-img');
+hey.addEventListener("mouseenter", (e) => {logo.setAttribute('src', 'img/hey.png');});
+
+//doubleclick
+let dbl = document.querySelector('.middle-img')
+dbl.addEventListener("dblclick", () => {alert('Stop Poking Me!!')});
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -63,6 +105,7 @@ navBar[4].innerHTML = "Features";
 navBar[5].innerHTML = "About";
 navBar[6].innerHTML = "Contact";
 // end nav
+//start CTA
 
 let headerImg = document.querySelector("#cta-img");
 headerImg.setAttribute('src', siteContent['cta']['img-src']);
@@ -75,6 +118,13 @@ headerOne.style.color = "green";
 
 let btn = document.querySelector("button")
 btn.innerHTML = "Get Started";
+//mouseover / click
+btn.addEventListener('mouseover', () => {
+  btn.classList.add("btnHover") //mouseover
+  });
+  btn.addEventListener('click', () => {  //click
+  headerImg.setAttribute('src', "img/What.png")
+  });
 // end CTA
 
 let middleImg = document.querySelector("#middle-img");
