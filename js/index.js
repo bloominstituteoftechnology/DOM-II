@@ -101,3 +101,7 @@ email.innerHTML = "sales@greatidea.io";
 
 let footer = document.getElementsByTagName("p")[9];
 footer.innerHTML = "Copyright Great Idea! 2018";
+
+window.addEventListener("resize", ()=>{
+  alert("woah...")
+})
