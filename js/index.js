@@ -117,23 +117,6 @@ window.addEventListener('wheel',() =>{
 alert("weeeee!!!")
 })
 
-document.getElementById("myBtn").addEventListener("click", displayDate);
-
-function displayDate() {
-    document.getElementById("dateEvent").innerHTML = Date();
-}
-let featuresH4 = document.getElementsByTagName("h4")[0];
-featuresH4.addEventListener("mouseenter", function(event){
-  event.target.style.color = "pink";
-  setTimeout(function() {
-    event.target.style.color = "";
-}, 700);
-}, false);
-
-let aboutH4 = document.getElementsByTagName("h4")[1];
-aboutH4.addEventListener("mouseover", function(event){
-  event.target.style.color = "purple";
-  setTimeout(function() {
-    event.target.style.color = "";
-}, 700);
-}, false);
+window.addEventListener('mousemove',() =>{
+alert("!!!!!")
+})
