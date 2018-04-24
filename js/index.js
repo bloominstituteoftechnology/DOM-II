@@ -152,10 +152,12 @@ textContents.forEach(x => {
 window.addEventListener('click', (event) => {
   console.log('click');
 
-  let editContentEle = document.querySelectorAll('.edit-content');
-  
-  editContentEle.forEach(x => {
-    let staticEle = createNewElement('p', x.innerHTML, '');
-    x.parentNode.replaceChild(staticEle, x);
-  });
+  if(event.target.className !== 'edit-content'){
+    let editContentEle = document.querySelectorAll('.edit-content');
+
+    editContentEle.forEach(x => {
+      let staticEle = createNewElement('p', x.value, '');
+      x.parentNode.replaceChild(staticEle, x);
+    });
+  }
 });
