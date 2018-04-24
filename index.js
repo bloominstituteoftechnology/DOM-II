@@ -144,7 +144,7 @@ const siteContent = {
   let topElements = document.querySelector(".top-content")
 
   topElements.addEventListener('mouseover', (event) => {
-   // topElements.style.background = "lavender"; 
+   // topElements.style.background = "lavender";
     event.target.parentElement.classList.add("highlighted");
 
   })
@@ -153,11 +153,23 @@ const siteContent = {
 
     event.target.parentElement.classList.remove("highlighted");
 
-  })   
-
-
+  })
 
   ctaTextButton.addEventListener('click', () => {
     alert("You clicked the button! Good job!")
+  });
 
-  })
+window.addEventListener('scroll', () => {
+  container.classList.toggle("black");
+});
+
+ctaImage.addEventListener('mouseover', (event) => {
+  event.target.classList.add("enlarge");
+
+})
+
+ctaImage.addEventListener('mouseout', (event) => {
+
+  event.target.classList.remove("enlarge");
+
+})
