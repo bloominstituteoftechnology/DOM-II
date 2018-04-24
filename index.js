@@ -173,3 +173,18 @@ ctaImage.addEventListener('mouseout', (event) => {
   event.target.classList.remove("enlarge");
 
 })
+
+emphasize = function(e){
+    if (e.target.classList.contains("emphasized")){
+      e.target.classList.remove("emphasized");
+      return; 
+    }
+    e.target.classList.add("emphasized");
+}
+
+let events = ["mouseover", "mouseout"];
+events.map(function(e) {
+    navBar.addEventListener(e, emphasize);
+})
+// navBar.addEventListener("mouseover", emphasize);
+// navBar.addEventListener("mouseout", emphasize);

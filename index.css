@@ -101,6 +101,10 @@ header nav a {
 	height: 100%;
 }
 
+.emphasized {
+    font-size: 25px;
+}
+
 header nav a:hover {
     text-decoration: underline;
     color: black;
