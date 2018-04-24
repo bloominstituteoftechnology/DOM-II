@@ -11,16 +11,29 @@ for (let i = 0; i < document.getElementsByClassName('blocks')[0].children.length
 
 // When a block is clicked, it should go to the top of the stack
 // holds current value of flex order at the time of a 'click' event
-let order = 0;
-// event
-const move = () => {
-    // decrement order: (-) orders will move to the top of the main-axis
-    // default order is 0 for all blocks
-	order--;
-	event.target.style.order = order.toString();
-}
+// let order = 0;
+// // event
+// const move = () => {
+//     // decrement order: (-) orders will move to the top of the main-axis
+//     // default order is 0 for all blocks
+// 	order--;
+// 	event.target.style.order = order.toString();
+// }
 
-// creates event listener on click for all blocks
-for (let i = 0; i < blockClsList.length; i++) {
-	document.querySelector('.'+blockClsList[i]).addEventListener('click', move);
+// // creates event listener on click for all blocks
+// for (let i = 0; i < blockClsList.length; i++) {
+// 	document.querySelector('.'+blockClsList[i]).addEventListener('click', move);
+// }
+
+// ======================  Travelers  =========================
+
+const moveRight = (event) => {
+    let marginPX = 10;
+    window.setInterval(function () {
+        // when margin is smaller than 300
+        if (marginPX < 300) {
+            marginPX++;
+            event.target.style.marginLeft = marginPX + 'px';
+        }
+    }, 5);
 }
