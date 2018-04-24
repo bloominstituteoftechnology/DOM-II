@@ -105,3 +105,7 @@ footer.innerHTML = "Copyright Great Idea! 2018";
 window.addEventListener("resize", ()=>{
   alert("woah...")
 })
+
+window.addEventListener('wheel',() =>{
+alert("weeeee!!!")
+})
