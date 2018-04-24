@@ -137,7 +137,3 @@ aboutH4.addEventListener("mouseover", function(event){
     event.target.style.color = "";
 }, 700);
 }, false);
-
-/*let ProductH4 = document.getElementsByTagName("h4")[3];
-aboutH4.addEventListener("mouseover", function(event){
-  event.target.style.fontsize = 50px;*/
