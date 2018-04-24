@@ -37,8 +37,6 @@ const siteContent = {
   },
 };
 
-// let cont = document.getElementsByClassName('container');
-
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -127,44 +125,53 @@ navLinkOne[7].style.color = 'green';
 //   // });
 // });
 
-//Used click event
+// Event 1: Used click event
 navLinkOne[0].addEventListener('click', () => {
   navLinkOne[0].style.color = 'red';
 });
 
+// Event 2: Used keyup event
 navLinkOne[1].addEventListener('keyup', () => {
   alert('I have been released!');
 });
 
-// Used keydown event
+// Event 3: Used keydown event
 navLinkOne[2].addEventListener('keydown', () => {
   alert('I have been selected!');
 });
 
-// Used keydown event
+// Event 4: Used keydown event
 navLinkOne[3].addEventListener('auxclick', () => {
   navLineOne[3].style.color = 'teal';
 });
 
-//Used dblclick event
+// Event 5: Used dblclick event
 navLinkOne[4].addEventListener('dblclick', () => {
   navLinkOne[4].style.color = 'orange';
 });
 
-// navLineOne[5].addEventListener('drag', event {
-//   event.target.style.backgroundColor = 'blue';
-// });
-
-// cont.addEventListener("resize", () => {
-//   cont.style.background = "purple";
-// });
-
-//Used mouseover event
+// Event 6: Used mouseover event
 navLinkOne[7].addEventListener('mouseover', () => {
   navLinkOne[7].style.color = 'blue';
 });
 
-//Used mouseleave event
+// Event 7: Used mouseleave event
 navLinkOne[7].addEventListener('mouseleave', () => {
   navLinkOne[7].style.color = 'green';
+});
+
+// Event 8: Used drag event
+mainHeader[0].addEventListener('drag', () => {
+  mainHeader[0].style['color'] = 'pink';
+});
+
+// Event 9: Used resize event
+const test = document.querySelector("#test");
+window.addEventListener('resize', () => {
+  test.style['background-color'] = 'purple';
+});
+
+// Event 10: Used scroll event
+window.addEventListener('scroll', () => {
+  test.style['background-color'] = 'green';
 });
