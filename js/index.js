@@ -36,15 +36,6 @@ const siteContent = {
     "copyright": "Copyright Great Idea! 2018"
   },
 };
-// naive implementation of bootstrap framework
-// const newLink = document.createElement('link')
-// const bla = document.querySelector("head");
-// bla.insertBefore(newLink, bla.childNodes[0]);
-// let oldLing = document.querySelectorAll("link")
-// oldLing[0].setAttribute('rel', 'stylesheet');
-// oldLing[0].setAttribute('integrity', 'sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4');
-// oldLing[0].setAttribute('crossorigin', 'anonymous');
-// oldLing[0].setAttribute('href', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css');
 
 // Inclusion of bootstrap framework
 const bla = document.querySelector("head");
@@ -132,21 +123,6 @@ for (let i = 0; i < textContent.length; i++) {
 let middleImg = document.querySelector("#middle-img");
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
-// Naive Solution:
-// let topContent = document.querySelector(".top-content")
-// topContent.children[0].firstElementChild.innerHTML = siteContent["main-content"]["features-h4"];
-// topContent.children[0].lastElementChild.innerHTML = siteContent["main-content"]["features-content"];
-// topContent.children[1].firstElementChild.innerHTML = siteContent["main-content"]["about-h4"];
-// topContent.children[1].lastElementChild.innerHTML = siteContent["main-content"]["about-content"];
-
-// let bottomContent = document.querySelector(".bottom-content")
-// bottomContent.children[0].firstElementChild.innerHTML = siteContent["main-content"]["services-h4"];
-// bottomContent.children[0].lastElementChild.innerHTML = siteContent["main-content"]["services-content"];
-// bottomContent.children[1].firstElementChild.innerHTML = siteContent["main-content"]["product-h4"];
-// bottomContent.children[1].lastElementChild.innerHTML = siteContent["main-content"]["product-content"];
-// bottomContent.children[2].firstElementChild.innerHTML = siteContent["main-content"]["vision-h4"];
-// bottomContent.children[2].lastElementChild.innerHTML = siteContent["main-content"]["vision-content"];
-
 // !Main-Content
 
 // Contact-Content
@@ -161,11 +137,82 @@ contactBody[2].innerHTML = siteContent["contact"]["email"]
 let footer = document.querySelector("footer")
 footer.innerHTML = siteContent["footer"]["copyright"];
 
+// Start DOM - II 
+// 10 unique event-listeners 
 
-// let topContent2h = document.querySelector(".text-content p");
-// topContent.innerHTML = "jbaoifoiasdjf";
+let ctaImg = document.querySelector(".cta img")
+let ctaTxt = document.querySelector(".cta h1")
+let ctaDiv = document.querySelector(".cta-text")
+let ctaDivM = document.querySelector(".cta")
+let navBar = document.querySelectorAll("a")
 
-//Stretch goals
-// ctaHeading[0].lastElementChild.addEventListener("click", () => {
-//   alert("FILTHY BUTTONCLICKER!")
-// })
+document.addEventListener('copy', () => {
+  alert("GOT YOU! STOP STEALING MY SHIT!")
+})
+
+ctaImg.addEventListener("mouseover", () => {
+  TweenMax.from(ctaImg, 2, {
+    marginRight: 200,
+    // ease: SlowMo.ease.config(0.8, 0.8, false),
+  })
+  // ctaImg.style = "visibility: hidden";
+  // setTimeout(() => {
+  //   ctaImg.removeAttribute("style");
+  // }, 800)
+})
+
+ctaTxt.addEventListener("dblclick", () => {
+  TweenMax.from(".box", 6, {
+    marginLeft: 800,
+    backgroundColor: "black",
+    ease: SlowMo.ease.config(0.7, 0.7, false),
+    rotation: 360
+  });
+  ctaDivM.style.justifyContent = "center"
+  ctaTxt.style.fontSize = "20rem"
+  ctaImg.style.display = "none"
+  ctaDiv.style.margin = "0px"
+})
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+});
+
+document.addEventListener('contextmenu', (event) => {
+  alert('NO NO NO NO!');
+});
+
+document.addEventListener('wheel', (event) => {
+  alert('WroomWroom');
+});
+
+document.addEventListener('dragstart', (event) => {
+  alert('Leave that where it is my friend, I will find it!');
+});
+
+document.addEventListener('dragend', (event) => {
+  alert(`Lucky you, I would've gotten you!`);
+});
+
+document.addEventListener('resize', (event) => {
+  alert(`STOOP, I'm not sure if breakpoints work!! :(`);
+}, false);
+
+for (let index = 0; index < navBar.length; index++) {
+  navBar[index].addEventListener("mouseup", () => {
+    navBar[index].setAttribute("disabled", "")
+  })
+}
+let specialVar = document.querySelector(".contact")
+let logoV = document.querySelector(".logo")
+window.onload = function () {
+  TweenMax.from(specialVar, 2, {
+    marginLeft: 800,
+    ease: SlowMo.ease.config(0.7, 0.7, false),
+  })
+  TweenMax.from(logoV, 2, {
+    marginRight: 400,
+    // ease: SlowMo.ease.config(0.8, 0.8, false),
+  })
+}
