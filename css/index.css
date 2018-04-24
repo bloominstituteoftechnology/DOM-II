@@ -306,6 +306,34 @@ footer {
     color: green;
 }
 
+.go-blue{
+    color: blue;
+}
+
 .skew{
    transform: skew(10deg, 10deg); 
+}
+
+.norm{
+    color: black;
+    transform: none;
+}
+
+.scale-up{
+    transform: scale(1.5);
+    margin-left: 250px;
+}
+
+.font-change{
+    font-size: 26px;
+    color: purple;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.copy{
+    color: red;
+    font-size: 20px;
 }
