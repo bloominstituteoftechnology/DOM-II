@@ -106,22 +106,54 @@ let footer = document.querySelector("footer");
 footer.innerHTML = siteContent["footer"]["copyright"];
 
 
-/*-----------Events--------------
-let myContainer = document.querySelector('.container');
-let myContent = document.querySelector('.content');
-
-let myButton = document.querySelector('.custom-button');
+/*-----------Events--------------*/
+let myButton = document.querySelector('button');
 let myHeading = document.querySelector('h1');
+let myNav = document.querySelector('nav');
 let myAnchor = document.querySelector('a');
+let myContact = document.querySelector('.contact');
+let myCtaImg = document.querySelector('#cta-img');
+let myFooter = document.querySelector('footer');
+let myLogo = document.querySelector('#logo-img');
+let myMiddle = document.querySelector('#middle-img');
 
-myAnchor.addEventListener('click', (e) => {
-  // Do something!  
-  e.preventDefault();
+myButton.addEventListener('click', (event) => {
+    alert("This is an alert!");
 });
 
-// //console.log(myButton.innerHTML)
+myCtaImg.addEventListener('dblclick',(event) => {
+    myCtaImg.style.display = 'none';
+});
 
-myContainer.addEventListener('click', (event) => {
-  // Do something!  
-  console.log("I am container");
-});*/
+myContact.addEventListener('drag',(event) => {
+    alert("This is such a drag.");
+});
+
+myAnchor.addEventListener('contextmenu', (event) => {
+    myNav.style.backgroundColor = 'black';
+});
+
+myLogo.addEventListener('mouseleave', (event) => {
+    alert("Leaving so soon?");
+});
+
+myLogo.addEventListener('mouseenter', (event) => {
+    alert("Welcome!");
+});
+
+myFooter.addEventListener('cut',(event) => {
+    myFooter.style.border = '3px red solid';
+});
+
+myFooter.addEventListener('copy',(event) => {
+    myMiddle.style.display = 'none';
+});
+
+myMiddle.addEventListener('auxclick',(event) => {
+    myMiddle.style.opacity = 0.25;
+});
+
+myHeading.addEventListener('mousemove',(event) => {
+    myHeading.style.transform = 'rotate(30deg)';
+});
+
