@@ -1,26 +1,22 @@
 let logo = document.querySelector('#logo-img');
 
-// let button = document.querySelector('.btn');
+logo.addEventListener('mouseover', (event) => {
+    event.currentTarget.classList.add('skew');
+});
 
-// console.log(button);
-// console.log(logo);
+let button = document.querySelector('.btn');
 
-// button.addEventListener('click', (event) => {
-//     console.log('You pressed the button!');
-// });
+button.addEventListener('dblclick', (event) => {
+    event.currentTarget.classList.add("go-green", 'skew');
+    console.log('You pressed the button!');
+});
 
-// let mainHeader = document.querySelector('.dom-text');
+let mainHeader = document.querySelector('.dom-text');
 
-
-
-// console.log(button);
-// console.log(mainHeader.innerHtml);
-
-
-// mainHeader.addEventListener('click', (event) => {
-//     event.currentTarget.classList.add("go-green");
-//     console.log('You clicked the header!');
-// });
+mainHeader.addEventListener('click', (event) => {
+    event.currentTarget.classList.add("go-green");
+    console.log('You clicked the header!');
+});
 
 window.addEventListener('contextmenu', () => {
     console.log("context!")
