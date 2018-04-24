@@ -42,12 +42,12 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
-//************************** Task 1 & 2 *******************************
+//************************** Task  *******************************
 
 let navLinks = document.querySelectorAll("nav a");
 navLinks.forEach((element, i) => {
     element.innerHTML = siteContent["nav"]["nav-item-" + (i + 1)];
-    element.style = "color: blue" //this is the first part of task 3
+    element.style = "color: blue"
 })
 
 let ctaH1 = document.querySelectorAll(".cta-text h1");
@@ -91,8 +91,6 @@ contactMain[2].innerHTML = siteContent["contact"]["email"]
 let footer = document.querySelector("footer")
 footer.innerHTML = siteContent["footer"]["copyright"];
 
-//************************** Task 3 *******************************
-
 let lastNav = document.createElement("A");
 lastNav.innerHTML = "Last";
 let navNav = document.querySelector("nav");
@@ -100,3 +98,36 @@ navNav.appendChild(lastNav);
 let firstNav = document.createElement("A");
 firstNav.innerHTML = "First";
 navNav.prepend(firstNav);
+
+//*************** window Event Listener ****************
+
+//********************* Wheel **************************
+window.addEventListener('wheel', () => {
+    alert("I guess you'll have to find another way down the page(Cant Scroll)")
+
+})
+
+//********************* Double Click ********************
+button.addEventListener('dblclick', () => {
+    event.target.style.border = "75px solid black"
+    alert("How dare you double click me!!!")
+})
+
+//********************* Mouseenter **********************
+
+let logoImg = document.getElementById("logo-img");
+logoImg.addEventListener("mouseenter", () => {
+    event.target.style.border = "2px solid black";
+});
+
+//*********************** Resize *************************
+
+window.addEventListener("resize", () => {
+    alert("Still trying to navigate this page huh?")
+})
+//*********************** Click *************************
+
+ctaOther.addEventListener("click", () => {
+    ctaOther.innerHTML = siteContent["cta"]["button"];
+    alert("Stop in the name of Love!")
+})
