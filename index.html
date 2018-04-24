@@ -57,7 +57,7 @@
             <img class="middle-img" id="middle-img" src="" alt="Image of code snippets across the screen">
 
             <div class="bottom-content">
-                <div class="text-content">
+                <div class="text-content"  draggable="true">
                     <h4></h4>
                     <p></p>
                 </div>
@@ -70,7 +70,7 @@
                     <p></p>
                 </div>
                 <div class="form">
-                    <h3>Log in</h3>
+                    <h3 class="head3">Log in</h3>
                         <form id="form">
                                   <input type="text" placeholder="User Name">
                                   <input type="password" placeholder="Password">
@@ -89,6 +89,15 @@
             <p></p>
 
             <p></p>
+
+            <div class="dropzone"> 
+                    <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> 
+                      Drag Me
+                    </div> 
+                  </div> 
+                  <div class="dropzone"></div>
+                  <div class="dropzone"></div> 
+                  <div class="dropzone"></div>
 
         </section>
 

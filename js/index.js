@@ -47,10 +47,56 @@ const siteContent = {
 //   }
 
 // });
-let head3 = document.querySelector("h3");
-head3.addEventListener('select', function() {
-  alert('you found me!');
-});
+
+
+// drag
+let dragged = document.getElementById("draggable");
+document.addEventListener("drag", function( event ) {
+
+}, false);
+document.addEventListener("dragstart", function( event ) {
+  dragged = event.target;
+  event.target.style.opacity = .5;
+}, false);
+
+document.addEventListener("dragend", function( event ) {
+  // reset the transparency
+  event.target.style.opacity = "";
+}, false);
+
+document.addEventListener("dragover", function( event ) {
+  // prevent default to allow drop
+  event.preventDefault();
+}, false);
+
+
+document.addEventListener("dragenter", function( event ) {
+  // highlight potential drop target when the draggable element enters it
+  if ( event.target.className == "dropzone" ) {
+      event.target.style.background = "green";
+  }
+
+}, false);
+
+document.addEventListener("dragleave", function( event ) {
+  // reset background of potential drop target when the draggable element leaves it
+  if ( event.target.className == "dropzone" ) {
+      event.target.style.background = "";
+  }
+
+}, false);
+
+document.addEventListener("drop", function( event ) {
+  // prevent default action (open as link for some elements)
+  event.preventDefault();
+  // move dragged elem to the selected drop target
+  if ( event.target.className == "dropzone" ) {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild( dragged );
+      event.target.appendChild( dragged );
+  }
+
+}, false);
 
 //focus
 let formed = document.querySelector("form");
