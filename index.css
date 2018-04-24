@@ -91,6 +91,10 @@ header nav a {
     background-color: yellow;
 }
 
+.highlighted {
+    background-color: lavender;
+}
+
 .show {
     font-size: 1.5em;
 }

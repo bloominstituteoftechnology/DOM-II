@@ -138,3 +138,26 @@ const siteContent = {
   }
 
   navBar.addEventListener("click", oneContent);
+
+
+
+  let topElements = document.querySelector(".top-content")
+
+  topElements.addEventListener('mouseover', (event) => {
+   // topElements.style.background = "lavender"; 
+    event.target.parentElement.classList.add("highlighted");
+
+  })
+
+  topElements.addEventListener('mouseout', (event) => {
+
+    event.target.parentElement.classList.remove("highlighted");
+
+  })   
+
+
+
+  ctaTextButton.addEventListener('click', () => {
+    alert("You clicked the button! Good job!")
+
+  })
