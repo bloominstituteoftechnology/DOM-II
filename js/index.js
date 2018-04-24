@@ -158,7 +158,20 @@ let logoChange = document.getElementsByTagName('h1');
 logoChange[0].addEventListener('click', () => {
 logoChange[0].style.color = 'red';
 });
+
+
+//seventh event
+let textColorChange = document.getElementsByTagName('p');
+textColorChange[0].addEventListener('dblclick', () => {
+textColorChange[0].style.color = 'blue';
+});
   
+//eigth event
+let contactColorChange = document.querySelector('.contact');
+contactColorChange.addEventListener('dblclick', () => {
+contactColorChange.style.color = 'orange';
+});
+
 
 
 
