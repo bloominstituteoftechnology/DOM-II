@@ -40,6 +40,8 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// DOM I Assignment 
+
 // ## Task 1: Create selectors to point your data into elements
 //  * Create selectors by using any of the DOM element's methods
 //  * Note that IDs have been used on all images.  Use the IDs to update src path content
@@ -182,11 +184,20 @@ window.addEventListener('load', () => {
   alert('Prepare to be amazed by another Lambda School project!')
 })
 
-// 9. 
+// 9. on window scroll background color of container will change
+
+let pageContainer = document.querySelector('.container')
+
+window.addEventListener('scroll', () => {
+  pageContainer.style.backgroundColor = "violet"
+});
 
 
+// 10. Upon double clicking anywhere in the document the background will turn white
 
-
+document.addEventListener('dblclick', () => {
+    pageContainer.style.backgroundColor = "white";
+});
 
 // * Using the 10 unique events, find ways to update the DOM in creative ways.  For example you could change colors, animate objects, remove objects, etc.
 
