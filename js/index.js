@@ -38,40 +38,47 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
- logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 
 
 
 //nav bar
+let navBar = document.querySelectorAll("nav");
 
-let navBar = document.getElementsByTagName('a');
-navBar[0].innerText = siteContent.nav["nav-item-1"];
-navBar[1].innerText = siteContent.nav["nav-item-2"];
-navBar[2].innerText = siteContent.nav["nav-item-3"];
-navBar[3].innerText = siteContent.nav["nav-item-4"];
-navBar[4].innerText = siteContent.nav["nav-item-5"];
+//nav link
 
-//nav bar color change
-navBar[0].style.color = "green";
-navBar[1].style.color = "green";
-navBar[2].style.color = "green";
-navBar[3].style.color = "green";
-navBar[4].style.color = "green";
-navBar[5].style.color = "green";
+let navLink = document.getElementsByTagName('a');
+navLink[0].innerText = siteContent.nav["nav-item-1"];
+navLink[1].innerText = siteContent.nav["nav-item-2"];
+navLink[2].innerText = siteContent.nav["nav-item-3"];
+navLink[3].innerText = siteContent.nav["nav-item-4"];
+navLink[4].innerText = siteContent.nav["nav-item-5"];
+navLink[5].innerText = siteContent.nav["nav-item-6"];
+
 
 // append 'About' to nav bar
 let node = document.createElement("a");
 let textNode = document.createTextNode("About");
 node.appendChild(textNode);
-navBar[5].appendChild(node);
+navBar[0].appendChild(node);
 
 //prepend 'Info' to nav bar
 let node2 = document.createElement("a");
 let textNode2 = document.createTextNode("Info");
 node2.prepend(textNode2);
 navBar[0].prepend(node2);
+
+//nav bar color change
+navLink[0].style.color = "green";
+navLink[1].style.color = "green";
+navLink[2].style.color = "green";
+navLink[3].style.color = "green";
+navLink[4].style.color = "green";
+navLink[5].style.color = "green";
+navLink[6].style.color = "green";
+navLink[7].style.color = "green";
 
 //cta
 let ctaH1 = document.getElementsByTagName("h1");
@@ -106,6 +113,34 @@ pElements[5].innerHTML = siteContent.contact.address;
 pElements[6].innerHTML = siteContent.contact.phone;
 pElements[7].innerHTML = siteContent.contact.email;
 pElements[8].innerHTML = siteContent.footer.copyright; 
+
+
+// DOM-II code
+
+// event one button changes to time on click
+let button1 = document.querySelector('button');
+
+button1.addEventListener('click', () => {
+  //button1.style.backgroundColor = "blue";
+  button1.innerHTML = Date();
+  button1.style.height = '100px';
+  button1.style.backgroundColor = "Aqua";
+
+});
+
+//second event
+logo.addEventListener('click', () => {
+  alert("It's great you're here!")
+ });
+
+
+let c = document.getElementById("middle-img");
+c.addEventListener('mouseover', () => {
+//let ctx = c.getContext("2d");
+ctx.rotate(20*Math.PI/180);
+ctx.fillRect(50,20,100,50);
+});
+
 
 
 
