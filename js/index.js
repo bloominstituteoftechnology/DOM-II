@@ -107,6 +107,8 @@ navItems[7].style.color = 'green';
 let customButton = document.querySelector("button");
 let ctaHeader = document.querySelector("h1");
 let ctaImg = document.querySelector("#cta-img");
+let navLogo = document.querySelector("img");
+let middleImg = document.getElementById("middle-img")
 //Listeners
 
 customButton.addEventListener('click', () => {
@@ -119,4 +121,16 @@ ctaImg.addEventListener('mouseover', () => {
 
 ctaImg.addEventListener('mouseout', () => {
   ctaImg.style.visibility = "visible";
+});
+
+navLogo.addEventListener('contextmenu', () => {
+  alert('Nice try!');
+});
+
+middleImg.addEventListener('dblclick', () => {
+  prompt("What are you doing to me?", "Just checking if this works...");
+});
+
+window.addEventListener("load", function(event) {
+  alert("All resources finished loading!")
 });
