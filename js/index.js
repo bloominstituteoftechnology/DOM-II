@@ -3,28 +3,44 @@ let getStartedBtn = document.querySelector(".cta-text button")
 let getStartedBtnText = document.querySelector(".cta-text .post-button")
 let iLaughAtYourFeatures = document.querySelectorAll(".top-content .text-content")[0];
 let ctaImg = document.getElementById("cta-img");
+let iLaughAtYourAbout = document.querySelectorAll(".top-content .text-content")[1];
 
 
 // iLaughAtYourFeatures.firstElementChild.innerHTML = 'test'
 iLaughAtYourFeatures.firstElementChild.addEventListener('mouseover' , () => {
   iLaughAtYourFeatures.firstElementChild.innerHTML = 'All your Features are worthless'
   ctaImg.setAttribute('src', "img/nope.jpg")
+  iLaughAtYourAbout.style = 'background: white; color: black;'
+})
+
+iLaughAtYourAbout.addEventListener('mouseout' , () => {
+  iLaughAtYourAbout.style = 'background: black; color: red;'
+  
 })
 
 getStartedBtn.addEventListener('click', () => {
   getStartedBtnText.innerHTML = Date() + ` is the day you clicked the button.  You stay in Wonderland, and see how deep the rabbit hole goes. Remember, all I'm offering is the truth!`
 },);
 
-
+window.addEventListener('contextmenu', (e)=>{
+  alert("You can't do that!");
+  e.preventDefault();
+})
 
 window.addEventListener('copy', (e) => {
   e.clipboardData.setData('text/plain', 'do not copy my stuff');
   e.preventDefault();
 },);
 
+window.addEventListener("resize", (e)=>{
+  alert("WHAT ARE YOU DOING TO ME!!!");
+  
+})
 
-
-
+window.addEventListener('wheel',(e) =>{
+  alert("hahahahahahahahahahahahahahahahahahahahahahahahahahahahah");
+  // e.preventDefault();
+})
 
 
 // this is all DOM-1 work
