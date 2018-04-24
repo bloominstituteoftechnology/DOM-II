@@ -35,31 +35,31 @@ const siteContent = {
       "copyright" : "Copyright Great Idea! 2018"
     },
   };
-  
+
   // Example: Update the img src for the logo
   let logo = document.getElementById("logo-img");
   logo.setAttribute('src', siteContent["nav"]["img-src"]);
-  
+
   // create an element for contact in navbar
   let navContact = document.createElement("A");
   navContact.innerHTML = "Contact";
   navContact.setAttribute("href", "#");
-  
+
   // get navbar element
   let navBar = document.querySelector("nav");
-  
+
   // remove blank a tag from navbar
   navBar.removeChild(navBar.children[5]);
-  
+
   // add contact to end of navbar
   navBar.appendChild(navContact);
-  
+
   // create element for home in navbar and add to beginning of navbar
   let navHome = document.createElement("A");
   navHome.innerHTML = "Home";
   navHome.setAttribute("href", "#");
   navBar.prepend(navHome);
-  
+
   // get necessary elements from DOM
   let nav = document.querySelectorAll("a");
   let cta = document.querySelector('.cta');
@@ -76,56 +76,64 @@ const siteContent = {
   let vision = bottomContent[2];
   let contact = document.querySelector('.contact');
   let footer = document.querySelector('footer');
-  
+
   let navContent = Object.values(siteContent["nav"]);
   navContent.pop() // remove img from list
   navContent.forEach((item, index) => {nav[index+1].innerHTML = item});
-  
+
   // make CTA text have new line for each word
   ctaTextH1.innerHTML = siteContent["cta"]["h1"].split(' ').join('<br>');
   ctaTextButton.innerHTML = siteContent["cta"]["button"];
   ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
-  
+
   features.firstElementChild.innerHTML = siteContent["main-content"]["features-h4"];
   features.lastElementChild.innerHTML = siteContent["main-content"]["features-content"];
-  
+
   about.firstElementChild.innerHTML = siteContent["main-content"]["about-h4"];
   about.lastElementChild.innerHTML = siteContent["main-content"]["about-content"];
-  
+
   middleImage.setAttribute('src',siteContent["main-content"]["middle-img-src"]);
-  
+
   services.firstElementChild.innerHTML = siteContent["main-content"]["services-h4"];
   services.lastElementChild.innerHTML = siteContent["main-content"]["services-content"];
-  
+
   product.firstElementChild.innerHTML = siteContent["main-content"]["product-h4"];
   product.lastElementChild.innerHTML = siteContent["main-content"]["product-content"];
-  
+
   vision.firstElementChild.innerHTML = siteContent["main-content"]["vision-h4"];
   vision.lastElementChild.innerHTML = siteContent["main-content"]["vision-content"];
-  
+
   const contactInfo = contact.children;
   const contactSource = Object.values(siteContent["contact"])
   for (let i=0; i<contactInfo.length; i++) {
     contactInfo[i].innerHTML = contactSource[i];
   }
-  
+
   footer.firstElementChild.innerHTML = siteContent["footer"]["copyright"];
-  
+
   // color navbar green
   nav.forEach((item) => {item.style.color = "green"});
-  
+
   // make site fluid
   let container = document.querySelector(".container");
   container.style.width = "100%";
   container.style.maxWidth = "880px";
-  
+
   // functions for testing event listeners
   function popUp() {
     alert("you pushed the button");
   }
-  
-  function changeBackground() { 
+
+  function changeBackground() {
     cta.classList.toggle("yellow");
   }
-  
+
   ctaTextButton.addEventListener("click", changeBackground);
+
+  // DOM-II
+
+  nav[4].addEventListener("click", () => {
+    features.style.background = "yellow";
+    features.setAttribute("id", "Features");
+    nav[4].href = "#Features";
+  });
