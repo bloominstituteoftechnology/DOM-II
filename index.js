@@ -18,12 +18,12 @@ for (let i = 0; i < document.getElementsByClassName('blocks')[0].children.length
 //     // default order is 0 for all blocks
 // 	order--;
 // 	event.target.style.order = order.toString();
-// }
+// };
 
 // // creates event listener on click for all blocks
 // for (let i = 0; i < blockClsList.length; i++) {
 // 	document.querySelector('.'+blockClsList[i]).addEventListener('click', move);
-// }
+// };
 
 // ======================  Travelers  =========================
 
@@ -52,4 +52,9 @@ const moveBack = (event) => {
             event.target.style.marginLeft = marginPX + 'px';
         }
     }, 5);
-}
+};
+
+// sets event listeners for mouseup on all blocks
+for (let i = 0; i < blockClsList.length; i++) {
+    document.querySelector('.' + blockClsList[i]).addEventListener('mouseup', moveBack);
+};
