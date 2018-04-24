@@ -109,6 +109,7 @@ let ctaHeader = document.querySelector("h1");
 let ctaImg = document.querySelector("#cta-img");
 let navLogo = document.querySelector("img");
 let middleImg = document.getElementById("middle-img")
+let pText = document.querySelectorAll("p");
 //Listeners
 
 customButton.addEventListener('click', () => {
@@ -133,4 +134,26 @@ middleImg.addEventListener('dblclick', () => {
 
 window.addEventListener("load", function(event) {
   alert("All resources finished loading!")
+});
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+});
+
+document.addEventListener('copy', function(e){
+  e.clipboardData.setData('text/plain', `Careful, we're getting into some crazy stuff here!`);
+  e.clipboardData.setData('text/html', `<b>Careful, we're getting into some crazy stuff here!</b>`);
+  e.preventDefault(); // We want our data, not data from any selection, to be written to the clipboard
+});
+
+
+window.addEventListener('resize', () => {
+  ctaImg.style.display = "none";
+  navLogo.style.display = "none";
+  middleImg.style.display = "none";
+});
+
+middleImg.addEventListener('mouseenter', () => {
+  customButton.style.color = "blue";
 });
