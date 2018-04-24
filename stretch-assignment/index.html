@@ -6,13 +6,35 @@
   </head>
   <body>
     <script defer="defer" src="./index.js"></script>
-
     <div class="blocks">
+      <div class="gameOver">Game Over</div>
       <div class="block block--red"></div>
       <div class="block block--blue"></div>
       <div class="block block--green"></div>
       <div class="block block--pink"></div>
       <div class="block block--gray"></div>
+      
+    </div>
+    <div id="board">
+      <div><h2>Catch Me If You Can</h2><p>(Click circle to earn point!)</p></div>
+      <div id="control">
+        <button id="play">Play</button>
+        <button id="giveup">Give Up</button>
+      </div>
+      <div>
+        <div class="point">
+          <h1>Point</h1>
+          <h1 id="point"></h1>
+        </div>
+        <div class="timer">
+          <h1>Timer</h1>
+          <h1 id="time"></h1>
+        </div>
+      </div>
+    </div>
+    <div id="media">
+      <audio src="./shoot.wav" id="shoot"></audio>
+      <audio src="./hover.mp3" id="hover"></audio>
     </div>
   </body>
 </html>

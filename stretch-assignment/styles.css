@@ -4,33 +4,73 @@ body {
 }
 
 .blocks {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
+  width: 600px;
+  height: 600px;
+  /* margin-top: 5%; */
+  border: 1px solid grey
 }
 
 .block {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
+  transition:2s;
+  -webkit-transition:2s;
+  -moz-transition:2s;
+  position:absolute;
+  left: 10px;
+  border-radius: 50%;
 }
 
 .block--red {
   background-color: red;
+  bottom:100px;
 }
 
 .block--blue {
   background-color: blue;
+  bottom: 200px;
 }
 
 .block--green {
-  background-color: green;
+  background-color: green; 
+  bottom: 300px;
 }
 
 .block--pink {
   background-color: pink;
+  bottom: 400px;
 }
 
 .block--gray {
   background-color: gray;
+  bottom: 500px;
+}
+
+h1 {
+  font-size: 2em
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.point, .timer {
+  padding: 50px;
+  border: 1px solid grey
+}
+
+.media {
+  display: hidden;
+}
+
+.gameOver {
+  display: none;
+  font-size: 4em;
+  color: red;
+  width: 100%;
+  text-align: center;
 }
