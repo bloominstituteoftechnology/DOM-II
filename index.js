@@ -120,7 +120,6 @@ button.addEventListener('click', () => {
 let inter = {};
 let codeImage = document.querySelector('#cta-img')
 codeImage.addEventListener('mouseover', () => {
-  console.log(inter)
   window.clearInterval(inter[`${codeImage}`]);
   inter[`${codeImage}`] = setInterval(function() {
     codeImage.style.transform = "rotate(2520deg)"; 
@@ -128,7 +127,35 @@ codeImage.addEventListener('mouseover', () => {
   codeImage.style.transform = 'rotate(0deg)'
 })
 
+// ---
 
+let ctaText = document.querySelector('.top-content')
+ctaText.addEventListener('click', () => {
+  ctaText.style.width = '50%'
+})
 
+// ----
 
+ctaText.addEventListener('dblclick', () => {
+  ctaText.style.width = '100%'
+})
 
+// ===
+
+let ctaTextBottom = document.querySelector('.bottom-content')
+ctaTextBottom.addEventListener('mouseover', () => {
+  ctaTextBottom.style.transform = 'rotate(180deg)'
+})
+
+//---
+
+ctaTextBottom.addEventListener('mouseleave', () => {
+  ctaTextBottom.style.transform = 'rotate(0deg)'
+})
+
+//----
+
+let phone = document.querySelector('.contact').children[2]
+phone.addEventListener('click', () => {
+  phone.style.fontSize = '80px'
+})
