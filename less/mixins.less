@@ -1,0 +1,103 @@
+// Mixins below variables
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 		@opacity;
+}
+
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+
+.rotate (@deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: 	 rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+	-o-transform: 		 rotate(@deg);
+}
+
+.skew (@deg, @deg2) {
+	-webkit-transform:       skew(@deg, @deg2);
+	-moz-transform: 	 skew(@deg, @deg2);
+	-ms-transform: 		 skew(@deg, @deg2);
+	-o-transform: 		 skew(@deg, @deg2);
+}
+
+.text-button (@width: 30px, @height: 30px, @background: green, @percentage-color: 20%) {
+	width: @width;
+	height: @height;
+	background: @background;
+	&:hover {
+		background: darken(@background, @percentage-color);
+		color: lighten(@background, @percentage-color);
+	}
+}
+
+//declare namespace with two mixins
+#my-namespace {
+	h1 {
+		background: mediumspringgreen;
+		.square(@param) {
+	  		width: @param;
+	  		height: @param;
+		}
+		.color(@color) {
+	  		color: @color;
+		}
+  	}	
+}
+
+#lambda-style() {
+	.button {
+	  width: 200px;
+	  text-align: center;
+	  padding: 20px;
+	  display: block;
+	  border: 1px solid black;
+	  background-color: grey;
+	  &:hover {
+		background-color: white
+	  }
+	}// button
+	
+	.button2 {
+	  width: 500px;
+	  text-align: center;
+	  padding: 20px;
+	  display: block;
+	  border: 1px solid black;
+	  background-color: green;
+	  &:hover {
+		background-color: white
+	  }
+	}// button
+  }
+/*
+  
+  .box {
+	//use the namespace
+	#ns > .square(10px);
+	#ns .color(#ff00ff);
+  }     
+  Compiles to:
+  
+  .box {
+	width: 10px;
+	height: 10px;
+	color: #ff00ff;
+  }
+
+  */

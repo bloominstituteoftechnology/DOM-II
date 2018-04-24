@@ -1,0 +1,51 @@
+// Header Styles
+
+header {
+    width: 100%;
+    display: flex;
+  
+    @media @tablet {
+      flex-direction: column;
+    }
+
+    @media @phone {
+      margin-top: 30px;
+    }
+
+    nav {
+      margin-top: 40px; 
+      width: 610px;
+      justify-content: space-between;
+      display: flex;
+
+      @media @tablet {
+        width: 100%;
+        margin-top: 30px;
+        justify-content: space-around;
+      }
+      @media @phone {
+          flex-direction: column; 
+          align-items: center;  
+      }
+      a {
+        text-decoration: none;
+        color: #b0b0b0;
+  
+        &:hover {
+            color: white;
+            background: @some-color;
+  
+        }
+      }
+    }
+  
+    .logo {
+        align-self: flex-end;
+        margin: 28px 0 0 91px;
+        @media @tablet {
+          order: -1;
+          align-self: center;
+          margin: 45px 0 0 0;
+      }
+    }
+  }// header 
