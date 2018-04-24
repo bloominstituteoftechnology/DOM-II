@@ -129,7 +129,7 @@ contactPs.item(2).textContent = contactContent.email;
 /**
  * Selectors to <footer>
  */
-console.log(document.querySelector('footer'));
+// console.log(document.querySelector('footer'));
 document.querySelector('footer').innerHTML = `<p>${siteContent.footer.copyright}</p>`;
 
 
@@ -156,7 +156,7 @@ nav.appendChild(newA);
  * STRETCH GOALS
  */
 /** UPDATE STYLES */
-console.log(ctaButton);
+// console.log(ctaButton);
 ctaButton.style.cssText = 'background-color: aqua; border-radius: 2rem;';
 contact.style.cssText = `display: flex; flex-direction: column;`
 
@@ -165,7 +165,7 @@ contact.style.cssText = `display: flex; flex-direction: column;`
  * toggle 'display: none' on random <div.text-content> Elements
  */
 const allContent = topTextContent.concat(bottomTextContent);
-console.log(allContent);
+// console.log(allContent);
 function toggleMainContent () {
   const randomNode = Math.floor(Math.random()*allContent.length);
   const item = allContent[randomNode];
@@ -177,14 +177,21 @@ ctaButton.addEventListener('click', toggleMainContent);
 
 /**
  * DOM-II ASSIGMENT CODE
+ * ADD 10 Event Listeners
  */
 let body = document.querySelector('.body');
 let bodyContainer = document.querySelector('.container');
 let bodyHtml = bodyContainer.innerHTML;
-console.log(bodyHtml);
+// console.log(bodyHtml);
+/** A mix with 'ofline' and 'online' that hide contend and display new one according to available internet conection */
+// 1. 'ofline' event.
 bodyContainer,addEventListener('offline', () => {
   bodyContainer.classList.add('offline');
 })
+// 2. 'online' event.
 bodyContainer,addEventListener('online', () => {
   bodyContainer.classList.remove('offline');
 })
+
+/** DOMContentLoaded : Alert && console.log the time the DOM takes to get loaded */
+// 3. 'DOMContentLoaded' ALERT: The code was added in <head> of the index.html file.

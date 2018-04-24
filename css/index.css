@@ -332,9 +332,6 @@ footer {
   }
 }
 /** OWN STYLES */
-.offline {
-  display: none;
-}
 .off-container {
   display: flex;
   flex-direction: column;
@@ -347,4 +344,7 @@ footer {
 }
 .off-container img {
   max-width: 90%;
+}
+.offline {
+  display: none;
 }

@@ -9,7 +9,17 @@
 
   <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
+  <script>
+    /** DOMContentLoaded : alert the time the DOM takes to get loaded */
+    // 3. 'DOMContentLoaded'
 
+    const start = Date.now();
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const elapse = Date.now() - start;
+        console.log(`${event.type} in ${elapse/1000} sg`);
+        alert(`${event.type} in ${elapse/1000} sg`);
+    });
+  </script>
   
 </head>
 
@@ -87,7 +97,7 @@
         </footer>
 
     </div><!-- container -->
-    <div class="offline container off-container">
+    <div class="container off-container offline">
         <h2>You just run out off internet conection</h2>
         <h4>Do not worry, we'll beback as soon as your conection is back.</h4>
         <img src="img/senal-fuera-de-servicio.jpg" alt="">
