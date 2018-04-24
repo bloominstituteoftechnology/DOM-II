@@ -40,55 +40,55 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+//EventListener 1
+logo.addEventListener('click', () => {
+  alert("It's great you're here!")
+});
+
 
 //nav bar
-let navBar = document.getElementsByTagName("nav");
+let navBar = document.querySelectorAll("nav")[0];
 
-//nav link
-let navLink = document.getElementsByTagName('a');
-navLink[0].innerText = siteContent.nav["nav-item-1"];
-navLink[1].innerText = siteContent.nav["nav-item-2"];
-navLink[2].innerText = siteContent.nav["nav-item-3"];
-navLink[3].innerText = siteContent.nav["nav-item-4"];
-navLink[4].innerText = siteContent.nav["nav-item-5"];
-navLink[5].innerText = siteContent.nav["nav-item-6"];
+//nav links
+let nav = siteContent.nav;
+let keys = Object.keys(nav);
+let values = Object.values(nav);
+
+for (let i = 0; i < keys.length; i++) {
+  if (keys[i].includes("nav")) {
+    navBar.children[i].innerHTML = values[i];
+    navBar.children[i].className = keys[i];
+  }
+}
 
 //prepend
 let newLink = document.createElement("a");
 let textNode = document.createTextNode("Home");
 newLink.appendChild(textNode);
-navBar[0].prepend(newLink);
+navBar.prepend(newLink);
 
 //append
 let newLink2 = document.createElement("a");
 let textNode2 = document.createTextNode("Sign In");
 newLink2.appendChild(textNode2);
-navBar[0].appendChild(newLink2);
+navBar.appendChild(newLink2);
 
 //color change
-navLink[0].style.color = "green";
-navLink[1].style.color = "green";
-navLink[2].style.color = "green";
-navLink[3].style.color = "green";
-navLink[4].style.color = "green";
-navLink[5].style.color = "green";
-navLink[6].style.color = "green";
-navLink[7].style.color = "green";
+let navLinks = document.querySelectorAll("a");
+navLinks.forEach((i) => {i.style.color = "green"});
+
+//EventListener 2
 
 
 
-//cta
-let ctaH1 = document.querySelectorAll("h1");
-ctaH1[0].innerText = siteContent.cta.h1;
-// ctaH1.forEach(i => {
-//     if (letter === ' ') return letter = '<br></br>';
-// });
-let linebreak = document.createElement("br");
-ctaH1.forEach(element => { 
-  for(let i = 0; i < element.length; i++) {
-     if(i === ' ') return linebreak; 
-    }
-  });
+//----------CTA----------//
+let ctaH1 = document.querySelector("cta-text h1");
+ctaH1.innerText = siteContent.cta.h1.split(' ').join('<br>');
+
+// // make CTA text have new line for each word
+// ctaTextH1.innerHTML = siteContent["cta"]["h1"].split(' ').join('<br>');
+// ctaTextButton.innerHTML = siteContent["cta"]["button"];
+// ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let ctaButton = document.getElementsByTagName("button");
 ctaButton[0].innerText = siteContent.cta.button;
@@ -98,6 +98,12 @@ ctaImg.setAttribute('src', siteContent.cta['img-src']);
 
 let midPageImg = document.getElementById("middle-img");
 midPageImg.setAttribute('src', siteContent['main-content']["middle-img-src"]);
+//Event Listener
+let imgDisapear = document.getElementById("middle-img");
+imgDisapear.addEventListener('mouseout', () => {
+  imgDisapear.style.display = 'none';
+});
+
 
 // h4 elements
 let hFourElements = document.getElementsByTagName('h4');
