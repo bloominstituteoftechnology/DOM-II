@@ -1,45 +1,19 @@
-# DOM II
-
-Topics:
- * Events
- * The Event Object
- * Event Handlers
-  * click
-  * mousedown
-  * mouseup
-  * scroll
-  * keydown
+# DOM II - Event exploration
 
 ## Objectives
- * Manipulate the DOM in response to user events using JavaScript
- * Use event listeners to handle events
+ * Explore the many events available to you by using this reference: https://developer.mozilla.org/en-US/docs/Web/Events
+ * Create custom events to manipulate the DOM
 
-## Beginning Project
- * You can open your `index.html` file in your browser to see your work, but you may also work in codepen.io first if you'd like
- * All your work will be done in `index.js`
- * Make sure to read both the `index.html` and `styles.css` files so that you know what you're working with
- * Organization of your code in `index.js` will be up to you. There will be suggestions provided later in the day
+## Project Setup
+ * Use yesterday's project as your base for today's project.
+ * You can update the HTML/CSS/JS for this project.
 
-## Project Description
- You will have two separate commits for this lab
+## Task: Create Event Listeners
+ * Create 10 unique event listeners based on the reference file in the objective.  
+ * Using the 10 unique events, find ways to update the DOM in creative ways.  For example you could change colors, animate objects, remove objects, etc.
 
- rockets:
-  * When a block is clicked, it should go to the top of the stack.
+## Stretch Task:
+ * Go look at GSAP: https://greensock.com/ and implement the animations found in that library with your custom events.
 
- travelers:
-  * While a mouse is clicked down on a box, it should move to the right (It should coninuously move, there is no limit on how far it will go).
-  
-## Stretch Goals
-  
-  Rockets:
-    
-  * Animate the rockets, visually show them being transported to the top.
-  
-  Travellers:
-    
-  * Give the traveller a limit on the distance it can travel.
-  * When the mouse button is released, it should travel back to its original position.
-  * A mouse down that occurs during a transition back to the original position should send it traveling to the right again  from it's current position.
-    
-
- You will again be using `window.setInterval`. For this method, and any of those listed in the "Topics" section of this README, you are encouraged to use MDN as your resource for Documentation. MDN can be challenging to consume at first, so you may also use something like W3schools if the MDN documentation on a given subject is a bit too complicated.
+## Stretch assignment
+ * Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
