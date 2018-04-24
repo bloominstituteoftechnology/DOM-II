@@ -124,8 +124,9 @@ const siteContent = {
     alert("you pushed the button");
   }
 
-  function changeBackground() {
-    cta.classList.toggle("yellow");
+  function changeBackground(e) {
+    const navItem = document.getElementById(e.target.innerHTML);
+    navItem.classList.toggle("show");
   }
 
   ctaTextButton.addEventListener("click", changeBackground);
@@ -137,3 +138,6 @@ const siteContent = {
     features.setAttribute("id", "Features");
     nav[4].href = "#Features";
   });
+
+
+  navBar.addEventListener("click", changeBackground);
