@@ -128,6 +128,7 @@ const siteContent = {
   // add eventListeners
   let myButton = document.querySelector('.custom-button');
   
+  // cta
   ctaBut.addEventListener('click', () => {
     ctaText.classList.toggle('resizedText', true);
   });
@@ -142,10 +143,12 @@ const siteContent = {
     ctaImg.classList.toggle('transformBack', true)
   })
   
-  // topContentImg.addEventListener('resize', () => {
-  //   TweenLite.to(element, 2, {rotation:"1.25rad", skewX:"30deg"});
-  // })
-  
+  ctaText.addEventListener('auxclick', () => {
+    TweenMax.to(ctaText, 2, 
+    {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
+  })
+    
+  // main content
   window.addEventListener('keydown', () => {
     TweenMax.from(".middle-img", 6, {
       marginButtom:800,
@@ -169,10 +172,5 @@ const siteContent = {
   
   document.addEventListener('scroll', () => {
     TweenMax.to([bottomContentP, bottomContentPSecond, bottomContentPThird, logo], 1,
-       {opacity:1.5, rotation:1440});
-  })
-  
-  ctaText.addEventListener('auxclick', () => {
-    TweenMax.to(ctaText, 2, 
-    {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
+       {opacity:1.5, rotation:720});
   })
