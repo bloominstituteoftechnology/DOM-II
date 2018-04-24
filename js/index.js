@@ -173,7 +173,11 @@ contactColorChange.style.color = 'orange';
 });
 
 
-
+//nineth event
+let footerSizeChange = document.querySelector('footer');
+footerSizeChange.addEventListener('dblclick', () => {
+footerSizeChange.style.fontSize = '100px';
+});
 
 
 
