@@ -54,7 +54,9 @@ navLink[0].innerText = siteContent.nav["nav-item-1"];
 navLink[1].innerText = siteContent.nav["nav-item-2"];
 navLink[2].innerText = siteContent.nav["nav-item-3"];
 navLink[3].innerText = siteContent.nav["nav-item-4"];
-navLink[4].innerText = siteContent.nav["nav-item-5"];
+navLink[5].innerText = siteContent.nav["nav-item-5"];
+//navLink[5].innerText = siteContent.nav["nav-item-5"];
+
 
 
 
@@ -62,7 +64,7 @@ navLink[4].innerText = siteContent.nav["nav-item-5"];
 let node = document.createElement("a");
 let textNode = document.createTextNode("About");
 node.appendChild(textNode);
-navBar[0].appendChild(node);
+navLink[4].appendChild(node);
 
 //prepend 'Info' to nav bar
 let node2 = document.createElement("a");
@@ -121,7 +123,6 @@ pElements[8].innerHTML = siteContent.footer.copyright;
 let button1 = document.querySelector('button');
 
 button1.addEventListener('click', () => {
-  //button1.style.backgroundColor = "blue";
   button1.innerHTML = Date();
   button1.style.height = '100px';
   button1.style.backgroundColor = "Aqua";
@@ -145,8 +146,19 @@ imgShrink.addEventListener('mouseout', () => {
 imgShrink.style.height = '150px';
 });
 
+//fifth event
+let textChange = document.getElementsByTagName('h4');
+textChange[0].addEventListener('click', () => {
+  textChange[0].style.fontSize = "300px";
+});
 
 
+//sixth event
+let logoChange = document.getElementsByTagName('h1');
+logoChange[0].addEventListener('click', () => {
+logoChange[0].style.color = 'red';
+});
+  
 
 
 
