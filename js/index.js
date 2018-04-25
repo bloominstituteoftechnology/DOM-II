@@ -66,9 +66,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
 
-document.querySelector("h1").innerHTML = siteContent.cta.h1;
+let ctaText = document.querySelector("h1");
+ctaText.innerHTML = siteContent.cta.h1;
 
-document.querySelector("button").innerHTML = siteContent.cta.button;
+let button = document.querySelector("button")
+button.innerHTML = siteContent.cta.button;
 
 
 //Main Content
@@ -91,7 +93,7 @@ middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
 
 //Contact
-contentTitles[5].innerHTML = siteContent["contact"]["contact-h4"];
+// contentTitles[5].innerHTML = siteContent["contact"]["contact-h4"];
 
 contentText[5].innerHTML = siteContent["contact"]["address"];
 contentText[6].innerHTML = siteContent["contact"]["phone"];
@@ -100,3 +102,38 @@ contentText[7].innerHTML = siteContent["contact"]["email"];
 
 //Footer
 contentText[8].innerHTML = siteContent["footer"]["copyright"];
+
+
+// CTA Event Listeners
+
+//Change ctaText red on mouseover ctaImg
+ctaImg.addEventListener('mouseover', () => {
+  ctaText.style.color = 'red';
+});
+
+//Change ctaImg purple on mouseover middleImg
+middleImg.addEventListener('mouseover', () => {
+  ctaText.style.color = 'purple';
+});
+
+//Window alert on CTA button
+button.addEventListener('click', ()=> {
+  window.alert('Greensock is also Amazeballs!')
+});
+
+//Change Contact into Button dropdown toggle
+document.getElementById("myBtn").onclick = function() {myFunction()};
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+//Keydown to make Body Red
+let body = document.querySelector("body");
+body.addEventListener("keydown", () => {
+  body.style.backgroundColor = "red";
+  });
+
+  //Keyup to make body white again because red is hard on the eyes lol
+  body.addEventListener("keyup", () => {
+    body.style.backgroundColor = "white";
+    });  
