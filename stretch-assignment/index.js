@@ -1,7 +1,7 @@
-// Selector for our Cubes
+// // Selector for our Cubes
 let boxes = document.querySelectorAll(".block")
 
-// Rocket:
+// //Rocket:
 
 // let order = 0;
 // for (let i = 0; i < boxes.length; i++) {
@@ -11,9 +11,10 @@ let boxes = document.querySelectorAll(".block")
 //     })
 // }
 
-// travelers
+// Travelers
 
-// Declared variables for our setInterval functions
+// Declared variables
+// for our setInterval functions
 let myVar = ""
 let travelBackVar = ""
 
@@ -34,6 +35,9 @@ for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener('mousedown', (event) => {
         clearTravelBack()
         myVar = setInterval(function () {
+            if (marginLeft >= 399) {
+                ClearTravel()
+            }
             marginLeft++
             boxes[i].style.marginLeft = `${marginLeft}px`;
         }, 10)
