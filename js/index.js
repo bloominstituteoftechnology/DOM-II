@@ -37,65 +37,54 @@ const siteContent = {
   },
 };
 
-// // scroll
-// let scrl = document.getElementsByClassName('top-content');
-
-// window.addEventListener('scroll', function() {
-
-//   if (this.scrollTop > 0) {
-//     alert("hi")
-//   }
-
-// });
-
+// GSAP
+TweenMax.to("nav", 2.5, { ease: SlowMo.ease.config(0.1, 0.7, false), x: -182 });
+TweenMax.to(".logo", 2.5, { ease: SlowMo.ease.config(0.1, 0.7, false), x: 698 });
+TweenMax.to("#cta-img", 2.5, {rotation:360});
 
 // drag
 let dragged = document.getElementById("draggable");
 document.addEventListener("drag", function( event ) {
-
 }, false);
+
+// dragstart
 document.addEventListener("dragstart", function( event ) {
   dragged = event.target;
   event.target.style.opacity = .5;
 }, false);
 
+//dragend
 document.addEventListener("dragend", function( event ) {
-  // reset the transparency
   event.target.style.opacity = "";
 }, false);
 
+// drag over
 document.addEventListener("dragover", function( event ) {
-  // prevent default to allow drop
   event.preventDefault();
 }, false);
 
-
+//dragenter
 document.addEventListener("dragenter", function( event ) {
-  // highlight potential drop target when the draggable element enters it
   if ( event.target.className == "dropzone" ) {
       event.target.style.background = "green";
   }
-
 }, false);
 
+//dragleave
 document.addEventListener("dragleave", function( event ) {
-  // reset background of potential drop target when the draggable element leaves it
   if ( event.target.className == "dropzone" ) {
       event.target.style.background = "";
   }
-
 }, false);
 
+// drop
 document.addEventListener("drop", function( event ) {
-  // prevent default action (open as link for some elements)
   event.preventDefault();
-  // move dragged elem to the selected drop target
   if ( event.target.className == "dropzone" ) {
       event.target.style.background = "";
       dragged.parentNode.removeChild( dragged );
       event.target.appendChild( dragged );
   }
-
 }, false);
 
 //focus
@@ -118,13 +107,22 @@ document.addEventListener('keydown', (e) => {
   alert('keydown event\n\n' + 'key: ' + keyName);
 })
 
-// mouseover
-let hey = document.getElementById('cta-img');
-hey.addEventListener("mouseenter", (e) => {logo.setAttribute('src', 'img/hey.png');});
+// mouseenter / mouseleave
+
+let heyT = document.querySelector('.logo');
+heyT.addEventListener('mouseleave', (e) => {heyT.classList.toggle("heyToggle")})
+heyT.addEventListener('mouseenter', (e) => {heyT.classList.toggle("heyToggle")})
+
 
 //doubleclick
 let dbl = document.querySelector('.middle-img')
 dbl.addEventListener("dblclick", () => {alert('Stop Poking Me!!')});
+
+//submit button 
+btn2 = document.querySelector(".buttonSubmit")
+btn2.addEventListener('click', () => {  //click
+  alert('I will never submit!');
+  });
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -151,6 +149,7 @@ navBar[4].innerHTML = "Features";
 navBar[5].innerHTML = "About";
 navBar[6].innerHTML = "Contact";
 // end nav
+
 //start CTA
 
 let headerImg = document.querySelector("#cta-img");
@@ -164,12 +163,14 @@ headerOne.style.color = "green";
 
 let btn = document.querySelector("button")
 btn.innerHTML = "Get Started";
+
 //mouseover / click
 btn.addEventListener('mouseover', () => {
-  btn.classList.add("btnHover") //mouseover
+  btn.classList.toggle("btnHover") //mouseover
   });
+  // btn.addEventListener('mouseleave', () => {btn.classList.add("btnHover2")});
   btn.addEventListener('click', () => {  //click
-  headerImg.setAttribute('src', "img/What.png")
+  headerImg.classList.toggle('whatToggle')
   });
 // end CTA
 

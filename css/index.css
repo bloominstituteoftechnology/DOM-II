@@ -95,7 +95,9 @@ header nav a:hover {
 
 header .logo {
     align-self: flex-end;
-    margin: 28px 0 0 91px;
+    justify-content: flex-start;
+    margin: 28px 0 0 0;
+    order: -1;
 }
 
 /* Call To Action (CTA) Styles */
@@ -198,7 +200,7 @@ footer {
     }
 
     header .logo {
-        order: -1;
+        /* order: -1; */
         display: block;
         margin: 30px auto 0;
     }
@@ -313,6 +315,10 @@ footer {
     transform: skew(10deg);
 }
 
+.btnHover2 {
+    transform: none;
+}
+
 .dropzone {
     display: flex;
     width: 220px;
@@ -329,4 +335,28 @@ footer {
     height: 20px;
     text-align: center;
     background: white;
+  }
+
+  .class1 {
+      height: 100px;
+  }
+
+  .class2 {
+      display: none;
+  }
+
+  .whatToggle {
+    content: url("../img/What.png");
+    width: 379px;
+  }
+
+  .buttonSubmit {
+      margin-top: 10px;
+
+  }
+
+  .heyToggle {
+      content: url("../img/hey.png");
+      width: 183px;
+      height: 36px;
   }
