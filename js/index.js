@@ -118,14 +118,28 @@ textContents.forEach(x => {
   // Event: Drag End
   x.addEventListener('dragend', (event) => {
     console.log('Drag end');
+    let dropAreas = document.querySelectorAll('.drop-area');
     event.target.classList.remove('active-drag-element');
     event.dataTransfer.clearData(); // Remove drag data
+    dropAreas.forEach(x => x.classList.remove('drop-area'));
+  });
+
+  // Event: Drag Enter -- provide visual cues during drag process
+  x.addEventListener('dragenter', (event) => {
+    console.log('Drag enter');
+    event.target.classList.add('drop-area');
   });
 
   // Event: Drag Over -- turns element into a drop zone
   x.addEventListener('dragover', (event) => {
     console.log('Drag over');
     event.preventDefault(); // Necessary to allow drop
+  });
+
+  // Event: Drag Leave -- provide visual cues during drag process
+  x.addEventListener('dragleave', (event) => {
+    console.log('Drag leave');
+    event.target.classList.remove('drop-area');
   });
 
   // Event: Drop -- turns element into a drop zone
