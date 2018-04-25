@@ -85,24 +85,21 @@ runImg.addEventListener('click', () => {
 
   TweenMax.from(".logo", 6, {
     marginLeft: 800,
-    backgroundColor: "black",
-    ease: SlowMo.ease.config(0.7, 0.7, false),
-    rotation: 360
-
+    ease: Circ.easeOut,
   });
 
 
   TweenMax.from("#cta-img", 6, {
     marginLeft: 800,
     backgroundColor: "white",
-    ease: SlowMo.ease.config(0.7, 0.7, false),
+    ease: Bounce.easeOut,
     rotation: 360
   });
 
   TweenMax.staggerTo("nav", 1, {
     rotation: 360,
     marginLeft: 0,
-    backgroundColor: "teal",
+    textColor: "green",
   });
 
 });
