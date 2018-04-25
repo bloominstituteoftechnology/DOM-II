@@ -82,7 +82,8 @@ let btnTag = document.getElementsByTagName("button");
 
 
 middleImag.addEventListener("mouseenter", function(){
-middleImag.style = "height: 50px";
+middleImag.style = "height: 200px";
+middleImag.style = "width: 600px";
 });
 
 let btn = ctaText.childNodes[3];
@@ -149,6 +150,15 @@ contact.childNodes[1].innerHTML = siteContent["contact"]["contact-h4"];
 contact.childNodes[3].innerHTML = siteContent["contact"]["address"];
 contact.childNodes[5].innerHTML = siteContent["contact"]["phone"];
 contact.childNodes[7].innerHTML = siteContent["contact"]["email"];
+
+contact.addEventListener("mousedown", function() { 
+  TweenLite.to(".contact", 2, {x: 75, y: 0, itemOrigin: "50% 50%"});
+
+  setTimeout(function() {
+    TweenLite.to(".contact", 2, {x: 0, y: 0, itemOrigin: "50% 50%"});  
+  }, 2000); 
+
+});
 
 let footer = document.getElementsByTagName("footer");
 footer[0].innerHTML = siteContent["footer"]["copyright"];
