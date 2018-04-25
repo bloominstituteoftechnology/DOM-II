@@ -6,7 +6,7 @@ const navContainer = document.getElementById("nav-container");
 
 
 window.addEventListener("click", (event) => {
-  TweenLite.to(ctaText, 2, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
+  TweenLite.to(ctaText, 2, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`});
 });
 
 
@@ -53,19 +53,19 @@ navLinks[3].addEventListener("click", (event) => {
 });
 
 navLinks[4].addEventListener("click", (event) => {
-  TweenMax.from(navLinks, 1, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
+  TweenMax.from(navLinks, 1, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`});
   event.stopPropagation();
 });
 
 navLinks[5].addEventListener("click", (event) => {
-  TweenMax.to(".text-content", 5, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`, scale: Math.random() + .5});
+  TweenMax.to(".text-content", 5, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`, scale: Math.random() + .5});
   event.stopPropagation();
 });
 
 logoImg.addEventListener("mouseenter", (event) => {
   TweenLite.to(logoImg, 10, {
     scale: Math.random() * 3 + 1,
-    background: `rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`,
+    background: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
     ease: Power1.easeOut
   });
 });
