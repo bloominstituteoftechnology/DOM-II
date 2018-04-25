@@ -69,6 +69,11 @@ h1, h2, h3, h4, h5 {
     font-weight:bold;
 }
 
+.blue{
+    font-size:small;
+    background-color:gray;
+}
+
 .container {
     width: 880px;
     margin: auto;
@@ -133,12 +138,11 @@ header .logo {
 }
 
 .cta .cta-text button:hover {
-    background: black;
-    color: white;
+    background: firebrick;
+    color: black;
 }
 
 .custom-button{
-    color:purple;
     font-family:'Times New Roman', Times, serif;
 }
 

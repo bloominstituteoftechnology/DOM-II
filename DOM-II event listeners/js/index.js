@@ -148,7 +148,7 @@ const siteContent = { //this is an object with properties and values.
   // });
 
 //1
-ctaBut.addEventListener('click', () => {
+ctaBut.addEventListener('mousedown', () => {
   console.log("I am Times Roman purple!");
   ctaBut.classList.add("custom-button");
 });
@@ -167,6 +167,20 @@ ctaText.addEventListener('mouseleave', () => {
 });
 //4
 visionHeadline.addEventListener('mousemove', () => {
-  console.log(`I'm a cat! My name is Marshmallow. I like mice.`)
+  console.log(`I'm a cat! My name is Marshmallow. I like to chase mice.`)
 })
+//5
+ctaBut.addEventListener('mouseup', () => {
+  alert("Are you sure you want to do that?!");
+  ctaBut.classList.remove("custom-button");
+});
 
+//6
+window.addEventListener("load", function(event) {
+  alert("All resources finished loading!");
+});
+
+//7
+navigator.addEventListener("dblclick", ()=> {
+navigator.classList.add("blue");
+});
