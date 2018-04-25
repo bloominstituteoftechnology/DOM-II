@@ -2,6 +2,7 @@ const startButton = document.getElementById("start-button");
 const ctaText = document.getElementById("big-text");
 const navLinks = Array.from(document.querySelectorAll(".nav"));
 const logoImg = document.getElementById("logo-img");
+const navContainer = document.getElementById("nav-container");
 
 
 window.addEventListener("click", (event) => {
@@ -32,6 +33,7 @@ navLinks[2].addEventListener("click", (event) => {
 
 navLinks[3].addEventListener("click", (event) => {
   console.log("I got clicked 4");
+
   event.stopPropagation();
 });
 
