@@ -8,6 +8,7 @@ let boxes = document.querySelectorAll(".block")
 //     boxes[i].addEventListener('click', () => {
 //         order--;
 //         boxes[i].style.order = order.toString();
+//         boxes[i].style.transition = "1s";
 //     })
 // }
 
@@ -18,7 +19,7 @@ let boxes = document.querySelectorAll(".block")
 let myVar = ""
 let travelBackVar = ""
 
-// Modular functions to end set Intervals
+// // Modular functions to end set Intervals
 function clearTravelBack() {
     clearInterval(travelBackVar);
 }
@@ -27,8 +28,8 @@ function ClearTravel() {
     clearInterval(myVar);
 }
 
-// For loop adding our event-listeners to the Cubes
-// Event mousedown to move right, mouseup to move left
+// // For loop adding our event-listeners to the Cubes
+// // Event mousedown to move right, mouseup to move left
 
 for (let i = 0; i < boxes.length; i++) {
     let marginLeft = 10;
