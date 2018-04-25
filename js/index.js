@@ -90,4 +90,19 @@ runImg.addEventListener('click', () => {
     rotation: 360
 
   });
+
+
+  TweenMax.from("#cta-img", 6, {
+    marginLeft: 800,
+    backgroundColor: "white",
+    ease: SlowMo.ease.config(0.7, 0.7, false),
+    rotation: 360
+  });
+
+  TweenMax.staggerTo("nav", 1, {
+    rotation: 360,
+    marginLeft: 0,
+    backgroundColor: "teal",
+  });
+
 });
