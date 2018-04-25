@@ -10,17 +10,46 @@ let boxes = document.querySelectorAll(".block")
 // }
 
 // travelers
-let marginLeft = 0;
 
+let myVar = ""
+let travelBackVar1 = ""
+let stateCountf = 0;
+let stateCountb = 0;
 for (let i = 0; i < boxes.length; i++) {
+    let marginLeft = 10;
     boxes[i].addEventListener('mousedown', (event) => {
-        let myVar = setInterval(function () {
+        clearVar()
+        myVar = setInterval(function () {
             marginLeft++
             boxes[i].style.marginLeft = `${marginLeft}px`;
         }, 10)
     })
+    boxes[i].addEventListener('mouseup', () => {
+        // travelBackVar = setInterval(function ())
+        clearInterval(myVar)
+        travelBackVar = setInterval(function () {
+            if (marginLeft === 10) {
+                clearVar()
+            }
+            marginLeft--
+            boxes[i].style.marginLeft = `${marginLeft}px`;
+        })
+    }, 20)
 }
+// boxes[i].addEventListener('mouseout', () => {
+//     // travelBackVar = setInterval(function ())
+//     if (marginLeft > 10) {
+//         travelBackVar = setInterval(function () {
+//             marginLeft--
+//             if (marginLeft === 10) {
+//                 clearInterval(travelBackVar);
+//             }
+//             boxes[i].style.marginLeft = `${marginLeft}px`;
+//         })
+//         clearInterval(myVar)
+//     }
+// })
 
-window.addEventListener('mouseup', () => {
-    clearInterval(myVar)
-})
+function clearVar() {
+    clearInterval(travelBackVar);
+}
