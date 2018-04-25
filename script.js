@@ -9,28 +9,27 @@ let vision = document.querySelectorAll('.vision');
 let features = document.querySelectorAll('.features');
 let about = document.querySelectorAll('.about');
 let contact = document.querySelectorAll('.contact');
-console.log(contact);
-
-// all text contents
-let textContent = document.querySelectorAll('.text-content');
+let reset = document.querySelectorAll('.reset');
 
 const resetBackground = function () {
-  // reset nav links
-  navLink.forEach(el => {
-    el.style.backgroundColor = 'initial';
-  })
-  // reset text content
-  textContent.forEach(el => {
-    el.style.backgroundColor = 'initial';
-  })
-  // reset contact
-  contact.forEach(el => {
+  // // reset nav links
+  // navLink.forEach(el => {
+  //   el.style.backgroundColor = 'initial';
+  // })
+  // // reset text content
+  // textContent.forEach(el => {
+  //   el.style.backgroundColor = 'initial';
+  // })
+  // // reset contact
+  // contact.forEach(el => {
+  //   el.style.backgroundColor = 'initial';
+  // })
+  reset.forEach(el => {
     el.style.backgroundColor = 'initial';
   })
 };
 
 const changeBackground = function (mainContent) {
-  console.log(mainContent);
   resetBackground();
   mainContent.forEach(el => {
     el.style.backgroundColor = 'yellow';
