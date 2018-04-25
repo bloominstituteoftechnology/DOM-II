@@ -4,30 +4,35 @@ let greenBox = document.querySelector('.block--green');
 let pinkBox = document.querySelector('.block--pink');
 let grayBox = document.querySelector('.block--gray');
 
-// TweenMax.from(redBox, 0.5, {
-//   opacity: 0,
-//   y: 500,
-// });
+TweenMax.from(redBox, 0.5, {
+  opacity: 0,
+  y: 500,
+  delay: 5.5,
+});
 
-// TweenMax.from(blueBox, 0.5, {
-//   opacity: 0,
-//   y: 500,
-// });
+TweenMax.from(blueBox, 0.5, {
+  opacity: 0,
+  y: 500,
+  delay: 5.5,
+});
 
-// TweenMax.from(greenBox, 0.5, {
-//   opacity: 0,
-//   y: 400,
-// });
+TweenMax.from(greenBox, 0.5, {
+  opacity: 0,
+  y: 400,
+  delay: 5.5,
+});
 
-// TweenMax.from(pinkBox, 0.5, {
-//   opacity: 0,
-//   y: 300,
-// });
+TweenMax.from(pinkBox, 0.5, {
+  opacity: 0,
+  y: 300,
+  delay: 5.5,
+});
 
-// TweenMax.from(grayBox, 0.5, {
-//   opacity: 0,
-//   y: 200,
-// });
+TweenMax.from(grayBox, 0.5, {
+  opacity: 0,
+  y: 200,
+  delay: 5.5,
+});
 //Pure JS, completely customizable preloader from GreenSock.
 //Once you create an instance like var preloader = new GSPreloader(), call preloader.active(true) to open it, preloader.active(false) to close it, and preloader.active() to get the current status. Only requires TweenLite and CSSPlugin (https://www.greensock.com/gsap/)
 var preloader = new GSPreloader({
@@ -266,21 +271,21 @@ blueBox.addEventListener('click', () => {
 });
 
 redBox.addEventListener('mouseover', () => {
-  redBox.innerHTML = ' ';
+  redBox.innerHTML = 'Try to Click me (-:';
 });
 
 blueBox.addEventListener('mouseover', () => {
-  blueBox.innerHTML = ' ';
+  blueBox.innerHTML = 'Try to Click me (-:';
 });
 
 greenBox.addEventListener('mouseover', () => {
-  greenBox.innerHTML = ' ';
+  greenBox.innerHTML = 'Try to Click me (-:';
 });
 
 pinkBox.addEventListener('mouseover', () => {
-  pinkBox.innerHTML = ' ';
+  pinkBox.innerHTML = 'Try to Click me (-:';
 });
 
 grayBox.addEventListener('mouseover', () => {
-  grayBox.innerHTML = ' ';
+  grayBox.innerHTML = 'Try to Click me (-:';
 });
