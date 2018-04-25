@@ -35,7 +35,7 @@ navLinks[0].addEventListener("click", (event) => {
 });
 
 navLinks[1].addEventListener("click", (event) => {
-  TweenMax.to(navLinks, 2, {rotation:0, ease:RoughEase.ease});
+  TweenMax.from(navLinks, .5, {rotation:360});
   event.stopPropagation();
 });
 
