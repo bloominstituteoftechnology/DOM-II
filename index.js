@@ -146,13 +146,10 @@ const siteContent = {
   topElements.addEventListener('mouseover', (event) => {
    // topElements.style.background = "lavender";
     event.target.parentElement.classList.add("highlighted");
-
   })
 
   topElements.addEventListener('mouseout', (event) => {
-
     event.target.parentElement.classList.remove("highlighted");
-
   })
 
   ctaTextButton.addEventListener('click', () => {
@@ -160,24 +157,22 @@ const siteContent = {
   });
 
 window.addEventListener('scroll', () => {
-  container.classList.toggle("black");
+  container.classList.add("black");
+  setTimeout(() => {container.classList.remove("black")}, 1000);
 });
 
 ctaImage.addEventListener('mouseover', (event) => {
   event.target.classList.add("enlarge");
-
-})
+});
 
 ctaImage.addEventListener('mouseout', (event) => {
-
   event.target.classList.remove("enlarge");
-
 })
 
 emphasize = function(e){
-    if (e.target.classList.contains("emphasized")){
+    if (e.target.classList.contains("emphasized")) {
       e.target.classList.remove("emphasized");
-      return; 
+      return;
     }
     e.target.classList.add("emphasized");
 }
@@ -185,6 +180,11 @@ emphasize = function(e){
 let events = ["mouseover", "mouseout"];
 events.map(function(e) {
     navBar.addEventListener(e, emphasize);
+});
+
+logo.addEventListener("dblclick", () => {
+  logo.style.transform = "rotate(180deg)";
 })
+
 // navBar.addEventListener("mouseover", emphasize);
 // navBar.addEventListener("mouseout", emphasize);
