@@ -320,6 +320,16 @@ header .logo {
   background: #c00022;
   color: #ffffff;
 }
+.main-content .trash-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-content .trash-content div {
+  display: flex;
+  flex-direction: column;
+}
 .contact p {
   margin: 20px 0;
 }

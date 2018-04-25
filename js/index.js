@@ -34,7 +34,6 @@ var last_known_scroll_position = 0;
 var ticking = false;
 
 function rotateDomAwesome(scroll_pos) {
-  console.log(scroll_pos)
   document.getElementById("domAwesome").style.transform = `rotate(${scroll_pos}deg)`;
 
 }
@@ -53,4 +52,50 @@ window.addEventListener('scroll', function(e) {
 
   }
   
+});
+
+//Trash can drag and drop
+
+var drag = document.getElementById("paper-img");
+var drop = document.getElementById("trash-img");
+
+/* Events fired on the drag target */
+
+drag.addEventListener("dragstart", function(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+});
+
+drag.addEventListener("drag", function(event) {
+    document.getElementById("demo").innerHTML = "I'm being dragged.";
+});
+
+drag.addEventListener("dragend", function(event) {
+  event.preventDefault();
+  document.getElementById("demo").innerHTML = "Try more time, drag me to the trash can.";
+});
+
+
+/* Events fired on the drop target */
+drop.addEventListener("dragover", function(event) {
+    event.preventDefault();
+    document.getElementById("demo").innerHTML = "I'm over the trash can.";
+    // event.target.setAtti;
+    drop.setAttribute("src", "img/full.png");
+});
+
+drop.addEventListener("dragleave", function(event) {
+  event.preventDefault();
+  document.getElementById("demo").innerHTML = "I'm out of the trash can.";
+  drop.setAttribute("src", "img/empty.png");
+});
+
+drop.addEventListener("drop", function(event) {
+    var id = event.dataTransfer.getData("Text");
+    if(id === 'paper-img'){
+      event.target.appendChild(document.getElementById(id));
+      document.getElementById("demo").innerHTML = "I was dropped on the trash can.";
+    } else {
+      drop.setAttribute("src", "img/empty.png");
+      document.getElementById("demo").innerHTML = "I'm not trash.";
+    }
 });
