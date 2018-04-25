@@ -144,11 +144,53 @@ const siteContent = {
   }, 1000);
 
   // DOM II starts here
-ctaButton.addEventListener("click", function(){  /// added click eventListener to the cta button
+
+ctaButton.addEventListener("click", function(){  // added click eventListener to the cta button
   TweenMax.from(ctaImg, 3, {
     marginLeft: 400,
     rotation: 720
   });
 });
+
+imgLogo.addEventListener('mouseenter', function(){ //added mouse enter eventListener to the img logo
+  TweenMax.from(imgLogo, 3, {
+    x:400, 
+    ease:Back.easeOut
+  }); 
+});
+
+
+ctaImg.addEventListener('dblclick', function(){ // added dblclick eventListener to the cta img
+  TweenMax.staggerFrom(headerNavA, 3, {
+    opacity:0, 
+    y:200, 
+    rotation:360}); 
+});                                                                       
+
+ctaH1.addEventListener('click', function(){ //click eventListener to "DOM is Awesome"
+  let topContentH4 = document.querySelectorAll(".main-content .top-content .text-content h4");
+  TweenMax.from(topContentH4, 3, {
+    x:-400, 
+    ease:Back.easeOut}); 
+});
+
+
+let topContentP = document.querySelectorAll(".main-content .top-content .text-content p"); //having the top content move from the right
+TweenMax.from(topContentP, 3, {
+  x:400, 
+  ease:Back.easeOut
+}); 
+
+
+middleImg.addEventListener('mouseover', function(){ //mouseover eventListener to middle img
+  TweenMax.from(middleImg, 3, {
+    autoAlpha:0}, {
+      autoAlpha:1}); 
+});
+
+
+
+
+
 
 
