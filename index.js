@@ -165,7 +165,7 @@ window.addEventListener('scroll', () => {
 document.body.style.backgroundColor = "lavender"
 });
 
-// Event listener #4 - 
+// Event listener #4 - onsubmit
 let cats = document.getElementById('cats');
 let form = document.querySelector('form');
 let submit = document.getElementById('submit');
@@ -182,3 +182,40 @@ cats.addEventListener('keypress', (event) => {
   if (keyName === 'n' || keyName === 'N') {
   alert(`Did you just hit 'n' for no?  What kind of monster *are* you?`)
 }});
+
+// Event listener #6 - select
+randomText.addEventListener('select', function(event) {
+  h1Message.style.animationName = 'raveReverse';
+  h1Message.style.animationDuration = '1s';
+  h1Message.style.animationDirection = 'alternate';
+  h1Message.style.animationIterationCount = 'infinite';
+})
+
+// Event listener #7 - load
+window.addEventListener('load', () => {
+  TweenMax.staggerFrom(document.getElementsByTagName('p'), 2, {scale:0.5, opacity:0, delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.2);
+})
+
+// Event listener #8 - keyup
+randomText.addEventListener('keyup', () => {
+  randomText.style.display = 'none';
+  console.log(`You didn't need that text, did you?`)
+});
+
+// Event Listener #9 - mouseleave
+randomText.addEventListener('mouseleave', () => {
+  randomText.value = 'Sorry about that.'
+})
+
+// Event listener #10 - focus
+cats.addEventListener('focus', (event) => {
+  h1Message.style.position = "relative";
+  TweenLite.to(h1Message, 1, {left:"160px", ease: Bounce.easeOut})
+})
+
+// Event Listener #11 - blur
+
+cats.addEventListener('blur', (event) => {
+  button.style.position = "relative";
+  TweenLite.to(button, 7, {right:"150px", ease: SlowMo.ease})
+})

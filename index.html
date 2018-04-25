@@ -13,6 +13,8 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <script src="../greensock-js/src/minified/plugins/CSSPlugin.min.js"></script>
+  <script src="../greensock-js/src/minified/TweenLite.min.js" async></script>
   <script src="../greensock-js/src/minified/TweenMax.min.js" async></script>
   <script src="index.js" async></script>
 </head>
@@ -45,8 +47,11 @@
     <form>
         <div>
             <label for="cats"> Do you like cats? </label>
-                <input id = "cats" type="text" name="Do you like cats?">
-                <input id = "submit" type="submit">   
+                <input id = "cats" type="text" name="Do you like cats?">        
+                <input id = "submit" type="submit"> <br>
+            <label for="catsnao"> How about now? </label>
+                <input id = "catsNao" type="text" name="Do you like cats now?">  
+                <input id = "submit2" type="submit"> 
         </div>
         <section class="main-content">
         </form>
@@ -62,7 +67,7 @@
             </div>
             <br>
             <br>
-            <textarea name="randomtext" rows="10" cols="142">Why don't you take this opportunity to write something?</textarea>
+            <textarea id="randomText" rows="10" cols="142">Why don't you take this opportunity to write something?</textarea>
             <img class="middle-img" id="middle-img" src="" alt="Image of code snippets across the screen">
 
             <div class="bottom-content">

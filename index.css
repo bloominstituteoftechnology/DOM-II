@@ -297,3 +297,13 @@ footer {
         margin: 20px;
     }
 }
+
+@keyframes raveReverse {
+    0% {color:  violet;} 
+    14% {color: indigo;}
+    28% {color: blue;}
+    42% {color: green;}
+    56% {color: yellow;}
+    70% {color: orange;}
+    84% {color: red;}
+  }
