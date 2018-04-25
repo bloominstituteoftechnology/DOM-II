@@ -91,13 +91,18 @@ ctaH1.innerHTML = siteContent['cta']['h1'];
 
 let ctaButton = document.querySelector('.cta-text button');
 ctaButton.innerHTML = siteContent['cta']['button'];
-
 window.addEventListener('scroll', () => {
   ctaButton.style = `background-color: ${randColor()}`; // 9th Event Listener
+});
+ctaButton.addEventListener('mouseenter', () => {
+  TweenMax.to(ctaImg, 1, {ease: Elastic.easeOut.config(1, 0.3), x: -475});
 });
 
 let ctaImg = document.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+ctaImg.addEventListener('mouseleave', () => {
+  TweenMax.to(ctaImg, 1, {ease: Back.easeOut.config(1.7), x: 0});
+});
 
 
 // ~~~~~ Main Content ~~~~~
