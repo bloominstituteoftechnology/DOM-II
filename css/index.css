@@ -298,6 +298,10 @@ footer {
 .context-menu {
   display: none;
   position: absolute;
+  background-color: #fff;
+  border: solid 1px #dfdfdf;
+  box-shadow: 1px 1px 2px #cfcfcf;
+  padding: 10px;
 }
 
 .context-menu.active {
