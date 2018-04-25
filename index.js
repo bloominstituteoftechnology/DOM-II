@@ -76,6 +76,10 @@ const siteContent = {
   let vision = bottomContent[2];
   let contact = document.querySelector('.contact');
   let footer = document.querySelector('footer');
+  let contactForm = document.querySelector('.form');
+  let page = document.querySelector("html");
+  let topElements = document.querySelector(".top-content");
+  let container = document.querySelector(".container");
 
   let navContent = Object.values(siteContent["nav"]);
   navContent.pop() // remove img from list
@@ -115,13 +119,16 @@ const siteContent = {
   nav.forEach((item) => {item.style.color = "green"});
 
   // make site fluid
-  let container = document.querySelector(".container");
   container.style.width = "100%";
   container.style.maxWidth = "880px";
 
   // functions for testing event listeners
   function popUp() {
     alert("you pushed the button");
+  }
+
+  function showContactForm(){
+    contactForm.style.display = 'flex';
   }
 
   function oneContent(e) {
@@ -131,6 +138,9 @@ const siteContent = {
     if (navItem === null) {
       textcont.forEach((item) => {item.style.display = "initial"});
     }
+    else if (navItem === contactForm) {
+        showContactForm();
+    }
     else {
       textcont.forEach((item) => {item.style.display = "none"});
       navItem.style.display = "initial";
@@ -138,10 +148,6 @@ const siteContent = {
   }
 
   navBar.addEventListener("click", oneContent);
-
-
-
-  let topElements = document.querySelector(".top-content")
 
   topElements.addEventListener('mouseover', (event) => {
    // topElements.style.background = "lavender";
@@ -157,8 +163,8 @@ const siteContent = {
   });
 
 window.addEventListener('scroll', () => {
-  container.classList.add("black");
-  setTimeout(() => {container.classList.remove("black")}, 1000);
+  page.classList.add("black");
+  setTimeout(() => {page.classList.remove("black")}, 1000);
 });
 
 ctaImage.addEventListener('mouseover', (event) => {
@@ -185,6 +191,3 @@ events.map(function(e) {
 logo.addEventListener("dblclick", () => {
   logo.classList.toggle("rotate");
 });
-
-// navBar.addEventListener("mouseover", emphasize);
-// navBar.addEventListener("mouseout", emphasize);

@@ -88,8 +88,7 @@ header nav a {
 }
 
 .black {
-	background-color: black;
-	color: white;
+	background-color: lightgray;
 }
 
 .highlighted {
@@ -181,14 +180,14 @@ header .logo {
 
 /* Contact Styles */
 .form {
-    /* display: none; */
     display: flex;
+    display: none;
     justify-content: center;
-    width: 80%;
 }
 
 form {
-    width: 100%;
+    width: 90%;
+    margin-bottom: 35px;
 }
 
 input[type=text] {
@@ -196,9 +195,13 @@ input[type=text] {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
+}
+
+input[name=message] {
+    height: 200px;
 }
 
 .contact p {
