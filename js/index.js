@@ -20,8 +20,17 @@ startButton.addEventListener("click", (event) => {
 });
 
 
+let rotated = false;
+
 navLinks[0].addEventListener("click", (event) => {
-  TweenMax.to(navLinks, 2, {rotation:180, ease:RoughEase.ease});
+  if (rotated) {
+    TweenMax.to(navLinks, 2, {rotation:0, ease:RoughEase.ease});
+    rotated = false;
+  }
+  else {
+    TweenMax.to(navLinks, 2, {rotation:180, ease:RoughEase.ease});
+    rotated = true;
+  }
   event.stopPropagation();
 });
 
