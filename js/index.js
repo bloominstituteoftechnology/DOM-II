@@ -166,6 +166,7 @@ contact.style.cssText = `display: flex; flex-direction: column;`
  * ADD BUTTON THAT UPDATES CONTENT
  * toggle 'display: none' on random <div.text-content> Elements
  */
+/** I will add this to my DOM-II events */
 const allContent = topTextContent.concat(bottomTextContent);
 // console.log(allContent);
 function toggleMainContent () {
