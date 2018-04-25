@@ -106,39 +106,39 @@ contentText[8].innerHTML = siteContent["footer"]["copyright"];
 
 // CTA Event Listeners
 
-//Change ctaText red on mouseover ctaImg
+//1 Change ctaText red on mouseover ctaImg
 ctaImg.addEventListener('mouseover', () => {
   ctaText.style.color = 'red';
 });
 
-//Change ctaImg purple on mouseover middleImg
+//2 Change ctaImg purple on mouseover middleImg
 middleImg.addEventListener('mouseover', () => {
   ctaText.style.color = 'purple';
 });
 
-//Window alert on CTA button
+//3 Window alert on CTA button
 button.addEventListener('click', ()=> {
   window.alert('Greensock is also Amazeballs!')
 });
 
-//Change Contact into Button dropdown toggle
+//4 Change Contact into Button dropdown toggle
 document.getElementById("myBtn").onclick = function() {myFunction()};
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-//Keydown to make Body Red
+//5 Keydown to make Body Red
 let body = document.querySelector("body");
 body.addEventListener("keydown", () => {
   body.style.backgroundColor = "red";
   });
 
-//Keyup to make body white again because red is hard on the eyes lol
+//6 Keyup to make body white again because red is hard on the eyes lol
 body.addEventListener("keyup", () => {
   body.style.backgroundColor = "white";
   });
 
-
+//7 and 8 Added two event listeners to make CTA image appear and dissapear
 ctaImg.addEventListener("mouseenter", ()=> {
   ctaImg.style.visibility = "hidden";
 });
@@ -146,3 +146,8 @@ ctaImg.addEventListener("mouseenter", ()=> {
 ctaImg.addEventListener("mouseleave", ()=>{
   ctaImg.style.visibility = "visible";
 });
+
+//9 
+body.addEventListener("wheel", ()=>{
+  middleImg.style.display = "none"
+})
