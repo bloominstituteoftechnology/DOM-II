@@ -5,19 +5,19 @@ const logoImg = document.getElementById("logo-img");
 const navContainer = document.getElementById("nav-container");
 
 
+
+
 window.addEventListener("click", (event) => {
-  TweenLite.to(ctaText, 2, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`});
-});
-
-
-startButton.addEventListener("click", (event) => {
-  TweenLite.to(startButton, 1, {
-    x: Math.floor(Math.random()*200) - 100,
-    y: Math.floor(Math.random()*200) - 100,
-    ease:Bounce.easeInOut
+  TweenLite.to(ctaText, 2, {
+    color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
   });
-  event.stopPropagation();
 });
+
+window.addEventListener("keyup", (event) => {
+  ctaText.innerHTML = `D${event.key}M\<br> Is\<br> Awesome`
+});
+
+
 
 
 let rotated = false;
@@ -53,14 +53,21 @@ navLinks[3].addEventListener("click", (event) => {
 });
 
 navLinks[4].addEventListener("click", (event) => {
-  TweenMax.from(navLinks, 1, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`});
+  TweenMax.from(navLinks, 1, {
+    color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+  });
   event.stopPropagation();
 });
 
 navLinks[5].addEventListener("click", (event) => {
-  TweenMax.to(".text-content", 5, {color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`, scale: Math.random() + .5});
+  TweenMax.to(".text-content", 5, {
+    color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
+    scale: Math.random() + .5
+  });
   event.stopPropagation();
 });
+
+
 
 logoImg.addEventListener("mouseenter", (event) => {
   TweenLite.to(logoImg, 10, {
@@ -74,6 +81,14 @@ logoImg.addEventListener("mouseleave", (event) => {
   TweenLite.to(logoImg, 10, {scale: 1, background: `rgb(255, 255, 255)`, ease: Power1.easeIn});
 });
 
-window.addEventListener("keyup", (event) => {
-  ctaText.innerHTML = `D${event.key}M\<br> Is\<br> Awesome`
+
+
+
+startButton.addEventListener("click", (event) => {
+  TweenLite.to(startButton, 1, {
+    x: Math.floor(Math.random()*200) - 100,
+    y: Math.floor(Math.random()*200) - 100,
+    ease:Bounce.easeInOut
+  });
+  event.stopPropagation();
 });
