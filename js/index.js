@@ -53,12 +53,12 @@ navLinks[3].addEventListener("click", (event) => {
 });
 
 navLinks[4].addEventListener("click", (event) => {
-  console.log("I got clicked 5");
+  TweenMax.from(navLinks, 1, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
   event.stopPropagation();
 });
 
 navLinks[5].addEventListener("click", (event) => {
-  console.log("I got clicked 6");
+  TweenMax.to(".text-content", 5, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`, scale: Math.random() + .5});
   event.stopPropagation();
 });
 
