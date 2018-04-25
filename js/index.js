@@ -12,7 +12,8 @@ window.addEventListener("click", (event) => {
 
 startButton.addEventListener("click", (event) => {
   TweenLite.to(startButton, 1, {
-    margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`,
+    x: Math.floor(Math.random()*200) - 100,
+    y: Math.floor(Math.random()*200) - 100,
     ease:Bounce.easeInOut
   });
   event.stopPropagation();
@@ -30,14 +31,15 @@ navLinks[1].addEventListener("click", (event) => {
 });
 
 navLinks[2].addEventListener("click", (event) => {
-  console.log("I got clicked 3");
   if (navContainer.style.flexDirection === "column") navContainer.style.flexDirection = "row";
   else navContainer.style.flexDirection = "column";
   event.stopPropagation();
 });
 
 navLinks[3].addEventListener("click", (event) => {
-  console.log("I got clicked 4");
+  TweenMax.from(".nav", 2, {
+  y: 200,
+  });
   event.stopPropagation();
 });
 
