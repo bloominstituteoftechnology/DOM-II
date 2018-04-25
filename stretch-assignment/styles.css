@@ -4,16 +4,6 @@ body {
   /*justify-content: center;*/
 }
 
-#loader {
-  position: absolute;
-  p {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    padding: 0 10px 4px 10px;
-  }
-}
 .blocks {
   margin-top: 2%;
   display: flex;
