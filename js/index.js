@@ -8,7 +8,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM IsAwesome",
+    "h1": "DOM Is Awesome",
 
     "button": "Get Started",
     "img-src": "img/header-img.png"
@@ -96,7 +96,7 @@ let runImg = document.querySelector("button");
 
 runImg.addEventListener('click', () => {
 
-  TweenMax.from(".logo", 6, {
+  TweenMax.from(".logo", 15, {
     marginLeft: 800,
     ease: Circ.easeOut,
   });
@@ -109,10 +109,21 @@ runImg.addEventListener('click', () => {
     rotation: 360
   });
 
-  TweenMax.staggerTo("nav", 1, {
+  TweenMax.staggerTo("nav", 6, {
     rotation: 360,
     marginLeft: 0,
     textColor: "green",
+   
   });
 
 });
+
+
+  
+// runImg.addEventListener('click', () => {
+
+//   TweenMax.to(".logo", 1, { morphSVG: "#hippo" }, "+=1")
+//     .to(".logo", 1, { morphSVG: "#star" }, "+=1")
+//     .to(".logo", 1, { morphSVG: "#elephant" }, "+=1")
+//     .to(".logo", 1, { morphSVG: circle }, "+=1")
+// });
