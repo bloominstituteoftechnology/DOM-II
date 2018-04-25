@@ -11,7 +11,10 @@ window.addEventListener("click", (event) => {
 
 
 startButton.addEventListener("click", (event) => {
-  TweenLite.to(startButton, 1, {margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`, ease:Bounce.easeInOut});
+  TweenLite.to(startButton, 1, {
+    margin: `${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px ${Math.floor(Math.random()*100)}px`,
+    ease:Bounce.easeInOut
+  });
   event.stopPropagation();
 });
 
@@ -33,7 +36,6 @@ navLinks[2].addEventListener("click", (event) => {
 
 navLinks[3].addEventListener("click", (event) => {
   console.log("I got clicked 4");
-
   event.stopPropagation();
 });
 
@@ -48,7 +50,12 @@ navLinks[5].addEventListener("click", (event) => {
 });
 
 logoImg.addEventListener("mouseenter", (event) => {
-  TweenLite.to(logoImg, 10, {width: `${Math.floor(Math.random()*1000)}px`, height: `${Math.floor(Math.random()*1000)}px`, background:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`, ease: Power1.easeOut});
+  TweenLite.to(logoImg, 10, {
+    width: `${Math.floor(Math.random()*1000)}px`,
+    height:  `${Math.floor(Math.random()*1000)}px`,
+    background: `rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`,
+    ease: Power1.easeOut
+  });
 });
 
 logoImg.addEventListener("mouseleave", (event) => {
