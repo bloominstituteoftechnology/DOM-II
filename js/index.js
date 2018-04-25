@@ -90,6 +90,12 @@ const resetModal = function(){
   });
 }
 
+const populateModalForm = function(){
+  document.getElementById('inputGroup-anchor-text').value = activeNavLink.innerHTML;
+  document.getElementById('inputGroup-anchor-href').value = activeNavLink.href;
+  document.getElementById('inputGroup-anchor-title').value = activeNavLink.title;
+};
+
 const updateNavLink = function(){
   activeNavLink.innerHTML = document.getElementById('inputGroup-anchor-text').value;
   activeNavLink.href = document.getElementById('inputGroup-anchor-href').value;
@@ -244,9 +250,7 @@ editNavLink.addEventListener('click', (event) => {
 
   contextMenuAction = 'edit';
   document.getElementById('editNavLinksModalLabel').innerHTML = 'Edit Link';
-  document.getElementById('inputGroup-anchor-text').value = activeNavLink.innerHTML;
-  document.getElementById('inputGroup-anchor-href').value = activeNavLink.href;
-  document.getElementById('inputGroup-anchor-title').value = activeNavLink.title;
+  populateModalForm();
   closeContextMenu();
   $('#editNavLinksModal').modal();
 });
