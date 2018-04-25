@@ -1,6 +1,8 @@
-// Rocket: 
-
+// Selector for our Cubes
 let boxes = document.querySelectorAll(".block")
+
+// Rocket:
+
 // let order = 0;
 // for (let i = 0; i < boxes.length; i++) {
 //     boxes[i].addEventListener('click', () => {
@@ -11,14 +13,26 @@ let boxes = document.querySelectorAll(".block")
 
 // travelers
 
+// Declared variables for our setInterval functions
 let myVar = ""
-let travelBackVar1 = ""
-let stateCountf = 0;
-let stateCountb = 0;
+let travelBackVar = ""
+
+// Modular functions to end set Intervals
+function clearTravelBack() {
+    clearInterval(travelBackVar);
+}
+
+function ClearTravel() {
+    clearInterval(myVar);
+}
+
+// For loop adding our event-listeners to the Cubes
+// Event mousedown to move right, mouseup to move left
+
 for (let i = 0; i < boxes.length; i++) {
     let marginLeft = 10;
     boxes[i].addEventListener('mousedown', (event) => {
-        clearVar()
+        clearTravelBack()
         myVar = setInterval(function () {
             marginLeft++
             boxes[i].style.marginLeft = `${marginLeft}px`;
@@ -26,30 +40,13 @@ for (let i = 0; i < boxes.length; i++) {
     })
     boxes[i].addEventListener('mouseup', () => {
         // travelBackVar = setInterval(function ())
-        clearInterval(myVar)
+        ClearTravel()
         travelBackVar = setInterval(function () {
             if (marginLeft === 10) {
-                clearVar()
+                clearTravelBack()
             }
             marginLeft--
             boxes[i].style.marginLeft = `${marginLeft}px`;
         })
-    }, 20)
-}
-// boxes[i].addEventListener('mouseout', () => {
-//     // travelBackVar = setInterval(function ())
-//     if (marginLeft > 10) {
-//         travelBackVar = setInterval(function () {
-//             marginLeft--
-//             if (marginLeft === 10) {
-//                 clearInterval(travelBackVar);
-//             }
-//             boxes[i].style.marginLeft = `${marginLeft}px`;
-//         })
-//         clearInterval(myVar)
-//     }
-// })
-
-function clearVar() {
-    clearInterval(travelBackVar);
+    }, 10)
 }
