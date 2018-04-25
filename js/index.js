@@ -111,7 +111,7 @@ textContents.forEach(x => {
   x.addEventListener('dragstart', (event) => {
     console.log('Drag start');
     event.target.classList.add('active-drag-element');
-    event.dataTransfer.setData('text', event.target.innerHTML); // Define drag data
+    event.dataTransfer.setData('text', event.target.innerHTML);
     dragSource = event.srcElement; // Save source data
   });
 
@@ -120,7 +120,7 @@ textContents.forEach(x => {
     console.log('Drag end');
     let dropAreas = document.querySelectorAll('.drop-area');
     event.target.classList.remove('active-drag-element');
-    event.dataTransfer.clearData(); // Remove drag data
+    event.dataTransfer.clearData();
     dropAreas.forEach(x => x.classList.remove('drop-area'));
   });
 
