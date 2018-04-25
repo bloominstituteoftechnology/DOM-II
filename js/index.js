@@ -47,11 +47,12 @@ navLinks[5].addEventListener("click", (event) => {
 });
 
 logoImg.addEventListener("mouseenter", (event) => {
-  console.log("Mouse is over picture");
+  TweenLite.to(logoImg, 10, {width: `${Math.floor(Math.random()*1000)}px`, height: `${Math.floor(Math.random()*1000)}px`, background:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
 });
 
 logoImg.addEventListener("mouseleave", (event) => {
   console.log("Mouse is not over picture");
+  TweenLite.to(logoImg, 10, {width: `183px`, height: `36px`, background: `rgb(255, 255, 255)`});
 });
 
 window.addEventListener("keyup", (event) => {
