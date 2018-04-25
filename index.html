@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Great Idea!</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <script>
+    /** DOMContentLoaded : alert the time the DOM takes to get loaded */
+    // 3. 'DOMContentLoaded'
+
+    const start = Date.now();
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const elapse = Date.now() - start;
+        console.log(`${event.type} in ${elapse/1000} sg`);
+        alert(`${event.type} in ${elapse/1000} sg`);
+    });
+  </script>
+  
+</head>
+
+<body>
+
+    <div class="container"> 
+
+        <header>
+            <nav>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+
+            <img id="logo-img" class="logo" src="" alt="Great Idea! Company logo.">
+        </header>
+
+        <section class="cta">
+            <div class="cta-text">
+                <h1></h1>
+                <button></button>
+            </div>
+            <img id="cta-img" src="" alt="Image of a code snippet.">
+        </section>
+
+        <section class="main-content">
+
+            <div class="top-content">
+                <div class="text-content">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="text-content">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <img class="middle-img" id="middle-img" src="" alt="Image of code snippets across the screen">
+
+            <div class="bottom-content">
+                <div class="text-content">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="text-content">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="text-content">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- <video> -->
+        <video controls id="myvideo">
+                <source src="video/zombie.mp4"></source>
+        </video>
+
+        <!-- YOUTUBE VIDEO -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BcJCNLgEsHs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        <section class="contact">
+
+            <h4></h4>
+
+            <p></p>
+
+            <p></p>
+
+            <p></p>
+
+        </section>
+
+        <footer>
+            <p></p>
+        </footer>
+
+    </div><!-- container -->
+    <div class="container off-container offline">
+        <h2>You just run out off internet conection</h2>
+        <h4>Do not worry, we'll beback as soon as your conection is back.</h4>
+        <img src="img/senal-fuera-de-servicio.jpg" alt="">
+    </div>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  <script src="js/index.js" async></script>
+
+       
+</body>
+</html>
