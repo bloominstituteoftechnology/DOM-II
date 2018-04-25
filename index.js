@@ -160,8 +160,11 @@ const siteContent = {
   navBar.addEventListener("click", oneContent);
 
   topElements.addEventListener('mouseover', (event) => {
-    if (event.target)
-    event.target.parentElement.classList.add("highlighted");
+    if (event.target.tagName === "P" || event.target.tagName === "H4") {
+      event.target.parentElement.classList.add("highlighted");
+    } else {
+      event.target.classList.add("highlighted");
+    }
   })
 
   topElements.addEventListener('mouseout', (event) => {
@@ -185,10 +188,12 @@ window.addEventListener('scroll', () => {
 });
 
 ctaImage.addEventListener('mouseover', (event) => {
+  //TweenLite.to(ctaImage, 2, {width:"50%", height:"50%"});
   event.target.classList.add("enlarge");
 });
 
 ctaImage.addEventListener('mouseout', (event) => {
+  //TweenLite.to(ctaImage, 1, {width:"379px", height:"379px"});
   event.target.classList.remove("enlarge");
 })
 
@@ -197,7 +202,9 @@ emphasize = function(e){
       e.target.classList.remove("emphasized");
       return;
     }
-    e.target.classList.add("emphasized");
+    if (e.target.tagName === "A") {
+      e.target.classList.add("emphasized");
+    }
 }
 
 let events = ["mouseover", "mouseout"];
