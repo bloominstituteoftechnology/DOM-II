@@ -31,6 +31,8 @@ navLinks[1].addEventListener("click", (event) => {
 
 navLinks[2].addEventListener("click", (event) => {
   console.log("I got clicked 3");
+  if (navContainer.style.flexDirection === "column") navContainer.style.flexDirection = "row";
+  else navContainer.style.flexDirection = "column";
   event.stopPropagation();
 });
 
@@ -59,7 +61,6 @@ logoImg.addEventListener("mouseenter", (event) => {
 });
 
 logoImg.addEventListener("mouseleave", (event) => {
-  console.log("Mouse is not over picture");
   TweenLite.to(logoImg, 10, {width: `183px`, height: `36px`, background: `rgb(255, 255, 255)`, ease: Power1.easeIn});
 });
 
