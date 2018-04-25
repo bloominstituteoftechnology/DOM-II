@@ -234,7 +234,6 @@ mainContent.addEventListener('focus', e => {
 })
 
 /** 'keydown' reverse <p> content */
-
 document.addEventListener("keydown", function(e) {
   let allP = document.querySelectorAll('p');
   allP.forEach( (p) => {
@@ -244,3 +243,13 @@ document.addEventListener("keydown", function(e) {
   })
 }, false);
 
+/** 'play' && 'pause': change <body> background */
+let video = document.querySelector('video');
+video.addEventListener('play', e => {
+  console.log(e.type);
+  body.style.backgroundColor = "black";
+})
+video.addEventListener('pause', e => {
+  console.log(e.type);
+  body.style.backgroundColor = "white";
+})
