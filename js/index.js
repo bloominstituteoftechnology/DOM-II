@@ -46,11 +46,8 @@ nav[0].children[2].innerHTML = siteContent["nav"]["nav-item-3"]
 nav[0].children[3].innerHTML = siteContent["nav"]["nav-item-4"]
 
 document.getElementById("logo-img").src = siteContent["nav"]["img-src"];
-
 document.getElementById("cta-img").src = siteContent['cta']['img-src'];
-
 document.getElementById("middle-img").src = siteContent["main-content"]["middle-img-src"];
-
 document.querySelector('.cta-text').firstElementChild.innerHTML = siteContent.cta.h1;
 
 // Add cta button
@@ -80,26 +77,17 @@ document.querySelector('.contact').getElementsByTagName('p')[2].innerHTML = site
 document.querySelector('footer').getElementsByTagName('p')[0].innerHTML = siteContent.footer.copyright;
 
 
-// let myContainer = document.querySelector('.container');
-// let myContent = document.querySelector('.content');
 
-// let myButton = document.querySelector('.custom-button');
-// let myHeading = document.querySelector('h1');
-// let myAnchor = document.querySelector('a');
 
-// myAnchor.addEventListener('click', (e) => {
-//   e.preventDefault();
-// });
+let runImg = document.querySelector("button");
 
-// myContainer.addEventListener('click', (event) => {
-//   console.log("I am container");
-// });
-// myContent.addEventListener('click', (event) => {
-//   console.log("I am content");
-//   myHeading.classList.add("mega")
-// });
+runImg.addEventListener('click', () => {
 
-// myButton.addEventListener('click', (event) => {
-//   event.stopImmediatePropagation();
-//   console.log("I am button");
-// });
+  TweenMax.from(".logo", 6, {
+    marginLeft: 800,
+    backgroundColor: "black",
+    ease: SlowMo.ease.config(0.7, 0.7, false),
+    rotation: 360
+
+  });
+});
