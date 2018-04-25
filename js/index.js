@@ -99,8 +99,8 @@ mainContentImg.src = siteContent['main-content']['middle-img-src'];
 
 
 // Create Event Listeners
-let textContents = document.querySelectorAll('.text-content'),
-    dragSource,
+const textContents = document.querySelectorAll('.text-content');
+let dragSource,
     activeNavLink;
 
 textContents.forEach(x => {
