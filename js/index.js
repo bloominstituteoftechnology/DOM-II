@@ -54,7 +54,8 @@ navLinks[3].addEventListener("click", (event) => {
 
 navLinks[4].addEventListener("click", (event) => {
   TweenMax.from(navLinks, 1, {
-    color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+    color:`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
+    scale: 1.5
   });
   event.stopPropagation();
 });
