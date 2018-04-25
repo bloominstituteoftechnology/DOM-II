@@ -67,13 +67,19 @@ h1, h2, h3, h4, h5 {
     font-size:xx-large;
     color:red;
     font-weight:bold;
+    background:purple;
 }
 
+
+
 .blue{
-    font-size:small;
+    font-size:medium;
     background-color:gray;
 }
 
+.purple{
+    background-color:darkmagenta;
+}
 .container {
     width: 880px;
     margin: auto;
