@@ -77,6 +77,19 @@ document.querySelector('.contact').getElementsByTagName('p')[2].innerHTML = site
 document.querySelector('footer').getElementsByTagName('p')[0].innerHTML = siteContent.footer.copyright;
 
 
+document.querySelector('.top-content').getElementsByTagName('h4')[0].addEventListener('click', (event) => console.log("Feature title"));
+document.querySelector('.top-content').getElementsByTagName('p')[0].addEventListener('click', (event) => console.log("feature paragraph"));
+document.querySelector('.top-content').getElementsByTagName('h4')[1].addEventListener('click', (event) => console.log("About Title"));
+document.querySelector('.top-content').getElementsByTagName('p')[1].addEventListener('click', (event) => console.log("About paragraph"));
+document.querySelector('.bottom-content').getElementsByTagName('h4')[0].addEventListener('click', (event) => console.log("Services title"));
+document.querySelector('.bottom-content').getElementsByTagName('p')[0].addEventListener('click', (event) => console.log("Services Paragraph"));
+document.querySelector('.bottom-content').getElementsByTagName('h4')[1].addEventListener('click', (event) => console.log("Product Title"));
+document.querySelector('.bottom-content').getElementsByTagName('p')[1].addEventListener('click', (event) => console.log("Product Paragraph"));
+document.querySelector('.bottom-content').getElementsByTagName('h4')[2].addEventListener('click', (event) => console.log("Vision Title"));
+document.querySelector('.bottom-content').getElementsByTagName('p')[2].addEventListener('click', (event) => console.log("Vision Paragraph"));
+
+
+
 
 
 let runImg = document.querySelector("button");
