@@ -44,13 +44,18 @@ let headerImg = document.getElementById("cta-img");
 headerImg.setAttribute("src", "https://img.etsystatic.com/il/fba1be/502755140/il_570xN.502755140_e5b7.jpg?version=1")
 
 let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute("src", "https://vignette.wikia.nocookie.net/emporea/images/d/d9/Black_dragon_preloader.jpg/revision/latest?cb=20160216171424")
+middleImg.setAttribute("src", "https://pre00.deviantart.net/1f2c/th/pre/f/2016/178/8/4/r_lyeh_rising_by_welshpixie-da7sxa8.png")
 
 //Navigation
+
+// let navBar = document.getElementsByName("nav");
+// TweenMax.to("nav", 15, {y:10, scale:0.9});
+
+
 let services = document.getElementsByTagName("a")[0];
 services.innerHTML = "Services";
 
-services.addEventListener('dblclick', () => { //dblclick used here. 1
+services.addEventListener('dblclick', () => { //dblclick  
   alert("Check out our cool services!");
 });
 
@@ -65,45 +70,61 @@ about.innerHTML = "About"
 let contact = document.getElementsByTagName("a")[5];
 contact.innerHTML = "Contact";
 
-contact.addEventListener('mouseover', () => { //mouseover used here 2 
-    alert("are you sure?");
-});
+contact.addEventListener('mouseover', () => { //mouseover   
+    TweenMax.to("a", 15, {x:29, y:19, scale:2}); //animation 
+    });
 
-let greatIdea = document.querySelector("#logo-img")
-// TweenMax.to("#logo-img", 2, {x:0, rotation:360, scale:0.5});//animation used here 3
+//let greatIdea = document.querySelector("#logo-img")
 
 //CTA
 let h1Message = document.getElementsByTagName("h1")[0];
 h1Message.innerHTML = "DOM Is Awesome";
 
-h1Message.addEventListener('select', () =>{//select used here(not working however) 4 
-  alert("You must really like me");
+h1Message.addEventListener('cut', () => {
+alert('turn back now');
 });
 
 let button = document.getElementsByTagName("button")[0];
 button.innerHTML = "Get Started";
 
-let askQuestion = document.getElementsByTagName("inspect")[0];
-askQuestion.innerText = "TEll ME WHY";
+button.addEventListener('click', () =>{ //click 
+  alert("don't click chuthulu");
+});
 
-askQuestion.addEventListener('click', () => { //click used here
+let askQuestion = document.getElementsByTagName("inspect")[0];
+askQuestion.innerText = "  ";
+
+askQuestion.addEventListener('click', () => { //click 
   prompt();
 });
 
+
 let codePic = document.querySelector("#cta-img")
-TweenMax.to("#cta-img", 60, {x:0, rotation:360, scale: 0.01});//animation used here 5 
-codePic.addEventListener('mouseover', () => {
-  // make picture full size
-  TweenMax.to("#cta-img", 5, {x:90, width:"223px", height:"333px"}); //stretchs it out
+//chuthulu animations
+TweenMax.to("#cta-img", 60, {x:0, rotation:360, scale: 0.1}); //animation 
+codePic.addEventListener('mouseup', () =>{ //mouseup 4of10
+  alert("What Have You DONE!");
+});
+codePic.addEventListener('click', () => { //click 
+  TweenMax.to("#cta-img", 120, {x:90, width:"223px", height:"333px", scale: 9}, //animation 
+  h1Message.innerHTML = "D00M Is Awesome"); 
 });
 
+
 //Main content 
+
+// let mainContent = document.getElementsByClassName('main-content');
+// mainContent.addEventListener('copy', (e) => {
+//   e.preventDefault();
+//   alert("You tryin to steal my words, yo?");
+// });
+
 let featuresH4 = document.getElementsByTagName('h4')[0];
 featuresH4.innerHTML = "Features";
 let featureContent = document.getElementsByTagName('p')[0];
 featureContent.innerHTML = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 
-featureContent.addEventListener('copy', () => { //copy used here 6 
+featureContent.addEventListener('copy', () => { //copy  
   alert("You trying to steal my words, yo?");
 })
 
@@ -125,11 +146,14 @@ let visionContent = document.getElementsByTagName('p')[4];
 visionContent.innerHTML = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 
 let otherPic = document.querySelector(".middle-img");
-otherPic.addEventListener('dragend', (e) =>{ //dragend used here (not working) 7 
+otherPic.addEventListener('dragend', (e) =>{ //dragend 
   e.preventDefault();
   alert("RAAAAWWWAAAARRRR");
 });
-TweenMax.to(".middle-img", 10, {x:0, rotation:360, }); //animation used here 8 
+TweenMax.to(".middle-img", 10, {x:0, rotation:360, }); //animation  
+otherPic.addEventListener('fullscreenchange',() => {
+  TweenMax.to(".middle-img", 100, {rotation: 360, scale: 10})
+});
 
 //Contact
 
@@ -138,7 +162,7 @@ contactH4.innerHTML = "Contact";
 let address = document.getElementsByTagName('p')[5];
 address.innerHTML = "123 Way 456 Street Somewhere, USA";
 
-address.addEventListener('drag', (e) => { //drag used here
+address.addEventListener('copy', (e) => { //copy again
     e.preventDefault(); 
     alert("where you trying to go with that?");
 });
@@ -148,7 +172,7 @@ phone.innerHTML = "1 (888) 888-8888";
 let email = document.getElementsByTagName('p')[7];
 email.innerHTML = "sales@greatidea.io";
 
-email.addEventListener('contextmenu', () => { //contextmenu used here
+email.addEventListener('contextmenu', () => { //contextmenu 
   alert('Enter Your Email PLease');
   prompt();
 });
@@ -156,6 +180,11 @@ email.addEventListener('contextmenu', () => { //contextmenu used here
 //footer
 let footer = document.getElementsByTagName('p')[8];
 footer.innerHTML = "Copyright Great Idea! 2018"
+
+footer.addEventListener('mousedown', () => { //mousedown
+  alert("D00M LLC");
+ });
+
 
 //Changing color of nav links to green
 let navigation = document.querySelectorAll("a");
