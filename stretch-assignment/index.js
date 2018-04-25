@@ -214,43 +214,93 @@ tl
   .to(grayBox, 0.4, { x: 1000, rotation: 360 });
 
 redBox.addEventListener('mouseover', () => {
-  TweenMax.to(redBox, 1, { x: 0, rotation: 360, scale: 0.6 });
+  TweenMax.to(redBox, 1, {
+    x: 0,
+    rotation: 360,
+    scale: 0.6,
+    ease: SlowMo.ease.config(0.7, 0.7, false),
+  });
 });
 
 blueBox.addEventListener('mouseover', () => {
-  TweenMax.to(blueBox, 1, { x: 0, rotation: 360, scale: 0.7 });
+  TweenMax.to(blueBox, 1, {
+    x: 0,
+    rotation: 360,
+    scale: 0.7,
+    ease: Bounce.easeOut,
+  });
 });
 
 greenBox.addEventListener('mouseover', () => {
-  TweenMax.to(greenBox, 1, { x: 0, rotation: 360, scale: 0.8 });
+  TweenMax.to(greenBox, 1, {
+    x: 0,
+    rotation: 360,
+    scale: 0.8,
+    ease: Back.easeOut,
+  });
 });
 
 pinkBox.addEventListener('mouseover', () => {
-  TweenMax.to(pinkBox, 1, { x: 0, rotation: 360, scale: 0.9 });
+  TweenMax.to(pinkBox, 1, {
+    x: 0,
+    rotation: 360,
+    scale: 0.9,
+    ease: Elastic.easeOut,
+  });
 });
 
 grayBox.addEventListener('mouseover', () => {
-  TweenMax.to(grayBox, 1, { x: 0, rotation: 360, scale: 1 });
+  TweenMax.to(grayBox, 1, {
+    x: 0,
+    rotation: 360,
+    scale: 1,
+    ease: SteppedEase.config(40),
+  });
 });
 
 redBox.addEventListener('click', () => {
-  TweenMax.to(redBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
+  TweenMax.to(redBox, 0.5, {
+    x: 1000,
+    rotation: 360,
+    scale: 1.5,
+    ease: Elastic.easeOut,
+  });
 });
 
 blueBox.addEventListener('click', () => {
-  TweenMax.to(blueBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
+  TweenMax.to(blueBox, 0.5, {
+    x: 1000,
+    rotation: 360,
+    scale: 1.5,
+    ease: Elastic.easeOut,
+  });
 });
 
 greenBox.addEventListener('click', () => {
-  TweenMax.to(greenBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
+  TweenMax.to(greenBox, 0.5, {
+    x: 1000,
+    rotation: 360,
+    scale: 1.5,
+    ease: Elastic.easeOut,
+  });
 });
 
 pinkBox.addEventListener('click', () => {
-  TweenMax.to(pinkBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
+  TweenMax.to(pinkBox, 0.5, {
+    x: 1000,
+    rotation: 360,
+    scale: 1.5,
+    ease: Elastic.easeOut,
+  });
 });
 
 grayBox.addEventListener('click', () => {
-  TweenMax.to(grayBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
+  TweenMax.to(grayBox, 0.5, {
+    x: 1000,
+    rotation: 360,
+    scale: 1.5,
+    ease: Elastic.easeOut,
+  });
 });
 greenBox.addEventListener('click', () => {
   greenBox.innerHTML = "Tmw I'll smoke that GREEN";
