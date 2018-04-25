@@ -180,6 +180,26 @@ header .logo {
 }
 
 /* Contact Styles */
+.form {
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+form {
+    width: 100%;
+}
+
+input[type=text] {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 .contact p {
     margin: 15px 0;
