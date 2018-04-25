@@ -87,7 +87,7 @@ header nav a {
     color: #b0b0b0;
 }
 
-.black {
+.shaded {
 	background-color: lightgray;
 }
 
@@ -180,28 +180,27 @@ header .logo {
 
 /* Contact Styles */
 .form {
-    display: flex;
     display: none;
-    justify-content: center;
-}
-
-form {
-    width: 90%;
     margin-bottom: 35px;
 }
 
-input[type=text] {
-    width: 100%;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: 1px solid black;
-    border-radius: 4px;
+.form button {
+    border: 1px double black;
+    font-size: 16px;
+    background: white;
+    width: 170px;
+    height: 32px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-input[name=message] {
-    height: 200px;
+.form button:hover {
+    background: black;
+    color: white;
+}
+
+textarea {
+    height: 100px;
 }
 
 .contact p {

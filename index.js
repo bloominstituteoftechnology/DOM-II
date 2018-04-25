@@ -77,7 +77,7 @@ const siteContent = {
   let contact = document.querySelector('.contact');
   let footer = document.querySelector('footer');
   let contactForm = document.querySelector('.form');
-  let page = document.querySelector("html");
+  let page = document.querySelector("body");
   let topElements = document.querySelector(".top-content");
   let container = document.querySelector(".container");
 
@@ -122,35 +122,45 @@ const siteContent = {
   container.style.width = "100%";
   container.style.maxWidth = "880px";
 
-  // functions for testing event listeners
+  // function for testing event listeners
   function popUp() {
     alert("you pushed the button");
   }
 
-  function showContactForm(){
+  // functions for event listeners
+  function showContactForm() {
     contactForm.style.display = 'flex';
+  }
+
+  function hideContactForm() {
+    contactForm.style.display = 'none';
   }
 
   function oneContent(e) {
     const navItem = document.getElementById(e.target.innerHTML);
-    let textcont = document.querySelectorAll(".text-content");
+    let textContent = document.querySelectorAll(".text-content");
     console.log(navItem);
     if (navItem === null) {
-      textcont.forEach((item) => {item.style.display = "initial"});
+      textContent.forEach((item) => {item.style.display = "initial"});
+      middleImage.style.display = "initial";
+      hideContactForm();
     }
     else if (navItem === contactForm) {
-        showContactForm();
+      textContent.forEach((item) => {item.style.display = "none"});
+      showContactForm();
     }
     else {
-      textcont.forEach((item) => {item.style.display = "none"});
+      textContent.forEach((item) => {item.style.display = "none"});
+      middleImage.style.display = "none";
       navItem.style.display = "initial";
+      hideContactForm();
     }
   }
 
   navBar.addEventListener("click", oneContent);
 
   topElements.addEventListener('mouseover', (event) => {
-   // topElements.style.background = "lavender";
+    if (event.target)
     event.target.parentElement.classList.add("highlighted");
   })
 
@@ -163,8 +173,15 @@ const siteContent = {
   });
 
 window.addEventListener('scroll', () => {
-  page.classList.add("black");
-  setTimeout(() => {page.classList.remove("black")}, 1000);
+  page.classList.add("shaded");
+  if(!window.backgroundTimeout){
+    window.backgroundTimeout = setTimeout(() => {
+      page.classList.remove("shaded")
+      window.backgroundTimeout = clearTimeout(window.backgroundTimeout), undefined; 
+    }, 1000);
+  }
+
+
 });
 
 ctaImage.addEventListener('mouseover', (event) => {

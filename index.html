@@ -7,12 +7,19 @@
 
   <title>Great Idea!</title>
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  
+
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <script src="index.js" async></script>
 </head>
 
@@ -73,7 +80,7 @@
 
         </section>
 
-        <section class="form" id="Contact">
+        <!-- <section class="form" id="Contact">
             <form action="">
                 Name: <br>
                 <input class="name-field" type="text" name="name"><br>
@@ -83,7 +90,26 @@
                 <input class="message-field" type="text" name="message"><br>
                 <input type="submit" value="Send">
             </form>
-        </section>
+        </section> -->
+        <div class="row form" id="Contact">
+            <div class="col-12">
+                <form>
+                    <div class="form-group">
+                        <label for="nameField">Name:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
 
         <section class="contact">
 
