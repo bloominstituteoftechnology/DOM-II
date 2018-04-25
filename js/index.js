@@ -147,7 +147,14 @@ ctaImg.addEventListener("mouseleave", ()=>{
   ctaImg.style.visibility = "visible";
 });
 
-//9 
+//9 Wheel Event on Body to make Middle Image disappear
 body.addEventListener("wheel", ()=>{
   middleImg.style.display = "none"
+})
+
+//10 click even to change feature text innerhtml and background
+let featureText = contentText[0];
+featureText.addEventListener("click", ()=> {
+  contentText[0].innerHTML = 'No copying!!!'
+  contentText[0].style.background = 'grey'
 })
