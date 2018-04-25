@@ -100,7 +100,6 @@ mainContentImg.src = siteContent['main-content']['middle-img-src'];
 
 // Create Event Listeners
 let textContents = document.querySelectorAll('.text-content'),
-    images = document.querySelectorAll('img'),
     dragSource,
     activeNavLink;
 
@@ -161,18 +160,6 @@ navLinks.forEach(x => {
     contextMenu.style.top = `${event.pageY}px`;
     contextMenu.style.left = `${event.pageX}px`;
     contextMenu.classList.add('active');
-  });
-});
-
-images.forEach(x => {
-  // Event: Mouseover
-  x.addEventListener('mouseover', (event) => {
-    console.log('Mouseover');
-  });
-
-  // Event: Mouseout
-  x.addEventListener('mouseout', (event) => {
-    console.log('Mouseout');
   });
 });
 
