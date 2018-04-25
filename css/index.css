@@ -312,11 +312,7 @@ footer {
 /* js styles */
 
 .btnHover {
-    transform: skew(10deg);
-}
-
-.btnHover2 {
-    transform: none;
+    transform: skew(15deg);
 }
 
 .dropzone {
@@ -348,6 +344,7 @@ footer {
   .whatToggle {
     content: url("../img/What.png");
     width: 379px;
+    height: 379px;
   }
 
   .buttonSubmit {

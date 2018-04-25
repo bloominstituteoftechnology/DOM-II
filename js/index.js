@@ -38,6 +38,19 @@ const siteContent = {
 };
 
 // GSAP
+CustomEase.create("bouncey", "M0,0 C0,0 0.012,0.368 0.022,0.378 0.025,0.382 0.063,0.767 0.12,0.804 0.176,0.84 0.219,-0.009 0.23,0 0.231,0.001 0.235,0.08 0.266,0.172 0.309,0.305 0.335,0.489 0.386,0.486 0.472,0.479 0.435,0.033 0.522,-0.014 0.549,-0.029 0.599,0.255 0.616,0.282 0.626,0.298 0.65,0.305 0.662,0.306 0.673,0.306 0.687,0.281 0.694,0.278 0.719,0.263 0.726 0.02 0.744,0 0.769,-0.029 0.783,0.201 0.818,0.186 0.835,0.178 0.835,0.029 0.856,0.01 0.873 -0.007 0.852,0.122 0.872,0.12 0.881,0.118 0.887,0.01 0.9,0 0.91,-0.009 0.906,0.081 0.918,0.08 0.927,0.078 0.932,0.014 0.948,0.014 0.983,0.014 0.999,0 1,0");
+// footer custom animation
+let footerClick = document.querySelector("footer");
+footerClick.addEventListener("click", () => {TweenMax.to(footerClick, 2, {ease: "bouncey", scale:1.5, y: 100})})
+// anchor custom animation
+let aHov = document.querySelectorAll("a");
+for (let i = 0; i < aHov.length; i++) {
+  let self = aHov[i];
+  self.addEventListener('click', () => { 
+    TweenMax.to(aHov, 1.7, { ease: "bouncey", scale:1.3, y: -15});
+  })
+};
+// nav logo cta-img animations
 TweenMax.to("nav", 2.5, { ease: SlowMo.ease.config(0.1, 0.7, false), x: -182 });
 TweenMax.to(".logo", 2.5, { ease: SlowMo.ease.config(0.1, 0.7, false), x: 698 });
 TweenMax.to("#cta-img", 2.5, {rotation:360});
@@ -110,8 +123,8 @@ document.addEventListener('keydown', (e) => {
 // mouseenter / mouseleave
 
 let heyT = document.querySelector('.logo');
-heyT.addEventListener('mouseleave', (e) => {heyT.classList.toggle("heyToggle")})
-heyT.addEventListener('mouseenter', (e) => {heyT.classList.toggle("heyToggle")})
+heyT.addEventListener('mouseleave', () => {heyT.classList.toggle("heyToggle")})
+heyT.addEventListener('mouseenter', () => {heyT.classList.toggle("heyToggle")})
 
 
 //doubleclick
@@ -128,26 +141,27 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Start Nav
-let newNav1 = document.createElement('a');
-let text = document.createTextNode("Pics");
-newNav1.appendChild(text);
-document.querySelector("nav").appendChild(newNav1);
+// let newNav1 = document.createElement('a');
+// let text = document.createTextNode("Pics");
+// newNav1.appendChild(text);
+// document.querySelector("nav").appendChild(newNav1);
 
-let newNav2 = document.createElement('a');
-let text2 = document.createTextNode("Forum");
-newNav2.appendChild(text2);
-document.querySelector("nav").prepend(newNav2);
+// let newNav2 = document.createElement('a');
+// let text2 = document.createTextNode("Forum");
+// newNav2.appendChild(text2);
+// document.querySelector("nav").prepend(newNav2);
 
 
 let navBar = document.querySelectorAll("a");
 navBar.forEach((navColor) => {navColor.style.color = "green";})
 navBar.forEach((weight) => {weight.style.fontWeight = "900"})
-navBar[1].innerHTML = "Services";
-navBar[2].innerHTML = "Product";
-navBar[3].innerHTML = "Vision";
-navBar[4].innerHTML = "Features";
-navBar[5].innerHTML = "About";
-navBar[6].innerHTML = "Contact";
+navBar.forEach((size) => {size.style.fontSize = "18px"})
+navBar[0].innerHTML = "(Click)Services";
+navBar[1].innerHTML = "Product";
+navBar[2].innerHTML = "Vision";
+navBar[3].innerHTML = "Features";
+navBar[4].innerHTML = "About";
+navBar[5].innerHTML = "Contact(Me)";
 // end nav
 
 //start CTA
@@ -165,13 +179,10 @@ let btn = document.querySelector("button")
 btn.innerHTML = "Get Started";
 
 //mouseover / click
-btn.addEventListener('mouseover', () => {
-  btn.classList.toggle("btnHover") //mouseover
-  });
-  // btn.addEventListener('mouseleave', () => {btn.classList.add("btnHover2")});
-  btn.addEventListener('click', () => {  //click
-  headerImg.classList.toggle('whatToggle')
-  });
+btn.addEventListener('mouseover', (e) => {btn.classList.toggle("btnHover")});
+btn.addEventListener('mouseleave', (e) => {btn.classList.toggle("btnHover")});
+
+btn.addEventListener('click', () => {headerImg.classList.toggle('whatToggle')});
 // end CTA
 
 let middleImg = document.querySelector("#middle-img");
@@ -202,5 +213,5 @@ contentT[5].innerHTML = "Contact";
 contentP[5].innerHTML = "123 Way 456 Street <br /> Somewhere, USA" ;
 contentP[6].innerHTML = "1 (888) 888-8888";
 contentP[7].innerHTML = "sales@greatidea.io";
-contentP[8].innerHTML = "Copyright Great Idea! 2018";
+contentP[8].innerHTML = "Copyright Great Idea! 2018 (Click Me)";
 
