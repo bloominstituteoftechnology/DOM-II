@@ -104,7 +104,7 @@ var currentIndex = 0;
 
 button.addEventListener('click', () => {
     setInterval(function () {
-        document.querySelector('.cta').style.cssText = "background-color: " + colors[currentIndex];
+        document.querySelector('body').style.cssText = "background-color: " + colors[currentIndex];
         currentIndex++;
         if (currentIndex == undefined || currentIndex >= colors.length) {
             currentIndex = 0;

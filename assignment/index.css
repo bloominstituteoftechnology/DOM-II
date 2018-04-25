@@ -57,6 +57,10 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+body {
+    transition: background-color 2s cubic-bezier(1, 1, 1, 1);
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -104,7 +108,6 @@ header .logo {
     margin-top: 72px;
     justify-content: flex-end;
     align-items: center;
-    transition: background-color 2s cubic-bezier(1, 1, 1, 1);
 }
 
 .cta #cta-img {
