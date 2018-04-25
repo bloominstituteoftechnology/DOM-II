@@ -109,7 +109,7 @@ textContents.forEach(x => {
   // Event: Drag Start
   x.addEventListener('dragstart', (event) => {
     console.log('Drag start');
-    event.target.style = 'opacity: 0.4';
+    event.target.style = 'opacity: 0.4; transform:scale(0.8)';
     event.dataTransfer.setData('text', event.target.innerHTML); // Define drag data
     dragSource = event.srcElement; // Save source data
   });
@@ -117,7 +117,7 @@ textContents.forEach(x => {
   // Event: Drag End
   x.addEventListener('dragend', (event) => {
     console.log('Drag end');
-    event.target.style = 'opacity: 1';
+    event.target.style = 'opacity: 1; transform:scale(1)';
     event.dataTransfer.clearData(); // Remove drag data
   });
 
@@ -145,6 +145,7 @@ textContents.forEach(x => {
         editEle = createNewElement('textarea', srcEle.innerHTML, 'edit-content');
     
     event.target.parentNode.replaceChild(editEle, srcEle);
+    event.currentTarget.setAttribute('draggable', 'false');
   });
 });
 
@@ -158,6 +159,10 @@ window.addEventListener('click', (event) => {
     editContentEle.forEach(x => {
       let staticEle = createNewElement('p', x.value, '');
       x.parentNode.replaceChild(staticEle, x);
+      
+      textContents.forEach(x => {
+        x.setAttribute('draggable', 'true');
+      });
     });
   }
 });
