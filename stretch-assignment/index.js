@@ -34,7 +34,7 @@ var preloader = new GSPreloader({
   radius: 42,
   dotSize: 15,
   dotCount: 10,
-  colors: ['#61AC27', '#555', 'purple', '#FF6600'], //have as many or as few colors as you want.
+  colors: ['#61AC27', '#E10920', '#3C75D7', '#F0E856'], //have as many or as few colors as you want.
   boxOpacity: 0.2,
   boxBorder: '1px solid #AAA',
   animationOffset: 1.8, //jump 1.8 seconds into the animation for a more active part of the spinning initially (just looks a bit better in my opinion)
@@ -229,36 +229,58 @@ grayBox.addEventListener('mouseover', () => {
 });
 
 redBox.addEventListener('click', () => {
-  TweenMax.to(redBox, 4, { x: 1000, rotation: 360, scale: 1 });
+  TweenMax.to(redBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
 });
 
 blueBox.addEventListener('click', () => {
-  TweenMax.to(blueBox, 4, { x: 1000, rotation: 360, scale: 0.9 });
+  TweenMax.to(blueBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
 });
 
 greenBox.addEventListener('click', () => {
-  TweenMax.to(greenBox, 4, { x: 1000, rotation: 360, scale: 0.8 });
+  TweenMax.to(greenBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
 });
 
 pinkBox.addEventListener('click', () => {
-  TweenMax.to(pinkBox, 4, { x: 1000, rotation: 360, scale: 0.7 });
+  TweenMax.to(pinkBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
 });
 
 grayBox.addEventListener('click', () => {
-  TweenMax.to(grayBox, 4, { x: 1000, rotation: 360, scale: 0.6 });
+  TweenMax.to(grayBox, 4, { x: 1000, rotation: 360, scale: 1.5 });
 });
 greenBox.addEventListener('click', () => {
   greenBox.innerHTML = "Tmw I'll smoke that GREEN";
 });
 
 redBox.addEventListener('click', () => {
-  redBox.innerHTML = 'Whats up cuzz Im a blood';
+  redBox.innerHTML = 'Whats up cuzz Im uhh blood';
 });
 
 pinkBox.addEventListener('click', () => {
   pinkBox.innerHTML = 'This is The Pinky toe take down';
 });
-
+grayBox.addEventListener('click', () => {
+  grayBox.innerHTML = 'Gray Hey';
+});
 blueBox.addEventListener('click', () => {
   blueBox.innerHTML = "Today I'm BLUE";
+});
+
+redBox.addEventListener('mouseover', () => {
+  redBox.innerHTML = ' ';
+});
+
+blueBox.addEventListener('mouseover', () => {
+  blueBox.innerHTML = ' ';
+});
+
+greenBox.addEventListener('mouseover', () => {
+  greenBox.innerHTML = ' ';
+});
+
+pinkBox.addEventListener('mouseover', () => {
+  pinkBox.innerHTML = ' ';
+});
+
+grayBox.addEventListener('mouseover', () => {
+  grayBox.innerHTML = ' ';
 });
