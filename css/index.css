@@ -294,6 +294,16 @@ footer {
   margin: 40px 0 20px;
 }
 
+/* Context Menu Styles */
+.context-menu {
+  display: none;
+  position: absolute;
+}
+
+.context-menu.active {
+  display: block;
+}
+
 /* Tablet */
 
 @media (max-width: 768px) {

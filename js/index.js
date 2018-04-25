@@ -132,7 +132,7 @@ textContents.forEach(x => {
     console.log('Dropped');
     event.preventDefault(); // Necessary to allow drop
     dragSource.innerHTML = event.currentTarget.innerHTML; // Swap innerHTML for source and destination
-    event.currentTarget.innerHTML = event.dataTransfer.getData('text'); 
+    event.currentTarget.innerHTML = event.dataTransfer.getData('text');
   });
 });
 
@@ -165,4 +165,22 @@ window.addEventListener('click', (event) => {
       });
     });
   }
+
+  if(!event.target.classList.contains('context-menu-link')){
+    let contextMenu = document.querySelector('.context-menu');
+    contextMenu.classList.remove('active');
+  }
+});
+
+// Event: Context Menu
+navLinks.forEach(x => {
+  x.addEventListener('contextmenu', (event) => {
+    console.log('Context menu');
+    event.preventDefault();
+
+    let contextMenu = document.querySelector('.context-menu');
+    contextMenu.style.top = `${event.pageY}px`;
+    contextMenu.style.left = `${event.pageX}px`;
+    contextMenu.classList.add('active');
+  });
 });
