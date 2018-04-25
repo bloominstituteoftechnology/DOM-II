@@ -133,7 +133,16 @@ body.addEventListener("keydown", () => {
   body.style.backgroundColor = "red";
   });
 
-  //Keyup to make body white again because red is hard on the eyes lol
-  body.addEventListener("keyup", () => {
-    body.style.backgroundColor = "white";
-    });  
+//Keyup to make body white again because red is hard on the eyes lol
+body.addEventListener("keyup", () => {
+  body.style.backgroundColor = "white";
+  });
+
+
+ctaImg.addEventListener("mouseenter", ()=> {
+  ctaImg.style.visibility = "hidden";
+});
+
+ctaImg.addEventListener("mouseleave", ()=>{
+  ctaImg.style.visibility = "visible";
+});
