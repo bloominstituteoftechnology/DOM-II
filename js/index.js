@@ -98,7 +98,7 @@ ctaImg.src = siteContent['cta']['img-src'];
 mainContentImg.src = siteContent['main-content']['middle-img-src'];
 
 
-// Playing around with drag and drop events
+// Create Event Listeners
 let textContents = document.querySelectorAll('.text-content'),
     dragSource;
 
