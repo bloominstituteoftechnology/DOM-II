@@ -140,5 +140,33 @@ const siteContent = { //this is an object with properties and values.
   navigator.prepend(newNavTwo);
   
   //Event Listeners
+//basic syntax
+  // element.addEventListener('type', () => {
+  //   // Do something!  
+  //   console.log("we got into this event!");
+  //   myHeader.classList.add("mega");
+  // });
 
-  
+//1
+ctaBut.addEventListener('click', () => {
+  console.log("I am Times Roman purple!");
+  ctaBut.classList.add("custom-button");
+});
+
+//2
+let myCTA = document.querySelector('.cta');
+ctaText.addEventListener('mouseenter', () => {
+  console.log("we are red!!");
+  myCTA.classList.add("red");
+});
+
+//3
+ctaText.addEventListener('mouseleave', () => {
+  console.log("we are not red anymore!");
+  myCTA.classList.remove("red");
+});
+//4
+visionHeadline.addEventListener('mousemove', () => {
+  console.log(`I'm a cat! My name is Marshmallow. I like mice.`)
+})
+

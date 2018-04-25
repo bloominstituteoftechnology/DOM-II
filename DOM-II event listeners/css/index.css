@@ -63,6 +63,12 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
+.red{
+    font-size:xx-large;
+    color:red;
+    font-weight:bold;
+}
+
 .container {
     width: 880px;
     margin: auto;
@@ -129,6 +135,11 @@ header .logo {
 .cta .cta-text button:hover {
     background: black;
     color: white;
+}
+
+.custom-button{
+    color:purple;
+    font-family:'Times New Roman', Times, serif;
 }
 
 /* Main Content Styles */

@@ -10,7 +10,7 @@ const siteContent = { //this is an object with properties and values.
     },
     'cta': { 
       'h1': 'DOM Is Awesome', 
-      'button': 'Get Started',
+      'button': 'Change Colors',
       'img-src': 'img/header-img.png' 
     },
     'main-content': { 
@@ -68,7 +68,7 @@ const siteContent = { //this is an object with properties and values.
   let ctaText = document.querySelector('.cta-text h1');
     ctaText.innerHTML = siteContent['cta']['h1'];
   //button
-  let ctaBut = document.querySelector('.cta-text button');
+  let ctaBut = document.querySelector('button');
    ctaBut.innerHTML = siteContent['cta']['button'];
    //circle image
   let ctaImg = document.querySelector('.cta img'); 
@@ -140,5 +140,9 @@ const siteContent = { //this is an object with properties and values.
   navigator.prepend(newNavTwo);
   
   //Event Listeners
+//1- do you really? ...
+ctaBut = document.querySelector('button');
+ctaBut.addEventListener("click", function (){
+    alert("Do you really want to leave this page?");
+});
 
-  
