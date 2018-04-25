@@ -9,9 +9,10 @@ let vision = document.querySelectorAll('.vision');
 let features = document.querySelectorAll('.features');
 let about = document.querySelectorAll('.about');
 let contact = document.querySelectorAll('.contact');
+console.log(contact);
+
 // all text contents
 let textContent = document.querySelectorAll('.text-content');
-// 
 
 const resetBackground = function () {
   // reset nav links
@@ -22,12 +23,16 @@ const resetBackground = function () {
   textContent.forEach(el => {
     el.style.backgroundColor = 'initial';
   })
+  // reset contact
+  contact.forEach(el => {
+    el.style.backgroundColor = 'initial';
+  })
 };
 
-const changeBackground = function (section) {
-  console.log(section);
+const changeBackground = function (mainContent) {
+  console.log(mainContent);
   resetBackground();
-  section.forEach(el => {
+  mainContent.forEach(el => {
     el.style.backgroundColor = 'yellow';
   })
 };
