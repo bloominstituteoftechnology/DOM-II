@@ -116,13 +116,28 @@ email.innerHTML = "sales@greatidea.io";
 let copyright = document.getElementsByTagName("p")[8];
 copyright.innerHTML = "Copyright Great Idea! 2018";
 
+let header = document.getElementsByTagName("header")[0].children;
+let news = document.createElement("a");
+let support = document.createElement("a");
+news.innerHTML = "News";
+support.innerHTML = "Support"
+header[0].prepend(news);
+header[0].appendChild(support);
+
+let nav = document.getElementsByTagName("nav")[0].children;
+let navArr = Array.from(nav);
+
+navArr.forEach((item, index) => {
+  item.style.cssText = 'color: limegreen;'
+})
 
 
+//--------------Event LIsteners---------------------------
 
 
 middle_img.addEventListener('mouseover', (event) => {
   // Do something!  
-    middle_img.setAttribute("src", "img/sky.jpg");
+    middle_img.setAttribute("src", "img/matrix.jpg");
 });
 
 middle_img.addEventListener('mouseleave', (event) => {
@@ -145,29 +160,26 @@ cta_button.addEventListener('dblclick', (event) => {
 
 
 cta_button.addEventListener('mouseover', (event) => {
-  heading.classList.add("green");
+  heading.classList.add("blue");
 });
 
-let nav = document.getElementsByTagName("nav")[0].children;
-//let copyOfNav = Array.from(nav);
+navArr.forEach((item, index) => {
+  item.addEventListener('mouseover', (event) => {
+    item.style.cssText = 'color: royalblue;'
+  })
+});
 
-for (let i = 0; i < nav.length; i++) {
-  nav[i].addEventListener('mouseover', (event) => {
-    nav[i].classList.add("green");
-  });
-}
+navArr.forEach((item, index) => {
+  item.addEventListener('click', (event) => {
+    item.classList.add('implode');
+  })
+});
 
-for (let i = 0; i < nav.length; i++) {
-  nav[i].addEventListener('click', (event) => {
-    nav[i].classList.add('implode');
-  });
-}
-
-for (let i = 0; i < nav.length; i++) {
-  nav[i].addEventListener('dblclick', (event) => {
-    nav[i].classList.add('font');
-  });
-}
+navArr.forEach((item, index) => {
+  item.addEventListener('dblclick', (event) => {
+    item.classList.add('font');
+  })
+});
 
 let image1 = document.getElementsByTagName("img")[1];
 
