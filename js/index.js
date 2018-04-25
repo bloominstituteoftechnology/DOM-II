@@ -85,6 +85,7 @@ middleImage.src = '/Users/MarcoG/DOM-II/img /mid-page-accent.jpg';
 let ctaText = document.getElementsByTagName('h1');
 ctaText[0].innerHTML = 'Dom is Awesome';
 
+//added some events to button
 let buttons = document.getElementsByTagName('button');
  buttons[0].innerHTML = 'Get Started';
 console.log(buttons[0]);
@@ -163,5 +164,21 @@ let CONtact = document.getElementById('Contact');
 CONtact.addEventListener('select', function () {
     alert('Selection changed!');
 }, false);
+
+//Full Screen Event
+document.addEventListener("fullscreenchange", (event) => {
+
+    if (document.fullscreen) {
+        document.fullscreenElement;
+    }
+
+});
+
+//PointerLockChange
+document.addEventListener("pointerlockchange", (event) => {
+
+    document.pointerLockElement;
+
+});
 
 
