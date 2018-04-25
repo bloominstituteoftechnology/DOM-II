@@ -74,6 +74,12 @@ ctaText.childNodes[3].innerHTML = siteContent["cta"]["button"];
 let btnTag = document.getElementsByTagName("button");
 
 
+   document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    alert('keydown event\n\n' + 'key: ' + keyName);
+  });
+  
+
 
 middleImag.addEventListener("mouseenter", function(){
 middleImag.style = "height: 50px";
@@ -87,12 +93,21 @@ logo.addEventListener("mouseover", function(){
   TweenLite.to("#logo-img", 2, {x:-100, y:100,z:-20, transformOrigin:"0% 100%"});   
     
   setTimeout(function() {
-    TweenLite.to("#logo-img", 2, {x:0, y:0, z:0});  
+    TweenLite.to("#logo-img", 1, {x:0, y:0, z:0});  
   }, 2000);
   
 });
 
-btn.addEventListener("click", function() {   
+ctaText.childNodes[1].addEventListener("copy", function() {
+  alert("Stop stealing my Stuffff!");
+ });
+
+
+window.addEventListener("resize", function() {
+ alert("Stop it Dude!");
+});
+
+btn.addEventListener("dblclick", function() {   
   ctaText.childNodes[1].style = "margin-bottom: 40px";
   ctaText.childNodes[1].style = "color: darkblue";
 
@@ -105,7 +120,7 @@ btn.addEventListener("click", function() {
 
 //let btn = ctaText.childNodes[3];
 
-btn.addEventListener('dblclick', (event) => {
+btn.addEventListener('click', (event) => {
   TweenMax.to("#cta-img", 2, {    
     rotation: 360
   });
