@@ -38,19 +38,19 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', "https://cdn.drawception.com/images/panels/2017/4-19/qa3eAkHP1T-6.png")
 
 let headerImg = document.getElementById("cta-img");
-headerImg.setAttribute("src", "img/header-img.png")
+headerImg.setAttribute("src", "https://img.etsystatic.com/il/fba1be/502755140/il_570xN.502755140_e5b7.jpg?version=1")
 
 let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute("src", "img/mid-page-accent.jpg")
+middleImg.setAttribute("src", "https://vignette.wikia.nocookie.net/emporea/images/d/d9/Black_dragon_preloader.jpg/revision/latest?cb=20160216171424")
 
 //Navigation
 let services = document.getElementsByTagName("a")[0];
 services.innerHTML = "Services";
 
-services.addEventListener('dblclick', () => { //dblclick used here.
+services.addEventListener('dblclick', () => { //dblclick used here. 1
   alert("Check out our cool services!");
 });
 
@@ -65,18 +65,18 @@ about.innerHTML = "About"
 let contact = document.getElementsByTagName("a")[5];
 contact.innerHTML = "Contact";
 
-contact.addEventListener('mouseover', () => { //mouseover used here
+contact.addEventListener('mouseover', () => { //mouseover used here 2 
     alert("are you sure?");
 });
 
 let greatIdea = document.querySelector("#logo-img")
-TweenMax.to("#logo-img", 6, {y:200, rotation:360, scale:0.5});//animation used here
+// TweenMax.to("#logo-img", 2, {x:0, rotation:360, scale:0.5});//animation used here 3
 
 //CTA
 let h1Message = document.getElementsByTagName("h1")[0];
 h1Message.innerHTML = "DOM Is Awesome";
 
-h1Message.addEventListener('select', () =>{//alert used here(not working however)
+h1Message.addEventListener('select', () =>{//select used here(not working however) 4 
   alert("You must really like me");
 });
 
@@ -91,7 +91,11 @@ askQuestion.addEventListener('click', () => { //click used here
 });
 
 let codePic = document.querySelector("#cta-img")
-TweenMax.to("#cta-img", 2, {x:0, rotation:360, scale: 0.5});//animation used here
+TweenMax.to("#cta-img", 60, {x:0, rotation:360, scale: 0.01});//animation used here 5 
+codePic.addEventListener('mouseover', () => {
+  // make picture full size
+  TweenMax.to("#cta-img", 5, {x:90, width:"223px", height:"333px"}); //stretchs it out
+});
 
 //Main content 
 let featuresH4 = document.getElementsByTagName('h4')[0];
@@ -99,7 +103,7 @@ featuresH4.innerHTML = "Features";
 let featureContent = document.getElementsByTagName('p')[0];
 featureContent.innerHTML = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 
-featureContent.addEventListener('copy', () => { //copy used here
+featureContent.addEventListener('copy', () => { //copy used here 6 
   alert("You trying to steal my words, yo?");
 })
 
@@ -120,16 +124,34 @@ visionH4.innerHTML = "Vision";
 let visionContent = document.getElementsByTagName('p')[4];
 visionContent.innerHTML = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 
+let otherPic = document.querySelector(".middle-img");
+otherPic.addEventListener('dragend', (e) =>{ //dragend used here (not working) 7 
+  e.preventDefault();
+  alert("RAAAAWWWAAAARRRR");
+});
+TweenMax.to(".middle-img", 10, {x:0, rotation:360, }); //animation used here 8 
+
 //Contact
 
 let contactH4 = document.getElementsByTagName('h4')[5];
 contactH4.innerHTML = "Contact";
 let address = document.getElementsByTagName('p')[5];
 address.innerHTML = "123 Way 456 Street Somewhere, USA";
+
+address.addEventListener('drag', (e) => { //drag used here
+    e.preventDefault(); 
+    alert("where you trying to go with that?");
+});
+
 let phone = document.getElementsByTagName('p')[6];
 phone.innerHTML = "1 (888) 888-8888";
 let email = document.getElementsByTagName('p')[7];
 email.innerHTML = "sales@greatidea.io";
+
+email.addEventListener('contextmenu', () => { //contextmenu used here
+  alert('Enter Your Email PLease');
+  prompt();
+});
 
 //footer
 let footer = document.getElementsByTagName('p')[8];
@@ -139,7 +161,8 @@ footer.innerHTML = "Copyright Great Idea! 2018"
 let navigation = document.querySelectorAll("a");
 let i;
 for (i = 0; i < navigation.length; i++) {
-  navigation[i].style.color = "green";
+  navigation[i].style.color = "purple";
 }
+
 
  

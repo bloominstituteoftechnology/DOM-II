@@ -93,8 +93,9 @@ header nav a:hover {
 }
 
 header .logo {
-    align-self: flex-end;
-    margin: 28px 0 0 91px;
+    /* align-self: flex-end;
+    margin: 28px 0 0 91px; */
+    display: none;
 }
 
 /* Call To Action (CTA) Styles */
@@ -157,7 +158,9 @@ header .logo {
 }
 
 .main-content .middle-img {
-    display: block;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 30px auto;
 }
 
