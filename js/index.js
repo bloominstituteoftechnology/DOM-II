@@ -147,7 +147,7 @@ let ctaDivM = document.querySelector(".cta")
 let navBar = document.querySelectorAll("a")
 
 document.addEventListener('copy', () => {
-  alert("GOT YOU! STOP STEALING MY SHIT!")
+  alert("GOT YOU! STOP STEALING MY STUFF!!")
 })
 
 ctaImg.addEventListener("mouseover", () => {
