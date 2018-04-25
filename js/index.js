@@ -149,6 +149,19 @@ textContents.forEach(x => {
   });
 });
 
+// Event: Context Menu -- opens context menu with edit options for navigation links
+navLinks.forEach(x => {
+  x.addEventListener('contextmenu', (event) => {
+    console.log('Context menu');
+    event.preventDefault();
+
+    let contextMenu = document.querySelector('.context-menu');
+    contextMenu.style.top = `${event.pageY}px`;
+    contextMenu.style.left = `${event.pageX}px`;
+    contextMenu.classList.add('active');
+  });
+});
+
 // Event: Click
 window.addEventListener('click', (event) => {
   console.log('click');
@@ -172,17 +185,4 @@ window.addEventListener('click', (event) => {
     let contextMenu = document.querySelector('.context-menu');
     contextMenu.classList.remove('active');
   }
-});
-
-// Event: Context Menu
-navLinks.forEach(x => {
-  x.addEventListener('contextmenu', (event) => {
-    console.log('Context menu');
-    event.preventDefault();
-
-    let contextMenu = document.querySelector('.context-menu');
-    contextMenu.style.top = `${event.pageY}px`;
-    contextMenu.style.left = `${event.pageX}px`;
-    contextMenu.classList.add('active');
-  });
 });
