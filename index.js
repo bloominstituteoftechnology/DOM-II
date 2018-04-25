@@ -183,8 +183,8 @@ events.map(function(e) {
 });
 
 logo.addEventListener("dblclick", () => {
-  logo.style.transform = "rotate(180deg)";
-})
+  logo.classList.toggle("rotate");
+});
 
 // navBar.addEventListener("mouseover", emphasize);
 // navBar.addEventListener("mouseout", emphasize);

@@ -212,6 +212,10 @@ footer {
     margin: 40px 0 20px;
 }
 
+.rotate {
+	transform: rotate(180deg); 
+}
+
 /* Tablet */
 @media (max-width: 768px) {
 
