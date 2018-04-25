@@ -44,8 +44,7 @@ const siteContent = {
 // Example: Update the img src for the logo
 
 let logo = document.getElementById("logo-img");
-logo.setAttribute('alt', 'This is company logo');
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.src = '/Users/MarcoG/DOM-II/img /logo.png';
 
 // Started working here
 let theNav = document.querySelector('nav');
@@ -77,36 +76,28 @@ theHead[5].innerHTML = 'Contacts';
 //theHead[5].appendChild(textNode);
 
 let ctaImage = document.getElementById('cta-img');
-ctaImage.setAttribute('alt', 'Image of a code snippet.');
-ctaImage.setAttribute('src', siteContent['cta']['img-src']);
+ctaImage.src = '/Users/MarcoG/DOM-II/img /header-img.png';
 
 let middleImage = document.getElementById('middle-img');
-middleImage.setAttribute('alt', 'An image of code snippets across the screen');
-middleImage.setAttribute('src', siteContent['main-content']['img-src'])
+middleImage.alt = 'An image of code snippets across the screen';
+middleImage.src = '/Users/MarcoG/DOM-II/img /mid-page-accent.jpg';
 
 let ctaText = document.getElementsByTagName('h1');
 ctaText[0].innerHTML = 'Dom is Awesome';
 
 let buttons = document.getElementsByTagName('button');
  buttons[0].innerHTML = 'Get Started';
-buttons[0].addEventListerner('click', () => {
+console.log(buttons[0]);
+buttons[0].addEventListener('click', () => {
+    buttons[0].style.backgroundColor = 'red';
     console.log("click");
-}
+})
 
-// let body = document.querySelector('body');
-// body.addEventListener('click', () => {
+buttons[0].addEventListener('mouseover', () => {
+    console.log("By the Power of DOM");
+});
 
-//     buttons.style.backgroundColor = 'red';
-//     buttons.style.color = 'white';
-//     body.style.backgroundColor = 'pink';
-    
-// });
 
-// buttons.addEventListener('mouseover', () => {
-//     console.log("By the Power of DOM");
-// });
-
-// 
 
 let headers = document.querySelectorAll('h4');
 headers[0].innerHTML = 'Features';
@@ -139,6 +130,38 @@ let footer = document.querySelectorAll('footer');
 footer[0].innerHTML = 'Copyright Great Idea! 2018';
 
 
-// window.addEventListener("optimizedResize", () => {
-//     console.log("Resize me Yall");
-// };
+window.addEventListener("optimizedResize", () => {
+    console.log("Resize me Yall");
+})
+
+
+
+
+//adding mouseenter and mousover to the nav (it worked!!!!!!)
+let test = document.getElementById("test");
+
+test.addEventListener("mouseenter", (event) => {
+    event.target.style.color = "purple";
+
+
+    setTimeout(function () {
+        event.target.style.color = "";
+    }, 500);
+}, false);
+
+test.addEventListener("mouseover", (event) => {
+    
+    event.target.style.color = "orange";
+
+    setTimeout(function () {
+        event.target.style.color = "";
+    }, 500);
+}, false);
+    
+//Contact SELECT Event
+let CONtact = document.getElementById('Contact');
+CONtact.addEventListener('select', function () {
+    alert('Selection changed!');
+}, false);
+
+
