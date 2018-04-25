@@ -149,10 +149,11 @@ textContents.forEach(x => {
   });
 });
 
-// Event: Click -- find any editable elements and convert back
+// Event: Click
 window.addEventListener('click', (event) => {
   console.log('click');
 
+  // Find any editable elements and convert back to static element
   if(event.target.className !== 'edit-content'){
     let editContentEle = document.querySelectorAll('.edit-content');
 
@@ -166,6 +167,7 @@ window.addEventListener('click', (event) => {
     });
   }
 
+  // If clicking outside context menu, close it
   if(!event.target.classList.contains('context-menu-link')){
     let contextMenu = document.querySelector('.context-menu');
     contextMenu.classList.remove('active');
