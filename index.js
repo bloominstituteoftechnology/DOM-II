@@ -71,7 +71,7 @@ let contact = document.getElementsByTagName("a")[5];
 contact.innerHTML = "Contact";
 
 contact.addEventListener('mouseover', () => { //mouseover   
-    TweenMax.to("a", 15, {x:29, y:19, scale:2}); //animation 
+    TweenMax.to("a", 120, {x:29, y:19, scale:2}); //animation 
     });
 
 //let greatIdea = document.querySelector("#logo-img")
@@ -132,6 +132,10 @@ let aboutH4 = document.getElementsByTagName('h4')[1];
 aboutH4.innerHTML = "About";
 let aboutContent = document.getElementsByTagName('p')[1];
 aboutContent.innerHTML = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+aboutContent.addEventListener('mouseover',()=>{
+  TweenMax.to("p", 120, {x:3, rotate: 15, width: 6});
+});
+
 let servicesH4 = document.getElementsByTagName('h4')[2];
 servicesH4.innerHTML = "Services";
 let servicesContent = document.getElementsByTagName('p')[2];

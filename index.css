@@ -55,7 +55,9 @@ table {
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/09/18/23/underwater-2615376_960_720.jpgcd ");
+    /* background-image: url("1272417967367.jpg");
+    opacity: 0.5; */ /* I want to add this in via an element*/
+    background-color: rgb(43, 133, 103);
 }
 
 h1, h2, h3, h4, h5 {
