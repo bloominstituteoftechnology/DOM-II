@@ -69,6 +69,43 @@ const createNewElement = function (nodeType, innerText, className) {
   return newNode;
 };
 
+const openContextMenu = function(posX, posY){
+  let contextMenu = document.querySelector('.context-menu');
+  contextMenu.style.top = `${posY}px`;
+  contextMenu.style.left = `${posX}px`;
+  contextMenu.classList.add('active');
+};
+
+const closeContextMenu = function(){
+  let contextMenu = document.querySelector('.context-menu');
+  contextMenu.classList.remove('active');
+};
+
+const resetModal = function(){
+  let modalFormInputs = document.querySelectorAll('#editNavLinksModal .form-control');
+  modalFormInputs.forEach(x => {
+    x.classList.remove('is-valid');
+    x.classList.remove('is-invalid');
+    x.value = '';
+  });
+}
+
+const updateNavLink = function(){
+  activeNavLink.innerHTML = document.getElementById('inputGroup-anchor-text').value;
+  activeNavLink.href = document.getElementById('inputGroup-anchor-href').value;
+  activeNavLink.title = document.getElementById('inputGroup-anchor-title').value;
+};
+
+const addNewNavLink = function(){
+  let newLink = createNewElement('a', document.getElementById('inputGroup-anchor-text').value, ''),
+      parentEle = activeNavLink.parentNode;
+
+  newLink.href = document.getElementById('inputGroup-anchor-href').value;
+  newLink.title = document.getElementById('inputGroup-anchor-title').value;
+
+  parentEle.insertBefore(newLink, activeNavLink);
+};
+
 // Create selectors
 const navLinks = document.querySelectorAll('nav a'),
   ctaHeader = document.querySelectorAll('.cta-text h1'),
@@ -99,9 +136,16 @@ mainContentImg.src = siteContent['main-content']['middle-img-src'];
 
 
 // Create Event Listeners
-const textContents = document.querySelectorAll('.text-content');
+const textContents = document.querySelectorAll('.text-content'),
+      editNavLink = document.querySelector('.context-menu-link.edit'),
+      removeNavLink = document.querySelector('.context-menu-link.remove'),
+      addNavLink = document.querySelector('.context-menu-link.add'),
+      modalCloseBtn = document.querySelector('.modal-footer .btn-secondary'),
+      modalSaveBtn = document.querySelector('.modal-footer .btn-primary');
+
 let dragSource,
-    activeNavLink;
+    activeNavLink,
+    contextMenuAction;
 
 textContents.forEach(x => {
   // Add draggable attribute to text-content divs
@@ -110,6 +154,7 @@ textContents.forEach(x => {
   // Event: Drag Start
   x.addEventListener('dragstart', (event) => {
     console.log('Drag start');
+
     event.target.classList.add('active-drag-element');
     event.dataTransfer.setData('text', event.target.innerHTML);
     dragSource = event.srcElement; // Save source data
@@ -118,6 +163,7 @@ textContents.forEach(x => {
   // Event: Drag End
   x.addEventListener('dragend', (event) => {
     console.log('Drag end');
+
     let dropAreas = document.querySelectorAll('.drop-area');
     event.target.classList.remove('active-drag-element');
     event.dataTransfer.clearData();
@@ -146,6 +192,7 @@ textContents.forEach(x => {
   x.addEventListener('drop', (event) => {
     console.log('Dropped');
     event.preventDefault(); // Necessary to allow drop
+
     dragSource.innerHTML = event.currentTarget.innerHTML; // Swap innerHTML for source and destination
     event.currentTarget.innerHTML = event.dataTransfer.getData('text');
   });
@@ -170,14 +217,72 @@ navLinks.forEach(x => {
     console.log('Context menu');
     event.preventDefault();
 
-    let contextMenu = document.querySelector('.context-menu');
-    contextMenu.style.top = `${event.pageY}px`;
-    contextMenu.style.left = `${event.pageX}px`;
-    contextMenu.classList.add('active');
+    openContextMenu(event.pageX, event.pageY);
+    activeNavLink = event.target;
+  });
+});
+
+// Event: Blur -- validate nav link edit form
+const navEditInputs = document.querySelectorAll('#editNavLinksModal .form-control');
+navEditInputs.forEach(x => {
+  x.addEventListener('blur', (event) => {
+    console.log('Blur');
+
+    if (event.target.value === '') {
+      event.target.classList.add('is-invalid');
+    } else {
+      event.target.classList.remove('is-invalid');
+      event.target.classList.add('is-valid');
+    }
   });
 });
 
 // Event: Click
+editNavLink.addEventListener('click', (event) => {
+  console.log('click');
+  event.preventDefault();
+
+  contextMenuAction = 'edit';
+  document.getElementById('editNavLinksModalLabel').innerHTML = 'Edit Link';
+  document.getElementById('inputGroup-anchor-text').value = activeNavLink.innerHTML;
+  document.getElementById('inputGroup-anchor-href').value = activeNavLink.href;
+  document.getElementById('inputGroup-anchor-title').value = activeNavLink.title;
+  closeContextMenu();
+  $('#editNavLinksModal').modal();
+});
+
+removeNavLink.addEventListener('click', (event) => {
+  console.log('click');
+  event.preventDefault();
+
+  closeContextMenu();
+  activeNavLink.remove();
+});
+
+addNavLink.addEventListener('click', (event) => {
+  console.log('click');
+  event.preventDefault();
+
+  contextMenuAction = 'add';
+  document.getElementById('editNavLinksModalLabel').innerHTML = 'Add Link';
+  resetModal();
+  closeContextMenu();
+  $('#editNavLinksModal').modal();
+});
+
+modalCloseBtn.addEventListener('click', (event) => {
+  console.log('click');
+  resetModal();
+});
+
+modalSaveBtn.addEventListener('click', (event) => {
+  console.log('click');
+
+  $('#editNavLinksModal').modal('hide');
+  contextMenuAction === 'edit' ? updateNavLink() : addNewNavLink();
+  resetModal();
+});
+
 window.addEventListener('click', (event) => {
   console.log('click');
 
@@ -197,7 +302,6 @@ window.addEventListener('click', (event) => {
 
   // If clicking outside context menu, close it
   if(!event.target.classList.contains('context-menu-link')){
-    let contextMenu = document.querySelector('.context-menu');
-    contextMenu.classList.remove('active');
+    closeContextMenu();
   }
 });
