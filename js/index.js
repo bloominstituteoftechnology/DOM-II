@@ -109,7 +109,7 @@ textContents.forEach(x => {
   // Event: Drag Start
   x.addEventListener('dragstart', (event) => {
     console.log('Drag start');
-    event.target.style = 'opacity: 0.4; transform:scale(0.8)';
+    event.target.classList.add('active-drag-element');
     event.dataTransfer.setData('text', event.target.innerHTML); // Define drag data
     dragSource = event.srcElement; // Save source data
   });
@@ -117,7 +117,7 @@ textContents.forEach(x => {
   // Event: Drag End
   x.addEventListener('dragend', (event) => {
     console.log('Drag end');
-    event.target.style = 'opacity: 1; transform:scale(1)';
+    event.target.classList.remove('active-drag-element');
     event.dataTransfer.clearData(); // Remove drag data
   });
 

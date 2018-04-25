@@ -162,6 +162,24 @@ h5 {
   margin: auto;
 }
 
+/* Global Classes */
+.edit-content {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 98%;
+  height: 90%;
+}
+
+.drop-area {
+  border: 2px dashed gray;
+}
+
+.active-drag-element {
+  opacity: 0.4;
+  transform:scale(0.8);
+}
+
 /* Header Styles */
 
 header {
@@ -261,14 +279,6 @@ header .logo {
 
 .main-content .bottom-content p {
   padding-right: 20px;
-}
-
-.main-content .edit-content {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  width: 98%;
-  height: 90%;
 }
 
 /* Contact Styles */
