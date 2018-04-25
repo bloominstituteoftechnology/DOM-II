@@ -17,12 +17,12 @@ startButton.addEventListener("click", (event) => {
 
 
 navLinks[0].addEventListener("click", (event) => {
-  TweenMax.to(navLinks, 2, {rotation:180});
+  TweenMax.to(navLinks, 2, {rotation:180, ease:RoughEase.ease});
   event.stopPropagation();
 });
 
 navLinks[1].addEventListener("click", (event) => {
-  TweenMax.to(navLinks, 2, {rotation:0});
+  TweenMax.to(navLinks, 2, {rotation:0, ease:RoughEase.ease});
   event.stopPropagation();
 });
 
@@ -47,12 +47,12 @@ navLinks[5].addEventListener("click", (event) => {
 });
 
 logoImg.addEventListener("mouseenter", (event) => {
-  TweenLite.to(logoImg, 10, {width: `${Math.floor(Math.random()*1000)}px`, height: `${Math.floor(Math.random()*1000)}px`, background:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
+  TweenLite.to(logoImg, 10, {width: `${Math.floor(Math.random()*1000)}px`, height: `${Math.floor(Math.random()*1000)}px`, background:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`, ease: Power1.easeOut});
 });
 
 logoImg.addEventListener("mouseleave", (event) => {
   console.log("Mouse is not over picture");
-  TweenLite.to(logoImg, 10, {width: `183px`, height: `36px`, background: `rgb(255, 255, 255)`});
+  TweenLite.to(logoImg, 10, {width: `183px`, height: `36px`, background: `rgb(255, 255, 255)`, ease: Power1.easeIn});
 });
 
 window.addEventListener("keyup", (event) => {
