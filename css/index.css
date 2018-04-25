@@ -106,8 +106,20 @@ header .logo {
     font-size: 72px;
 }
 
-.p {
+.green {
     color: limegreen;
+}
+
+.font {
+    font-size: 100%;
+}
+
+.circle1 {
+    transform: rotate(-90deg);
+}
+
+.circle2 {
+    transform: rotate(90deg);
 }
 
 .cta {

@@ -145,6 +145,36 @@ cta_button.addEventListener('dblclick', (event) => {
 
 
 cta_button.addEventListener('mouseover', (event) => {
-  heading.classList.add("p");
+  heading.classList.add("green");
 });
 
+let nav = document.getElementsByTagName("nav")[0].children;
+//let copyOfNav = Array.from(nav);
+
+for (let i = 0; i < nav.length; i++) {
+  nav[i].addEventListener('mouseover', (event) => {
+    nav[i].classList.add("green");
+  });
+}
+
+for (let i = 0; i < nav.length; i++) {
+  nav[i].addEventListener('click', (event) => {
+    nav[i].classList.add('implode');
+  });
+}
+
+for (let i = 0; i < nav.length; i++) {
+  nav[i].addEventListener('dblclick', (event) => {
+    nav[i].classList.add('font');
+  });
+}
+
+let image1 = document.getElementsByTagName("img")[1];
+
+image1.addEventListener('mouseover', (event) => {
+  image1.classList.add("circle1");
+});
+
+image1.addEventListener('mouseleave', (event) => {
+  image1.classList.add("circle2");
+});
