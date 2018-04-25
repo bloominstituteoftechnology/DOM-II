@@ -260,6 +260,7 @@ header .logo {
 }
 
 .main-content .top-content .text-content {
+  cursor: move;
   width: 50%;
 }
 
@@ -274,6 +275,7 @@ header .logo {
 }
 
 .main-content .bottom-content .text-content {
+  cursor: move;
   width: 33.33%;
 }
 
