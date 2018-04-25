@@ -64,15 +64,14 @@ navLinks[5].addEventListener("click", (event) => {
 
 logoImg.addEventListener("mouseenter", (event) => {
   TweenLite.to(logoImg, 10, {
-    width: `${Math.floor(Math.random()*1000)}px`,
-    height:  `${Math.floor(Math.random()*1000)}px`,
+    scale: Math.random() * 3 + 1,
     background: `rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`,
     ease: Power1.easeOut
   });
 });
 
 logoImg.addEventListener("mouseleave", (event) => {
-  TweenLite.to(logoImg, 10, {width: `183px`, height: `36px`, background: `rgb(255, 255, 255)`, ease: Power1.easeIn});
+  TweenLite.to(logoImg, 10, {scale: 1, background: `rgb(255, 255, 255)`, ease: Power1.easeIn});
 });
 
 window.addEventListener("keyup", (event) => {
