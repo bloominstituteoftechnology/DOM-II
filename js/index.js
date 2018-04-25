@@ -2,11 +2,10 @@ const startButton = document.getElementById("start-button");
 const ctaText = document.getElementById("big-text");
 const navLinks = Array.from(document.querySelectorAll(".nav"));
 const logoImg = document.getElementById("logo-img");
-const colors = ["red", "blue", "orange", "green", "purple", "yellow", "aqua", "pink"]
 
 
 window.addEventListener("click", (event) => {
-  TweenLite.to(ctaText, 2, {color:colors[Math.floor(Math.random() * colors.length)]});
+  TweenLite.to(ctaText, 2, {color:`rgb(${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))}, ${(Math.floor(Math.random() * 256))})`});
 });
 
 
