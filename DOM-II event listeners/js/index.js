@@ -10,7 +10,7 @@ const siteContent = { //this is an object with properties and values.
     },
     'cta': { 
       'h1': 'DOM Is Awesome', 
-      'button': 'Change Colors',
+      'button': 'Get Started',
       'img-src': 'img/header-img.png' 
     },
     'main-content': { 
@@ -65,10 +65,12 @@ const siteContent = { //this is an object with properties and values.
   
   //cta
   //text
+
+  let cTA = document.querySelector('.cta');
   let ctaText = document.querySelector('.cta-text h1');
     ctaText.innerHTML = siteContent['cta']['h1'];
   //button
-  let ctaBut = document.querySelector('button');
+  let ctaBut = document.querySelector('.cta-text button');
    ctaBut.innerHTML = siteContent['cta']['button'];
    //circle image
   let ctaImg = document.querySelector('.cta img'); 
@@ -119,8 +121,8 @@ const siteContent = { //this is an object with properties and values.
   
   //new navs
   
-  //create text node to append to "a" element that will then append to
-  //"nav" element.
+  //create text node to append to 'a' element that will then append to
+  //'nav' element.
   
   //append
   let navigator = document.querySelector('nav');
@@ -140,9 +142,68 @@ const siteContent = { //this is an object with properties and values.
   navigator.prepend(newNavTwo);
   
   //Event Listeners
-//1- do you really? ...
-ctaBut = document.querySelector('button');
-ctaBut.addEventListener("click", function (){
-    alert("Do you really want to leave this page?");
+//basic syntax
+  // element.addEventListener('type', () => {
+  //   // Do something!  
+  //   console.log('we got into this event!');
+  //   myHeader.classList.add('mega');
+  // });
+
+//1
+ctaBut.addEventListener('mousedown', () => {
+  console.log('I am Times Roman purple!');
+  ctaBut.classList.add('custom-button');
+});
+
+//2
+let myCTA = document.querySelector('.cta');
+ctaText.addEventListener('mouseenter', () => {
+  console.log('we are red!!');
+  
+});
+
+
+//3
+ctaText.addEventListener('mouseleave', () => {
+  console.log('we are not red anymore!');
+  myCTA.classList.remove('red');
+});
+//4
+visionHeadline.addEventListener('mousemove', () => {
+  console.log(`I'm a cat! My name is Marshmallow. I like to chase mice.`)
+})
+//5
+ctaBut.addEventListener('mouseup', () => {
+  alert('Are you sure you want to do that?!');
+  ctaBut.classList.remove('custom-button');
+});
+
+//6
+window.addEventListener('load', function(event) {
+  console.log('All resources finished loading!');
+});
+
+//7
+navigator.addEventListener('dblclick', ()=> {
+navigator.classList.add('blue');
+});
+//8
+cTA.addEventListener('pointerover', function(event) {
+  cTA.classList.add('red');
+})
+
+//9
+document.addEventListener('keypress', () =>{
+  if(/[.]/gi){
+    console.log('You can code!');
+  }
+});
+//10
+window.addEventListener('mouseon',() =>{
+  window.classList.add('purple');
+});
+
+window.addEventListener('mouseleave', ()=>{
+  alert('The mouse has run away!!');
 });
 
