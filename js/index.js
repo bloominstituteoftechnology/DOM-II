@@ -147,8 +147,30 @@ const siteContent = {
 ctaButton.addEventListener("click", function(){  /// added click eventListener to the cta button
   TweenMax.from(ctaImg, 3, {
     marginLeft: 400,
-    rotation: 720
+    rotation: 720,
+    scale: 0.3
   });
+});
+
+TweenMax.from(servicesH4, 0.5, {color:"#ff0000", x:-300, opacity: 0});
+TweenMax.from(servicesP, 0.5, {x: 300, delay: 0.5, opacity: 0});
+TweenMax.from(productH4 , 0.5, {color:"#ff0000", y:300, delay: 1, opacity: 0});
+TweenMax.from(productP, 0.5, {y: -300, delay: 1.5, opacity: 0});
+TweenMax.from(visionH4, 0.5, {color:"#ff0000", x:500, delay: 2, opacity: 0});
+TweenMax.from(visionP, 0.5, {x: -500, delay: 2.5, opacity: 0});
+
+let contactBtn = document.querySelector(".contact .contact-btn");
+
+contactBtn.addEventListener("click", function() {
+  TweenMax.to(contactH4, 1, {color: "red", opacity: 1, x: "40%"});
+  TweenMax.to(contactAddress, 1, {color: "red", opacity: 1, x: "40%"});
+  TweenMax.to(contactPhone, 1,{color: "red", opacity: 1, x: "40%"});
+  TweenMax.to(contactEmail, 1, {color: "red", opacity: 1, x: "40%"});
+  TweenMax.to(contactBtn, 1, {opacity: 0});
+});
+
+copyRight.addEventListener("mouseover", function() {
+  TweenMax.to(copyRight, 2, {color: "blue", scale: 2, padding: 10, marginBottom: 50});
 });
 
 
