@@ -144,20 +144,14 @@ const siteContent = {
   }, 1000);
 
   // DOM II starts here
-ctaButton.addEventListener("click", function(){  /// added click eventListener to the cta button
+
+ctaButton.addEventListener("click", function(){  // added click eventListener to the cta button
   TweenMax.from(ctaImg, 3, {
     marginLeft: 400,
     rotation: 720,
     scale: 0.3
   });
 });
-
-TweenMax.from(servicesH4, 0.5, {color:"#ff0000", x:-300, opacity: 0});
-TweenMax.from(servicesP, 0.5, {x: 300, delay: 0.5, opacity: 0});
-TweenMax.from(productH4 , 0.5, {color:"#ff0000", y:300, delay: 1, opacity: 0});
-TweenMax.from(productP, 0.5, {y: -300, delay: 1.5, opacity: 0});
-TweenMax.from(visionH4, 0.5, {color:"#ff0000", x:500, delay: 2, opacity: 0});
-TweenMax.from(visionP, 0.5, {x: -500, delay: 2.5, opacity: 0});
 
 let contactBtn = document.querySelector(".contact .contact-btn");
 
@@ -172,5 +166,52 @@ contactBtn.addEventListener("click", function() {
 copyRight.addEventListener("mouseover", function() {
   TweenMax.to(copyRight, 2, {color: "blue", scale: 2, padding: 10, marginBottom: 50});
 });
+
+imgLogo.addEventListener('mouseenter', function(){ //added mouse enter eventListener to the img logo
+  TweenMax.from(imgLogo, 3, {
+    x:400,
+    ease:Back.easeOut
+  });
+});
+
+
+ctaImg.addEventListener('dblclick', function(){ // added dblclick eventListener to the cta img
+  TweenMax.staggerFrom(headerNavA, 3, {
+    opacity:0,
+    y:200,
+    rotation:360});
+});
+
+ctaH1.addEventListener('click', function(){ //click eventListener to "DOM is Awesome"
+  let topContentH4 = document.querySelectorAll(".main-content .top-content .text-content h4");
+  TweenMax.from(topContentH4, 3, {
+    x:-400,
+    ease:Back.easeOut});
+});
+
+
+let topContentP = document.querySelectorAll(".main-content .top-content .text-content p"); //having the top content move from the right
+TweenMax.from(topContentP, 3, {
+  x:400,
+  ease:Back.easeOut
+});
+
+
+middleImg.addEventListener('mouseover', function(){ //mouseover eventListener to middle img
+  TweenMax.from(middleImg, 3, {
+    autoAlpha:0}, {
+      autoAlpha:1});
+  TweenMax.from(servicesH4, 0.5, {color:"#ff0000", x:-300, opacity: 0});
+  TweenMax.from(servicesP, 0.5, {x: 300, delay: 0.5, opacity: 0});
+  TweenMax.from(productH4 , 0.5, {color:"#ff0000", y:300, delay: 1, opacity: 0});
+  TweenMax.from(productP, 0.5, {y: -300, delay: 1.5, opacity: 0});
+  TweenMax.from(visionH4, 0.5, {color:"#ff0000", x:500, delay: 2, opacity: 0});
+  TweenMax.from(visionP, 0.5, {x: -500, delay: 2.5, opacity: 0});
+});
+
+
+
+
+
 
 
