@@ -112,10 +112,55 @@ document.addEventListener("contextmenu", noRightClicks);
 
 
 let n = 0;
-let buttonText=[`Don't Click me`, `I said don't click me`, `Please stop`, `Why would you click me?`, `Click again and I'll just say undefined`];
+let buttonText=[`Don't Click me`, `I said don't click me`, `Please stop`, `Why would you click me?`, `This is hurting me`, `I didn't do anything wrong`, `You are going to kill me`, `What kind of freak are you`, `Stop it before you kill me`, `Somebody he-`];
 
 function noClicking(){
-    this.innerText = buttonText[n];
+    if (n < buttonText.length) {
+      this.innerText = buttonText[n];
+    } else if (n === buttonText.length){
+      this.innerText = ``;
+    } else if (n > buttonText.length + 3){
+      alert("You killed my favorite button");
+        }
     n++;
   }
 document.querySelector('.cta-text button').addEventListener("click", noClicking);
+
+function disappear() {
+    document.querySelector('.cta-text button').innerText = `Don't take my picture!`;
+}
+function reappear() {
+    document.querySelector('.cta-text button').innerText ='Thanks for returning my picture'
+}
+document.getElementById("cta-img").addEventListener("dragstart", disappear)
+document.getElementById("cta-img").addEventListener("dragend", reappear)
+
+function beep() {
+  this.innerText = 'Beep';
+}
+function boop() {
+  this.innerText = 'Boop';
+}
+title[0].addEventListener("mouseleave", beep);
+title[1].addEventListener("mouseleave", boop);
+title[2].addEventListener("mouseleave", beep);
+title[3].addEventListener("mouseleave", boop);
+title[4].addEventListener("mouseleave", beep);
+
+
+
+function invert() {
+  this.style.filter = "invert(100%)";
+}
+document.getElementById("middle-img").addEventListener("dblclick", invert);
+
+
+function copied() {
+  this.innerText = 'You stole my copyright!';
+}
+document.querySelector('footer p').addEventListener("copy", copied);
+
+function print() {
+  alert("No need to do that");
+}
+document.addEventListener("keydown", print);
