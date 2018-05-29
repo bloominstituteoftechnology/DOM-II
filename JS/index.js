@@ -93,7 +93,7 @@ navmain.forEach(function (e){
 let ctah1 = document.querySelector(".cta h1");
 ctah1.innerHTML = "DOM <br> Is <br> Awesome";
 ctah1.addEventListener("contextmenu", () => {
-  ctah1.style.textShadow = "20px 10px 20px black";
+  ctah1.style.textShadow = "40px 10px 40px black";
 });
 
 ctah1.addEventListener("mousemove", () => {
