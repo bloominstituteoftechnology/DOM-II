@@ -233,6 +233,8 @@ header .logo {
 .main-content .top-content {
   display: flex;
   justify-content: space-around;
+  position: relative;
+  left: 100%;
 }
 
 .main-content .middle-img {

@@ -209,7 +209,8 @@ ctaText.addEventListener("mouseleave", () => {
 
 // On scroll enlarge image the click image to revert back
 window.addEventListener("scroll", () => {
-  middleImage.style.transform = "scale(1.5)";
+  // middleImage.style.transform = "scale(1.5)";
+  document.querySelector(".cta").style.flexDirection = "initial";
 });
 
 middleImage.addEventListener("click", () => {
@@ -230,3 +231,11 @@ button.addEventListener("click", () => {
 // GSAP Animation
 
 TweenMax.to(".logo", 2, { left: 0 });
+
+TweenMax.to(".top-content", 2, {
+  left: 0,
+  backgroundColor: "#5BD3FF",
+  padding: 20,
+  borderColor: "blue",
+  borderRadius: 26
+});
