@@ -40,14 +40,20 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"])
-
+logo.addEventListener('mouseenter', function() {
+  this.style.background = "yellow";
+});
+logo.addEventListener('mouseleave', function() {
+  this.style.background = "white";
+})
 //Header Section updated
 const nav = document.querySelector("nav");
-const navLinks = document.querySelectorAll("nav a");
+let navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach((link,i) => {
   link.textContent = siteContent.nav[`nav-item-${i+1}`]; 
   link.style.color = "green";
+ 
 });
 
 
@@ -61,27 +67,54 @@ const donationsLink = document.createElement('a');
 donationsLink.textContent = "Donations";
 donationsLink.style.cssText = navLinks[0].style.cssText;
 donationsLink.setAttribute('href', '#');
-nav.append(donationsLink);
-
+nav.appendChild(donationsLink);
+navLinks = document.querySelectorAll("nav a");
+navLinks.forEach(link => {
+  link.addEventListener('mouseover', function() {
+    this.style.color = "blue";
+  });
+});
 //CTA Section
 const ctaSection = document.querySelector(".cta");
 const domText = ctaSection.querySelector(".cta-text h1");
 
 domText.innerHTML = `DOM<br> Is<br> Awesome`;
+domText.addEventListener('click', function(){
+  this.innerHTML = `Manipulating<br> the<br> DOM is Awesome`
+});
 
 const domBtn = ctaSection.querySelector(".cta-text button");
 
 domBtn.textContent = `Get Started`;
+domBtn.addEventListener('click', function() {
+  const saying1 = 'You clicked me!';
+  const saying2 = 'I get it already, stop clicking me!';
+  if(this.textContent === saying1 || this.textContent === saying2) {
+    this.textContent = saying2;
+    this.style.height = 'auto';
+
+    return;
+  }
+  this.textContent = saying1;
+
+});
 
 const ctaImg = ctaSection.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
-
+ctaImg.addEventListener('mouseenter', function() {
+  this.style.boxShadow = "12px 12px 2px 1px rgba(0, 0, 255, .2)";
+});
+ctaImg.addEventListener('mouseleave', function() {
+  this.style.boxShadow = "";
+});
 //Main Content Section
 
 const mainContentObj = siteContent["main-content"];
 const middleImg = document.querySelector('#middle-img');
 middleImg.setAttribute('src', mainContentObj["middle-img-src"]);
-
+middleImg.addEventListener('mouseover', function(event) {
+  this.style.visibility = "hidden";
+});
 const textContentsH4 = document.querySelectorAll('.main-content h4');
 
 const textContentsP = document.querySelectorAll('.main-content p');
@@ -99,7 +132,11 @@ function attachContent(nodes, contentObj,regex) {
 
 attachContent(textContentsH4, mainContentObj, /\bh4\b/);
 attachContent(textContentsP, mainContentObj, /\b-content\b/);
-
+textContentsH4.forEach(h4 => {
+  h4.addEventListener('mouseover', function() {
+    this.style.fontSize = "22px"
+  });
+});
 //Contact Section
 
 const contactSection = document.querySelector('.contact');
@@ -110,14 +147,20 @@ contactHeading.textContent = siteContent.contact["contact-h4"];
 
 const address = contactSection.querySelectorAll('p')[0];
 address.textContent = siteContent.contact.address;
-
+address.addEventListener('mouseover', function() {
+  this.style.color = 'red';
+});
 const phoneNum = contactSection.querySelectorAll('p')[1];
 phoneNum.textContent = siteContent.contact.phone;
-
+phoneNum.addEventListener('mouseover', function() {
+  this.style.color = 'red';
+});
 const email = contactSection.querySelectorAll('p')[2];
 
 email.textContent = siteContent.contact.email;
-
+email.addEventListener('mouseover', function() {
+  this.style.color = 'red';
+});
 //Footer
 
 const footerP = document.querySelector('footer p');
