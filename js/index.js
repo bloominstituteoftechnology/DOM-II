@@ -227,6 +227,6 @@ button.addEventListener("click", () => {
   }
 });
 
-// GSAP
+// GSAP Animation
 
 TweenMax.to(".logo", 2, { left: 0 });
