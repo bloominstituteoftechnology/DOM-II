@@ -77,7 +77,7 @@ navTop[5].style.color = "green";
 navTop[6].style.color = "green";
 navTop[7].style.color = "green";
 
-// Event Listener for nav upon click
+// Event Listener for nav > Services upon click
 navTop[0].addEventListener("click", () => {
   if (navTop[0].style.color === "blue") {
     navTop[0].style.color = "green";
@@ -129,6 +129,16 @@ topParagraphs[1].innerHTML = siteContent["main-content"]["about-content"];
 
 let midImage = document.getElementById("middle-img");
 midImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+//event listener for mouse over on middle image
+midImage.addEventListener("mouseover", () => {
+  midImage.style.transform = "rotate(180deg)";
+}); 
+
+//event listener for mouseleave on middle image
+midImage.addEventListener("mouseleave", () => {
+  midImage.style.transform = "rotate(0deg)";
+});
 
 let botHeaders = document.querySelectorAll(".bottom-content .text-content h4");
 botHeaders[0].innerHTML = siteContent["main-content"]["services-h4"];
