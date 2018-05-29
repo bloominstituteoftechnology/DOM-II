@@ -239,3 +239,5 @@ TweenMax.to(".top-content", 2, {
   borderColor: "blue",
   borderRadius: 26
 });
+
+TweenMax.to(".middle-img", 2, { x: 875, rotation: 360 });
