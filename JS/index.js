@@ -46,7 +46,7 @@ logo.setAttribute("src", siteContent["nav"]["img-src"])
 logo.addEventListener("dblclick", () => {
   logo.style.transform = "rotate(25deg)";
 });
-logo.addEventListener("mouseout", () => {
+logo.addEventListener("mouseleave", () => {
   logo.style.transform = "rotate(0deg)";
 });
 
@@ -95,6 +95,12 @@ ctah1.innerHTML = "DOM <br> Is <br> Awesome";
 
 let ctabtn = document.querySelector(".cta button");
 ctabtn.innerHTML = "Get Started";
+ctabtn.addEventListener("mousedown", () =>{
+  ctabtn.style.boxshadow = "40px 80px 80px blue";
+} );
+ctabtn.addEventListener("mouseup", () => {
+  ctabtn.style.boxshadow = "100px green";
+});
 
 let ctalogo = document.getElementById("cta-img");
 ctalogo.setAttribute("src", siteContent["cta"]["img-src"])
