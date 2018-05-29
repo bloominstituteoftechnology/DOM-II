@@ -77,21 +77,45 @@ contactInfo[2].innerText = siteContent["contact"]["email"];
 
 document.querySelector('footer p').innerText = siteContent["footer"]["copyright"];
 
-navItems[0].style.color = 'green';
-navItems[1].style.color = 'green';
-navItems[2].style.color = 'green';
-navItems[3].style.color = 'green';
-navItems[4].style.color = 'green';
-navItems[5].style.color = 'green';
+//Event Listeners
+function colorChanger() {
+  if (this === navItems[0]) {
+  this.style.color = 'red';
+} else if (this === navItems[1]) {
+  this.style.color = 'orange';
+} else if (this === navItems[2]) {
+  this.style.color = 'gold';
+} else if (this === navItems[3]) {
+  this.style.color = 'green';
+} else if (this === navItems[4]) {
+  this.style.color = 'blue';
+} else if (this === navItems[5]) {
+  this.style.color = 'purple';
+  }
+}
+navItems[0].addEventListener("mouseover", colorChanger);
+navItems[1].addEventListener("mouseover", colorChanger);
+navItems[2].addEventListener("mouseover", colorChanger);
+navItems[3].addEventListener("mouseover", colorChanger);
+navItems[4].addEventListener("mouseover", colorChanger);
+navItems[5].addEventListener("mouseover", colorChanger);
 
-let firstNav = document.createElement("a");
-firstNav.setAttribute("href", "#");
-firstNav.innerHTML = "First";
-firstNav.style.color = 'green';
-document.querySelector(".container header nav").prepend(firstNav);
+function awesome() {
+  this.innerText = 'Jennifer\n is\n awesome';
+}
+document.querySelector('.cta-text h1').addEventListener("click", awesome);
 
-let lastNav = document.createElement("a");
-lastNav.setAttribute("href", "#");
-lastNav.innerHTML = "Last";
-lastNav.style.color = 'green';
-document.querySelector(".container header nav").append(lastNav);
+function noRightClicks() {
+  alert("Why would you right click on my website?")
+}
+document.addEventListener("contextmenu", noRightClicks);
+
+
+let n = 0;
+let buttonText=[`Don't Click me`, `I said don't click me`, `Please stop`, `Why would you click me?`, `Click again and I'll just say undefined`];
+
+function noClicking(){
+    this.innerText = buttonText[n];
+    n++;
+  }
+document.querySelector('.cta-text button').addEventListener("click", noClicking);
