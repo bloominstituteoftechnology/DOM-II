@@ -96,6 +96,10 @@ ctah1.addEventListener("contextmenu", () => {
   ctah1.style.textShadow = "20px 10px 20px black";
 });
 
+ctah1.addEventListener("mousemove", () => {
+  ctah1.style.textShadow = "20px 10px 20px black";
+});
+
 let ctabtn = document.querySelector(".cta button");
 ctabtn.innerHTML = "Get Started";
 ctabtn.addEventListener("mousedown", () =>{
