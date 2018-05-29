@@ -77,7 +77,6 @@ let contactContent = document.querySelectorAll('.contact p');
 contactHeading.innerHTML = siteContent.contact["contact-h4"];
 
 
-console.log(contactContent);
 contactContent[0].innerHTML = siteContent["contact"]["address"];
 contactContent[1].innerHTML = siteContent.contact.phone;
 contactContent[2].innerHTML = siteContent.contact.email;
@@ -113,3 +112,32 @@ document.querySelector('.cta .cta-text button').addEventListener('click', (event
   })
 })
 
+textHeading[0].addEventListener('mouseover', () => {
+  alert('I bet there\'s a secret message logged into the console');
+  console.log('Hey! Who are you to reveal my secrets!? You\'re mother was a pop-up add!');
+})
+
+midImg.addEventListener('mouseover', ()=> {
+  textHeading[3].innerHTML = 'Hey! Who changed my heading? I better not get clicked next.'
+})
+
+textHeading[3].addEventListener('click', (event)=>{
+  event.target.innerHTML = 'Hey! I said not to click me!'
+})
+
+document.getElementById('navbar').addEventListener('mouseover', (event)=> {
+    for (let i = 0; i < navBar.length; i++){
+
+      navBar[i].style.color = getRandomColor();
+    }
+
+})
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
