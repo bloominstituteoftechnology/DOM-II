@@ -89,11 +89,20 @@ document.querySelector('footer p').innerHTML = siteContent.footer.copyright;
 //////////////////////////
 
 window.addEventListener('scroll', (e)=>{
-  document.querySelector(".cta .cta-text h1").innerHTML= 'YOU\'RE SCROLLING!!!';
+  document.querySelector(".cta .cta-text h1").innerHTML= 'YOU\'RE SCROLLING!!! I dare you to drag that image right there.';
 })
+
+document.querySelector("#cta-img").addEventListener('dragstart',(event)=>{
+  document.querySelector(".cta .cta-text h1").innerHTML = "Hey! Let him go! Your mother's a cat!"
+})
+document.querySelector("#cta-img").addEventListener('dragend',(event)=>{
+  document.querySelector(".cta .cta-text h1").innerHTML = "I knew you didn't have it in you."
+})
+
 
 document.querySelector('.cta .cta-text button').addEventListener('click', (event)=>{
   event.target.innerHTML = '<input id="theInput" placeholder="I\'m hilarious. Type stuff in here."/>';
+
   document.querySelector('#theInput').addEventListener('keydown', (event)=>{
     if (event.key === 'Backspace'){
       alert('Not even the backspace works!');
@@ -103,3 +112,4 @@ document.querySelector('.cta .cta-text button').addEventListener('click', (event
     }
   })
 })
+
