@@ -41,12 +41,13 @@ const siteContent = {
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-
+logo.addEventListener("dblclick", ()=>{
+  logo.style.border = "3px solid black";
+})
 const a = document.createElement('a');
 const p = document.querySelector('nav').appendChild(a);
 const b = document.createElement('a');
 const q = document.querySelector('nav').prepend(b);
-
 let nav = document.querySelectorAll("nav a");
 nav[0].innerHTML = "Random";
 nav[1].innerHTML = "Services";
@@ -58,7 +59,8 @@ nav[6].innerHTML = "Contact";
 nav[7].innerHTML = "Stuff";
 // const a = document.createElement('a');
 // const p = document.querySelector('nav a').appendChild(a);
-nav.forEach(function(arr){arr.style.color = "green";});
+nav.forEach(function(arr){arr.style.color = "green";
+arr.setAttribute('href','#')});
 
 
 let ctaImg = document.getElementById("cta-img");
