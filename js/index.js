@@ -81,3 +81,37 @@ for (let i=1; i<=3; i++){
 
 //Footer
 document.querySelector("footer p").innerHTML = siteContent.footer.copyright;
+
+//Events
+btn = document.querySelector(".cta-text button");
+btn.addEventListener('click', (event)=>{
+  window.open('https://developer.mozilla.org/en-US/docs/Web/Events') ;
+});
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+header = document.querySelector(".cta-text h1");
+
+header.addEventListener('mouseover', (event) => {
+  randomColor = getRandomColor();
+  header.style.color = randomColor;
+});
+
+// mainHeaders = document.querySelectorAll(".main-content h4");
+// mainTexts = document.querySelector(".main-content p");
+
+// for(let i=0; i<mainHeaders.length; i++){
+//   if features
+// }
+
+// features.addEventListener((event)=>{
+//   if ()
+// })
+
