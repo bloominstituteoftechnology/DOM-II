@@ -100,3 +100,84 @@ pElements[8].innerHTML = siteContent["footer"]["copyright"];
 
 let middleImg = document.querySelector(".middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+});
+
+ctaBtn.addEventListener('click', (event) => {
+  event.target.style.color = 'green';
+
+  setTimeout(() => {
+    event.target.style = '';
+  }, 5000);
+}, false);
+
+ctaImg.addEventListener('dblclick', (event) => {
+  event.target.style = 'border: 1px solid green';
+
+  setTimeout(() => {
+    event.target.style = '';
+  }, 5000);
+});
+
+nav.addEventListener('mouseover', (event) => {
+  event.target.style = 'border: 1px solid green';
+
+  setTimeout(() => {
+    event.target.style = '';
+    event.target.style.color = 'green';
+  }, 5000);
+});
+
+middleImg.addEventListener('dragstart', (event) => {
+  event.target.style = 'border-radius: 50%';
+
+  setTimeout(() => {
+    event.target.style= '';
+  }, 5000);
+});
+
+logo.addEventListener('mouseleave', (event) => {
+  event.target.style = 'border: 1px solid green';
+
+  setTimeout(() => {
+    event.target.style = '';
+  }, 5000);
+});
+
+for (let i = 0; i < h4Elements.length; i++) {
+  h4Elements[i].addEventListener('mousemove', (event) => {
+    event.target.style.color = 'green';
+
+    setTimeout(() => {
+      event.target.style.color ='';
+    }, 5000);
+  });
+}
+
+for (let i = 0; i < pElements.length; i++) {
+  pElements[i].addEventListener('contextmenu', (event) => {
+    event.target.style.color = 'green';
+
+    setTimeout(() => {
+      event.target.style.color ='';
+    }, 5000);
+  });
+}
+
+ctaH1.addEventListener('mouseup', (event) => {
+  event.target.style.color = 'green';
+
+  setTimeout(() => {
+    event.target.style.color ='';
+  }, 5000);
+});
+
+document.addEventListener('copy', function(e){
+  e.clipboardData.setData('text/plain', 'Great Idea!');
+  e.clipboardData.setData('text/html', '<b>Great Idea!</b>');
+  e.preventDefault(); // We want our data, not data from any selection, to be written to the clipboard
+});
