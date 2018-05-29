@@ -41,6 +41,18 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+
+//event listener for mouse over
+logo.addEventListener("mouseover", () => {
+  logo.style.transform = "rotate(180deg)";
+}); 
+
+
+//event listener for mouseleave
+logo.addEventListener("mouseleave", () => {
+  logo.style.transform = "rotate(0deg)";
+});
+
 const a = document.createElement('a');
 const p = document.querySelector('nav').appendChild(a);
 p.innerHTML = "Examples"
@@ -66,9 +78,23 @@ navTop[5].style.color = "green";
 navTop[6].style.color = "green";
 navTop[7].style.color = "green";
 
+// Event Listener for nav upon click
+navTop[0].addEventListener("click", () => {
+  if (navTop[0].style.color === "red") {
+    navTop[0].style.color = "green";
+    navTop[0].style.fontWeight = "normal";
+  } else {
+  navTop[0].style.color = "blue";
+  navTop[0].style.fontWeight = "bold";
+  }
+});
+
+
 
 let callToAction = document.querySelector(".cta .cta-text h1");
 callToAction.innerHTML = "DOM<br>Is<br>Awesome";
+
+
 
 
 
@@ -78,20 +104,29 @@ ctaImage.setAttribute("src", siteContent["cta"]["img-src"]);
 let ctaButton = document.querySelector(".cta .cta-text button");
 ctaButton.innerHTML = siteContent["cta"]["button"];
 
+
+//event listener for hover over button. Makes image opacity 50%
+ctaButton.addEventListener("mouseover", () => {
+  ctaImage.style.opacity = ".5";
+ })
+
+//event listener for clicking on button
 ctaButton.addEventListener("click", () => {
   if (callToAction.innerHTML === "DOM<br>Is<br>Awesome") {
-  callToAction.innerHTML = "LAMBDA SCHOOL!";
+  callToAction.innerHTML = "LAMBDA<br>Is<br>Awesome!";
   callToAction.style.color = "red";
-} else if (callToAction.innerHTML === "LAMBDA SCHOOL!") {
+} else if (callToAction.innerHTML === "LAMBDA<br>Is<br>Awesome!") {
   callToAction.innerHTML = "DOM<br>Is<br>Awesome";
   callToAction.style.color = "black";
 }
-
 });
+
 
 let topHeaders = document.querySelectorAll(".top-content .text-content h4");
 topHeaders[0].innerHTML = siteContent["main-content"]["features-h4"];
 topHeaders[1].innerHTML = siteContent["main-content"]["about-h4"];
+
+
 
 let topParagraphs = document.querySelectorAll(".top-content .text-content p");
 topParagraphs[0].innerHTML = siteContent["main-content"]["features-content"];
@@ -123,3 +158,14 @@ let footerStuff = document.querySelector("footer p");
 footerStuff.innerHTML = siteContent["footer"]["copyright"];
 
 
+// Event Listener for footer upon click
+footerStuff.addEventListener("click", () => {
+  if (footerStuff.style.color === "red") {
+    footerStuff.style.color = "black";
+  footerStuff.style.fontWeight = "normal";
+  } else {
+  footerStuff.style.color = "red";
+  footerStuff.style.fontWeight = "bold";
+  }
+}
+);
