@@ -52,43 +52,14 @@ logo.addEventListener("mouseleave", () => {
   logo.style.transform = "rotate(0deg)";
 });
 
-const a = document.createElement('a');
-const p = document.querySelector('nav').appendChild(a);
-p.innerHTML = "Examples"
 
-const l = document.createElement('a');
-const m = document.querySelector('nav').appendChild(l);
-m.innerHTML = "Portfolio"
 
 
 let navTop= document.querySelectorAll("nav a");
-navTop[0].innerHTML = siteContent["nav"]["nav-item-1"]
-navTop[0].style.color = "green";
-navTop[1].innerHTML = siteContent["nav"]["nav-item-2"]
-navTop[1].style.color = "green";
-navTop[2].innerHTML = siteContent["nav"]["nav-item-3"]
-navTop[2].style.color = "green";
-navTop[3].innerHTML = siteContent["nav"]["nav-item-4"]
-navTop[3].style.color = "green";
-navTop[4].innerHTML = siteContent["nav"]["nav-item-5"]
-navTop[4].style.color = "green";
-navTop[5].innerHTML = siteContent["nav"]["nav-item-6"]
-navTop[5].style.color = "green";
-navTop[6].style.color = "green";
-navTop[7].style.color = "green";
-
-// Event Listener for nav > Services upon click
-navTop[0].addEventListener("click", () => {
-  if (navTop[0].style.color === "blue") {
-    navTop[0].style.color = "green";
-    navTop[0].style.fontWeight = "normal";
-  } else {
-  navTop[0].style.color = "blue";
-  navTop[0].style.fontWeight = "bold";
-  }
+navTop.forEach((link, i) => {
+  link.innerHTML = siteContent.nav[`nav-item-${i+1}`];
 });
-
-
+                         
 
 let callToAction = document.querySelector(".cta .cta-text h1");
 callToAction.innerHTML = "DOM<br>Is<br>Awesome";
@@ -195,3 +166,45 @@ footerStuff.addEventListener("click", () => {
   }
 }
 );
+
+
+
+navTop.forEach((link,i) => {
+  link.style.color = "green";
+  link.addEventListener("click", () => {
+    if (link.style.color === "blue") {
+      link.style.fontWeight = "normal";
+      link.style.color = "green";
+    } else {
+      link.style.fontWeight = "bold";
+      link.style.color = "blue";
+    }
+  });
+});
+
+// Add two items to navigation
+navTop = document.getElementsByTagName("nav")[0];
+let createNewNode = (name) => {
+  let newNode = document.createElement("a");
+  newNode.innerHTML = name;
+  newNode.style.color = "green";
+  newNode.addEventListener("click", () => {
+    if (newNode.style.color === "blue") {
+      newNode.style.fontWeight = "normal";
+      newNode.style.color = "green";
+    } else {
+      newNode.style.fontWeight = "bold";
+      newNode.style.color = "blue";
+    }
+  });
+  return newNode;
+};
+
+navTop.prepend(createNewNode("Portfolio"));
+navTop.append(createNewNode("Examples"));
+
+// Event Listener for nav > Services upon click
+
+
+
+
