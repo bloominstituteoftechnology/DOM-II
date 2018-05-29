@@ -231,8 +231,10 @@ button.addEventListener("click", () => {
 // GSAP Animation
 
 // TweenMax.to(".logo", 2, { left: 0 });
+// Bouncing logo
 TweenMax.to(".logo", 2, { left: 0, ease: Elastic.easeOut });
 
+// Slide in top-content with background and border
 TweenMax.to(".top-content", 2, {
   left: 0,
   backgroundColor: "#5BD3FF",
@@ -241,4 +243,13 @@ TweenMax.to(".top-content", 2, {
   borderRadius: 26
 });
 
+// Rotating middle image
 TweenMax.to(".middle-img", 2, { x: 875, rotation: 360 });
+
+// Stagger in Nav Bar
+TweenMax.staggerFrom(
+  ".nav",
+  0.5,
+  { opacity: 0, y: 200, rotationDelay: 0.5 },
+  0.2
+);
