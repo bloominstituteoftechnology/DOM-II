@@ -123,3 +123,7 @@ footer.innerHTML = siteContent["footer"]["copyright"];
 middleImg.addEventListener("dblclick", () => {
   middleImg.style.border = "5px solid red";
 })
+
+ctaImg.addEventListener("click", () => {
+  ctaImg.display = "none";
+})
