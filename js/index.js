@@ -10,7 +10,7 @@ const siteContent = {
   },
   cta: {
     h1: "DOM Is Awesome",
-    button: "Get Started",
+    button: "Reverse Me!",
     "img-src": "img/header-img.png"
   },
   "main-content": {
@@ -158,9 +158,75 @@ contact[7].innerHTML = siteContent.contact.email;
 let footer = document.getElementsByTagName("footer");
 footer[0].innerHTML = siteContent.footer.copyright;
 
-// Append to Nav
-// var  = document.createElement("div");
-// var p = document.createElement("p");
-// parent.append("Some text", p);
+// DOM II
 
-// console.log(parent.childNodes); // NodeList [ #text "Some text", <p> ]
+// Logo disappears when clicked.
+logo.addEventListener("click", () => {
+  logo.style.visibility = "hidden";
+});
+
+// Log reappears when mouse is moved off of it.
+logo.addEventListener("mouseleave", () => {
+  logo.style.visibility = "visible";
+});
+
+//3. Alert to stop resizing
+(function() {
+  let throttle = function(type, name, obj) {
+    obj = obj || window;
+    var running = false;
+    var func = function() {
+      if (running) {
+        return;
+      }
+      running = true;
+      requestAnimationFrame(function() {
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+
+  /* init - you can init any event */
+  throttle("resize", "optimizedResize");
+})();
+
+// handle event
+window.addEventListener("optimizedResize", function() {
+  alert("Please STOP resizing me!");
+});
+
+// Change size of CTA Text the revert back.
+ctaText.addEventListener("mouseover", () => {
+  ctaText.style.fontSize = "150px";
+  ctaText.style.color = "red";
+});
+
+ctaText.addEventListener("mouseleave", () => {
+  ctaText.style = ctaText;
+});
+
+// On scroll enlarge image the click image to revert back
+window.addEventListener("scroll", () => {
+  middleImage.style.transform = "scale(1.5)";
+});
+
+middleImage.addEventListener("click", () => {
+  middleImage.style = middleImage;
+});
+
+// Click button to reverse Middle Content
+let button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  if ((document.querySelector(".cta").style.flexDirection = "initial")) {
+    document.querySelector(".cta").style.flexDirection = "row-reverse";
+  } else {
+    document.querySelector(".cta").style.flexDirection = "initial";
+  }
+});
+
+// GSAP
+
+TweenMax.to(".logo", 2, { left: 0 });
