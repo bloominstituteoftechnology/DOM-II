@@ -110,14 +110,16 @@ document.querySelector(".container header nav").append(appendNav);
 // 05/29/18
 
 // Logo light bulb lights up
+/*************************/
 logo.addEventListener("mouseover", () =>
                     logo.setAttribute("src", siteContent["nav"]["img2-src"]));
 logo.addEventListener("mouseleave", () =>
                     logo.setAttribute("src", siteContent["nav"]["img-src"]));
 
 // Make a bunch of borders
+/*************************/
 let borderButton = document.createElement("button");
-borderButton.innerHTML = "Holy Borders Batman!";
+borderButton.innerHTML = "One click on, double click off";
 document.querySelector(".contact").append(borderButton);
 
 borderButton.addEventListener("click", () => {
@@ -130,3 +132,27 @@ borderButton.addEventListener("click", () => {
     element.style.borderRadius = "30%";
   });
 });
+
+// remove borders with double click
+borderButton.addEventListener("dblclick", () => {
+  let navAndH4 = document.querySelectorAll(".container nav a, .container .main-content .text-content h4")
+  navAndH4.forEach(element => {
+    element.style.border = "0";
+    element.style.padding = "0";
+    element.style.margin = "0";
+    element.style.backgroundColor = "white";
+    element.style.borderRadius = "0";
+  });
+});
+
+// Show different picture when selecting text
+/*************************/
+let ctaSelectText = document.createElement("p");
+ctaSelectText.innerHTML = "Select Me To See Some Magic";
+document.querySelector(".container .cta").append(ctaSelectText);
+
+// Broken right now
+// let ctaImg = document.getElementById("cta-img");
+// ctaSelectText.addEventListener("select", () =>
+//   ctaImg.setAttribute("src", "img/Gandalf_the_Grey.jpg");
+// );
