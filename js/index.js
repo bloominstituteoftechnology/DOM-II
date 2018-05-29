@@ -98,3 +98,46 @@ contactParagraph[2].textContent = siteContent["contact"]["email"];
 
 let footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
+
+//Event Listeners
+
+logo.addEventListener("click", () => {
+  ctaHeader.style.color = "green";
+});
+
+logo.addEventListener("dblclick", () => {
+  ctaHeader.style.color = "yellow";
+});
+
+ctaButton.addEventListener("mouseover", () => {
+  ctaButton.textContent = "Ready?";
+});
+
+ctaButton.addEventListener("mouseleave", () => {
+  ctaButton.textContent = siteContent["cta"]["button"];
+});
+
+document.addEventListener("keydown", () => {
+  ctaButton.remove();
+})
+
+document.addEventListener("wheel", () => {
+  logo.remove();
+})
+
+ctaImage.addEventListener("dragstart", () => {
+  ctaImage.remove();
+})
+
+ctaImage.addEventListener("auxclick", () => {
+  ctaImage.remove();
+})
+
+mainContentHeader[0].addEventListener("mouseup", () => {
+  mainContentHeader[0].style.color = "green";
+})
+
+mainContentHeader[1].addEventListener("mouseleave", () => {
+  mainContentHeader[1].style.color = "green";
+})
+
