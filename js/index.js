@@ -58,13 +58,14 @@ navItems[5].innerHTML = "Contact";
 
 let logoID = document.querySelector("#logo-img");
 logoID.setAttribute("src", "img/logo.png");
+
 logoID.setAttribute("alt", "Great Idea! Company logo.");
 
 let ctaTextH1Class = document.querySelector(".cta h1");
 ctaTextH1Class.innerHTML = "DOM Is Awesome";
 
 let ctaTextButtonClass = document.querySelector(".cta button");
-ctaTextButtonClass.innerHTML = "Get Started";
+ctaTextButtonClass.innerHTML = "double click here";
 
 let ctaImageId = document.querySelector("#cta-img");
 ctaImageId.setAttribute("src", "img/header-img.png");
@@ -111,12 +112,12 @@ footerPElement[0].innerHTML = "Copyright Great Idea! 2018";
 // navItems.style.color = "green"
 // document.getElementsByTagName("a").style.color = "green";
 
-navItems[0].style.cssText = "color:green;";
-navItems[1].style.cssText = "color:green;"
-navItems[2].style.cssText = "color:green;"
-navItems[3].style.cssText = "color:green;"
-navItems[4].style.cssText = "color:green;"
-navItems[5].style.cssText = "color:green;"
+navItems[0].style.cssText = "color:blue;";
+navItems[1].style.cssText = "color:blue;"
+navItems[2].style.cssText = "color:blue;"
+navItems[3].style.cssText = "color:blue;"
+navItems[4].style.cssText = "color:blue;"
+navItems[5].style.cssText = "color:blue;"
 
 let navTag = document.querySelector("nav"); //Parent node
 
@@ -130,3 +131,98 @@ newAElement2.innerHTML = "newAElement2"; //Setting the content inbetween <a> tag
 navTag.appendChild(newAElement2);
 
 
+// NAV A ELEMENTS EVENT LISTENER
+//mousemove
+for (let i = 0; i < navItems.length; i++) {
+  navItems[i].addEventListener("mousemove", () => {
+    navItems[i].style.background = "#e6f2ff";
+    navItems[i].style.color = "darkblue";
+    navItems[i].style.textDecoration = "none";
+  });
+}
+
+//mouseleave
+for (let i = 0; i < navItems.length; i++) {
+  navItems[i].addEventListener("mouseleave", () => {
+    navItems[i].style.background = "";
+    navItems[i].style.color = "blue";
+  });
+}
+
+// Button EVENT LISTENER
+ctaTextButtonClass.addEventListener("dblclick", () => {
+  ctaTextButtonClass.style.background = "#e6f2ff";
+  ctaTextButtonClass.style.color = "darkblue";
+});
+
+
+ctaTextButtonClass.addEventListener("dblclick", () => {
+  ctaTextButtonClass.style.background = "#e6f2ff";
+  ctaTextButtonClass.style.color = "darkblue";
+});
+
+for (let i = 0; i < topContentH4Elements.length; i++) {
+  topContentH4Elements[i].addEventListener("dblclick" , () => {
+    topContentH4Elements[i].style.color = "blue";
+  })
+}
+
+//copy
+for (let i = 0; i < bottomContentH4Elements.length; i++) {
+  bottomContentH4Elements[i].addEventListener("copy" , () => {
+    bottomContentH4Elements[i].style.color = "red";
+  })
+}
+
+// //mousedown
+// for (let i = 0; i < topContentPElements.length; i++) {
+//   topContentPElements[i].addEventListener("mousedown" , () => {
+//     topContentPElements[i].style.color = "blue";
+//   })
+// }
+
+//keypress
+for (let i = 0; i < topContentPElements.length; i++) {
+  topContentPElements[i].addEventListener("keypress" , () => {
+    topContentPElements[i].style.color = "blue";
+  })
+}
+
+
+// for (let i = 0; i < bottomContentPElements.length; i++) {
+//   bottomContentPElements[i].addEventListener("resize" , () => {
+//     bottomContentPElements[i].style.color = "lightgreen";
+//   })
+// }
+
+
+
+
+
+// ctaTextH1Class.style.animationName = "greenloop";
+// ctaTextH1Class.style.animationDuration = "2s";
+// ctaTextH1Class.style.animationIterationCount = "infinite";
+
+// let textContentClass = querySelectorAll(".text-content");
+
+// topContentH4Elements[0].addEventListener("keydown",  () => {
+//   topContentH4Elements[0].style.color = "red";
+// });
+
+
+
+// // FAIL
+// let textBoxForm  = document.createElement("form"); //Create a node
+// textBoxForm.innerHTML = "textBoxForm"; //Setting the content inbetween <a> tags
+
+// let textBox  = document.createElement("input"); //Create a node
+// textBox.innerHTML = "textBox"; //Setting the content inbetween <a> tags
+
+// textBoxForm.prepend("textBox")
+
+// for (let i = 0; i < topContentH4Elements.length; i++) {
+//   topContentH4Elements[i].addEventListener("keydown", () => {
+//     topContentH4Elements[i].style.background = "lightgreen";
+//     topContentH4Elements[i].style.color = "darkgreen";
+//   });
+// }
