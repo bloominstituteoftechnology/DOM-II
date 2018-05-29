@@ -230,7 +230,8 @@ button.addEventListener("click", () => {
 
 // GSAP Animation
 
-TweenMax.to(".logo", 2, { left: 0 });
+// TweenMax.to(".logo", 2, { left: 0 });
+TweenMax.to(".logo", 2, { left: 0, ease: Elastic.easeOut });
 
 TweenMax.to(".top-content", 2, {
   left: 0,
