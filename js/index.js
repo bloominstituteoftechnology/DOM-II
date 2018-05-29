@@ -108,3 +108,47 @@ contactContent[2].innerHTML = siteContent["contact"]["email"];
 
 let footer = document.querySelector("footer");
 footer.innerHTML = siteContent["footer"]["copyright"];
+
+let body = document.querySelector("body");
+
+nav.addEventListener("mouseover", () => {
+  body.style.background = "lightBlue";
+});
+
+nav.addEventListener("mouseout", () => {
+  body.style.background = "none";
+});
+
+ctaButton.addEventListener("click", () => {
+  body.style.background = "red";
+});
+
+ctaButton.addEventListener("dblclick", () => {
+  body.style.background = "none";
+});
+
+let features = document.querySelectorAll(".main-content .top-content .text-content");
+
+features[0].addEventListener("mouseover", () => {
+  features[0].style.background = "yellow";
+});
+
+features[0].addEventListener("mouseout", () => {
+  features[0].style.background = "none";
+});
+
+features[1].addEventListener("mouseover", () => {
+  features[1].style.background = "pink";
+});
+
+features[1].addEventListener("mouseout", () => {
+  features[1].style.background = "none";
+});
+
+contactContent[2].addEventListener("click", () => {
+  contactContent[2].innerHTML += " spam";
+});
+
+ctaImg.addEventListener("dblclick", () => {
+  ctaImg.style.transform = "rotateY(45deg) rotateX(45deg)";
+});
