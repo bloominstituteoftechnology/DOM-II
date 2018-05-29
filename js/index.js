@@ -1,3 +1,9 @@
+/* ========================
+
+  Old DOM I Lesson stuff
+
+=========================== */
+
 const siteContent = {
   'nav': {
     'nav-item-1': 'Services',
@@ -42,14 +48,13 @@ const logoElement = document.getElementById('logo-img');
 logoElement.setAttribute('src', siteContent['nav']['img-src']);
 
 // Task 1: Create selectors to point your data into elements
-const navLinkElements = document.querySelectorAll('nav a');
+let navLinkElements = document.querySelectorAll('nav a');
 
 const ctaTextElements = document.querySelector('.cta-text');
 const ctaH1Element = ctaTextElements.getElementsByTagName('h1')[0];
 const ctaButtonElement = ctaTextElements.getElementsByTagName('button')[0];
 const ctaImgElement = document.getElementById('cta-img');
 
-const mainContent = Object.entries(siteContent['main-content']);
 const sectionHeaderElements = document.querySelectorAll('.text-content h4');
 const sectionTextElements = document.querySelectorAll('.text-content p');
 const mainImg = document.getElementById('middle-img');
@@ -68,6 +73,7 @@ ctaH1Element.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
 ctaButtonElement.innerHTML = siteContent['cta']['button'];
 ctaImgElement.setAttribute('src', siteContent['cta']['img-src']);
 
+const mainContent = Object.entries(siteContent['main-content']);
 const headers = mainContent.filter(prop => prop[0].indexOf('-h4') > -1);
 const contents = mainContent.filter(prop => prop[0].indexOf('-content') > -1);
 
@@ -101,6 +107,91 @@ lastNavLinkElement.href = '#';
 
 navElements.prepend(firstNavLinkElement)
 navElements.appendChild(lastNavLinkElement)
+
+/* ========================
+
+  New DOM II Lesson stuff
+
+=========================== */
+
+// 1, 2, 3 of 10
+navLinkElements = document.querySelectorAll('nav a');
+Array.from(navLinkElements).map(function(navLink){
+  navLink.addEventListener('mouseover', function(e) {
+    e.target.style.color = 'coral';
+  });
+
+  navLink.addEventListener('mouseout', function(e) {
+    e.target.style.color = 'cadetblue';
+  });
+
+  navLink.addEventListener('click', function(e) {
+    e.target.style.color = 'firebrick';
+  });
+});
+
+// 4 of 10
+window.addEventListener('keydown', e => {
+  const keyName = e.key;
+  ctaButtonElement.innerHTML = `Why did you type ${keyName}?`;
+});
+
+// 5, 6 of 10
+ctaImgElement.addEventListener('dragstart', e => {
+  e.target.style.opacity = .25;
+});
+ctaImgElement.addEventListener('dragend', e => {
+  e.target.style.opacity = 1;
+});
+ctaImgElement.addEventListener('dragend', e => {
+  e.target.style.opacity = 1;
+});
+
+// 7, 8, 9, 10  of 10
+const containerElement = document.getElementsByClassName('container')[0];
+const ctaElement = document.getElementsByClassName('cta')[0];
+const mainElement = document.getElementsByClassName('main-content')[0];
+const contactElement = document.getElementsByClassName('contact')[0];
+const pageElements = [containerElement, ctaElement, mainElement, contactElement];
+const transitionStyle = 'all .4s ease-out';
+
+for (let i = 0; i < pageElements.length; i++) {
+  pageElements[i].style.opacity = 0;
+  pageElements[i].style.transition = transitionStyle;
+}
+
+containerElement.style.transform = 'translateX(1em)';
+ctaElement.style.transform = 'scale(.92)';
+mainElement.style.transform = 'translateY(1em)';
+
+window.addEventListener('load', function(e) {
+  const timeoutID = window.setTimeout(function() {
+    containerElement.style.opacity = 1;
+    containerElement.style.transform = 'translateX(0)';
+  }, 500);
+});
+
+containerElement.addEventListener('transitionend', function(e) {
+  ctaElement.style.opacity = 1;
+  ctaElement.style.transform = 'scale(1)';
+}, false);
+
+ctaElement.addEventListener('transitionend', function(e) {
+  mainElement.style.opacity = 1;
+  mainElement.style.transform = 'translateY(0)';
+}, false);
+
+mainElement.addEventListener('transitionend', function(e) {
+  contactElement.style.opacity = 1;
+}, false);
+
+
+
+
+
+
+
+
 
 
 
