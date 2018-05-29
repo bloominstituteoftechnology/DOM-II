@@ -52,10 +52,10 @@ logo.addEventListener("mouseout", () => {
 
 
 const a = document.createElement('a');
-const p = document.querySelector('nav a').appendChild(a);
+const p = document.querySelector('nav').appendChild(a);
 
 const l = document.createElement('a');
-const t = document.querySelector('nav a').prepend(l);
+const t = document.querySelector('nav').prepend(l);
 
 
 
