@@ -37,18 +37,17 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 
-//event listener for mouse over
+//event listener for mouse over on logo
 logo.addEventListener("mouseover", () => {
   logo.style.transform = "rotate(180deg)";
 }); 
 
 
-//event listener for mouseleave
+//event listener for mouseleave on logo
 logo.addEventListener("mouseleave", () => {
   logo.style.transform = "rotate(0deg)";
 });
@@ -80,7 +79,7 @@ navTop[7].style.color = "green";
 
 // Event Listener for nav upon click
 navTop[0].addEventListener("click", () => {
-  if (navTop[0].style.color === "red") {
+  if (navTop[0].style.color === "blue") {
     navTop[0].style.color = "green";
     navTop[0].style.fontWeight = "normal";
   } else {
@@ -93,9 +92,6 @@ navTop[0].addEventListener("click", () => {
 
 let callToAction = document.querySelector(".cta .cta-text h1");
 callToAction.innerHTML = "DOM<br>Is<br>Awesome";
-
-
-
 
 
 let ctaImage = document.getElementById("cta-img");
@@ -127,7 +123,6 @@ topHeaders[0].innerHTML = siteContent["main-content"]["features-h4"];
 topHeaders[1].innerHTML = siteContent["main-content"]["about-h4"];
 
 
-
 let topParagraphs = document.querySelectorAll(".top-content .text-content p");
 topParagraphs[0].innerHTML = siteContent["main-content"]["features-content"];
 topParagraphs[1].innerHTML = siteContent["main-content"]["about-content"];
@@ -148,11 +143,32 @@ botParagraphs[2].innerHTML = siteContent["main-content"]["vision-content"];
 let contactHeader = document.querySelector(".contact h4");
 contactHeader.innerHTML = siteContent["contact"]["contact-h4"];
 
+// event listener for contact header
+contactHeader.addEventListener("mouseup", () => {
+  contactHeader.style.color = "purple";
+  contactHeader.style.fontSize = "20px";
+}, false);
 
 let contactParagraphs = document.querySelectorAll(".contact p");
 contactParagraphs[0].innerHTML = siteContent["contact"]["address"];
 contactParagraphs[1].innerHTML = siteContent["contact"]["phone"];
 contactParagraphs[2].innerHTML = siteContent["contact"]["email"];
+
+// event listeners for right-click  on contact paragraphs
+contactParagraphs[0].addEventListener("contextmenu", () => {
+  contactParagraphs[0].style.color = "blue";
+  contactParagraphs[0].style.background = "orange";
+ })
+
+ contactParagraphs[1].addEventListener("contextmenu", () => {
+  contactParagraphs[1].style.color = "blue";
+  contactParagraphs[1].style.background = "orange";
+ })
+
+ contactParagraphs[2].addEventListener("contextmenu", () => {
+  contactParagraphs[2].style.color = "blue";
+  contactParagraphs[2].style.background = "orange";
+ })
 
 let footerStuff = document.querySelector("footer p");
 footerStuff.innerHTML = siteContent["footer"]["copyright"];
