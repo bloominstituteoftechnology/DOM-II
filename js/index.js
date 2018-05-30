@@ -129,26 +129,26 @@ ctaButton.addEventListener("dblclick", () => {
 
 let features = document.querySelectorAll(".main-content .top-content .text-content");
 
-features[0].addEventListener("mouseover", () => {
-  features[0].style.background = "yellow";
+features[0].addEventListener("mouseover", (e) => {
+  e.target.style.background = "yellow";
 });
 
-features[0].addEventListener("mouseout", () => {
-  features[0].style.background = "none";
+features[0].addEventListener("mouseout", (e) => {
+  e.target.style.background = "none";
 });
 
-features[1].addEventListener("mouseover", () => {
-  features[1].style.background = "pink";
+features[1].addEventListener("mouseover", (e) => {
+  e.target.style.background = "pink";
 });
 
-features[1].addEventListener("mouseout", () => {
-  features[1].style.background = "none";
+features[1].addEventListener("mouseout", (e) => {
+  e.target.style.background = "none";
 });
 
-contactContent[2].addEventListener("click", () => {
-  contactContent[2].innerHTML += " spam";
+contactContent[2].addEventListener("click", (e) => {
+  e.target.innerHTML += " spam";
 });
 
-ctaImg.addEventListener("dblclick", () => {
-  ctaImg.style.transform = "rotateY(45deg) rotateX(45deg)";
+ctaImg.addEventListener("dblclick", (e) => {
+  e.target.style.transform = "rotateY(45deg) rotateX(45deg)";
 });
