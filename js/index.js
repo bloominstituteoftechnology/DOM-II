@@ -37,10 +37,17 @@ const siteContent = {
   },
 };
 
+window.addEventListener("load", function(event) {
+  alert("All resources finished loading. Welcome to a Great Idea!");
+});
+
 //Header Section
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
+logo.addEventListener("dragstart", function() {
+  alert("This item cannot be moved.")
+}, false);
 
 const a = document.createElement('a')
 const p = document.querySelector('nav').appendChild(a);
@@ -88,6 +95,12 @@ ctaImg.addEventListener("mouseenter", () => {
 ctaImg.addEventListener("mouseleave", () => {
   ctaImg.style.border = ""
 })
+ctaImg.addEventListener("click", function() {
+  midImg.style.visibility = "visible";
+});
+ctaImg.addEventListener("dragend", function() {
+  alert("This item cannot be moved.")
+}, false);
 
 //Main Content Section
 let topH4 = document.querySelectorAll(".top-content .text-content h4");
@@ -103,6 +116,10 @@ topP[1].innerHTML = siteContent["main-content"]["about-content"];
 
 let midImg = document.querySelector(".middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+midImg.addEventListener("dblclick", function() {
+  this.style.visibility = "hidden";
+});
+
 
 let bottomH4 = document.querySelectorAll(".bottom-content .text-content h4");
 bottomH4[0].innerHTML = siteContent["main-content"]["services-h4"];
