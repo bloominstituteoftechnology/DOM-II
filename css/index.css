@@ -94,6 +94,8 @@ header nav a:hover {
 
 header .logo {
     align-self: flex-end;
+		position: relative;
+		right: 100%;
     margin: 28px 0 0 91px;
 }
 

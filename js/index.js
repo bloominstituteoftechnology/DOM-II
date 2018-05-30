@@ -115,10 +115,12 @@ ctaSelectText.innerHTML = "Scroll To See Some Magic";
 ctaSelectText.style.fontSize = "1rem";
 document.querySelector(".cta h1").append(ctaSelectText);
 
+// Create variable for our cta Pic
+let ctaPic =  document.querySelector("#cta-img");
+
 // Show different picture when scrolling
 /******************************************************/
 
-let ctaPic =  document.querySelector("#cta-img");
 document.addEventListener("scroll", () => {
   ctaPic.setAttribute("src", "img/Gandalf_the_Grey.jpg");
   ctaPic.style.borderRadius = "50%";
@@ -132,13 +134,12 @@ document.addEventListener("scroll", () => {
 document.addEventListener("keydown", () => {
   ctaPic.setAttribute("src", "img/happy_gandalf.jpg");
   ctaSelectText.innerHTML = "Scroll over the Great Idea logo for a little more";
-  document.removeEventListener("scroll");
+  document.addEventListener("scroll", () => ctaPic.style.border = "2px solid black" );
 });
 
 document.addEventListener("keyup", () => {
   ctaPic.setAttribute("src", "img/Gandalf_the_Grey.jpg");
   ctaSelectText.innerHTML = "Scroll over the Great Idea logo for a little more";
-  document.removeEventListener("scroll");
 
 });
 
@@ -159,7 +160,7 @@ borderButton.innerHTML = "One click on, double click off";
 document.querySelector(".contact").append(borderButton);
 
 borderButton.addEventListener("click", () => {
-  let navAndH4 = document.querySelectorAll(".container nav a, .container .main-content .text-content h4")
+  let navAndH4 = document.querySelectorAll(".container .main-content .text-content h4")
   navAndH4.forEach(element => {
     element.style.border = "2px solid black";
     element.style.padding = "1%";
@@ -171,12 +172,18 @@ borderButton.addEventListener("click", () => {
 
 // remove borders with double click
 borderButton.addEventListener("dblclick", () => {
-  let navAndH4 = document.querySelectorAll(".container nav a, .container .main-content .text-content h4")
+  let navAndH4 = document.querySelectorAll(".container .main-content .text-content h4")
   navAndH4.forEach(element => {
     element.style.border = "0";
-    element.style.padding = "0";
-    element.style.margin = "0";
+    element.style.marginLeft = "0";
+    element.style.paddingLeft = "0";
     element.style.backgroundColor = "white";
     element.style.borderRadius = "0";
   });
 });
+
+// Lets add some gsap
+
+TweenMax.to(".logo", 2, { left: 0 });
+TweenLite.from(".container nav a", 2, {autoAlpha:0, y: 100} );
+// TweenLite.from(".logo", 1, {autoAlpha:0, y: 100} );
