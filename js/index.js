@@ -185,5 +185,6 @@ borderButton.addEventListener("dblclick", () => {
 // Lets add some gsap
 
 TweenMax.to(".logo", 2, { left: 0 });
-TweenLite.from(".container nav a", 2, {autoAlpha:0, y: 100} );
+TweenLite.from(".container nav a, .container .cta h1, .container .main-content .text-content h4", 3, {autoAlpha:0, y: 100} );
+TweenLite.from("html body", 5, {autoAlpha:0});
 // TweenLite.from(".logo", 1, {autoAlpha:0, y: 100} );
