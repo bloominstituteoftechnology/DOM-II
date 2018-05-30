@@ -249,7 +249,7 @@ TweenMax.to(".middle-img", 2, { x: 875, rotation: 360 });
 // Stagger in Nav Bar
 TweenMax.staggerFrom(
   ".nav",
-  0.5,
+  1,
   { opacity: 0, y: 200, rotationDelay: 0.5 },
-  0.2
+  0.5
 );
