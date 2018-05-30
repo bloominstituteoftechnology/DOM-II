@@ -42,6 +42,8 @@ const siteContent = {
   },
 };
 
+window.addEventListener('resize', () => alert('resized'));
+
 // Body
 {
   let body = document.querySelector('body');
@@ -49,8 +51,6 @@ const siteContent = {
     let str = `the keycode for ${e.key} is ${e.keyCode}`;
     alert(str);
   });
-
-  body.addEventListener('resize', () => alert('welcome to Great Idea!'));
 }
 
 // Container
@@ -119,8 +119,11 @@ const siteContent = {
   let ctaButton = document.querySelector('.cta button');
   ctaButton.innerHTML = 'Get Started';
   ctaButton.addEventListener('focus', () => {
-    ctaButton.style.visibility = 'hidden';
     alert('an email is on its way!');
+    ctaButton.blur();
+  });
+  ctaButton.addEventListener('blur', () => {
+    ctaButton.innerHTML = 'thank you';
   });
 
   let ctaImg = document.querySelector('#cta-img');
