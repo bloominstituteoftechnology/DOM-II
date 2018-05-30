@@ -109,15 +109,51 @@ document.querySelector(".container header nav").append(appendNav);
 // Alex McEvoy
 // 05/29/18
 
+// Create a paragraph telling our users about our new features
+let ctaSelectText = document.createElement("p");
+ctaSelectText.innerHTML = "Scroll To See Some Magic";
+ctaSelectText.style.fontSize = "1rem";
+document.querySelector(".cta h1").append(ctaSelectText);
+
+// Show different picture when scrolling
+/******************************************************/
+
+let ctaPic =  document.querySelector("#cta-img");
+document.addEventListener("scroll", () => {
+  ctaPic.setAttribute("src", "img/Gandalf_the_Grey.jpg");
+  ctaPic.style.borderRadius = "50%";
+  ctaPic.style.border = "2px solid black";
+  ctaSelectText.innerHTML = "Hit any key to see some more magic";
+});
+
+// R key does some stuff
+/******************************************************/
+
+document.addEventListener("keydown", () => {
+  ctaPic.setAttribute("src", "img/happy_gandalf.jpg");
+  ctaSelectText.innerHTML = "Scroll over the Great Idea logo for a little more";
+  document.removeEventListener("scroll");
+});
+
+document.addEventListener("keyup", () => {
+  ctaPic.setAttribute("src", "img/Gandalf_the_Grey.jpg");
+  ctaSelectText.innerHTML = "Scroll over the Great Idea logo for a little more";
+  document.removeEventListener("scroll");
+
+});
+
 // Logo light bulb lights up
-/*************************/
-logo.addEventListener("mouseover", () =>
-                    logo.setAttribute("src", siteContent["nav"]["img2-src"]));
+/******************************************************/
+logo.addEventListener("mouseover", () => {
+                    logo.setAttribute("src", siteContent["nav"]["img2-src"]);
+                      ctaSelectText.innerHTML =
+                        "Try to add some borders with the button at the bottom";
+                  });
 logo.addEventListener("mouseleave", () =>
                     logo.setAttribute("src", siteContent["nav"]["img-src"]));
 
 // Make a bunch of borders
-/*************************/
+/******************************************************/
 let borderButton = document.createElement("button");
 borderButton.innerHTML = "One click on, double click off";
 document.querySelector(".contact").append(borderButton);
@@ -144,15 +180,3 @@ borderButton.addEventListener("dblclick", () => {
     element.style.borderRadius = "0";
   });
 });
-
-// Show different picture when selecting text
-/*************************/
-let ctaSelectText = document.createElement("p");
-ctaSelectText.innerHTML = "Select Me To See Some Magic";
-document.querySelector(".container .cta").append(ctaSelectText);
-
-// Broken right now
-// let ctaImg = document.getElementById("cta-img");
-// ctaSelectText.addEventListener("select", () =>
-//   ctaImg.setAttribute("src", "img/Gandalf_the_Grey.jpg");
-// );
