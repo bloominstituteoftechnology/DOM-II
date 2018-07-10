@@ -47,6 +47,19 @@ navs.forEach((item, i) => {
   item.innerHTML = siteContent.nav[`nav-item-${i+1}`]
 })
 
+//add new a tags to nav bar
+let nav = document.querySelector("nav");
+let createNav = (name) => {
+  let newNav = document.createElement("a");
+  newNav.innerHTML = name;
+  newNav.className = "tooltip";
+  newNav.setAttribute('href', '#')
+  return newNav;
+}
+nav.prepend(createNav("Home"));
+nav.append(createNav("Blog"));
+navs = document.querySelectorAll("nav a"); //update navs with new elements
+
 //add cta-text
 let cta = Array.from(document.getElementsByClassName("cta-text")[0].children);
 cta.forEach((child) => {
@@ -56,7 +69,7 @@ cta.forEach((child) => {
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
-let head
+
 let mainHeaders = document.querySelectorAll(".text-content h4");
 mainHeaders[0].innerHTML = siteContent["main-content"]["features-h4"];
 mainHeaders[1].innerHTML = siteContent["main-content"]["about-h4"];
@@ -86,35 +99,21 @@ contactInfo[2].innerHTML = siteContent["contact"]["email"];
 let footer = document.querySelector("footer p");
 footer.innerHTML = siteContent["footer"]["copyright"];
 
-//adds new tags to nav bar
-navs = document.getElementsByTagName("nav")[0];
-let createNav = (name) => {
-  let newNav = document.createElement("a");
-  newNav.innerHTML = name;
-  newNav.className = "tooltip";
-  newNav.setAttribute('href', '#')
-  return newNav;
-}
-navs.prepend(createNav("Home"));
-navs.append(createNav("Blog"));
-
-navs = navs.children;
-
-
-for(i=0; i < navs.length; i++) {
-  navs[i].style.color = "green";
-  navs[i].addEventListener('mouseenter', function(event) {
+//makes nav links green with white background on hover
+navs.forEach((item) => {
+  item.style.color = "green";
+  item.addEventListener('mouseenter', function(event) {
     event.target.style.backgroundColor = "white";
   })
-  navs[i].addEventListener('mouseleave', function(event) {
+  item.addEventListener('mouseleave', function(event) {
     event.target.style.backgroundColor = "lightGray"
   })
-}
+})
 
 mainHeaders.forEach((header) => {
   header.addEventListener('dblclick', function(event) {
-    event.target.style.fontSize = "150%";
-    event.target.style.textShadow = "5px 5px 1px lightGreen";
+    event.target.style.fontSize === "150%" ? event.target.style.fontSize = "100%" : event.target.style.fontSize = "150%";
+    event.target.style.textShadow === "none" ? event.target.style.textShadow = "5px 5px 1px lightGreen" : event.target.style.textShadow = "none";
   })
 });
 
