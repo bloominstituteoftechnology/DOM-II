@@ -150,3 +150,42 @@ return newContent;
 
 // let nav6 = document.querySelector('nav');
 // nav6.innerHTML = (siteContent["nav"]["nav-item-6"]);
+
+
+
+
+// EVENT LISTENER
+
+const ctabutton = document.querySelector('button')
+
+ctabutton.addEventListener('click', e => {
+  ctabutton.style.backgroundColor = 'green'
+})
+
+const ctaImg = document.querySelector('#cta-img')
+
+ctaImg.addEventListener('dblclick', event => {
+  event.target.style.display = "fullscreen"
+})
+
+let topContent = document.querySelector('.top-content')
+
+topContent.addEventListener('mouseover', event => {
+  event.target.style.color = 'red';
+});
+
+topContent.addEventListener('mouseleave', event => {
+  event.target.style.color = 'blue';
+});
+
+let btmContent = document.querySelector('.bottom-content')
+
+btmContent.addEventListener('select', event => {
+  event.target.style.backgroundColor = 'purple'
+})
+
+let midImgs = document.querySelector('middle-img')
+
+midImgs.addEventListener('drag', event => {
+  event.target.style.opacity ='50';
+});
