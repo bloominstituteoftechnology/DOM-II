@@ -4,7 +4,7 @@
  * Explore the many events available to you by using this reference: https://developer.mozilla.org/en-US/docs/Web/Events
  * Create custom events to manipulate the DOM
 
-## Project Setup
+## Project Setup 
  * Use yesterday's project as your base for today's project.
  * You can update the HTML/CSS/JS for this project.
 
