@@ -40,7 +40,9 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-
+logo.addEventListener('message', (event) => {
+  console.log("Message from messanger");
+});
 // REMEMBER, you can accomplish the assignment in many different ways. You could literally use getElementByTag name to accomplish everything if you wanted:
 
 //navigation bar
@@ -51,20 +53,35 @@ navBarLinks.forEach((navLink, i) => {
   navLink.innerHTML = siteContent.nav[`nav-item-${i+1}`];
 })
 
+
 //cta section
 
 //header
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.innerHTML = siteContent.cta[`h1`];
+ctaText.addEventListener('copy', (event) => {
+  console.log("copied content to clipboard")
+})
 
 //button
 let ctaButton = document.querySelector(".cta-text button");
 ctaButton.innerHTML = siteContent.cta['button'];
+ctaButton.addEventListener('click', (event) => {
+  console.log("button was clicked");
+  ctaButton.style.color = "red";
+  event.stopPropagation();
+})
+
 
 //img source
 let ctaImg = document.querySelector(".cta img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
-
+ctaImg.addEventListener('mouseover', (event) => {
+  // ctaImg.style.scale(2);
+  ctaImg.style.border 10px solid red;
+  
+  // console.log("mouseover");
+});
 
 //main-content section
 
@@ -99,6 +116,7 @@ mainImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 //header
 let contactHeader = document.querySelector(".contact h4");
 contactHeader.innerHTML = siteContent["contact"]["contact-h4"];
+
 
 //contact information
 
