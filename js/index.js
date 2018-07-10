@@ -78,9 +78,9 @@ let ctaImg = document.querySelector(".cta img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 ctaImg.addEventListener('mouseover', (event) => {
   // ctaImg.style.scale(2);
-  ctaImg.style.border 10px solid red;
+  // ctaImg.style.border 10px solid red;
   
-  // console.log("mouseover");
+  console.log("mouseover");
 });
 
 //main-content section
@@ -116,6 +116,9 @@ mainImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 //header
 let contactHeader = document.querySelector(".contact h4");
 contactHeader.innerHTML = siteContent["contact"]["contact-h4"];
+contactHeader.addEventListener('auxclick', (event) => {
+  console.log("non-primary key pressed");
+})
 
 
 //contact information
