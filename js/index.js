@@ -63,6 +63,30 @@ const contactHeading = document.querySelector(".contact h4");
 const contactContent = document.querySelectorAll(".contact p");
 const footerContent = document.querySelector("footer p");
 
+//======== For DOM II project ========
+
+const container = document.querySelector(".container");
+const beginningTag = document.querySelector("nav a");
+const otherTags = document.querySelectorAll(".otherTags");
+const circleImg = document.querySelector("#cta-img");
+const ctaText = document.querySelector(".cta-text h1");
+const button = document.querySelector(".cta-text button");
+//
+// //======== Creating Event Listeners ========
+//
+container.addEventListener("mousemove", (event) => {beginningTag.innerHTML = "Hello! Click me :)";
+otherTags.forEach(x => {x.style.color = "white"}); beginningTag.style.fontSize = "x-large"; beginningTag.style.color = "red"});
+
+beginningTag.addEventListener("click", (event) => {circleImg.style.display = "none"; ctaText.innerHTML = "Oh no! You've broken the Image! Quick, right click!"});
+
+container.addEventListener("contextmenu", (event) => {circleImg.style.display = "inline"; ctaText.innerHTML = "Nice job! Now double click me :)"})
+
+ctaText.addEventListener("dblclick", (event) => {ctaText.innerHTML = "OUCH! Okay, too much, ease up a little!"; button.innerText = "click and hold for 5s!";});
+
+button.addEventListener("mouseup", (event) => {button.innerText = "Move on down"; textBoxContent[0].innerHTML = "We have the best features! Better than anyone with features. Just ask us"; textBoxHeadings[0].innerHTML = "Features - Use your scrolly wheel to see more cool stuff"; textBoxContent[0].style.fontSize = "x-large"; textBoxHeadings[0].style.fontSize = "x-large"; textBoxContent[0].style.color = "red"; textBoxHeadings[0].style.color = "teal"});
+
+container.addEventListener("wheel", (event) => {textBoxContent[1].innerHTML = "The only think you need to know about us is we're the best."; textBoxHeadings[1].innerHTML = "About - "})
+
 // ======== Updating Nodes ========
 
 navLinks.forEach(i => i.style.color = "green");
