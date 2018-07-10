@@ -1,4 +1,4 @@
-# DOM II - Event exploration
+## DOM II - Event exploration
 
 ## Objectives
  * Explore the many events available to you by using this reference: https://developer.mozilla.org/en-US/docs/Web/Events
