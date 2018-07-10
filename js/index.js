@@ -232,3 +232,19 @@ HTMLBody.addEventListener("click", () => {
   document.querySelectorAll(".text-content h4").forEach(el => el.style.color = "dodgerblue");
 });
 
+// GSAP
+
+ctaImg.addEventListener("click", event => {
+  TweenMax.to("#cta-img", 1, {x:200, rotation:180});
+});
+
+logo.addEventListener("mouseover", event => {
+  TweenMax.to("#logo-img", 1, {x:100});
+  TweenMax.to("#logo-img", 1, {y:50, delay:1});
+  TweenMax.to("#logo-img", 1, {opacity:0, delay:2});
+});
+
+window.onload = function() {
+  TweenMax.from("body", 4, {x:-1500, y:-1500});
+  TweenMax.to("body", 4, {x:0, y:0});
+}
