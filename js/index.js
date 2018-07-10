@@ -48,6 +48,10 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+middleImg.addEventListener("mousewheel", (e) => {
+  document.getElementById("middle-img").setAttribute("class", "shaker");
+})
+
 
 let nav = document.querySelectorAll("nav a");
 nav[0].innerHTML = siteContent["nav"]["nav-item-1"];
@@ -173,6 +177,8 @@ pContent[1].innerHTML = siteContent["main-content"]["about-content"];
 pContent[2].innerHTML = siteContent["main-content"]["services-content"];
 pContent[3].innerHTML = siteContent["main-content"]["product-content"];
 pContent[4].innerHTML = siteContent["main-content"]["vision-content"]
+
+
 
 
 
