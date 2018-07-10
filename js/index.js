@@ -1,11 +1,13 @@
 const siteContent = {
   "nav": {
-    "nav-item-1": "Services",
-    "nav-item-2": "Product",
-    "nav-item-3": "Vision",
-    "nav-item-4": "Features",
-    "nav-item-5": "About",
-    "nav-item-6": "Contact",
+    "nav-item-1": "Yahh",
+    "nav-item-2": "Services",
+    "nav-item-3": "Product",
+    "nav-item-4": "Vision",
+    "nav-item-5": "Features",
+    "nav-item-6": "About",
+    "nav-item-7": "Contact",
+    "nav-item-8": "Blahh",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -49,6 +51,8 @@ navBar[2].innerHTML = siteContent["nav"]["nav-item-3"];
 navBar[3].innerHTML = siteContent["nav"]["nav-item-4"];
 navBar[4].innerHTML = siteContent["nav"]["nav-item-5"];
 navBar[5].innerHTML = siteContent["nav"]["nav-item-6"];
+navBar[6].innerHTML = siteContent["nav"]["nav-item-7"];
+navBar[7].innerHTML = siteContent["nav"]["nav-item-8"];
 
 let domIsAwesome = document.querySelector(".cta .cta-text h1");
 domIsAwesome.innerHTML = siteContent["cta"]["h1"];
@@ -94,22 +98,40 @@ footer.innerHTML = siteContent["footer"]["copyright"];
 // navBar[3].style.color = 'green';
 // navBar[4].style.color = 'green';
 // navBar[5].style.color = 'green';
-let mainNav = document.querySelector("nav");
+// navBar[6].style.color = 'green';
+// navBar[7].style.color = 'green';
 for(let i = 0; i < navBar.length; i++){
   navBar[i].style.color = 'green';
 }
 
-// Utilize .appendChild() and .prepend() to add two new items to the navigation 
-// system. You can call them whatever you want.
-let newAnchor = document.createElement("a");
-newAnchor.innerHTML = "Blahh";
-mainNav.appendChild(newAnchor);
+// Selectors
+let pageContainer = document.querySelector(".container");
+let mainNav = document.querySelector("nav");
+// let navBar = document.querySelectorAll("nav a");
+// let logo = document.getElementById("logo-img");
+// let domIsAwesome = document.querySelector(".cta .cta-text h1");
+// let getStarted = document.querySelector(".cta .cta-text button");
+// let greatIdeaLogo = document.querySelector("#cta-img");
+// let mainHeaders = document.querySelectorAll(".text-content h4");
+// let mainText = document.querySelectorAll(".text-content p");
+// let midImage = document.querySelector("#middle-img");
+// let contactHead = document.querySelector(".contact h4");
+// let contactBody = document.querySelectorAll(".contact p");
+// let footer = document.querySelector("footer");
 
+// Mouseover logo alert
+logo.addEventListener('mouseover', (event) => {
+  alert(confirm("Touch the logo?"));
+});
 
-let secondAnchor = document.createElement("a");
-secondAnchor.innerHTML = "Yahh";
-mainNav.prepend(secondAnchor);
+// Button click background color change
+getStarted.addEventListener('click', (event) => {
+  getStarted.style.backgroundColor = 'red';
+  event.stopPropagation();
+})
 
-for(let i = 0; i < mainNav.length; i++){
-  mainNav[i].style.color = 'green';
-}
+// Nav double click flex change
+mainNav.addEventListener('dblclick', (event) => {
+  mainNav.style.flexDirection = 'column';
+})
+
