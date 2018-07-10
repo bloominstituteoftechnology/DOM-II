@@ -83,9 +83,21 @@ container.addEventListener("contextmenu", (event) => {circleImg.style.display = 
 
 ctaText.addEventListener("dblclick", (event) => {ctaText.innerHTML = "OUCH! Okay, too much, ease up a little!"; button.innerText = "click and hold for 5s!";});
 
-button.addEventListener("mouseup", (event) => {button.innerText = "Move on down"; textBoxContent[0].innerHTML = "We have the best features! Better than anyone with features. Just ask us"; textBoxHeadings[0].innerHTML = "Features - Use your scrolly wheel to see more cool stuff"; textBoxContent[0].style.fontSize = "x-large"; textBoxHeadings[0].style.fontSize = "x-large"; textBoxContent[0].style.color = "red"; textBoxHeadings[0].style.color = "teal"});
+button.addEventListener("mouseup", (event) => {button.innerText = "Move on down"; textBoxContent[0].innerHTML = "We have the best features! Better than anyone with features. Just ask us.";
+  textBoxHeadings[0].innerHTML = "Features - Use your scrolly wheel to see more cool stuff"; textBoxContent[0].style.fontSize = "x-large";
+  textBoxHeadings[0].style.fontSize = "x-large"; textBoxContent[0].style.color = "teal"; textBoxHeadings[0].style.color = "red"});
 
-container.addEventListener("wheel", (event) => {textBoxContent[1].innerHTML = "The only think you need to know about us is we're the best."; textBoxHeadings[1].innerHTML = "About - "})
+container.addEventListener("wheel", (event) => {textBoxContent[1].innerHTML = "The only thing you need to know about us is we're the best.";
+textBoxHeadings[1].innerHTML = "About - Why don't you try swiping right on me? (move your mouse over me)"; textBoxContent[1].style.color = "teal"; textBoxHeadings[1].style.color = "red";
+textBoxContent[1].style.fontSize = "x-large"; textBoxHeadings[1].style.fontSize = "x-large"});
+
+textBoxHeadings[1].addEventListener("mouseover", (event) => {textBoxContent[2].innerHTML = "Our services are the best services in the world. Ever.";
+textBoxHeadings[2].innerHTML = "Services - put your mouse over me. When you move away, I will make the image disappear!"; textBoxContent[2].style.color = "teal"; textBoxHeadings[2].style.color = "red";
+textBoxContent[2].style.fontSize = "x-large"; textBoxHeadings[2].style.fontSize = "x-large"});
+
+textBoxHeadings[2].addEventListener("mouseleave", (event) => {textBoxContent[3].innerHTML = "Our products are the best products in the world. Ever.";
+textBoxContent[3].style.fontSize = "x-large"; textBoxHeadings[3].style.fontSize = "x-large"; midImg.style.display = "none"});
+textBoxHeadings[3].innerHTML = "Products - do you want the img back? Click me!"; textBoxContent[3].style.color = "teal"; textBoxHeadings[3].style.color = "red";
 
 // ======== Updating Nodes ========
 
