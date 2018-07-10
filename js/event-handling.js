@@ -17,7 +17,7 @@ function removeVowels(str){
 
 function createNuBtn(){
     nuBtn.className = "nuBtn";
-    nuBtn.innerHTML = "OH YEAH!"
+    nuBtn.innerHTML = "OH NO!"
     container.append(nuBtn);
 }
 
@@ -64,7 +64,9 @@ midImg.addEventListener('wheel', (e) => {
 
 nuBtn.addEventListener('click',(e)=>{
     // nuBtn.style.display = "none";
-     TweenMax.to(".nuBtn", 2, {
+    nuBtn.innerHTML = "OH YEAH!"
+
+     TweenMax.to(".nuBtn", 3, {
          scale: 50.0
      });
     window.setTimeout(()=>{
@@ -101,7 +103,12 @@ document.addEventListener('dragover', (e)=>{
 });
 document.addEventListener('drop',(e)=>{
     console.log(e);
+    ctaImg.style.display = "none";
     e.target.style.backgroundColor = "black";
+    e.target.style.width = "100%";
+    cta.style.justifyContent = "center";
+
+    ctaH1.innerHTML = "Where from here?";
 });
 
 
