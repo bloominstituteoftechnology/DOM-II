@@ -96,8 +96,9 @@ textBoxHeadings[2].innerHTML = "Services - put your mouse over me. When you move
 textBoxContent[2].style.fontSize = "x-large"; textBoxHeadings[2].style.fontSize = "x-large"});
 
 textBoxHeadings[2].addEventListener("mouseleave", (event) => {textBoxContent[3].innerHTML = "Our products are the best products in the world. Ever.";
-textBoxContent[3].style.fontSize = "x-large"; textBoxHeadings[3].style.fontSize = "x-large"; midImg.style.display = "none"});
-textBoxHeadings[3].innerHTML = "Products - do you want the img back? Click me!"; textBoxContent[3].style.color = "teal"; textBoxHeadings[3].style.color = "red";
+textBoxContent[3].style.fontSize = "x-large"; textBoxHeadings[3].style.fontSize = "x-large"; midImg.style.display = "none"; textBoxHeadings[3].innerHTML = "Products - do you want the img back? Click me!"; textBoxContent[3].style.color = "teal"; textBoxHeadings[3].style.color = "red";});
+
+
 
 // ======== Updating Nodes ========
 
