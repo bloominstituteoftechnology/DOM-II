@@ -37,6 +37,21 @@ const siteContent = {
   },
 };
 
+//---Event Listeners used---
+
+//load
+//mousemove
+//keypress
+//scroll
+//mouseover
+//click
+//dblclick
+
+window.addEventListener("load", function(event) {
+  console.log("All resources finished loading!");
+});
+
+
 //Added event to entire page for detecting idle time - consoles logs number of minutes idle
 
 let idleTime = 0;
@@ -62,6 +77,36 @@ function timerIncrement() {
     }
     console.log(idleTime);
 }
+
+
+//Adding function with event listener to track scrolling
+
+// Reference: http://www.html5rocks.com/en/tutorials/speed/animations/
+
+let last_known_scroll_position = 0;
+let ticking = false;
+
+function doSomething(scroll_pos) {
+  // do something with the scroll position
+  console.log(scroll_pos)
+}
+
+window.addEventListener('scroll', function(event) {
+  console.log('User is scrolling')
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
+     
+    ticking = true;
+
+  }
+  
+});
 
 
 
@@ -136,13 +181,16 @@ ctaHead.innerHTML = siteContent['cta']['h1']
 let ctaButton = document.querySelector('button')
 ctaButton.innerHTML = siteContent['cta']['button']
 
-//-------Added Event Listeners-------------------
+//-------More Event Listeners-------------------
 
 //mouseover changes text color
 ctaButton.addEventListener('mouseover',(event)=>{event.target.style.color = "blue";
 });
 //click changes background color
 ctaButton.addEventListener('click',(event)=>{event.target.style.background = "yellow";
+});
+//double click changes background color
+ctaButton.addEventListener('dblclick',(event)=>{event.target.style.background = "orange";
 });
 
 
