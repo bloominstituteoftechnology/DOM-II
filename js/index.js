@@ -126,3 +126,54 @@ ctaBtn.addEventListener('click', () => {
   document.body.style.background = 'linear-gradient(#e66465, #9198e5)';
   navLinks.forEach(a => a.style.color = 'rgb(198, 190, 100)');
 });
+
+
+/* ------------ Today's JS ------------ */
+
+// adding hrefs to the additional nav links
+
+const addHref = (e) => {
+  e.target.href = '#';
+};
+
+first.addEventListener('mouseenter', addHref);
+last.addEventListener('mouseenter', addHref);
+
+
+// adding styling based on hover and click for cta button
+
+ctaBtn.addEventListener('mouseover', (e) => {
+  e.target.style.transitionDuration = '1s';
+});
+
+ctaBtn.addEventListener('click', (e) => {
+  e.target.style.borderRadius = '5%';
+});
+
+ctaBtn.addEventListener('dblclick', (e) => {
+  e.target.textContent = 'Slow down, fool!';
+  alert('Slow down!');
+});
+
+ctaBtn.addEventListener('mousedown', (e) => {
+  e.target.textContent = siteContent['cta']['button'];
+});
+
+ctaBtn.addEventListener('transitionstart', );
+
+
+// Changing main content view
+
+let hdrs = document.querySelectorAll('.main-content h4');
+
+hdrs.forEach(hdr => {
+  hdr.addEventListener('mouseover', e => {
+    e.target.parentElement.style.color = 'lightslategray';
+  });
+});
+
+hdrs.forEach(hdr => {
+  hdr.addEventListener('mouseleave', e => {
+    e.target.parentElement.style.color = 'black';
+  });
+});

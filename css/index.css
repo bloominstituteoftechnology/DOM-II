@@ -161,6 +161,15 @@ header .logo {
     padding-right: 20px;
 }
 
+.main-content .text-content {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
+    -moz-box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
 /* Contact Styles */
 
 .contact p {
