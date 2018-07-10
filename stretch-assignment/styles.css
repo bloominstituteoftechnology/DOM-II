@@ -10,6 +10,7 @@ body {
 }
 
 .block {
+  transition: all 1.5s ease-out;
   width: 100px;
   height: 100px;
   margin: 10px;
