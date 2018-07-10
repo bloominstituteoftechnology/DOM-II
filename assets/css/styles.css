@@ -6,9 +6,55 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-image: url("../img/background.jpg");
   background-position: center;
   background-size: cover;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 300;
+  color: #4C4A48;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.boxes {
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  background-color: #EA005E;
+  margin: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.box:hover {
+  transform: scale(1.15);
+}
+
+.box:nth-of-type(2n + 1){
+  background-color: #4A5459;
+}
+.box:nth-of-type(5n) {
+  background-color: rgb(241,196,15);
+}
+
+.box:nth-of-type(7n) {
+  background-color: #00CC6A;
+}
+
+.box:nth-of-type(9n) {
+  background-color: #6B69D6;
 }
