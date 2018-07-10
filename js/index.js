@@ -56,29 +56,21 @@ middleImg.src = 'img/mid-page-accent.jpg';
 let ctaH1 = document.querySelector('.cta-text h1');
 ctaH1.innerHTML = siteContent.cta.h1;
 
-let ctaB = document.querySelector('.cta-text button');
-ctaB.innerHTML = siteContent.cta.button;
+let ctaButton = document.querySelector('.cta-text button');
+ctaButton.innerHTML = siteContent.cta.button;
 
-let features = document.getElementsByTagName('h4');
-//contains "h4??"
-features[0].innerHTML = "Features";
-features[1].innerHTML =  siteContent["main-content"]["about-h4"];
-features[2].innerHTML = "Services";
-features[3].innerHTML = siteContent["main-content"]["vision-h4"];
-features[4].innerHTML =  siteContent["main-content"]["product-h4"];
-
-features[5].innerHTML =  siteContent["contact"]["contact-h4"];
-
-
-
-
-
-// aTags[0].innerHTML= siteContent.nav[`nav-item-1`];
-// aTags[1].innerHTML= siteContent.nav[`nav-item-2`];
+let h4 = document.getElementsByTagName('h4');
+//contains "h4??" possible method?
+//titles
+h4[0].innerHTML = "Features";
+h4[1].innerHTML =  siteContent["main-content"]["about-h4"];
+h4[2].innerHTML = "Services";
+h4[3].innerHTML = siteContent["main-content"]["vision-h4"];
+h4[4].innerHTML =  siteContent["main-content"]["product-h4"];
+h4[5].innerHTML =  siteContent["contact"]["contact-h4"];
 
 
 let nav = document.querySelector(".container header nav");
-
 let newArr = Object.values(siteContent.nav)
 newArr.pop();
 
@@ -91,11 +83,8 @@ startItem.innerHTML = 'Start Item';
 nav.append(endItem);
 nav.prepend(startItem);
 
-newArr.push("endItem");
-newArr.unshift("startItem")
-
-
-
+newArr.push("Location");
+newArr.unshift("Home")
 
 console.log(newArr)
 console.log(nav)
@@ -109,50 +98,72 @@ const navFunction = function(){
       aTags[i].style.color = "green";
   }
 }
-
 navFunction();
 
-// console.log(Object.keys(siteContent.nav).length-1 + ' 1')
-// console.log(siteContent.nav[`nav-item-${6}`] + ' 2')
-//
-// nav = document.querySelector(".container header nav")
-//
-// let aTags = document.querySelectorAll("a");
-// const navFunction = function(){
-//   for(let i=1; i < Object.keys(siteContent.nav).length -1; i++) {
-//       console.log(i + ' 3');
-//       aTags[i].innerHTML = siteContent.nav[`nav-item-${i}`];
-//       aTags[i].style.color = "green";
-//       console.log(i + ' 4');
-//   }
-// }
-//
-// navFunction();
-
-// aTags[6].innerHTML = siteContent.nav[`nav-item-6`]
-// console.log(siteContent.nav[`nav-item-6`] + ' 4')
-
-// console.log(nav);
-// let childA = document.createElement("a");
-
-// console.log(nav.childNodes);
-
-// let nav = document.querySelector('nav');
-// nav.style.color = "blue";
-// const results =siteContent.filter(word => word.includes('content'));
-// console.log(siteContent);
-
-
-
 let content = document.querySelectorAll("p");
+//main content
 content[0].innerHTML = siteContent["main-content"]["features-content"];
 content[1].innerHTML = siteContent["main-content"]["about-content"];
 content[2].innerHTML = siteContent["main-content"]["services-content"];
 content[3].innerHTML = siteContent["main-content"]["product-content"];
 content[4].innerHTML = siteContent["main-content"]["vision-content"];
-
+//Contact
 content[5].innerHTML = siteContent["contact"]["address"];
 content[6].innerHTML = siteContent["contact"]["phone"];
 content[7].innerHTML = siteContent["contact"]["email"];
-
+//Copyright
 content[8].innerHTML = siteContent["footer"]["copyright"];
+
+
+//Day 2
+const button = document.querySelector('.cta-text button');
+const theH1 = document.querySelector('.cta-text h1');
+const navService = document.querySelector('#service');
+const line = document.querySelector('.line');
+const containerBG = document.querySelector('.container');
+
+containerBG.addEventListener("auxclick", (event) =>{
+  event.target.style.background = "black";
+  event.stopPropagation();
+})
+containerBG.addEventListener("dblclick", (event) =>{
+  event.target.style.background = "none";
+  event.stopPropagation();
+})
+
+line.addEventListener('wheel', (event) => {
+  event.target.style.background = "green"
+  event.target.style.height = "50px";
+  console.log("line was clicked")
+})
+
+navService.addEventListener('mouseenter', (event) => {
+  event.target.style.color = "red"
+})
+
+content[1].addEventListener('mouseenter', (event) => {
+  event.target.style.color = "red"
+})
+
+h4[3].addEventListener('mouseenter', (event) => {
+  event.target.style.color = "red"
+})
+
+theH1.addEventListener('click', (event) => {
+  event.target.style.color = "blue";
+})
+
+button.addEventListener('click', (event) => {
+  event.target.style.color = "red";
+  event.target.style.background = "yellow"
+  event.stopPropagation();
+})
+
+button.addEventListener('doubleclick', (event) => {
+  event.target.innerHTML = "oops";
+})
+
+button.addEventListener('wheel', (event) => {
+  event.target.rotate  = "oops";
+  // event.shiftKey.style.color = 'blue';
+})
