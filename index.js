@@ -50,6 +50,7 @@ let contact = document.querySelector('.contact');
 let footer = document.querySelector("footer");
 let body = document.querySelector('body');
 let header = document.querySelector('header');
+let button = document.querySelector('button');
 
 // Question to explore later: is there a way I can iterate through siteContent["nav"]?
 nav.children[0].textContent = siteContent["nav"]["nav-item-1"];
@@ -105,6 +106,17 @@ window.addEventListener('scroll', () => {
   header.style.top = "0";
 });
 
+button.addEventListener('mouseenter', () => {
+  alert("Sike!");
+});
 ctaIMG.addEventListener('click', () => {
   ctaIMG.style.display = "none";
+});
+
+midIMG.addEventListener('dblclick', () => {
+  midIMG.style.display = "none";
+});
+
+contact.addEventListener('mouseleave', () => {
+  alert("Don't leave!");
 });
