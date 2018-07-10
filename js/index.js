@@ -43,6 +43,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //QUERY SELECTORS
 
+
+let myContainer = document.querySelector(".container");
+
 //nav
 
 
@@ -95,6 +98,13 @@ let footer = document.querySelector("footer p");
 
 //HTML MANIPULATION
 
+//container
+
+myContainer.parentElement.addEventListener("keydown", (event) => {
+  TweenMax.to("#cta-img", 3, {x:-800, rotation:360, scale:0});
+  event.stopPropagation();
+});
+
 //nav
 
 
@@ -117,6 +127,7 @@ navItems.forEach((element) => element.style.color = "green");
 
 navItems.forEach((element) => element.addEventListener ("click", (event) => {
   TweenMax.to(element, 1, {y:20});
+  event.stopPropagation();
 }));
 
 
