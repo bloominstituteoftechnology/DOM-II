@@ -121,7 +121,58 @@ footerText.innerHTML = siteContent["footer"]["copyright"];
 
   customButton.addEventListener('click', (event) => {
     TweenMax.to(".cta-text", .5, {x:200, opacity: 0, scale:0.5});
-    
     event.stopPropagation();
-    //console.log(event)
   });
+
+  //...........................................................................
+
+ let customTextColor = document.querySelectorAll(".main-content .text-content");
+
+  customTextColor[0].addEventListener('mouseover', (event) => {
+    customTextColor[0].style.color = "paleTurquoise";
+    event.stopPropagation();
+  });
+
+  customTextColor[1].addEventListener('mouseover', (event) => {
+    customTextColor[1].style.color = "pink";
+    event.stopPropagation();
+  });
+
+  customTextColor[2].addEventListener('mouseover', (event) => {
+    customTextColor[2].style.color = "orchid";
+    event.stopPropagation();
+  });
+
+  customTextColor[3].addEventListener('mouseover', (event) => {
+    customTextColor[3].style.color = "paleGoldenRod";
+    event.stopPropagation();
+  });
+
+  customTextColor[4].addEventListener('mouseover', (event) => {
+    customTextColor[4].style.color = "paleGreen";
+    event.stopPropagation();
+  });
+
+//.......................................................................
+
+ctaImg.addEventListener('dblclick', (event) => {
+  alert("This is an alert!");
+  event.stopPropagation();
+});
+
+midImg.addEventListener('click', (event) => {
+  TweenMax.to(".middle-img", 2, {rotation:360, scale:0.75});
+  event.stopPropagation();
+});
+
+logo.addEventListener('click', (event) => {
+  TweenMax.to(".logo", 1, {x:300, opacity:0, scale:0.5});
+  event.stopPropagation();
+});
+
+let submitButton = document.querySelectorAll(".submit-button");
+
+submitButton.addEventListener('click', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+});
