@@ -41,6 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
 let navItem1 = document.querySelector("nav a");
 navItem1.innerHTML = siteContent["nav"]["nav-item-1"]
 
@@ -61,6 +62,7 @@ navItem5[4].innerHTML = siteContent["nav"]["nav-item-5"]
 
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.innerHTML = siteContent["cta"]["h1"];
+
 
 let ctaImg = document.getElementById("cta-img");
 ctaImg.src = siteContent["cta"]["img-src"];
@@ -134,4 +136,59 @@ selectedNavLinks.append(createNewNode("Testimonials"));
 
 
 
-// Event Listeners 
+
+// nav event listeners 
+
+
+
+
+
+
+
+// CTA Event Listeners 
+ctaText.addEventListener('mouseover',(event)=> {
+event.target.innerText = "I am the Queen";
+});
+
+ctaText.addEventListener('mouseout',(event)=>{
+  event.target.innerText = siteContent["cta"]["h1"]
+});
+
+ctaButton.addEventListener('mouseover',(event)=> {
+  event.target.innerText = "I am the Queen";
+  });
+
+  ctaImg.addEventListener('click',(event)=>{
+    event.target.style.animation = "rotate 20s";
+    event.target.style.webkitAnimation = "rotate 20s";
+  });
+
+
+  // Main Content Event Listeners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
