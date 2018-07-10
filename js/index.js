@@ -118,6 +118,15 @@ mainHeaders.forEach((header) => {
   })
 });
 
+let form = document.getElementsByTagName('form')[0];
+
+form.addEventListener('submit', function() {
+  alert('thanks for submitting!')
+})
+
+form.addEventListener('input', function() {
+  submit.disabled = false;
+})
 
 let header = document.querySelector('header');
 let ctaBtn = document.querySelector('.cta-text button')
@@ -134,3 +143,4 @@ ctaBtn.addEventListener('mousedown', function(event) {
 ctaBtn.addEventListener('mouseup', function(event) {
   event.target.style.boxShadow = "0 0 0 transparent";
 })
+
