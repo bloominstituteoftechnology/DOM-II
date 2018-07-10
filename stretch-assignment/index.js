@@ -21,6 +21,7 @@ function putInFront(event) {
   }, 200)
 }
 
+// traveler
 function goToRight(event) {
   // let infinteVal = 0;
 
