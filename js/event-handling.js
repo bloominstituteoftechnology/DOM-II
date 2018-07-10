@@ -21,6 +21,10 @@ function createNuBtn(){
     container.append(nuBtn);
 }
 
+function dropIt(e){
+    console.log(e.target);
+}
+
 // // background: linear-gradient(to bottom right, red, yellow);
 
 container.addEventListener('mouseover',()=>{
@@ -56,7 +60,6 @@ midImg.addEventListener('wheel', (e) => {
     } else {
         return;
     }
-    
 });
 
 nuBtn.addEventListener('click',(e)=>{
@@ -70,4 +73,15 @@ nuBtn.addEventListener('click',(e)=>{
            scale: 0.0
        });
 })
+
+document.addEventListener('drag',(e)=>{
+    // console.log(e.target);
+});
+
+
+document.addEventListener('drop', (e) => {
+    // e.preventDefault();
+    // if(e.target.className == "dropzone") {console.log("drop");}
+    console.log("dropped");
+});
 
