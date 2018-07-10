@@ -37,20 +37,21 @@ const siteContent = {
   },
 };
 
-//Add event to entire page for detecting idle time
+//Add event to entire page for detecting idle time - consoles logs number of minutes idle
 
 let idleTime = 0;
 $(document).ready(function () {
     //Increment the idle time counter every minute.
     let idleInterval = setInterval(timerIncrement, 60000); // 1 minute
-    console.log(idleInterval);
 
     //Zero the idle timer on mouse movement.
-    $(this).mousemove(function (e) {
+    $(this).mousemove(function (event) {
         idleTime = 0;
+        //event.style.color = 'red';
     });
-    $(this).keypress(function (e) {
+    $(this).keypress(function (event) {
         idleTime = 0;
+        //event.style.color = 'blue';
     });
 });
 
@@ -59,6 +60,7 @@ function timerIncrement() {
     if (idleTime > 19) { // 20 minutes
         window.location.reload();
     }
+    console.log(idleTime);
 }
 
 
