@@ -83,14 +83,29 @@ ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 let textContentList = document.querySelectorAll(".text-content");
 
 textContentList[0].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["features-h4"];
+textContentList[0].addEventListener("mouseover", function () {
+  textContentList[0].style.color = "green"
+});
 textContentList[0].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["features-content"];
 textContentList[1].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["about-h4"];
+textContentList[1].addEventListener("mouseover", function () {
+  textContentList[1].style.color = "blue"
+});
 textContentList[1].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["about-content"];
 textContentList[2].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["services-h4"];
+textContentList[2].addEventListener("mouseover", function () {
+  textContentList[2].style.color = "purple"
+});
 textContentList[2].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["services-content"];
 textContentList[3].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["product-h4"];
+textContentList[3].addEventListener("mouseover", function () {
+  textContentList[3].style.color = "red"
+});
 textContentList[3].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["product-content"];
 textContentList[4].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["vision-h4"];
+textContentList[4].addEventListener("mouseover", function () {
+  textContentList[4].style.color = "orange"
+});
 textContentList[4].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["vision-content"];
 
 let middleImg = document.getElementById("middle-img");
