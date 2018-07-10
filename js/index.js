@@ -37,10 +37,37 @@ const siteContent = {
   },
 };
 
+//Add event to entire page for detecting idle time
+
+let idleTime = 0;
+$(document).ready(function () {
+    //Increment the idle time counter every minute.
+    let idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+    console.log(idleInterval);
+
+    //Zero the idle timer on mouse movement.
+    $(this).mousemove(function (e) {
+        idleTime = 0;
+    });
+    $(this).keypress(function (e) {
+        idleTime = 0;
+    });
+});
+
+function timerIncrement() {
+    idleTime = idleTime + 1;
+    if (idleTime > 19) { // 20 minutes
+        window.location.reload();
+    }
+}
+
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 logo.setAttribute('alt', 'This is the logo for the Great Idea site')
+
 
 //Update the navigation
 let siteNav = document.querySelector('nav')
@@ -65,14 +92,40 @@ siteHead[3].style.color = 'green';
 siteHead[4].style.color = 'blue';
 siteHead[5].style.color = 'purple';
 
-//Add items to navigation
-let lastItem = document.createElement('a');
-siteNav.appendChild(lastItem);
-lastItem.innerHTML = 'Last Item';
+siteHead[0].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "Services" option')
+});
+siteHead[1].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "Product" option')
+});
+siteHead[2].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "Vision" option')
+});
+siteHead[3].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "Features" option')
+});
+siteHead[4].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "About" option')
+});
+siteHead[5].addEventListener('mouseover',(event)=>{
+  event.target.style.fontSize = "20px";
+  console.log('user moused-over "Contact" option')
+});
 
-let firstItem = document.createElement('a');
-siteNav.prepend(firstItem);
-firstItem.innerHTML = 'First Item';
+
+//Add items to navigation
+// let lastItem = document.createElement('a');
+// siteNav.appendChild(lastItem);
+// lastItem.innerHTML = 'Last Item';
+
+// let firstItem = document.createElement('a');
+// siteNav.prepend(firstItem);
+// firstItem.innerHTML = 'First Item';
 
 //Add cta header and button
 let ctaHead = document.querySelector('h1')
@@ -80,6 +133,17 @@ ctaHead.innerHTML = siteContent['cta']['h1']
 
 let ctaButton = document.querySelector('button')
 ctaButton.innerHTML = siteContent['cta']['button']
+
+//-------Added Event Listeners-------------------
+
+//mouseover changes text color
+ctaButton.addEventListener('mouseover',(event)=>{event.target.style.color = "blue";
+});
+//click changes background color
+ctaButton.addEventListener('click',(event)=>{event.target.style.background = "yellow";
+});
+
+
 
 //Add cta image with html id "cta-img"
 let ctaImg = document.getElementById('cta-img')
