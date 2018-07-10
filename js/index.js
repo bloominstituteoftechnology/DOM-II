@@ -178,3 +178,57 @@ HTMLBody.addEventListener("keyup", event => {
   event.target.style.color = "black";
   document.querySelectorAll("nav a").forEach(el => {el.style.color = "green";})
 });
+
+middleImg.addEventListener("dblclick", event => {
+  event.target.style.width = "100px";
+});
+
+middleImg.addEventListener("click", event => {
+  event.target.style.width = "880px";
+});
+
+TCTCP[0].addEventListener("wheel", event => {
+  event.target.style.color = "white";
+});
+
+TCTCP[1].addEventListener("wheel", event => {
+  event.target.style.color = "white";
+});
+
+BCTCP[0].addEventListener("wheel", event => {
+  event.target.style.color = "white";
+});
+
+BCTCP[1].addEventListener("wheel", event => {
+  event.target.style.color = "white";
+});
+
+BCTCP[2].addEventListener("wheel", event => {
+  event.target.style.color = "white";
+});
+
+TCTCH4[0].addEventListener("contextmenu", event => {
+  event.target.style.color = "black";
+});
+
+TCTCH4[1].addEventListener("contextmenu", event => {
+  event.target.style.color = "black";
+});
+
+BCTCH4[0].addEventListener("contextmenu", event => {
+  event.target.style.color = "black";
+});
+
+BCTCH4[1].addEventListener("contextmenu", event => {
+  event.target.style.color = "black";
+});
+
+BCTCH4[2].addEventListener("contextmenu", event => {
+  event.target.style.color = "black";
+});
+
+HTMLBody.addEventListener("click", () => {
+  document.querySelectorAll(".text-content p").forEach(el => el.style.color = "black");
+  document.querySelectorAll(".text-content h4").forEach(el => el.style.color = "dodgerblue");
+});
+
