@@ -117,6 +117,11 @@ myContainer.parentElement.addEventListener("keydown", (event) => {
   event.stopPropagation();
 });
 
+window.addEventListener("wheel", (event) => {
+  mainContentText.forEach((element) => element.style.color = "blue");
+  event.stopPropagation();
+})
+
 //nav
 
 
@@ -167,6 +172,10 @@ mainContentText[3].innerHTML = siteContent["main-content"]["product-content"];
 mainContentText[4].innerHTML = siteContent["main-content"]["vision-content"];
 
 mainContentImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+
+
+
 
 //contact
 
