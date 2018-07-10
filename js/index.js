@@ -137,3 +137,44 @@ BCTCH4[0].style.color = "dodgerblue";
 BCTCH4[1].style.color = "dodgerblue";
 BCTCH4[2].style.color = "dodgerblue";
 contactH4.style.color = "dodgerblue";
+
+
+
+
+
+
+// DOM-II .addEventListener() and .stopPropagation() and .preventDefault()
+let HTMLBody = document.querySelector("body");
+
+
+ctaBtn.addEventListener("click", event => {
+  event.target.style.color = "red";
+});
+
+navigation.addEventListener("mousemove", event => {
+  event.target.style.color = "blue";
+});
+
+navigation.addEventListener("mouseout", event => {
+  event.target.style.color = "green";
+});
+
+logo.addEventListener("drag", event => {
+  event.target.style.display = "none";
+});
+
+logo.addEventListener("dragend", event => {
+  event.target.style.display = "block";
+});
+
+HTMLBody.addEventListener("keydown", event => {
+  event.target.style.backgroundColor = "blue";
+  event.target.style.color = "white";
+  document.querySelectorAll("nav a").forEach(el => {el.style.color = "white";})
+});
+
+HTMLBody.addEventListener("keyup", event => {
+  event.target.style.backgroundColor = "white";
+  event.target.style.color = "black";
+  document.querySelectorAll("nav a").forEach(el => {el.style.color = "green";})
+});
