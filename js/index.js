@@ -178,11 +178,7 @@ document.addEventListener('copy', () =>{
   alert('Why you copying me brah?');
 })
 
-<<<<<<< HEAD
 //10. auxclick
-=======
-//auxclick
->>>>>>> 4a558a7c8a30489976c17fb58886278e4377d908
 document.addEventListener('auxclick', event=>{
   event.target.style.visibility = 'hidden';
   setTimeout(() => {
