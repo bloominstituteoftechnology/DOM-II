@@ -222,22 +222,6 @@ navBar.forEach(function(navATag){
     });
 });
 
-//Animation functions
-// function myFunction () {
-//     ctaButton.style.WebKitAnimation = "mymove 3s 2";
-// }
-
-// function myStartFunction () {
-//     ctaButton.style.backgroundColor = "Blue"; 
-//     ctaButton.innerHTML = "Your Journey is about to begin!!";
-// }
-
-// function myEndFunction () {
-//     ctaButton.innerHTML = "May the profits be with you! Click again.";
-// }
-// ctaButton.addEventListener("webkitAnimationstart", myStartFunction);
-// ctaButton.addEventListener("webkitAnimationEnd", myEndFunction); 
-// ctaButton.addEventListener("")
 
 ctaButton.addEventListener("dblclick", () => {
     let emailRequest = prompt("Please provide your email address in the following format your@email.com your email must be a gmail.com account");
@@ -274,7 +258,11 @@ ctaButton.addEventListener("mouseout", (e) => {
     oneTime++; 
 });
 //The above i've seen done on sites where you didn't actually click on the item but you are prompted to move forward. Maybe they changed their mind?  
-//Little aggessive but may provide some contacts. 
+//Little aggessive but may provide some contacts. I set if statements so that it doesn't cause a pop up everytime. 
+
+body.addEventListener("wheel", () => {
+    console.log("The wheel is being used"); 
+});
 
 
 
