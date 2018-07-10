@@ -156,6 +156,7 @@ body.addEventListener('keydown', (event) => {
 paragraphText[0].addEventListener('copy', (event) => {
   event.stopPropagation();
   console.log("Something has been copied! Beware of plagiarism!");
+  paragraphText[0].style.color = "green";
 })
 
 paragraphText[7].addEventListener('copy', (event) => {
@@ -165,7 +166,17 @@ paragraphText[7].addEventListener('copy', (event) => {
 
 tagLinks[0].addEventListener('mouseenter', (event) => {
   console.log("mouse entered nav item 1 with index of 0")
+  tagLinks[0].style.color = 'red';
 })
+
+
+
+
+// let navLinks = document.querySelectorAll("nav a");
+
+// navLinks.addEventListener('mouseover', (event) => {
+//   console.log("linkc licked.")
+// })
 
 
 // const navLinksEvent = document.querySelectorAll("nav a");
@@ -177,13 +188,6 @@ tagLinks[0].addEventListener('mouseenter', (event) => {
 //     console.log("mousedentered!")
 //   })
 // }
-
-// let navLinks = document.querySelectorAll("nav a");
-
-// navLinks.addEventListener('mouseover', (event) => {
-//   console.log("linkc licked.")
-// })
-
 
 
 
