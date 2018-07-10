@@ -160,11 +160,13 @@ footerP.addEventListener('mouseleave', (event) => {
     event.stopPropagation();
 }); 
 
-// change the background color of the body on keydown
-document.querySelector('body').addEventListener('keydown', (event) => {
-    event.target.style.backgroundColor = 'pink';
-    event.stopPropagation();
-});
+let elBody = document.querySelector('body');
+// function to toggle a background color class on something
+function bodyBackgroundToggle() {
+	this.classList.toggle('aqua-background');
+}
+// toggle the background color on keydown
+elBody.addEventListener('keydown', bodyBackgroundToggle);
 
 // rotate the middle image when clicked
 middleImg.addEventListener('click', () => {
@@ -189,6 +191,7 @@ form.addEventListener('blur', (event) => {
 // override the forms default background on input change
 form.addEventListener('input', (event) => {
     event.target.style.background = 'aqua';
+    event.stopPropagation();
 }, true);
 
 
