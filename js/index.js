@@ -66,3 +66,49 @@ let ctaImg = document.querySelector(".cta img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 
+//main-content section
+
+ 
+// headerMain.innerHTML = siteContent["main-content"][];
+
+//headers and paragraphs
+//common variables h4, p, .text-content finding way to loop through three variables
+let mainContent = document.querySelectorAll(".text-content");
+
+//first mainContent Section, all elements with h4 at 0 position, change HTML contents, with contents in siteContent
+mainContent[0].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["features-h4"];
+mainContent[0].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["features-content"];
+mainContent[1].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["about-h4"];
+mainContent[1].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["about-content"];
+mainContent[2].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["services-h4"];
+mainContent[2].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["services-content"];
+mainContent[3].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["product-h4"];
+mainContent[3].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["product-content"];
+mainContent[4].getElementsByTagName("h4")[0].innerHTML = siteContent["main-content"]["vision-h4"];
+mainContent[4].getElementsByTagName("p")[0].innerHTML = siteContent["main-content"]["vision-content"];
+
+
+//main content image
+let mainImg = document.querySelector(".main-content img");
+mainImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+
+
+//contact section
+
+//header
+let contactHeader = document.querySelector(".contact h4");
+contactHeader.innerHTML = siteContent["contact"]["contact-h4"];
+
+//contact information
+
+//tried looping
+// let contactInfo = document.querySelectorAll(".contact p");
+// contactInfo.forEach((info, i) => {
+//   contactInfo.innerHTML = (object.values(siteContent));
+  
+// });
+
+let contactInfo = document.querySelectorAll(".contact p");
+
+contactInfo.innerHTML = siteContent["contact"]["address"];
