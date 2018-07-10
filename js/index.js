@@ -114,7 +114,7 @@ first.textContent = 'Sleep';
 last.textContent = 'Extra';
 nav.appendChild(last);
 nav.prepend(first);
-navLinks = document.querySelectorAll('nav a');
+navLinks = document.querySelectorAll('header a');
 
 
 // New styles
@@ -151,15 +151,20 @@ ctaBtn.addEventListener('click', (e) => {
 });
 
 ctaBtn.addEventListener('dblclick', (e) => {
-  e.target.textContent = 'Slow down, fool!';
+  e.target.textContent = 'Slow down, fool!'; // joke text
   alert('Slow down!');
 });
 
 ctaBtn.addEventListener('mousedown', (e) => {
-  e.target.textContent = siteContent['cta']['button'];
+  e.target.textContent = siteContent['cta']['button']; // sets to correct text
 });
 
-ctaBtn.addEventListener('transitionstart', );
+ctaBtn.addEventListener('transitionend', e => {
+  TweenMax.to(e.target, 6, { // twists up/down
+    rotationX:360,
+    ease: Power2.easeInOut,
+  });
+});
 
 
 // Changing main content view
@@ -175,5 +180,23 @@ hdrs.forEach(hdr => {
 hdrs.forEach(hdr => {
   hdr.addEventListener('mouseleave', e => {
     e.target.parentElement.style.color = 'black';
+  });
+});
+
+hdrs.forEach(hdr => {
+  hdr.addEventListener('copy', e => {
+    alert(`That is our ${e.target.innerText.toLowerCase()}!`);
+  });
+});
+
+
+// nav link events
+
+navLinks.forEach(link => {
+  link.addEventListener('auxclick', e => {
+    alert(`
+    That's not how you click a link.
+    If you want to navigate to ${e.target.innerText.toLowerCase()},
+    try using your left mouse button.`);
   });
 });
