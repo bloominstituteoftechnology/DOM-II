@@ -145,8 +145,46 @@ body.addEventListener('keydown', (event) => {
   console.log("A key has been pressed down.")
 })
 
-body.addEventListener('copy', (event) => {
-  console.log("Something has been copied! Beware of plagiarism!")
+
+// for (let i = 0; i < paragrahText.length; i++) {
+//   paragraphText[i].addEventListener('copy', (event) => {
+//     console.log("Something has been copied! Beware of plagiarism!")
+//     event.stopPropagation();
+//   })
+// }
+
+paragraphText[0].addEventListener('copy', (event) => {
+  event.stopPropagation();
+  console.log("Something has been copied! Beware of plagiarism!");
 })
+
+paragraphText[7].addEventListener('copy', (event) => {
+  event.stopPropagation();
+  console.log("Email has been copied. Expect an email soon!");
+})
+
+tagLinks[0].addEventListener('mouseenter', (event) => {
+  console.log("mouse entered nav item 1 with index of 0")
+})
+
+
+// const navLinksEvent = document.querySelectorAll("nav a");
+
+// for (let i = 0; i < nevLinksEvent.length; i++) {
+//   navLinksEvent[i].addEventListener('mouseenter', (event) => {
+//     event.stopPropagation();
+//     event.target.innerHTML = 'Hey';
+//     console.log("mousedentered!")
+//   })
+// }
+
+// let navLinks = document.querySelectorAll("nav a");
+
+// navLinks.addEventListener('mouseover', (event) => {
+//   console.log("linkc licked.")
+// })
+
+
+
 
 
