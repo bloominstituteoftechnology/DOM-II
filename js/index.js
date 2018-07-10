@@ -134,7 +134,16 @@ highlight[4].addEventListener('click',(event)=>{
 event.stopPropagation();
 });
 
-highlight[5].addEventListener('click',(event)=>{
-  event.target.classList.add('highlighted');
-event.stopPropagation();
+contacth4.addEventListener('mouseover',(event)=>{
+  event.target.style.color= "red";
+});
+
+contactp[0].addEventListener('mouseover',(event)=>{
+  event.target.style.color="blue";
+});
+contactp[1].addEventListener('mouseover',(event)=>{
+  event.target.style.color="blue";
+});
+contactp[2].addEventListener('mouseover',(event)=>{
+  event.target.style.color="blue";
 });
