@@ -12,6 +12,18 @@ document.querySelectorAll('.box').forEach(box => {
   });
 });
 
+document.querySelector('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const text = document.querySelector('input').value;
+  text
+    .toLowerCase()
+    .split('')
+    .filter(x => /[a-z]/.test(x))
+    .forEach((key, idx) => {
+      setTimeout(playSoundWithAnim, idx * 300, key);
+    });
+});
+
 function playSoundWithAnim(key) {
   sounds[key].play();
   const target = `#box${key.charCodeAt(0) - 96}`;
