@@ -102,3 +102,44 @@ let createNewNode = (name) => {
 }
 selectedNavLinks.prepend(createNewNode("Extra Item 1"));
 selectedNavLinks.append(createNewNode("Extra Item 2"));
+
+//Events
+const container = document.querySelector('.container')
+const mainContent = document.querySelector('.main-content');
+const topContent = document.querySelector('.top-content');
+const bottomContent = document.querySelector('.bottom-content');
+const head = document.querySelector('head');
+
+mainContent.addEventListener('mouseenter', (e) => {
+  e.target.style.background = "orange";
+  console.log('mouse entered main content')
+})
+mainContent.addEventListener('mouseleave', (e) => {
+  e.target.style.background = "blue";
+  console.log('mouse left main content')
+})
+topContent.addEventListener('copy', (e) => {
+  TweenLite.to(topContent, 3,{left:"100px"})
+  console.log('copied top content')
+})
+document.addEventListener('scroll', (e) => {
+  console.log('screen scrolled')
+})
+document.addEventListener('keydown', (e) => {
+  console.log('key pressed')
+})
+bottomContent.addEventListener('dragstart', (e) => {
+  console.log('started dragging')
+})
+document.addEventListener('keyup', (e) => {
+  console.log('key released')
+})
+window.addEventListener('load', (e) => {
+  console.log('loaded')
+})
+window.addEventListener('resize', (e) => {
+  console.log('resized')
+})
+bottomContent.addEventListener('dblclick', (e) => {
+  console.log('bottom content double clicked')
+})
