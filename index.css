@@ -309,3 +309,15 @@ footer {
 .blue {
     color: blue;
 }
+
+input {
+    font-size: 16px;
+    padding:8px 16px;
+    margin: 16px 0;
+}
+
+.flex {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

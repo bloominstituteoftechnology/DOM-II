@@ -157,23 +157,39 @@ logo.addEventListener('mouseenter', (event) => {
 // make footer disappear on mouseleave
 footerP.addEventListener('mouseleave', (event) => {
     event.target.style.opacity = 0;
+    event.stopPropagation();
 }); 
 
-// function changeTextColor(color) {
-//     this.target.style.color = color;
-// }
-// let changeNavColors = document.querySelectorAll('nav a');
-// changeNavColors.addEventListener('click', (event) => {
-//     event.target.style.color = 'aqua';
-// });
-
+// change the background color of the body on keydown
 document.querySelector('body').addEventListener('keydown', (event) => {
-	event.target.style.backgroundColor = 'pink';
+    event.target.style.backgroundColor = 'pink';
+    event.stopPropagation();
 });
 
+// rotate the middle image when clicked
 middleImg.addEventListener('click', () => {
 	TweenMax.to('#middle-img', 2, {
 		rotation: 720
 	});
 });
+
+// select the form element
+let form = document.getElementById("form");
+
+// override the forms default background on focus
+form.addEventListener('focus', (event) => {
+    event.target.style.background = 'white';
+}, true);
+
+// override the forms default background on blur
+form.addEventListener('blur', (event) => {
+    event.target.style.background = '#eee';
+}, true);
+
+// override the forms default background on input change
+form.addEventListener('input', (event) => {
+    event.target.style.background = 'aqua';
+}, true);
+
+
 
