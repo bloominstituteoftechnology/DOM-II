@@ -44,11 +44,30 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 // nav
 let navElements = document.getElementsByTagName("a");
 navElements[0].innerHTML = siteContent["nav"]["nav-item-1"];
+navElements[0].addEventListener("mouseover", function () {
+  navElements[0].style.color = "blue"
+});
 navElements[1].innerHTML = siteContent["nav"]["nav-item-2"];
+navElements[1].addEventListener("mouseover", function () {
+  navElements[1].style.color = "purple"
+});
 navElements[2].innerHTML = siteContent["nav"]["nav-item-3"];
+navElements[2].addEventListener("mouseover", function () {
+  navElements[2].style.color = "red"
+});
 navElements[3].innerHTML = siteContent["nav"]["nav-item-4"];
+navElements[3].addEventListener("mouseover", function () {
+  navElements[3].style.color = "orange"
+});
 navElements[4].innerHTML = siteContent["nav"]["nav-item-5"];
+navElements[4].addEventListener("mouseover", function () {
+  navElements[4].style.color = "yellow"
+});
 navElements[5].innerHTML = siteContent["nav"]["nav-item-6"];
+navElements[5].addEventListener("mouseover", function () {
+  navElements[5].style.color = "green"
+});
+
 
 // Update CTA
 let ctaText = document.getElementsByClassName("cta-text")[0];
