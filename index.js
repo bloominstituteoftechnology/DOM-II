@@ -103,4 +103,8 @@ window.addEventListener('scroll', () => {
   header.style.position = "fixed";
   header.style.backgroundColor = "black";
   header.style.top = "0";
-})
+});
+
+ctaIMG.addEventListener('click', () => {
+  ctaIMG.style.display = "none";
+});
