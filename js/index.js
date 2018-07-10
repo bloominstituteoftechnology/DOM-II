@@ -124,17 +124,23 @@ let footer = document.querySelector("footer p");
 
 //HTML MANIPULATION
 
-//container
+//window or container
+
+window.addEventListener("wheel", (event) => {
+  mainContentText.forEach((element) => element.style.color = "blue");
+  event.stopPropagation();
+})
+
+window.addEventListener("beforeprint", (event) => {
+  alert("No Printing Allowed!");
+})
 
 myContainer.parentElement.addEventListener("keydown", (event) => {
   TweenMax.to("#cta-img", 3, { x: -800, rotation: 360, scale: 0 });
   event.stopPropagation();
 });
 
-window.addEventListener("wheel", (event) => {
-  mainContentText.forEach((element) => element.style.color = "blue");
-  event.stopPropagation();
-})
+
 
 //nav
 
