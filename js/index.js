@@ -109,6 +109,16 @@ contactHeader.innerHTML = siteContent["contact"]["contact-h4"];
   
 // });
 
-let contactInfo = document.querySelectorAll(".contact p");
+let contactInfo = document.getElementsByClassName("contact")[0];
 
-contactInfo.innerHTML = siteContent["contact"]["address"];
+contactInfo.getElementsByTagName("p")[0].innerHTML = siteContent["contact"]["address"];
+contactInfo.getElementsByTagName("p")[1].innerHTML = siteContent["contact"]["phone"];
+contactInfo.getElementsByTagName("p")[2].innerHTML = siteContent["contact"]["email"];
+
+
+//footer
+
+let footerInfo = document.querySelector("footer p");
+footerInfo.innerHTML = siteContent["footer"]["copyright"];
+
+
