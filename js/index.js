@@ -51,16 +51,67 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 let nav = document.querySelectorAll("nav a");
 nav[0].innerHTML = siteContent["nav"]["nav-item-1"];
+nav[0].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[0].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
 nav[1].innerHTML = siteContent["nav"]["nav-item-2"];
+nav[1].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[1].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
 nav[2].innerHTML = siteContent["nav"]["nav-item-3"];
+nav[2].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[2].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
 nav[3].innerHTML = siteContent["nav"]["nav-item-4"];
+nav[3].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[3].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
 nav[4].innerHTML = siteContent["nav"]["nav-item-5"];
+nav[4].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[4].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
 nav[5].innerHTML = siteContent["nav"]["nav-item-6"];
+nav[5].addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+nav[5].addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
+
+
+
 
 let whateverA = document.createElement('a');
 let whateverText = document.createTextNode('Whatever');
 whateverA.appendChild(whateverText);
 document.querySelector('nav').appendChild(whateverA);
+
+whateverA.addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+whateverA.addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});-+
 
 whateverA.addEventListener("click", (e) => {
   document.getElementById("cta-img").setAttribute("src", siteContent["cta"]["whatever-img-src"]);
@@ -70,6 +121,13 @@ let homeA = document.createElement('a');
 let homeText = document.createTextNode('Home');
 homeA.appendChild(homeText);
 document.querySelector('nav').prepend(homeA);
+
+homeA.addEventListener("mouseover", (e) => {
+  e.target.style.fontSize = "25px";
+});
+homeA.addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "20px";
+});
 
 let navigation = document.querySelectorAll('nav a');
 
