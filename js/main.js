@@ -70,7 +70,7 @@ bottomText[2].innerHTML = siteContent["main-content"]["vision-content"];
 
 
 
-ctaH1.innerHTML = siteContent.cta.h1;
+ctaH1.innerHTML = "Double Click";
 ctaBtn.innerHTML = siteContent.cta.button;
 
 topH4[0].innerHTML = siteContent["main-content"]["features-h4"];
