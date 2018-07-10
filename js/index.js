@@ -185,18 +185,23 @@ navBar[7].addEventListener("click",modifyTemplate, false);
 contentParagraphs.forEach(function(paragraph){
     paragraph.addEventListener("copy", function(e){
         e.clipboardData.setData('text/plain', 'Not so fast this is copyrighted material.');
-        e.preventDefault(); 
+        e.preventDefault();        
+});
+    paragraph.addEventListener("dragstart", (e) => {
+        e.preventDefault();
         
-});
+   
+    });
 });
 
+//so along with copy information you can just drag the text to the desired place you would like to place the text. No good. I don't want the information
+//without referencing my websites link. 
 
-// let body = document.querySelector("body");
-// body.addEventListener("contextmenu", (element)=> {
-//     e.preventDefault(); 
-//     e.stopPropagation();
-//     alert("Right clicking has been disabled!"); //Question would this be a secure method for protecting user profiles from password hacks? 
-// }); did not work moving forward. 
+let body = document.querySelector("body");
+body.addEventListener("contextmenu", (element)=> {
+    element.preventDefault(); 
+    alert("Right clicking has been disabled!"); //Question would this be a secure method for protecting user profiles from password hacks? 
+}); //works now
 
 navBar.forEach(function(navATag){
     navATag.addEventListener("mouseover", ()=>{
