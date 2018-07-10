@@ -121,6 +121,23 @@ const theH1 = document.querySelector('.cta-text h1');
 const navService = document.querySelector('#service');
 const line = document.querySelector('.line');
 const containerBG = document.querySelector('.container');
+const bigLogo = document.querySelector('#cta-img')
+
+theH1.addEventListener("mouseenter", (event) => {
+  TweenMax.to("#cta-img", 5, { scale: 0.005})
+})
+
+theH1.addEventListener("mouseleave", (event) => {
+  TweenMax.to("#cta-img", .3, { scale: 1})
+})
+
+bigLogo.addEventListener("mouseenter", (event) => {
+  TweenMax.to("#cta-img", 5, { scale: 0.005})
+})
+
+bigLogo.addEventListener("mouseleave", (event) => {
+  TweenMax.to("#cta-img", .3, { scale: 1})
+})
 
 containerBG.addEventListener("auxclick", (event) =>{
   event.target.style.background = "black";
@@ -133,7 +150,8 @@ containerBG.addEventListener("dblclick", (event) =>{
 
 line.addEventListener('wheel', (event) => {
   event.target.style.background = "green"
-  event.target.style.height = "50px";
+  event.target.style.height = "100px";
+  event.target.innerHTML = "Congrats, you scrolled. ";
   console.log("line was clicked")
 })
 
