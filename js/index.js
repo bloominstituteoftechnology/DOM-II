@@ -71,7 +71,7 @@ navItem6[5].style.color = "green";
 
 //---------------------------CTA---------------------------------
 let ctaH1 = document.querySelector(".cta-text h1");
-ctaH1.innerHTML = siteContent["cta"]["h1"]
+ctaH1.innerHTML = "Dom<br>IS<br>AWESOME"
 
 let ctaButton = document.querySelector(".cta-text button");
 ctaButton.innerHTML = siteContent["cta"]["button"]
@@ -102,6 +102,7 @@ let botContentP = document.querySelectorAll(".bottom-content P")
 botContentP[0].innerHTML = siteContent["main-content"]["services-content"]
 botContentP[1].innerHTML = siteContent["main-content"]["product-content"]
 botContentP[2].innerHTML = siteContent["main-content"]["vision-content"]
+
 //---------------------------Contact---------------------------------
 let contactH4 = document.querySelector(".contact h4")
 contactH4.innerHTML = siteContent["contact"]["contact-h4"]
@@ -128,3 +129,34 @@ navLink.prepend(createNode("Start of Nav"));
 
 //-----------------------Events-------------------------------------
 
+ctaImg.addEventListener("mouseenter", (event) => {
+console.log("img was entered")
+});
+
+contactP[2].addEventListener("copy", (event) => {
+  console.log("Email Copied. Expect an email")
+  });
+
+  contactP[1].addEventListener("cut", (event) => {
+    console.log("Phone cut. Expect an Call")
+    });
+
+    document.addEventListener("scroll", (event) => {
+    console.log("Page scrolled")
+    "backgroundColor: black"
+  });
+
+  document.addEventListener("keypress", (event) => {
+    console.log("someone is pressin buttons")
+  });
+
+
+  logo.addEventListener("mouseenter", (event) => {
+    logo.setAttribute('src', "img/logo-lit.png")
+    TweenMax.to(".logo", 3, {x:100, rotation:180, opacity: 0, scale:0.5});
+  });
+    logo.addEventListener("mouseleave", (event) => {
+      logo.setAttribute('src', siteContent["nav"]["img-src"])
+      TweenMax.to(".logo", 2, {x:0, rotation:360, opacity: 100, scale:1});
+    
+    });
