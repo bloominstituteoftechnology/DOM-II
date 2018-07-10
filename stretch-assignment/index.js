@@ -1,8 +1,10 @@
 // element.addEventListener( event, function, useCapture);
 
-let blocks = document.getElementsByClassName("blocks");
-let redBlock = document.getElementsByClassName("block block--red");
-let blueBlock = document.getElementsByClassName("block block--blue");
-let greenBlock = document.getElementsByClassName("block block--green");
-let pinkBlock = document.getElementsByClassName("block block--pink");
-let grayBlock = document.getElementsByClassName("block block--gray");
+let blocks = document.querySelector(".blocks");
+let redBlock = document.querySelector(".block--red");
+let blueBlock = document.querySelector(".block--blue");
+let greenBlock = document.querySelector(".block--green");
+let pinkBlock = document.querySelector(".block--pink");
+let grayBlock = document.querySelector(".block--gray");
+
+redBlock.addEventListener("click", function () { redBlock.style.background = "lightblue" });
