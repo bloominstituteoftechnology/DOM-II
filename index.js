@@ -124,3 +124,19 @@ const siteContent = {
   
   document.body.style.background = "lightgrey";
   middleImg.style.boxShadow = "20px 20px black";
+
+
+
+  // =========== DOM II - Event Listeners ============
+
+  ctaH1.addEventListener("mouseover", () => {
+    document.body.style.background = "yellow";
+  });
+
+  navItem[0].addEventListener("click", () => {
+      alert("You have clicked on the Services tab");
+  });
+
+  document.body.addEventListener("keydown", () => {
+      document.body.style.background = "red";
+  });
