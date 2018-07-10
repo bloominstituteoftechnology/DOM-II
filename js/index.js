@@ -157,3 +157,20 @@ ctaBtn.addEventListener('contextmenu', function() {
   event.preventDefault();
   TweenMax.to(".cta-text h1", 1, {y:-500, opacity: 0});
 })
+
+// let animation = TweenMax.to("middle-img", 2.5, {
+//   ease: Bounce.easeIn,
+//   y: -200
+// }).reverse();
+
+// let toggleAnimation = (animation) => {
+//   if (animation.reversed()) {
+//     animation.play();
+//   } else {
+//     animation.reverse();
+//   }
+// }
+
+middleImg.addEventListener('mouseover', function() {
+  TweenMax.to("middle-img", 2.5, { ease: Bounce.easeIn, y: -200})
+});
