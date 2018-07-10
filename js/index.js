@@ -130,7 +130,7 @@ ctaBtn.addEventListener('click', () => {
 
 /* ------------ Today's JS ------------ */
 
-// adding hrefs to the additional nav links
+// nav link events
 
 const addHref = (e) => {
   e.target.href = '#';
@@ -138,6 +138,25 @@ const addHref = (e) => {
 
 first.addEventListener('mouseenter', addHref);
 last.addEventListener('mouseenter', addHref);
+
+navLinks.forEach(link => {
+  link.addEventListener('auxclick', e => {
+    alert(`
+    That's not how you click a link.
+    If you want to navigate to ${e.target.innerText.toLowerCase()},
+    try using your left mouse button.`);
+  });
+  link.addEventListener('mouseout', e => {
+    TweenMax.to(e.target, 3, {
+      y: 20,
+      ease: Bounce.easeOut,
+    });
+    TweenMax.to(e.target, 1, {
+      y: -20,
+      ease: Bounce.easeIn,
+    });
+  });
+});
 
 
 // adding styling based on hover and click for cta button
@@ -186,17 +205,5 @@ hdrs.forEach(hdr => {
 hdrs.forEach(hdr => {
   hdr.addEventListener('copy', e => {
     alert(`That is our ${e.target.innerText.toLowerCase()}!`);
-  });
-});
-
-
-// nav link events
-
-navLinks.forEach(link => {
-  link.addEventListener('auxclick', e => {
-    alert(`
-    That's not how you click a link.
-    If you want to navigate to ${e.target.innerText.toLowerCase()},
-    try using your left mouse button.`);
   });
 });
