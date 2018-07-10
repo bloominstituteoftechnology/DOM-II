@@ -203,6 +203,10 @@ body.addEventListener("contextmenu", (element)=> {
     alert("Right clicking has been disabled!"); //Question would this be a secure method for protecting user profiles from password hacks? 
 }); //works now
 
+body.addEventListener("keypress", (element) => {
+    alert("We can't see what you type here. Please contact us by phone at 1(888) 888-8888 or Email : sales@greatidea.io")
+});
+
 navBar.forEach(function(navATag){
     navATag.addEventListener("mouseover", ()=>{
         navATag.style.color = "Red"; 
