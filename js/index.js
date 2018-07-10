@@ -166,7 +166,7 @@ paragraphText[7].addEventListener('copy', (event) => {
 
 tagLinks[0].addEventListener('mouseenter', (event) => {
   console.log("mouse entered nav item 1 with index of 0")
-  tagLinks[0].style.color = 'red';
+  tagLinks[0].style.color = 'red';         
 })
 
 
