@@ -141,7 +141,7 @@ function buttonColorToggle() {
 }
 ctaButton.addEventListener('click', buttonColorToggle);
 // change color of p text on click
-ctaImg.addEventListener('click', () => {
+ctaImg.addEventListener('dblclick', () => {
 	TweenMax.to('#cta-img', 1, {
 		rotation: 360
 	});
@@ -154,6 +154,11 @@ logo.addEventListener('mouseenter', (event) => {
 	event.stopPropagation()
 });
 
+// make footer disappear on mouseleave
+footerP.addEventListener('mouseleave', (event) => {
+    event.target.style.opacity = 0;
+}); 
+
 // function changeTextColor(color) {
 //     this.target.style.color = color;
 // }
@@ -165,8 +170,10 @@ logo.addEventListener('mouseenter', (event) => {
 document.querySelector('body').addEventListener('keydown', (event) => {
 	event.target.style.backgroundColor = 'pink';
 });
+
 middleImg.addEventListener('click', () => {
 	TweenMax.to('#middle-img', 2, {
 		rotation: 720
 	});
 });
+
