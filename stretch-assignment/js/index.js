@@ -106,9 +106,3 @@ document.querySelector("nav").appendChild(newA2);
 
 newA2.style.color = "green";
 newA.style.color = "green";
-
-
-
-logo.addEventListener('dblclick', ()=>{
-  logo.style.opacity = '0.5';
-});
