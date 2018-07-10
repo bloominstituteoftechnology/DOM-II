@@ -41,7 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-//QUERY SELECTORS
+//QUERY SELECTORS and Element Creation
 
 
 let myContainer = document.querySelector(".container");
@@ -69,7 +69,6 @@ nav.prepend(newNavItem2);
 let navItems = document.querySelectorAll("nav a");
 
 
-
 //cta
 
 
@@ -80,11 +79,26 @@ ctaNewImg.style.width = "15%";
 ctaNewImg.style.height = "15%";
 ctaNewImg.className = "cat";
 
+let ctaNewImg2 = document.createElement("img");
+ctaNewImg2.setAttribute('src', "img/kitty2.jpg");
+ctaNewImg2.style.display = "none";
+ctaNewImg2.style.width = "15%";
+ctaNewImg2.style.height = "15%";
+ctaNewImg2.className = "cat2";
+
+let ctaNewImg3 = document.createElement("img");
+ctaNewImg3.setAttribute('src', "img/kitty3.jpg");
+ctaNewImg3.style.display = "none";
+ctaNewImg3.style.width = "15%";
+ctaNewImg3.style.height = "15%";
+ctaNewImg3.className = "cat3";
+
 
 let ctaWhole = document.querySelector(".cta");
 
 ctaWhole.prepend(ctaNewImg);
-
+ctaWhole.appendChild(ctaNewImg2);
+ctaWhole.appendChild(ctaNewImg3);
 
 
 
@@ -146,9 +160,18 @@ navItems.forEach((element) => element.addEventListener("click", (event) => {
 
 navItems[0].addEventListener("click", (event) => {
   ctaNewImg.style.display = "inline";
-  TweenMax.to(".cat", 3, {x:-100, ease:Bounce.easeOut});
+  TweenMax.to(".cat", 3, { x: 200, ease: Bounce.easeOut });
 });
 
+logo.addEventListener("mouseenter", (event) => {
+  ctaNewImg2.style.display = "inline";
+  TweenMax.to(".cat2", 3, {y:100, ease:Bounce.easeOut});
+});
+
+logo.addEventListener("mouseleave", (event) => {
+  ctaNewImg3.style.display = "inline";
+  TweenMax.to(".cat3", 3, {y:50, ease:Bounce.easeOut});
+});
 
 //cta
 
@@ -160,8 +183,9 @@ ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
 ctaButton.addEventListener("dblclick", (event) => {
   TweenMax.to(event.target, 6, { ease: Elastic.easeOut.config(1, 0.3), y: -300 });
   event.target.style.color = 'red';
-  
-})
+});
+
+
 
 //main content
 
