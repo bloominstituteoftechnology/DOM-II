@@ -161,3 +161,6 @@ window.addEventListener('scroll', function() {
   imageList[2].style.transform = `rotate(${Math.floor(Math.random() * 100)}deg)`;
 })
 
+imageList[1].addEventListener('mousedown', function() {
+  document.body.style.background = 'black';
+})
