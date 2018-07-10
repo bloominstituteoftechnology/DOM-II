@@ -45,11 +45,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //QUERY SELECTORS
 
 //nav
-const body =document.querySelector('.body');
 const container = document.querySelector('.container');
 
 let nav = document.querySelector("nav");
 let navBar= document.querySelectorAll("nav a");
+let topText = document.querySelectorAll('top-content')
 
 let navLink1 = document.createElement("a");
 let navLink2 = document.createElement("a");
@@ -141,22 +141,32 @@ footer.innerHTML = siteContent["footer"]["copyright"];
 
 // EVENT LISTENERS
 
+window.addEventListener('keyup', (event) => {
+  alert ("Did you mean to do that?");
+  event.preventDefault();
+});
+
 window.addEventListener('beforeprint', (event) => {
   alert ("This may not print the way you want it to.");
   event.preventDefault();
 });
 
-container.parentElement.addEventListener('resize', (event) => {
-  alert ("This page always looks great because it's responsive!");
+window.addEventListener('resize', (event) => {
+  console.log ("This page always looks great because it's responsive!");
   event.preventDefault();
 });
 
 container.addEventListener('click', (event) => {
-  alert ("What're you clicking there for?");
+  console.log ("What're you clicking there for?");
   event.stopPropagation();
 });
 
-ctaButton.addEventListener('click', (event) => {
+ctaButton.addEventListener('mouseup', (event) => {
   alert ("Are you sure you want to leave this page?");
+  event.stopPropagation();
+});
+
+container.addEventListener('copy', (event) => {
+  console.log ("Are you about to plaigarize this content?");
   event.stopPropagation();
 });
