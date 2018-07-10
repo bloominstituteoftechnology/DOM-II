@@ -186,5 +186,25 @@ contentParagraphs.forEach(function(paragraph){
     paragraph.addEventListener("copy", function(e){
         e.clipboardData.setData('text/plain', 'Not so fast this is copyrighted material.');
         e.preventDefault(); 
+        
 });
+});
+
+
+// let body = document.querySelector("body");
+// body.addEventListener("contextmenu", (element)=> {
+//     e.preventDefault(); 
+//     e.stopPropagation();
+//     alert("Right clicking has been disabled!"); //Question would this be a secure method for protecting user profiles from password hacks? 
+// }); did not work moving forward. 
+
+navBar.forEach(function(navATag){
+    navATag.addEventListener("mouseover", ()=>{
+        navATag.style.color = "Red"; 
+        navATag.style.fontWeight = 700;
+    });
+    navATag.addEventListener("mouseleave", () => {
+        navATag.style.color = "Green";
+        navATag.style.fontWeight = 400; 
+    });
 });
