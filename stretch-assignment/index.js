@@ -11,7 +11,10 @@ let grayBlock = document.querySelector(".block--gray");
 
 //Events
 redBlock.addEventListener("click", function () { redBlock.style.background = "lightblue" });
+
 blueBlock.addEventListener("click", changeText);
 function changeText() {
     blueBlock.textContent = "Here is some text for the blue box"
 };
+
+greenBlock.addEventListener("mouseover", function () { greenBlock.style.border = "3px solid red" });
