@@ -45,12 +45,15 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //QUERY SELECTORS
 
 //nav
+const body =document.querySelector('.body');
+const container = document.querySelector('.container');
+
 let nav = document.querySelector("nav");
 let navBar= document.querySelectorAll("nav a");
 
 let navLink1 = document.createElement("a");
 let navLink2 = document.createElement("a");
-let text1 = document.createTextNode("Memes");
+let text1 = document.createTextNode(" Printable Memes");
 let text2 = document.createTextNode("Existential Dread");
 
 //cta
@@ -134,3 +137,26 @@ contactText[2].innerHTML = siteContent["contact"]["email"];
 //footer
 
 footer.innerHTML = siteContent["footer"]["copyright"];
+
+
+// EVENT LISTENERS
+
+window.addEventListener('beforeprint', (event) => {
+  alert ("This may not print the way you want it to.");
+  event.preventDefault();
+});
+
+container.parentElement.addEventListener('resize', (event) => {
+  alert ("This page always looks great because it's responsive!");
+  event.preventDefault();
+});
+
+container.addEventListener('click', (event) => {
+  alert ("What're you clicking there for?");
+  event.stopPropagation();
+});
+
+ctaButton.addEventListener('click', (event) => {
+  alert ("Are you sure you want to leave this page?");
+  event.stopPropagation();
+});
