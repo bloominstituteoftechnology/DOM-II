@@ -125,3 +125,6 @@ let createNode = (addNav) => {
 
 navLink.appendChild(createNode("End of Nav"));
 navLink.prepend(createNode("Start of Nav"));
+
+//-----------------------Events-------------------------------------
+
