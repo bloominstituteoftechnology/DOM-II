@@ -151,6 +151,16 @@ window.addEventListener('beforeprint', (event) => {
   event.preventDefault();
 });
 
+window.addEventListener('afterprint', (event) => {
+  alert ("I told you so.");
+  event.preventDefault();
+});
+
+window.addEventListener('scroll', (event) => {
+  console.log ("There's not a lot of content here!");
+  event.preventDefault();
+});
+
 window.addEventListener('resize', (event) => {
   console.log ("This page always looks great because it's responsive!");
   event.preventDefault();
@@ -161,12 +171,22 @@ container.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
-ctaButton.addEventListener('mouseup', (event) => {
-  alert ("Are you sure you want to leave this page?");
+container.addEventListener('copy', (event) => {
+  alert ("Are you about to plaigarize this content?");
   event.stopPropagation();
 });
 
-container.addEventListener('copy', (event) => {
-  console.log ("Are you about to plaigarize this content?");
+container.addEventListener('cut', (event) => {
+  alert ("I'll cut you first!");
+  event.stopPropagation();
+});
+
+ctaLogo.addEventListener('dragstart', (event) => {
+  console.log ("Where are you taking me?!");
+  event.stopPropagation();
+});
+
+ctaButton.addEventListener('mouseup', (event) => {
+  alert ("Are you sure you want to leave this page?");
   event.stopPropagation();
 });
