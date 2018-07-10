@@ -64,10 +64,7 @@ navItem6[5].innerHTML = siteContent["nav"]["nav-item-6"];
 
 
 
-let navColor = document.querySelectorAll("nav a");
-for (let i = 0; i < 6; i++) {
-  navColor[i].style.color = "green";
-}
+
 
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.innerHTML = (siteContent["cta"]["h1"]);
@@ -94,45 +91,69 @@ let midImg = document.getElementById("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 let bottomService = document.querySelectorAll(".text-content h4");
-bottomService[2].innerHTML = siteContent["main-content"]["services-h4"]
+bottomService[2].innerHTML = siteContent["main-content"]["services-h4"];
 
 let serviceContent = document.querySelectorAll(".text-content p");
-serviceContent[2].innerHTML = siteContent["main-content"]["services-content"]
+serviceContent[2].innerHTML = siteContent["main-content"]["services-content"];
 
 let productHead = document.querySelectorAll(".text-content h4");
-productHead[3].innerHTML = siteContent["main-content"]["product-h4"]
+productHead[3].innerHTML = siteContent["main-content"]["product-h4"];
 
 let productContent = document.querySelectorAll(".text-content p");
-productContent[3].innerHTML = siteContent["main-content"]["product-content"]
+productContent[3].innerHTML = siteContent["main-content"]["product-content"];
 
 let visionHead = document.querySelectorAll(".text-content h4");
-visionHead[4].innerHTML = siteContent["main-content"]["vision-h4"]
+visionHead[4].innerHTML = siteContent["main-content"]["vision-h4"];
 
 let visionContent= document.querySelectorAll(".text-content p");
-visionContent[4].innerHTML = siteContent["main-content"]["vision-content"]
+visionContent[4].innerHTML = siteContent["main-content"]["vision-content"];
 
 let contactHead = document.querySelectorAll(".contact h4");
-contactHead[0].innerHTML = siteContent["contact"]["contact-h4"]
+contactHead[0].innerHTML = siteContent["contact"]["contact-h4"];
 
 let contactAddress = document.querySelectorAll(".contact p");
-contactAddress[0].innerHTML = siteContent["contact"]["address"]
+contactAddress[0].innerHTML = siteContent["contact"]["address"];
 
 let contactPhone = document.querySelectorAll(".contact p");
-contactPhone[1].innerHTML = siteContent["contact"]["phone"]
+contactPhone[1].innerHTML = siteContent["contact"]["phone"];
 
 let contactEmail = document.querySelectorAll(".contact p");
-contactEmail[2].innerHTML = siteContent["contact"]["email"]
+contactEmail[2].innerHTML = siteContent["contact"]["email"];
 
-let footerCr= document.querySelectorAll("footer p");
-footerCr.innerHTML = siteContent["footer"]["copyright"]
+let footerCr= document.querySelector("footer p");
+footerCr.innerHTML = siteContent["footer"]["copyright"];
 
 let navvy = document.querySelector("nav");
 let newChild = document.createElement("a");
 newChild.innerHTML = "blog";
 navvy.appendChild(newChild);
 
+let containerBod = document.querySelector("body .container");
+containerBod.style.backgroundColor='lightblue';
 
+let navColor = document.querySelectorAll("nav a");
+for (let i = 0; i < 7; i++) {
+  navColor[i].style.color = "green";
+}
 //DOM-II event listener
+
+
+topFeature.addEventListener('mouseover', event => {
+  event.target.style.color = 'white';
+});
+
+topFeature.addEventListener('mouseleave', event => {
+  event.target.style.color = 'purple';
+});
+
+
+featureContent.addEventListener('mouseover', event => {
+  event.target.style.color = 'white';
+});
+
+featureContent.addEventListener('mouseleave', event => {
+  event.target.style.color = 'purple';
+});
 
 midImg.addEventListener('click', event => {
  event.target.style.display = 'none' ;
@@ -142,4 +163,31 @@ ctaImg.addEventListener('mouseover', event => {
   event.target.style.display = 'none' ;
 });
 
+ctaButton.addEventListener('dblclick', event => {
+  event.target.style.backgroundColor= 'red';
+});
 
+// containerBod.addEventListener('keypress', event =>{
+//   event.target.style.color='white';
+//   })
+
+   
+ctaButton.addEventListener('blur', event => {
+  event.target.style.backgroundColor='green';
+});
+
+featureContent.addEventListener('select', event =>{
+event.style.backgroundColor= 'white';
+});
+
+
+logo.addEventListener('dragend', event =>{
+  dragged = event.target;
+  // make it half transparent
+  event.target.style.display = 'none';
+}, false);
+
+// .addEventListener('', event=>{
+// event.style.
+
+// })
