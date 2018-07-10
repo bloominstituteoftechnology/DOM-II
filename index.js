@@ -48,6 +48,7 @@ let nava = document.querySelector("nav"); // innerhtml
 let a = document.querySelectorAll("a") //das da juan
 console.log(nav, nava, a[3]); // okay so now I have an array like list
 let h1cta = document.querySelector(".cta-text h1");
+let cta = document.querySelector(".cta-text")
 let butt = document.querySelector(".cta-text button");
 let ctaimage = document.getElementById('cta-img');
 let middleimg = document.getElementById("middle-img");
@@ -117,17 +118,80 @@ contactP[2].innerHTML = siteContent['contact']['email']
 let bottomup = siteContent['contact']['address']
 let splitbottom = bottomup.split("")
 splitbottom.splice(18, 0, "<br>")
-let red = splitbottom.join('')
-console.log(red)
+let joined = splitbottom.join('')
+console.log(joined)
 let splitIndex = splitbottom.lastIndexOf("t")
 console.log(splitIndex)
 console.log()
 
-contactP[0].innerHTML = red
+contactP[0].innerHTML = joined
 
 // footer
 
 footer.innerHTML = siteContent['footer']['copyright']
+
+
+//Event Listeners
+// adding button making functionality 1/10
+
+butt.addEventListener('click', (event) => {
+   let btn = document.createElement("BUTTON");
+   let t = document.createTextNode("CLICK ME");
+   btn.appendChild(t);
+   cta.appendChild(btn);
+})
+
+
+
+// keydown 2/10
+document.addEventListener('keydown', (event) => {
+  bottomh4[0].style.color = 'red'
+})
+
+// keyup 3/10
+document.addEventListener('keyup', (event) => {
+  bottomh4[1].style.color = 'blue'
+})
+
+
+//mouseenter 4/10
+ctaimage.addEventListener('mouseenter', (event) => {
+  middleimg.style.padding = '120px'
+})
+
+//mouseout 5/10
+ctaimage.addEventListener('mouseout', (event) => {
+  middleimg.style.padding = '0px'
+})
+
+// mouseup 6/10
+ctaimage.addEventListener('mouseup', (event) =>{
+  logo.style.backgroundColor = 'orchid'
+})
+
+//mousedown 7/10
+ctaimage.addEventListener('mousedown', (event) =>{
+  logo.style.backgroundColor = 'orange'
+})
+
+//dclick 8/10
+ctaimage.addEventListener('dblclick', (event) =>{
+  logo.style.backgroundColor = 'white'
+})
+
+//mousemove 9/10
+cta.addEventListener('mouseleave', (event) =>{
+  butt.remove()
+})
+
+//resive 10/10
+window.addEventListener('resize', (w) =>{
+  footer.style.outline = '2px dashed blue'
+  footer.style.boxShadow = '2px 2px 0 0 red'
+})
+
+
+
 
 /* Okay so I want to make:
 <div class="cta-text">
