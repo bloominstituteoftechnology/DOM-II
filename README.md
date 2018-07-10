@@ -1,3 +1,6 @@
+LINK TO MY DOM II PROJECT BELOW!!
+https://github.com/trevorfehrman/DOM-I
+
 # DOM II - Event exploration
 
 ## Objectives
