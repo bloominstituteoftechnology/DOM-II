@@ -106,3 +106,44 @@ document.querySelector("nav").appendChild(newA2);
 
 newA2.style.color = "green";
 newA.style.color = "green";
+
+
+//10 events
+
+window.addEventListener('load', ()=>{
+  alert('Welcome To This Site!');
+});
+
+logo.addEventListener('click', ()=>{
+  alert('Leave It Alone!');
+});
+
+
+image[1].addEventListener('click', ()=>{
+  alert('Dont Touch This Either');
+});
+
+image[2].addEventListener('click', ()=>{
+  alert('STOP!');
+});
+
+let HeaderButton = document.querySelector('.cta .cta-text');
+
+HeaderButton.querySelector('button').addEventListener('click', ()=>{alert('Ouch')})
+
+HeaderButton.querySelector('h1').addEventListener('mouseover', (event)=>{
+  event.target.style.backgroundColor = 'yellow' 
+});
+
+HeaderButton.querySelector('button').innerText = siteContent['cta']['button'];
+
+HeaderButton.querySelector('button').style.backgroundColor = 'red';
+
+HeaderButton.querySelector('h1').innerText = siteContent['cta']['h1'];
+
+HeaderButton.addEventListener('mouseover', (event)=> {event.target.style.color = 'green'});
+
+
+
+
+
