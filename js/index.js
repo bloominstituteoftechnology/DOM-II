@@ -157,10 +157,30 @@ window.addEventListener('scroll', function() {
   }
   
   imageList[1].style.transform = `scale(${Math.random()}, 1.5)`;
-  imageList[0].style.transform = `rotate(${Math.floor(Math.random() * 10)}deg)`;
+  // imageList[0].style.transform = `rotate(${Math.floor(Math.random() * 10)}deg)`;
   imageList[2].style.transform = `rotate(${Math.floor(Math.random() * 100)}deg)`;
 })
 
 imageList[1].addEventListener('mousedown', function() {
   document.body.style.background = 'black';
 })
+
+TweenMax.to(imageList[0], 6, {
+  x: -600,
+  rotation: 360,
+  scale: 0.7,
+  backgroundColor: '#f00',
+  padding: 100,
+  borderColor: 'red',
+  borderRadius: 28
+});
+
+TweenMax.to(imageList[1], 2, {
+  x: -600,
+  ease: Bounce.easeOut
+});
+
+TweenMax.staggerFrom(imageList[0], 2, {
+  opacity: 0,
+  scale: 2
+});
