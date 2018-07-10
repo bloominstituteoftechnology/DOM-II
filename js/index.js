@@ -37,9 +37,25 @@ const siteContent = {
   },
 };
 
+window.addEventListener('load', ()=>{
+  alert('I hate these, can seem to never get rid of them completely');
+});
+
+window.addEventListener('scroll', ()=>{
+  document.querySelector('.container').style.backgroundColor = `rgb(${window.pageYOffset}, ${window.pageYOffset}, ${window.pageYOffset})`;
+});
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+logo.addEventListener('mouseover', ()=> {
+  logo.style.transform = 'rotate(180deg)';
+});
+
+logo.addEventListener('mouseleave', ()=> {
+  logo.style.transform = 'rotate(0deg)';
+});
 
 // Nav Bar
 let navBarLinks = document.querySelectorAll('header nav a');
@@ -69,6 +85,10 @@ ctaText.innerText = siteContent.cta.h1;
 ctaButton.innerText = siteContent.cta.button;
 ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
 
+ctaLogo.addEventListener('dblclick', ()=>{
+  ctaLogo.style.opacity = '0.5';
+});
+
 // Main Content
 let titles = document.querySelectorAll('.main-content .text-content h4');
 let content = document.querySelectorAll('.main-content .text-content p');
@@ -87,6 +107,15 @@ content[4].innerText = siteContent['main-content']['vision-content'];
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+middleImg.addEventListener('mouseenter', ()=>{
+  middleImg.style['border-radius'] = '8px';
+});
+
+middleImg.addEventListener('dragstart', ()=>{
+  alert('This image cannot be dragged!');
+});
+
+
 // Contact
 let contactTitle = document.querySelector('.contact h4');
 let contactContent = document.querySelectorAll('.contact p');
@@ -100,9 +129,12 @@ contactContent[2].innerText = siteContent['contact']['email'];
 let copyright = document.querySelector('footer p');
 copyright.innerText = siteContent.footer.copyright;
 
-let changeColor = () => {
+let startButton = document.querySelector('.started');
+
+startButton.addEventListener('click', (event) => {
+  event.stopPropagation();
   document.querySelector('.container').style.backgroundColor = getRandomColor();
-}
+});
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -112,3 +144,13 @@ function getRandomColor() {
   }
   return color;
 }
+
+startButton.addEventListener('auxclick', (event) => {
+  event.stopPropagation();
+  document.querySelector('.container').style.backgroundColor = 'white';
+});
+
+document.querySelector('.container').addEventListener('click', (event)=>{
+  event.stopPropagation();
+  document.querySelector('.container').style.backgroundColor = 'white';
+});
