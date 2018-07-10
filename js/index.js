@@ -45,10 +45,6 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
-ctaImg.addEventListener("mouseover", () => {
-
-});
-
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
@@ -82,12 +78,21 @@ navigation.forEach(element => element.style.color = 'green');
 let callToAction = document.querySelector(".cta .cta-text h1");
 callToAction.innerHTML = "dom<br>is<br>awesome";
 
+callToAction.addEventListener("mouseover", (e) => {
+  e.target.innerHTML = "dom<br>is<br>dominating!!!";
+});
+callToAction.addEventListener("mouseout", (e) => {
+  e.target.innerHTML = "dom<br>is<br>awesome";
+});
+
 let button = document.querySelector(".cta button");
 button.innerHTML = siteContent["cta"]["button"];
 
 button.addEventListener("click", (e) => {
   document.getElementById("cta-img").setAttribute("class", "rotated-image");
-});
+  e.target.innerHTML = "STOP SPIN";
+  });
+
 
 
 let headerContent = document.querySelectorAll(".text-content h4");
