@@ -177,3 +177,17 @@ function modifyTemplate (){
 navBar[7].addEventListener("click",modifyTemplate, false);
 //^ this will change the template from orginal to 4 other template choices. 
 
+
+//The idea here is to not allow the copying of data from the website. Or make the website copy the information featured with a link of where they got the information.
+//Still though they can delete the link to the website off so i don't want them to be able to copy it. 
+// contentParagraphs[0].addEventListener("copy", function(e){
+//     e.clipboardData.setData('text/plain', 'Not so fast this is copyrighted material.');
+//     e.preventDefault(); 
+// });
+
+contentParagraphs.forEach(function(paragraph){
+    paragraph.addEventListener("copy", function(e){
+        e.clipboardData.setData('text/plain', 'Not so fast this is copyrighted material.');
+        e.preventDefault(); 
+});
+});
