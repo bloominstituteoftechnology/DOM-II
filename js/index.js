@@ -254,8 +254,9 @@ ctaButton.addEventListener("dblclick", () => {
     }
      
 });
-
-ctaButton.addEventListener("mouseout", () => {
+let oneTime = true; 
+ctaButton.addEventListener("mouseout", (e) => {
+    if(oneTime){
     let emailRequest = prompt("Please provide your email address in the following format your@email.com your email must be a gmail.com account");
     if (emailRequest.includes("@gmail.com")){
         alert("You will be contacted shortly. THANK YOU.");
@@ -268,6 +269,8 @@ ctaButton.addEventListener("mouseout", () => {
             alert("Your contact information was not able to submit. Please contact us at 888 888 8888 or sales@greatidea.io");
         }
     }
+    oneTime = false; 
+}
 });
 //The above i've seen done on sites where you didn't actually click on the item but you are prompted to move forward. Maybe they changed their mind?  
 //Little aggessive but may provide some contacts. 
