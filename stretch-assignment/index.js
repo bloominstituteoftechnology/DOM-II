@@ -15,34 +15,61 @@ let delay = 50; // milliseconds
 let whichBlock = 0; // flag indicating which block an event was triggered on
 
 
+// 'click' Event Listeners
+redBlock.addEventListener('click', function () {
+
+});
+
+blueBlock.addEventListener('click', function () {
+
+});
+
+greenBlock.addEventListener('click', function () {
+
+});
+
+pinkBlock.addEventListener('click', function () {
+
+});
+
+grayBlock.addEventListener('click', function () {
+
+});
+
+
 // 'mousedown' Event Listeners
-redBlock.addEventListener('mousedown', function() {
+redBlock.addEventListener('mousedown', function(event) {
   clearInterval(interval);
   whichBlock = 0;
+  event.stopPropagation();
   interval = setInterval(moveRight, delay);
 });
 
-blueBlock.addEventListener('mousedown', function() {
+blueBlock.addEventListener('mousedown', function(event) {
   clearInterval(interval);
   whichBlock = 1;
+  event.stopPropagation();
   interval = setInterval(moveRight, delay);
 });
 
 greenBlock.addEventListener('mousedown', function() {
   clearInterval(interval);
   whichBlock = 2;
+  event.stopPropagation();
   interval = setInterval(moveRight, delay);
 });
 
 pinkBlock.addEventListener('mousedown', function() {
   clearInterval(interval);
   whichBlock = 3;
+  event.stopPropagation();
   interval = setInterval(moveRight, delay);
 });
 
 grayBlock.addEventListener('mousedown', function() {
   clearInterval(interval);
   whichBlock = 4;
+  event.stopPropagation();
   interval = setInterval(moveRight, delay);
 });
 
@@ -50,32 +77,38 @@ grayBlock.addEventListener('mousedown', function() {
 // 'mouseup' Event Listeners
 redBlock.addEventListener('mouseup', function () {
   clearInterval(interval);
+  event.stopPropagation();
   interval = setInterval(moveLeft, delay);
 })
 
 blueBlock.addEventListener('mouseup', function () {
   clearInterval(interval);
+  event.stopPropagation();
   interval = setInterval(moveLeft, delay);
 })
 
 greenBlock.addEventListener('mouseup', function () {
   clearInterval(interval);
+  event.stopPropagation();
   interval = setInterval(moveLeft, delay);
 })
 
 pinkBlock.addEventListener('mouseup', function () {
   clearInterval(interval);
+  event.stopPropagation();
   interval = setInterval(moveLeft, delay);
 })
 
 grayBlock.addEventListener('mouseup', function () {
   clearInterval(interval);
+  event.stopPropagation();
   interval = setInterval(moveLeft, delay);
 })
 
 
 // Move the corresponding block to the right using margin styling
 function moveRight() {
+
     switch (whichBlock) {
       case 0:
         if (redBlockSteps <= maxSteps) {
