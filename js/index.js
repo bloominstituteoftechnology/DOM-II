@@ -46,9 +46,25 @@ const siteContent = {
 //mouseover
 //click
 //dblclick
+//keydown
+//keyup
 
 window.addEventListener("load", function(event) {
   console.log("All resources finished loading!");
+});
+
+
+//change background color with key down and key up
+window.addEventListener("keydown", event => {
+  if (event.key == "v") {
+    document.body.style.background = "violet";
+  }
+});
+
+window.addEventListener("keyup", event => {
+  if (event.key == "v") {
+    document.body.style.background = "";
+  }
 });
 
 
