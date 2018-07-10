@@ -38,13 +38,9 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-
-// let navcolor = document.querySelectorAll("nav a");
-// for (let i = 0; i < 6; i++) {
-//   navcolor[i].style.color = "mediumspringgreen";
-// }
 
 let nav = document.querySelectorAll('nav a');
 nav[0].innerHTML = (siteContent["nav"]["nav-item-1"]);
@@ -139,5 +135,49 @@ oldNav.prepend(newItem2);
 
 let navcolor = document.querySelectorAll("nav a");
 for (let i = 0; i < navcolor.length; i++) {
-  navcolor[i].style.color = "mediumspringgreen";
+  navcolor[i].style.color = "blueviolet";
 }
+
+//Event listeners wooOOoooOOo
+
+let body = document.querySelector('body');
+
+ctaBtn.addEventListener('click', ()=> {
+  body.style.background = 'pink'
+});
+
+ctaBtn.addEventListener('dblclick', ()=> {
+  body.style.background = 'lightblue'
+});
+
+cta.addEventListener("dragstart", (event) => {
+    event.target.style.opacity = 0;
+}, false);
+
+ctaText.addEventListener('mouseover', ()=> {
+  ctaText.innerHTML = "Cats r Awesome"
+});
+
+document.addEventListener("keydown", ()=> {
+    body.style.background = 'lavender'
+});
+
+middle.addEventListener("dragstart", (event) => {
+  event.target.style.opacity = 0;
+}, false);
+
+middle.addEventListener("dragend", (event) => {
+  event.target.style.opacity = 1;
+}, false);
+
+document.addEventListener("dragenter", function( event ) {
+  if ( event.target.className === "main-content") {
+    event.target.style.background = "lightskyblue"
+  }
+}, false);
+
+
+
+
+
+

@@ -297,3 +297,13 @@ footer {
         margin: 20px;
     }
 }
+
+/* Messin' with stuff */
+
+.secret {
+    z-index: 1;
+    position: absolute;
+}
+#cta-img {
+    z-index: 3;
+}
