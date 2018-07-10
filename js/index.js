@@ -44,14 +44,32 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //QUERY SELECTORS
 
 //nav
-let nav = document.querySelector("nav");
-let navItems = document.querySelectorAll("nav a");
+
 
 
 let newNavItem1 = document.createElement("a");
 let newNavItem2 = document.createElement("a");
 let t1 = document.createTextNode("Propoganda");
 let t2 = document.createTextNode("Kittens");
+
+
+let nav = document.querySelector("nav");
+newNavItem1.appendChild(t1);
+newNavItem2.appendChild(t2);
+
+
+
+
+nav.appendChild(newNavItem1);
+nav.prepend(newNavItem2);
+
+let navItems = document.querySelectorAll("nav a");
+
+
+
+
+
+
 
 
 //cta
@@ -79,28 +97,27 @@ let footer = document.querySelector("footer p");
 
 //nav
 
-newNavItem1.appendChild(t1);
-newNavItem2.appendChild(t2);
 
-nav.appendChild(newNavItem1);
-nav.prepend(newNavItem2);
 
-newNavItem1.style.color = "green";
-newNavItem2.style.color = "green";
+// newNavItem1.style.color = "green";
+// newNavItem2.style.color = "green";
 
 newNavItem1.setAttribute("href", "#");
 newNavItem2.setAttribute("href", "#");
 
-navItems[0].innerHTML = siteContent["nav"]["nav-item-1"];
-navItems[1].innerHTML = siteContent["nav"]["nav-item-2"];
-navItems[2].innerHTML = siteContent["nav"]["nav-item-3"];
-navItems[3].innerHTML = siteContent["nav"]["nav-item-4"];
-navItems[4].innerHTML = siteContent["nav"]["nav-item-5"];
-navItems[5].innerHTML = siteContent["nav"]["nav-item-6"];
+navItems[1].innerHTML = siteContent["nav"]["nav-item-1"];
+navItems[2].innerHTML = siteContent["nav"]["nav-item-2"];
+navItems[3].innerHTML = siteContent["nav"]["nav-item-3"];
+navItems[4].innerHTML = siteContent["nav"]["nav-item-4"];
+navItems[5].innerHTML = siteContent["nav"]["nav-item-5"];
+navItems[6].innerHTML = siteContent["nav"]["nav-item-6"];
 
 
 navItems.forEach((element) => element.style.color = "green");
 
+navItems.forEach((element) => element.addEventListener ("click", (event) => {
+  TweenMax.to(element, 1, {y:20});
+}));
 
 
 //cta
