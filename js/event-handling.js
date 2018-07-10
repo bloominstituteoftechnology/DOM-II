@@ -1,6 +1,5 @@
-console.log("events",navItem);
-
-// const container = document.querySelector('.container');
+const nuBtn = document.createElement('div');
+let isNuBtn = false;
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -16,6 +15,12 @@ function removeVowels(str){
     return str.replace(vowels, '');
 }
 
+function createNuBtn(){
+    nuBtn.className = "nuBtn";
+    nuBtn.innerHTML = "OH YEAH!"
+    container.append(nuBtn);
+}
+
 // // background: linear-gradient(to bottom right, red, yellow);
 
 container.addEventListener('mouseover',()=>{
@@ -23,15 +28,38 @@ container.addEventListener('mouseover',()=>{
 });
 
 nav.addEventListener('click', (e)=>{
-    console.log(event.target);
+    e.target.style.color = (e.target.style.color === 'black') ? 'white' : 'black';
+});
+
+nav.addEventListener('mouseover', (e) => {
     e.target.style.color = (e.target.style.color === 'black') ? 'white' : 'black';
 });
 
 ctaBtn.addEventListener('dblclick', (e)=>{
     e.preventDefault();
     let h1Text = ctaH1.innerHTML;
-    console.log(typeof h1Text);
-    
     ctaH1.innerHTML = removeVowels(h1Text);
 });
+
+midImg.addEventListener('wheel', (event) => {
+    TweenMax.to(".container", 3, {
+        rotation: event.clientX,
+        scale: 0.5
+    });
+    if (isNuBtn === false) {
+        createNuBtn();
+        isNuBtn = true;
+         TweenMax.to(".nuBtn", 3, {
+             rotation: -event.clientX,
+             scale: 1
+         });
+    } else {
+        return;
+    }
+    
+});
+
+nuBtn.addEventListener('click',()=>{
+    window.location.reload(true);
+})
 
