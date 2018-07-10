@@ -140,3 +140,15 @@ const siteContent = {
   document.body.addEventListener("keydown", () => {
       document.body.style.background = "red";
   });
+
+  document.body.addEventListener("keyup", () => {
+    document.body.style.background = "green";
+  });
+
+  window.addEventListener("resize", () => {
+      alert("The document is being resized");
+  });
+
+  window.addEventListener("scroll", () => {
+    prompt("Where are you scrolling to?");
+  });
