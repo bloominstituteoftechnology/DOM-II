@@ -51,4 +51,18 @@ navBarLinks.forEach((navLink, i) => {
   navLink.innerHTML = siteContent.nav[`nav-item-${i+1}`];
 })
 
+//cta section
+
+//header
+let ctaText = document.querySelector(".cta-text h1");
+ctaText.innerHTML = siteContent.cta[`h1`];
+
+//button
+let ctaButton = document.querySelector(".cta-text button");
+ctaButton.innerHTML = siteContent.cta['button'];
+
+//img source
+let ctaImg = document.querySelector(".cta img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
 
