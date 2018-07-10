@@ -38,11 +38,7 @@ const siteContent = {
 };
 
 window.addEventListener('load', ()=>{
-  alert('I hate these, can seem to never get rid of them completely');
-});
-
-window.addEventListener('scroll', ()=>{
-  document.querySelector('.container').style.backgroundColor = `rgb(${window.pageYOffset}, ${window.pageYOffset}, ${window.pageYOffset})`;
+  TweenMax.to('.welcome', 3, {x:100, scale:0})
 });
 
 // Example: Update the img src for the logo
@@ -112,7 +108,16 @@ middleImg.addEventListener('mouseenter', ()=>{
 });
 
 middleImg.addEventListener('dragstart', ()=>{
-  alert('This image cannot be dragged!');
+  TweenMax.to("#middle-img", 2, {rotation:360});
+});
+
+window.addEventListener('scroll', ()=>{
+  if (window.pageYOffset > 200){
+    TweenMax.to("#middle-img", 2, {opacity:0});
+  }
+  if (window.pageYOffset < 200){
+    TweenMax.to("#middle-img", 2, {opacity:1});
+  }
 });
 
 
