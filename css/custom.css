@@ -1,9 +1,6 @@
 .container {
   color: white;
 }
-nav:hover {
-  color: orange;
-}
 .nuBtn {
   position: fixed;
   display: flex;

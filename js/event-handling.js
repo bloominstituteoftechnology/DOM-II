@@ -41,16 +41,16 @@ ctaBtn.addEventListener('dblclick', (e)=>{
     ctaH1.innerHTML = removeVowels(h1Text);
 });
 
-midImg.addEventListener('wheel', (event) => {
+midImg.addEventListener('wheel', (e) => {
     TweenMax.to(".container", 3, {
-        rotation: event.clientX,
+        rotation: e.clientX,
         scale: 0.5
     });
     if (isNuBtn === false) {
         createNuBtn();
         isNuBtn = true;
          TweenMax.to(".nuBtn", 3, {
-             rotation: -event.clientX,
+             rotation: -e.clientX,
              scale: 1
          });
     } else {
@@ -59,7 +59,15 @@ midImg.addEventListener('wheel', (event) => {
     
 });
 
-nuBtn.addEventListener('click',()=>{
-    window.location.reload(true);
+nuBtn.addEventListener('click',(e)=>{
+
+    window.setTimeout(()=>{
+
+        window.location.reload(true);
+    }, 2000);
+       TweenMax.to(".container", 2, {
+           rotation: e.clientY * 3.14,
+           scale: 0.0
+       });
 })
 
