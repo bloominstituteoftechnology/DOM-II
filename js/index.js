@@ -132,6 +132,23 @@ customButton.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
+// let ctaImgEvent = document.querySelector(".cta .cta-img");
+
+function changeImg () {
+  let ctaImg = document.getElementById("cta-img");
+
+  if (ctaImg.src == "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/header-img.png") {
+    ctaImg.src = "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/mid-page-accent.jpg";
+  } 
+  else if (ctaImg.src == "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/mid-page-accent.jpg") {
+    ctaImg.src = "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/logo.png";
+  }
+  else {
+    ctaImg.src = "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/header-img.png";
+  }
+}
+
+
 
 
 
