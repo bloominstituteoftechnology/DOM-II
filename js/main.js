@@ -23,11 +23,9 @@ const contactPara = document.querySelectorAll('.contact p');
 
 const footerP = document.querySelector('footer p');
 
-console.log(bottomText);
+// console.log(bottomText);
 
 
-
-navItem.forEach((elem)=>{ elem.style.color = "green"})
 
 
 const newNavItem1 = document.createElement('a');
@@ -40,7 +38,7 @@ newNavItem2.href = "#"
 newNavItem2.innerHTML = "CerebroSynchrony";
 nav.appendChild(newNavItem2);
 
-console.log("nav1 ",newNavItem1);
+// console.log("nav1 ",newNavItem1);
 
 
 footerP.innerHTML = siteContent.footer.copyright;
@@ -102,7 +100,7 @@ topText[1].innerHTML = siteContent["main-content"]["about-content"];
 
 (function fillNavItems(){
     navItem.forEach((elem,i)=>{
-        console.log(elem);
+        // console.log(elem);
         elem.innerHTML = siteContent.nav[`nav-item-${i+=1}`]
     })
 })();
