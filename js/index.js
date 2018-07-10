@@ -132,7 +132,6 @@ customButton.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
-// let ctaImgEvent = document.querySelector(".cta .cta-img");
 
 function changeImg () {
   let ctaImg = document.getElementById("cta-img");
@@ -146,10 +145,28 @@ function changeImg () {
   else {
     ctaImg.src = "file:///Users/luissalazar/Documents/LambdaSchool/DOM-II/img/header-img.png";
   }
-}
+};
 
 
+const disappearProduct = document.getElementById("productInfo");
+disappearProduct.addEventListener("click", (event) => {
+  event.target.parentElement.style.display = "none";
+  alert("WHAT DID YOU JUST DO!?");
+  event.stopPropagation();
+});
 
+const disappearServices = document.getElementById("servicesInfo");
+disappearServices.addEventListener("mouseover", (event) => {
+  event.target.parentElement.style.display = "none";
+  alert("REALLY???");
+  event.stopPropagation();
+});
 
+const disappearVision = document.getElementById("visionInfo");
+disappearVision.addEventListener("mouseover", (event) => {
+  event.target.parentElement.style.display = "none";
+  alert("AGAIN!?");
+  event.stopPropagation();
+});
 
 
