@@ -37,6 +37,9 @@ const siteContent = {
   },
 };
 
+//global variables
+let deg = 0;
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
@@ -107,3 +110,78 @@ footerP.innerText = siteContent.footer.copyright;
 let newFooterP = document.createElement('p');
 newFooterP.innerText = 'DOM is Great, Inc.';
 document.querySelector('footer').append(newFooterP);
+
+//1. wheel event
+ctaImg.addEventListener('wheel', event => {
+  event.preventDefault();
+  deg += event.deltaY /10;
+  event.target.style.transform = `rotate(${deg}deg)`;
+});
+
+//2. click event
+ctaBox.querySelector('button').addEventListener('click', event => {
+  let rotate = 0;
+  let inter = setInterval(()=>{
+    rotate += 1;
+    if(rotate == 360){
+      clearInterval(inter);
+    }
+    document.querySelector('body').style.transform = `rotate(${rotate}deg)`;
+  }, 10);
+});
+
+//3. mouseover event
+document.addEventListener('mouseover', event => {
+  event.stopPropagation();
+  event.target.style.textDecoration = "underline";
+});
+
+//4. mouseout event
+document.addEventListener('mouseout', event => {
+  event.stopPropagation();
+  event.target.style.textDecoration = "none";
+});
+
+//5. contextmenu
+document.addEventListener('contextmenu', event => {
+  event.preventDefault();
+  alert('That has been disabled.');
+})
+
+//6. dblclick
+document.addEventListener('dblclick', event => {
+  event.stopPropagation();
+  let rot;
+  let att = event.target.getAttribute('flipped');
+  if(att == 'true'){
+    event.target.setAttribute('flipped', 'false');
+    rot = 0;
+  }else{
+    event.target.setAttribute('flipped', 'true');
+    rot = 180;
+  }
+  event.target.style.transform = `rotate(${rot}deg)`;
+});
+
+//7. keydown
+document.addEventListener('keydown', event => {
+  document.querySelector('body').style.color = 'blue';
+});
+
+//8. keyup
+document.addEventListener('keyup', () =>{
+  document.querySelector('body').style.color = 'black';
+});
+
+//9. copy
+document.addEventListener('copy', () =>{
+  alert('Why you copying me brah?');
+})
+
+//auxclick
+document.addEventListener('auxclick', event=>{
+  event.target.style.visibility = 'hidden';
+  setTimeout(() => {
+    event.target.style.visibility = 'visible';
+  }, 5000);
+})
