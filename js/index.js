@@ -192,6 +192,9 @@ contentParagraphs.forEach(function(paragraph){
     paragraph.addEventListener("dragstart", (e) => {
         e.preventDefault();
     });
+    paragraph.addEventListener("select", (e) => {
+        alert("Please reference www.greatidea.io"); 
+    });
 });
 
 //so along with copy information you can just drag the text to the desired place you would like to place the text. No good. I don't want the information
@@ -207,6 +210,7 @@ body.addEventListener("keypress", (element) => {
     alert("We can't see what you type here. Please contact us by phone at 1(888) 888-8888 or Email : sales@greatidea.io")
 });
 
+
 navBar.forEach(function(navATag){
     navATag.addEventListener("mouseover", ()=>{
         navATag.style.color = "Red"; 
@@ -218,9 +222,40 @@ navBar.forEach(function(navATag){
     });
 });
 
+//Animation functions
+// function myFunction () {
+//     ctaButton.style.WebKitAnimation = "mymove 3s 2";
+// }
 
+// function myStartFunction () {
+//     ctaButton.style.backgroundColor = "Blue"; 
+//     ctaButton.innerHTML = "Your Journey is about to begin!!";
+// }
 
-ctaButton.addEventListener("dblclick", (element) => {
+// function myEndFunction () {
+//     ctaButton.innerHTML = "May the profits be with you! Click again.";
+// }
+// ctaButton.addEventListener("webkitAnimationstart", myStartFunction);
+// ctaButton.addEventListener("webkitAnimationEnd", myEndFunction); 
+// ctaButton.addEventListener("")
+
+ctaButton.addEventListener("dblclick", () => {
+    let emailRequest = prompt("Please provide your email address in the following format your@email.com your email must be a gmail.com account");
+    if (emailRequest.includes("@gmail.com")){
+        alert("You will be contacted shortly. THANK YOU.");
+
+    } else {
+        let phone = prompt("Email address was invalid let's try your phone number 10 numbers no extra characters please 9997778888 i.e.");
+        if(Number(phone)){
+            alert("You will be contacted shortly. THANK YOU.");
+        } else {
+            alert("Your contact information was not able to submit. Please contact us at 888 888 8888 or sales@greatidea.io");
+        }
+    }
+     
+});
+
+ctaButton.addEventListener("mouseout", () => {
     let emailRequest = prompt("Please provide your email address in the following format your@email.com your email must be a gmail.com account");
     if (emailRequest.includes("@gmail.com")){
         alert("You will be contacted shortly. THANK YOU.");
@@ -234,3 +269,11 @@ ctaButton.addEventListener("dblclick", (element) => {
         }
     }
 });
+//The above i've seen done on sites where you didn't actually click on the item but you are prompted to move forward. Maybe they changed their mind?  
+//Little aggessive but may provide some contacts. 
+
+
+
+
+
+
