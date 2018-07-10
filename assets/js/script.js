@@ -1,6 +1,19 @@
 window.addEventListener('keydown', ({ code }) => {
   if (/Key[A-Z]/.test(code)) {
     const key = code.charAt(code.length - 1).toLowerCase();
-    sounds[key].play();
+    playSoundWithAnim(key);
   }
 });
+
+function playSoundWithAnim(key) {
+  sounds[key].play();
+  const target = `#box${key.charCodeAt(0) - 96}`;
+  TweenMax.to(target, 0.2, {
+    scale: 2,
+    onComplete: () => {
+      TweenMax.to(target, 0.1, {
+        scale: 1
+      });
+    }
+  });
+}
