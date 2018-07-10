@@ -116,10 +116,12 @@ footer.appendChild(spacer);
 
 footer.appendChild(createdButton);
 
-const flipButton =  document.querySelector("footer button")
+const flipButton = document.querySelector("footer button")
 
 flipButton.innerText = "Australian use only"
-flipButton.setAttribute('onclick', "flip()");
+
+
+
 //functions
 
 const flip = () => {
@@ -129,3 +131,78 @@ const flip = () => {
     document.querySelector(".container").style.transform = "rotate(0deg)";
   }
 }
+
+// First event listener 
+flipButton.addEventListener("click", flip);
+
+
+let mediaPort = document.querySelector("#middle-content-div")
+
+
+//the game that comes up when you press g
+const cantTouchThisGame = () => {
+  let gameConstructor = " ";
+
+  //constructs the html for the game 
+  for (let index = 0; index < 25; index++) {
+    if (index % 5 === 0 && index != 0) {
+      gameConstructor += `</div>`;
+    }
+
+    if (index % 5 === 0) {
+      gameConstructor += `<div class='gamerow'>`;
+    }
+    gameConstructor += `<button class="gamebutton" id="button${index}" style="visibility:hidden" >Click Me</button>`;
+
+  }
+
+  //game styling
+  mediaPort.innerHTML = gameConstructor;
+  mediaPort.style.height = "25vh";
+  mediaPort.style.display = "flex";
+  mediaPort.style["flex-direction"] = "column";
+  mediaPort.style["justify-content"] = "space-between";
+  mediaPort.style.margin = "10px"
+
+
+  let toCSS = document.querySelectorAll(".gamerow");
+
+  for (let index = 0; index < toCSS.length; index++) {
+    toCSS[index].style.display = "flex";
+    toCSS[index].style["justify-content"] = "space-between";
+  }
+
+  //button styling
+  document.querySelector(`#button${Math.floor(Math.random() * 24) } `).style.visibility = "visible";
+
+  let buttons = document.querySelectorAll(".gamebutton");
+  //adds event listeners for buttons (mouseover and onclick)
+  for (let index = 0; index < buttons.length; index++) {
+    //eventlistener number 3 (times 25)
+    buttons[index].addEventListener("click", function () {
+      alert("You Win!");
+
+
+    });
+
+    //event listener 4
+    buttons[index].addEventListener("mouseover", function () {
+      document.querySelector(`#button${index} `).style.visibility = "hidden";
+      document.querySelector(`#button${Math.floor(Math.random() * 24)} `).style.visibility = "visible";
+
+    });
+  }
+
+
+
+}
+
+
+
+//Second event listener 
+window.addEventListener("keypress", function (event) {
+  console.log(event.key)
+  if (event.key === 'g') {
+    cantTouchThisGame();
+  }
+}, false);
