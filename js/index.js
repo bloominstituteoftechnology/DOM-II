@@ -149,6 +149,11 @@ button.innerHTML = siteContent["cta"]["button"];
 button.addEventListener("click", (e) => {
   document.getElementById("cta-img").setAttribute("class", "rotated-image");
   e.target.innerHTML = "STOP SPIN";
+
+  button.addEventListener("dblclick", (e) => {
+    document.getElementById("cta-img").setAttribute("class", "cta-img");
+    e.target.innerHTML = "Get Started";
+  })
   });
 
 
