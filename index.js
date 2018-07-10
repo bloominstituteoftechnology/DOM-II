@@ -152,3 +152,19 @@ const siteContent = {
   window.addEventListener("scroll", () => {
     prompt("Where are you scrolling to?");
   });
+
+  navItem[1].addEventListener("copy", () => {
+    navItem[1].style.color = "purple";
+  });
+
+  ctaImg.addEventListener("contextmenu", () => {
+    prompt("What are you looking at this image for?");
+  });
+
+  ctaH1.addEventListener("dblclick", () => {
+    ctaH1.innerHTML = "DOM IS REALLY AWESOME";
+  });
+
+  ctaButton.addEventListener("mouseout", () => {
+    alert(`Go get started`);
+  });
