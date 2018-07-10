@@ -215,10 +215,13 @@ navBar.forEach(function(navATag){
     navATag.addEventListener("mouseover", ()=>{
         navATag.style.color = "Red"; 
         navATag.style.fontWeight = 700;
+        TweenLite.to(navATag, 2, {rotation:360, transformOrigin:"left 50%"});
     });
     navATag.addEventListener("mouseleave", () => {
         navATag.style.color = "Green";
-        navATag.style.fontWeight = 400; 
+        navATag.style.fontWeight = 400;
+        TweenLite.to(navATag, 2, {rotation:360, transformOrigin: "left 50%"});
+
     });
 });
 
