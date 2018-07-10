@@ -45,6 +45,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
+ctaImg.addEventListener("mouseover", () => {
+
+});
+
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
@@ -62,12 +66,9 @@ let whateverText = document.createTextNode('Whatever');
 whateverA.appendChild(whateverText);
 document.querySelector('nav').appendChild(whateverA);
 
-whateverA.addEventListener("click", () => {
-
+whateverA.addEventListener("click", (e) => {
   document.getElementById("cta-img").setAttribute("src", siteContent["cta"]["whatever-img-src"]);
-
-
-})
+});
 
 let homeA = document.createElement('a');
 let homeText = document.createTextNode('Home');
@@ -84,6 +85,9 @@ callToAction.innerHTML = "dom<br>is<br>awesome";
 let button = document.querySelector(".cta button");
 button.innerHTML = siteContent["cta"]["button"];
 
+button.addEventListener("click", (e) => {
+  document.getElementById("cta-img").setAttribute("class", "rotated-image");
+});
 
 
 let headerContent = document.querySelectorAll(".text-content h4");
