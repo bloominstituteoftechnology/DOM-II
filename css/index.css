@@ -97,6 +97,13 @@ header .logo {
     margin: 28px 0 0 91px;
 }
 
+header.rot{
+    align-self: stretch;
+    margin: 0;
+    animation-name: rotate;
+    animation-duration: 4s;
+}
+
 /* Call To Action (CTA) Styles */
 
 .cta {
@@ -129,6 +136,11 @@ header .logo {
 .cta .cta-text button:hover {
     background: black;
     color: white;
+}
+
+#cta-img.hov {    
+    animation-name: rotate;
+    animation-duration: 4s;   
 }
 
 /* Main Content Styles */
@@ -295,5 +307,20 @@ footer {
 
     .contact {
         margin: 20px;
+    }
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}
+}
+
+@keyframes slide {
+    from {
+        
+        transform: rotate(0deg);
+    }
+    to {
+        
+        transform: rotate(360deg);
     }
 }

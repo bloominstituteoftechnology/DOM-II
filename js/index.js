@@ -96,3 +96,24 @@ const navColor = document.querySelectorAll('a');
 navColor.forEach(a => {
   a.style.color = "green";
 });
+
+logo2.addEventListener("mouseover", (event) => {
+  console.log("button was moused over!");
+  logo2.classList.add('hov');
+  event.stopPropagation();
+});
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+});
+
+window.addEventListener("beforeunload", function (event) {
+  event.returnValue = "NO";
+});
+
+logo.addEventListener("click", (event) => {
+  console.log("button was clicked!");
+  logo.classList.add('rot');
+  event.stopPropagation();
+});
