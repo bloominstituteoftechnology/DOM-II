@@ -105,6 +105,7 @@ for(let i = 0; i < navBar.length; i++){
 }
 
 // Selectors
+let allPage = document.querySelector("html");
 let pageContainer = document.querySelector(".container");
 let mainNav = document.querySelector("nav");
 // let navBar = document.querySelectorAll("nav a");
@@ -132,6 +133,38 @@ getStarted.addEventListener('click', (event) => {
 
 // Nav double click flex change
 mainNav.addEventListener('dblclick', (event) => {
-  mainNav.style.flexDirection = 'column';
+  mainNav.style.flexDirection = 'row-reverse';
 })
 
+// Pressing a key and releasing a key changes container background color
+document.addEventListener('keydown', (event) => {
+  pageContainer.style.backgroundColor = 'blue';
+})
+
+document.addEventListener('keyup', (event) => {
+  pageContainer.style.backgroundColor = 'white';
+})
+
+// Copying text
+document.addEventListener('copy', (event) => {
+  alert("Copycat!");
+})
+
+// Click on Dom is awesome
+domIsAwesome.addEventListener('mousedown', (event) => {
+  domIsAwesome.innerHTML = "Who's Dom";
+})
+
+domIsAwesome.addEventListener('mouseup', (event) => {
+  domIsAwesome.innerHTML = siteContent["cta"]["h1"];
+})
+
+// Mouse leaves top image
+greatIdeaLogo.addEventListener('mouseout', (event) => {
+  alert("Come back!");
+})
+
+// Rotate mouse wheel increase nav and footer text size
+document.addEventListener('wheel', (event) => {
+  allPage.style.fontSize = '200%';
+})
