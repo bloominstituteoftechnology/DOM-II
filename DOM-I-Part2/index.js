@@ -165,7 +165,7 @@ featuresContent.addEventListener('click', (event) => {
 
 //---9th event
 const contentPs = document.querySelectorAll('.text-content p');
-contentPs.forEach(i => i.addEventListener('dblclick', (event) => {
+bottomContentText.forEach(i => i.addEventListener('dblclick', (event) => {
   event.target.innerText = reverseString(event.target.innerText)
   }));
 
