@@ -11,6 +11,31 @@ body {
   background-size: cover;
   font-family: Lato, sans-serif;
   font-weight: 300;
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  height: 100px;
+  width: 100%;
+  background-color: #232323;
+}
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #EA005E;
 }
 
 h1 {
