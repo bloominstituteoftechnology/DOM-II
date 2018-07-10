@@ -48,6 +48,8 @@ let ctaIMG = document.querySelector('#cta-img');
 let mainContent = document.querySelector('.main-content');
 let contact = document.querySelector('.contact');
 let footer = document.querySelector("footer");
+let body = document.querySelector('body');
+let header = document.querySelector('header');
 
 // Question to explore later: is there a way I can iterate through siteContent["nav"]?
 nav.children[0].textContent = siteContent["nav"]["nav-item-1"];
@@ -94,3 +96,11 @@ for (let i = 0; i < nav.children.length; i++) {
   nav.children[i].style.color = "green";
   console.log(nav.children[i]);
 }
+
+
+window.addEventListener('scroll', () => {
+  console.log("it works");
+  header.style.position = "fixed";
+  header.style.backgroundColor = "black";
+  header.style.top = "0";
+})
