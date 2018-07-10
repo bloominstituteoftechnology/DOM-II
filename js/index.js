@@ -56,15 +56,15 @@ document.querySelector("nav").appendChild(aLink);
 siteContent.nav["nav-item-0"] = "Home";
 siteContent.nav["nav-item-7"] = "Webring";
 
-
+function baseColorNav(){
 for (let index = 0; index < nav.length; index++) {
   nav[index].innerHTML = siteContent.nav["nav-item-" + (index)]
   nav[index].style.color = "green";
 
 }
 
-
-
+}
+baseColorNav();
 //cta text
 let ctaText = document.querySelector(".cta-text").children;
 
@@ -212,6 +212,7 @@ let rotationCounter = 0;
 
 var lastScrollTop = 0;
 //event listener 5
+
 window.addEventListener("scroll", function(){
    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
    if (st > lastScrollTop){
@@ -229,3 +230,31 @@ window.addEventListener("scroll", function(){
    }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
+
+
+//event listener six
+document.querySelector("nav").addEventListener("mouseenter", function( event ) {
+  for (let index = 0; index < nav.length; index++) {
+   
+    nav[index].style["font-size"] = "150%";
+  
+  }
+});
+
+//event listener 7
+document.querySelector("nav").addEventListener("mouseleave", function( event ) {
+  for (let index = 0; index < nav.length; index++) {
+    
+    nav[index].style["font-size"] = "100%";
+  
+  }
+});
+
+
+document.querySelector("nav").addEventListener("mouseover", function( event ) {
+  for (let index = 0; index < nav.length; index++) {
+    
+    nav[index].style["font-size"] = "100%";
+  
+  }
+});
