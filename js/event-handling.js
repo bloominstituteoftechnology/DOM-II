@@ -77,15 +77,31 @@ nuBtn.addEventListener('click',(e)=>{
        });
 })
 
+ctaImg.addEventListener('mouseenter', (e)=>{
+    TweenMax.to("#cta-img", 1, {
+        scale: 0.7
+    });
+});
+ctaImg.addEventListener('mouseleave', (e) => {
+    TweenMax.to("#cta-img", 1, {
+        scale: 1.0
+    });
+});
+
 document.addEventListener('drag',(e)=>{
     // console.log(e.target);
 });
 
-
-document.addEventListener('drop', (e) => {
+document.addEventListener('dragover', (e)=>{
     e.preventDefault();
-    e.target.style.backgroundColor = "black";
-    // if(e.target.className == "dropzone") {console.log("drop");}
-    console.log("dropped");
+    // if(e.target.className == "dropzone") {
+    //     // console.log(e);
+    //     e.target.style.backgroundColor = "black";
+    // }
 });
+document.addEventListener('drop',(e)=>{
+    console.log(e);
+    e.target.style.backgroundColor = "black";
+});
+
 
