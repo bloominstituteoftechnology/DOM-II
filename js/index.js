@@ -37,7 +37,7 @@ const siteContent = {
   },
 };
 
-//Add event to entire page for detecting idle time - consoles logs number of minutes idle
+//Added event to entire page for detecting idle time - consoles logs number of minutes idle
 
 let idleTime = 0;
 $(document).ready(function () {
