@@ -37,6 +37,8 @@ const siteContent = {
   },
 };
 
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -189,8 +191,6 @@ contentParagraphs.forEach(function(paragraph){
 });
     paragraph.addEventListener("dragstart", (e) => {
         e.preventDefault();
-        
-   
     });
 });
 
@@ -216,4 +216,21 @@ navBar.forEach(function(navATag){
         navATag.style.color = "Green";
         navATag.style.fontWeight = 400; 
     });
+});
+
+
+
+ctaButton.addEventListener("dblclick", (element) => {
+    let emailRequest = prompt("Please provide your email address in the following format your@email.com your email must be a gmail.com account");
+    if (emailRequest.includes("@gmail.com")){
+        alert("You will be contacted shortly. THANK YOU.");
+
+    } else {
+        let phone = prompt("Email address was invalid let's try your phone number 10 numbers no extra characters please 9997778888 i.e.");
+        if(Number(phone)){
+            alert("You will be contacted shortly. THANK YOU.");
+        } else {
+            alert("Your contact information was not able to submit. Please contact us at 888 888 8888 or sales@greatidea.io");
+        }
+    }
 });
