@@ -149,3 +149,11 @@ ctaBtn.addEventListener('mouseup', function(event) {
   event.target.style.boxShadow = "0 0 0 transparent";
 })
 
+ctaBtn.addEventListener('click', function() {
+  TweenMax.to("#cta-img", 4, {rotation: 360, repeat: -1});
+})
+
+ctaBtn.addEventListener('contextmenu', function() {
+  event.preventDefault();
+  TweenMax.to(".cta-text h1", 1, {y:-500, opacity: 0});
+})
