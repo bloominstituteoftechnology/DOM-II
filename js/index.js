@@ -100,10 +100,85 @@ headerNav[5].style.color = "green";
 
 //=======BEGIN EVENT LISTENERS ==============// 
 
+//Number 1
 contactH.addEventListener('click', (event) =>{ event.target.style.color = "blue";
 });
 
+//Number 2
 let mouseOver = document.querySelector(".background-mouseover");
-mouseOver.addEventListener('mouseover', (secondevent) =>{secondevent.target.style.backgroundColor = "yellow";
+mouseOver.addEventListener('mouseover', (event) =>{event.target.style.backgroundColor = "yellow";
 });
+
+//Number 3
+let dblClick = document.querySelector(".background-mouseover");
+dblClick.addEventListener('dblclick', (event) =>{event.target.style.color = "orange";
+});
+
+//Number 4
+let auxClick = document.querySelector(".background-mouseover");
+auxClick.addEventListener('auxclick', (event) =>{
+event.target.style.visibility = "hidden";
+event.target.style.backgroundColor = "white";
+});
+
+//Number 5
+let wheel = document.querySelector(".box1");
+wheel.addEventListener('wheel', (event) =>{
+  event.target.style.visibility = "visible";
+  event.target.style.border = "5px solid black";
+});
+
+let wheel2 = document.querySelector(".box2");
+wheel2.addEventListener('wheel', (event) =>{
+  event.target.style.border = "5px solid black";
+});
+
+//Number 6
+var dragText;
+document.addEventListener('drag', (event) => {
+
+}, false);
+
+//Number 7
+document.addEventListener('dragstart', (event) => {
+dragText = event.target;
+
+  event.target.style.opacity = .5;
+}, false);
+
+//Number 8
+document.addEventListener('dragend', (event) => {
+  event.target.style.opacity = "";
+}, false);
+
+//Number 9
+document.addEventListener('dragover', (event) => {
+  event.preventDefault();
+}, false);
+
+//Number 10
+document.addEventListener('dragenter', (event) => {
+ if(event.target.className === "dropzone"){
+   event.target.style.background = "purple";
+ }
+}, false);
+
+//Number 11
+document.addEventListener('dragleave', (event) => {
+  if(event.target.className === "dropzone"){
+    event.target.style.background = "";
+  }
+ }, false);
+
+//Number 12
+ document.addEventListener('drop', (event) => {
+   event.preventDefault();
+
+  if(event.target.className === "dropzone"){
+    event.target.style.background = "";
+    dragText.parentNode.removeChild(dragText);
+    event.target.appendChild(dragText);
+  }
+ }, false);
+
 

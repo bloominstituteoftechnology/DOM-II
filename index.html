@@ -44,11 +44,11 @@
         <section class="main-content">
 
             <div class="top-content background-mouseover">
-                <div class="text-content">
+                <div class="text-content box1">
                     <h4></h4>
                     <p></p>
                 </div>
-                <div class="text-content">
+                <div class="text-content box2">
                     <h4></h4>
                     <p></p>
                 </div>
@@ -58,7 +58,7 @@
 
             <div class="bottom-content">
                 <div class="text-content">
-                    <h4></h4>
+                    <h4 id="draggable-text" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"></h4>
                     <p></p>
                 </div>
                 <div class="text-content">
@@ -84,6 +84,9 @@
             <p></p>
 
         </section>
+
+        <div class="dropzone"></div>
+        <div class="dropzone"></div>
 
         <footer>
             <p></p>

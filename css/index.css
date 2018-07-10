@@ -167,6 +167,22 @@ header .logo {
     margin: 15px 0;
 }
 
+/*Dragger*/
+#draggable {
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    background: white;
+  }
+
+  .dropzone {
+    width: 200px;
+    height: 20px;
+    background: blueviolet;
+    margin-bottom: 10px;
+    padding: 10px;
+
+
 /* Footer Styles */
 
 footer {
