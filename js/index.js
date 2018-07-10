@@ -11,7 +11,8 @@ const siteContent = {
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
-    "img-src": "img/header-img.png"
+    "img-src": "img/header-img.png",
+    "whatever-img-src": "https://i.redd.it/pdu52bbc92201.jpg"
   },
   "main-content": {
     "features-h4":"Features",
@@ -60,6 +61,13 @@ let whateverA = document.createElement('a');
 let whateverText = document.createTextNode('Whatever');
 whateverA.appendChild(whateverText);
 document.querySelector('nav').appendChild(whateverA);
+
+whateverA.addEventListener("click", () => {
+
+  document.getElementById("cta-img").setAttribute("src", siteContent["cta"]["whatever-img-src"]);
+
+
+})
 
 let homeA = document.createElement('a');
 let homeText = document.createTextNode('Home');
