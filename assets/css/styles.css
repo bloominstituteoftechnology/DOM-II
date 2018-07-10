@@ -5,8 +5,7 @@ body {
 
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   background-image: url("../img/background.jpg");
   background-position: center;
   background-size: cover;
@@ -23,8 +22,16 @@ h1 {
   background-color: rgba(255,255,255,0.3);
 }
 
-.boxes {
+.container {
   max-width: 800px;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,11 +44,6 @@ h1 {
   margin: 10px;
   border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.2s ease-out;
-}
-
-.box:hover {
-  transform: scale(1.15);
 }
 
 .box:nth-of-type(2n + 1){
@@ -57,4 +59,49 @@ h1 {
 
 .box:nth-of-type(9n) {
   background-color: #6B69D6;
+}
+
+form {
+  display: flex;
+  margin-top: 35px;
+  width: 100%;
+}
+form input {
+  margin-right: 10px;
+  flex-grow: 1;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+form button {
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: 1px solid #ea005e;
+  background-color: #EA005E;
+  color: #f7f7f7;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+form button:hover {
+  background-color: rgba(255,255,255,0.7);
+  color: #ea005e;
+}
+
+form button:focus {
+  outline: none;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
