@@ -206,3 +206,26 @@ window.addEventListener("keypress", function (event) {
     cantTouchThisGame();
   }
 }, false);
+
+let rotationCounter = 0;
+
+
+var lastScrollTop = 0;
+//event listener 5
+window.addEventListener("scroll", function(){
+   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+   if (st > lastScrollTop){
+    rotationCounter += 10;
+
+      // downscroll code
+
+      document.querySelector("#cta-img").style.transform = `rotate(${rotationCounter}deg)`;
+   } else {
+    rotationCounter -=10;
+
+      // upscroll code
+
+      document.querySelector("#cta-img").style.transform = `rotate(${rotationCounter}deg)`;
+   }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
