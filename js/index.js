@@ -14,26 +14,26 @@ const siteContent = {
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
+    "features-h4": "Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
+    "about-h4": "About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
+    "services-h4": "Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
+    "product-h4": "Product",
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
+    "vision-h4": "Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   "contact": {
-    "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
-    "phone" : "1 (888) 888-8888",
-    "email" : "sales@greatidea.io",
+    "contact-h4": "Contact",
+    "address": "123 Way 456 Street Somewhere, USA",
+    "phone": "1 (888) 888-8888",
+    "email": "sales@greatidea.io",
   },
   "footer": {
-    "copyright" : "Copyright Great Idea! 2018"
+    "copyright": "Copyright Great Idea! 2018"
   },
 };
 
@@ -52,7 +52,7 @@ let myContainer = document.querySelector(".container");
 
 let newNavItem1 = document.createElement("a");
 let newNavItem2 = document.createElement("a");
-let t1 = document.createTextNode("Propoganda");
+let t1 = document.createTextNode("Propaganda");
 let t2 = document.createTextNode("Kittens");
 
 
@@ -70,12 +70,24 @@ let navItems = document.querySelectorAll("nav a");
 
 
 
-
-
-
-
-
 //cta
+
+
+let ctaNewImg = document.createElement("img");
+ctaNewImg.setAttribute('src', "img/kitty1.jpg");
+ctaNewImg.style.display = "none";
+ctaNewImg.style.width = "15%";
+ctaNewImg.style.height = "15%";
+ctaNewImg.className = "cat";
+
+
+let ctaWhole = document.querySelector(".cta");
+
+ctaWhole.prepend(ctaNewImg);
+
+
+
+
 let ctaHeader = document.querySelector(".cta-text h1");
 let ctaButton = document.querySelector(".cta-text button");
 let ctaLogo = document.querySelector("#cta-img");
@@ -101,16 +113,13 @@ let footer = document.querySelector("footer p");
 //container
 
 myContainer.parentElement.addEventListener("keydown", (event) => {
-  TweenMax.to("#cta-img", 3, {x:-800, rotation:360, scale:0});
+  TweenMax.to("#cta-img", 3, { x: -800, rotation: 360, scale: 0 });
   event.stopPropagation();
 });
 
 //nav
 
 
-
-// newNavItem1.style.color = "green";
-// newNavItem2.style.color = "green";
 
 newNavItem1.setAttribute("href", "#");
 newNavItem2.setAttribute("href", "#");
@@ -125,13 +134,20 @@ navItems[6].innerHTML = siteContent["nav"]["nav-item-6"];
 
 navItems.forEach((element) => element.style.color = "green");
 
-navItems.forEach((element) => element.addEventListener ("click", (event) => {
-  TweenMax.to(element, 1, {y:20});
+navItems.forEach((element) => element.addEventListener("click", (event) => {
+  TweenMax.to(element, 1, { y: 20 });
   event.stopPropagation();
 }));
 
+navItems[0].addEventListener("click", (event) => {
+  ctaNewImg.style.display = "inline";
+  TweenMax.to(".cat", 3, {x:-100, ease:Bounce.easeOut});
+});
+
 
 //cta
+
+
 ctaHeader.innerHTML = "DOM<br> Is<br> Awesome";
 ctaButton.innerHTML = siteContent["cta"]["button"];
 ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
