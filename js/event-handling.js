@@ -22,10 +22,8 @@ function createNuBtn(){
 }
 
 function dropIt(e){
-    console.log(e.target);
+    // console.log(e.target);
 }
-
-// // background: linear-gradient(to bottom right, red, yellow);
 
 container.addEventListener('mouseover',()=>{
     container.style.background = `linear-gradient(to bottom right, ${getRandomColor()}, ${getRandomColor()})`;
@@ -96,18 +94,13 @@ document.addEventListener('drag',(e)=>{
 
 document.addEventListener('dragover', (e)=>{
     e.preventDefault();
-    // if(e.target.className == "dropzone") {
-    //     // console.log(e);
-    //     e.target.style.backgroundColor = "black";
-    // }
+
 });
 document.addEventListener('drop',(e)=>{
-    console.log(e);
     ctaImg.style.display = "none";
     e.target.style.backgroundColor = "black";
     e.target.style.width = "100%";
     cta.style.justifyContent = "center";
-
     ctaH1.innerHTML = "Where from here?";
 });
 
