@@ -157,6 +157,12 @@ ctaHeader.innerHTML = "DOM<br> Is<br> Awesome";
 ctaButton.innerHTML = siteContent["cta"]["button"];
 ctaLogo.setAttribute('src', siteContent["cta"]["img-src"]);
 
+ctaButton.addEventListener("dblclick", (event) => {
+  TweenMax.to(event.target, 6, { ease: Elastic.easeOut.config(1, 0.3), y: -300 });
+  event.target.style.color = 'red';
+  
+})
+
 //main content
 
 mainContentHeaders[0].innerHTML = siteContent["main-content"]["features-h4"];
