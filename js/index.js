@@ -124,9 +124,14 @@ form.addEventListener('submit', function() {
   alert('thanks for submitting!')
 })
 
-form.addEventListener('input', function() {
-  submit.disabled = false;
-})
+let contact = document.getElementsByClassName('contact-details')[0];
+contact.addEventListener('toggle', function() {
+  contactInfo.forEach((p) => {
+    p.style.fontSize = "150%";
+  })
+  contactHead.style.color === "green" ? contactHead.style.color = "black" : contactHead.style.color = "green";
+  contactHead.style.fontSize === "150%" ? contactHead.style.fontSize = "100%" : contactHead.style.fontSize = "150%";
+}) 
 
 let header = document.querySelector('header');
 let ctaBtn = document.querySelector('.cta-text button')
