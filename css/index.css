@@ -101,7 +101,8 @@ header.rot{
     align-self: stretch;
     margin: 0;
     animation-name: rotate;
-    animation-duration: 4s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
 }
 
 /* Call To Action (CTA) Styles */
@@ -140,7 +141,13 @@ header.rot{
 
 #cta-img.hov {    
     animation-name: rotate;
-    animation-duration: 4s;   
+    animation-duration: 8s;
+    animation-iteration-count: infinite; 
+    animation-play-state: running;
+}
+
+#cta-img.lve {        
+    animation-play-state: paused;
 }
 
 /* Main Content Styles */
@@ -311,7 +318,7 @@ footer {
 }
 @keyframes rotate {
     from {transform: rotate(0deg);}
-    to {transform: rotate(90deg);}
+    to {transform: rotate(360deg);}
 }
 
 @keyframes slide {

@@ -97,9 +97,10 @@ navColor.forEach(a => {
   a.style.color = "green";
 });
 
-logo2.addEventListener("mouseover", (event) => {
-  console.log("button was moused over!");
+logo2.addEventListener("mouseenter", (event) => {
+  console.log("mouse in");
   logo2.classList.add('hov');
+  logo2.classList.remove('lve');
   event.stopPropagation();
 });
 
@@ -115,5 +116,11 @@ window.addEventListener("beforeunload", function (event) {
 logo.addEventListener("click", (event) => {
   console.log("button was clicked!");
   logo.classList.add('rot');
+  event.stopPropagation();
+});
+
+logo2.addEventListener("mouseleave", (event) => {
+  console.log("mouse out");
+  logo2.classList.add('lve');
   event.stopPropagation();
 });
