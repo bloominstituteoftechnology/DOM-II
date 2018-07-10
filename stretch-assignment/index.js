@@ -1,4 +1,5 @@
 let blocks = document.querySelectorAll(".block");
+let blockParent = document.querySelector('.blocks');
 let redBlock = blocks[0];
 let blueBlock = blocks[1];
 let greenBlock = blocks[2];
@@ -17,23 +18,33 @@ let whichBlock = 0; // flag indicating which block an event was triggered on
 
 // 'click' Event Listeners
 redBlock.addEventListener('click', function () {
-
+  let tmpBlock = redBlock;
+  blockParent.removeChild(redBlock);
+  blockParent.prepend(tmpBlock);
 });
 
 blueBlock.addEventListener('click', function () {
-
+  let tmpBlock = blueBlock;
+  blockParent.removeChild(blueBlock);
+  blockParent.prepend(tmpBlock);
 });
 
 greenBlock.addEventListener('click', function () {
-
+  let tmpBlock = greenBlock;
+  blockParent.removeChild(greenBlock);
+  blockParent.prepend(tmpBlock);
 });
 
 pinkBlock.addEventListener('click', function () {
-
+  let tmpBlock = pinkBlock;
+  blockParent.removeChild(pinkBlock);
+  blockParent.prepend(tmpBlock);
 });
 
 grayBlock.addEventListener('click', function () {
-
+  let tmpBlock = grayBlock;
+  blockParent.removeChild(grayBlock);
+  blockParent.prepend(tmpBlock);
 });
 
 
