@@ -63,7 +63,10 @@ midImg.addEventListener('wheel', (e) => {
 });
 
 nuBtn.addEventListener('click',(e)=>{
-
+    // nuBtn.style.display = "none";
+     TweenMax.to(".nuBtn", 2, {
+         scale: 50.0
+     });
     window.setTimeout(()=>{
 
         window.location.reload(true);
@@ -80,7 +83,8 @@ document.addEventListener('drag',(e)=>{
 
 
 document.addEventListener('drop', (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+    e.target.style.backgroundColor = "black";
     // if(e.target.className == "dropzone") {console.log("drop");}
     console.log("dropped");
 });
