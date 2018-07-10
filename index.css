@@ -126,11 +126,6 @@ header .logo {
     cursor: pointer;
 }
 
-.cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
 /* Main Content Styles */
 
 .main-content {
@@ -296,4 +291,21 @@ footer {
     .contact {
         margin: 20px;
     }
+}
+
+.chivo-font {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 700;
+}
+
+.system-font {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.aqua {
+    color: aqua;
+}
+
+.blue {
+    color: blue;
 }

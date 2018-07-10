@@ -1,3 +1,5 @@
+// import TweenMax from 'gsap/TweenMax'
+
 const siteContent = {
     "nav": {
       "nav-item-1": "Services",
@@ -57,7 +59,7 @@ const siteContent = {
   position.appendChild(newLink2);
   // Select nav links
   let navLink = document.querySelectorAll("header nav a");
-  
+
   // for each nav link 
   // Update content for each nav link
   // navLink[0].textContent = siteContent["nav"]["nav-item-1"];
@@ -85,6 +87,7 @@ const siteContent = {
   
   // select cta text button element
   let ctaButton = document.querySelector(".cta-text button");
+  
   // inject text into the button element
   ctaButton.textContent = siteContent["cta"]["button"];
   
@@ -132,3 +135,52 @@ const siteContent = {
   //select footer p
   let footerP = document.querySelector("footer p");
   footerP.textContent = siteContent["footer"]["copyright"];
+
+
+// EVENTS
+
+// toggle font class function
+function fontFamilyToggle() {
+    this.classList.toggle('chivo-font');
+    event.stopPropagation();
+}
+// event listener to toggle font family of the cta text
+ctaText.addEventListener('click', fontFamilyToggle);
+
+// toggle button text color
+function buttonColorToggle() {
+    this.classList.toggle('aqua');
+}
+ctaButton.addEventListener('click', buttonColorToggle);
+
+// change color of p text on click
+ctaImg.addEventListener('click', () => {
+    TweenMax.to('#cta-img', 1, {rotation:360});
+});
+
+// change body background color on logo mouseeneter, then revert on mouseleave
+logo.addEventListener('mouseenter', (e) => {
+    e.target.style.border = '2px solid aqua';
+    e.target.style.padding = '10px';
+    e.target.style.borderRadius = '10px';
+    event.stopPropagation()
+});
+
+// function changeTextColor(color) {
+//     this.target.style.color = color;
+// }
+
+// let changeNavColors = document.querySelectorAll('nav a');
+
+// changeNavColors.addEventListener('click', (event) => {
+//     event.target.style.color = 'aqua';
+// });
+
+document.querySelector('body').addEventListener('keydown', (event) => {
+    event.target.style.backgroundColor = 'pink';
+});
+
+middleImg.addEventListener('click', () => {
+    TweenMax.to('#middle-img', 2, {rotation:720});
+});
+
