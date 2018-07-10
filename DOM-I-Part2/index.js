@@ -112,3 +112,30 @@ navBarColor.forEach(i => i.href = '#');
 ctaImg.addEventListener('click', (event) => {
   event.target.style.transform = 'rotate(90deg)';
 });
+
+ctaText.addEventListener('wheel', (event) => {
+  event.target.style.color = 'purple';
+});
+
+//----------Not working-----------------
+const container = document.querySelector('.container');
+container.addEventListener('select', (event) => {
+  footer.style.backgroundColor = 'green';
+}); //----------Not working-----------------
+
+
+container.addEventListener('click', (event) => {
+  footer.style.color = 'green';
+  footer.style.fontSize = '200%';
+});
+
+const contentHeaders = document.querySelectorAll('.text-content h4');
+contentHeaders.forEach(i => i.addEventListener('mouseenter', (event) => {
+  event.target.style.color = 'LawnGreen';
+  i.style.fontSize = '200%';
+  }));
+
+contentHeaders.forEach(i => i.addEventListener('mouseleave', (event) => {
+  event.target.style.color = 'black';
+  i.style.fontSize = '100%';
+  }));
