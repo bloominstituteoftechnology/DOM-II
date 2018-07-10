@@ -109,3 +109,6 @@ let navBarColor = document.querySelectorAll('nav a');
 navBarColor.forEach(i => i.style.color = 'green');
 navBarColor.forEach(i => i.href = '#');
 
+ctaImg.addEventListener('click', (event) => {
+  event.target.style.transform = 'rotate(90deg)';
+});
