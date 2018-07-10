@@ -114,7 +114,7 @@ function contact (element, data){
   element = document.getElementsByClassName('contact')[0].childNodes
   const elements = []
   let counter = 0
-  element.forEach(e => e.length > 0 ? elements.push(e) : '')
+  element.forEach(e => e.length > 1 ? elements.push(e) : '')
 
   for (d in data){
     element[counter++].textContent = data[d]
@@ -124,3 +124,50 @@ function contact (element, data){
 function footer (element, data){
   element[0].childNodes[1].textContent = data.copyright
 }
+
+
+// ==============================APPLIES TO ALL IMAGES
+const images = document.getElementsByTagName('img');
+const paragraphs = document.getElementsByTagName('p')
+
+for (const image of images){
+  image.addEventListener("mouseenter", event => {
+     event.target.width = event.target.width + 50;
+     event.target.height = event.target.height + 50;
+  }, false)
+
+  image.addEventListener('mouseout', event => {
+    event.target.width = event.target.width - 50;
+    event.target.height = event.target.height - 50;
+  })
+}
+
+const getStartedButton = document.querySelector('.cta button')
+getStartedButton.addEventListener('click', event => {
+  event.target.style.color = 'grey'
+
+  setTimeout(() => {
+    event.target.style.color = ''
+  }, 500)
+})
+
+
+document.addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    if (keyName === 'c')
+      event.target.style.color = 'grey'
+
+});
+
+for (const paragraph of paragraphs){
+  console.log(paragraph)
+  paragraph.addEventListener('dblclick', event => {
+    console.log('trigered')
+      console.log(event.target)
+    event.target.fontSize = event.target.fontSize + 10
+      console.log(event.target.fontSize)
+  })
+}
+
+
+
