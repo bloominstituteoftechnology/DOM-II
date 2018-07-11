@@ -127,9 +127,9 @@ topContent[1].addEventListener('mouseenter', (event) => {
   event.target.style.display = "none";
 });
 
-topContent[0].addEventListener('mouseout', (event) => {
-  event.target.style.visibility = "visible";
-});
+// topContent[0].addEventListener('mouseout', (event) => {
+//   event.target.style.visibility = "visible";
+// });
 
 topContent[1].addEventListener('mouseout', (event) => {
   event.target.innerHTML = siteContent["main-content"]["about-content"];
@@ -156,3 +156,12 @@ centerText.addEventListener('mouseover', (event) => {
 navYes.addEventListener('dblclick', (event) => {
   event.target.style.color = "red";
 });
+
+logo.addEventListener('contextmenu', event => {
+  TweenMax.to(logo, 5, {x : 50, opacity : 0, scale: 0.5});
+});
+console.log(contactContent);
+
+contactContent.forEach(() => {
+  addEventListener('keypress', () => { TweenLite.to(contactContent, 2.5, { ease: Bounce.easeOut, y: -50 });
+})});
