@@ -61,12 +61,9 @@ navYes.setAttribute("href", "#");
 navYes.style.color = 'green';
 
 let navYesText = document.createTextNode("Members");
+console.log(navYesText);
 navYes.appendChild(navYesText);
 navigationBar.prepend(navYes);
-
-navYesText.addEventListener('dblclick', (event) => {
-  event.target.style.color = "red";
-});
 
 let navNo = document.createElement("a");
 navNo.setAttribute("href", "#");
@@ -80,24 +77,11 @@ navigationBar.appendChild(navNo).appendChild(navNoText);
 let centerText = document.querySelector(".cta-text h1");
 centerText.innerHTML = "DOM<br> Is<br> Awesome";
 
-centerText.addEventListener('mouseover', (event) => {
-  event.target.innerHTML = "Okay";
-});
-
 let buttonText = document.querySelector(".cta .cta-text button");
 buttonText.innerHTML = siteContent["cta"]["button"];
 
-buttonText.addEventListener('click', (event) => {
-  event.target.textContent = "woah";
-}, 500);
-
 let circleImage = document.getElementById("cta-img");
 circleImage.setAttribute('src', siteContent["cta"]["img-src"]);
-circleImage.addEventListener('click', () => {
-
-  CustomEase.create("hop", "M0,0.005 C0,0.005 0.056,0.445 0.175,0.445 0.294,0.445 0.332,0 0.332,0 0.332,0 0.414,1 0.671,1 0.991,1 1,0 1,0");
-  TweenLite.to("#cta-img", 2, { ease: "hop", scale:1.5, rotation:30 });
-});
 
 let topContentHeader = document.querySelectorAll(".top-content h4");
 topContentHeader[0].innerHTML = siteContent["main-content"]["features-h4"];
@@ -130,3 +114,45 @@ contactContent[2].innerHTML = siteContent["contact"]["email"];
 
 let footerContent = document.querySelectorAll("footer p")
 footerContent[0].innerHTML = siteContent["footer"]["copyright"];
+
+/******Add Event Listeners ******/
+topContent[0].addEventListener('mouseenter', (event) => {
+  event.target.style.visibility = "hidden";
+  setTimeout(() => {
+    event.target.style.visibility = "visible";
+  }, 5000);
+});
+
+topContent[1].addEventListener('mouseenter', (event) => {
+  event.target.style.display = "none";
+});
+
+topContent[0].addEventListener('mouseout', (event) => {
+  event.target.style.visibility = "visible";
+});
+
+topContent[1].addEventListener('mouseout', (event) => {
+  event.target.innerHTML = siteContent["main-content"]["about-content"];
+});
+
+middleImage.addEventListener('dblclick', () => {
+  event.target.style.animation = 'rotate 5s';
+  event.target.style.webkitAnimation = 'rotate 5s';
+});
+
+circleImage.addEventListener('dblclick', () => {
+  event.target.style.animation = 'rotate 5s';
+  event.target.style.webkitAnimation = 'rotate 5s';
+});
+
+buttonText.addEventListener('click', (event) => {
+  event.target.textContent = "woah";
+}, 500);
+
+centerText.addEventListener('mouseover', (event) => {
+  event.target.innerHTML = "Okay";
+});
+
+navYes.addEventListener('dblclick', (event) => {
+  event.target.style.color = "red";
+});
