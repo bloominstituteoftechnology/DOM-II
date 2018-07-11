@@ -118,9 +118,7 @@ const siteContent = {
   // ======= Footer ========
   let footer = document.querySelector("footer p");
   
-  
   footer.innerHTML = siteContent["footer"]["copyright"];
-  
   
   document.body.style.background = "lightgrey";
   middleImg.style.boxShadow = "20px 20px black";
@@ -131,6 +129,7 @@ const siteContent = {
 
   ctaH1.addEventListener("mouseover", () => {
     document.body.style.background = "yellow";
+    TweenMax.to("#logo-img", 3, {rotation: 360});
   });
 
   navItem[0].addEventListener("click", () => {
@@ -166,5 +165,10 @@ const siteContent = {
   });
 
   ctaButton.addEventListener("mouseout", () => {
-    alert(`Go get started`);
+    // alert(`Go get started`);
+    TweenMax.to("#cta-img", 2, {rotation:360});
+  });
+
+  nav.addEventListener("click", () => {
+    TweenMax.to("#logo-img", 1, {x: 100, opacity: 0, scale: 0});
   });
