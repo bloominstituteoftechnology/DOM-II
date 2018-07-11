@@ -133,6 +133,18 @@ setTimeout(function() {
   }, 5000);
 },false);
 
+customNav.addEventListener('mouseover', (event) => {event.target.style.backgroundColor="blue"
+setTimeout(function() {
+  event.target.style.backgroundColor = "";
+  }, 5000);
+},false);
+
+const img = document.querySelector('.middle-img')
+img.addEventListener('mouseover', (event) => {event.target.style.border="10px solid blue"
+setTimeout(function() {
+  event.target.style.border = "";
+  }, 5000);
+},false);
 // customNav.setTimeout((event) => {
 //   event.target.style.color = "";
 // }, 500);
