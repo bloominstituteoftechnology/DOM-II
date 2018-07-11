@@ -37,8 +37,9 @@ const siteContent = {
   },
 };
 
-//variable for scroll rotation
+//global variables
 let deg = 0;
+let isRobbieDancing = false;
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
@@ -72,8 +73,8 @@ let newTextBox = document.createElement('div');
 newTextBox.className = 'text-content';
 let newTextBoxHeader = document.createElement('h4');
 let newTextBoxPara = document.createElement('p');
-newTextBoxHeader.innerText = 'Sample';
-newTextBoxPara.innerText = 'Sample content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
+newTextBoxHeader.innerText = 'Listeners';
+newTextBoxPara.innerHTML = 'Scroll wheel on cta img. Click animation on cta button. Mouse over adds underline, mouse out removes. Right click disabled and alerts. Dblclick flip upside down/rightside up. Key down styles all text to blue, up removes it. copy text issues alert. Auxclick hides items temporarily. Services link plays animation with sound on click.';
 newTextBoxPara.style.paddingRight = '20px';
 newTextBox.appendChild(newTextBoxHeader);
 newTextBox.appendChild(newTextBoxPara);
@@ -184,34 +185,39 @@ document.addEventListener('auxclick', event=>{
   event.target.style.visibility = 'hidden';
   setTimeout(() => {
     event.target.style.visibility = 'visible';
-  }, 5000);
+  }, 3000);
 });
 
 //experimental animations
-//reimplementation of robbie dance using keyframe
+
+//reimplementation of robbie dance
 //create lefty and righty, style them, add them to body
 let lefty = document.createElement('div');
 lefty.style = 'position: fixed; z-index: 5; height: 150px; width: 200px; top: 10%; left: 0; transform: rotate(-90deg); transform-origin: bottom left; background-image: url("img/robbie.png"); background-size: contain; visibility: hidden;';
 let righty = document.createElement('div');
 righty.style = 'position: fixed; z-index: 5; height: 150px; width: 230px; background: white; top: 20%; right: 0; transform: rotate(90deg); transform-origin: bottom right; background-image: url("img/shout.png"); background-size: contain; visibility: hidden;'
 document.querySelector('body').append(lefty, righty);
+
 //add eventListener to first nav link
 navLinks[0].addEventListener('click', event => {
-  let audio = new Audio('audio/6y2h2-xpiz2.ogg');
-  lefty.style.visibility = 'visible';
-  righty.style.visibility = 'visible';
-  lefty.style.animation = "leftRot 6s linear";
-  setTimeout(()=>{
-    lefty.style.animation = "";
-    lefty.style.visibility = 'hidden';
-  }, 6000)
-  audio.play();
-  setTimeout(function(){
-    righty.style.animation = "rightShout 1s linear";
+  if(!isRobbieDancing){
+    isRobbieDancing = true;
+    let audio = new Audio('audio/6y2h2-xpiz2.ogg'); //grab audio file
+    lefty.style.visibility = 'visible';
+    righty.style.visibility = 'visible';//show my previously created divs
+    lefty.style.animation = "leftRot 6s linear";//start left div's keyframe animation
+    setTimeout(()=>{
+      lefty.style.animation = "";
+      lefty.style.visibility = 'hidden';
+      isRobbieDancing = false;
+    }, 6000);//reset animation after it's done
+    audio.play();//start audio file
     setTimeout(function(){
-      righty.style.animation = "";
-      righty.style.visibility = 'hidden';
-    }, 1000);//clean up after animation
-  }, 5250);//wait 5.25 seconds to add the animation(timing it to the shout)
-
+      righty.style.animation = "rightShout 1s linear";
+      setTimeout(function(){
+        righty.style.animation = "";
+        righty.style.visibility = 'hidden';
+      }, 1000);//clean up after animation
+    }, 5250);//wait 5.25 seconds to add the animation(timing it to the shout)
+  }
 })
