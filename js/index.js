@@ -47,6 +47,9 @@ document.querySelector('#text').addEventListener('keypress', () => {
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+let head2 = logo.addEventListener('click', () => {
+  TweenMax.to(logo,0.5, {x:200})
+})
 
 let cta = document.getElementById('cta-img');
 cta.src = siteContent['cta']['img-src'];
@@ -67,6 +70,10 @@ navbar.forEach((x,index) => {
   x.innerText = siteContent["nav"][`nav-item-${index+1}`];
   x.style.color = 'green';
 });
+let navbarMain = document.querySelector('nav');
+let head1 = navbarMain.addEventListener('click', () => {
+  TweenMax.to(navbarMain,1, {x:-200})
+})
 
 let first = document.createElement("a");
 let last = document.createElement("a");
@@ -92,6 +99,7 @@ ctaContent.querySelector('h1').addEventListener('mouseover', (event)=>{
   setTimeout(function() {
     event.target.style.backgroundColor = '';
     }, 800);
+  TweenMax.to(ctaContent,3, {rotation:180})
 });
 
 
@@ -128,4 +136,3 @@ contactContent[2].innerText = siteContent['contact']['email'];
 let footer = document.querySelector('footer p');
 footer.innerText = siteContent['footer']['copyright'];
 footer.style.color = 'purple';
-
