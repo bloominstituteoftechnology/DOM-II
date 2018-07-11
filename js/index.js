@@ -188,7 +188,7 @@ document.addEventListener('auxclick', event=>{
 });
 
 //experimental animations
-//reimplementation of robbie dance using greensock
+//reimplementation of robbie dance using keyframe
 //create lefty and righty, style them, add them to body
 let lefty = document.createElement('div');
 lefty.style = 'position: fixed; z-index: 5; height: 150px; width: 200px; top: 10%; left: 0; transform: rotate(-90deg); transform-origin: bottom left; background-image: url("img/robbie.png"); background-size: contain; visibility: hidden;';
