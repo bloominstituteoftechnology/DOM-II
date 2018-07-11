@@ -1,5 +1,5 @@
 const siteContent = {
-  "nav": {
+  nav: {
     "nav-item-1": "Services",
     "nav-item-2": "Product",
     "nav-item-3": "Vision",
@@ -8,72 +8,70 @@ const siteContent = {
     "nav-item-6": "Contact",
     "img-src": "img/logo.png"
   },
-  "cta": {
-    "h1": "DOM Is Awesome",
-    "button": "Get Started",
+  cta: {
+    h1: "DOM Is Awesome",
+    button: "Get Started",
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
-    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
-    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "features-h4": "Features",
+    "features-content":
+      "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "about-h4": "About",
+    "about-content":
+      "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
-    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
-    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "services-h4": "Services",
+    "services-content":
+      "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "product-h4": "Product",
+    "product-content":
+      "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "vision-h4": "Vision",
+    "vision-content":
+      "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
   },
-  "contact": {
-    "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
-    "phone" : "1 (888) 888-8888",
-    "email" : "sales@greatidea.io",
+  contact: {
+    "contact-h4": "Contact",
+    address: "123 Way 456 Street Somewhere, USA",
+    phone: "1 (888) 888-8888",
+    email: "sales@greatidea.io"
   },
-  "footer": {
-    "copyright" : "Copyright Great Idea! 2018"
-  },
+  footer: {
+    copyright: "Copyright Great Idea! 2018"
+  }
 };
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+let navItem1 = document.querySelectorAll("nav a");
+navItem1[0].innerHTML = siteContent["nav"]["nav-item-1"];
 
+let navItem2 = document.querySelectorAll("nav a");
+navItem2[1].innerHTML = siteContent["nav"]["nav-item-2"];
 
+let navItem3 = document.querySelectorAll("nav a");
+navItem3[2].innerHTML = siteContent["nav"]["nav-item-3"];
 
-let navItem1 = document.querySelectorAll("nav a"); 
-navItem1[0].innerHTML = siteContent["nav"]["nav-item-1"]
+let navItem4 = document.querySelectorAll("nav a");
+navItem4[3].innerHTML = siteContent["nav"]["nav-item-4"];
 
-let navItem2 = document.querySelectorAll("nav a"); 
-navItem2[1].innerHTML = siteContent["nav"]["nav-item-2"]
+let navItem5 = document.querySelectorAll("nav a");
+navItem5[4].innerHTML = siteContent["nav"]["nav-item-5"];
 
-let navItem3 = document.querySelectorAll("nav a"); 
-navItem3[2].innerHTML = siteContent["nav"]["nav-item-3"]
-
-let navItem4 = document.querySelectorAll("nav a"); 
-navItem4[3].innerHTML = siteContent["nav"]["nav-item-4"]
-
-let navItem5 = document.querySelectorAll("nav a"); 
-navItem5[4].innerHTML = siteContent["nav"]["nav-item-5"]
-
-let navItem6 = document.querySelectorAll("nav a"); 
+let navItem6 = document.querySelectorAll("nav a");
 navItem6[5].innerHTML = siteContent["nav"]["nav-item-6"];
 
-
-
-
-
 let ctaText = document.querySelector(".cta-text h1");
-ctaText.innerHTML = (siteContent["cta"]["h1"]);
+ctaText.innerHTML = siteContent["cta"]["h1"];
 
 let ctaButton = document.querySelector(".cta-text button");
-ctaButton.innerHTML = (siteContent["cta"]["button"]);
+ctaButton.innerHTML = siteContent["cta"]["button"];
 
 let ctaImg = document.getElementById("cta-img");
-ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
 let topFeature = document.querySelector(".text-content h4");
 topFeature.innerHTML = siteContent["main-content"]["features-h4"];
@@ -88,7 +86,7 @@ let aboutContent = document.querySelectorAll(".text-content p");
 aboutContent[1].innerHTML = siteContent["main-content"]["about-content"];
 
 let midImg = document.getElementById("middle-img");
-midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
 let bottomService = document.querySelectorAll(".text-content h4");
 bottomService[2].innerHTML = siteContent["main-content"]["services-h4"];
@@ -105,7 +103,7 @@ productContent[3].innerHTML = siteContent["main-content"]["product-content"];
 let visionHead = document.querySelectorAll(".text-content h4");
 visionHead[4].innerHTML = siteContent["main-content"]["vision-h4"];
 
-let visionContent= document.querySelectorAll(".text-content p");
+let visionContent = document.querySelectorAll(".text-content p");
 visionContent[4].innerHTML = siteContent["main-content"]["vision-content"];
 
 let contactHead = document.querySelectorAll(".contact h4");
@@ -120,7 +118,7 @@ contactPhone[1].innerHTML = siteContent["contact"]["phone"];
 let contactEmail = document.querySelectorAll(".contact p");
 contactEmail[2].innerHTML = siteContent["contact"]["email"];
 
-let footerCr= document.querySelector("footer p");
+let footerCr = document.querySelector("footer p");
 footerCr.innerHTML = siteContent["footer"]["copyright"];
 
 let navvy = document.querySelector("nav");
@@ -129,7 +127,7 @@ newChild.innerHTML = "blog";
 navvy.appendChild(newChild);
 
 let containerBod = document.querySelector("body .container");
-containerBod.style.backgroundColor='lightblue';
+containerBod.style.backgroundColor = "lightblue";
 
 let navColor = document.querySelectorAll("nav a");
 for (let i = 0; i < 7; i++) {
@@ -137,57 +135,68 @@ for (let i = 0; i < 7; i++) {
 }
 //DOM-II event listener
 
-
-topFeature.addEventListener('mouseover', event => {
-  event.target.style.color = 'white';
+topFeature.addEventListener("mouseover", event => {
+  event.target.style.color = "white";
 });
 
-topFeature.addEventListener('mouseleave', event => {
-  event.target.style.color = 'purple';
+topFeature.addEventListener("mouseleave", event => {
+  event.target.style.color = "purple";
 });
 
-
-featureContent.addEventListener('mouseover', event => {
-  event.target.style.color = 'white';
+featureContent.addEventListener("mouseover", event => {
+  event.target.style.color = "white";
 });
 
-featureContent.addEventListener('mouseleave', event => {
-  event.target.style.color = 'purple';
+featureContent.addEventListener("mouseleave", event => {
+  event.target.style.color = "purple";
 });
 
-midImg.addEventListener('click', event => {
- event.target.style.display = 'none' ;
+midImg.addEventListener("click", event => {
+  event.target.style.display = "none";
 });
 
-ctaImg.addEventListener('mouseover', event => {
-  event.target.style.display = 'none' ;
+ctaImg.addEventListener("mouseover", event => {
+  event.target.style.display = "none";
 });
 
-ctaButton.addEventListener('dblclick', event => {
-  event.target.style.backgroundColor= 'red';
+ctaButton.addEventListener("dblclick", event => {
+  event.target.style.backgroundColor = "red";
 });
 
 // containerBod.addEventListener('keypress', event =>{
 //   event.target.style.color='white';
 //   })
 
-   
-ctaButton.addEventListener('blur', event => {
-  event.target.style.backgroundColor='green';
+ctaButton.addEventListener("blur", event => {
+  event.target.style.backgroundColor = "green";
 });
 
-featureContent.addEventListener('select', event =>{
-event.style.backgroundColor= 'white';
+featureContent.addEventListener("select", event => {
+  event.style.backgroundColor = "white";
 });
 
+logo.addEventListener(
+  "dragend",
+  event => {
+    dragged = event.target;
+    // make it half transparent
+    event.target.style.display = "none";
+  },
+  false
+);
 
-logo.addEventListener('dragend', event =>{
-  dragged = event.target;
-  // make it half transparent
-  event.target.style.display = 'none';
-}, false);
+document.addEventListener('keydown', event=>{
+  const keyName = event.key;
+  alert('keydown event\n\n' + 'key: ' + keyName);
+});
 
-// .addEventListener('', event=>{
-// event.style.
+footerCr.addEventListener('click',()=>{
+  console.log("hey");
+  footerCr.classList.add("mega")
+})
 
-// })
+footerCr.addEventListener('dblclick', () =>{
+console.log("hi");
+footerCr.classList.remove("mega")
+}
+)
