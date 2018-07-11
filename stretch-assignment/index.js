@@ -6,7 +6,7 @@ let size=10;
 rockets=(e)=>{e.target.style.order=index;index-=1;};
 
 travelers=(e)=>{
-    interval=setInterval(()=>{size+=5;e.target.style.marginLeft=size+'px';},100);
+    interval=setInterval(()=>{size+=10;e.target.style.marginLeft=size+'px';},500);
     
 }
 reset=(e)=>{
