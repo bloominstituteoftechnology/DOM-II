@@ -153,8 +153,6 @@ document.addEventListener('contextmenu', event => {
 //6. dblclick
 document.addEventListener('dblclick', event => {
   event.stopPropagation();
-  console.log(event);
-  console.log(event.target.style.transform);
   event.target.style.transform = event.target.style.transform == '' ? 'rotate(180deg)' : '';
   // event.stopPropagation();
   // let rot;
