@@ -124,15 +124,12 @@ topContent[0].addEventListener('mouseenter', (event) => {
 });
 
 topContent[1].addEventListener('mouseenter', (event) => {
-  event.target.style.display = "none";
+  event.target.style.visibility = "hidden";
 });
 
-// topContent[0].addEventListener('mouseout', (event) => {
-//   event.target.style.visibility = "visible";
-// });
 
 topContent[1].addEventListener('mouseout', (event) => {
-  event.target.innerHTML = siteContent["main-content"]["about-content"];
+  event.target.style.visibility = "visible";
 });
 
 middleImage.addEventListener('dblclick', () => {
@@ -163,5 +160,5 @@ logo.addEventListener('contextmenu', event => {
 console.log(contactContent);
 
 contactContent.forEach(() => {
-  addEventListener('keypress', () => { TweenLite.to(contactContent, 2.5, { ease: Bounce.easeOut, y: -50 });
+  addEventListener('keypress', (event) => { TweenLite.to(contactContent, 2.5, { ease: Bounce.easeIn, y: -50 });
 })});
