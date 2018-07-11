@@ -69,8 +69,7 @@ midImg.setAttribute('src', siteContent["cta"]["img-src"])
 let rightImg = document.getElementById("middle-img");
 rightImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-let aboutContent = document.querySelector(".top-content .text-content"); 
-aboutContent.innerHTML = ("p", siteContent["main-content"]["about-content"])
+
 
 // 
 let textPtag = document.querySelectorAll("p");//top-content
@@ -80,15 +79,19 @@ console.log(textH4tag)
  textH4tag[0].innerHTML = siteContent["main-content"]["features-h4"];
  textPtag[0].innerHTML = siteContent["main-content"]["features-content"];
 
+//  let aboutContent = document.querySelector(".top-content .text-content"); 
+//   aboutContent.innerHTML = ("p", siteContent["main-content"]["about-content"])
+
+
  textH4tag[1].innerHTML = siteContent["main-content"]["about-h4"];
  textPtag[1].innerHTML = siteContent["main-content"]["about-content"];
  textH4tag[2].innerHTML = siteContent["main-content"]["services-h4"];
  textPtag[2].innerHTML = siteContent["main-content"]["services-content"];
-textH4tag[3].innerHTML = siteContent["main-content"]["product-h4"];
-textPtag[3].innerHTML = siteContent["main-content"]["product-content"];
-textH4tag[4].innerHTML = siteContent["main-content"]["vision-h4"];
+ textH4tag[3].innerHTML = siteContent["main-content"]["product-h4"];
+ textPtag[3].innerHTML = siteContent["main-content"]["product-content"];
+ textH4tag[4].innerHTML = siteContent["main-content"]["vision-h4"];
 
-textPtag[4].innerHTML = siteContent["main-content"]["vision-content"];
+ textPtag[4].innerHTML = siteContent["main-content"]["vision-content"];
 
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
