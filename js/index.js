@@ -191,12 +191,14 @@ document.addEventListener('keydown', event=>{
 });
 
 footerCr.addEventListener('click',()=>{
-  console.log("hey");
+  console.log("big");
   footerCr.classList.add("mega")
 })
 
 footerCr.addEventListener('dblclick', () =>{
-console.log("hi");
+console.log("lil");
 footerCr.classList.remove("mega")
 }
 )
+
+TweenMax.to(ctaText,10,{x:400,backgroundColor:"red"});
