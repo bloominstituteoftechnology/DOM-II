@@ -202,3 +202,4 @@ footerCr.classList.remove("mega")
 )
 
 TweenMax.to(ctaText,10,{x:400,backgroundColor:"red"});
+TweenMax.to(ctaButton,10,{x:400, rotation:360, scale:0.5});
