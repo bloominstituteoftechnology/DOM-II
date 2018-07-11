@@ -37,7 +37,7 @@ const siteContent = {
   },
 };
 
-//global variables
+//variable for scroll rotation
 let deg = 0;
 
 // Example: Update the img src for the logo
@@ -52,7 +52,7 @@ navLinks.forEach((nav, pos) => nav.innerText = siteContent.nav[`nav-item-${pos+1
 
 //cta
 let ctaBox = document.querySelector('.cta .cta-text');
-ctaBox.querySelector('h1').innerHTML = siteContent.cta.h1;
+ctaBox.querySelector('h1').innerHTML = siteContent.cta.h1;//innerHTML because I added <br> to siteContent.cta.h1
 ctaBox.querySelector('button').innerText = siteContent.cta.button;
 
 let ctaImg = document.getElementById('cta-img');
@@ -107,6 +107,7 @@ contactParas[2].innerText = siteContent['contact']['email'];
 let footerP = document.querySelector('footer p');
 footerP.innerText = siteContent.footer.copyright;
 
+//initial use of append before creating new text box for prepend, left because why not?
 let newFooterP = document.createElement('p');
 newFooterP.innerText = 'DOM is Great, Inc.';
 document.querySelector('footer').append(newFooterP);
@@ -176,7 +177,7 @@ document.addEventListener('keyup', () =>{
 //9. copy
 document.addEventListener('copy', () =>{
   alert('Why you copying me brah?');
-})
+});
 
 //10. auxclick
 document.addEventListener('auxclick', event=>{
@@ -184,4 +185,33 @@ document.addEventListener('auxclick', event=>{
   setTimeout(() => {
     event.target.style.visibility = 'visible';
   }, 5000);
+});
+
+//experimental animations
+//reimplementation of robbie dance using greensock
+//create lefty and righty, style them, add them to body
+let lefty = document.createElement('div');
+lefty.style = 'position: fixed; z-index: 5; height: 150px; width: 200px; top: 10%; left: 0; transform: rotate(-90deg); transform-origin: bottom left; background-image: url("img/robbie.png"); background-size: contain; visibility: hidden;';
+let righty = document.createElement('div');
+righty.style = 'position: fixed; z-index: 5; height: 150px; width: 230px; background: white; top: 20%; right: 0; transform: rotate(90deg); transform-origin: bottom right; background-image: url("img/shout.png"); background-size: contain; visibility: hidden;'
+document.querySelector('body').append(lefty, righty);
+//add eventListener to first nav link
+navLinks[0].addEventListener('click', event => {
+  let audio = new Audio('audio/6y2h2-xpiz2.ogg');
+  lefty.style.visibility = 'visible';
+  righty.style.visibility = 'visible';
+  lefty.style.animation = "leftRot 6s linear";
+  setTimeout(()=>{
+    lefty.style.animation = "";
+    lefty.style.visibility = 'hidden';
+  }, 6000)
+  audio.play();
+  setTimeout(function(){
+    righty.style.animation = "rightShout 1s linear";
+    setTimeout(function(){
+      righty.style.animation = "";
+      righty.style.visibility = 'hidden';
+    }, 1000);//clean up after animation
+  }, 5250);//wait 5.25 seconds to add the animation(timing it to the shout)
+
 })
