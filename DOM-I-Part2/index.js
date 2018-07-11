@@ -37,6 +37,8 @@ const siteContent = {
   },
 };
 
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -132,6 +134,11 @@ container.addEventListener('click', (event) => {
   footer.style.fontSize = '200%';
 });
 
+container.addEventListener('dblclick', (event) => {
+  footer.style.color = 'black';
+  footer.style.fontSize = '100%';
+});
+
 //--4th event
 const contentHeaders = document.querySelectorAll('.text-content h4');
 contentHeaders.forEach(i => i.addEventListener('mouseover', (event) => {
@@ -171,9 +178,29 @@ bottomContentText.forEach(i => i.addEventListener('dblclick', (event) => {
 
   //--10th event
 ctaImg.addEventListener('dblclick', (event) => {
-  event.target.style.transform = 'rotate(180deg)';
+  event.target.style.transform = 'rotate(0deg)';
   event.stopPropagation();
 });
+
+//--additional events
+trailer.addEventListener('mouseover', (event) => {
+  event.target.style.opacity = '.3';
+})
+trailer.addEventListener('mouseout', (event) => {
+  event.target.style.opacity = '1';
+})
+
+//--greensock
+const startButton = document.querySelector('.cta-button');
+startButton.addEventListener('click', (event) => {
+  TweenMax.to(logo, 3, {x:-400, opacity: .2, scale:1.5});
+  TweenMax.to(logo, 3, {y:400, opacity: .2, scale:1.5});
+}); 
+
+startButton.addEventListener('dblclick', (event) => {
+  TweenMax.to(logo, 3, {x:-0, opacity: 1, scale:1.});
+  TweenMax.to(logo, 3, {y:0, opacity: 1, scale:1.});
+}); 
 
 //-- string functions borrowed from previous code challenges
 function reverseCase(str) {
