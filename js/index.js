@@ -46,10 +46,11 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //nav
 const container = document.querySelector('.container');
+const headerBar = document.querySelector('.header');
 
 let nav = document.querySelector("nav");
 let navBar= document.querySelectorAll("nav a");
-let topText = document.querySelectorAll('top-content')
+
 
 let navLink1 = document.createElement("a");
 let navLink2 = document.createElement("a");
@@ -60,6 +61,7 @@ let text2 = document.createTextNode("Existential Dread");
 let ctaHeader = document.querySelector(".cta-text h1");
 let ctaButton = document.querySelector(".cta-text button");
 let ctaLogo = document.querySelector("#cta-img");
+
 
 //main content
 
@@ -142,7 +144,7 @@ footer.innerHTML = siteContent["footer"]["copyright"];
 // EVENT LISTENERS
 
 window.addEventListener('keyup', (event) => {
-  alert ("Did you mean to do that?");
+  console.log ("Did you mean to do that?");
   event.preventDefault();
 });
 
@@ -166,27 +168,32 @@ window.addEventListener('resize', (event) => {
   event.preventDefault();
 });
 
-container.addEventListener('click', (event) => {
-  console.log ("What're you clicking there for?");
-  event.stopPropagation();
+nav.addEventListener("mousedown", (event) =>
+ {event.target.style.color = "lavender";
+ event.stopPropagation();
+ event.preventDefault();
+});
+
+container.addEventListener("mouseup", (event) =>
+ {event.target.style.color = "black";
+ event.stopPropagation();
+ event.preventDefault();
 });
 
 container.addEventListener('copy', (event) => {
   alert ("Are you about to plaigarize this content?");
   event.stopPropagation();
+  event.preventDefault();
 });
 
 container.addEventListener('cut', (event) => {
   alert ("I'll cut you first!");
   event.stopPropagation();
-});
+  event.preventDefault();
+}); 
 
-ctaLogo.addEventListener('dragstart', (event) => {
-  console.log ("Where are you taking me?!");
-  event.stopPropagation();
-});
 
-ctaButton.addEventListener('mouseup', (event) => {
-  alert ("Are you sure you want to leave this page?");
+logo.addEventListener('click', (event) => {
+  TweenMax.to(".logo", 1, {x:300, opacity:0, scale:0.5});
   event.stopPropagation();
 });
