@@ -116,8 +116,16 @@ window.addEventListener("beforeunload", function (event) {
 logo.addEventListener("click", (event) => {
   console.log("button was clicked!");
   logo.classList.add('rot');
+  logo.classList.remove('logo');
   event.stopPropagation();
 });
+
+logo.addEventListener("animationend",(event)=> {
+  let computedStyle = window.getComputedStyle(logo),
+        marginLeft = computedStyle.getPropertyValue('margin-left');
+    logo.style.marginLeft = marginLeft;
+    event.stopPropagation();
+})
 
 logo2.addEventListener("mouseleave", (event) => {
   console.log("mouse out");

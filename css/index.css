@@ -97,12 +97,12 @@ header .logo {
     margin: 28px 0 0 91px;
 }
 
-header.rot{
-    align-self: stretch;
-    margin: 0;
-    animation-name: rotate;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
+header .rot{
+    align-self: flex-end;
+    margin: 28px 0 0 91px;
+    animation-name: slide;
+    animation-duration: 8s;    
+    
 }
 
 /* Call To Action (CTA) Styles */
@@ -144,6 +144,7 @@ header.rot{
     animation-duration: 8s;
     animation-iteration-count: infinite; 
     animation-play-state: running;
+    animation-timing-function: linear;
 }
 
 #cta-img.lve {        
@@ -323,11 +324,10 @@ footer {
 
 @keyframes slide {
     from {
-        
-        transform: rotate(0deg);
+        transform: translateX(0) rotate(0deg);        
     }
-    to {
-        
-        transform: rotate(360deg);
+  
+    to {      
+        transform: translateX(300%) rotate(360deg);        
     }
-}
+  }
