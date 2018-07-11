@@ -153,16 +153,20 @@ document.addEventListener('contextmenu', event => {
 //6. dblclick
 document.addEventListener('dblclick', event => {
   event.stopPropagation();
-  let rot;
-  let att = event.target.getAttribute('flipped');
-  if(att == 'true'){
-    event.target.setAttribute('flipped', 'false');
-    rot = 0;
-  }else{
-    event.target.setAttribute('flipped', 'true');
-    rot = 180;
-  }
-  event.target.style.transform = `rotate(${rot}deg)`;
+  console.log(event);
+  console.log(event.target.style.transform);
+  event.target.style.transform = event.target.style.transform == '' ? 'rotate(180deg)' : '';
+  // event.stopPropagation();
+  // let rot;
+  // let att = event.target.getAttribute('flipped');
+  // if(att == 'true'){
+  //   event.target.setAttribute('flipped', 'false');
+  //   rot = 0;
+  // }else{
+  //   event.target.setAttribute('flipped', 'true');
+  //   rot = 180;
+  // }
+  // event.target.style.transform = `rotate(${rot}deg)`;
 });
 
 //7. keydown
