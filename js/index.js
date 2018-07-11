@@ -193,7 +193,12 @@ container.addEventListener('cut', (event) => {
 }); 
 
 
-logo.addEventListener('click', (event) => {
-  TweenMax.to(".logo", 1, {x:300, opacity:0, scale:0.5});
-  event.stopPropagation();
-});
+// logo.addEventListener('click', (event) => {
+//   TweenMax.to(".logo", 1, {x:300, opacity:0, scale:0.5});
+//   event.stopPropagation();
+// });
+
+// mainContentText[0].addEventListener('click', (event) => {
+//   TweenMax.to("mainContentText[0]", 1, {x:300, opacity:0, scale:0.5});
+//   event.stopPropagation();
+// });
