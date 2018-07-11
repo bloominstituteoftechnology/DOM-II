@@ -1,13 +1,3 @@
-// map stuff
-var mymap = L.map('mapid').setView([-97.9753, 30.6263], 13);
-
-L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1Ijoicm9kYWNvcmFtIiwiYSI6ImNqamc4NDJ3ZzRtdXYzdm9ocjQ4bzgxdWIifQ.nS7KJtRnAoH39kMtXz1Y9g',
-}).addTo(mymap);
-
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -61,15 +51,42 @@ customButton.addEventListener("click", () => {
 let contactArea = document.querySelector(".contact h4");
 contactArea.addEventListener("mouseover", (e) => {
   // TweenMax.to(".contact", 1.5, {y:25});
-  document.querySelector("#mapid").style.display = "block";
+  document.querySelector("#map").style.display = "block";
 });
 
-// // map stuff
-// var mymap = L.map('mapid').setView([-96.291, 30.676], 4);
+//MapId
+// var map = L.map('map').setView([30.26, -97.74], 10);
+// L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ',
+//     maxZoom: 18
+// }).addTo(map);
 
-// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//     maxZoom: 18,
-//     id: 'mapbox.streets',
-//     accessToken: 'pk.eyJ1Ijoicm9kYWNvcmFtIiwiYSI6ImNqamc4NDJ3ZzRtdXYzdm9ocjQ4bzgxdWIifQ.nS7KJtRnAoH39kMtXz1Y9g',
-// }).addTo(mymap);
+// var marker = new L.Marker([30.27, -97.77], {
+//   icon: icon_normal
+// });
+
+// map.addLayer(marker);
+// var popup = L.popup()
+//     .setContent('<p>Zilker Park</p>');
+// marker.bindPopup(popup).openPopup();
+
+var map = L.map('map').setView([30.27, -97.70], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> ',
+    maxZoom: 18
+}).addTo(map);
+
+// var icon_normal = new L.icon({
+//     iconUrl: 'http://cdn.leafletjs.com/leaflet-0.6.4/images/marker-icon.png',
+//     iconAnchor: [12, 41],
+//     popupAnchor: [0, -41]
+// });
+
+var marker = new L.Marker([30.27, -97.77], {
+    icon: icon_normal
+});
+
+map.addLayer(marker);
+var popup = L.popup()
+    .setContent('<p>Zilker Park</p>');
+marker.bindPopup(popup).openPopup();
