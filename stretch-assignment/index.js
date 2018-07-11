@@ -3,7 +3,7 @@
    //Moving boxes to the right side of the screen when pressing right mouse click
    //Goes back to start position after releasing the left mouse button
    
-   let redBox = TweenMax.to(".block--red", 5, {x:600, paused: true});
+  /*  let redBox = TweenMax.to(".block--red", 5, {x:600, paused: true});
 
    let blockRed = document.querySelector(".block--red");
    blockRed.onmousedown = () => {
@@ -51,7 +51,7 @@
    }
    blockGray.onmouseup = () => {
        grayBox.reverse();
-   }
+   } */
 
 
    
