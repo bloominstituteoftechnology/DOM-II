@@ -160,14 +160,26 @@ document.addEventListener('keypress', (event) => {
 });
 
 for (const paragraph of paragraphs){
-  console.log(paragraph)
   paragraph.addEventListener('dblclick', event => {
     console.log('trigered')
       console.log(event.target)
     event.target.fontSize = event.target.fontSize + 10
       console.log(event.target.fontSize)
   })
+
+  paragraph.addEventListener('select', event => {
+      alert('do you want to copy this')
+  }, false)
 }
+
+const navElement = document.getElementsByTagName('nav')[0]
+navElement.addEventListener('focus', event => {
+    event.target.style.background = 'black'
+})
+
+navElement.addEventListener('blur', event => {
+    event.target.style.background = ''
+})
 
 
 
