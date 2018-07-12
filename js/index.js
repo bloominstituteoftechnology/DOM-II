@@ -181,5 +181,21 @@ navElement.addEventListener('blur', event => {
     event.target.style.background = ''
 })
 
+document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    alert('keydown event\n\n' + 'key: ' + keyName);
+});
+
+function changeBacground(){
+  document.getElementsByTagName('body')[0].color = 'grey'
+}
+
+window.addEventListener('scroll', function(e) {
+
+    window.requestAnimationFrame(function() {
+        changeBacground()
+    })
+});
+
 
 
