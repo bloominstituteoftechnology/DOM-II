@@ -20,3 +20,12 @@ document.addEventListener("wheel", (event) => {
         mainNav.style.opacity = "0.5";
     }
 });
+
+// mouse over and mouse leave event listeners
+introImg.addEventListener("mouseover", (event) => {
+    introImg.src = "../img/fun-bus-invert.jpg";
+});
+
+introImg.addEventListener("mouseleave", (event) => {
+    introImg.src = "../img/fun-bus.jpg";
+});
