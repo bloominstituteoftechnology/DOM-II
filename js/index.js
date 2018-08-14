@@ -29,3 +29,16 @@ introImg.addEventListener("mouseover", (event) => {
 introImg.addEventListener("mouseleave", (event) => {
     introImg.src = "../img/fun-bus.jpg";
 });
+
+// on click and mouse over event
+funImg.addEventListener("mouseover", (event) => {
+    funImg.addEventListener("click", (event) => {
+        funImg.src = "../img/fun-over.jpg";
+        adventureHeading.innerText = "Blood Awaits";
+        var audio = new Audio('/js/noo.mp3');
+        audio.play();
+    });
+    event.target.style.cursor = "pointer";
+});
+
+
