@@ -64,6 +64,9 @@ document.addEventListener("keydown", event => {
     } else if (event.keyCode === 88) { // rotate right X
       imgAdventure.style.transform = "rotate(90deg)";
       keysH2.innerHTML = "<h2>ROTATE RIGHT</h2>";
+    } else if (event.keyCode === 65) { // animation start A
+        keysH2.innerHTML = "<h2>The Page Is Bleeding!</h2>";
+        TweenMax.to("img", 5, {boxShadow:"0px 0px 600px red", color:"#FC0"});
     }
   });
 
