@@ -9,6 +9,7 @@ const contentPick = document.querySelector(".content-pick");
 const destination =document.querySelectorAll(".destination");
 const funBusImg = document.getElementById("fun-bus-img");
 const footerP = document.querySelector(".footer p");
+const welcomeToFunBus = document.querySelector(".home .intro h2");
 
 logoHeading.addEventListener("mouseenter", () => {
     logoHeading.style.fontWeight = "bold";
@@ -84,6 +85,13 @@ Array.from(destination).forEach(elem => {
         event.currentTarget.style.background = "gray";
     });
 });
+
+document.addEventListener("keypress", (event) => {
+    const key = event.key;
+    welcomeToFunBus.innerText = `Welcome To Fun Bus! (You pressed the ${key} key)`;
+});
+
+document.addEventListener("fullscreenchange", () => {});
 
 const secretMsgDiv = document.createElement("DIV");
 const secretMsg = document.createElement("P");
