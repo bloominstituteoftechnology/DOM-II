@@ -39,6 +39,10 @@ img {
   height: auto;
 }
 
+.hide-this {
+  display: none;
+}
+
 .container {
   max-width: 800px;
   width: 100%;
@@ -48,4 +52,37 @@ img {
     width: 90%;
     margin: 0 5%;
   }
+}
+
+.cover {
+  background-image: url(../img/fun-people.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70% 500px;
+  margin: 0 auto;
+  width: 100%;
+  height: 760px;
+  text-align: center;
+  font-size: 8rem;
+  color: black;
+  padding-top: 20px;
+  background-color: tan;
+}
+
+.animation{
+  transform: translateX(10px) translateY(10px);
+  box-shadow: -10px -10px @button-bg;
+  transition: all 1s linear;
+}
+
+.context {
+  display: none;
+  border: 1px solid black;
+  font-size: 10rem;
+  justify-content: center;
+  position: sticky;
+}
+
+.flex-context {
+  display: flex;
 }
