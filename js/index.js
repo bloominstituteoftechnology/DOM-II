@@ -42,6 +42,10 @@ Array.from(images).forEach(image => {
 Array.from(aLinks).forEach(a => {
     a.addEventListener("focus", (event) => {
         event.target.style.fontStyle = "italic";
+        event.target.style.fontWeight = "900";
+    });
+    a.addEventListener("click", (event) => {
+        event.preventDefault();
     });
 });
 
