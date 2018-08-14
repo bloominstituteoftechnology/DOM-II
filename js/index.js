@@ -66,3 +66,16 @@ window.addEventListener('scroll', function () {
        select('body').style.background = "#fff";
    }
 });
+
+// *** Change Event ***
+const inputBox = select('#custom-h2-text');
+inputBox.addEventListener('change', function () {
+   const h1Logo = select('.logo-heading');
+   h1Logo.innerText = inputBox.value;
+
+   // *** Submit Event with preventDefault method ***
+   const h1LogoForm = select('#h1-text-form');
+    h1LogoForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+    })
+});
