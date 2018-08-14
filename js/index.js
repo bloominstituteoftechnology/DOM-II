@@ -16,7 +16,10 @@ const allH4Text = document.querySelectorAll("h4");
 navigation.addEventListener('mouseover', (event) => {
   console.log("We sensed a mouse dancing above a link.");
   event.stopPropagation();
-});
+  });
+  navigation.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
 logoHeading.addEventListener('click', (event) => {
   event.currentTarget.parentNode.style.color = "red";
   console.log("Ouch! That hurt!");
@@ -34,9 +37,16 @@ headerIntro.addEventListener('mouseover', (event) => {
     event.stopPropagation();
   });
 });
-mainPage.addEventListener('load', () => {
-  // work in progress - headerIntro
-})
-textContent.addEventListener('dblclick', (event) => {
-  console.log("I see you like to scroll. Me too.");
+mainPage.addEventListener('keydown', (event) => {
+  console.log("OI! You're pressing the keys too hard! STAHP");
+});
+headerIntro.addEventListener('dblclick', (event) => {
+  console.log("I see you like to doubleclick. Me too.");
+});
+buttons.addEventListener('mouseover', (event) => {
+  event.currentTarget.style.width = "110%";
+  buttons.addEventListener('mouseleave', (event) => {
+    console.log("C'mon, why did you leave?");
+    event.currentTarget.style.width = "100%";
+  })
 });
