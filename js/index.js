@@ -1,18 +1,14 @@
 /*[ Element selectors ]*/
 
-const tracker = document.querySelectorAll('.tracker p')
+const tracker = document.querySelectorAll('.tracker p');
 const busImg = document.querySelector('.intro img');
 const footer = document.querySelector('footer');
-const destinationP = document.querySelectorAll('.destination p')
+const destinationP = document.querySelectorAll('.destination p');
 const boatImg = document.querySelector('.content-destination img');
-const signMeUp = document.querySelectorAll('.destination .btn')
+const signMeUp = document.querySelectorAll('.destination .btn');
+const firstP = document.querySelector('p');
 const navItems = document.querySelectorAll('.nav a');
-const 
-
-/*[ Element selectors ]*/
-
-
-
+const intro = document.querySelector('.intro');
 
 /*[ Event listeners ]*/
 
@@ -22,8 +18,9 @@ window.addEventListener('load', () => {
 });
 
 //Click the bus
-busImg.addEventListener('click', () => {
+busImg.addEventListener('click', (event) => {
   tracker[2].style.color = 'lime';
+  event.stopPropagation();
 });
 
 //Resize the window
@@ -74,14 +71,17 @@ boatImg.addEventListener('drag', () => {
   tracker[7].style.color = 'lime';
 });
 
-//Drop it here
-boatImg.addEventListener('drop', () => {
+//Copy text from first paragraph
+firstP.addEventListener('copy', () => {
+  
   tracker[9].style.color = 'lime';
 });
 
 
-//Prevent propagation
-
+//Prevent propagation (see 'Click the Bus' above)
+intro.addEventListener('click', () => {
+  tracker[2].style.color = 'red';
+});
 
 
 //Stop nav refresh
