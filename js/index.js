@@ -8,11 +8,17 @@ const freakyClick = document.querySelector(".freaky-click");
 const imgDst = document.querySelector(".img-dst");
 const imgAdventure = document.querySelector(".img-adv");
 const keysH2 = document.querySelector(".keys-h2");
+const copyChallenge = document.querySelector(".copy-challenge");
+const selectText = document.querySelector(".select-text");
+const nav1 = document.querySelector(".nav-1");
+const nav2 = document.querySelector(".nav-2");
+const nav3 = document.querySelector(".nav-3");
+const nav4 = document.querySelector(".nav-4");
 
 
 // add event listeners
 
-// on scroll wheel event
+//  1 on scroll wheel event
 document.addEventListener("wheel", (event) => {
     mainNav.style.backgroundColor = "#333";
     mainNav.style.color = "#fff";
@@ -23,7 +29,7 @@ document.addEventListener("wheel", (event) => {
     }
 });
 
-// mouse over and mouse leave event listeners
+// 2 , 3 mouse over and mouse leave event listeners
 introImg.addEventListener("mouseover", (event) => {
     introImg.src = "../img/fun-bus-invert.jpg";
 });
@@ -32,7 +38,7 @@ introImg.addEventListener("mouseleave", (event) => {
     introImg.src = "../img/fun-bus.jpg";
 });
 
-// on click and mouse over event
+// 4 on click and mouse over event
 funImg.addEventListener("mouseover", (event) => {
     funImg.addEventListener("click", (event) => {
         funImg.src = "../img/fun-over.jpg";
@@ -43,7 +49,7 @@ funImg.addEventListener("mouseover", (event) => {
     event.target.style.cursor = "pointer";
 });
  
-// key down event on the document object
+// 5 key down event on the document object
 document.addEventListener("keydown", event => {
     if (event.keyCode === 37) { // left
       keysH2.innerHTML = "<h2>LEFT</h2>";
@@ -61,13 +67,13 @@ document.addEventListener("keydown", event => {
     }
   });
 
-// dblclick event listener
+// 6 dblclick event listener
 freakyClick.addEventListener("dblclick", (event) => {
     imgAdventure.src = "../img/adventure-josh.jpg";
 });
 
 
-// drag start event listener
+// 7 drag start event listener
 imgAdventure.addEventListener("dragstart", (event) => {
     mainNav.style.backgroundColor = "#303";
     mainNav.style.color = "#f0f";
@@ -77,7 +83,7 @@ imgAdventure.addEventListener("dragstart", (event) => {
         mainNav.style.opacity = "0.8";
     }
 
-    // drag end event listener
+    // 8 drag end event listener
     imgAdventure.addEventListener("dragend", (event) => {
         mainNav.style.backgroundColor = "coral";
         mainNav.style.color = "green";
@@ -91,5 +97,47 @@ imgAdventure.addEventListener("dragstart", (event) => {
     imgAdventure.src = "../img/adventure-josh.jpg";
 });
 
+// 9 copy challenge copy event listener
+copyChallenge.addEventListener("copy", (event) => {
+    for(let i = 0; i < 3; i++) {
+        alert("stop copying me!!!");
+        copyChallenge.innerText = "copy alert copy allert copy allert!!!"
+    }
+});
 
+// 10 cut event listener
+
+selectText.addEventListener("cut", (event) => {
+    for(let i = 0; i < 3; i++) {
+        event.stopPropagation(); // stopping the body event from fireing
+        alert("the correct select alert!!!");
+    }
+});
+
+document.body.addEventListener("cut", (event) => {
+    for(let i = 0; i < 3; i++) {
+        alert("The body version of listener had been triggered!!!");
+    }
+});
+
+// stopping default nav behavior on the nav items
+nav1.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("you clicked a link!!!");
+});
+
+nav2.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("you clicked a link!!!");
+});
+
+nav3.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("you clicked a link!!!");
+});
+
+nav4.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("you clicked a link!!!");
+});
 
