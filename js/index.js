@@ -5,7 +5,7 @@
 // * [ ] `drag / drop`
 // * [ ] `load`
 // * [ ] `focus`
-// * [ ] `resize`
+// * [x] `resize`
 // * [x] `scroll`
 // * [ ] `select`
 // * [ ] `dblclick`
