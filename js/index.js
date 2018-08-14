@@ -47,10 +47,12 @@ welcome.addEventListener('change', () => {
 
 welcomeP.addEventListener('copy', () => {
 	alert("Your such a copy cat!")
+	mainNav.style.backgroundColor = 'red';
 });
 
 letsGoP.addEventListener('contextmenu', () => {
 	alert("right clicking huh. Ok I see what you did there");
+	mainNav.style.backgroundColor = 'yellow';
 });
 
 adventureP.addEventListener('mousemove', (e) => {
