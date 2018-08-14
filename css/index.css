@@ -181,11 +181,17 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
+.main-navigation .redacted {
+  background: red;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.main-navigation .nav-container .remove {
+  background: blue;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container {
@@ -229,8 +235,14 @@ img {
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
+  /* displayNone { */
+  /*     display: none; */
+  /* } */
 }
 .home .intro img {
+  /*     	displayNone { */
+  /*     display: none; */
+  /* } */
   max-width: 100%;
   height: auto;
 }
@@ -350,3 +362,6 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+/* html { */
+/*     background-color:red; */
+/* } */
