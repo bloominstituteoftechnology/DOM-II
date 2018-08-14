@@ -1,6 +1,6 @@
 // Your code goes here
 // * [x] `mouseover`
-// * [ ] `keydown`
+// * [x] `keydown`
 // * [x] `wheel`
 // * [ ] `drag / drop`
 // * [x] `load`
@@ -73,3 +73,9 @@ funBusImage.style.display = 'auto';
 window.addEventListener('select', (event) => {
     alert(`You've selected that text! Great job!`);
 })
+'use strict';
+window.onkeydown = function(event) {
+    if (event.keyCode === 66) {
+        body.classList.toggle('blur');
+    }
+ };
