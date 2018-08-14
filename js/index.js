@@ -9,7 +9,7 @@ const destinationImg = document.querySelector('.destination-img');
 const welcome = document.querySelector('.welcome');
 const adventureText = document.querySelector('.adventure-text');
 const hamburger = document.querySelector('.hamburger');
-const mainNav = document.querySelector('nav');
+const mainNav = document.querySelector('.main-nav');
 const homeTag = document.querySelector('#home-tag');
 const letsGo = document.querySelector('.letsgo');
 const pickDestination = document.querySelector('.pick-destination');
@@ -20,7 +20,7 @@ homeTag.addEventListener('click', (event) => {
 
 // NAV ANIMATION
 hamburger.addEventListener('click', () => { 
-  TweenMax.to("nav", 2, {x:-20, opacity: 1});
+  TweenMax.to(".main-nav", 2, {x:-20, opacity: 1});
 });
 
 //MAIN IMAGE ANIMATION ON CLICK

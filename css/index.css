@@ -258,6 +258,9 @@ img {
 .main-navigation .nav-container h1 {
   cursor: pointer;
 }
+.main-navigation .nav-container .main-nav {
+  opacity: 0;
+}
 .main-navigation .nav-container .hamburger {
   width: 55px;
   height: 55px;
@@ -506,17 +509,14 @@ img {
   font-family: raleway;
 }
 .home #name {
-  background-image: url(../images/name.jpg);
   background-repeat: no-repeat;
   background-position: 5px 7px;
 }
 .home #email {
-  background-image: url(../images/email.png);
   background-repeat: no-repeat;
   background-position: 5px 7px;
 }
 .home textarea {
-  background-image: url(../images/msg.png);
   background-repeat: no-repeat;
   background-position: 5px 7px;
   width: 82%;
