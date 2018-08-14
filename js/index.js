@@ -4,6 +4,8 @@ const buttons = document.querySelectorAll('.btn');
 const mainBody = document.querySelector('body');
 const images = document.querySelectorAll('img');
 const input = document.querySelector('.form-submit');
+const parentContainer = document.querySelector('.container');
+const mainHome = document.querySelector('.home');
 
 // Body
 mainBody.addEventListener('wheel', (event) => {
@@ -18,6 +20,18 @@ window.addEventListener('load', (event) => {
     alert('Page loaded');
 });
 
+// Propagation
+// If stopPropagation is off, parentContainer will change the logo
+// heading to red after being clicked.
+logoHeading.addEventListener('click', (event) => {
+    logoHeading.style.color = 'blue';
+    event.stopPropagation();
+
+    parentContainer.addEventListener('click', (event) => {
+        parentContainer.style.color = 'red';
+    });
+});
+
 // Logo
 logoHeading.addEventListener('mouseenter', (event) => {
     logoHeading.style.cssText = 'color: blue; cursor: pointer;';
@@ -29,6 +43,10 @@ logoHeading.addEventListener('mouseleave', (event) => {
 
 // Nav
 navLink.forEach((elem) => {
+
+    elem.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
 
     elem.addEventListener('mousedown', (event) => {
         elem.style.color = 'red';
