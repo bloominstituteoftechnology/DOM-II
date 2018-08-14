@@ -54,9 +54,10 @@ page.addEventListener('wheel', (event)=>{
 
 // first image gets drag/drop event listener > border radius changes
 let contentImages = document.querySelectorAll('.img-content img');
+contentImages[0].style.borderRadius = 0;
 contentImages[0].addEventListener('drag', (event)=>{
     console.log('Drag event occured.');
-    contentImages[0].style.borderRadius = 0;
+    contentImages[0].style.borderRadius = '10px';
 });
 
 // load event listener on page > logo-heading gets proper size
