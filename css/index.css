@@ -181,7 +181,7 @@ img {
   justify-content: space-around;
   left: 0;
   bottom: 0;
-  background: tan;
+  background: #146161;
   padding: 10px 0;
   width: 100%;
   height: 180px;
@@ -193,8 +193,8 @@ img {
 }
 .tracker p {
   width: 45%;
-  font-weight: bold;
-  color: gray;
+  color: darkgray;
+  text-shadow: 1px 1px 2px black;
 }
 .tracker p input {
   background: burlywood;
