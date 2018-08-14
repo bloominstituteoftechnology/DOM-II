@@ -12,7 +12,7 @@ headerLogo.addEventListener('click', () => {
 //     navSection.classList.toggle('action');
 // });
 
-window.addEventListener('keydown', function() {
+window.addEventListener('keydown', () => {
     document.querySelector('.nav-link').style = 'color: #ff69b4 '; 
   });  
 
@@ -31,12 +31,12 @@ imgAction.addEventListener('mouseover', () => {
 //     });
 // }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
     document.querySelector('.main-navigation').style = 
     'background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);'
   });
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', () => {
     document.querySelector('.footer').style = 
     'background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 90%);'
   });  
