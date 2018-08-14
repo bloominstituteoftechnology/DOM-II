@@ -350,3 +350,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+html body .home #fun-bus-img {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

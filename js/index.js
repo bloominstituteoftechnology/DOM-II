@@ -7,6 +7,7 @@ const pElements = document.querySelectorAll("p");
 const body = document.querySelector("body");
 const contentPick = document.querySelector(".content-pick");
 const destination =document.querySelectorAll(".destination");
+const funBusImg = document.getElementById("fun-bus-img");
 
 logoHeading.addEventListener("mouseenter", () => {
     logoHeading.style.fontWeight = "bold";
@@ -54,8 +55,9 @@ Array.from(pElements).forEach(p => {
         event.target.style.border = "1px solid black";
         event.target.style.borderRadius = "5px";
         event.target.style.padding = "5px";
-        event.target.style.background = "black";
+        event.target.style.background = "#333333";
         event.target.style.color = "white";
+        TweenLite.fromTo(p, 1, {x:-100}, {x:0});
     });
 });
 
@@ -81,3 +83,7 @@ Array.from(destination).forEach(elem => {
         event.currentTarget.style.background = "gray";
     });
 });
+
+// Stretch Goal: Using GSAP
+TweenLite.to(funBusImg, 1, {opacity:"1", width:"800px", height:"240px",});
+// Also added a TweenLite to pElements
