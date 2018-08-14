@@ -61,3 +61,7 @@ document.addEventListener("keydown", event => {
     }
   });
 
+// dblclick event listener
+freakyClick.addEventListener("dblclick", (event) => {
+    imgAdventure.src = "../img/adventure-josh.jpg";
+});
