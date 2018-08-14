@@ -17,11 +17,17 @@ sandBus.addEventListener("mouseout", event => {
 mainNav.addEventListener("click", event => {
   event.target.style.color = "red";
   event.target.style.color = preventDefault();
+  event.stopPropagation();
+
+  welcometofun.addEventListener("click", event => {
+    event.target.style.color = "blue";
+  });
 });
 
 document.addEventListener("keypress", event => {
   const keyName = event.key;
   alert("keydown event\n\n" + "key: " + keyName);
+  welcometofun.style.color = "green";
 });
 
 document.addEventListener("wheel", event => {
