@@ -1,3 +1,71 @@
+@-webkit-keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-ms-keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.bounce {
+  animation: bounceIn 2s;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -187,6 +255,13 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+.main-navigation .nav-container h1 {
+  cursor: pointer;
+}
+.main-navigation .nav-container .hamburger {
+  width: 55px;
+  height: 55px;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container {
     flex-wrap: wrap;
@@ -236,6 +311,29 @@ img {
 }
 .home .intro h2 {
   margin-top: 20px;
+}
+.home .bounce-this {
+  animation: bounceIn 2s;
+}
+.home .grow {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+.home .shrink {
+  transform: scale(0.8);
+  transition: all 0.2s ease-in-out;
+}
+.home .border-color {
+  border: 1px solid black;
+}
+.home .border-color2 {
+  border: 3px solid #17A2B8;
+}
+.home .font-color {
+  color: #17A2B8;
+}
+.home .hide {
+  display: none;
 }
 .home .content-section {
   margin: 30px 0;
@@ -349,4 +447,113 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home #popupForm {
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  background-color: #313131;
+  overflow: auto;
+}
+.home p#close {
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  cursor: pointer;
+}
+.home div#popupSignUp {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  margin-left: -202px;
+  font-family: 'Raleway', sans-serif;
+}
+.home form {
+  max-width: 300px;
+  min-width: 250px;
+  padding: 10px 50px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  font-family: raleway;
+  background-color: #fff;
+}
+.home p {
+  margin-top: 30px;
+}
+.home h2 {
+  background-color: #FEFFED;
+  padding: 20px 35px;
+  margin: -10px -50px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+.home hr {
+  margin: 10px -50px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+.home input[type=text] {
+  width: 82%;
+  padding: 10px;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding-left: 40px;
+  font-size: 16px;
+  font-family: raleway;
+}
+.home #name {
+  background-image: url(../images/name.jpg);
+  background-repeat: no-repeat;
+  background-position: 5px 7px;
+}
+.home #email {
+  background-image: url(../images/email.png);
+  background-repeat: no-repeat;
+  background-position: 5px 7px;
+}
+.home textarea {
+  background-image: url(../images/msg.png);
+  background-repeat: no-repeat;
+  background-position: 5px 7px;
+  width: 82%;
+  height: 95px;
+  padding: 10px;
+  resize: none;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding-left: 40px;
+  font-size: 16px;
+  font-family: raleway;
+  margin-bottom: 30px;
+}
+.home #submit {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  display: block;
+  background-color: #FFBC00;
+  color: #fff;
+  border: 1px solid #FFCB00;
+  padding: 10px 0;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.home span {
+  color: red;
+  font-weight: 700;
+}
+.home button {
+  width: 10%;
+  height: 45px;
+  border-radius: 3px;
+  background-color: #cd853f;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
 }

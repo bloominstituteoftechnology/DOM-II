@@ -30,3 +30,50 @@
     color: @button-bg;
   }
 }
+
+//Animation
+
+.keyframes(@name,@rules) {
+
+  @-webkit-keyframes @name {
+      @rules();
+  }
+
+  @-moz-keyframes @name {
+      @rules();
+  }
+
+  @-ms-keyframes @name {
+      @rules();
+  }
+
+  @-o-keyframes @name {
+      @rules();
+  }
+
+  @keyframes @name {
+      @rules();
+  }
+}
+
+// 2. Use the mixin to create an animation
+
+.keyframes(bounceIn, {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+});
+
+// 3. Apply animation
+
+.bounce {
+  animation: bounceIn 2s;
+}

@@ -4,13 +4,21 @@
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
-
   .nav-container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    h1{
+      cursor: pointer;
+    }
 
+    .hamburger {
+      width: 55px;
+      height: 55px;
+    }
+    
     @media @mobile {
       flex-wrap: wrap;
       justify-content: center;
