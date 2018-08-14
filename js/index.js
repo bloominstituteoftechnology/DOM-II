@@ -7,7 +7,7 @@ homeContainer.addEventListener("click", (event)=>{
 
 const navLink = document.querySelectorAll(".nav-link");
 
-navLink.addEventListener("click", (event))=>{
+navLink.addEventListener("click", (event)=>{
     event.target.style.color = "blue";
 });
 
@@ -20,11 +20,19 @@ introImg.addEventListener("dragstart", () => {
     alert("This image cannot be dragged!");
 });
 
+/*function eventHandler(event) {
+    if (event.type == fullscreenchange) {
+        /* handle a full screen toggle */
+   // } else /* fullscreenerror */ {
+        /* handle a full screen toggle error */
+   // }
+//}*//
+
 let signMeButton = document.querySelectorAll(".btn");
 signMeButton.addEventListener("click", (event) => {
     event.stopPropagation();
     document.querySelector(".container home").style.backgroundColor = getRandomColor(); 
-}	});
+	});
 
 function getRandomColor(){
     let letters= "0123456789ABCDEF";
