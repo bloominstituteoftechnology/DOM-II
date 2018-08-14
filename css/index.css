@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -199,6 +199,9 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .hidden {
+  display: none;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -214,6 +217,14 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.main-navigation .nav-container .menu-img {
+  width: 3%;
+  height: 30%;
+}
+.main-navigation .nav-container .menu-img img {
+  width: 100%;
+  height: 100%;
 }
 .footer {
   width: 100%;
