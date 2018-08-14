@@ -180,6 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  user-select: none;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -194,6 +195,9 @@ img {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .logo-heading {
+  cursor: pointer;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
@@ -203,6 +207,7 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+  height: 100%;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {
@@ -214,6 +219,9 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .footer {
   width: 100%;
@@ -225,6 +233,10 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.footer .debugwindow {
+  display: hidden;
+  color: #ddcaaf;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -349,4 +361,39 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #000000;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content p {
+  padding: 0;
 }
