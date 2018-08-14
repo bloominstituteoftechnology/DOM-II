@@ -12,36 +12,40 @@ let headingTwo = document.querySelectorAll('h2');
 //Make logo-heading Fun Buss tilt and change to gold
 logoHeading.addEventListener('mouseover', () => { 
   console.log('logo-heading Fun Bus was mouseovered');
-logoHeading.classList.toggle('grow')
+  logoHeading.classList.toggle('grow')
 });
 
 logoHeading.addEventListener('mouseleave', () => { 
   console.log('logo-heading Fun Bus was mouseleaved');
-logoHeading.classList.toggle('grow')
+  logoHeading.classList.toggle('grow')
 });
 
 //Make Home aTag turn red when mousedover
-navElement[0].addEventListener('mouseover', () => { 
+navElement[0].addEventListener('mouseover', (event) => { 
+  event.preventDefault();
   console.log('Home anchor tag was mouseovered');
-navElement[0].style.color = 'red';
+  navElement[0].style.color = 'red';
 });
 
 //Make About Us aTag turn orange when mousedover
-navElement[1].addEventListener('mouseover', () => { 
+navElement[1].addEventListener('mouseover', (event) => { 
+  event.preventDefault();
   console.log('About Us anchor tag was mouseovered');
-navElement[1].style.color = 'orange';
+  navElement[1].style.color = 'orange';
 });
 
 //Make Blog aTag turn gold when mousedover
-navElement[2].addEventListener('mouseover', () => { 
+navElement[2].addEventListener('mouseover', (event) => { 
+  event.preventDefault();
   console.log('Blog anchor tag was mouseovered');
-navElement[2].style.color = 'gold';
+  navElement[2].style.color = 'gold';
 });
 
 //Make Contact aTag turn green when mousedover
-navElement[3].addEventListener('mouseover', () => { 
+navElement[3].addEventListener('mouseover', (event) => { 
+  event.preventDefault();
   console.log('Contact anchor tag was mouseovered');
-navElement[3].style.color = 'green';
+  navElement[3].style.color = 'green';
 });
 
 //Make all h2s blueviolet when clicked indivudually
