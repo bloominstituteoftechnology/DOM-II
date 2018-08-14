@@ -5,6 +5,8 @@ const images = document.querySelectorAll("img");
 const aLinks = document.querySelectorAll("a");
 const pElements = document.querySelectorAll("p");
 const body = document.querySelector("body");
+const contentPick = document.querySelector(".content-pick");
+const destination =document.querySelectorAll(".destination");
 
 logoHeading.addEventListener("mouseenter", () => {
     logoHeading.style.fontWeight = "bold";
@@ -55,4 +57,23 @@ Array.from(pElements).forEach(p => {
 
 window.addEventListener("resize", () => {
     logoHeading.innerText = "Fun Bus (resized!)";
+});
+
+// Nested events
+contentPick.style.border = "2px solid black";
+contentPick.style.paddingLeft = "20px";
+contentPick.style.marginBottom = "10px";
+contentPick.style.borderRadius = "10px";
+
+contentPick.addEventListener("click", () => {
+    contentPick.style.background = "darkgray";
+});
+
+Array.from(destination).forEach(elem => {
+    elem.addEventListener("click", (event) => {
+        event.stopPropagation();
+        event.currentTarget.style.borderRadius = "10px";
+        event.currentTarget.style.padding = "5px";
+        event.currentTarget.style.background = "gray";
+    });
 });
