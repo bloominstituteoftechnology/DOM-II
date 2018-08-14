@@ -50,21 +50,22 @@ destinationImg.addEventListener('mouseleave', () => {
     destination.appendChild(text);
 });
 
-//drag/drop
-
 //load
 window.addEventListener('load', () => {
     console.log("All resources finished loading!");
   });
-//focus
 
 //resize
 window.addEventListener('resize', () => {
-    alert(`Don't mess with my perfect pixel, you hear.`);
+    alert(`Don't mess with my perfect pixel.`);
 });
 
-//scroll
-
-//select
+//prevent navigation from refreshing page
+const navTags = document.querySelectorAll('.nav-link');
+for (i=0; i<navTags.length; i++) {
+    navTags[i].addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+};
 
 
