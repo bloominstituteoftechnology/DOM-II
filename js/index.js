@@ -10,6 +10,7 @@ let go = document.querySelector(".text-content h2");
 let images = document.querySelectorAll("img");
 console.log(images);
 let fontColor = "#212529";
+let buttons = document.querySelectorAll(".btn");
 
 //Add event: make logo larger on mouseover and addHover
 logo.addEventListener("click", event => {
@@ -24,7 +25,7 @@ header.addEventListener("mouseover", function(event) {
 
 //Add event: keydown to input field
 input.addEventListener("keydown", event => {
-  headers.innerText = "STOP TYPING!!";
+  go.innerText = "STOP TYPING!!";
 
   headers.forEach(item => {
     item.innerText = "";
@@ -71,6 +72,7 @@ window.addEventListener("scroll", function(event) {
   counter++;
   if (counter > 200) {
     alert("You've scrolled too much!!");
+    counter = 0;
   }
 });
 
@@ -82,4 +84,11 @@ window.addEventListener("resize", function(event) {
 //Add event: load
 window.addEventListener("load", function(event) {
   console.log("It loads!");
+});
+
+// Add event: click
+buttons.forEach(function(btn) {
+  btn.addEventListener("click", function(event) {
+    alert("We will get in contact with you!");
+  });
 });
