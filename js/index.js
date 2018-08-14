@@ -48,8 +48,12 @@ btnArray.map((btn, i) => {
     }
 });
 
-const busImg = select('#busImg');
-console.log(busImg);
-busImg.addEventListener('resize', function (e) {
-   console.log('resizing');
+// *** RESIZE ***
+let count = 0;
+window.addEventListener('resize', function () {
+    const resizeElement = select('#resizePage');
+    console.log('resizing');
+    let text = count += 1;
+    resizeElement.innerText = "Resize event has been fired off " + text + " number of times.";
 });
+
