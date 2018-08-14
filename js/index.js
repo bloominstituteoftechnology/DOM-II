@@ -65,3 +65,22 @@ navLinks.forEach(navLink => {
   e.preventDefault();
   })
 })
+
+
+// Stretch with GSAP
+window.onload = () => {
+  TweenMax.from(".nav-container", 2, {x:-200, ease:Bounce.easeOut});
+  TweenMax.from(".intro", 2, {
+    x:200, ease:Bounce.easeOut, 
+    backgroundColor:"yellow",
+    borderBottomColor:"black",
+    color:"white"
+  });
+  TweenMax.from(".intro img", 2, {
+    x:200, 
+    ease:Bounce.easeOut, 
+    delay:1,
+    opacity: 0,
+    repeat: 1,
+  });
+}
