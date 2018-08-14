@@ -237,8 +237,6 @@ img {
 .home .intro .header-img {
   overflow: hidden;
   z-index: 0;
-}
-.home .intro .header-img img {
   min-width: 100%;
 }
 .home .content-section {

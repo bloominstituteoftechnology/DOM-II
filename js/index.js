@@ -27,12 +27,14 @@ function popNav(){
 navLogo.addEventListener('load', popNav());
 
 navLogo.addEventListener('mouseover', function(){
-    TweenMax.fromTo(navLogo, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
+    TweenMax.fromTo(this, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
 });
-
 navLogo.addEventListener('mouseout', function(){
-    TweenMax.fromTo(navLogo, 1, {scale: 1.15} ,{scale: 1, ease: Elastic.easeOut.config(1, 0.3)});
-})
+    TweenMax.fromTo(this, 1, {scale: 1.15} ,{scale: 1, ease: Elastic.easeOut.config(1, 0.3)});
+});
+navLogo.addEventListener('click', function(){
+    TweenMax.fromTo(this, 1, {scale: .8} ,{scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
+});
 
 
 navLinks.forEach(function(link){
@@ -41,15 +43,20 @@ navLinks.forEach(function(link){
     });
     link.addEventListener('mouseout', function(){
         TweenMax.fromTo(link, 0.3, {scale: 1.15}, {scale: 1, ease: Power1.easeOut});
-    })
+    });
+    link.addEventListener('click', function(){
+        TweenMax.fromTo(link, 1, {scale: .8} ,{scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
+    });
 });
 
 let headerImg = document.querySelector('.header-img > img');
+// headerImg.style.opacity = '0';
+headerImg.addEventListener('load', function(){
+    TweenMax.fromTo(headerImg, 1, {opacity: 0, 'margin-left': -800} , {opacity: 1, 'margin-left': 0, ease: Back.easeOut});
+});
+
 let scrollAmount = 0;
 document.addEventListener('scroll', function(){
     let offset = window.scrollY;
     TweenMax.to(headerImg, 0.1, {scale: 1 + offset/300});
-    console.log(headerImg);
-    console.log(offset);
 });
-
