@@ -106,6 +106,13 @@ contentSectionHeaders[1].addEventListener('dblclick', (event)=>{
 });
 // Nest two similar events somewhere in the site and prevent the event propagation properly
 let inverseContent = document.querySelector('.inverse-content .text-content');
+let dblclickFlag = true;
 inverseContent.addEventListener('dblclick', (event)=>{
-    inverseContent.style.backgroundColor = 'yellow';
-})
+    if(dblclickFlag){
+        inverseContent.style.backgroundColor = 'yellow';
+        dblclickFlag = false;
+    }else{
+        inverseContent.style.backgroundColor = 'transparent';
+        dblclickFlag = true;
+    }
+});
