@@ -1,4 +1,9 @@
 .home {
+  
+
+  
+
+
 
   .intro {
     padding: 90px 0 10px;
@@ -13,6 +18,23 @@
       margin-top: 20px;
     }
   }
+
+
+  .blurBus {
+    filter: blur(3px);
+  
+  }
+  .imageChange{
+    filter: opacity(20%);
+  }
+  .textGrow{
+    font-size: 60px;
+  }
+  .imageGo{
+    filter:contrast(200%);
+  }
+  
+ 
 
   .content-section {
     margin: 30px 0;
@@ -106,8 +128,17 @@
         margin: 0 auto 30px;
       }
       
-      .btn {
+      .btn1 {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+      }
+      .btn2 {
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+      }
+      .btn3 {
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+      }
+      .btn-grow{
+        transition: all 1s ease-in-out;
       }
     }
   }

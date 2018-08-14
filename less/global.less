@@ -8,6 +8,33 @@ html {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  .colorChange{
+    background: linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
+    background-size: 300% 300%;
+    box-sizing: border-box;
+    display: table;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    -webkit-animation: Rainbow 1s ease infinite;
+    -moz-animation: Rainbow 1s ease infinite;
+    animation: Rainbow 1s ease infinite;
+  };
+  
+
+  @-webkit-keyframes Rainbow {
+    0% {
+      background-position: 94% 0%; }
+    50% {
+      background-position: 7% 100%; }
+    100% {
+      background-position: 94% 0%; } }
+
+  .easter{
+    display:none;
+  }
+  
 }
 
 h1, h2, h3, h4, h5 {
@@ -40,12 +67,19 @@ img {
 }
 
 .container {
+
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  
+}
+
 
   @media @mobile {
     width: 90%;
     margin: 0 5%;
   }
-}
+
+  
+
+  

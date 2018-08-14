@@ -5,6 +5,13 @@
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
 
+  
+
+
+  .underline{
+    text-decoration: underline;
+  }
+
   .nav-container {
     height: 100%;
     display: flex;
@@ -42,3 +49,25 @@
     }
   }
 } // .main-navigation
+
+.NewColor{
+  background: linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
+    background-size: 300% 300%;
+    box-sizing: border-box;
+    display: table;
+  
+    margin: 0;
+    position: relative;
+    
+    -webkit-animation: Rainbow 1s ease infinite;
+    -moz-animation: Rainbow 1s ease infinite;
+    animation: Rainbow 1s ease infinite;
+  
+}
+@-webkit-keyframes Rainbow {
+  0% {
+    background-position: 94% 0%; }
+  50% {
+    background-position: 7% 100%; }
+  100% {
+    background-position: 94% 0%; } }
