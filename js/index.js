@@ -1,37 +1,65 @@
 /*[ Element selectors ]*/
 
- const homeContainer = document
+const tracker = document.querySelectorAll('.tracker p')
+const homeContainer = document.querySelector('.home');
+const busImg = document.querySelector('.intro img');
+const footer = document.querySelector('footer');
 
 
- /*[ Event listeners ]*/
-
- //Load page
+/*[ Element selectors ]*/
 
 
- //Click the bus
 
 
- //Scroll the page
+/*[ Event listeners ]*/
 
+//Load page
+homeContainer.addEventListener('load', () => {
 
- //Press any key
+});
 
+//Click the bus
+busImg.addEventListener('click', () => {
+  tracker[2].setAttribute('color', 'green');
+});
 
- //Resize the window
+//Resize the window
+window.addEventListener('resize', () => {
 
+});
 
- //Double-click the copyright footer
+//Scroll the page
+window.addEventListener('scroll', () => {
 
+});
 
- //Mouseover each 'Sign Me Up!' button ~(turn each green)
+//Press any key
+window.addEventListener('keydown', () => {
 
+});
 
- //Highlight some text in the second paragraph
+//Double-click the copyright footer
+footer.addEventListener('dblclick', () => {
 
+});
 
- //Drag the first photo of a boat
+//Mouseover each 'Sign Me Up!' button ~(turn each green)
+window.addEventListener('mouseover', () => {
 
+});
 
- //Drop it somewhere (here will work:)
+//Highlight some text in the third paragraph
+window.addEventListener('highlight', () => {
 
+});
+
+//Drag the second photo of a boat
+window.addEventListener('drag', () => {
+
+});
+
+//Drop it here
+window.addEventListener('drop', () => {
+
+});
  

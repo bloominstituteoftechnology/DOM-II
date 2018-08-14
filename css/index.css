@@ -174,6 +174,31 @@ img {
     margin: 0 5%;
   }
 }
+.tracker {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  left: 0;
+  bottom: 0;
+  background: tan;
+  padding: 10px 0;
+  width: 100%;
+  height: 180px;
+}
+@media (max-width: 500px) {
+  .tracker {
+    height: 260px;
+  }
+}
+.tracker p {
+  width: 45%;
+  font-weight: bold;
+  color: gray;
+}
+.tracker p input {
+  background: burlywood;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -219,6 +244,12 @@ img {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
+  padding-bottom: 180px;
+}
+@media (max-width: 500px) {
+  .footer {
+    padding-bottom: 260px;
+  }
 }
 .footer p {
   text-align: center;

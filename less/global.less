@@ -49,3 +49,30 @@ img {
     margin: 0 5%;
   }
 }
+
+.tracker {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  left: 0;
+  bottom: 0;
+  background: tan;
+  padding: 10px 0;
+  width: 100%;
+  height: 180px;
+
+  @media @mobile {
+    height: 260px;
+  }
+
+  p {
+    width: 45%;
+    font-weight: bold;
+    color: gray;
+
+    input {
+      background: burlywood;
+    }
+  }
+}
