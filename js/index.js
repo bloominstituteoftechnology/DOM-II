@@ -1,7 +1,7 @@
 // Your code goes here
 // * [x] `mouseover`
 // * [ ] `keydown`
-// * [ ] `wheel`
+// * [x] `wheel`
 // * [ ] `drag / drop`
 // * [x] `load`
 // * [x] `focus`
@@ -13,11 +13,12 @@
 let firstPageLoad = true;
 let opacity = 1;
 let width = 0;
+let pSize = 16;
 const mainNav = document.querySelector('.nav-container .nav');
 const funBusImage = document.querySelector('.intro img');
 const universalImgSelect = document.querySelectorAll('img');
 const body = document.querySelector('body');
-const h2Selector = document.querySelectorAll('h2')
+const p = document.querySelectorAll('p');
 funBusImage.style.display = 'auto';
 // janky fade out effect on funBusImage scroll
 window.addEventListener('scroll', (event) => {
@@ -57,4 +58,14 @@ window.addEventListener('focus', (event) => {
 
 window.addEventListener('dblclick', (event) => {
     body.classList.remove('blur');
+})
+
+window.addEventListener('wheel', (event) => {
+p.forEach(param => param.style.fontSize = `${pSize}px`);
+if (pSize <= 1) {
+    pSize = 1;
+} else {
+    pSize -= 1;
+    p.forEach(param => param.style.fontSize = `${pSize}px`);
+}
 })
