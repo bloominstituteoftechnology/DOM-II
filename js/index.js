@@ -8,7 +8,7 @@
 // * [x] `resize`
 // * [x] `scroll`
 // * [ ] `select`
-// * [ ] `dblclick`
+// * [x] `dblclick`
 // .stopPropagation();
 let firstPageLoad = true;
 let opacity = 1;
