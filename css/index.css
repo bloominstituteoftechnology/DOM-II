@@ -271,6 +271,9 @@ img {
     width: 100%;
   }
 }
+.home .content-section .rotate {
+  transform: rotate(180deg);
+}
 .home .inverse-content {
   padding-bottom: 30px;
   border-bottom: 2px dashed #C0C0C0;
