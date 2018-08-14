@@ -327,6 +327,14 @@ img {
   width: 30%;
   margin-bottom: 30px;
 }
+.home .content-pick .destination .dest-h4 {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.home .content-pick .destination .dest-input {
+  width: 200px;
+  margin-bottom: 10px;
+}
 @media (max-width: 500px) {
   .home .content-pick .destination {
     width: 80%;
