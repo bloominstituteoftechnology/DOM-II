@@ -1,3 +1,6 @@
+.hidden {
+  display: none;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -199,6 +202,10 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .logo-heading-clicked {
+  color: white;
+  background: black;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -214,6 +221,9 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.display-none {
+  display: none;
 }
 .footer {
   width: 100%;
@@ -233,6 +243,9 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+}
+.home .intro .display-none {
+  display: none;
 }
 .home .intro h2 {
   margin-top: 20px;
@@ -304,6 +317,9 @@ img {
 }
 .home .content-destination img {
   border-radius: 10px;
+}
+.home .content-destination .charlie {
+  display: none;
 }
 .home .content-pick {
   padding-top: 30px;
