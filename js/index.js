@@ -14,6 +14,8 @@ const nav1 = document.querySelector(".nav-1");
 const nav2 = document.querySelector(".nav-2");
 const nav3 = document.querySelector(".nav-3");
 const nav4 = document.querySelector(".nav-4");
+const btn1 = document.querySelector(".btn-1");
+const vid1 = document.querySelector(".vid-1");
 
 
 // add event listeners
@@ -144,3 +146,6 @@ nav4.addEventListener("click", (event) => {
     alert("you clicked a link!!!");
 });
 
+btn1.addEventListener("click", (event) => {
+    vid1.style.display = "block";
+})
