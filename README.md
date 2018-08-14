@@ -10,25 +10,25 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   
 
-* [ ] Fork the project into your GitHub user account
+* [x] Fork the project into your GitHub user account
 
-* [ ] Clone the forked project into a directory on your machine
+* [x] Clone the forked project into a directory on your machine
 
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] You are now ready to build this project with your preferred IDE
 
   
 
 ## Task 2: Set Up LESS Preprocessor
 
-* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
+* [x] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
 
-* [ ] Open your terminal and navigate to your preprocessing project by using the `cd` command
+* [x] Open your terminal and navigate to your preprocessing project by using the `cd` command
 
-* [ ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
+* [x] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
 
-* [ ] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
+* [x] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
 
-* [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
+* [x] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
 ## Task 3: Create Unique Event Listeners
 
