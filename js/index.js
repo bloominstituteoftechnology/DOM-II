@@ -8,6 +8,7 @@ const body = document.querySelector("body");
 const contentPick = document.querySelector(".content-pick");
 const destination =document.querySelectorAll(".destination");
 const funBusImg = document.getElementById("fun-bus-img");
+const footerP = document.querySelector(".footer p");
 
 logoHeading.addEventListener("mouseenter", () => {
     logoHeading.style.fontWeight = "bold";
@@ -82,6 +83,15 @@ Array.from(destination).forEach(elem => {
         event.currentTarget.style.padding = "5px";
         event.currentTarget.style.background = "gray";
     });
+});
+
+const secretMsgDiv = document.createElement("DIV");
+const secretMsg = document.createElement("P");
+secretMsg.innerText = "You right clicked on the copyright, so you get this secret message.";
+secretMsgDiv.appendChild(secretMsg);
+
+footerP.addEventListener("contextmenu", () => {
+    document.getElementsByClassName("footer")[0].prepend(secretMsgDiv);
 });
 
 // Stretch Goal: Using GSAP
