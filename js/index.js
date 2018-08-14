@@ -67,6 +67,10 @@ window.addEventListener('resize', (e) => {
     alert("MY PIXELS!");
 })
 
-navCont.addEventListener('click', () => { 
-    TweenMax.to(".main-nav", 2, {y:-20, opacity: 1});
+navCont.addEventListener('mouseover', () => { 
+    TweenMax.to(".nav", 2, {x:-70, opacity: 1});
+});
+
+navCont.addEventListener('mouseout', () => { 
+    TweenMax.to(".nav", 1, {x:0, opacity: 1});
 });
