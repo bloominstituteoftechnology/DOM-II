@@ -339,6 +339,7 @@ img {
   color: #FFFFFF;
   border: 1px solid #C0C0C0;
   cursor: pointer;
+  text-align: center;
   font-size: 1.8rem;
 }
 @media (max-width: 500px) {
@@ -349,4 +350,12 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+
+.hide {
+  display: none;
+}
+
+.dragOver {
+  border: 3px dashed red;
 }
