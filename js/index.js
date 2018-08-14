@@ -40,7 +40,8 @@ introH2.addEventListener('dblclick', () => {
 //mouseenter
 const destinationImg = document.querySelector('.content-destination img');
 destinationImg.addEventListener('mouseenter', () => {
-    destinationImg.classList.add('hide');
+    TweenMax.to('.content-destination img', 2, {x:0, opacity: 0})
+    destinationImg.classList.add('hide'); 
     event.stopPropagation();
 });
 
@@ -67,7 +68,7 @@ window.addEventListener('resize', () => {
 const navTags = document.querySelectorAll('.nav-link');
 for (i=0; i<navTags.length; i++) {
     navTags[i].addEventListener('click', (event) => {
-        event.stopPropagation();
+        event.preventDefault();
     });
 };
 
