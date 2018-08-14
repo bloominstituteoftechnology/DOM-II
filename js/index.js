@@ -6,6 +6,7 @@ const images = document.querySelectorAll('img');
 const input = document.querySelector('.form-submit');
 const parentContainer = document.querySelector('.container');
 const mainHome = document.querySelector('.home');
+const navBar = document.querySelector('nav');
 
 // Body
 mainBody.addEventListener('wheel', (event) => {
@@ -41,6 +42,14 @@ logoHeading.addEventListener('mouseleave', (event) => {
     logoHeading.style.color = '#212529';
 });
 
+// navBar.addEventListener('mouseenter', (event) => {
+//     TweenMax.to("nav", 2, {x:-200, opacity: 1});
+// });
+
+// navBar.addEventListener('mouseleave', (event) => {
+//     TweenMax.to("nav", 2, {x:20, opacity: 1});
+// });
+
 // Nav
 navLink.forEach((elem) => {
 
@@ -54,10 +63,12 @@ navLink.forEach((elem) => {
 
     elem.addEventListener('mouseenter', (event) => {
         elem.style.color = 'blue';
+        TweenMax.to(elem, 1, {scale: 1.5});
     });
 
     elem.addEventListener('mouseleave', (event) => {
         elem.style.color = '#212529';
+        TweenMax.to(elem, 1, {scale: 1});
     });
 
 });
@@ -85,10 +96,12 @@ buttons.forEach((elem) => {
     // Change logo style
     logoHeading.addEventListener('mouseenter', (event) => {
         logoHeading.style.cssText = 'color: #17A2B8; cursor: pointer;';
+        TweenMax.to(logoHeading, 1, {scale: 1.5});
     });
     
     logoHeading.addEventListener('mouseleave', (event) => {
         logoHeading.style.cssText = 'color: @white';
+        TweenMax.to(logoHeading, 1, {scale: 1});
     });
 });
 
@@ -96,6 +109,14 @@ buttons.forEach((elem) => {
 images.forEach((elem) => {
     elem.addEventListener('dblclick', (event) => {
         elem.style.cssText = 'opacity: 0.6;';
+    });
+
+    elem.addEventListener('mouseenter', (event) => {
+        TweenMax.to(elem, 1, {scale: 1.05});
+    });
+
+    elem.addEventListener('mouseleave', (event) => {
+        TweenMax.to(elem, 1, {scale: 1});
     });
 });
 
