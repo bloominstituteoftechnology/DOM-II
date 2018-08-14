@@ -6,6 +6,7 @@ const mainPic = document.querySelector('.main-pic');
 const images = document.querySelector('.advpic');
 const imageDiv = document.querySelector('.img-content');
 const funFun = document.querySelector('.logo-heading');
+const navCont = document.querySelector('.nav');
 
 for (let i = 0; i < buttons.length; i++) {
 buttons[i].addEventListener('mouseover', (e) => {
@@ -22,7 +23,7 @@ for (let i = 0; i < buttons.length; i++) {
 for (let i = 0; i < aTags.length; i++) {
 aTags[i].addEventListener('click', (e) => {
     aTags[i].classList.add("greenText");
-    aTags[i].preventDefault();
+    e.preventDefault();
 })
 }
 
@@ -65,3 +66,7 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('resize', (e) => {
     alert("MY PIXELS!");
 })
+
+navCont.addEventListener('click', () => { 
+    TweenMax.to(".main-nav", 2, {y:-20, opacity: 1});
+});
