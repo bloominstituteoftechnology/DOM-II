@@ -4,6 +4,7 @@ let logoHeading = document.querySelector('.logo-heading');
 let navElement = document.querySelectorAll('a');
 let btn = document.querySelectorAll('.btn');
 let headingTwo = document.querySelectorAll('h2');
+let intro = document.querySelector('.intro');
 
 
 
@@ -48,9 +49,14 @@ navElement[3].addEventListener('mouseover', (event) => {
   navElement[3].style.color = 'green';
 });
 
+intro.addEventListener('click', (event) => { 
+  console.log('.intro was clicked');
+});
+
 //Make all h2s blueviolet when clicked indivudually
-headingTwo[0].addEventListener('click', () => { 
-  //console.log('Home anchor tag was mouseovered');
+headingTwo[0].addEventListener('click', (event) => { 
+  console.log('Welcome To Fun Bus! was clicked');
+  event.stopPropagation();
   headingTwo[0].style.color = 'blueviolet';
 });
 headingTwo[1].addEventListener('click', () => { 
