@@ -1,5 +1,5 @@
 // Your code goes here
-document.querySelector('title').innerText = 'Fun Bus Travel Agency - ljnfiawebfila';
+document.querySelector('title').innerText = 'Fun Bus Travel Agency - ????';
 document.querySelector('.content-destination > img').alt = 'I\'m on a boat!';
 
 const navigation = document.querySelectorAll('.nav-link');
@@ -16,4 +16,15 @@ navHead.addEventListener('wheel', (event) => {
     event.currentTarget.style.fontSize = fntSize + 'rem';
     event.stopPropagation();
 });
+
+const bod = document.querySelector('body');
+bod.addEventListener('keydown', (event) => {
+    document.title += event.key;
+});
+
+const introImg = document.querySelector('.intro img');
+introImg.addEventListener('dragstart', (event) => {
+    event.currentTarget.style.transform = 'rotate(180deg)';
+});
+
 
