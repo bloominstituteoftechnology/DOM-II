@@ -88,6 +88,7 @@ Array.from(destination).forEach(elem => {
 
 document.addEventListener("keypress", (event) => {
     const key = event.key;
+    TweenLite.fromTo(welcomeToFunBus, 1, {opacity:0, y: -50}, {opacity:100, y:0});
     welcomeToFunBus.innerText = `Welcome To Fun Bus! (You pressed the ${key} key)`;
 });
 
