@@ -52,9 +52,10 @@ funBusImage.style.display = 'auto';
 //     body.classList.add('blur');
 // })
 
-// window.addEventListener('focus', (event) => {
-//     body.style.color = 'darkgreen';
-// })
+window.addEventListener('focus', (event) => {
+    body.style.color = 'darkgreen';
+    body.classList.remove('blur');
+})
 
 // window.addEventListener('dblclick', (event) => {
 //     body.classList.remove('blur');
@@ -79,3 +80,7 @@ window.onkeydown = function(event) {
         body.classList.toggle('blur');
     }
  };
+
+ window.addEventListener('blur', (event) => {
+    body.classList.add('blur');
+})
