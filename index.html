@@ -8,7 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script src="js/index.js" async></script>
 
   <!--[if lt IE 9]>
@@ -22,10 +22,10 @@
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
       <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Blog</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="http://www.espn.com/">Home</a>
+        <a class="nav-link" href="https://www.facebook.com/">About Us</a>
+        <a class="nav-link" href="https://www.rottentomatoes.com/">Blog</a>
+        <a class="nav-link" href="https://www.youtube.com/">Contact</a>
       </nav>
     </div>
   </header>
@@ -41,6 +41,7 @@
         <h2>Let's Go!</h2>
         <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
         <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
+        <input type="text" id="keyDown">
       </div>
       <div class="img-content">
         <img src="img/adventure.jpg" alt="Let's go on an adventure!">
@@ -64,7 +65,7 @@
     </section>
     <section class="content-pick">
 
-      <div class="destination">
+      <div class="destination" draggable="true">
         <h4>Fun In The Sun</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
         <div class="btn">Sign Me Up!</div>
