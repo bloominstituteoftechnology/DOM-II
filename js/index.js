@@ -31,10 +31,12 @@ window.addEventListener('load', (event) => {
 
 mainNav.addEventListener('mouseenter', (event) => {
     event.currentTarget.style.border = '5px solid orange'; 
+    event.preventDefault();
 });
 
 pageName.addEventListener('mousemove', (event) => {
     event.currentTarget.style.border = '5px solid orange'; 
+    event.stopPropagation();
 })
 
 footer.addEventListener('dblclick', (event) => {
@@ -56,10 +58,11 @@ pageName.addEventListener('mouseleave', (event) => {
 
 background.addEventListener('keydown', (event) => {
     background.style.backgroundColor = 'purple';
+    background.style.color = 'white';
 });
 
 background.addEventListener('keydown', (event) => {
-    background.style.color = 'white';
+    
 });
 
 //  keydown
