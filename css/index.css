@@ -226,6 +226,13 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.blur {
+  -webkit-filter: blur(2px) !important;
+  -moz-filter: blur(2px) !important;
+  -o-filter: blur(2px) !important;
+  -ms-filter: blur(2px) !important;
+  filter: blur(2px) !important;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
