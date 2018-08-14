@@ -12,6 +12,7 @@ const destinationImg = document.querySelector('.destination-img');
 const context = document.querySelector('.context');
 const intro = document.querySelector('.intro');
 const home = document.querySelector('.home');
+const content = document.querySelectorAll('.content');
 
 
 
@@ -42,7 +43,7 @@ headerImg.addEventListener('dblclick', () => {
   headerImg.style.margin = "0 5%";
 });
 
-document.addEventListener('scroll', (event) => {
+document.addEventListener('scroll', () => {
   mainNav.style.backgroundColor = "#17A2B8";
 });
 
@@ -78,4 +79,20 @@ headerImg.addEventListener('click', (event) => {
 
 intro.addEventListener('click', (event) => {
   intro.style.color = "red";
+});
+
+content[0].addEventListener('wheel', (event) => {
+  content[0].getElementsByTagName("h2")[0].innerText = "Don't Go!";
+});
+
+content[1].addEventListener('wheel', (event) => {
+  content[1].getElementsByTagName("h2")[0].innerText = "Come back!";
+});
+
+content[2].addEventListener('wheel', (event) => {
+  content[2].getElementsByTagName("h2")[0].innerText = "I miss you :(";
+});
+
+content[0].getElementsByTagName("p")[0].addEventListener('copy', (event) => {
+  content[0].getElementsByTagName("p")[0].innerText = "Don't copy me!";
 });
