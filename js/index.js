@@ -65,3 +65,31 @@ document.addEventListener("keydown", event => {
 freakyClick.addEventListener("dblclick", (event) => {
     imgAdventure.src = "../img/adventure-josh.jpg";
 });
+
+
+// drag start event listener
+imgAdventure.addEventListener("dragstart", (event) => {
+    mainNav.style.backgroundColor = "#303";
+    mainNav.style.color = "#f0f";
+    for(let i = 0; i < mainNavTags.length; i++) {
+
+        mainNavTags[i].style.color = "#f0f";
+        mainNav.style.opacity = "0.8";
+    }
+
+    // drag end event listener
+    imgAdventure.addEventListener("dragend", (event) => {
+        mainNav.style.backgroundColor = "coral";
+        mainNav.style.color = "green";
+        for(let i = 0; i < mainNavTags.length; i++) {
+    
+            mainNavTags[i].style.color = "green";
+            mainNav.style.opacity = "0.9";
+        }
+    });
+    
+    imgAdventure.src = "../img/adventure-josh.jpg";
+});
+
+
+
