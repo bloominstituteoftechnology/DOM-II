@@ -4,7 +4,6 @@ const buttons = document.querySelectorAll(".btn");
 const images = document.querySelectorAll("img");
 const aLinks = document.querySelectorAll("a");
 const pElements = document.querySelectorAll("p");
-const body = document.querySelector("body");
 const contentPick = document.querySelector(".content-pick");
 const destination =document.querySelectorAll(".destination");
 const funBusImg = document.getElementById("fun-bus-img");
@@ -91,8 +90,6 @@ document.addEventListener("keypress", (event) => {
     TweenLite.fromTo(welcomeToFunBus, 1, {opacity:0, y: -50}, {opacity:100, y:0});
     welcomeToFunBus.innerText = `Welcome To Fun Bus! (You pressed the ${key} key)`;
 });
-
-document.addEventListener("fullscreenchange", () => {});
 
 const secretMsgDiv = document.createElement("DIV");
 const secretMsg = document.createElement("P");
