@@ -164,8 +164,12 @@ img {
   height: auto;
 }
 
-.gold {
-  color: goldenrod;
+.hide-this {
+  display: none;
+}
+
+.yellow {
+  color: yellow;
 }
 
 .container {
@@ -178,6 +182,9 @@ img {
     width: 90%;
     margin: 0 5%;
   }
+
+
+
 }
 .main-navigation {
   width: 100%;
@@ -192,6 +199,16 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+
+/* .main-navigation .nav-container a {
+  opacity: 0;
+} */
+
+.main-navigation .bus-nav {
+  cursor:pointer;
+  height: 50px;
+}
+
 @media (max-width: 500px) {
   .main-navigation .nav-container {
     flex-wrap: wrap;
