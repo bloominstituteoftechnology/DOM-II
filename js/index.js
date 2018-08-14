@@ -72,6 +72,7 @@ for (let i = 0; i < allATags.length; i++) {
 
 
 busNav.addEventListener('click', () => { 
+    
     TweenMax.to(busNav, 2, {
         x:-490, 
         opacity: 0,
@@ -86,7 +87,7 @@ busNav.addEventListener('click', () => {
             ease:Expo.easeIn
         })        
     }, 2)
-
+    event.stopPropogation();
 });
 
 
@@ -136,6 +137,9 @@ adventure.addEventListener('mouseleave', () => {
 
 
 const fun = document.querySelector('.fun-img');
+const awaitH2 = document.querySelector('.await');
+const awaitText = document.querySelector('.await-text');
+const awaitText2 = document.querySelector('.await-text2');
 
 fun.addEventListener('mouseleave', () => {
     fun.style.opacity = "0";
@@ -146,6 +150,13 @@ fun.addEventListener('mouseleave', () => {
     
         fun.addEventListener('mouseleave', () => {
             fun.style.opacity = "1";
+            awaitH2.style.color = "red";
+            awaitH2.innerHTML = "ALL HAIL THE MIGHTY FUN BUS";
+            
+            awaitText.innerHTML = "ALL HAIL THE MIGHTY FUN BUS THE MIGHTY MIGHTY FUN BUS ALL HAIL THE MIGHTY FUN BUS THE MIGHTY MIGHTY FUN BUS ALL HAIL THE MIGHTY FUN BUS THE MIGHTY MIGHTY FUN BUS ALL HAIL THE MIGHTY FUN BUS THE MIGHTY MIGHTY FUN BUS ALL HAIL THE MIGHTY FUN BUS THE MIGHTY MIGHTY FUN BUS";
+            awaitText2.style.backgroundColor = "red";
+            awaitText2.innerHTML = "Where is your bus driver now?";
+
             });
     });
 
@@ -178,6 +189,7 @@ const goText = document.querySelectorAll('.go-text');
 // }
 
 for (let i = 0; i < goText.length; i++) {
+    goText[i].style.cursor = "grab";
     goText[i].addEventListener('click', () => {
         goText[i].style.color = "black";
         goText[i].innerHTML = "Goodbye goodbye baby bye bye bye, so long, farewell, go away go away goodbye, na na na na, na na na na, hey, hey, hey, goodbye, make like a tree and get the heck outta here!"
@@ -186,5 +198,9 @@ for (let i = 0; i < goText.length; i++) {
 }
 
 //10
+ 
+const mainNav = document.querySelector('.main-navigation')
 
-
+mainNav.addEventListener('dblclick', () => {
+    mainNav.style.backgroundColor = "yellow";
+})
