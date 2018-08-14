@@ -9,7 +9,13 @@
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
-
+.blur-filter(@blur) {
+  -webkit-filter: blur(@blur);
+  -moz-filter: blur(@blur);
+  -o-filter: blur(@blur);
+  -ms-filter: blur(@blur);
+  filter: blur(@blur);
+}
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
   .border-radius(15px);
   .center;
