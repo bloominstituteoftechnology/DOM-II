@@ -9,6 +9,10 @@
       height: auto;
     }
 
+    .black-and-white {
+	    filter: grayscale(100%);
+    }
+
     h2 {
       margin-top: 20px;
     }
@@ -108,6 +112,14 @@
       
       .btn {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+      }
+
+      .scaled {
+        transform: scale(1.2);
+      }
+
+      .transformed {
+        transform: skewY(20deg);
       }
     }
   }
