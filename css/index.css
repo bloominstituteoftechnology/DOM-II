@@ -199,6 +199,32 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .dance {
+  color: blue;
+  overflow: hidden;
+  border-right: 0.15em solid pink;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: pink;
+  }
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
