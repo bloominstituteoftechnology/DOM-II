@@ -79,3 +79,19 @@ inputBox.addEventListener('change', function () {
         e.preventDefault();
     })
 });
+
+// *** LOAD ***
+const lambdaIframe = select('#lambdaIframe');
+lambdaIframe.addEventListener('load', function () {
+    const loadedText = select('#iframe-loaded');
+    loadedText.innerText = "Lambda School Iframe Loaded";
+    loadedText.style = "font-size: 30px; font-weight: bold; text-align: center;"
+});
+
+// *** SELECT ***
+const selectTextElement = select('#custom-h2-text');
+selectTextElement.addEventListener('select', function () {
+    const textSelected = select('#textSelected');
+    textSelected.innerText = "You have select the text";
+    console.log('selected');
+});
