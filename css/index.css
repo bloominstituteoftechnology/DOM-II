@@ -162,6 +162,7 @@ p {
 img {
   max-width: 100%;
   height: auto;
+  opacity: 0;
 }
 .container {
   max-width: 800px;
