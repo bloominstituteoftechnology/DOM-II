@@ -46,3 +46,14 @@ window.addEventListener('scroll', function(e) { // 9. scroll
 window.addEventListener('keydown', (e) => { // 10. keydown
   e.which === 32 ? window.open('https://www.youtube.com/watch?v=uSD4vsh1zDA', '_blank') : '';
 })
+
+// Event Propagation
+const intro = document.querySelector('.intro');
+const introH2 = document.querySelector('.intro h2');
+intro.addEventListener('click', (e) => {
+  console.log('intro clicked');
+})
+introH2.addEventListener('click', (e) => {
+  e.stopPropagation();
+  console.log('intro h2 clicked');
+})
