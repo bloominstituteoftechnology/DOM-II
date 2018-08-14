@@ -57,3 +57,12 @@ window.addEventListener('resize', function () {
     resizeElement.innerText = "Resize event has been fired off " + text + " number of times.";
 });
 
+// *** SCROLL ***
+window.addEventListener('scroll', function () {
+   select('#offsetText').innerText = "Current scroll position is " + pageYOffset + "px on the Y axis. At 300px the container background should turn gray";
+   if(pageYOffset >= 300){
+       select('body').style.background = "rgba(0,0,0,0.5";
+   } else {
+       select('body').style.background = "#fff";
+   }
+});
