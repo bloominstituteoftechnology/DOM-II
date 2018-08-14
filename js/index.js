@@ -6,10 +6,10 @@ homeContainer.addEventListener("click", (event)=>{
 });
 
 const navLink = document.querySelectorAll(".nav-link");
-//navLink.style.color = "red";
-navLink.addEventListener("mouseover",function (e)=>{
-    event.target.style.color = "red";
-})
+
+navLink.addEventListener("click", (event))=>{
+    event.target.style.color = "blue";
+});
 
 let introImg = document.getElementById(".intro img");
 
@@ -17,7 +17,7 @@ introImg.addEventListener("mouseenter", () => {
     introImg.style["border-radius"] = "8px";
 });
 introImg.addEventListener("dragstart", () => {
-    prompt("This image cannot be dragged!");
+    alert("This image cannot be dragged!");
 });
 
 let signMeButton = document.querySelectorAll(".btn");
@@ -31,7 +31,7 @@ function getRandomColor(){
     color += letters[Math.floor(Math.random()*16)];
 }
 return color;
-}
+});
 signMeButton.addEventListener("auxclick", (event) =>{
     event.stopPropagation();
     document.querySelector(".container home").style.backgroundColor = "white";
