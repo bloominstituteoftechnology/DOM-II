@@ -8,7 +8,11 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/DirectionalRotationPlugin.min.js"></script>
+  <script type="text/javascript" src="js/greensock/plugins/CSSPlugin.min.js"></script>
+  <script type="text/javascript" src="js/greensock/TweenLite.min.js"></script>
   <script src="js/index.js" async></script>
 
   <!--[if lt IE 9]>
@@ -17,7 +21,7 @@
 </head>
 
 <body>
-
+  
   <header class="main-navigation">
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
@@ -32,18 +36,18 @@
      
   <div class="container home">
     <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
-      <h2>Welcome To Fun Bus!</h2>
-      <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
+      <img class="introImg" src="img/fun-bus.jpg" alt="bus in the sand">
+      <h2 class="welcome">Welcome To Fun Bus!</h2>
+      <p class="welcome-text">Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
     <section class="content-section">
       <div class="text-content">
-        <h2>Let's Go!</h2>
-        <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
+        <h2 class="lets-go">Let's Go!</h2>
+        <p class="adventure-text">Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
         <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
       </div>
       <div class="img-content">
-        <img src="img/adventure.jpg" alt="Let's go on an adventure!">
+        <img class="letsGoImg" src="img/adventure.jpg" alt="Let's go on an adventure!">
       </div>
     </section>
     <section class="content-section inverse-content">
@@ -52,14 +56,14 @@
       </div>
       <div class="text-content">
         <h2>Adventure Awaits</h2>
-        <p>Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
+        <p class="Adventure">Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.</p> 
         <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
       </div>
      
     </section>
     <section class="content-destination">
-      <h2>Pick Your Destination</h2>
-      <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
+      <h2 class="destinationH2">Pick Your Destination</h2>
+      <p class="destinationText">Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
       <img src="img/destination.jpg" alt="Second slide">
     </section>
     <section class="content-pick">
