@@ -8,8 +8,10 @@ const hoverBanner = document.querySelector('.banner');
 const mainNav = document.querySelector('.main-navigation');
 const pageName = document.querySelector('.logo-heading');
 const destinationPic = document.querySelector('.content-destination img');
+const mainHeader = document.querySelector('.welcome')
 const background = document.querySelector('body');
 const footer = document.querySelector('.footer');
+const squareImg = document.querySelector('.img-fluid rounded');
 
 
 // Event Listeners
@@ -65,11 +67,9 @@ background.addEventListener('keydown', (event) => {
     
 });
 
-//  keydown
 
-//  drag / drop
+mainHeader.addEventListener('click', () => {
+    TweenMax.to("h2.welcome", 1, {opacity:0.3});
+});
 
-//  focus
-//  resize
-//  scroll
-//  select
+
