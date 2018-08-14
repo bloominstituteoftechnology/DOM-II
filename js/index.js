@@ -8,4 +8,15 @@ const freakyClick = document.querySelector(".freaky-click");
 const imgDst = document.querySelector(".img-dst");
 
 
+// add event listeners
 
+// on scroll wheel event
+document.addEventListener("wheel", (event) => {
+    mainNav.style.backgroundColor = "#333";
+    mainNav.style.color = "#fff";
+    for(let i = 0; i < mainNavTags.length; i++) {
+
+        mainNavTags[i].style.color = "#fff";
+        mainNav.style.opacity = "0.5";
+    }
+});
