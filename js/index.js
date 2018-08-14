@@ -5,7 +5,8 @@ const h2s = document.querySelector(".intro h2");
 // const words = document.querySelector(".text-content2");
 h2s.addEventListener('mouseenter', (event) => {
     event.target.style.width = '100px';
-})
+    event.stopPropagation();
+});
 
 logo.addEventListener('mousedown', (event) => {
     event.target.style.color = 'red';
@@ -13,10 +14,11 @@ logo.addEventListener('mousedown', (event) => {
 
 logo.addEventListener('mouseup', (event) => {
     event.target.style.color = 'blue';
-})
+});
 
 nav.addEventListener('mouseover', (event) => {
     event.target.style.opacity = 0.5;
+    event.stopPropagation();
 });
 
 nav.addEventListener('mouseout', (event) => {
