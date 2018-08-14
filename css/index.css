@@ -351,3 +351,6 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .content-pick .destination .toggle-btn {
+  background: black !important;
+}

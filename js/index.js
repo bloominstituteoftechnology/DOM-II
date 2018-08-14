@@ -27,18 +27,27 @@ allATags.forEach((item) => {
   });
 });
 
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('toggle-btn');
+    console.log('test');
+  });
+});
 // const mainNav = document.querySelector('.main-navigation');
 // mainNav.addEventListener(
 //   'drag',
 //   (event) => {
 //     // console.log(event);
+//     event.preventDefault();
 //   },
 //   false
 // );
 // mainNav.addEventListener(
 //   'drop',
 //   (event) => {
-//     event.preventDefault();
+//     console.log();
+//     // event.preventDefault();
 //     // x = event.offsetX;
 //     console.log(test);
 //   },
