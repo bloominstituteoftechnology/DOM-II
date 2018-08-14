@@ -7,6 +7,7 @@ const navigation = document.querySelector(".nav");
 const logoHeading = document.querySelector(".logo-heading")
 const headerIntro = document.querySelector(".intro");
 const topImg = document.querySelector(".img-content")
+const buttons = document.querySelectorAll(".btn");
 
 //Multiple items to cache
 const textContent = document.querySelectorAll(".text-content");
@@ -19,7 +20,12 @@ navigation.addEventListener('mouseover', (event) => {
 logoHeading.addEventListener('click', (event) => {
   event.currentTarget.parentNode.style.color = "red";
   console.log("Ouch! That hurt!");
-  console.log("Wait a minute, am I bleeding??")
+  console.log("Wait a minute, am I bleeding??");
+  logoHeading.addEventListener('mouseleave', (event) => {
+    event.currentTarget.parentNode.style.color = "pink";
+    console.log("Be more careful next time!!!");
+    event.stopPropagation();
+  })
 });
 headerIntro.addEventListener('mouseover', (event) => {
   event.currentTarget.style.width = "110%";
@@ -27,4 +33,10 @@ headerIntro.addEventListener('mouseover', (event) => {
     event.currentTarget.style.width = "100%";
     event.stopPropagation();
   });
+});
+mainPage.addEventListener('load', () => {
+  // work in progress - headerIntro
+})
+textContent.addEventListener('dblclick', (event) => {
+  console.log("I see you like to scroll. Me too.");
 });
