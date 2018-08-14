@@ -199,10 +199,10 @@ img {
     font-size: 3rem;
   }
 }
-.main-navigation .nav-container .dance {
-  color: blue;
+.main-navigation .nav-container .type {
+  color: yellow;
   overflow: hidden;
-  border-right: 0.15em solid pink;
+  border-right: 0.15em solid orange;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
@@ -259,6 +259,13 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+  border: 5px solid blue;
+  box-shadow: 10px 10px 5px grey;
+}
+.home .intro .grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border: none;
 }
 .home .intro h2 {
   margin-top: 20px;
