@@ -1,21 +1,24 @@
 // Your code goes here
 //mouseover
+//GSAP
 const logo = document.querySelector(".logo-heading");
 logo.addEventListener('mouseover', (event) => {
-    logo.style.fontSize= '5rem'; 
+    logo.style.fontSize= '5rem';
+    TweenMax.to(".nav", 3, {x:-200, opacity: 1}) 
     event.stopPropagation();
 });
 
 //mouseout
 logo.addEventListener('mouseout', (event) => {
-    logo.style.fontSize= '4rem'; 
+    logo.style.fontSize= '4rem';
+    TweenMax.to(".nav", .5, {x:0, opacity: 1}) 
     event.stopPropagation();
 });
 
 //keydown
 document.addEventListener('keydown', () => {
     alert('Would you like to Subscribe to an email list that you will never want or need?');
-  });
+});
 
 //click
 const introImg = document.querySelector(".intro img");
