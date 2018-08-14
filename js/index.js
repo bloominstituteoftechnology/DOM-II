@@ -4,7 +4,7 @@
 // * [ ] `wheel`
 // * [ ] `drag / drop`
 // * [x] `load`
-// * [ ] `focus`
+// * [x] `focus`
 // * [x] `resize`
 // * [x] `scroll`
 // * [ ] `select`
@@ -17,6 +17,7 @@ const mainNav = document.querySelector('.nav-container .nav');
 const funBusImage = document.querySelector('.intro img');
 const universalImgSelect = document.querySelectorAll('img');
 const body = document.querySelector('body');
+const h2Selector = document.querySelectorAll('h2')
 funBusImage.style.display = 'auto';
 // janky fade out effect on funBusImage scroll
 window.addEventListener('scroll', (event) => {
@@ -47,9 +48,13 @@ window.addEventListener('load', (event) => {
     // confirm(`Sometimes options can be fun! Who knew "cancel" could be so enticing! Go ahead and click whatever you'd like. You've earned it.`);
     // alert(`Not that it makes much of a choice. It's all about the illusion of choice, am I right? The idea of power is intoxicating.`)
     // alert(`I want to get off Fun Bus's wild ride`);
-    // body.classList.remove('blur');
+    body.classList.add('blur');
 })
 
 window.addEventListener('focus', (event) => {
-    
+    body.style.color = 'darkgreen';
+})
+
+window.addEventListener('dblclick', (event) => {
+    body.classList.remove('blur');
 })
