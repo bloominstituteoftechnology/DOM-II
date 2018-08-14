@@ -8,13 +8,14 @@ const logoHeading = document.querySelector(".logo-heading")
 const headerIntro = document.querySelector(".intro");
 const topImg = document.querySelector(".img-content")
 const buttons = document.querySelectorAll(".btn");
-
+const destination = document.querySelector(".destination-image");
 //Multiple items to cache
-const textContent = document.querySelectorAll(".text-content");
+const pText = document.querySelectorAll(".text-content");
 const allH4Text = document.querySelectorAll("h4");
 // Event Listeners
 navigation.addEventListener('mouseover', (event) => {
   console.log("We sensed a mouse dancing above a link.");
+  event.currentTarget.style.width = "80%";
   event.stopPropagation();
   });
   navigation.addEventListener('click', (event) => {
@@ -43,10 +44,47 @@ mainPage.addEventListener('keydown', (event) => {
 headerIntro.addEventListener('dblclick', (event) => {
   console.log("I see you like to doubleclick. Me too.");
 });
-buttons.addEventListener('mouseover', (event) => {
+
+destination.addEventListener('mouseover', (event) => {
+  event.currentTarget.parentNode.style.width = "600px";
+});
+
+buttons[0].addEventListener('mouseover', (event) => {
   event.currentTarget.style.width = "110%";
-  buttons.addEventListener('mouseleave', (event) => {
+
+  buttons[0].addEventListener('mouseleave', (event) => {
     console.log("C'mon, why did you leave?");
-    event.currentTarget.style.width = "100%";
+    event.currentTarget.style.width = "200px";
+    event.currentTarget.style.height = "45px";
+    event.stopPropagation();
   })
+});
+buttons[1].addEventListener('mouseover', (event) => {
+  event.currentTarget.style.width = "110%";
+  buttons[1].addEventListener('mouseleave', (event) => {
+    console.log("C'mon, why did you leave?");
+    event.currentTarget.style.width = "200px";
+    event.currentTarget.style.height = "45px";
+    event.stopPropagation();
+  })
+});
+  buttons[2].addEventListener('mouseover', (event) => {
+    event.currentTarget.style.width = "110%";
+    buttons[2].addEventListener('mouseleave', (event) => {
+      console.log("C'mon, why did you leave?");
+      event.currentTarget.style.width = "200px";
+      event.currentTarget.style.height = "45px";
+      event.stopPropagation();
+    })
+  });
+
+  buttons[0].addEventListener('click', (event) => {
+    event.currentTarget.textContent = "Let's Go!";
+});
+
+  buttons[1].addEventListener('click', (event) => {
+event.currentTarget.textContent = "Let's Go!";
+});
+    buttons[2].addEventListener('click', (event) => {
+event.currentTarget.textContent = "Let's Go!";
 });
