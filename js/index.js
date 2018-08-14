@@ -47,7 +47,7 @@ window.addEventListener('keydown', (e) => { // 10. keydown
   e.which === 32 ? window.open('https://www.youtube.com/watch?v=uSD4vsh1zDA', '_blank') : '';
 })
 
-// Event Propagation
+// Event Propagation: stopPropagation
 const intro = document.querySelector('.intro');
 const introH2 = document.querySelector('.intro h2');
 intro.addEventListener('click', (e) => {
@@ -56,4 +56,12 @@ intro.addEventListener('click', (e) => {
 introH2.addEventListener('click', (e) => {
   e.stopPropagation();
   console.log('intro h2 clicked');
+})
+
+// preventDefault
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(navLink => {
+  navLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  })
 })
