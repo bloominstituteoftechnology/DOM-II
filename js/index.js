@@ -42,25 +42,24 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach((btn) => {
   btn.addEventListener('click', () => {
     btn.classList.toggle('toggle-btn');
-    console.log('test');
   });
 });
 
-// const mainNav = document.querySelector('.main-navigation');
-// mainNav.addEventListener(
-//   'drag',
-//   (event) => {
-//     // console.log('test');
-//     event.preventDefault();
-//   },
-//   false
-// );
-// mainNav.addEventListener(
-//   'drop',
-//   (event) => {
-//     // event.preventDefault();
-//     event.target.x = event.offsetX;
-//     console.log('test');
-//   },
-//   false
-// );
+const mainNav = document.querySelector('.main-navigation');
+mainNav.addEventListener(
+  'drag',
+  (event) => {
+    // console.log('test');
+    event.preventDefault();
+  },
+  false
+);
+mainNav.addEventListener(
+  'dragend',
+  (event) => {
+    event.target.style.marginTop = event.y + 'px';
+    console.log(event);
+    event.preventDefault();
+  },
+  false
+);
