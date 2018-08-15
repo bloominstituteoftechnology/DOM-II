@@ -63,11 +63,18 @@ intro.addEventListener('click', (event) => {
 });
 
 
+img[1].addEventListener("mouseenter", function(){
+  if(img[1].src != "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGSTEAukTZTZMTxSjWTJbgTGILjs73WS5-8GZ9d9uLiIT1PgD8A"){
+    img[1].src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGSTEAukTZTZMTxSjWTJbgTGILjs73WS5-8GZ9d9uLiIT1PgD8A";}
+  else{
+    img[1].src = "img/adventure.jpg";}});
+
 img[3].addEventListener("dblclick", function(){
   if(img[3].src != "https://pre00.deviantart.net/b9c0/th/pre/f/2013/298/2/5/kb_party_time___by_kittyloverrr-d6rrbpj.jpg"){
     img[3].src = "https://pre00.deviantart.net/b9c0/th/pre/f/2013/298/2/5/kb_party_time___by_kittyloverrr-d6rrbpj.jpg";}
   else{
     img[3].src = "img/destination.jpg";}});
+    
 
 //Make all h2s blueviolet when clicked indivudually
 headingTwo[0].addEventListener('click', (event) => { 
