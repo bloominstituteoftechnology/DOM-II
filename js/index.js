@@ -5,6 +5,7 @@ images.forEach((item) => {
     TweenMax.to('img', 3, { opacity: 1 });
   });
 });
+
 // resize images on mouse scroll
 images.forEach((item) => {
   item.addEventListener('wheel', (event) => {
@@ -14,6 +15,15 @@ images.forEach((item) => {
     event.preventDefault();
   });
 });
+
+// Bring back images
+const body = document.querySelector('body');
+body.addEventListener('dblclick', () => {
+  images.forEach((item) => {
+    item.width = '800';
+  });
+});
+
 // resize a tags on mouseover
 const allATags = document.querySelectorAll('a');
 allATags.forEach((item) => {
@@ -27,6 +37,7 @@ allATags.forEach((item) => {
   });
 });
 
+// toggle button backgrounds on click
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -34,11 +45,12 @@ buttons.forEach((btn) => {
     console.log('test');
   });
 });
+
 // const mainNav = document.querySelector('.main-navigation');
 // mainNav.addEventListener(
 //   'drag',
 //   (event) => {
-//     // console.log(event);
+//     // console.log('test');
 //     event.preventDefault();
 //   },
 //   false
@@ -46,10 +58,9 @@ buttons.forEach((btn) => {
 // mainNav.addEventListener(
 //   'drop',
 //   (event) => {
-//     console.log();
 //     // event.preventDefault();
-//     // x = event.offsetX;
-//     console.log(test);
+//     event.target.x = event.offsetX;
+//     console.log('test');
 //   },
 //   false
 // );
