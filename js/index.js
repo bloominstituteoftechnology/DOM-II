@@ -24,6 +24,11 @@ body.addEventListener('dblclick', () => {
   });
 });
 
+// Reset nav bar on doubleclick
+body.addEventListener('dblclick', () => {
+  mainNav.style.marginTop = '0';
+});
+
 // resize a tags on mouseover
 const allATags = document.querySelectorAll('a');
 allATags.forEach((item) => {
