@@ -74,7 +74,7 @@ form.addEventListener('focus', function(event) {
 }, true);
 
 form.addEventListener('blur', function(event) {
-    event.target.stlye.background = '';
+    event.target.style.background = '';
 }, true);
 
 
