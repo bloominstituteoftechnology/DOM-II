@@ -88,3 +88,6 @@ intro.addEventListener('click', () => {
 navItems.forEach(item => item.addEventListener('click', (event) => {
   event.preventDefault();
 }));
+
+
+//GSAP animation
