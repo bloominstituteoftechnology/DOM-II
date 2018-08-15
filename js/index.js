@@ -10,7 +10,7 @@ contentSection.addEventListener('mouseover', () => {
   document.body.style.color = "#FFFFFF";
 });
 
-// return to normal on mouse document
+// return to normal on mouseout
 
 contentSection.addEventListener('mouseout', () => {
   document.body.style.backgroundColor = "#FFFFFF";
@@ -24,7 +24,7 @@ contentInverse.addEventListener('mouseover', () => {
   document.body.style.color = "#FFFFFF";
 });
 
-// return to normal on mouse document
+// return to normal on mouseout
 
 contentInverse.addEventListener('mouseout', () => {
   document.body.style.backgroundColor = "#FFFFFF";
