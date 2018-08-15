@@ -55,7 +55,6 @@ navLinks.forEach(function(link){
     });
 });
 
-
 /* HEADER IMAGE */
 let headerImg = document.querySelector('.header-img > img');
 
@@ -69,34 +68,29 @@ document.addEventListener('scroll', function(){
     TweenMax.to(headerImg, 0.1, {scale: 1 + offset/300});
 });
 
+/* MIDDLE IMAGES */
+
 let middleImages = document.querySelectorAll('.img-content > img');
 middleImages.forEach(function(image){
-    image.addEventListener('click', function(){
-        TweenMax.to(image, 1, {rotationY: 360});
-        
+    window.addEventListener('keydown', function(event){
+        const keyName = event.key;
+        if(keyName === 'a'){
+            TweenMax.to(image, 1, {rotationY: 180});
+        } else if (keyName === 'd') {
+            TweenMax.to(image, 1, {rotationY: 0});
+        }
     });
+    let flipped = false;
+    image.addEventListener('dblclick', function(){
+        if (flipped == false){
+        TweenMax.to(image, 1, {rotationX: 360});
+        flipped = true;
+        } else if (flipped == true){
+            TweenMax.to(image, 1, {rotationX: 0});
+            flipped = false;
+        }
+    })
 });
 
-window.addEventListener('keydown', (event) => {
-    const keyName = event.key;
-    if(keyName === 'a'){
-        TweenMax.to(headerImg, 1, {skewX: 10});
-    } else if (keyName === 'd') {
-        TweenMax.to(headerImg, 1, {skewX: -10});
-    } else {
-        TweenMax.to(headerImg, 1, {skewX: 0});
-    }
-    console.log(keyName);
-});
-
-
-//TO-DO:
-
-// on image hover, show "learn more"
-// clicking image loads adjacent text
-
-// pressing T key takes you to the top of the page
-
-// add scroll zoom to all images on the page with offset breakpoints
-
-// add a bus that drives across the sreen using arrow keys
+// TO DO
+// zoom with wheel on hover
