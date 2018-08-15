@@ -30,3 +30,29 @@
     color: @button-bg;
   }
 }
+
+.transition(@time:.2s) {
+  transition: background-color @time, color @time,
+   font-size @time, padding-bottom @time, padding-top @time, box-shadow @time; 
+}
+
+.button() {
+  text-align: center;
+  width: 20rem;
+  padding: 12px 0;
+  color: #FFFFFF;
+  background-color: #17A2B8;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  outline: 0px;
+  .transition();
+  &:hover{
+      background-color: @silver;
+      box-shadow: 0 0 0 2.5px @eastern-blue;
+  }
+
+  @media @mobile{
+  width: 100%;
+  }
+}

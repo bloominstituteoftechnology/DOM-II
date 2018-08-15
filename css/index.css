@@ -362,6 +362,55 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .findoutmore form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.home .findoutmore form div {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 20px;
+}
+.home .findoutmore form label {
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+.home .findoutmore form input,
+.home .findoutmore form textarea,
+.home .findoutmore form select {
+  padding: 10px 0 10px 10px;
+  font-size: 1.6rem;
+}
+.home .findoutmore form textarea {
+  width: 100%;
+}
+.home .findoutmore form submit {
+  text-align: center;
+  width: 20rem;
+  padding: 12px 0;
+  color: #FFFFFF;
+  background-color: #17A2B8;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  outline: 0px;
+  transition: background-color 0.2s, color 0.2s, font-size 0.2s, padding-bottom 0.2s, padding-top 0.2s, box-shadow 0.2s;
+  width: 40rem;
+}
+.home .findoutmore form submit:hover {
+  background-color: #C0C0C0;
+  box-shadow: 0 0 0 2.5px #17A2B8;
+}
+@media (max-width: 500px) {
+  .home .findoutmore form submit {
+    width: 100%;
+  }
+}
 .modal {
   display: none;
   /* Hidden by default */
@@ -383,6 +432,8 @@ img {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+  opacity: 0;
+  align-items: center;
 }
 .modal .modal-content {
   background-color: #fefefe;
@@ -396,4 +447,7 @@ img {
 }
 .modal .modal-content p {
   padding: 0;
+}
+.modal .selectMe {
+  color: chartreuse;
 }
