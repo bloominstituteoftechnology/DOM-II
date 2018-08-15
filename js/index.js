@@ -1,4 +1,8 @@
 // Your code goes here
+const mainNavigation = document.querySelector(".main-navigation");
+const navContainer = document.querySelector(".nav-container");
+const nav = document.querySelector(".nav");
+const aTags =document.querySelector("a");
 const homeBox = document.querySelector(".home");
 const introHeaderHome = document.querySelector(".intro");
 const mainHeader = document.querySelector(".main-header");
@@ -6,6 +10,7 @@ let logoHeading = document.querySelector(".logo-heading");
 let dragBus = document.querySelector(".dragBus");
 const inverseContent = document.querySelector(".inverse-content");
 const contentDesination = document.querySelector(".content-destination");
+const contentPick = document.querySelector(".content-pick");
 
 logoHeading.style.color = "yellow";
 logoHeading.addEventListener("mouseover", () => {
@@ -27,7 +32,22 @@ contentDesination.addEventListener("click", () => {
 	event.target.innerText = "NOOOOOOOOO";
 });
 
+contentPick.style.color = "red";
+contentPick.addEventListener("dblclick", () => {
+	event.target.innerText = "Hey!";
+});
 
+aTags.style.color = "teal";
+aTags.addEventListener("mouseout", () => {
+	event.target.innerText = "Get On the Bus!";
+});
+
+introHeaderHome.addEventListener("mousemove", () => {
+	event.target.innerText = "THE BUS WAITS FOR NO ONE!!";
+	introHeaderHome.style.fontSize = "40px";
+	introHeaderHome.style.color = "red";
+	event.stopPropagation();
+});
 
 
 

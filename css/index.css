@@ -234,7 +234,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-.home .intro h2 {
+.home .intro .main-header {
+  cursor: pointer;
   margin-top: 20px;
 }
 .home .content-section {
