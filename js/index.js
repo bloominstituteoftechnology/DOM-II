@@ -88,3 +88,16 @@ event.currentTarget.textContent = "Let's Go!";
     buttons[2].addEventListener('click', (event) => {
 event.currentTarget.textContent = "Let's Go!";
 });
+
+pText[1].addEventListener('focus', (event) => {
+  event.currentTarget.style.color = "green";
+})
+
+document.addEventListener('keydown', (event) => {
+  console.log(event);
+  event.target.style.background = "blue";
+})
+
+document.addEventListener('dblclick', (event) => {
+  event.target.style.color = "green";
+})
