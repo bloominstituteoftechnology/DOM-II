@@ -54,7 +54,6 @@ const mainNav = document.querySelector('.main-navigation');
 mainNav.addEventListener(
   'drag',
   (event) => {
-    // console.log('test');
     event.preventDefault();
   },
   false
@@ -63,7 +62,6 @@ mainNav.addEventListener(
   'dragend',
   (event) => {
     event.target.style.marginTop = event.y + 'px';
-    console.log(event);
     event.preventDefault();
   },
   false
