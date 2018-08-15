@@ -182,6 +182,11 @@ img {
   position: fixed;
   z-index: 10;
 }
+.main-navigation .logo-heading a {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -258,6 +263,11 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.home .content-section .img-content img:hover {
+  box-shadow: 2px 2px 1px black;
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {

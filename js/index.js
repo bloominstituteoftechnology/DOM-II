@@ -1,5 +1,7 @@
 // Your code goes here
 
+/* NAVBAR ANIMATIONS */
+
 // prepare the nav links and logo
 let navLogo = document.querySelector('.logo-heading');
 let navLinks = document.querySelectorAll('.nav-link');
@@ -26,6 +28,8 @@ function popNav(){
 // on page load, pop logo and navLinks
 navLogo.addEventListener('load', popNav());
 
+
+// navLogo hover and click animations
 navLogo.addEventListener('mouseover', function(){
     TweenMax.fromTo(this, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
 });
@@ -34,9 +38,10 @@ navLogo.addEventListener('mouseout', function(){
 });
 navLogo.addEventListener('click', function(){
     TweenMax.fromTo(this, 1, {scale: .8} ,{scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
+    event.preventDefault();
 });
 
-
+// navLinks hover and click animations
 navLinks.forEach(function(link){
     link.addEventListener('mouseover', function(){
         TweenMax.fromTo(link, 0.3, {scale: 1}, {scale: 1.15, ease: Power1.easeOut});
@@ -46,11 +51,14 @@ navLinks.forEach(function(link){
     });
     link.addEventListener('click', function(){
         TweenMax.fromTo(link, 1, {scale: .8} ,{scale: 1.15, ease: Elastic.easeOut.config(1, 0.3)});
+        event.preventDefault();
     });
 });
 
+
+/* HEADER IMAGE */
 let headerImg = document.querySelector('.header-img > img');
-// headerImg.style.opacity = '0';
+
 headerImg.addEventListener('load', function(){
     TweenMax.fromTo(headerImg, 1, {opacity: 0, 'margin-left': -800} , {opacity: 1, 'margin-left': 0, ease: Back.easeOut});
 });
@@ -60,3 +68,35 @@ document.addEventListener('scroll', function(){
     let offset = window.scrollY;
     TweenMax.to(headerImg, 0.1, {scale: 1 + offset/300});
 });
+
+let middleImages = document.querySelectorAll('.img-content > img');
+middleImages.forEach(function(image){
+    image.addEventListener('click', function(){
+        TweenMax.to(image, 1, {rotationY: 360});
+        
+    });
+});
+
+window.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    if(keyName === 'a'){
+        TweenMax.to(headerImg, 1, {skewX: 10});
+    } else if (keyName === 'd') {
+        TweenMax.to(headerImg, 1, {skewX: -10});
+    } else {
+        TweenMax.to(headerImg, 1, {skewX: 0});
+    }
+    console.log(keyName);
+});
+
+
+//TO-DO:
+
+// on image hover, show "learn more"
+// clicking image loads adjacent text
+
+// pressing T key takes you to the top of the page
+
+// add scroll zoom to all images on the page with offset breakpoints
+
+// add a bus that drives across the sreen using arrow keys
