@@ -34,8 +34,16 @@ window.addEventListener('resize', () => bod.style.backgroundColor = 'lightgrey')
 const introWelcome = document.querySelector('.intro > h2');
 window.addEventListener('scroll', (event) => introWelcome.style.fontSize = '6rem');
 
+const contDest = document.querySelector('.content-destination');
+contDest.addEventListener('dblclick', (event) => {
+    document.title += ` Tracking mouse at: ${event.clientX}, ${event.clientY}! Look, now the page title is all long and stuff. :O `;
+});
+
 const imgDest = document.querySelector('.img-destination');
-imgDest.addEventListener('dblclick', (event) => document.title += ` ${event.detail}! ${event.detail} clicks! Ah ah ah! `);
+imgDest.addEventListener('dblclick', (event) => {
+    document.title += ` ${event.detail}! ${event.detail} clicks! Ah ah ah! `;
+    event.stopPropagation();
+});
 
 window.addEventListener('copy', (event) => {
     let howl = 'AWWWOOOOOOOOOOOOO!!!';
