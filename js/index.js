@@ -12,13 +12,17 @@ console.log(nav);
     for (let i = 0; i < nav.length; i++) {
         nav[i].addEventListener('mouseout', (event) => {
             event.target.style.fontSize = '1.5rem';
-            console.log('mouse over!')});
+            });
         console.log(nav[i]);
     }
 
+// nav.addEventListener('click', (event) => {
+//     event.preventDefault();
+// })
+
 const logoHeading = document.querySelector('.logo-heading');
 
-    logoHeading.addEventListener('click', () => {
+    logoHeading.addEventListener('dblclick', () => {
     logoHeading.classList.toggle('blue');
     
 })
@@ -40,11 +44,7 @@ for (let i = 0; i < button.length; i++) {
 }
 
 const body = document.querySelector('body');
-body.addEventListener('wheel', (event) => {
-    event.target.style = 'background-color: green'
+document.body.addEventListener('wheel', (event) => {
+body.style.backgroundColor = 'green'
 })
 
-const page = document.querySelector('.text-content');
-page.addEventListener('scroll', (event) => {
-    event.target.style = 'background-color: pink'
-})
