@@ -6,11 +6,18 @@ let btn = document.querySelectorAll('.btn');
 let headingTwo = document.querySelectorAll('h2');
 let intro = document.querySelector('.intro');
 let img = document.querySelectorAll('img'); 
+let mainNavi = document.querySelector('.main-navigation');
+let home = document.querySelector('.home');
+
 
 
 
 
 // Event Listeners and Actions
+
+home.addEventListener('wheel', () => { 
+  mainNavi.style.backgroundColor = 'LightCyan';
+});
 
 //Make logo-heading Fun Buss tilt and change to gold
 logoHeading.addEventListener('mouseover', () => { 
