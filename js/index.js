@@ -20,8 +20,6 @@ console.log(introH2);
 window.addEventListener('scroll', (event) => {
     // animate to enter from left
     TweenMax.to("#introH2", 4, {x:-50, opacity: 1});
-    //introH2.style.background = "gold";
-
 });
 
 // scroll
@@ -30,7 +28,6 @@ console.log(contentSectionTextContentH2);
 window.addEventListener('scroll', (event) => {
     // animate to enter from left
     TweenMax.to("#contentSectionTextContentH2", 4, {x:-50, opacity: 1});
-    //contentSectionTextContentH2.style.background = "gold";
 });
 
 // scroll
@@ -39,7 +36,6 @@ console.log(contentSectionInverseContentH2);
 window.addEventListener('scroll', (event) => {
     // animate to enter from right
     TweenMax.to("#contentSectionInverseContentH2", 4, {x:50, opacity: 1});
-    //contentSectionInverseContentH2.style.background = "gold";
 });
 
 // scroll
@@ -48,7 +44,6 @@ console.log(contentDestinationH2);
 window.addEventListener('scroll', (event) => {
     // animate to enter from left
     TweenMax.to("#contentDestinationH2", 4, {x:-50, opacity: 1});
-    //contentDestinationH2.style.background = "gold";
 });
 
 // mouseover
@@ -99,7 +94,6 @@ contentPickDestinationBtn1.addEventListener('click', (event) => {
     // show a new h4 element
     contentPickDestinationFunInTheSunCoverText.classList.remove('hide-this');
     console.log("Clicked Fun in the Sun Adventure");
-    event.stopPropagation();
 });
 
 // click
@@ -111,7 +105,6 @@ contentPickDestinationBtn2.addEventListener('click', (event) => {
     // show a new h4 element
     contentPickDestinationMountainCoverText.classList.remove('hide-this');
     console.log("Clicked Mountain Adventure");
-    event.stopPropagation();
 });
 
 // click
@@ -123,5 +116,4 @@ contentPickDestinationBtn3.addEventListener('click', (event) => {
     // show a new h4 element
     contentPickDestinationIslandCoverText.classList.remove('hide-this');
     console.log("Clicked Island Adventure");
-    event.stopPropagation();
 });
