@@ -10,6 +10,8 @@ let form = document.querySelector('.form');
 //update window
 window.addEventListener('load', function(event) {
     alert('Click OK to open Fun Bus');
+    event.stopPropagation();
+
 })
 
 window.addEventListener('offline', function(event){
@@ -38,6 +40,8 @@ navItems.forEach((item) => {
 
   item.addEventListener('mouseenter', function(event) {
     event.target.style.color = 'aqua';
+    event.stopPropagation();
+    event.preventDefault();
   })
     
   item.addEventListener('mouseleave', function(event) {
