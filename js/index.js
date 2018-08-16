@@ -45,7 +45,7 @@ window.addEventListener('keyup', () => {
 
 const logo = document.querySelector('.logo-heading')
 
-//logo's event does not bubble up to main-navigation
+//logo's event does not bubble up to main-navigation when using stopPropagation
 logo.addEventListener('mousedown', () => {
     logo.style.color = 'red';
     event.stopPropagation();
@@ -55,6 +55,16 @@ const mainNav = document.querySelector('.main-navigation')
 
 mainNav.addEventListener('mousedown', () => {
     mainNav.style.backgroundColor = 'gold';
+});
+
+//Preventing nav items from refreshing the page
+let navItems = document.querySelectorAll('.nav-link')
+navItems = Array.from(navItems);
+
+navItems.forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
 });
 
 
