@@ -5,6 +5,22 @@
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
 
+    .custom {
+      border: 1px solid red;
+      margin: auto;
+      max-width: 880px;
+      display: flex;
+      flex-direction: column;
+      align-items: : center;
+      .custom-head {
+        color: blue;
+        align-self: center;
+      }
+      .custom-text {
+        display: flex;        
+        color: red;
+      }
+    }
   .nav-container {
     height: 100%;
     display: flex;
@@ -32,8 +48,8 @@
         width: 100%;
         justify-content: space-around;
       }
-      
-      
+
+
       a {
         font-size: 1.6rem;
         color: @font-color;

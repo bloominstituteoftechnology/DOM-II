@@ -181,6 +181,22 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
+.main-navigation .custom {
+  border: 1px solid red;
+  margin: auto;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: : center;
+}
+.main-navigation .custom .custom-head {
+  color: blue;
+  align-self: center;
+}
+.main-navigation .custom .custom-text {
+  display: flex;
+  color: red;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
