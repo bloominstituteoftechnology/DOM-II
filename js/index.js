@@ -40,5 +40,21 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('keyup', () => {
     homePage.style.color = 'black';
+
 });
+
+const logo = document.querySelector('.logo-heading')
+
+//logo's event does not bubble up to main-navigation
+logo.addEventListener('mousedown', () => {
+    logo.style.color = 'red';
+    event.stopPropagation();
+});
+
+const mainNav = document.querySelector('.main-navigation')
+
+mainNav.addEventListener('mousedown', () => {
+    mainNav.style.backgroundColor = 'gold';
+});
+
 
