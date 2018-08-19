@@ -33,17 +33,17 @@ document.addEventListener("wheel", (event) => {
 
 // 2 , 3 mouse over and mouse leave event listeners
 introImg.addEventListener("mouseover", (event) => {
-    introImg.src = "../img/fun-bus-invert.jpg";
+    introImg.src = "img/fun-bus-invert.jpg";
 });
 
 introImg.addEventListener("mouseleave", (event) => {
-    introImg.src = "../img/fun-bus.jpg";
+    introImg.src = "img/fun-bus.jpg";
 });
 
 // 4 on click and mouse over event
 funImg.addEventListener("mouseover", (event) => {
     funImg.addEventListener("click", (event) => {
-        funImg.src = "../img/fun-over.jpg";
+        funImg.src = "img/fun-over.jpg";
         adventureHeading.innerText = "Blood Awaits";
         var audio = new Audio('/js/noo.mp3');
         audio.play();
@@ -99,7 +99,7 @@ imgAdventure.addEventListener("dragstart", (event) => {
         }
     });
     
-    imgAdventure.src = "../img/adventure-josh.jpg";
+    imgAdventure.src = "img/adventure-josh.jpg";
 });
 
 // 9 copy challenge copy event listener
