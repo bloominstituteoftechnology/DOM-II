@@ -304,6 +304,8 @@ img {
 }
 .home .content-destination img {
   border-radius: 10px;
+  width: 100%;
+  height: 300px;
 }
 .home .content-pick {
   padding-top: 30px;
