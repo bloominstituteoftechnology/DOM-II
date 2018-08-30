@@ -33,7 +33,7 @@ headers.forEach(function (item) {
     item.addEventListener('copy', changeToBlue)});
 
 let adventureJpg = document.querySelector('.content-section img');
-let disappear = function(e) {
+let disappear = function (e) {
     if (e.target.style.display === '') {
         e.target.style.display = 'none';
     }
@@ -42,3 +42,14 @@ let disappear = function(e) {
     }
 }
 adventureJpg.addEventListener('mouseup', disappear)
+
+let inverse = document.querySelector('.inverse-content');
+let inverseInverse = function (e) {
+    if (e.target.style.flexDirection === '') {
+        e.target.style.flexDirection = 'row-reverse';
+    }
+    else {
+        e.target.style.flexDirection = '';
+    }
+}
+inverse.addEventListener('contextmenu', inverseInverse);
