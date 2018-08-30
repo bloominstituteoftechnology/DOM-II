@@ -101,3 +101,11 @@ let changeBackground = function() {
 }
 window.addEventListener('scroll', changeBackground);
 
+//event 10
+
+let footerP2 = document.createElement('p');
+footerP2.innerHTML = 'All rights reserved!';
+let addFooterText = function () {
+    document.querySelector('footer').prepend(footerP2);
+}
+window.addEventListener('beforeprint', addFooterText)
