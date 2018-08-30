@@ -31,3 +31,14 @@ let changeToBlue = function (e) {
 }
 headers.forEach(function (item) {
     item.addEventListener('copy', changeToBlue)});
+
+let adventureJpg = document.querySelector('.content-section img');
+let disappear = function(e) {
+    if (e.target.style.display === '') {
+        e.target.style.display = 'none';
+    }
+    else {
+        e.target.style.display = '';
+    }
+}
+adventureJpg.addEventListener('mouseup', disappear)
