@@ -9,10 +9,14 @@ headerpic.addEventListener("mouseover", function(event) {
     //this = event.target
     event.target.style.filter = "sepia(0%)";
     // reset color so once mouseover, effect takes place
-    setTimeout(function(){
-        event.target.style.filter = "sepia(100%)";
-    }, 500);
+    // setTimeout(function(){
+    //     event.target.style.filter = "sepia(100%)";
+    // }, 1000);
+});
+headerpic.addEventListener("mouseleave", function(event){
+    event.target.style.filter = "sepia(100%)";
 })
+
 
 //keydown
 
