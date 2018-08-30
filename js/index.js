@@ -61,9 +61,9 @@ document.addEventListener("keydown", function(event)    {       // 8
                                                         document.addEventListener("keydown", function(event)    {
                                                             if(event.key == "ArrowRight")   {
                                                                 document.addEventListener("keydown",    function(event) {
-                                                                    if(event.key == "a"){
+                                                                    if(event.key == "b"){
                                                                         document.addEventListener("keydown",    function(event) {
-                                                                            if(event.key == "b")    {
+                                                                            if(event.key == "a")    {
                                                                                 document.addEventListener("keydown",    function(event) {
                                                                                     if(event.key == "Enter")    {
                                                                                         document.querySelector("body").innerHTML = ""
