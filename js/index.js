@@ -26,9 +26,15 @@ headerpic.addEventListener("mouseleave", function(event){
 
 //load
 
+window.addEventListener('load', function(){
+    let windowload = this.window.open('','', 'width=500,height=500');
+    windowload.document.write(`Welcome to the Fun Bus!`);
+    // windowload.focus()
+    this.setTimeout(function() {windowload.close();}, 2000);
+})
+
+
 //focus
-
-
 
 //resize
 
@@ -48,7 +54,7 @@ window.addEventListener('scroll', function(){
         //alternative to alert - window with timer, must enable pop-ups
         let w = this.window.open('','', 'width=200,height=100');
         w.document.write(`Now that you've scrolled to the bottom, sign up for a program! :) `)
-        w.focus()
+        // w.focus()
         this.setTimeout(function() {w.close();}, 2500)
     }
 });
@@ -67,3 +73,10 @@ clickbutton.addEventListener("dblclick", function(){
 })
 
 //incorporate "focus" + "resize"
+
+// function getFocus() {
+//     document.getElementById("name-label").focus();
+// }
+
+
+
