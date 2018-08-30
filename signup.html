@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Signup Page</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    
+  <header class="main-navigation">
+    <div class="container nav-container">
+      <h1 class="logo-heading">Fun Bus</h1>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+    <div class="container">
+        <section class="main-header">
+            <div class="img-content">
+                <img id="headerpic" src="img/fun-bus.jpg" alt="bus in the sand">
+            </div>
+        </section>
+
+
+
+        <form>
+            <ul class="form-style-1">
+                <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+                <li>
+                    <label>Email <span class="required">*</span></label><input type="email" name="field3" class="field-long" />
+                </li>
+                <li>
+                    <label>Package</label>
+                    <select name="field4" class="field-select">
+                    <option value="Advertise">Fun In The Sun</option>
+                    <option value="Partnership">Mountain Excursion</option>
+                    <option value="General Question">Island Getaway</option>
+                    </select>
+                </li>
+                <li>
+                    <label>Your Message <span class="required">*</span></label>
+                    <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                </li>
+                <li><input type="submit" value="Submit" /></li>
+            </ul>
+        </form>
+
+    </div>
+
+</body>
