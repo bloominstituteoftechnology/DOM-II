@@ -1,5 +1,7 @@
+//event 1
+
 let funBusH1 = document.querySelector('.logo-heading');
-let funner = function (e) {
+let funner = function(e) {
     if (e.target.innerHTML === 'Fun Bus') {
         e.target.innerHTML = 'The Funnest Bus!'
     }
@@ -9,8 +11,10 @@ let funner = function (e) {
 }
 funBusH1.addEventListener('click', funner);
 
+//event 2
+
 let busImage = document.querySelector('.intro img');
-let addBorder = function (e) {
+let addBorder = function(e) {
     if (e.target.style.borderBottom === '') {
         e.target.style.borderBottom = '2px dashed #C0C0C0'; 
     }
@@ -20,8 +24,10 @@ let addBorder = function (e) {
 }
 busImage.addEventListener('mouseenter', addBorder);
 
+//event 3
+
 let headers = document.querySelectorAll('h2');
-let changeToBlue = function (e) {
+let changeToBlue = function(e) {
     if (e.target.style.color === '') {
         e.target.style.color = 'blue';
     }
@@ -29,11 +35,14 @@ let changeToBlue = function (e) {
         e.target.style.color = '';
     }
 }
-headers.forEach(function (item) {
-    item.addEventListener('copy', changeToBlue)});
+headers.forEach(function(item) {
+    item.addEventListener('copy', changeToBlue
+)});
+
+//event 4
 
 let adventureJpg = document.querySelector('.content-section img');
-let disappear = function (e) {
+let disappear = function(e) {
     if (e.target.style.display === '') {
         e.target.style.display = 'none';
     }
@@ -43,8 +52,10 @@ let disappear = function (e) {
 }
 adventureJpg.addEventListener('mouseup', disappear)
 
+//event 5
+
 let inverse = document.querySelector('.inverse-content');
-let inverseInverse = function (e) {
+let inverseInverse = function(e) {
     if (e.target.style.flexDirection === '') {
         e.target.style.flexDirection = 'row-reverse';
     }
@@ -54,8 +65,10 @@ let inverseInverse = function (e) {
 }
 inverse.addEventListener('contextmenu', inverseInverse);
 
+//event 6
+
 let funJpg = document.querySelector('.inverse-content img');
-let addFullBorder = function (e) {
+let addFullBorder = function(e) {
     if (e.target.style.border === '') {
         e.target.style.border = '2px dashed #C0C0C0'; 
     }
@@ -65,15 +78,26 @@ let addFullBorder = function (e) {
 }
 funJpg.addEventListener('drag', addFullBorder);
 
+//event 7
+
 let destinationJpg = document.querySelector('.content-destination img');
-let switchImg = function (e) {
+let switchImg = function(e) {
     destinationJpg.src = 'img/fun-bus.jpg';
 }
 window.addEventListener('resize', switchImg);
 
-let loadedAlert = function () {
+//event 8
+
+let loadedAlert = function() {
     alert('Are you ready for the FUN BUS!??!?!');
 }
 busImage.addEventListener('load', loadedAlert);
 
+//event 9
+
+let navContainer = document.querySelector('.nav-container');
+let changeBackground = function() {
+    navContainer.parentNode.style.background = 'powderblue';
+}
+window.addEventListener('scroll', changeBackground);
 
