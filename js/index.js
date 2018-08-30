@@ -70,3 +70,10 @@ let switchImg = function (e) {
     destinationJpg.src = 'img/fun-bus.jpg';
 }
 window.addEventListener('resize', switchImg);
+
+let loadedAlert = function () {
+    alert('Are you ready for the FUN BUS!??!?!');
+}
+busImage.addEventListener('load', loadedAlert);
+
+
