@@ -12,6 +12,10 @@ mouseover [done]
 
 click [done]
 
+load [done]
+
+drag [done]
+
 */
 /*Default prevention.*/
 let navLinks = document.querySelectorAll('.nav-link');
@@ -67,3 +71,44 @@ buttonSet.forEach(item => {
     })
 })
 console.log(buttonSet);
+
+let headerImg = document.querySelector('.intro img');
+
+
+headerImg.addEventListener('load', function(event){
+    event.target.style.border = '8px solid darkslategray';
+  
+})
+
+
+let body = document.querySelector('html');
+let logoHeader = Array.from(document.getElementsByClassName('logo-heading'));
+console.log(logoHeader);
+let middleImg = document.querySelector('.content-destination img')
+
+let headerClass = document.querySelector('.main-navigation');
+middleImg.addEventListener('drag', function getRandomColor(event) {
+    // event.stopPropagation();
+    let hexText = '0123456789ABCDEF';
+    let color = '#';
+    
+      for (let i = 0; i < 6; i++ ) {
+          color += hexText[Math.floor(Math.random() * 16)];
+
+          if (i % 3 === 0){
+              event.target.style.backgroundColor = color;
+              headerClass.style.color = color
+          }
+
+          else {
+              logoHeader[0].innerText = 'TIME TO PARTY!'; 
+              headerClass.style.backgroundColor = color ;
+       ;
+          }
+
+      }
+      body.style.backgroundColor = color ;
+      ;
+})
+
+
