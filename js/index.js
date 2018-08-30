@@ -28,7 +28,12 @@ headerpic.addEventListener("mouseleave", function(event){
 
 //focus
 
+
+
 //resize
+
+
+
 
 //scroll
 window.addEventListener('scroll', function(){
@@ -54,3 +59,10 @@ window.addEventListener('scroll', function(){
 
 //dblclick
 
+//dbclick to create pop-up window to choose your package
+let clickbutton = document.getElementById("btn1");
+clickbutton.addEventListener("dblclick", function(){
+    window.open("http://freecodecamp.com", "newWindow", "menubar=true,location=true,resizable=false,scrollbars=false,width=400,height=300,top=200,left=200");
+})
+
+//incorporate "focus" + "resize"
