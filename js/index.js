@@ -123,7 +123,7 @@ document.addEventListener('dragstart', function(event){
 
 document.addEventListener('dragover', function(event){
     event.preventDefault();
-})
+});
 
 document.addEventListener('dragenter', function(event){
     if(event.target === sun){
@@ -183,4 +183,37 @@ document.addEventListener('drop', function(event){
             event.target.innerHTML = 'Free Meals!!!'
         }
     }
+});
+
+// Pop out destinations elements
+const destinations = document.querySelectorAll('.destination');
+
+destinations.forEach(element => {
+    element.addEventListener('mouseleave', function(event){
+        destinations[0].style.transform = 'scale(1.0)';
+        destinations[1].style.transform = 'scale(1.0)';
+        destinations[2].style.transform = 'scale(1.0)';
+        draggedElement = null;
+    })
+});
+
+destinations[0].addEventListener('mouseenter', function(event){
+    if(draggedElement)return;
+    destinations[0].style.transform = 'scale(1.1)';
+    destinations[1].style.transform = 'scale(.8)';
+    destinations[2].style.transform = 'scale(.8)';
+});
+
+destinations[1].addEventListener('mouseenter', function(event){
+    if(draggedElement)return;
+    destinations[0].style.transform = 'scale(.8)';
+    destinations[1].style.transform = 'scale(1.1)';
+    destinations[2].style.transform = 'scale(.8)';
+});
+
+destinations[2].addEventListener('mouseenter', function(event){
+    if(draggedElement)return;
+    destinations[0].style.transform = 'scale(.8)';
+    destinations[1].style.transform = 'scale(.8)';
+    destinations[2].style.transform = 'scale(1.1)';
 });
