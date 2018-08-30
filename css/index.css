@@ -311,6 +311,24 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.home .content-pick .coupons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.home .content-pick .coupon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 150px;
+  margin: 0px 5px 30px 5px;
+  padding: 5px;
+  color: #454343;
+  border: 1px dashed black;
+  background-color: #FEEEA3;
+}
 @media (max-width: 500px) {
   .home .content-pick {
     flex-wrap: wrap;
