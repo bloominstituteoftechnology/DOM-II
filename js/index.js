@@ -2,6 +2,7 @@
 
 let funBusH1 = document.querySelector('.logo-heading');
 let funner = function(e) {
+    e.stopPropagation();
     if (e.target.innerHTML === 'Fun Bus') {
         e.target.innerHTML = 'The Funnest Bus!'
     }
@@ -109,3 +110,20 @@ let addFooterText = function () {
     document.querySelector('footer').prepend(footerP2);
 }
 window.addEventListener('beforeprint', addFooterText)
+
+//adding prevent default to nav links
+
+let navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(function (item) {
+    item.addEventListener("click", function(e){
+        e.preventDefault()
+    })
+});
+
+//nesting similar event for header and added stopPropagation to funner function under first event
+
+let changeToBrownBackground = function (e) {
+    e.target.parentNode.style.background = '#FFEBCD';
+}
+navContainer.addEventListener('click', changeToBrownBackground);
+
