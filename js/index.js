@@ -11,11 +11,19 @@ const buttonClickHandler = function(event){
 }
 
 const buttonHoverHandler = function(event){
-    event.target.style.width = '100%'
+    event.target.style.width = '100%';
+}
+
+const buttonLeaveHandler = function(event){
+    event.target.style.width = '200px';
+}
+
+const imageLoadHandler = function(event){
+    event.target.style.width = '50%';
 }
 
 const imageHoverHandler = function(event){
-    event.target.style.width = '50%';
+    event.target.style.width = '75%';
 }
 
 const imageDClickHandler = function(event){
@@ -23,7 +31,7 @@ const imageDClickHandler = function(event){
 }
 
 const clickAnchorHandler = function(event){
-    event.target.style.background = 'darkcyan';
+    event.target.style.color = 'darkcyan';
 }
 
 button.forEach((clickButton) => {
@@ -31,11 +39,19 @@ button.forEach((clickButton) => {
 })
 
 button.forEach((hoverButton) => {
-    hoverButton.addEventListener('mouseover', buttonHoverHandler)
+    hoverButton.addEventListener('mouseenter', buttonHoverHandler)
+})
+
+button.forEach((leaveButton) => {
+    leaveButton.addEventListener('mouseleave', buttonLeaveHandler)
+})
+
+images.forEach((loadImage) => {
+    loadImage.addEventListener('load', imageLoadHandler)
 })
 
 images.forEach((hoverImage) => {
-    hoverImage.addEventListener('mouseover', imageHoverHandler)
+    hoverImage.addEventListener('mouseenter', imageHoverHandler)
 })
 
 images.forEach((dClick) => {
@@ -47,23 +63,23 @@ anchor.forEach((clickAnchor) => {
 })
 
 nav.addEventListener('click', function(event){
-    event.preventDefault()
+    event.preventDefault();
 })
 
 nav.addEventListener('mouseover', function(event){
-    event.stopImmediatePropagation();
-    event.target.parentNode.style.background = 'lightgray';
+    event.preventDefault();
+    event.target.parentNode.style.background = 'yellow';
 })
 
 mainNav.addEventListener('mouseover', function(event){
-    event.target.style.background = 'hotpink';
+    event.target.style.background = 'lime';
 })
 
-title.addEventListener('mouseover', function(event){
+title.addEventListener('mouseenter', function(event){
     event.target.style.fontSize = '5rem';
 })
 
-title.addEventListener('click', function(event){
+title.addEventListener('mouseleave', function(event){
     event.target.innerHTML = 'HAVE FUN!';
 })
 
