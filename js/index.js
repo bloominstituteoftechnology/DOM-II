@@ -89,35 +89,22 @@
         function navHandler() {
             for (i = 0; i < nav.length; i++) {
                 if (nav[i].style.color === "red") {
+                    nav[i].style.fontSize = "";
                     nav[i].style.color = "";
                 } else {
                     nav[i].style.color = "red";
+                    nav[i].style.fontSize = "24px";
                 }
             }
         }
         
+        /*******EVENT 10*************/ 
+        window.addEventListener('resize', (event) => {
+            alert('screen has been resized');
+        });
         
         
-        
-            //elem.addEventListener('select', function() {
-        //alert('Selection changed!');
-       // }, false);
-      
-
-            //const containerClickHandler = function(event){
-            // change the bg color of the entire container to blue;
-            // event.target.style.backgroundColor = 'blue';
-      //      this.style.backgroundColor = 'dodgerblue';
-      //    }
-        //document.getElementById("test").addEventListener("mouseover", function( event ) {
-        //var target = event.target, related = event.relatedTarget, match;
-
-
-
-
-
-
-
+       
 
     };
 
