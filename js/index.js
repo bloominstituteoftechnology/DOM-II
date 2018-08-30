@@ -61,7 +61,13 @@ window.addEventListener('scroll', function(){
 
 
 
-//select
+//select - - why does this not work? 
+
+// var selectevent = document.getElementById("select-label");
+// selectevent.addEventListener('select', function(){
+//     alert('Good Choice!');
+// }, false);
+
 
 //dblclick
 
