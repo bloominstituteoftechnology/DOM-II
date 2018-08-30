@@ -11,16 +11,18 @@ nav.forEach(function(e)
 
 
 window.onclick = hideContextMenu;
-
-const funBus = document.querySelector('.logo-heading');
+window.onkeydown = listenKeys; 
+const funBus = document.querySelector('body');
 funBus.addEventListener("contextmenu", showContextMenu);
 const contentDiv = document.querySelector(".main-navigation");
 var li = document.createElement("li");
+
+
 function showContextMenu (e) {
     funBus.style.display = 'block';
     funBus.style.left = event.clientX + 'px';
     funBus.style.top = event.clientY + "px";
-    e.stopPropagation();
+    e.preventDefault();
     li.innerHTML = "Cool Menu";
     li.style.border = '1px Solid Black';
     li.style.padding = '10px 5px';
@@ -36,10 +38,16 @@ function showContextMenu (e) {
 
 function hideContextMenu(){
     list = li.style;
-    if (list.display === ''){
-   list.display = 'none'}
-   else {
-       list.display = ''
-   }
+     list.display = 'none';
+
 }
 
+function listenKeys (event) {
+    var keyCode = event.which || event.keyCode;
+    if(keyCode == 27){
+        hideContextMenu();
+    } else {
+    showContextMenu();
+    }
+
+}
