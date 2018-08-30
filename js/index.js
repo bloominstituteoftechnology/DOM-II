@@ -38,7 +38,13 @@ window.addEventListener('scroll', function(){
     
     //if scrolled value is equal to scrollable, page bottom has been reached
     if(Math.ceil(scrolled) === scrollable){
-        alert(`Now that you've scrolled to the bottom, sign up for a program! :) `);
+        // alert(`Now that you've scrolled to the bottom, sign up for a program! :) `);
+
+        //alternative to alert - window with timer, must enable pop-ups
+        let w = this.window.open('','', 'width=200,height=100');
+        w.document.write(`Now that you've scrolled to the bottom, sign up for a program! :) `)
+        w.focus()
+        this.setTimeout(function() {w.close();}, 2500)
     }
 });
 
