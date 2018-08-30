@@ -54,7 +54,7 @@ let inverseInverse = function (e) {
 }
 inverse.addEventListener('contextmenu', inverseInverse);
 
-let destinationJpg = document.querySelector('.inverse-content img');
+let funJpg = document.querySelector('.inverse-content img');
 let addFullBorder = function (e) {
     if (e.target.style.border === '') {
         e.target.style.border = '2px dashed #C0C0C0'; 
@@ -63,4 +63,10 @@ let addFullBorder = function (e) {
         e.target.style.border = '';
     }
 }
-destinationJpg.addEventListener('drag', addFullBorder);
+funJpg.addEventListener('drag', addFullBorder);
+
+let destinationJpg = document.querySelector('.content-destination img');
+let switchImg = function (e) {
+    destinationJpg.src = 'img/fun-bus.jpg';
+}
+window.addEventListener('resize', switchImg);
