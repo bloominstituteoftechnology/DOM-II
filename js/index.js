@@ -25,6 +25,7 @@ let destInterval;
 let advenInterval;
 
 function destSlideShowHover(event){
+    cycleImg(destImg, destImgs);
     destInterval = setInterval(cycleImg, 1000, destImg, destImgs);
 }
 
@@ -33,6 +34,7 @@ function destSlideShowHoverCancel(event){
 }
 
 function advenSlideShowHover(event){
+    cycleImg(advenImg, advenImgs);
     advenInterval = setInterval(cycleImg, 1000, advenImg, advenImgs);
 }
 
@@ -50,3 +52,18 @@ destImg.addEventListener('mouseleave', destSlideShowHoverCancel);
 advenImg.addEventListener('mouseleave', advenSlideShowHoverCancel);
 
 // Change nav bar color
+const navBar = document.querySelector('.main-navigation');
+
+function pageScrollHandler(event){
+    const mixPer = window.scrollY / window.innerHeight;
+    let red = 255; 
+    let green = Number.parseInt(255 - (255 - 235) * mixPer); 
+    green = green < 235 ? 235 : green; 
+    let blue = Number.parseInt(255 - (255 - 205) * mixPer); 
+    blue = blue <205 ? 205 : blue; 
+    navBar.style.background = `rgb(${red}, ${green}, ${blue})`
+}
+
+window.addEventListener('scroll', pageScrollHandler);
+
+//
