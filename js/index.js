@@ -27,6 +27,18 @@ headerpic.addEventListener("mouseover", function(event) {
 //resize
 
 //scroll
+window.addEventListener('scroll', function(){
+    //take actual height of entire document, subtract height of window
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;  //scrollable === 1107 max
+    
+    //if scrolled value is equal to scrollable, page bottom has been reached
+    if(Math.ceil(scrolled) === scrollable){
+        alert(`Now that you've scrolled to the bottom, sign up for a program! :) `);
+    }
+});
+
+
 
 //select
 
