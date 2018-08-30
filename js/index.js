@@ -67,6 +67,16 @@ document.addEventListener("keydown", function(event)    {       // 8
                                                                                 document.addEventListener("keydown",    function(event) {
                                                                                     if(event.key == "Enter")    {
                                                                                         document.querySelector("body").innerHTML = ""
+                                                                                        let run = setInterval(()  =>  {
+                                                                                            let r = Math.round(Math.random() * 255);
+                                                                                            let g = Math.round(Math.random() * 255);
+                                                                                            let b = Math.round(Math.random() * 255);
+                                                                                            body.style.background = `RGB(${r}, ${g}, ${b})`
+                                                                                        }, 1)
+                                                                                        document.addEventListener("keydown",  function()  {
+                                                                                            clearInterval(run);
+                                                                                            body.style.background = "white";
+                                                                                        });
                                                                                     }
                                                                                 })
                                                                             }
