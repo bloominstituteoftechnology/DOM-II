@@ -37,7 +37,7 @@ document.addEventListener('keydown', (event) => {
 
 
 //WHEN THE WHEEL IS SCROLLED IN NIGHTTIME UI THE LOGO FLASHES THROUGH THE COLORS OF THE RAINBOW
-document.addEventListener("scroll", (event) => {
+document.addEventListener("scroll", () => {
     if (h1.style.color === 'white') {h1.style.color = 'red';}
     else if (h1.style.color === 'red') {h1.style.color = 'orange';}
     else if (h1.style.color === 'orange') {h1.style.color = 'yellow';}
@@ -45,6 +45,26 @@ document.addEventListener("scroll", (event) => {
     else if (h1.style.color === 'green') {h1.style.color = 'blue';}
     else if (h1.style.color === 'blue') {h1.style.color = 'purple';}
     else if (h1.style.color === 'purple') {h1.style.color = 'red';}
+});
+
+//WHEN SIGN ME UP BUTTONS ARE CLICKED THEY WILL BECOME DARKER BLUE, IF CLICKED AGAIN THEY WILL GO BACK TO ORIGINAL COLOR
+let button = document.querySelectorAll('.btn');
+button.forEach(function(element) {
+    element.addEventListener('click', (event) => {
+        if (event.target.style.backgroundColor != 'blue'){
+        event.target.style.backgroundColor = 'blue';
+        }
+        else if (event.target.style.backgroundColor === 'blue'){
+            event.target.style.backgroundColor = '#17A2B8';
+        }
+    });
+});
+
+///////NOT WORKING
+
+//WHEN PARAGRAPH TEXT IS SELECTED IT WILL CHANGE THE COLOR OF THE FONT
+document.addEventListener("select", () => {
+    paragraphText.style.color = 'yellow'; 
 });
 
 //LOAD STARTS TIMER FOR POP UP TO APPEAR, DOUBLE CLICK TO REMOVE POP UP
@@ -55,7 +75,6 @@ document.addEventListener('load', (event) => {
     };
 });
 
-//////// LESS COMPLICATED ONES
 
 
 
