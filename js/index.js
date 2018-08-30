@@ -2,13 +2,15 @@
 /*
 
 
-mouseenter
+mouseenter [done]
 
-dblclick
+dblclick [done]
 
+mouseleave [done]
 
+mouseover [done]
 
-click
+click [done]
 
 */
 /*Default prevention.*/
@@ -51,3 +53,17 @@ adventureImg.addEventListener('dblclick', function(){
 })
 
 console.log(adventureImg);
+
+let buttonSet = Array.from(document.getElementsByClassName('btn'));
+buttonSet.forEach(item => {
+    item.addEventListener('mouseover', function(){
+        item.style.color = 'Black';
+        item.style.backgroundColor = 'blanchedalmond';
+    })
+
+    item.addEventListener('mouseleave', function(){
+        item.style.color = 'white';
+        item.style.backgroundColor = '#17A2B8';
+    })
+})
+console.log(buttonSet);
