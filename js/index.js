@@ -24,6 +24,37 @@ headerpic.addEventListener("mouseleave", function(event){
 
 //drag/drop
 
+//identify WHAT is draggable
+function dragstart_handler(event) {
+    console.log("dragStart");
+    // add the target element's id to the data transfer object
+    event.dataTransfer.setData("text/plain", event.target.id);
+    console.log("data added");
+}
+
+//define the drag's data - - is this redundant?
+// function dragstart_handler(event) {
+//     //add the drag data
+//     event.dataTransfer.setData("text/plain", event.target.id);
+// }
+
+//define a drop zone
+function dragover_handler(event) {
+    event.preventDefault();
+    //set dropeffect to move
+    event.dataTransfer.dropEffect = "move";
+    console.log("drag effect move added");
+}
+
+function drop_handler(event) {
+    event.preventDefault();
+    //get the id of the target and add the moved element to the target's DOM
+    let data = event.dataTransfer.getData("text/plain");
+    event.target.appendChild(document.getElementById(data));
+}
+
+
+
 //load
 
 window.addEventListener('load', function(){
