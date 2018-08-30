@@ -53,3 +53,14 @@ let inverseInverse = function (e) {
     }
 }
 inverse.addEventListener('contextmenu', inverseInverse);
+
+let destinationJpg = document.querySelector('.inverse-content img');
+let addFullBorder = function (e) {
+    if (e.target.style.border === '') {
+        e.target.style.border = '2px dashed #C0C0C0'; 
+    }
+    else {
+        e.target.style.border = '';
+    }
+}
+destinationJpg.addEventListener('drag', addFullBorder);
