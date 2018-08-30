@@ -1,17 +1,23 @@
 // Your code goes here
+var each = [].forEach;
 const nav = document.querySelectorAll('.nav-link');
-nav.forEach(function(e)
+each.call( nav, function(e)
 {
     e.addEventListener('mouseover', function(event){
         navy = event.target.style;
-        navy.border = '2px solid dodgerblue';
+     
+        navy.borderBottom = '1px solid dodgerblue';
+
     });
+    e.addEventListener('mouseout', function(){
+        navy.borderBottom = '';
+    })
 }
 );
 
 
 window.onclick = hideContextMenu;
-window.onkeydown = listenKeys; 
+// window.onkeydown = listenKeys; 
 const funBus = document.querySelector('body');
 funBus.addEventListener("contextmenu", showContextMenu);
 const contentDiv = document.querySelector(".main-navigation");
@@ -38,16 +44,26 @@ function showContextMenu (e) {
 
 function hideContextMenu(){
     list = li.style;
-     list.display = 'none';
+    list.display = 'none';
+    
 
 }
 
-function listenKeys (event) {
-    var keyCode = event.which || event.keyCode;
-    if(keyCode == 27){
-        hideContextMenu();
-    } else {
-    showContextMenu();
-    }
-
+let intro = document.querySelector('.intro img'); 
+intro.addEventListener("wheel", wheelMe);
+intro.title = 'FUN BUS! READY TO ROLL!'
+function wheelMe() {
+intro.setAttribute('src', '/img/newfun.png');
 }
+
+
+
+// function listenKeys (event) {
+//     var keyCode = event.which || event.keyCode;
+//     if(keyCode == 27){
+//         hideContextMenu();
+//     } else {
+//     showContextMenu();
+//     }
+
+// }
