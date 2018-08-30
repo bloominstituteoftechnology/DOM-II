@@ -1,21 +1,33 @@
 let funBusH1 = document.querySelector('.logo-heading');
-let funner = function () {
-    if (funBusH1.innerHTML === 'Fun Bus') {
-        funBusH1.innerHTML = 'The Funnest Bus!'
+let funner = function (e) {
+    if (e.target.innerHTML === 'Fun Bus') {
+        e.target.innerHTML = 'The Funnest Bus!'
     }
     else {
-        funBusH1.innerHTML = 'Fun Bus';
+        e.target.innerHTML = 'Fun Bus';
     }
 }
 funBusH1.addEventListener('click', funner);
 
 let busImage = document.querySelector('.intro img');
-let addBorder = function () {
-    if (busImage.style.borderBottom === '') {
-        busImage.style.borderBottom = '2px dashed #C0C0C0'; 
+let addBorder = function (e) {
+    if (e.target.style.borderBottom === '') {
+        e.target.style.borderBottom = '2px dashed #C0C0C0'; 
     }
     else {
-        busImage.style.borderBottom = '';
+        e.target.style.borderBottom = '';
     }
 }
 busImage.addEventListener('mouseenter', addBorder);
+
+let headers = document.querySelectorAll('h2');
+let changeToBlue = function (e) {
+    if (e.target.style.color === '') {
+        e.target.style.color = 'blue';
+    }
+    else {
+        e.target.style.color = '';
+    }
+}
+headers.forEach(function (item) {
+    item.addEventListener('copy', changeToBlue)});
