@@ -65,9 +65,10 @@ logo.addEventListener('contextmenu',function(event){
 const body = document.querySelector('body');
 
 const span = document.createElement('span');
-span.innerHTML="CLick here to invert text";
+span.innerHTML="CLick To Invert Text";
 span.style.fontSize = '14px';
-span.style.border = '1px solid gold'
+span.style.fontFamily = 'roboto';
+span.style.border = '1px solid black'
 span.style.marginLeft= '30px';
 span.style.padding = '10px';
 span.style.cursor = 'pointer';
@@ -109,5 +110,24 @@ body.addEventListener('keypress',function(){
         logo.style.color = 'blue';
     } else if (logo.style.color === 'blue') {
         logo.style.color = 'red';
+    }
+})
+
+const firstTextContent = document.querySelector('.text-content');
+firstTextContent.addEventListener('click',function(event){
+    event.stopPropagation();
+    if (this.style.border === ''){
+    this.style.border = '1px dotted red';}
+    else if (this.style.border === '1px dotted red'){
+        this.style.border = ''
+    }
+})
+
+const firstContentSection = document.querySelector('.content-section');
+firstContentSection.addEventListener('click', function () {
+    if (this.style.border === ''){
+    this.style.border = '1px solid dodgerblue';}
+    else if (this.style.border === '1px solid dodgerblue'){
+        this.style.border = ''
     }
 })
