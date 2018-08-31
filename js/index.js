@@ -76,6 +76,19 @@ bottomDivs.forEach(function(element){
     })
 })
 
+//**Nav background animates colors upon Load**
+
+// const navColors = document.querySelector('.main-navigation');
+// window.addEventListener('load', function(){
+//     navColors.animate({
+//         backgroundColor: ['thistle', 'plum', 'violet', 'orchid', 'mediumorchid', 'thistle',],
+//     }, {
+//         duration:2000,
+//         iterations: Infinity,}
+//     )
+// })
+
+
 
 // **Create a pop up form**
 
@@ -83,25 +96,18 @@ bottomDivs.forEach(function(element){
 // this adds a fifth) --> .insertBefore(NAME, parent.second-child) to put before 2nd child
 // pop up form so would like it to have z-index: 1
 
+const navBar = document.querySelector('.main-navigation');
+navBar.style = 'z-index: -5;'
+
 const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
 parentDiv.prepend(box);
-box.style = 'z-index: 1;'
 box.classList.add('popup');
-box.style = 'height: 300px; width: 80%; margin: 0 auto;';
-box.style.background = 'red';
-box.innerHTML = 'I am a box';
-box.style.display = 'none'
+box.style = 'position: fixed; height: 300px; width: 80%; margin: 200px 10%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: center; align-item: center;';
+box.style.background = 'white';
+// box.style.display = 'none'
 
-
-//**Nav background animates colors upon Load**
-const navColors = document.querySelector('.main-navigation');
-window.addEventListener('load', function(){
-    navColors.animate({
-        backgroundColor: ['thistle', 'plum', 'violet', 'orchid', 'mediumorchid', 'thistle',],
-    }, {
-        duration:2000,
-        iterations: Infinity,}
-    )
-})
+const babyBox = document.createElement('div');
+box.prepend(babyBox);
+babyBox.style = 'height: 175px; width: 75%; border: 2px solid yellow; align-self: center;'
 
