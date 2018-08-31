@@ -48,11 +48,14 @@ document.addEventListener('scroll', () => {
 });
 
 //WHEN SIGN ME UP BUTTONS ARE CLICKED THEY WILL BECOME DARKER BLUE, IF CLICKED AGAIN THEY WILL GO BACK TO ORIGINAL COLOR
+//STOPPED PROPAGATION, CLICK DOES NOT TRIGGER THE CLICK EVENT OF THE BODY
 let button = document.querySelectorAll('.btn');
 button.forEach((element) => {
     element.addEventListener('click', (event) => {
+        event.stopPropagation();
+
         if (event.target.style.backgroundColor != 'blue'){
-        event.target.style.backgroundColor = 'blue';
+            event.target.style.backgroundColor = 'blue';
         }
         else if (event.target.style.backgroundColor === 'blue'){
             event.target.style.backgroundColor = '#17A2B8';
@@ -76,10 +79,16 @@ img.forEach((element) => {
     });
 });
 
-// WHEN YOU SCROLL THE WHEEL THE BACKGROUND TURNS TO DARK GREEN 
+// WHEN YOU CLICK THE BODY THE BACKGROUND TURNS TO DARK GREEN 
 
-document.addEventListener('wheel', (event) => {
+body.addEventListener('click', (event) => {
     body.style.backgroundColor = 'darkgreen'
+});
+
+// WHEN YOU PRESS THE MOUSE BUTTON DOWN ON THE FOOTER THE BACKGROUND TURNS TO DARK RED
+
+footer.addEventListener('mousedown', (event) => {
+    footer.style.backgroundColor = 'darkred';
 });
 
 //WHEN THE PAGE FINISHES LOADING, IT APPENDS A NEW DIV TO THE NAV BAR
@@ -103,6 +112,14 @@ document.addEventListener('keyup', (event) => {
         h2.forEach((element) => {element.style.color = 'black';});
         h4.forEach((element) => {element.style.color = 'black';});
     }
+});
+
+// PREVENTING ANCHOR TAGS FROM DEFAULT ACTION
+
+anchorText.forEach((element) => {
+    element.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
 });
 
 ///////NOT WORKING
