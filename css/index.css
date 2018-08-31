@@ -253,6 +253,9 @@ img {
     padding: 0;
   }
 }
+.home .content-section .goldenrod {
+  color: goldenrod;
+}
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
