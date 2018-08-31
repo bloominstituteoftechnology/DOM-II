@@ -115,3 +115,16 @@ const backgroundEventHandler = function() {
 header.addEventListener('mousemove', function() {
     toggle(onOff, backgroundEventHandler);
 });
+
+// 8. Change h2 colors if scrolled over
+const pageWheelHandler = function() {
+    let rand = Math.random();
+    let red = 255; 
+    let green = (255-50) * rand;
+    let blue =  (255-200) * rand;
+    this.style.color = `rgb(${red}, ${green}, ${blue})`;
+};
+
+ headings.forEach( head => {
+     head.addEventListener('wheel', pageWheelHandler)
+});
