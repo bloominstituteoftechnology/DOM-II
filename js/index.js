@@ -77,3 +77,16 @@ const logoMouseDownHandler = function() {
 logo.addEventListener('mousedown', function() {
     toggle(onOff, logoMouseDownHandler);
 });
+
+// 6. Mouse enters the top image inverts the color
+const introImageEventHandler = function() {
+    if (onOff === 1) {
+        introImage.style.filter = 'invert(100%)';
+    } else {
+        introImage.style.filter = 'invert(0%)';
+    }
+};
+
+introImage.addEventListener('mouseenter', function() {
+    toggle(onOff, introImageEventHandler);
+});
