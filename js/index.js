@@ -66,9 +66,9 @@ window.addEventListener('resize', function(event) {
 const button = document.querySelectorAll('.btn')
 
 window.addEventListener('scroll', function(event) {
-    button[0].innerHTML = "Changed!"
-    button[1].innerHTML = "Changed!"
-    button[2].innerHTML = "Changed!"
+    button[0].style.backgroundColor = "red"
+    button[1].style.backgroundColor = "purple"
+    button[2].style.backgroundColor = "dodgerblue"
 });
 
 
