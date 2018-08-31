@@ -1,7 +1,3 @@
-// todo - Nest two similar events somewhere in the site and prevent the event propagation properly
-// todo - Stop the navigation from items from refreshing the page by using preventDefault()
-
-
 // 1
 var itemOne = document.querySelectorAll('header .container h1')[0].addEventListener('mouseover', itemOneFunc);
 
@@ -108,4 +104,15 @@ var itemStopPropInner = document.querySelectorAll('.content-destination img')[0]
 function itemStopPropFuncInner() {
     event.stopPropagation();
     console.log('content-destination BOX + IMG');
+}
+
+// stop nav items refreshing
+var navItems = document.querySelectorAll('header .nav-container nav a')
+
+for (var i = 0; i < navItems.length; i++) {
+    navItems[i].addEventListener('click', navItemsStopFunc);
+}
+
+function navItemsStopFunc() {
+    event.preventDefault();
 }
