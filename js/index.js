@@ -10,6 +10,10 @@ const images = document.querySelectorAll('.img-content > img');
 const paragraph = document.querySelectorAll('p');
 const boat = document.querySelector('.content-destination > img');
 
+anchor.addEventListener("click", function(event){
+    event.preventDefault()
+});
+
 const buttonColorHandler = function() {
     this.style.backgroundColor = 'white';
     this.style.color = '#17A2B8';
