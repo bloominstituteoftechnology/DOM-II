@@ -33,3 +33,16 @@ const textContentClickHandler = function() {
 textContent[0].addEventListener('click', function() {
     toggle(onOff, textContentClickHandler);
 });
+
+// 2. Change second paragraph to italic on double click
+const textContentDoubleClickHandler = function() {
+    if (onOff === 1) {
+        textContent[1].style.fontStyle = 'italic';
+    } else {
+        textContent[1].style.fontStyle = 'normal';
+    }
+};
+
+textContent[1].addEventListener('dblclick', function() {
+    toggle(onOff, textContentDoubleClickHandler);
+});
