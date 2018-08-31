@@ -64,3 +64,16 @@ textContent[2].addEventListener('mouseover', function() {
 document.addEventListener('keydown', (event) => {
     introImage.style.opacity = `${Math.random()}`;
 });
+
+// 5. Mouse down on the logo changes the text color to red
+const logoMouseDownHandler = function() {
+    if (onOff === 1) {
+        logo.style.color = "red";
+    } else {
+        logo.style.color = "black";
+    }
+};
+
+logo.addEventListener('mousedown', function() {
+    toggle(onOff, logoMouseDownHandler);
+});
