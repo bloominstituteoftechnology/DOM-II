@@ -215,6 +215,14 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.scroll-counter {
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
