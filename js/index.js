@@ -68,3 +68,55 @@ nav4.onclick = function(event){
 //can I make it click through the rainbow with other else if?
 //can we toggle on/off animations? Could get it to toggle on but not off
 
+
+const welcome = document.querySelectorAll('.intro p')[0];
+window.addEventListener('resize', function(){
+    welcome.style = 'color: red';
+})
+
+const welcome2 = document.querySelectorAll('.text-content p')[1];
+welcome2.addEventListener('dblclick', function(){
+    welcome2.style = 'font-size: 2.0rem';
+})
+
+const text = document.querySelectorAll('.content-section p')[0];
+window.addEventListener('scroll', function(){
+    text.style = 'color: blue';
+})
+
+
+
+const bottomDiv1 = document.querySelectorAll('.destination')[0];
+const bottomDiv2 = document.querySelectorAll('.destination')[1];
+const bottomDiv3 = document.querySelectorAll('.destination')[2];
+
+bottomDiv1.addEventListener('mouseover', function(){
+    if (bottomDiv1.style.color === ''){
+    bottomDiv1.style.color = 'aqua';
+    } else {bottomDiv1.style.color = ''}
+})
+
+bottomDiv2.addEventListener('mouseover', function(){
+    if (bottomDiv2.style.color === ''){
+    bottomDiv2.style.color = 'aqua';
+    } else {bottomDiv2.style.color = ''}
+})
+
+bottomDiv3.addEventListener('mouseover', function(){
+    if (bottomDiv3.style.color === ''){
+    bottomDiv3.style.color = 'aqua';
+    } else {bottomDiv3.style.color = ''}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
