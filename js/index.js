@@ -67,12 +67,10 @@ let destinations = document.querySelectorAll(".destination");
 destinations.forEach(function(destination) {
     destination.addEventListener("mouseover", function(e) {
         console.log("Mouse entered destination box");
-        console.log(this);
         this.style.backgroundColor = "#cccccc";
     });
     destination.addEventListener("mouseout", function(e) {
         console.log("Mouse exited destination box");
-        console.log(this);
         this.style.backgroundColor = "";
     });
 });
