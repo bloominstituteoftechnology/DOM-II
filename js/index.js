@@ -7,6 +7,18 @@ function rando() {
   }
 }
 window.addEventListener("scroll", rando);
+navItems[0].addEventListener('click', function(event){
+    event.preventDefault();
+});
+navItems[1].addEventListener('click', function(event){
+    event.preventDefault();
+})
+navItems[2].addEventListener('click', function(event){
+    event.preventDefault();
+})
+navItems[3].addEventListener('click', function(event){
+    event.preventDefault();
+})
 
 const topPic = document.querySelector(".intro img");
 function fade() {
@@ -151,3 +163,13 @@ sunBtn.addEventListener("click", greyOut0);
 mountBtn.addEventListener("click", greyOut1);
 islandBtn.addEventListener("click", greyOut2);
 document.addEventListener("dblclick", greyNone);
+
+const paragraph = document.querySelector(".intro p");
+const intro = document.querySelector(".intro");
+intro.addEventListener("click", function(){
+    intro.style.backgroundColor = 'rebeccapurple';
+})
+paragraph.addEventListener("click", function(event) {
+    paragraph.style.backgroundColor = 'aqua';
+    event.stopPropagation();
+})
