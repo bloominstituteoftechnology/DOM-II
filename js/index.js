@@ -4,7 +4,7 @@ img sources
   <img id="funbus" src="img/fun-bus.jpg" alt="bus in the sand">
   <img id="adventure" src="img/adventure.jpg" alt="Let's go on an adventure!"> 
   <img id="fun" src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
-// <img src="img/destination.jpg" alt="Second slide">
+  <img src="img/destination.jpg" alt="Second slide">
 
 headers
 <h2>Welcome To Fun Bus!</h2>  | 
@@ -21,12 +21,72 @@ headers
 
 <h4>Island Getaway</h4>   | 
 
+ACTIONS
+3 options
+Learn more (wikipedia)
+Watch Videos
+I want to go (priceline, kayak)
+
+
  EVENTS
   select
 
-  3 options
-  Learn more (wikipedia)
-  Watch Videos
-  I want to go (priceline, kayak)
+const elementName = document.getElementById('');
+  const button4 = document.querySelector('.button4');
+button.addEventListener('click', function(){
+	console.log('Inline style bg color:', button4.style.backgrounColor)
+	if( this.style.backgroundColor === 'green'){
+		this.style.backgroundColor = 'aqua'
+	}else {
+		button.style.backgroundColor = 'green';
+	}
+})
+id="imgFunbus"
+id="imgAdventure"
+id="imgFun"
+id="imgDestination"
 
-  */
+id="Welcome"
+id="LetsGo"
+id="adventureAwaits"
+id="pickDestination"
+id="FunInSun"
+id="MountainExcursion"
+id="islandGetaway"
+*/
+
+id="imgFunbus"
+const imgFunbus = document.getElementById('imgFunbus');
+
+id="imgAdventure"
+const imgAdventure = document.getElementById('imgAdventure');
+
+id="imgFun"
+const imgFun = document.getElementById('imgFun');
+
+id="imgDestination"
+const imgDestination = document.getElementById('imgDestination');
+
+id="Welcome"
+const Welcome = document.getElementById('Welcome');
+
+id="LetsGo"
+const LetsGo = document.getElementById('LetsGo');
+
+id="adventureAwaits"
+const adventureAwaits = document.getElementById('adventureAwaits');
+
+id="pickDestination"
+const pickDestinatione = document.getElementById('pickDestination');
+
+id="FunInSun"
+const FunInSune = document.getElementById('FunInSun');
+
+id="MountainExcursion"
+const MountainExcursion = document.getElementById('MountainExcursion');
+
+id="islandGetaway"
+const islandGetaway = document.getElementById('islandGetaway');
+.addEventListener('click',function(){
+  
+})
