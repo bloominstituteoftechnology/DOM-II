@@ -17,7 +17,7 @@ each.call( nav, function(e)
 
 
 window.onclick = hideContextMenu;
-window.onkeydown = listenKeys; 
+
 const funBus = document.querySelector('.logo-heading');
 funBus.addEventListener("contextmenu", showContextMenu);
 const contentDiv = document.querySelector(".main-navigation");
@@ -40,25 +40,15 @@ function showContextMenu (e) {
     li.style.heigh ="25px";
     li.style.listStyleType = 'none';
     contentDiv.appendChild(li);
-    e.stopPropagation();
-    
-  
 }
 
 function hideContextMenu(){
     list = li.style;
     list.display = 'none';
-    
-
 }
 
 
-function listenKeys (event) {
-    var keyCode = event.which || event.keyCode;
-    if(keyCode == 27){
-        hideContextMenu();
-    }
-}
+
 
 // Wheel in the Bus Img 
 let intro = document.querySelector('.intro img'); 
@@ -87,14 +77,26 @@ function getStarted (){
   alert("Let's Get it STARTED");
 }
 
+// When the window resizes this woill count as you resize the window in
+// first p tag on Destination
+window.addEventListener("resize", newResize);
 
+var x = 0;
+function newResize(event){
 
- window.addEventListener('scroll', function(){
-    const contentText = document.querySlector('.content-pick .destination p');
-   const yPosition = window.pageYOffset;
-   if (yPosition > 550) {
-contentText.style.opacity = '0';
-   }else{
-    contentText.style.opacity = '1';
-   }
- })
+  
+var txt = ` The Window was resized ${x +=1}`
+document.querySelector('div .destination p').innerHTML= txt;
+
+}
+//adding color to the lower section like water
+const boxed = document.querySelectorAll('div .destination p');
+boxed.forEach( boxed => {
+    boxed.addEventListener('click', boxes)
+  }) 
+  
+function boxes() {
+ this.style.backgroundColor = 'dodgerblue';
+   this.style.color ="white";
+
+}
