@@ -7,9 +7,9 @@ const funBusRainbow = document.querySelector('h1');
 window.addEventListener('load', function(){
 
     funBusRainbow.animate({
-        color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
+        color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'blue', 'green', 'yellow', 'orange', 'red',],
     }, {
-        duration:3000,
+        duration: 6000,
         iterations: Infinity,}
     )
     }
@@ -53,10 +53,14 @@ window.addEventListener('resize', function(){
 
 
 // **Text gets larger when double clicked 4/10**
-const welcome2 = document.querySelectorAll('.text-content p')[1];
-welcome2.addEventListener('dblclick', function(){
-    welcome2.style = 'font-size: 2.0rem';
-})
+const sillyStatement = document.querySelectorAll('.nav a');
+for (let i=0; i<sillyStatement.length; i++){
+    this.addEventListener('dblclick', function(){
+        sillyStatement[i].innerHTML = 'OOPS!'
+    })
+}
+
+
 
 //**Turns headers rainbow when the page is scrolled  down 5/10**
 const welcomeText = document.querySelectorAll('h2');
@@ -70,26 +74,13 @@ console.log(rainbowScrollHeaders);
 for (let i=0; i<rainbowScrollHeaders.length; i++){
     window.addEventListener('scroll', function(){
         rainbowScrollHeaders[i].animate({
-            color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
+            color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'blue', 'green', 'yellow', 'orange', 'red',],
         }, {
-            duration:3000,
+            duration:6000,
             iterations: Infinity,}
         )
     })
 }
-
-
-// window.addEventListener('scroll', function(){
-
-//     welcomeText.animate({
-//         color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
-//     }, {
-//         duration:3000,
-//         iterations: Infinity,}
-//     )
-//     }
-
-// );
 
 
 //** All three bottom divs turn aqua on mouseover */
@@ -116,15 +107,7 @@ bottomDivs.forEach(function(element){
 
 // **Create a pop up form**
 
-//prepend to .home after .intro class, before .content-section claass (4 children, 
-// this adds a fifth) --> .insertBefore(NAME, parent.second-child) to put before 2nd child
-// pop up form so would like it to have z-index: 1
-
-
-
-
 const navBar = document.querySelector('.main-navigation');
-// navBar.style = 'z-index: 0;'
 
 const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
@@ -159,7 +142,7 @@ formHeader.style = 'font-size: 3.4rem; margin: 0 auto; padding-bottom: 5px;';
 babyBox.appendChild(formHeader);
 
 const nameBox = document.createElement('div');
-nameBox.style = 'height: 30px; width: 56%; display: flex; justify-content: space-evenly; margin-left: 20%; align-items: flex-end;';
+nameBox.style = 'height: 30px; width: 57%; display: flex; justify-content: space-evenly; margin-left: 21%; align-items: flex-end;';
 babyBox.appendChild(nameBox);
 
 const emailBox = document.createElement('div');
@@ -242,5 +225,32 @@ xBox.addEventListener('click',function(){
 //**Event to close pop up when button is clicked**
 submitButton.addEventListener('click',function(){
     box.style.display = 'none';
+})
+
+//**Select Text Event**
+formName.addEventListener('select', function(){
+    formName.style.background = 'hotpink';
+})
+
+formEmail.addEventListener('select', function(){
+    formEmail.style.background = 'hotpink';
+})
+
+
+
+//**Create Tooltip**
+const toolTip = document.createElement('div');
+nameBox.appendChild(toolTip);
+
+const tooltipSpan = document.createElement('span');
+tooltipSpan.innerHTML = 'Keep going!';
+toolTip.appendChild(tooltipSpan);
+
+toolTip.style = 'position: relative; display: inline-block;'
+tooltipSpan.style = 'visibility: hidden; width: 120px; background-color: #555; color: #fff; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 3; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s;'
+
+//**Keypress Event**
+formName.addEventListener('keypress', function(){
+    tooltipSpan.style = 'visibility: visible; opacity: 1;'
 })
 
