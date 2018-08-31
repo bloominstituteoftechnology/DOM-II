@@ -6,8 +6,14 @@ const buttonColorHandler = function() {
     this.style.color = '#17A2B8';
 }
 
+const buttonReset = function() {
+    this.style.backgroundColor = '';
+    this.style.color = '';
+}
+
 button.forEach(button => {
     button.addEventListener('mouseover', buttonColorHandler);
+    button.addEventListener('mouseleave', buttonReset);
 });
 
 const body = document.querySelector('body');
