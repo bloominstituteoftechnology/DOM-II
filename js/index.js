@@ -96,6 +96,26 @@ headerBG.style.color= "yellow";
 firstImage.addEventListener('drag',dragBus);
 
 
+let navItems= document.querySelectorAll(".nav-link");
+
+//changes color of home link when mouse down 9 
+let changeLinkColor = (event) =>{
+event.preventDefault();
+navItems[0].style.color = 'red' ;
+}
+
+navItems[0].addEventListener('mousedown', changeLinkColor);
+
+
+
+
+
+
+
+
+
+
+
 
 
 // anime({
