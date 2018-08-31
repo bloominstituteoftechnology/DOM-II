@@ -96,16 +96,17 @@ body.addEventListener('dblclick', dblclickHandler);
 
 
 // Same drill but single-clicking on any element sets the font to zapf-dingbats
-// I gotta say, I enjoyed playing with this one :)
+let blottedText = null;
 
 const clickHandler = function(e) {
     e.stopPropagation();
     const target = e.target;
-    const cur_font = target.style.fontFamily;
-    if (cur_font) {
-        target.style.fontFamily = "";
-    } else {
+    if (blottedText === null) {
+        blottedText = target;
         target.style.fontFamily = '"Zapf Dingbats", Wingdings, Symbol, sans-serif';
+    } else {
+        blottedText.style.fontFamily = '';
+        blottedText = null;
     }
 };
 
@@ -113,4 +114,11 @@ const clickHandler = function(e) {
 body.addEventListener('click', clickHandler);
 
 // Seven so far!
+
+// Complain if the user tries to drag something
+// (it's a little hard to select stuff because we've already 
+//  commandeered the click action, but it still works)
+document.addEventListener('dragstart', (e) => {
+    window.alert('OOOUUUCCCHHH!\nStop pulling on me!');
+});
 
