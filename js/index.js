@@ -46,3 +46,16 @@ const textContentDoubleClickHandler = function() {
 textContent[1].addEventListener('dblclick', function() {
     toggle(onOff, textContentDoubleClickHandler);
 });
+
+// 3. Change third paragraph to pink background on mouseover
+const textContentMouseOverHandler = function() {
+    if (onOff === 1) {
+        textContent[2].style.backgroundColor = 'rgb(252, 17, 169)';
+    } else {
+        textContent[2].style.backgroundColor = 'white';
+    }
+};
+
+textContent[2].addEventListener('mouseover', function() {
+    toggle(onOff, textContentMouseOverHandler);
+});
