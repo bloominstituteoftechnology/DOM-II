@@ -134,7 +134,7 @@ xBox.prepend(xText);
 
 const babyBox = document.createElement('div');
 box.prepend(babyBox);
-babyBox.style = 'height: 250px; width: 85%; align-self: center; border-radius: 7px; margin-right: 2%; background-color: white; border: 2px solid navy; display: flex; flex-direction: column; justify-content: space-evenly;'
+babyBox.style = 'height: 250px; width: 85%; align-self: center; border-radius: 7px; margin: 0 auto; background-color: white; border: 2px solid navy; display: flex; flex-direction: column; justify-content: space-evenly;'
 
 const formHeader = document.createElement('h3');
 formHeader.innerHTML = 'Join our update list!';
@@ -265,3 +265,4 @@ formEmail.addEventListener('keypress', function(){
 })
 
 
+//need to add media queries to fix width issues for the tooltips and pop up box.
