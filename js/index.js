@@ -103,7 +103,7 @@ const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
 parentDiv.prepend(box);
 box.classList.add('popup');
-box.style = 'position: fixed; height: 300px; width: 80%; margin: 200px 10%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: center; align-item: center;';
+box.style = 'position: fixed; height: 300px; width: 60%; margin: 200px 15%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: center; align-item: center;';
 box.style.background = 'white';
 // box.style.display = 'none'
 
