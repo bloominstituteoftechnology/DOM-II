@@ -1,3 +1,12 @@
+// change color and size of a tags on mouseenter
+const aNavs = document.querySelectorAll('nav a');
+aNavs.forEach((a) => {
+  a.addEventListener('mouseenter', function(e){
+  a.style.cursor = 'pointer';
+  a.preventDefault();
+  });
+});
+
 //change opactiy of images on mouse enter and exit
 const imgs = document.querySelectorAll('.img-content img');
 
@@ -38,6 +47,48 @@ const secondMainImg = document.getElementsByClassName('img-content')[1];
                      : secondMainImg.style.opacity = 1;
     });
     document.body.appendChild(scrollCoords);
+
+    // mousedown event on button
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((button) => {
+      button.addEventListener('mousedown', function(e) {
+        button.style.color = 'yellow';
+        button.style.backgroundColor = 'black';
+        button.addEventListener('mouseup', function(e) {
+          button.style.color = 'white';
+          button.style.backgroundColor = '#17A2B8';
+          e.stopPropagation();
+        });
+      });
+
+      button.addEventListener('mouseover', function(e) {
+        button.style.color = '#17A2B8';
+        button.style.backgroundColor = 'white';
+        button.addEventListener('mouseout', function(e) {
+          button.style.color = 'white';
+          button.style.backgroundColor = '#17A2B8';
+          e.stopPropagation();
+        });
+      });
+
+      // dblclick
+      button.addEventListener('dblclick', (e) => button.style.backgroundColor =
+    'limegreen');
+    });
+
+    // document loads animation with transform
+
+    window.addEventListener('load', function(e)  {
+      alert('Welcome to the Fun Bus Travel Agency!');
+    });
+
+
+    // keydown when someone is scrolling
+    document.addEventListener('keydown', (e) => {
+      console.log(e.key);
+    })
+
+
 // const createQueryEventWithStyle = function(selector, eventType, styleToChange, styleValue ) {
 //
 //     let targ = document.querySelector(selector);
