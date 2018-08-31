@@ -7,7 +7,8 @@ const header = document.querySelector('.main-navigation');
 const textContent = document.querySelectorAll('.text-content');
 const footer = document.querySelector('.footer');
 const buttons = document.querySelectorAll('.btn');
-console.log(buttons);
+const destinationHeaders = document.querySelectorAll('.destination h4');
+console.log(destinationHeaders);
 
 //handler callbacks
 const navMouseOverHandler = function(event){
@@ -93,3 +94,17 @@ document.addEventListener('keydown', function(e){
         header.style.display = '';
     }
 }) //10
+
+destinationHeaders.forEach(h => {
+    h.addEventListener('click', function(e){
+        if (this.style.color === 'crimson'){
+            this.style.color = '';
+        } else {
+            this.style.color = 'crimson';
+        }  
+    })
+})
+
+footer.addEventListener('dblclick', function(e) {
+    this.style.backgroundColor = 'aqua';
+})
