@@ -60,12 +60,14 @@ button.forEach(function(element) {
     });
 });
 
-///////NOT WORKING
-
-//WHEN PARAGRAPH TEXT IS SELECTED IT WILL CHANGE THE COLOR OF THE FONT
-document.addEventListener("select", () => {
-    paragraphText.style.color = 'yellow'; 
+//RESIZE (TRIGGERS FOR EVERY PIXEL YOU CHANGE IN SIZE)
+window.addEventListener("resize", (event) =>  {    
+    paragraphText.forEach(function(element) {
+        element.style.color = "yellow";
+    });
 });
+
+///////NOT WORKING
 
 //LOAD STARTS TIMER FOR POP UP TO APPEAR, DOUBLE CLICK TO REMOVE POP UP
 document.addEventListener('load', (event) => { 
