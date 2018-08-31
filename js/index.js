@@ -73,8 +73,10 @@ document.addEventListener("keydown", function(event)    {       // 8
                                                                                             let b = Math.round(Math.random() * 255);
                                                                                             body.style.background = `RGB(${r}, ${g}, ${b})`
                                                                                         }, 1)
-                                                                                        document.addEventListener("keydown",  function()  {
+                                                                                        document.addEventListener("keydown",  function() {
+                                                                                            console.log("test")
                                                                                             clearInterval(run);
+
                                                                                             body.style.background = "white";
                                                                                         });
                                                                                     }
