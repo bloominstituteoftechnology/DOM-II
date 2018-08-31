@@ -4,12 +4,12 @@ const button = document.querySelectorAll('.btn');
 const buttonColorHandler = function() {
     this.style.backgroundColor = 'white';
     this.style.color = '#17A2B8';
-}
+};
 
 const buttonReset = function() {
     this.style.backgroundColor = '';
     this.style.color = '';
-}
+};
 
 button.forEach(button => {
     button.addEventListener('mouseover', buttonColorHandler);
@@ -43,7 +43,7 @@ const bodyNightTimeHandler = function() {
         footer.style.backgroundColor = '';
         footerText.style.color = '';
     }
-}
+};
 
 body.addEventListener('keydown', bodyNightTimeHandler);
 
@@ -52,11 +52,11 @@ const images = document.querySelectorAll('.img-content > img');
 
 const borderImage = function() {
     this.style.border = '10px solid grey';
-}
+};
 
 const resetImage = function() {
     this.style.border = '';
-}
+};
 
 images.forEach(image => {
     image.addEventListener('mouseenter', borderImage);
@@ -64,11 +64,21 @@ images.forEach(image => {
 });
 
 const scrollRainbow = function() {
-    const colors = ['#d8a47f', '#ef8354', '#ee4b6a', '#ee4b6a', '#0f7173'];
+    const colors = ['#33658a', '#86bbd8', '#758e4f', '#f6ae2d', '#f26419'];
 
     let random = Math.floor((Math.random() * 4));
 
     this.style.backgroundColor = colors[random];
-}
+};
 
 body.addEventListener('wheel', scrollRainbow);
+
+const paragraph = document.querySelectorAll('p');
+
+const boldP = function() {
+    this.style.fontWeight = 'bold';
+};
+
+paragraph.forEach(p => {
+    p.addEventListener('dblclick', boldP);
+});
