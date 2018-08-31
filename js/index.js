@@ -17,13 +17,14 @@ each.call( nav, function(e)
 
 
 window.onclick = hideContextMenu;
-// window.onkeydown = listenKeys; 
-const funBus = document.querySelector('body');
+window.onkeydown = listenKeys; 
+const funBus = document.querySelector('.logo-heading');
 funBus.addEventListener("contextmenu", showContextMenu);
 const contentDiv = document.querySelector(".main-navigation");
 var li = document.createElement("li");
 
 
+// Right Click Function with Escape
 function showContextMenu (e) {
     funBus.style.display = 'block';
     funBus.style.left = event.clientX + 'px';
@@ -39,6 +40,8 @@ function showContextMenu (e) {
     li.style.heigh ="25px";
     li.style.listStyleType = 'none';
     contentDiv.appendChild(li);
+    e.stopPropagation();
+    
   
 }
 
@@ -49,6 +52,15 @@ function hideContextMenu(){
 
 }
 
+
+function listenKeys (event) {
+    var keyCode = event.which || event.keyCode;
+    if(keyCode == 27){
+        hideContextMenu();
+    }
+}
+
+// Wheel in the Bus Img 
 let intro = document.querySelector('.intro img'); 
 intro.addEventListener("wheel", wheelMe);
 intro.title = 'FUN BUS! READY TO ROLL!'
@@ -57,13 +69,20 @@ intro.setAttribute('src', '/img/newfun.png');
 }
 
 
+// Double Clicking the Content
+const contentTop = document.querySelector('.content-section p');
+contentTop.addEventListener("dblclick", doubleClick);
+function doubleClick (){
+    contentTop.innerHTML = " I was double-clicked on and added more content here.";
 
-// function listenKeys (event) {
-//     var keyCode = event.which || event.keyCode;
-//     if(keyCode == 27){
-//         hideContextMenu();
-//     } else {
-//     showContextMenu();
-//     }
+}
 
-// }
+
+// Alert Message On First Signup
+const signUp = document.querySelector(".btn");
+signUp.addEventListener('click',getStarted);
+// Action to the button to alert user.
+function getStarted (){
+
+  alert("Let's Get it STARTED");
+}
