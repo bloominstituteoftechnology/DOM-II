@@ -351,11 +351,3 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
-.dropzone {
-  width: 200px;
-  height: 80px;
-  background: bisque;
-  margin-bottom: 10px;
-  padding: 10px;
-  text-align: center;
-}

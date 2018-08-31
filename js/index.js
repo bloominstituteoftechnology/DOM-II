@@ -88,3 +88,95 @@ document.addEventListener("drop", function( event ) {
   }
 
 }, false);
+
+//  preventDefault
+let nav_a2 = document.querySelectorAll('.nav-link');
+
+for(leti = 0; i < nav_a2.length; i++) {
+  nav_a2[i] = addEventListener('dblclick', navDblClick);
+  nav_a2[i] = addEventListener('lick', navClick);
+}
+
+function navDblClick() {
+  for(let i= 0; i < nav_a2.length; i++) {
+    if(nav_a2[i].style.color === 'black'){
+      nav_a2[i].style.fontSize = '';
+      nav_a2[i].style.color = '';
+    } else {
+      nav_a2[i].style.color ='black';
+      nav_a2[i].style.fontSize = '8rem';
+    }
+  }
+}
+
+function navClick(event){
+  for(let i = 0; i < nav_a2.length; i++){
+    nav_a2[i].preventDefault();
+  }
+}
+
+
+function randomColor_RGB(min,max){
+  let minVal = Math.ceil(min);
+  let maxVal = Math.floor(max);
+  return Math.floor(Math.random()  * (max-min)) + min;
+}
+
+// Stop Propogation
+let h4_el = document.querySelectorAll('h4');
+
+
+function h4Handler(event) {
+  for(let i = 0; i < h4_el.length; i++){
+    event.stopPropagation();
+    h4_el.style.color = 'red';
+  }
+}
+
+var btn_el = document.querySelector('.btn');
+
+
+btn_el.onclick = function() {
+  let randomRGB = 'rgb(' + randomColor_RGB(0, 255) + ','
+                         + randomColor_RGB(0, 255) + ','
+                         + randomColor_RGB(0, 255) +')';
+  btn_el.style.backgroundColor = randomRGB;
+};
+
+
+
+
+
+
+
+
+
+
+
+/*
+btn_el.forEach(function(element){
+  let randomRGB = 'rgb(' + randomColor_RGB(0, 255) + ','
+    + randomColor_RGB(0, 255) + ','
+    + randomColor_RGB(0, 255) +')';
+
+  element.addEventListener('mousemove', function (event) {
+    let tag = event.target.style;
+    tag.backgroundColor = randomRGB;
+
+  });
+
+});
+
+/*
+nav_a.forEach(function(element){
+  element.addEventListener('mousemove', function (event) {
+    let tag = event.target.style;
+    tag.fontSize = '2rem';
+    tag.backgroundColor = 'bisque';
+    tag.padding= '2rem';
+    tag.borderRadius = '5rem 0 5rem 0';
+    tag.border = '1px solid chocolate';
+
+  });
+});
+*/
