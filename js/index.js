@@ -1,6 +1,6 @@
 // Your code goes here
 
-//****Mouseover  ********** */
+//****MOUSEOVER EVENT ********** */
 // const funBusImg = document.querySelector('.intro img');
 
 // // cb - Mouseover event handler
@@ -17,7 +17,7 @@
 // funBusImg.addEventListener('mouseover', hideFunBusImg);
 
 
-//************* Keydown Event**************/
+//************* KEYDOWN Event**************/
 // //change footer text on keydown
 // let footer = document.querySelector('.footer');
 // let footerText = ''
@@ -86,16 +86,50 @@
  *****************************************************/
 
  //Give message saying that resources have finished loading
- window.addEventListener('load', function(event){
-    //grab header
-    const header = document.querySelector('.main-navigation');
-    const infopara = document.createElement('p');
-    infopara.textContent = 'All Resources have finished loading!';
-    infopara.style.color = '#ff1111';
-    header.prepend(infopara);
+//  window.addEventListener('load', function(event){
+//     //grab header
+//     const header = document.querySelector('.main-navigation');
+//     const infopara = document.createElement('p');
+//     infopara.textContent = 'All Resources have finished loading!';
+//     infopara.style.color = '#ff1111';
+//     header.prepend(infopara);
 
-    setTimeout(() => {
-        infopara.style.display = 'none';
-    }, 3000);
+//     setTimeout(() => {
+//         infopara.style.display = 'none';
+//     }, 3000);
 
- });
+//  });
+
+
+/******************************************************
+ * FOCUS EVENT
+ *******************************************************/
+
+//change border of anchors that has focus
+// const navAnchors = document.querySelectorAll('.nav-link');
+
+// //add event handler
+// function addImgBorder(event){
+//     event.target.style.border = '2px solid orange';
+// }
+
+// //add event listeners
+// for(anchor of navAnchors){
+//     anchor.addEventListener('focus', addImgBorder);
+// }
+
+
+/*******************************************
+ * RESIZE EVENT
+ ********************************************/
+let resizeCount = 0;
+window.addEventListener('resize', function(){
+    const span = document.createElement('span');
+    document.querySelector('footer').appendChild(span);
+    resizeCount += 1;
+    span.textContent = `Resized screen ${resizeCount} times`;
+
+});
+
+
+
