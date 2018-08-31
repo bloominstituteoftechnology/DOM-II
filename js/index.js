@@ -12,7 +12,7 @@ footer.addEventListener('mouseover', function () {
 });
 
 const img2 = document.querySelector('.img-content img');
-img2.addEventListener('click', function () {
+img2.addEventListener('contextmenu', function () {
     img2.style.height = '300px';
     img2.style.width = '25px';
 });
@@ -25,6 +25,37 @@ intro.addEventListener('keyup', function () {
 const adventureAwaits = document.querySelector('.inverse-content .text-content');
 adventureAwaits.addEventListener('wheel', function () {
     adventureAwaits.style.display = 'flex';
+    adventureAwaits.style.color = 'yellow';
 });
 
+const header = document.querySelector('header')
+header.addEventListener('mouseleave', function () {
+    header.style.display = 'none';
+});
 
+const destinationPick = document.querySelector('.content-pick');
+destinationPick.addEventListener('copy', function () {
+    destinationPick.style.flexDirection = 'column';
+    destinationPick.style.color = 'white';
+})
+
+const navBar = document.querySelector('.nav');
+navBar.addEventListener('mousemove', function () {
+    navBar.style.flexDirection = 'row-reverse';
+})
+
+const navItems = document.querySelectorAll('.nav-link');
+navItems.forEach(navItem => {
+    navItem.addEventListener('click', function () {
+        navItem.style.color = 'red';
+    })
+})
+
+const destination = document.querySelectorAll('.destination');
+destination.forEach(item => {
+    item.addEventListener('click', function () {
+        item.style.backgroundColor = 'red';
+        item.style.display = 'flex';
+        item.style.flexDirection = 'column-reverse';
+    })
+})
