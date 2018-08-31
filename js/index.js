@@ -62,3 +62,13 @@ images.forEach(image => {
     image.addEventListener('mouseenter', borderImage);
     image.addEventListener('mouseleave', resetImage);
 });
+
+const scrollRainbow = function() {
+    const colors = ['#d8a47f', '#ef8354', '#ee4b6a', '#ee4b6a', '#0f7173'];
+
+    let random = Math.floor((Math.random() * 4));
+
+    this.style.backgroundColor = colors[random];
+}
+
+body.addEventListener('wheel', scrollRainbow);
