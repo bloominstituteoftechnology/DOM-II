@@ -9,6 +9,11 @@ const footer = document.querySelector('.footer');
 const imgs = document.querySelectorAll("img");
 const body = document.querySelector("body");
 const button = document.querySelectorAll('.btn');
+const anchorText = document.querySelectorAll('a');
+const paragraphText = document.querySelectorAll('p');
+const h1 = document.querySelector('h1');
+const h2 = document.querySelectorAll('h2');
+const h4 = document.querySelectorAll('h4');
 
 // Event Listeners
 
@@ -24,11 +29,23 @@ for (let i = 0; i < nav.length; i++){              // 2
         nav[i].style.fontSize = '1.5rem';
         nav[i].style.color = 'black';
     });
-}
+};
 
-window.addEventListener('scroll', function() {      //3
-    document.body.style.backgroundColor = "dodgerblue";
+// Toggles Night mode when N key is pressed  3
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'n') {
+        body.style.backgroundColor = 'rgb(71, 71, 73';
+        mainNav.style.background = 'rgb(50, 50, 52)';
+        footer.style.background = 'rgb(50, 50, 52)';
+        anchorText.forEach((element) => {element.style.color = 'white';});
+        paragraphText.forEach((element) => {element.style.color = 'white';});
+        h1.style.color = 'white';
+        h2.forEach((element) => {element.style.color = 'white';});
+        h4.forEach((element) => {element.style.color = 'white';});
+    }
 });
+
 
 mainNav.addEventListener('mouseover', (event) => {  //4
     event.preventDefault();
@@ -67,3 +84,4 @@ button.forEach((element) => {  //10
         }
     });
 });
+
