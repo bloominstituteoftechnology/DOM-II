@@ -15,7 +15,7 @@ yellowBus.addEventListener('mouseleave', function() {
 });
 
 const welcomeMessage = document.querySelector('h2');
-welcomeMessage.addEventListener('wheel', function() {
+document.addEventListener('wheel', function() {
     welcomeMessage.innerText = 'Welcome to the Bun Fus!';
 });
 
@@ -23,5 +23,78 @@ const dragPTag = document.querySelector('p');
 dragPTag.addEventListener('drag', function() {
     this.style.display = 'none';
 })
+
+const footer = document.querySelector('footer');
+document.addEventListener('keypress', function(event){
+    if(event.key = "w") {
+        footer.style.backgroundColor = 'aqua';
+    }
+})
+
+window.addEventListener('resize', function (event) {
+    yellowBus.style.display = 'none';
+})
+
+document.addEventListener('scroll', function() {
+    alert('You have encounterd the Scroll Lock monster.  Please Do not do this again!');
+})
+
+const nav = document.querySelector('.nav');
+window.addEventListener('contextmenu', function() {
+    nav.style.display = none;
+})
+//shoutout to Ryan Matthews for the Konami Code
+// I just changed the alert
+document.addEventListener("keydown", function(event)    {
+    if(event.key == "ArrowUp")  {
+        document.addEventListener("keydown", function(event)    {
+            if(event.key == "ArrowUp")  {
+                document.addEventListener("keydown", function(event)    {
+                    if(event.key == "ArrowDown")    {
+                        document.addEventListener("keydown",    function(event) {
+                            if(event.key == "ArrowDown")    {
+                                document.addEventListener("keydown", function(event) {
+                                    if(event.key == "ArrowLeft")    {
+                                        document.addEventListener("keydown",    function(event) {
+                                            if(event.key == "ArrowRight")   {
+                                                document.addEventListener("keydown",    function(event) {
+                                                    if(event.key == "ArrowLeft")    {
+                                                        document.addEventListener("keydown", function(event)    {
+                                                            if(event.key == "ArrowRight")   {
+                                                                document.addEventListener("keydown",    function(event) {
+                                                                    if(event.key == "b"){
+                                                                        document.addEventListener("keydown",    function(event) {
+                                                                            if(event.key == "a")    {
+                                                                                document.addEventListener("keydown",    function(event) {
+                                                                                    if(event.key == "Enter")    {
+                                                                                        window.location.href = 'https://i.kym-cdn.com/entries/icons/original/000/000/269/hqdefault.jpg';
+                                                                                        alert('You just entered the Konami code ... why?');
+                                                                                        alert('You have been redirected');
+                                                                                    }
+                                                                                })
+                                                                            }
+                                                                        })
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+})
+// document.addEventListener('keydown', function(event) {
+//     const keyName = event.key;
+//     alert('keydown event\n\n' + 'key: ' + keyName);
+//   });
 // .intro img 
 // yellow bus image
