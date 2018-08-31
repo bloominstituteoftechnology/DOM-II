@@ -77,14 +77,14 @@ logo.addEventListener('mouseleave', () => {//animates the logo header
     var id = setInterval(frame, 5);
     function frame() {
         if (pos == 400) {
-      clearInterval(id);
+            clearInterval(id);
         } else {
-        pos++; 
-        logo.style.left = pos + 'px'; 
+            pos++; 
+            logo.style.left = pos + 'px'; 
         }
     }
 })
-
-allImg[0].addEventListener('dblclick', () => {
-    TweenMax.to(".text-content h2", 5, {x:400});
-})
+/* not working yet
+allImg[0].addEventListener('mouseover', () => {//animates top img
+    TweenMax.to(allImg[0], 5, {x:400});
+}) */
