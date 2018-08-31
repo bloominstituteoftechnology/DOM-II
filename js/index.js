@@ -45,6 +45,8 @@ function funBus() {
     /*******EVENT 5*************/
     document.addEventListener('keydown', (event) => {
         const keyName = event.key;
+        console.log(event);
+        console.log(event.target);
         alert('keydown event\n\n' + 'key: ' + keyName);
     });
 
@@ -75,24 +77,25 @@ function funBus() {
 
     function h2Handler() {
         for (i = 0; i < h2.length; i++) {
-            h2[i].innerHTML = "LAMBDA STUDENTS HAVE BEEN HERE!"
+           // if (h2[i].innerHTML === "") {
+                h2[i].innerHTML = "LAMBDA STUDENTS HAVE BEEN HERE!";
+        //    } h2[i].innerHTML = "";
         }
     };
 
     let nav = document.querySelectorAll('.nav-link');
 
-    for (i = 0; i < nav.length; i++) {
+    for (let i = 0; i < nav.length; i++) {
         /*******EVENT 9*************/
         nav[i].addEventListener('dblclick', navHandler);
         nav[i].addEventListener('click', navClickHandler);
     };
 
     function navHandler() {
-        for (i = 0; i < nav.length; i++) {
+        for (let i = 0; i < nav.length; i++) {
             if (nav[i].style.color === "red") {
                 nav[i].style.fontSize = "";
                 nav[i].style.color = "";
-
             } else {
                 nav[i].style.color = "red";
                 nav[i].style.fontSize = "24px";
@@ -101,9 +104,9 @@ function funBus() {
     }
 
     /*******PREVENT DEFAULT*************/
-    function navClickHandler(e) {
-        for (i = 0; i < nav.length; i++) {
-            nav[i].e.preventDefault();
+    function navClickHandler(event) {
+        for (let i = 0; i < nav.length; i++) {
+            event.preventDefault();
         }
     }
     /*******EVENT 10*************/
@@ -125,7 +128,7 @@ function funBus() {
     };
 
     function h4ClickHandler(event) {
-        for (i = 0; i < h4.length; i++) {
+        for (let i = 0; i < h4.length; i++) {
             /*******STOP PROPAGATION*************/
             event.stopPropagation();
             h4[i].style.color = "yellow";
@@ -133,10 +136,9 @@ function funBus() {
     };
 
     function destinationClickHandler() {
-        for (i = 0; i < destination.length; i++) {
+        for (let i = 0; i < destination.length; i++) {
             destination[i].style.color = "blue";
         }
     };
 };
-
 funBus();

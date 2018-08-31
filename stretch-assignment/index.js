@@ -15,7 +15,7 @@ function blocky() {
     grayBlock.addEventListener("click", grayHandler);
 
     //redBlock.addEventListener("mousedown", redDwnHandler);
-    //blueBlock.addEventListener("mousedown", blueDwnHandler);
+   // blueBlock.addEventListener("mousedown", blueDwnHandler);
     //greenBlock.addEventListener("mousedown", greenDwnHandler);
     //pinkBlock.addEventListener("mousedown", pinkDwnHandler);
     //grayBlock.addEventListener("mousedown", grayDwnHandler);
@@ -36,6 +36,8 @@ function blocky() {
 const blockArr = ["redBlock", "blueBlock", "greenBlock", "pinkBlock", "grayBlock"];
 
 function redHandler() {
+    //console.log("redHandler click");
+    //stopRedTimer();
     let redPos = 0;
         for(i = 0; i < blockArr.length; i++) {
             if (blockArr[i] === "redBlock") {
@@ -141,6 +143,38 @@ function reOrder() {
 };
 //when the mouse button is held down the block should go to the 
 //right indefinitely.
+/* let timerId = 0;
+//redBlock.style.position = "absolute";
+function redDwnHandler() {
+    console.log("redMouse Down");
+    
+    timerId = setInterval(redTimer, 1000);
+};
+
+function redTimer() {
+    //alert(redBlock.style.left);
+    redBlock.style.left += "+50px";
+    console.log("timer and x:" + redBlock.style.left)
+
+}
+
+function stopRedTimer() {
+    console.log("timer stopped");
+    clearInterval(timerId);
+}; */
+//window.setInterval
+//var myVar = setInterval(myTimer, 1000);
+
+//function myTimer() {
+//    var d = new Date();
+//    var t = d.toLocaleTimeString();
+ //   document.getElementById("demo").innerHTML = t;
+///}
+
+//function myStopFunction() {
+ //   clearInterval(myVar);
+//}
+
 };
 
 blocky();
