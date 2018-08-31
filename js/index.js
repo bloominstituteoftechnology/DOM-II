@@ -74,9 +74,14 @@ img.forEach((element) => {
     });
 });
 
-document.addEventListener('wheel', (event) => {    
-    let body = document.querySelector('body');
+document.addEventListener('wheel', (event) => {
     body.style.backgroundColor = 'darkgreen'
+});
+
+window.addEventListener('load', (event) => {
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = 'Lorem ipsum doler sit amet.';
+    document.querySelector('.container').appendChild(newDiv);
 });
 
 ///////NOT WORKING
