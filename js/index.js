@@ -57,3 +57,17 @@ pickDestination.addEventListener("mousemove", function(event){
   event.target.style.marginBottom = "15px"; 
   event.target.style.padding = "10px"; 
 })
+
+
+document.addEventListener('copy', function(event){
+  event.clipboardData.setData('text/plain', 'Hello, world!');
+  event.clipboardData.setData('text/html', '<b>Hello, world!</b>');
+  event.preventDefault();
+  console.log("item copied"); 
+});
+
+const lastImg = document.querySelector(".last-img"); 
+
+lastImg.addEventListener("mouseenter", function(event){
+  event.target.style.filter= "invert(1)"; 
+})
