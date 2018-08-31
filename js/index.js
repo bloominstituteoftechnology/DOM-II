@@ -53,70 +53,74 @@ id="pickDestination"
 id="FunInSun"
 id="MountainExcursion"
 id="islandGetaway"
+
+// ☞ 54129a6a-319d-493b-966b-50a841a981b5
+
 */
 
 id="imgFunbus"
 const imgFunbus = document.getElementById('imgFunbus');
 imgFunbus.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="imgAdventure"
 const imgAdventure = document.getElementById('imgAdventure');
 imgAdventure.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="imgFun"
 const imgFun = document.getElementById('imgFun');
 imgFun.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="imgDestination"
 const imgDestination = document.getElementById('imgDestination');
 imgDestination.addEventListener('click',function(){
-  
+ window.open('https:www.kayak.com/news/the-10-hottest-destinations-of-2018/', 'Destinations');
+
 })
 
 id="Welcome"
 const Welcome = document.getElementById('Welcome');
 Welcome.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="LetsGo"
 const LetsGo = document.getElementById('LetsGo');
 LetsGo.addEventListener('click',function(){
-  
+  console.log('https://earth.google.com/web/');
 })
 
 id="adventureAwaits"
 const adventureAwaits = document.getElementById('adventureAwaits');
 adventureAwaits.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="pickDestination"
 const pickDestination = document.getElementById('pickDestination');
 pickDestination.addEventListener('click',function(){
-  
+  console.log('https://www.kayak.com/news/the-10-hottest-destinations-of-2018/')
 })
 
 id="FunInSun"
 const FunInSun = document.getElementById('FunInSun');
 FunInSun.addEventListener('click',function(){
-  
+  console.log('https://www.kayak.com/news/summers-cheapest-travel-weekends/');
 })
 
 id="MountainExcursion"
 const MountainExcursion = document.getElementById('MountainExcursion');
 MountainExcursion.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
 
 id="islandGetaway"
 const islandGetaway = document.getElementById('islandGetaway');
 islandGetaway.addEventListener('click',function(){
-  
+  console.log('I Work!');
 })
