@@ -57,36 +57,66 @@ id="islandGetaway"
 
 id="imgFunbus"
 const imgFunbus = document.getElementById('imgFunbus');
+imgFunbus.addEventListener('click',function(){
+  
+})
 
 id="imgAdventure"
 const imgAdventure = document.getElementById('imgAdventure');
+imgAdventure.addEventListener('click',function(){
+  
+})
 
 id="imgFun"
 const imgFun = document.getElementById('imgFun');
+imgFun.addEventListener('click',function(){
+  
+})
 
 id="imgDestination"
 const imgDestination = document.getElementById('imgDestination');
+imgDestination.addEventListener('click',function(){
+  
+})
 
 id="Welcome"
 const Welcome = document.getElementById('Welcome');
+Welcome.addEventListener('click',function(){
+  
+})
 
 id="LetsGo"
 const LetsGo = document.getElementById('LetsGo');
+LetsGo.addEventListener('click',function(){
+  
+})
 
 id="adventureAwaits"
 const adventureAwaits = document.getElementById('adventureAwaits');
+adventureAwaits.addEventListener('click',function(){
+  
+})
 
 id="pickDestination"
-const pickDestinatione = document.getElementById('pickDestination');
+const pickDestination = document.getElementById('pickDestination');
+pickDestination.addEventListener('click',function(){
+  
+})
 
 id="FunInSun"
-const FunInSune = document.getElementById('FunInSun');
+const FunInSun = document.getElementById('FunInSun');
+FunInSun.addEventListener('click',function(){
+  
+})
 
 id="MountainExcursion"
 const MountainExcursion = document.getElementById('MountainExcursion');
+MountainExcursion.addEventListener('click',function(){
+  
+})
 
 id="islandGetaway"
 const islandGetaway = document.getElementById('islandGetaway');
-.addEventListener('click',function(){
+islandGetaway.addEventListener('click',function(){
   
 })
