@@ -70,3 +70,39 @@
 //         }
 //     }
 // }
+
+
+
+// ***Adjusted from doing individual event listeners to batching like elements with identical
+// styles
+
+// **NON LOOP**
+// const bottomDiv1 = document.querySelectorAll('.destination')[0];
+// const bottomDiv2 = document.querySelectorAll('.destination')[1];
+// const bottomDiv3 = document.querySelectorAll('.destination')[2];
+
+// bottomDiv1.addEventListener('mouseover', function(){
+//     if (bottomDiv1.style.color === ''){
+//     bottomDiv1.style.color = 'aqua';
+//     } else {bottomDiv1.style.color = ''}
+// })
+
+// bottomDiv2.addEventListener('mouseover', function(){
+//     if (bottomDiv2.style.color === ''){
+//     bottomDiv2.style.color = 'aqua';
+//     } else {bottomDiv2.style.color = ''}
+// })
+
+// bottomDiv3.addEventListener('mouseover', function(){
+//     if (bottomDiv3.style.color === ''){
+//     bottomDiv3.style.color = 'aqua';
+//     } else {bottomDiv3.style.color = ''}
+// })
+
+
+// **For loop**
+// const bottomDivs = document.querySelectorAll('.destination');
+// for (let i=0; i<bottomDivs.length; i++){
+// bottomDivs[i].addEventListener('mouseover', function(){
+//     bottomDivs[i].style.color = 'aqua';
+// })}

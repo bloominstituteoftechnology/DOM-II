@@ -69,35 +69,15 @@ window.addEventListener('scroll', function(){
 
 
 //** All three bottom divs turn aqua on mouseover */
-// const bottomDiv1 = document.querySelectorAll('.destination')[0];
-// const bottomDiv2 = document.querySelectorAll('.destination')[1];
-// const bottomDiv3 = document.querySelectorAll('.destination')[2];
-
-// bottomDiv1.addEventListener('mouseover', function(){
-//     if (bottomDiv1.style.color === ''){
-//     bottomDiv1.style.color = 'aqua';
-//     } else {bottomDiv1.style.color = ''}
-// })
-
-// bottomDiv2.addEventListener('mouseover', function(){
-//     if (bottomDiv2.style.color === ''){
-//     bottomDiv2.style.color = 'aqua';
-//     } else {bottomDiv2.style.color = ''}
-// })
-
-// bottomDiv3.addEventListener('mouseover', function(){
-//     if (bottomDiv3.style.color === ''){
-//     bottomDiv3.style.color = 'aqua';
-//     } else {bottomDiv3.style.color = ''}
-// })
-
 const bottomDivs = document.querySelectorAll('.destination');
-for (let i=0; i<bottomDivs.length; i++){
-bottomDivs[i].addEventListener('mouseover', function(){
-    bottomDivs[i].style.color = 'aqua';
-})}
+bottomDivs.forEach(function(element){
+    element.addEventListener('mouseover', function(){
+        element.style.color = 'aqua';
+    })
+})
 
 
+// **Create a pop up form**
 
 //prepend to .home after .intro class, before .content-section claass (4 children, 
 // this adds a fifth) --> .insertBefore(NAME, parent.second-child) to put before 2nd child
@@ -111,9 +91,17 @@ box.classList.add('popup');
 box.style = 'height: 300px; width: 80%; margin: 0 auto;';
 box.style.background = 'red';
 box.innerHTML = 'I am a box';
-// box.style.display = 'none'
+box.style.display = 'none'
 
 
-
-
+//**Nav background animates colors upon Load**
+const navColors = document.querySelector('.main-navigation');
+window.addEventListener('load', function(){
+    navColors.animate({
+        backgroundColor: ['thistle', 'plum', 'violet', 'orchid', 'mediumorchid', 'thistle',],
+    }, {
+        duration:2000,
+        iterations: Infinity,}
+    )
+})
 
