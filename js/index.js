@@ -1,5 +1,14 @@
 // Your code goes here
 const button = document.querySelectorAll('.btn');
+const funBus = document.querySelector('.intro > img');
+const body = document.querySelector('body');
+const header = document.querySelector('header');
+const anchor = document.querySelectorAll('a');
+const footer = document.querySelector('footer');
+const footerText = document.querySelector('footer > p');
+const images = document.querySelectorAll('.img-content > img');
+const paragraph = document.querySelectorAll('p');
+const boat = document.querySelector('.content-destination > img');
 
 const buttonColorHandler = function() {
     this.style.backgroundColor = 'white';
@@ -16,19 +25,12 @@ button.forEach(button => {
     button.addEventListener('mouseleave', buttonReset);
 });
 
-const body = document.querySelector('body');
-const header = document.querySelector('header');
-const anchor = document.querySelectorAll('a');
-const footer = document.querySelector('footer');
-const footerText = document.querySelector('footer > p');
-
-
 const bodyNightTimeHandler = function() {
     if (this.style.backgroundColor === '') {
         this.style.backgroundColor = '#2c3e50';
         this.style.color = 'white';
         header.style.backgroundColor = '#2c3e50';
-        anchor.forEach(function(a) {
+        anchor.forEach(a => {
             a.style.color = 'white';
         }); 
         footer.style.backgroundColor = '#2c3e50';
@@ -46,8 +48,6 @@ const bodyNightTimeHandler = function() {
 };
 
 body.addEventListener('keydown', bodyNightTimeHandler);
-
-const images = document.querySelectorAll('.img-content > img');
 
 
 const borderImage = function() {
@@ -68,6 +68,8 @@ images.forEach(image => {
     image.addEventListener('drag', removeImage);
 });
 
+funBus.addEventListener('click', removeImage);
+
 const scrollRainbow = function() {
     const colors = ['#33658a', '#86bbd8', '#758e4f', '#f6ae2d', '#f26419'];
 
@@ -78,12 +80,17 @@ const scrollRainbow = function() {
 
 body.addEventListener('wheel', scrollRainbow);
 
-const paragraph = document.querySelectorAll('p');
-
 const boldP = function() {
     this.style.fontWeight = 'bold';
 };
 
+const redP = function() {
+    this.style.color = 'red';
+}
+
 paragraph.forEach(p => {
     p.addEventListener('dblclick', boldP);
+    p.addEventListener('copy', redP);
 });
+
+boat.addEventListener('contextmenu', borderImage);
