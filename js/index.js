@@ -90,3 +90,28 @@ const introImageEventHandler = function() {
 introImage.addEventListener('mouseenter', function() {
     toggle(onOff, introImageEventHandler);
 });
+
+// 7. Mouse moves in the header causes it to random colors
+// SEIZURE WARNING
+let num = 1;
+const backgroundEventHandler = function() {
+    num = Math.floor(Math.random() * 10);
+
+    switch (num) {
+        case 0: header.style.backgroundColor = 'deeppink'; break;
+        case 1: header.style.backgroundColor = 'red'; break;
+        case 2: header.style.backgroundColor = 'aqua'; break;
+        case 3: header.style.backgroundColor = 'chartreuse'; break; 
+        case 4: header.style.backgroundColor = 'coral'; break;
+        case 5: header.style.backgroundColor = 'cyan'; break;
+        case 6: header.style.backgroundColor = 'greenyellow'; break;
+        case 7: header.style.backgroundColor = 'darkblue'; break;
+        case 8: header.style.backgroundColor = 'mintcream'; break;
+        case 9: header.style.backgroundColor = 'orangered'; break;
+        default: header.style.backgroundColor = 'white';
+    }
+};
+
+header.addEventListener('mousemove', function() {
+    toggle(onOff, backgroundEventHandler);
+});
