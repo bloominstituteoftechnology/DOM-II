@@ -21,51 +21,26 @@ funBusRainbow.addEventListener('mouseover', function(){
 
 
 //** Nav items change colors on click 2/10**
-//how can I for loop this
-const nav1 = document.querySelectorAll('.nav a')[0];
-const nav2 = document.querySelectorAll('.nav a')[1];
-const nav3 = document.querySelectorAll('.nav a')[2];
-const nav4 = document.querySelectorAll('.nav a')[3];
-
-
-const nav1List = nav1.classList;
-const nav2List = nav2.classList;
-const nav3List = nav3.classList;
-const nav4List = nav4.classList;
-
-nav1.onclick = function(event){
-    var result = nav1List.toggle('go');
-    if(result) {
-        nav1.style.color = 'red';
-    } else {
-        nav1.style.color = '';
-    }
+const navs = document.querySelectorAll('.nav a');
+const testarray = [];
+for (let i=0; i<navs.length; i++) {
+    testarray.push(document.querySelectorAll('.nav a')[i]);
+}
+const classListArray = [];
+for (let i=0; i<navs.length; i++) {
+    classListArray.push(testarray[i].classList);
 }
 
-nav2.onclick = function(event){
-    var result = nav2List.toggle('go');
-    if(result) {
-        nav2.style.color = 'orange';
-    } else {
-        nav2.style.color = '';
-    }
-}
+const colorArray = ['red', 'orange', 'green', 'blue',];
 
-nav3.onclick = function(event){
-    var result = nav3List.toggle('go');
-    if(result) {
-        nav3.style.color = 'green';
-    } else {
-        nav3.style.color = '';
-    }
-}
-
-nav4.onclick = function(event){
-    var result = nav4List.toggle('go');
-    if(result) {
-        nav4.style.color = 'blue';
-    } else {
-        nav4.style.color = '';
+for (let i=0; i<testarray.length; i++) {
+    testarray[i].onclick = function(event){
+        var result = classListArray[i].toggle('go');
+        if(result){
+            testarray[i].style.color = colorArray[i];
+        } else {
+            testarray[i].style.color = '';
+        }
     }
 }
 //can I make it click through the rainbow with other else if?
@@ -94,29 +69,33 @@ window.addEventListener('scroll', function(){
 
 
 //** All three bottom divs turn aqua on mouseover */
-const bottomDiv1 = document.querySelectorAll('.destination')[0];
-const bottomDiv2 = document.querySelectorAll('.destination')[1];
-const bottomDiv3 = document.querySelectorAll('.destination')[2];
+// const bottomDiv1 = document.querySelectorAll('.destination')[0];
+// const bottomDiv2 = document.querySelectorAll('.destination')[1];
+// const bottomDiv3 = document.querySelectorAll('.destination')[2];
 
-bottomDiv1.addEventListener('mouseover', function(){
-    if (bottomDiv1.style.color === ''){
-    bottomDiv1.style.color = 'aqua';
-    } else {bottomDiv1.style.color = ''}
-})
+// bottomDiv1.addEventListener('mouseover', function(){
+//     if (bottomDiv1.style.color === ''){
+//     bottomDiv1.style.color = 'aqua';
+//     } else {bottomDiv1.style.color = ''}
+// })
 
-bottomDiv2.addEventListener('mouseover', function(){
-    if (bottomDiv2.style.color === ''){
-    bottomDiv2.style.color = 'aqua';
-    } else {bottomDiv2.style.color = ''}
-})
+// bottomDiv2.addEventListener('mouseover', function(){
+//     if (bottomDiv2.style.color === ''){
+//     bottomDiv2.style.color = 'aqua';
+//     } else {bottomDiv2.style.color = ''}
+// })
 
-bottomDiv3.addEventListener('mouseover', function(){
-    if (bottomDiv3.style.color === ''){
-    bottomDiv3.style.color = 'aqua';
-    } else {bottomDiv3.style.color = ''}
-})
+// bottomDiv3.addEventListener('mouseover', function(){
+//     if (bottomDiv3.style.color === ''){
+//     bottomDiv3.style.color = 'aqua';
+//     } else {bottomDiv3.style.color = ''}
+// })
 
-
+const bottomDivs = document.querySelectorAll('.destination');
+for (let i=0; i<bottomDivs.length; i++){
+bottomDivs[i].addEventListener('mouseover', function(){
+    bottomDivs[i].style.color = 'aqua';
+})}
 
 
 
