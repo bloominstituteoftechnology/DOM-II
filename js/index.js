@@ -73,8 +73,7 @@ buttons.forEach(function(x) {
     })
 });
 
-images.forEach(function(x) {
-    x.addEventListener('mousedown', function() {
-        alert('What a pretty place! Don\'t you wish you were there?');
-    })
+
+images[2].addEventListener('mousedown', function() {
+    alert('What a pretty place! Don\'t you wish you were there?');
 })
