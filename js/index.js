@@ -142,7 +142,7 @@ formHeader.style = 'font-size: 3.4rem; margin: 0 auto; padding-bottom: 5px;';
 babyBox.appendChild(formHeader);
 
 const nameBox = document.createElement('div');
-nameBox.style = 'height: 30px; width: 57%; display: flex; justify-content: space-evenly; margin-left: 21%; align-items: flex-end;';
+nameBox.style = 'height: 30px; width: 56%; display: flex; justify-content: space-evenly; margin-left: 20%; align-items: flex-end;';
 babyBox.appendChild(nameBox);
 
 const emailBox = document.createElement('div');
@@ -239,18 +239,29 @@ formEmail.addEventListener('select', function(){
 
 
 //**Create Tooltip**
-const toolTip = document.createElement('div');
-nameBox.appendChild(toolTip);
+// const toolTip = document.createElement('div');
+// nameBox.appendChild(toolTip);
 
 const tooltipSpan = document.createElement('span');
 tooltipSpan.innerHTML = 'Keep going!';
-toolTip.appendChild(tooltipSpan);
+nameBox.appendChild(tooltipSpan);
 
-toolTip.style = 'position: relative; display: inline-block;'
+// toolTip.style = 'position: relative; display: inline-block;'
 tooltipSpan.style = 'visibility: hidden; width: 120px; background-color: #555; color: #fff; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 3; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s;'
 
 //**Keypress Event**
 formName.addEventListener('keypress', function(){
-    tooltipSpan.style = 'visibility: visible; opacity: 1;'
+    tooltipSpan.style = 'visibility: visible; opacity: 1; position: absolute; left: 72%; border-width: 1px; border-style: solid; background-color: lightpink; align-self: center; color: blue; font-size: 1.3rem; height: 20px; width: 17%; padding-left: 2%; padding-top: 2px; border-radius: 4px;'
 })
+
+const tooltipSpan2 = document.createElement('span');
+tooltipSpan2.innerHTML = 'Almost there!';
+emailBox.appendChild(tooltipSpan2);
+
+tooltipSpan2.style = 'visibility: hidden; width: 120px; background-color: #555; color: #fff; text-align: center; padding: 5px 0; border-radius: 6px; position: absolute; z-index: 3; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s;'
+
+formEmail.addEventListener('keypress', function(){
+    tooltipSpan2.style = 'visibility: visible; opacity: 1; position: absolute; left: 72%; border-width: 1px; border-style: solid; background-color: lightpink; align-self: center; color: blue; font-size: 1.3rem; height: 20px; width: 17%; padding-left: 1%; padding-top: 3px; border-radius: 4px;'
+})
+
 
