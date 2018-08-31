@@ -85,6 +85,6 @@ logo.addEventListener('mouseleave', () => {//animates the logo header
     }
 })
 
-allH2[1].addEventListener('dblclick', () => {
+allImg[0].addEventListener('dblclick', () => {
     TweenMax.to(".text-content h2", 5, {x:400});
 })
