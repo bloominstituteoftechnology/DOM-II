@@ -20,3 +20,17 @@ navLogo.addEventListener("click", function(){
   this.style.transform = "rotate(50040deg)"; 
   this.style.transition = "5s"; 
 })
+
+const buttons = document.querySelectorAll(".btn"); 
+
+buttons.forEach(function(element){
+  element.addEventListener('dblclick', function(event){
+    event.target.style.borderColor = "blue"; 
+    event.target.style.backgroundColor = "red"; 
+  }); 
+})
+
+document.addEventListener("keydown", function(event){
+  alert("Oops! You may have accidentally struck a key!");
+});
+
