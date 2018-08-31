@@ -23,10 +23,6 @@ function fixNav(e) {
     size --;
 }
 
-function loaded() {
-    alert('Hey the page is all loaded and ready for you!')
-}
-
 function hide(e) {
     e.target.style.display = "none"
 }
@@ -42,6 +38,7 @@ function alerty() {
 }
 
 function highlight(e) {
+    e.preventDefault();
     e.target.style.color = 'red'
 }
 
@@ -57,10 +54,13 @@ document.getElementById('bus').addEventListener('dragend', dragEnd);
 document.getElementById('search').addEventListener('focus', alerty);
 
 window.addEventListener("scroll", fixNav);
-window.addEventListener("load", loaded);
 window.addEventListener("resize", yell);
 
 
 document.addEventListener('click', highlight);
 document.addEventListener('dblclick', hide);
 
+window.addEventListener("load", function() {
+    let navContainer = document.querySelector("header .container");
+    TweenLite.to(navContainer, 2, {opacity:".8"});
+});

@@ -4,5 +4,5 @@ header .container {
   background: white;
   z-index: 9999999;
   padding: 10px;
-  opacity: 0.8;
+  opacity: 1;
 }
