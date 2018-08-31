@@ -46,3 +46,19 @@ const bodyNightTimeHandler = function() {
 }
 
 body.addEventListener('keydown', bodyNightTimeHandler);
+
+const images = document.querySelectorAll('.img-content > img');
+
+
+const borderImage = function() {
+    this.style.border = '10px solid grey';
+}
+
+const resetImage = function() {
+    this.style.border = '';
+}
+
+images.forEach(image => {
+    image.addEventListener('mouseenter', borderImage);
+    image.addEventListener('mouseleave', resetImage);
+});
