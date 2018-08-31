@@ -1,3 +1,6 @@
+// todo - Nest two similar events somewhere in the site and prevent the event propagation properly
+// todo - Stop the navigation from items from refreshing the page by using preventDefault()
+
 
 // 1
 var itemOne = document.querySelectorAll('header .container h1')[0].addEventListener('mouseover', itemOneFunc);
@@ -62,7 +65,7 @@ function itemSevenFunc(item) {
 }
 
 // 8
-var itemEight = document.querySelectorAll('.content-destination')[0].addEventListener('select', itemEightFunc);
+var itemEight = document.querySelectorAll('.content-destination img')[0].addEventListener('select', itemEightFunc);
 
 function itemEightFunc(item) {
     this.style.border = '1px solid red';
@@ -89,5 +92,20 @@ for (var i = 0; i < itemTen.length; i++) {
 }
 
 function itemTenFunc(item) {
-    this.style.display = 'none';
+    this.style.fontWeight = 'bold';
+}
+
+
+// stop
+var itemStopPropOuter = document.querySelectorAll('.content-destination')[0].addEventListener('click', itemStopPropFuncOuter);
+
+function itemStopPropFuncOuter() {
+    console.log('content-destination BOX');
+}
+
+var itemStopPropInner = document.querySelectorAll('.content-destination img')[0].addEventListener('click', itemStopPropFuncInner);
+
+function itemStopPropFuncInner() {
+    event.stopPropagation();
+    console.log('content-destination BOX + IMG');
 }
