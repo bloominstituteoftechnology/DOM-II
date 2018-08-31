@@ -59,3 +59,8 @@ const textContentMouseOverHandler = function() {
 textContent[2].addEventListener('mouseover', function() {
     toggle(onOff, textContentMouseOverHandler);
 });
+
+// 4. Change the opacity of the intro (top) image every time a key is pressed
+document.addEventListener('keydown', (event) => {
+    introImage.style.opacity = `${Math.random()}`;
+});
