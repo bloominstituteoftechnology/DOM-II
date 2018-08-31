@@ -26,7 +26,7 @@ image2.setAttribute("src", "Artboard72100.jpg");
 }
 
 const button = document.getElementsByClassName('btn');
-console.log(button);
+
 
 button[0].addEventListener("dblclick", getRandomColor);
 
@@ -37,8 +37,9 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return button[0].style.backgroundColor = color;
-}
 
+}
+  event.stopPropagation();
 button[1].addEventListener("mouseover", getRandomColor);
 
 function getRandomColor() {
@@ -48,4 +49,12 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return button[1].style.backgroundColor = color;
+}
+
+const text = document.getElementsByClassName('content-destination');
+text[0].addEventListener("mouseup", changeText);
+console.log(text[0]);
+function changeText() {
+
+text[0].style.backgroundColor = "red";
 }
