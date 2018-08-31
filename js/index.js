@@ -62,4 +62,41 @@ img.addEventListener("dblclick", function() {
     console.log("Fun Bus Image double clicked");
 });
 
+// stop event propagation on nested events
+let destinations = document.querySelectorAll(".destination");
+destinations.forEach(function(destination) {
+    destination.addEventListener("mouseover", function(e) {
+        console.log("Mouse entered destination box");
+        console.log(this);
+        this.style.backgroundColor = "#cccccc";
+    });
+    destination.addEventListener("mouseout", function(e) {
+        console.log("Mouse exited destination box");
+        console.log(this);
+        this.style.backgroundColor = "";
+    });
+});
+
+let destinationHeaders = document.querySelectorAll(".destination h4");
+destinationHeaders.forEach(function(destinationHeader) {
+    destinationHeader.addEventListener("mouseover", function(e) {
+        console.log("Mouse entered destination box");
+        this.style.backgroundColor = "#cccccc";
+        e.stopPropagation();
+    });
+    destinationHeader.addEventListener("mouseout", function(e) {
+        console.log("Mouse exited destination box");
+        this.style.backgroundColor = "";
+        e.stopPropagation();
+    });
+});
+
+// stopping the links from refreshing the page
+links.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+        console.log("Links don't refresh page");
+        e.preventDefault();
+    });
+});
+
 
