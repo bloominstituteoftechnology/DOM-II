@@ -59,16 +59,15 @@ aTag.forEach(color => {
     color.addEventListener('click', textColorChange);
 });
 
+const button = document.querySelectorAll('.btn');
+
 window.addEventListener('resize', function(event) {
     alert ("This has been resized.");
   });
-
-const button = document.querySelectorAll('.btn')
 
 window.addEventListener('scroll', function(event) {
     button[0].style.backgroundColor = "red"
     button[1].style.backgroundColor = "purple"
     button[2].style.backgroundColor = "dodgerblue"
 });
-
 
