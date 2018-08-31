@@ -133,3 +133,20 @@ const pageWheelHandler = function() {
 window.addEventListener('resize', function(event) {
     alert ("This page is responsive! 😄");
   });
+
+  // 10. Create an alert trying to copy images
+const copyHandler = function() {
+    alert ("These images are copyrighted! 😠");
+};
+
+ imgs.forEach( img => {
+     img.addEventListener('copy', copyHandler)
+});
+
+for(let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click',(event) => {
+        navLinks[i].style.color = "red";
+        event.stopPropagation();
+        event.preventDefault();
+    })
+  };
