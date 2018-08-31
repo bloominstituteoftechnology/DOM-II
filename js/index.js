@@ -86,3 +86,15 @@ function getStarted (){
 
   alert("Let's Get it STARTED");
 }
+
+
+
+ window.addEventListener('scroll', function(){
+    const contentText = document.querySlector('.content-pick .destination p');
+   const yPosition = window.pageYOffset;
+   if (yPosition > 550) {
+contentText.style.opacity = '0';
+   }else{
+    contentText.style.opacity = '1';
+   }
+ })
