@@ -34,3 +34,26 @@ document.addEventListener("keydown", function(event){
   alert("Oops! You may have accidentally struck a key!");
 });
 
+const img1 = document.querySelector("#adventure-img");
+
+img1.addEventListener('mousedown', function(event){
+  event.target.style.transform = "rotate(360deg)"; 
+  event.target.style.transition = "5s"; 
+})
+
+const img2 = document.querySelector("#img2");
+
+img2.addEventListener("mouseup", function(event){
+  event.target.style.borderRadius = "50%"; 
+  event.target.style.transition = "5s"; 
+})
+
+const pickDestination = document.querySelector("#pick-destination"); 
+
+pickDestination.addEventListener("mousemove", function(event){
+  event.target.style.backgroundColor = "rgba(0, 0, 0, 0.3)"; 
+  event.target.style.transition = "3s"; 
+  event.target.style.borderRadius = "15px"; 
+  event.target.style.marginBottom = "15px"; 
+  event.target.style.padding = "10px"; 
+})
