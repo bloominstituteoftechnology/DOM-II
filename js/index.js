@@ -18,16 +18,17 @@
 
 
 //************* KEYDOWN Event**************/
-// //change footer text on keydown
-// let footer = document.querySelector('.footer');
-// let footerText = ''
-// //keydown event handler
-// function changeFooterText(event){
-//     footerText += event.key;
-//     footer.textContent = footerText;
-// }
+//change footer text on keydown
+let footer = document.querySelector('.footer');
+let footerText = ''
+//keydown event handler
+function changeFooterText(event){
+    footerText += event.key;
+    footer.style.fontSize = '36px';
+    footer.textContent = footerText;
+}
 
-// document.addEventListener('keydown', changeFooterText);
+document.addEventListener('keydown', changeFooterText);
 
 
 /********************************************
