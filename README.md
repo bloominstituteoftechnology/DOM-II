@@ -41,7 +41,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 	* [ ] `keyup`
 	* [X] `resize`
 	* [X] `scroll`
-	* [ ] `wheel`
+	* [X] `wheel`
 	* [X] `dblclick`
 
 	Suggested event listeners left out: `drag/drop`, `focus`

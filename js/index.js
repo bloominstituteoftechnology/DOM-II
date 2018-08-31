@@ -2,12 +2,12 @@
 
 //MOUSEOVER NAV TEXT CHANGES COLOR AND BACK TO BLACK WHEN MOUSE LEAVES
 let navText = document.querySelectorAll('.nav-link');
-navText.forEach(function(element) {
+navText.forEach((element) => {
     element.addEventListener('mouseover', (event) => {
         event.target.style.color = 'yellow';
     });
 });
-navText.forEach(function(element) {
+navText.forEach((element) => {
     element.addEventListener('mouseleave', (event) => {
         event.target.style.color = 'black';
     });
@@ -27,11 +27,11 @@ document.addEventListener('keydown', (event) => {
         body.style.backgroundColor = 'rgb(71, 71, 73';
         header.style.background = 'rgb(50, 50, 52)';
         footer.style.background = 'rgb(50, 50, 52)';
-        anchorText.forEach(function(element) {element.style.color = 'white';});
-        paragraphText.forEach(function(element) {element.style.color = 'white';});
+        anchorText.forEach((element) => {element.style.color = 'white';});
+        paragraphText.forEach((element) => {element.style.color = 'white';});
         h1.style.color = 'white';
-        h2.forEach(function(element) {element.style.color = 'white';});
-        h4.forEach(function(element) {element.style.color = 'white';});
+        h2.forEach((element) => {element.style.color = 'white';});
+        h4.forEach((element) => {element.style.color = 'white';});
     }
 });
 
@@ -49,7 +49,7 @@ document.addEventListener('scroll', () => {
 
 //WHEN SIGN ME UP BUTTONS ARE CLICKED THEY WILL BECOME DARKER BLUE, IF CLICKED AGAIN THEY WILL GO BACK TO ORIGINAL COLOR
 let button = document.querySelectorAll('.btn');
-button.forEach(function(element) {
+button.forEach((element) => {
     element.addEventListener('click', (event) => {
         if (event.target.style.backgroundColor != 'blue'){
         event.target.style.backgroundColor = 'blue';
@@ -62,16 +62,21 @@ button.forEach(function(element) {
 
 //RESIZE (TRIGGERS FOR EVERY PIXEL YOU CHANGE IN SIZE)
 window.addEventListener('resize', (event) =>  {    
-    paragraphText.forEach(function(element) {
+    paragraphText.forEach((element) => {
         element.style.color = 'yellow';
     });
 });
 
 let img = document.querySelectorAll('img');
-img.forEach(function(element) {
+img.forEach((element) => {
     element.addEventListener('dblclick', (event) => {
         element.remove();
     });
+});
+
+document.addEventListener('wheel', (event) => {    
+    let body = document.querySelector('body');
+    body.style.backgroundColor = 'darkgreen'
 });
 
 ///////NOT WORKING
