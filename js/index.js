@@ -4,19 +4,16 @@
 //**Rainbow Fun Bus Animation on mouse over 1/10 **
 const funBusRainbow = document.querySelector('h1');
 
-funBusRainbow.addEventListener('mouseover', function(){
+window.addEventListener('load', function(){
 
-    this.animate({
+    funBusRainbow.animate({
         color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
     }, {
-        duration:2000,
+        duration:3000,
         iterations: Infinity,}
     )
     }
 );
-// funBusRainbow.addEventListener('click', function(){
-//     this.style.color = '';
-// })
 //can we toggle on/off animations? Could get it to toggle on but not off
 
 
@@ -48,10 +45,10 @@ for (let i=0; i<testarray.length; i++) {
 
 
 
-//**Turns red when page is re-sized 3/10**
+//**Font grows when page is re-sized 3/10**
 const welcome = document.querySelectorAll('.intro p')[0];
 window.addEventListener('resize', function(){
-    welcome.style = 'color: red';
+    welcome.style = 'font-size: 5.0rem';
 })
 
 
@@ -61,11 +58,38 @@ welcome2.addEventListener('dblclick', function(){
     welcome2.style = 'font-size: 2.0rem';
 })
 
-//**Turns blue when the page is scrolled  down 5/10**
-const text = document.querySelectorAll('.content-section p')[0];
-window.addEventListener('scroll', function(){
-    text.style = 'color: blue';
-})
+//**Turns headers rainbow when the page is scrolled  down 5/10**
+const welcomeText = document.querySelectorAll('h2');
+const rainbowScrollHeaders = [];
+for (let i=0; i<4; i++) {
+    rainbowScrollHeaders.push(document.querySelectorAll('h2')[i]);
+    rainbowScrollHeaders.push(document.querySelectorAll('h4')[i]);
+}
+console.log(rainbowScrollHeaders);
+
+for (let i=0; i<rainbowScrollHeaders.length; i++){
+    window.addEventListener('scroll', function(){
+        rainbowScrollHeaders[i].animate({
+            color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
+        }, {
+            duration:3000,
+            iterations: Infinity,}
+        )
+    })
+}
+
+
+// window.addEventListener('scroll', function(){
+
+//     welcomeText.animate({
+//         color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple',],
+//     }, {
+//         duration:3000,
+//         iterations: Infinity,}
+//     )
+//     }
+
+// );
 
 
 //** All three bottom divs turn aqua on mouseover */
