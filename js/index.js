@@ -11,6 +11,9 @@ navigationAnchors.forEach(function(a) {
             event.target.style.color = "";
         }
     })
+    a.addEventListener("click", function() {
+        preventDefault();
+    })
 })
 
 headings.forEach(function(h2) {
@@ -48,18 +51,20 @@ let dragImage1 = document.querySelector(".img1");
 let dragImage2 = document.querySelector(".img2");
 const containers = document.querySelectorAll(".text-content");
 
-for(const container of containers) {
+containers.forEach(function(container) {
   dragImage1.addEventListener("dragstart", function() {
     container.addEventListener("drop", drop1);
     container.addEventListener("dragover", dragover);
     container.addEventListener("dragenter", dragenter);
+    container.removeEventListener("drop", drop2);
   })
   dragImage2.addEventListener("dragstart", function() {
-    container.addEventListener("drop", drop2);
-    container.addEventListener("dragover", dragover);
-    container.addEventListener("dragenter", dragenter);
+      container.addEventListener("drop", drop2);
+      container.addEventListener("dragover", dragover);
+      container.addEventListener("dragenter", dragenter);
+      container.removeEventListener("drop", drop1);
   })
-}
+})
 
 function dragover (event) {
   event.preventDefault();
@@ -89,6 +94,46 @@ window.addEventListener("load", function(event) {
     console.log(window.scrollY);
 });
 
-window.addEventListener("select", function(event) {
-    event.target.style.fontSize = '75%';
+buttons = document.querySelectorAll(".btn");
+
+const buttonSignUpHandler = function() {
+    var form = document.createElement("form");
+    form.setAttribute('class',"form");
+    form.setAttribute('method',"post");
+    form.setAttribute('action',"submit.php");
+
+    var name = document.createElement("input");
+    name.setAttribute('type',"text");
+    name.setAttribute('value',"Full Name");
+
+    var phone = document.createElement("input");
+    phone.setAttribute('type',"text");
+    phone.setAttribute('value',"Phone Number");
+
+    var submit = document.createElement("input");
+    submit.setAttribute('type',"submit");
+    submit.setAttribute('value',"Submit");
+
+    form.appendChild(name);
+    form.appendChild(phone);
+    form.appendChild(submit);
+
+    document.getElementsByClassName('home')[0].appendChild(form);
+}
+
+buttons.forEach(function(btn) {
+    btn.addEventListener("click", buttonSignUpHandler);
 })
+const bottomBoxes = document.querySelectorAll(".destination");
+const bottomHeadings = document.querySelectorAll("h4");
+// bottomBoxes.forEach(function(dest) {
+//     dest.addEventListener("click", erase);
+// })
+bottomHeadings.forEach(function(h4) {
+    h4.addEventListener("click", erase);
+})
+
+function erase(event) {
+    event.target.style.display = 'none';
+}
+
