@@ -17,23 +17,15 @@ const h4 = document.querySelectorAll('h4');
 
 // Event Listeners
 
-for (let i = 0; i < nav.length; i++){
+for (let i = 0; i < nav.length; i++){   // changes nav text to dodger blue
     nav[i].addEventListener('mouseover', () =>{  // 1
         nav[i].style.fontSize = '3rem';
         nav[i].style.color = 'dodgerblue';
     });
-}
-
-for (let i = 0; i < nav.length; i++){              // 2
-    nav[i].addEventListener('mouseout', (event) =>{
-        nav[i].style.fontSize = '1.5rem';
-        nav[i].style.color = 'black';
-    });
 };
 
-// Toggles Night mode when N key is pressed  3
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => {  // Toggles Night mode when N key is pressed  2
     if (event.key === 'n') {
         body.style.backgroundColor = 'rgb(71, 71, 73';
         mainNav.style.background = 'rgb(50, 50, 52)';
@@ -47,33 +39,33 @@ document.addEventListener('keydown', (event) => {
 });
 
 
-mainNav.addEventListener('mouseover', (event) => {  //4
+mainNav.addEventListener('mouseover', (event) => {  //3  changes nav background to yellow on mouse entering it
     event.preventDefault();
     event.stopPropagation();
     event.currentTarget.style.backgroundColor = '#ffff00';
  });
 
-body.addEventListener('click',   function()  {   // 5
+body.addEventListener('click',   function()  {   // 4  change background color of body to white when you click it
     this.style.background = 'white';
 });
 
-mainNav.addEventListener('click',   function()  {   // 6
+mainNav.addEventListener('click',   function()  {   // 5 change nav color to white when you click it
     this.style.background = 'white';
 });
 
-footer.addEventListener('click', function(){ //7
+footer.addEventListener('click', function(){ //6 change footer color to white when clicking it
     this.style.background = 'white';
 });
 
-body.addEventListener('dblclick', function(){ //8
+body.addEventListener('dblclick', function(){ //7 double click to reload page
     location.reload();
 });
 
-funBusMain.addEventListener('mouseover', (event) =>{ //9
+funBusMain.addEventListener('mouseover', (event) =>{ //8  increase font size of logo while hovering over it
     funBusMain.style.fontSize = '5rem';
 });
 
-button.forEach((element) => {  //10
+button.forEach((element) => {  // 9 change buttons to dark blue when clicking, then click again the reset to normal color
     element.addEventListener('click', (event) => {
         if (event.target.style.backgroundColor != 'blue'){
         event.target.style.backgroundColor = 'blue';
