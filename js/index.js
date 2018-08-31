@@ -1,12 +1,10 @@
 // Your code goes here
-var els = document.getElementsByClassName("destination");
-
-Array.prototype.forEach.call(els, function(el) {
-    // Do stuff here
-    el.addEventListener('mouseover', logElement);
-});
 
 
-function logElement() {
-    console.log('hello');
+//1
+var itemOne = document.querySelectorAll('header .container h1')[0].addEventListener('mouseover', itemOneFunc);
+
+function itemOneFunc(item) {
+    this.style.backgroundColor = 'red';
 }
+
