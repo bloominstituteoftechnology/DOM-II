@@ -67,7 +67,7 @@ imgFunbus.addEventListener('click',function(){
 id="imgAdventure"
 const imgAdventure = document.getElementById('imgAdventure');
 imgAdventure.addEventListener('click',function(){
-  console.log('I Work!');
+  window.open('https://earth.google.com/web/','Adventure');
 })
 
 id="imgFun"
@@ -92,7 +92,7 @@ Welcome.addEventListener('click',function(){
 id="LetsGo"
 const LetsGo = document.getElementById('LetsGo');
 LetsGo.addEventListener('click',function(){
-  console.log('https://earth.google.com/web/');
+  window.open('https://earth.google.com/web/','LetsGo');
 })
 
 id="adventureAwaits"
