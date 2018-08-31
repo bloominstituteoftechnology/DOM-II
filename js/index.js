@@ -106,13 +106,19 @@ const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
 parentDiv.prepend(box);
 box.classList.add('popup');
-box.style = 'position: fixed; height: 300px; width: 60%; margin: 200px 15%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: flex-end; align-item: center;';
+box.style = 'position: fixed; height: 275px; width: 60%; margin: 200px 15%; border-radius: 8px; border: 2px solid darkolivegreen; z-index: 2; display: flex; justify-content: flex-end; align-item: center;';
 box.style.background = 'white';
 box.style.display = 'none'
 
 const xBox = document.createElement('div');
-xBox.style = 'border: 1px solid black; height: 20px; width: 20px; align-text: center; align-self: flex-start; margin-top: 10px; margin-right: 10px;'
+xBox.style = 'border: 1px solid black; height: 20px; width: 20px; border-radius: 3px; align-text: center; align-self: flex-start; margin-top: 10px; margin-right: 10px;'
 box.prepend(xBox);
+xBox.addEventListener('mouseover', function(){
+        xBox.style.background = 'white';
+})
+xBox.addEventListener('mouseleave',function(){
+    xBox.style.background = '';
+})
 
 const xText = document.createElement('p');
 xText.innerHTML = 'X';
@@ -121,22 +127,18 @@ xBox.prepend(xText);
 
 const babyBox = document.createElement('div');
 box.prepend(babyBox);
-babyBox.style = 'height: 200px; width: 85%; border: 2px solid yellow; align-self: center; margin-right: 2%;'
-
-
-// const timeFunc=()=>{
-//     navBar.style = 'z-index: 0';
-//     box.style.display = 'flex';}
+babyBox.style = 'height: 200px; width: 85%; align-self: center; border-radius: 7px; margin-right: 2%; background-color: white; border: 2px solid darkolivegreen;'
 
 
 window.addEventListener('load', function(){
     this.setTimeout(function(){
         box.style.display = 'flex'
-        // box.animate({
-        //     background: ['white', 'blue', 'white',],
-        // }, {
-        //     duration:2000,
-        //     iterations: Infinity,}
-        // )
-    }, 1000)
+        box.animate({
+            background: ['lightblue', 'lightskyblue', 'cornflowerblue', 'lightskyblue', 'lightblue',],
+        }, {
+            duration:4000,
+            iterations: Infinity,}
+        );
+        }, 1000)
 })
+
