@@ -37,7 +37,7 @@ document.addEventListener('keydown', (event) => {
 
 
 //WHEN THE WHEEL IS SCROLLED IN NIGHTTIME UI THE LOGO FLASHES THROUGH THE COLORS OF THE RAINBOW
-document.addEventListener("scroll", () => {
+document.addEventListener('scroll', () => {
     if (h1.style.color === 'white') {h1.style.color = 'red';}
     else if (h1.style.color === 'red') {h1.style.color = 'orange';}
     else if (h1.style.color === 'orange') {h1.style.color = 'yellow';}
@@ -61,23 +61,25 @@ button.forEach(function(element) {
 });
 
 //RESIZE (TRIGGERS FOR EVERY PIXEL YOU CHANGE IN SIZE)
-window.addEventListener("resize", (event) =>  {    
+window.addEventListener('resize', (event) =>  {    
     paragraphText.forEach(function(element) {
-        element.style.color = "yellow";
+        element.style.color = 'yellow';
+    });
+});
+
+let img = document.querySelectorAll('img');
+img.forEach(function(element) {
+    element.addEventListener('dblclick', (event) => {
+        element.remove();
     });
 });
 
 ///////NOT WORKING
 
 //LOAD STARTS TIMER FOR POP UP TO APPEAR, DOUBLE CLICK TO REMOVE POP UP
-document.addEventListener('load', (event) => { 
-    let myVar = popUp(myTimer, 1000);
-    let popUp = () => {
-        window.confirm("sometext");
-    };
-});
-
-
-
-
-
+// document.addEventListener('load', (event) => { 
+//     let myVar = popUp(myTimer, 1000);
+//     let popUp = () => {
+//         window.confirm('sometext');
+//     };
+// });
