@@ -58,9 +58,14 @@ const resetImage = function() {
     this.style.border = '';
 };
 
+const removeImage = function() {
+    this.style.display = 'none';
+};
+
 images.forEach(image => {
     image.addEventListener('mouseenter', borderImage);
     image.addEventListener('mouseleave', resetImage);
+    image.addEventListener('drag', removeImage);
 });
 
 const scrollRainbow = function() {
