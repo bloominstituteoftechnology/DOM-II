@@ -128,3 +128,8 @@ const pageWheelHandler = function() {
  headings.forEach( head => {
      head.addEventListener('wheel', pageWheelHandler)
 });
+
+// 9. Create an alert when resizing the window
+window.addEventListener('resize', function(event) {
+    alert ("This page is responsive! 😄");
+  });
