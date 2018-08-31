@@ -84,3 +84,5 @@ logo.addEventListener('mouseleave', () => {//animates the logo header
         }
     }
 })
+
+TweenMax.to(".text-content h2", 5, {x:400});
