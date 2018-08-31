@@ -183,6 +183,32 @@
 // });
 
 
+/****************************************************
+ * USE STOPPROPOGATION METHOD
+ ***********************************************/
+//select parent and child elements
+// const destinationDivs = document.querySelectorAll('.destination');
+// const destinationBtns = document.querySelectorAll('.destination .btn');
+// console.log(destinationDivs[0]);
+// console.log(destinationBtns[0]);
+
+// //set click event for first destinationDiv (parent element)
+// destinationDivs[0].addEventListener('click',function(event){
+//     event.target.style.backgroundColor = '#34495e';
+// });
+
+// //set click event for first destinationBtn (child element)
+// destinationBtns[0].addEventListener('click', function (event) {
+//     event.target.style.backgroundColor = '#16a085';
+//     event.stopPropagation();  //stops destinationDiv click from firing
+// });
+
+
+
+/************************************************
+ * .preventDefault was used above in DRAG/DROP event
+ **************************************************/
+
 
 
 
