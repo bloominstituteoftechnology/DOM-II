@@ -75,7 +75,7 @@
 // //Add event listener for drop container
 // dropContainer.addEventListener('drop', dragDrop);
 
-// // prevent default to allow drop
+// // ***USE PREVENT DEFAULT to allow drop ******
 // dropContainer.addEventListener("dragover", function (event) {
 //     event.preventDefault();
 // });
@@ -122,14 +122,67 @@
 /*******************************************
  * RESIZE EVENT
  ********************************************/
-let resizeCount = 0;
-window.addEventListener('resize', function(){
-    const span = document.createElement('span');
-    document.querySelector('footer').appendChild(span);
-    resizeCount += 1;
-    span.textContent = `Resized screen ${resizeCount} times`;
+// let resizeCount = 0;
+// window.addEventListener('resize', function(){
+//     const span = document.createElement('span');
+//     document.querySelector('footer').appendChild(span);
+//     resizeCount += 1;
+//     span.textContent = `Resized screen ${resizeCount} times`;
 
-});
+// });
+
+
+
+/*******************************************
+ * SCROLL EVENT
+ ********************************************/
+
+
+// function changeBackgroundColor(event){
+
+//     let color1, color2, color3;
+//     color1 = Math.floor(Math.random() * 256);
+//     color2 = Math.floor(Math.random() * 256);
+//     color3 = Math.floor(Math.random() * 256);
+//     document.querySelector('body').style.backgroundColor = `rgb(${color1},${color2},${color3})`;
+
+//  }
+
+// window.addEventListener('scroll', changeBackgroundColor);
+
+
+ /*******************************************
+ * SELECT EVENT
+ ********************************************/
+//Create input box so we can use select event
+// const newInputEl= document.createElement('input');
+// document.querySelector('.main-navigation').prepend(newInputEl);
+
+// //event handler
+// function changeTextColor(event){
+//     newInputEl.style.color = 'red';
+// }
+
+// //add event listener
+// newInputEl.addEventListener('select', changeTextColor);
+
+
+
+/*******************************************
+ * DBLCLICK EVENT
+ ********************************************/
+//Change color of button when double-clicked
+
+// const destButtons = document.querySelectorAll('.btn');
+// function changeButtonColor(event){
+//     event.target.style.backgroundColor = '#3498db';
+// }
+
+// destButtons.forEach((btn)=>{
+//     btn.addEventListener('dblclick', changeButtonColor);
+// });
+
+
 
 
 
