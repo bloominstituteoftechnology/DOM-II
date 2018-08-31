@@ -67,6 +67,8 @@ window.addEventListener('resize', (event) =>  {
     });
 });
 
+//DOUBLE CLICKING ON AN IMAGE REMOVES THE IMAGE
+
 let img = document.querySelectorAll('img');
 img.forEach((element) => {
     element.addEventListener('dblclick', (event) => {
@@ -74,14 +76,33 @@ img.forEach((element) => {
     });
 });
 
+// WHEN YOU SCROLL THE WHEEL THE BACKGROUND TURNS TO DARK GREEN 
+
 document.addEventListener('wheel', (event) => {
     body.style.backgroundColor = 'darkgreen'
 });
+
+//WHEN THE PAGE FINISHES LOADING, IT APPENDS A NEW DIV TO THE NAV BAR
 
 window.addEventListener('load', (event) => {
     let newDiv = document.createElement('div');
     newDiv.innerHTML = 'Lorem ipsum doler sit amet.';
     document.querySelector('.container').appendChild(newDiv);
+});
+
+//SWITCHES BACK TO DAYTIME MODE WHEN THE D KEY IS RELEASED
+
+document.addEventListener('keyup', (event) => {
+    if (event.key === 'd') {
+        body.style.backgroundColor = 'white';
+        header.style.background = 'white';
+        footer.style.background = '#FFEBCD';
+        anchorText.forEach((element) => {element.style.color = 'black';});
+        paragraphText.forEach((element) => {element.style.color = 'black';});
+        h1.style.color = 'black';
+        h2.forEach((element) => {element.style.color = 'black';});
+        h4.forEach((element) => {element.style.color = 'black';});
+    }
 });
 
 ///////NOT WORKING
