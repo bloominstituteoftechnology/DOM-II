@@ -19,16 +19,16 @@
 
 //************* KEYDOWN Event**************/
 //change footer text on keydown
-let footer = document.querySelector('.footer');
-let footerText = ''
-//keydown event handler
-function changeFooterText(event){
-    footerText += event.key;
-    footer.style.fontSize = '36px';
-    footer.textContent = footerText;
-}
+// let footer = document.querySelector('.footer');
+// let footerText = ''
+// //keydown event handler
+// function changeFooterText(event){
+//     footerText += event.key;
+//     footer.style.fontSize = '36px';
+//     footer.textContent = footerText;
+// }
 
-document.addEventListener('keydown', changeFooterText);
+// document.addEventListener('keydown', changeFooterText);
 
 
 /********************************************
@@ -126,8 +126,9 @@ document.addEventListener('keydown', changeFooterText);
 // let resizeCount = 0;
 // window.addEventListener('resize', function(){
 //     const span = document.createElement('span');
-//     document.querySelector('footer').appendChild(span);
+//     document.querySelector('footer').prepend(span);
 //     resizeCount += 1;
+//     span.style.fontSize = '20px';
 //     span.textContent = `Resized screen ${resizeCount} times`;
 
 // });
