@@ -131,7 +131,7 @@ babyBox.style = 'height: 250px; width: 85%; align-self: center; border-radius: 7
 
 const formHeader = document.createElement('h3');
 formHeader.innerHTML = 'Join our update list!';
-formHeader.style = 'font-size: 3.4rem; margin: 0 auto;';
+formHeader.style = 'font-size: 3.4rem; margin: 0 auto; padding-bottom: 5px;';
 babyBox.appendChild(formHeader);
 
 const nameBox = document.createElement('div');
@@ -200,6 +200,23 @@ formName.style = 'height: 25px; width: 60%;';
 labelName.style = 'margin-bottom: 7px; font-size: 1.4rem;'
 formEmail.style = 'height: 25px; width: 60%;';
 emailName.style = 'margin-bottom: 7px; font-size: 1.4rem;'
-submitButton.style = 'height: 25px; width: 34%; margin: 0 auto';
+submitButton.style = 'height: 40px; width: 40%; margin: 0 auto; border-radius: 4px; font-size: 1.6rem;';
 
+submitButton.addEventListener('mouseover', function(){
+    submitButton.style.background = 'lightskyblue';
+})
+submitButton.addEventListener('mouseleave',function(){
+    submitButton.style.background = '';
+})
+
+
+//**Event to close pop up when X is clicked**
+xBox.addEventListener('click',function(){
+    box.style.display = 'none';
+})
+
+//**Event to close pop up when button is clicked**
+submitButton.addEventListener('click',function(){
+    box.style.display = 'none';
+})
 
