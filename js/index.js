@@ -96,18 +96,47 @@ bottomDivs.forEach(function(element){
 // this adds a fifth) --> .insertBefore(NAME, parent.second-child) to put before 2nd child
 // pop up form so would like it to have z-index: 1
 
+
+
+
 const navBar = document.querySelector('.main-navigation');
-navBar.style = 'z-index: -5;'
+// navBar.style = 'z-index: 0;'
 
 const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
 parentDiv.prepend(box);
 box.classList.add('popup');
-box.style = 'position: fixed; height: 300px; width: 60%; margin: 200px 15%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: center; align-item: center;';
+box.style = 'position: fixed; height: 300px; width: 60%; margin: 200px 15%; border: 2px solid dodgerblue; z-index: 2; display: flex; justify-content: flex-end; align-item: center;';
 box.style.background = 'white';
-// box.style.display = 'none'
+box.style.display = 'none'
+
+const xBox = document.createElement('div');
+xBox.style = 'border: 1px solid black; height: 20px; width: 20px; align-text: center; align-self: flex-start; margin-top: 10px; margin-right: 10px;'
+box.prepend(xBox);
+
+const xText = document.createElement('p');
+xText.innerHTML = 'X';
+xText.style = 'height: 20px; width: 20px; align-self: center; text-align: center; font-size: 1.2rem;'
+xBox.prepend(xText);
 
 const babyBox = document.createElement('div');
 box.prepend(babyBox);
-babyBox.style = 'height: 175px; width: 75%; border: 2px solid yellow; align-self: center;'
+babyBox.style = 'height: 200px; width: 85%; border: 2px solid yellow; align-self: center; margin-right: 2%;'
 
+
+// const timeFunc=()=>{
+//     navBar.style = 'z-index: 0';
+//     box.style.display = 'flex';}
+
+
+window.addEventListener('load', function(){
+    this.setTimeout(function(){
+        box.style.display = 'flex'
+        // box.animate({
+        //     background: ['white', 'blue', 'white',],
+        // }, {
+        //     duration:2000,
+        //     iterations: Infinity,}
+        // )
+    }, 1000)
+})
