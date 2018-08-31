@@ -50,12 +50,13 @@ btn.forEach(function(button){
 
      input.addEventListener('focus', function(event){
               let target = event.target;
-              if(target.style.background === 'aqua' && target.style.color === 'red'){
-              	 target.style.background = 'red';
-                 target.style.color = 'yellow';
-              } else {
-                target.style.background === 'aqua';
-                target.style.color === 'red'
-              }
-        });
+              target.style.background = 'red';
+              target.style.color = 'yellow';
+     });
+
+     input.addEventListener('blur', function(event){
+              let target = event.target;
+              target.style.background = 'aqua';
+              target.style.color = 'red';
+     });
 });
