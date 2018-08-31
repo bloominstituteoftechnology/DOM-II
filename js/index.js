@@ -106,7 +106,7 @@ const parentDiv = document.querySelector('.home');
 const box = document.createElement('section');
 parentDiv.prepend(box);
 box.classList.add('popup');
-box.style = 'position: fixed; height: 275px; width: 60%; margin: 200px 15%; border-radius: 8px; border: 2px solid darkolivegreen; z-index: 2; display: flex; justify-content: flex-end; align-item: center;';
+box.style = 'position: fixed; height: 325px; width: 60%; margin: 200px 15%; border-radius: 8px; border: 2px solid navy; z-index: 2; display: flex; justify-content: flex-end; align-item: center;';
 box.style.background = 'white';
 box.style.display = 'none'
 
@@ -127,7 +127,22 @@ xBox.prepend(xText);
 
 const babyBox = document.createElement('div');
 box.prepend(babyBox);
-babyBox.style = 'height: 200px; width: 85%; align-self: center; border-radius: 7px; margin-right: 2%; background-color: white; border: 2px solid darkolivegreen;'
+babyBox.style = 'height: 250px; width: 85%; align-self: center; border-radius: 7px; margin-right: 2%; background-color: white; border: 2px solid navy; display: flex; flex-direction: column; justify-content: space-evenly;'
+
+const formHeader = document.createElement('h3');
+formHeader.innerHTML = 'Join our update list!';
+formHeader.style = 'font-size: 3.4rem; margin: 0 auto;';
+babyBox.appendChild(formHeader);
+
+const nameBox = document.createElement('div');
+nameBox.style = 'height: 30px; width: 56%; display: flex; justify-content: space-evenly; margin-left: 20%; align-items: flex-end;';
+babyBox.appendChild(nameBox);
+
+const emailBox = document.createElement('div');
+emailBox.style = 'height: 30px; width: 56%; display: flex; justify-content: space-evenly; margin-left: 20%; align-items: flex-end;';
+babyBox.appendChild(emailBox);
+
+
 
 
 window.addEventListener('load', function(){
@@ -141,4 +156,50 @@ window.addEventListener('load', function(){
         );
         }, 1000)
 })
+
+
+//**Create Form**
+
+var form = document.createElement('FORM');
+form.setAttribute('id', 'signup')
+form.setAttribute('action', '/signup-page');
+form.setAttribute('method', 'post');
+babyBox.appendChild(form);
+
+
+var labelName = document.createElement('LABEL');
+labelName.setAttribute('for', 'name');
+labelName.innerHTML = 'Name:';
+nameBox.appendChild(labelName);
+
+var formName = document.createElement('INPUT');
+formName.setAttribute('type', 'text');
+formName.setAttribute('placeholder', 'Your Name')
+nameBox.appendChild(formName);
+
+
+var emailName = document.createElement('LABEL');
+emailName.setAttribute('for', 'name');
+emailName.innerHTML = 'Email:';
+emailBox.appendChild(emailName);
+
+var formEmail = document.createElement('INPUT');
+formEmail.setAttribute('type', 'email');
+formEmail.setAttribute('placeholder', 'you@gmail.com');
+emailBox.appendChild(formEmail);
+
+
+var submitButton = document.createElement('BUTTON');
+submitButton.setAttribute('type', 'submit');
+submitButton.innerHTML = 'Sign-up for updates!';
+babyBox.appendChild(submitButton);
+
+
+//**Style the form**
+formName.style = 'height: 25px; width: 60%;';
+labelName.style = 'margin-bottom: 7px; font-size: 1.4rem;'
+formEmail.style = 'height: 25px; width: 60%;';
+emailName.style = 'margin-bottom: 7px; font-size: 1.4rem;'
+submitButton.style = 'height: 25px; width: 34%; margin: 0 auto';
+
 
