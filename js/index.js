@@ -130,6 +130,13 @@ function bottomTextChanged(){
 }
 
 
+let bottomImage = document.querySelector('.content-destination a img');
+console.log(bottomImage);
+// # Event 8
+bottomImage.addEventListener('click', bottomImageBanner);
+function bottomImageBanner(){
+  bottomImage.src = '../img/thor-thunder.jpeg';
+}
 // function changeTitle(){
 //   title[0].innerHTML = 'Thor Ragnarok';
 //   headerBackground[0].style.backgroundColor = 'rgb(31, 168, 23)';
