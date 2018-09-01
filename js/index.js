@@ -59,3 +59,11 @@ imgs.forEach(item => {
     this.parentNode.style.display = "none";
   });
 });
+
+// 5. clicking on paragraphs makes its width 100%
+
+paragraph.forEach(item => {
+  item.addEventListener("click", function() {
+    this.parentNode.style.width = "100%";
+  });
+});
