@@ -85,3 +85,9 @@ imgs.forEach(item => {
     alert("No dragging");
   });
 });
+
+// 8. Logo turns Grennwhen double clicked
+
+logo.addEventListener("dblclick", function() {
+  logo.style.color = "green";
+});
