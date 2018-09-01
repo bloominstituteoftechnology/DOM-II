@@ -134,9 +134,30 @@ let bottomImage = document.querySelector('.content-destination a img');
 console.log(bottomImage);
 // # Event 8
 bottomImage.addEventListener('click', bottomImageBanner);
+
 function bottomImageBanner(){
   bottomImage.src = '../img/thor-thunder.jpeg';
 }
+
+let destination = document.querySelector('.content-pick .destination');
+//# Event 9
+destination.addEventListener('dblclick', destinationContent);
+let destinationHeader = document.querySelectorAll('.content-pick .destination h4');
+let destinationText = document.querySelectorAll('.content-pick .destination p');
+
+function destinationContent(){
+  destinationHeader[0].innerHTML = 'Avenger Near You';
+  destinationHeader[1].innerHTML = 'Mighty Thor';
+  destinationHeader[2].innerHTML='And More Thor';
+
+  destinationText[0].innerHTML = 'Thor lorem thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.';
+
+  destinationText[1].innerHTML ='Thor lorem thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.';
+
+  destinationText[2].innerHTML = 'Thor lorem thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.';
+
+}
+
 // function changeTitle(){
 //   title[0].innerHTML = 'Thor Ragnarok';
 //   headerBackground[0].style.backgroundColor = 'rgb(31, 168, 23)';
