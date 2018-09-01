@@ -2,7 +2,7 @@ const logo = document.querySelector('.logo-heading');
 const rickRoll = document.querySelector(".rickRoll");
 const buttonList = document.querySelectorAll('.btn');
 const adventurePic = document.querySelector(".img-content img");
-const navLinks = document.querySelectorAll("a");
+const navLinks = document.querySelectorAll(".nav a");
 const bodCont = document.querySelector("body");
 const funImg = document.querySelector(".funImg");
 const destImg = document.querySelector("#destImg");
@@ -50,11 +50,17 @@ function drag(ev) {
 //end img events
 //button event
 buttonList.forEach(function(button) {
-    button.addEventListener('click', goAway);
+    //prevents page from linking to google.com.
+    button.addEventListener("click", function(event){
+        event.preventDefault()
+    });
+    button.addEventListener("click", goAway);
 });
 
 function goAway(event){
     event.target.style.display = "none";
+    //if the div area is clicked the whole button dissapears. 
+    //if the link is clicked, it dissapears but leaves the blank div area. The div area will vanish on the second click. 
 };
 
 //logo effects
@@ -116,3 +122,5 @@ titles.forEach(function(element){
         event.target.style.padding = "25px";
     })
 })
+
+
