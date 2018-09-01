@@ -20,6 +20,24 @@ headerpic.addEventListener("mouseleave", function(event){
 
 //keydown
 
+
+//click - each click rotates Hue by 90deg - pic1
+let picHue = document.getElementById('pic1');
+picHue.addEventListener('click', function(event) {
+   event.target.style.filter += "hue-rotate(90deg)";
+});
+
+let picInvert = document.getElementById('pic2');
+picInvert.addEventListener('click', function(event){
+    event.target.style.filter += "saturate(8)";
+});
+
+let picContrast = document.getElementById('pic3');
+picContrast.addEventListener('click', function(event) {
+    event.target.style.filter += "drop-shadow(8px 8px 10px gray)";
+})
+
+
 //wheel
 
 //drag/drop
