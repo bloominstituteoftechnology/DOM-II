@@ -141,10 +141,8 @@ clickbutton.addEventListener("dblclick", function(){
 //     document.getElementById("name-label").focus();
 // }
 
-
+// Night Mode - - how to 'click' again and make Night Mode go away?
 let desti = document.getElementById('night');   //.destination p
-
-
 
 desti.addEventListener('click', function(event){
     document.querySelector('body').style.backgroundColor = 'black';
@@ -158,8 +156,10 @@ const containerButtonGone = document.querySelector('.destination #btn3');
 const container = document.querySelector('.gone');
 
 const buttonDisappear = function(event) {
-    event.stopPropagation();
-    this.parentNode.style.display = 'none';
+    event.stopPropagation();      //what is being stopped here?
+    // this.parentNode.style.display = 'none';
+    this.style.display = 'none';
+
 }
 
 containerButtonGone.addEventListener('click', buttonDisappear);
@@ -172,4 +172,5 @@ container.addEventListener('click', containerClickBlue);
 
 const onlyButtonDisappear = document.querySelector('#btn3');
 
+// what is this doing?
 onlyButtonDisappear.addEventListener('click', function(event){ event.preventDefault() })
