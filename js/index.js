@@ -4,6 +4,7 @@ alert('Welcome To The Fun Bus');
 // navigation title
 let title = document.getElementsByClassName('logo-heading');
 for (let i = 0; i < title.length; i++){
+  // # Event 1 and 2
   title[i].addEventListener('mouseenter', changeTitle);
   title[i].addEventListener('mouseleave', originalTitle);
 }
@@ -23,8 +24,9 @@ function originalTitle(){
 // navigation links
 let links = document.getElementsByClassName('nav-link');
 for(let i = 0; i < links.length; i++){
-  links[i].addEventListener('mouseenter', changeLinks);
-  links[i].addEventListener('mouseleave', originalNav);
+  // # Event 3 and 4
+  links[i].addEventListener('mouseover', changeLinks);
+  links[i].addEventListener('mouseout', originalNav);
 }
 
 function changeLinks(){
@@ -64,9 +66,10 @@ function changeBanner(){
 
 // main title and paragraph
 let mainTitle = document.querySelector('.home .intro h2');
-mainTitle.addEventListener('mouseover', newTitle);
+// # Event 5
+mainTitle.addEventListener('mousemove', newTitle);
 let mainText = document.querySelector('.home .intro p');
-mainText.addEventListener('mouseover', newTitle);
+mainText.addEventListener('mousemove', newTitle);
 
 function newTitle(){
   mainTitle.innerHTML = 'Odin\'s tale';
@@ -108,6 +111,22 @@ function textContent(){
   sectionText[1].innerHTML = 'Queen frigga sat at her vanity putting her jewellery on in the mirror she saw her husband turn and walk to the centre of the chamber. His blue eyes were dark with worry. ';
   sectionText[2].innerHTML = 'Labeled "Earth\'s Mightiest Heroes", the Avengers originally consisted of Ant-Man, the Hulk, Iron Man, Thor, and the Wasp. Ant-Man had become Giant-Man by issue #2. The original Captain America was discovered trapped in ice in issue #4, and joined the group after they revived him.';
   sectionText[3].innerHTML = 'Without a double Thor was a great warrior but a warror king, that was still a lesson to learn. ';
+}
+
+// bottom textContent
+let bottomHeader = document.querySelector('.content-destination h2');
+let bottomText = document.querySelector('.content-destination p');
+console.log(bottomHeader)
+//# Event 6 and 7
+bottomHeader.addEventListener('mousedown', changeBottomHeader);
+bottomText.addEventListener('mouseup', bottomTextChanged);
+
+function changeBottomHeader(){
+  bottomHeader.innerHTML = 'Thor is the best';
+}
+
+function bottomTextChanged(){
+  bottomText.innerHTML = 'Thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 }
 
 
