@@ -173,4 +173,4 @@ container.addEventListener('click', containerClickBlue);
 const onlyButtonDisappear = document.querySelector('#btn3');
 
 // what is this doing?
-onlyButtonDisappear.addEventListener('click', function(event){ event.preventDefault() })
+// onlyButtonDisappear.addEventListener('click', function(event){ event.preventDefault() })

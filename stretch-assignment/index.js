@@ -1,6 +1,15 @@
 // When a block is clicked, it should go to the top of the stack.
 
+// document.getElementsByTagName('body').style.backgroundColor = 'black';
 
+
+let clickBlock = document.querySelectorAll('.block'); //Nodelist = array-like object
+// let clickBlock = document.querySelectorAll('.block');
+console.log(clickBlock)
+
+clickBlock[1].addEventListener('click', function(event){
+    event.target.style.backgroundColor = 'black';
+})
 
 
 
