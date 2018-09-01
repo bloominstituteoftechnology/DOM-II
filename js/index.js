@@ -27,7 +27,7 @@ mainTitle.addEventListener('mouseover', newTitle);
 let mainText = document.querySelector('.home .intro p');
 mainText.addEventListener('mouseover', newTitle);
 
-// section content and image
+// section images
 let imageContent = document.querySelectorAll('.content-section .img-content img');
 console.log(imageContent);
 for(let i = 0; i < imageContent.length;i++){
@@ -36,11 +36,32 @@ for(let i = 0; i < imageContent.length;i++){
 
 function changeImage(){
   imageContent[0].src='../img/thor_ragnarok.jpg';
+  imageContent[0].style.height = ('100%');
   imageContent[1].src='../img/thor-green-bg.jpg';
 }
 
-let textHeaders = document.querySelectorAll('.content-section .img-content .text-content h2');
-let textContent = document.querySelectorAll('.content-section .img-content .text-content p');
+// section header
+let textHeaders = document.querySelectorAll('.text-content h2');
+for (let i = 0; i < textHeaders.length; i++){
+  textHeaders[i].addEventListener('mouseenter', mainHeaders);
+}
+
+function mainHeaders(){
+  textHeaders[0].innerHTML = 'Thor';
+  textHeaders[1].innerHTML = 'Avengers';
+}
+
+// section text
+let sectionText = document.querySelectorAll('.text-content p');
+for(let i = 0; i < sectionText.length; i++){
+  sectionText[i].addEventListener('mouseenter', textContent)
+}
+
+function textContent(){
+  sectionText[0].innerHTML = 'At last the great hall was filled with asgardians waiting for a glimpse of the new king. ';
+  sectionText[1].innerHTML = 'Queen frigga sat at her vanity putting her jewellery on in the mirror she saw her husband turn and walk to the centre of the chamber. His blue eyes were dark with worry. ';
+  sectionText[2].innerHTML = 'Labeled "Earth\'s Mightiest Heroes", the Avengers originally consisted of Ant-Man, the Hulk, Iron Man, Thor, and the Wasp. Ant-Man had become Giant-Man by issue #2. The original Captain America was discovered trapped in ice in issue #4, and joined the group after they revived him.';
+}
 
 
 function changeTitle(){
