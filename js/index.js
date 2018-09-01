@@ -27,6 +27,7 @@ navLinks.forEach( link => {
   link.addEventListener('mouseleave', linkLeaveHandler);
 });
 
+// so far 2 events...
 
 // Let's have certain keypresses highlight the corresponding paragraphs in the body text
 const welcome = document.querySelector('.intro');
@@ -64,17 +65,19 @@ const keyupHandler = function(e) {
 document.addEventListener('keydown', keydownHandler);
 document.addEventListener('keyup', keyupHandler);
 
+// up to 4...
 
 // let's do something annoying...shout if someone uses the scroll wheel
 document.addEventListener('wheel', (e) => {
     window.alert('Wheeeeeeeeeeeeeee........llll!\nYou used the scroll wheel!');
 });
 
+// that makes 5
 
-// Okay, how's this...double clicking on any element makes it disappear.
+// How's this...double clicking on any element makes it disappear.
+// We need to keep track of the element so that we can bring it 
+// back with another double-click (anywhere on the page).
 // We need to stop propagation so it doesn't destroy the whole page.
-// Further, we want to remember the element so that we can bring it back with
-// another double-click
 
 let blottedElement = null;
 
@@ -94,31 +97,65 @@ const dblclickHandler = function(e) {
 const body = document.querySelector('body');
 body.addEventListener('dblclick', dblclickHandler);
 
+// up to 6!
 
-// Same drill but single-clicking on any element sets the font to zapf-dingbats
-let blottedText = null;
-
-const clickHandler = function(e) {
+// Same drill but right-clicking on any element sets the font to zapf-dingbats.
+// Right-clicking again will toggle it back to normal. (Originally had this set
+// to click instead of auxclick, but that was just too obnoxious)
+// Context-menu will still appear -- even invoking e.preventDefault() did
+// not change this behavior.
+const auxclickHandler = function(e) {
     e.stopPropagation();
     const target = e.target;
-    if (blottedText === null) {
-        blottedText = target;
-        target.style.fontFamily = '"Zapf Dingbats", Wingdings, Symbol, sans-serif';
+    if (target.style.fontFamily) {
+        target.style.fontFamily = '';
     } else {
-        blottedText.style.fontFamily = '';
-        blottedText = null;
+        // I think this is correct but don't have a Mac/Unix device for testing
+        target.style.fontFamily = '"Zapf Dingbats", Wingdings, Symbol, sans-serif';
     }
 };
 
 // anything in the body is fair game!
-body.addEventListener('click', clickHandler);
+body.addEventListener('auxclick', auxclickHandler);
 
 // Seven so far!
 
 // Complain if the user tries to drag something
-// (it's a little hard to select stuff because we've already 
-//  commandeered the click action, but it still works)
+// (Nothing is set up to be draggable in the page, but
+//  attempting a dragging motion will trigger the event.)
 document.addEventListener('dragstart', (e) => {
     window.alert('OOOUUUCCCHHH!\nStop pulling on me!');
 });
 
+// Eight!
+
+// Make things fade if the window is resized.
+// This one only applies to the window object.
+const originalHeight = window.innerHeight;
+const originalWidth = window.innerWidth;
+
+const resizeHandler = function(e) {
+    const newHeight = e.target.innerHeight;
+    const newWidth = e.target.innerWidth;
+    let opacity = (originalWidth * originalHeight) / (newWidth * newHeight);
+    if (opacity > 1) {
+        opacity = 1.0 / opacity;
+    }
+    body.style.opacity = opacity;
+};
+
+window.addEventListener('resize', resizeHandler); 
+
+// Nine!
+
+// What to do now?
+// Make the background get darker as we scroll down through the page
+const scrollHandler = function(e) {
+    const scroll = window.scrollY;
+    const pct = Math.max(100 - Math.floor(scroll / 20), 0);
+    body.style.backgroundColor = `rgb(${pct}%, ${pct}%, ${pct}%)`;
+};
+
+window.addEventListener('scroll', scrollHandler);
+
+// Ten and we're out!
