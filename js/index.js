@@ -89,7 +89,7 @@ function changeImage(){
   imageContent[1].src='../img/thor-green-bg.jpg';
 }
 
-// section headers loop and events
+// section headers
 let textHeaders = document.querySelectorAll('.text-content h2');
 for (let i = 0; i < textHeaders.length; i++){
   textHeaders[i].addEventListener('mouseenter', mainHeaders);
@@ -100,7 +100,7 @@ function mainHeaders(){
   textHeaders[1].innerHTML = 'Avengers';
 }
 
-// section text loop and events
+// section main text
 let sectionText = document.querySelectorAll('.text-content p');
 for(let i = 0; i < sectionText.length; i++){
   sectionText[i].addEventListener('mouseenter', textContent)
@@ -113,10 +113,11 @@ function textContent(){
   sectionText[3].innerHTML = 'Without a double Thor was a great warrior but a warror king, that was still a lesson to learn. ';
 }
 
-// bottom textContent
+// middle section
 let bottomHeader = document.querySelector('.content-destination h2');
 let bottomText = document.querySelector('.content-destination p');
 console.log(bottomHeader)
+
 //# Event 6 and 7
 bottomHeader.addEventListener('mousedown', changeBottomHeader);
 bottomText.addEventListener('mouseup', bottomTextChanged);
@@ -130,6 +131,7 @@ function bottomTextChanged(){
 }
 
 
+// middle banner
 let bottomImage = document.querySelector('.content-destination a img');
 console.log(bottomImage);
 // # Event 8
@@ -139,6 +141,7 @@ function bottomImageBanner(){
   bottomImage.src = '../img/thor-thunder.jpeg';
 }
 
+// bottom columns and headers
 let destination = document.querySelector('.content-pick .destination');
 //# Event 9
 destination.addEventListener('dblclick', destinationContent);
@@ -155,43 +158,31 @@ function destinationContent(){
   destinationText[1].innerHTML ='Thor lorem thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.';
 
   destinationText[2].innerHTML = 'Thor lorem thor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.';
-
 }
 
-// function changeTitle(){
-//   title[0].innerHTML = 'Thor Ragnarok';
-//   headerBackground[0].style.backgroundColor = 'rgb(31, 168, 23)';
-// }
-//
-// function originalTitle(){
-//   if(title[0].innerHTML = 'Thor'){
-//       title[0].innerHTML = 'Fun Bus';
-//   }
-// }
-//
-// function changeLinks(){
-//   links[0].innerHTML = 'Thor Home';
-//   links[1].innerHTML = 'Valhalla';
-//   links[2].innerHTML = 'About Thor';
-//   links[3].innerHTML = 'Contact Avengers';
-//   title[0].innerHTML = 'Thor Ragnarok';
-//   navigation[0].style.width = ('500px');
-// }
-//
-// function originalNav(){
-//   links[0].innerHTML = 'Home';
-//   links[1].innerHTML = 'About Us';
-//   links[2].innerHTML = 'Blog';
-//   links[3].innerHTML = 'Contact';
-//   navigation[0].style.width = ('350px');
-//   title[0].innerHTML = 'Fun Bus';
-// }
-//
-// function changeBanner(){
-//   banner.src = '../img/thor-banner.jpg';
-// }
+let buttons = document.querySelectorAll('.destination .btn');
+console.log(buttons);
+for(let i = 0; i < buttons.length;i++){
+  buttons[i].addEventListener('mouseover', buttonsChange);
+  buttons[i].addEventListener('mouseleave', buttonsOriginal);
+}
 
-// function newTitle(){
-//   mainTitle.innerHTML = 'Odin\'s tale';
-//   mainText.innerHTML = 'Odin Allfather did not act without thought. Now as the sun shone over asgard and the buildings were illuminated by it’s rays, gleaming like gold, he thought long and hard. At the realms edge, the darkness of the cosmos spread out like a calm sea. Asgard was at peace, and all was ready for the momentous events to come. Standing in his chambers, Odin stared out at the realm he had ruled for so many years.';
-// }
+let buttonsText = document.querySelectorAll('.destination .btn a')
+
+function buttonsChange(){
+  buttons[0].style.backgroundColor = 'rgb(31, 168, 23)';
+  buttons[1].style.backgroundColor = 'rgb(31, 168, 23)';
+  buttons[2].style.backgroundColor = 'rgb(31, 168, 23)';
+  buttons[0].style.color = '#000';
+  buttons[1].style.color = '#000';
+  buttons[2].style.color = '#000';
+  buttons[0].innerHTML = 'Join Avengers';
+  buttons[1].innerHTML = 'Join Avengers';
+  buttons[2].innerHTML = 'Join Avengers';
+}
+
+function buttonsOriginal(){
+  buttons[0].style.backgroundColor = '#ccc';
+  buttons[1].style.backgroundColor = '#ccc';
+  buttons[2].style.backgroundColor = '#ccc';
+}
