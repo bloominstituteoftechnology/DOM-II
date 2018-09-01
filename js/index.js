@@ -18,7 +18,16 @@ anchor.forEach(function(element){
      	     if(target.tagName === 'A') {
      	     	 target.style.color = 'black';
      	     }
-     })
+     });
+
+     element.addEventListener('click', function(event){
+             event.preventDefault();
+              let target = event.target;
+              if(target.style.color='tomato'){
+                target.style.color = 'green';
+              }
+     });
+
 });
 
 
@@ -54,9 +63,8 @@ btn.forEach(function(button){
             }
      });
      
-     //4. Select event
-      
-     //5. focus event 
+         
+     //4. focus event 
      input.addEventListener('focus', function(event){
               let target = event.target;
               // let parent = target.parentNode;
@@ -72,7 +80,7 @@ btn.forEach(function(button){
               let firstChildText = parent.children[0].innerHTML;
               alert('You have chosen: ' + firstChildText);
      },false);
-     // 6.Keydown event
+     // 5.Keydown event
      input.addEventListener('keydown', function(event){
             let target = event.target;
             let inputValue = input.value;
@@ -83,7 +91,7 @@ btn.forEach(function(button){
 
      });
         
-     // 7. Blur event
+     // 6. Blur event
      input.addEventListener('blur', function(event){
           let target = event.target;
           target.style.background = 'aqua';
