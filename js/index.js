@@ -15,7 +15,7 @@ each.call( nav, function(e)
 }
 );
 
-
+// This was my first try ad adding a right click. It works only once.
 window.onclick = hideContextMenu;
 
 const funBus = document.querySelector('.logo-heading');
@@ -90,16 +90,34 @@ document.querySelector('div .destination p').innerHTML= txt;
 
 }
 //adding color to the lower section like water
-const boxed = document.querySelectorAll('div .destination p');
+
+const boxed = document.querySelectorAll('div .destination');
+const headers = document.querySelectorAll('div .destination h4');
+const para = document.querySelectorAll('div .destination p');
 boxed.forEach( boxed => {
-    boxed.addEventListener('click', boxes)
-  }) 
   
-function boxes() {
- this.style.backgroundColor = 'dodgerblue';
-   this.style.color ="white";
+    boxed.addEventListener('click', boxes)
+    
+  }) 
+
+  const clearHandler = function(event){
+    event.stopPropagation();
+    this.parentNode.style.display = 'None';
+ }
+ 
+const boxes = function(event) {
+this.style.backgroundColor = 'dodgerblue';
+this.style.color ="white";
 
 }
+headers.array.forEach((head)=> {
+    head.addEventListener('click', boxes);
+});
+
+para.forEach((clearContainer) => {
+    clearContainer.addEventListener('click', clearHandler);
+})
+
 
 
 // Adding scrolling happy figured out scrolling!
