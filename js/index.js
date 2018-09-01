@@ -61,8 +61,9 @@ let banner = document.querySelector('.container .intro img');
 banner.addEventListener('mouseover', changeBanner);
 
 function changeBanner(){
-  banner.src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e1/Thor_Ragnarok_Promo_Banner.jpg/revision/latest?cb=20170910113214';
+  banner.src = 'img/thor-banner.jpg';
 }
+// https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e1/Thor_Ragnarok_Promo_Banner.jpg/revision/latest?cb=20170910113214
 
 
 // main title and paragraph
@@ -85,10 +86,13 @@ for(let i = 0; i < imageContent.length;i++){
 }
 
 function changeImage(){
-  imageContent[0].src='https://www.quirkybyte.com/wp-content/uploads/2017/12/thor_ragnarok_fejs.jpg';
+  imageContent[0].src='img/thor_ragnarok.jpg';
   imageContent[0].style.height = ('100%');
-  imageContent[1].src='http://moviesbox.live/wp-content/uploads/2018/02/watch-thor-ragnarok-online-free-13.jpg';
+  imageContent[1].src='img/thor-green-bg.jpg';
 }
+// https://www.quirkybyte.com/wp-content/uploads/2017/12/thor_ragnarok_fejs.jpg
+
+// http://moviesbox.live/wp-content/uploads/2018/02/watch-thor-ragnarok-online-free-13.jpg
 
 // section headers
 let textHeaders = document.querySelectorAll('.text-content h2');
@@ -139,8 +143,10 @@ console.log(bottomImage);
 bottomImage.addEventListener('click', bottomImageBanner);
 
 function bottomImageBanner(){
-  bottomImage.src = 'https://www.withashleyandco.com/wp-content/uploads/2017/07/ThorRagnarok5974d7a557bca.jpg';
+  bottomImage.src = 'img/thor-thunder.jpeg';
 }
+
+// https://www.withashleyandco.com/wp-content/uploads/2017/07/ThorRagnarok5974d7a557bca.jpg
 
 // bottom columns and headers
 let destination = document.querySelector('.content-pick .destination');
