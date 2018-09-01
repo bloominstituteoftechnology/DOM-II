@@ -29,6 +29,7 @@ for(let i = 0; i < links.length; i++){
   links[i].addEventListener('mouseout', originalNav);
 }
 
+
 function changeLinks(){
   links[0].innerHTML = 'Thor';
   links[1].innerHTML = 'Valhalla';
@@ -60,7 +61,7 @@ let banner = document.querySelector('.container .intro img');
 banner.addEventListener('mouseover', changeBanner);
 
 function changeBanner(){
-  banner.src = '../img/thor-banner.jpg';
+  banner.src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e1/Thor_Ragnarok_Promo_Banner.jpg/revision/latest?cb=20170910113214';
 }
 
 
@@ -84,9 +85,9 @@ for(let i = 0; i < imageContent.length;i++){
 }
 
 function changeImage(){
-  imageContent[0].src='../img/thor_ragnarok.jpg';
+  imageContent[0].src='https://www.quirkybyte.com/wp-content/uploads/2017/12/thor_ragnarok_fejs.jpg';
   imageContent[0].style.height = ('100%');
-  imageContent[1].src='../img/thor-green-bg.jpg';
+  imageContent[1].src='http://moviesbox.live/wp-content/uploads/2018/02/watch-thor-ragnarok-online-free-13.jpg';
 }
 
 // section headers
@@ -138,7 +139,7 @@ console.log(bottomImage);
 bottomImage.addEventListener('click', bottomImageBanner);
 
 function bottomImageBanner(){
-  bottomImage.src = '../img/thor-thunder.jpeg';
+  bottomImage.src = 'https://www.withashleyandco.com/wp-content/uploads/2017/07/ThorRagnarok5974d7a557bca.jpg';
 }
 
 // bottom columns and headers
