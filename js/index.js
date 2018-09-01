@@ -67,3 +67,13 @@ paragraph.forEach(item => {
     this.parentNode.style.width = "100%";
   });
 });
+
+// 6. Double click on a button changed its color
+
+let button = document.querySelectorAll(".btn");
+
+button.forEach(item => {
+  item.addEventListener("dblclick", function() {
+    this.style.backgroundColor = "red";
+  });
+});
