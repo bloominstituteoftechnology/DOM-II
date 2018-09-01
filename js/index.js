@@ -91,3 +91,11 @@ imgs.forEach(item => {
 logo.addEventListener("dblclick", function() {
   logo.style.color = "green";
 });
+
+// 9. Nav Items turn red when clicked
+
+navItem.forEach(item => {
+  item.addEventListener("click", function() {
+    this.style.color = "red";
+  });
+});
