@@ -49,3 +49,13 @@ paragraph.forEach(item => {
     this.parentNode.style.backgroundColor = "";
   });
 });
+
+// 4. Clicking clicking on pictures makes them dissapear
+
+let imgs = document.querySelectorAll("img");
+
+imgs.forEach(item => {
+  item.addEventListener("click", function() {
+    this.parentNode.style.display = "none";
+  });
+});
