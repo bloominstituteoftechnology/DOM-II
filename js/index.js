@@ -77,3 +77,11 @@ button.forEach(item => {
     this.style.backgroundColor = "red";
   });
 });
+
+// 7. draggin imgs alert
+
+imgs.forEach(item => {
+  item.addEventListener("drag", function(event) {
+    alert("No dragging");
+  });
+});
