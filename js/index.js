@@ -1,5 +1,5 @@
 // Your code goes here
-alert('Welcome To The Fun Bus');
+alert('Welcome To The Fun Bus, move your mouse around the navigation and the first section, then click the section with pick your destination the header, paragraph and photo, and double click the first header with sign me up and see the magic.');
 
 // navigation title
 let title = document.getElementsByClassName('logo-heading');
