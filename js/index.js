@@ -6,7 +6,9 @@ const navLinks = document.querySelectorAll('.nav-link');
 const topNav = document.querySelector('.main-navigation');
 const images = document.querySelectorAll('img');
 const paragraphs = document.querySelectorAll('p');
-let buttons = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll('.btn');
+const firstHeader = document.querySelector('.text-content h2');
+const firstSection = document.querySelector('section');
 
 navLogo.addEventListener("mouseover", function() {
     navLogo.style.border = '2px dashed black';
@@ -76,4 +78,23 @@ buttons.forEach(function(x) {
 
 images[2].addEventListener('mousedown', function() {
     alert('What a pretty place! Don\'t you wish you were there?');
+})
+
+navLinks.forEach(function(links) {
+    links.addEventListener('click', function(event) {
+        event.preventDefault();
+    })
+})
+
+firstHeader.addEventListener('click', function(event) {
+    alert("This event won't propagate.");
+    event.stopPropagation();
+})
+
+firstSection.addEventListener('click', function() {
+    this.style.backgroundColor = 'aqua';
+})
+
+firstSection.addEventListener('dblclick', function() {
+    this.style.cssText = '';
 })
