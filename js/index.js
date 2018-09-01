@@ -10,18 +10,15 @@ const buttons = document.querySelectorAll('.btn');
 const firstHeader = document.querySelector('.text-content h2');
 const firstSection = document.querySelector('section');
 
-navLogo.addEventListener("mouseover", function() {
-    navLogo.style.border = '2px dashed black';
-    navLogo.style.backgroundColor = 'gold';
-    navLogo.style.transform = 'scale(2, 1)';
-    navLogo.style.padding = '10px';
+navLogo.addEventListener("mouseover", function(event) {
+    this.classList.add('nav-logo-border')
 
 });
 
 navLogo.addEventListener('mouseleave', function() {
-    navLogo.style.cssText = "";
+    this.classList.remove('nav-logo-border');
 
-})
+});
 
 window.addEventListener('wheel', function() {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
