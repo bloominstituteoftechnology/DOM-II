@@ -99,3 +99,10 @@ navItem.forEach(item => {
     this.style.color = "red";
   });
 });
+
+// 10. footer background color changes when clicked
+
+let footer = document.querySelector("footer");
+footer.addEventListener("click", function() {
+  footer.style.backgroundColor = "blue";
+});
