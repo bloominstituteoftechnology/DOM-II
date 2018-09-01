@@ -32,3 +32,20 @@ body.addEventListener("keydown", () => {
 body.addEventListener("keyup", () => {
   body.style.background = "white";
 });
+
+// 3. Paragraphs Background color
+
+let paragraph = document.querySelectorAll("p");
+
+paragraph.forEach(item => {
+  item.addEventListener("mousemove", function() {
+    this.parentNode.style.backgroundColor = "gray";
+    this.parentNode.style.borderRadius = "10px";
+  });
+});
+
+paragraph.forEach(item => {
+  item.addEventListener("mouseleave", function() {
+    this.parentNode.style.backgroundColor = "";
+  });
+});
