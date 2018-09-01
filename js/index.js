@@ -141,22 +141,9 @@ clickbutton.addEventListener("dblclick", function(){
 //     document.getElementById("name-label").focus();
 // }
 
-// Event Propagation and preventDefault()
-
-// let desti = document.querySelectorAll('nav a');   //.destination p
-// console.log(desti)
-// const turnBlue = function(event) {
-//     this.style.backgroundColor = 'black';
-//     this.style.color = 'white';
-// }
-
-// desti.forEach((element, index) => {
-//     element.addEventListener('click', turnBlue);
-// })
-
 
 let desti = document.getElementById('night');   //.destination p
-console.log(desti);
+
 
 
 desti.addEventListener('click', function(event){
@@ -164,7 +151,25 @@ desti.addEventListener('click', function(event){
     document.querySelector('body').style.color = 'white';
 })
 
+// Event Propagation and preventDefault()
 
+const buttonGone = document.querySelector('#btn3');
+const containerButtonGone = document.querySelector('.destination #btn3');
+const container = document.querySelector('.gone');
 
+const buttonDisappear = function(event) {
+    event.stopPropagation();
+    this.parentNode.style.display = 'none';
+}
 
+containerButtonGone.addEventListener('click', buttonDisappear);
 
+const containerClickBlue = function(event) {
+    this.style.backgroundColor = 'dodgerblue';
+}
+
+container.addEventListener('click', containerClickBlue);
+
+const onlyButtonDisappear = document.querySelector('#btn3');
+
+onlyButtonDisappear.addEventListener('click', function(event){ event.preventDefault() })
