@@ -11,6 +11,14 @@ function funBus() {
     const nav = document.querySelector(".nav");
     const introH2 = document.querySelector(".intro h2");
     const introP = document.querySelector(".intro p");
+    const textH2 = document.querySelector(".text-content h2");
+    const textP = document.querySelector(".text-content p");
+    const invH2 = document.querySelector(".inverse-content .text-content h2");
+    const invP = document.querySelector(".inverse-content .text-content p");
+    
+    const contentH2 = document.querySelector(".content-destination h2");
+    const contentP = document.querySelector(".content-destination p");
+    //console.log(invH2)
  
     /******* ADD LISTENERS *************/
    
@@ -24,6 +32,13 @@ function funBus() {
    nav.id = "nav";
    introH2.id = "introH2";
    introP.id = "introP";
+   textH2.id = "textH2";
+   textP.id = "textP";
+   invH2.id = "invH2";
+   invP.id = "invP";
+   
+   contentH2.id = "contentH2";
+   contentP.id = "contentP";
 
     //**** MAKE ALL THE IMAGES DRAGGABLE *******/
     Draggable.create("#imgBus");
@@ -34,6 +49,13 @@ function funBus() {
     Draggable.create("#nav");
     Draggable.create("#introH2");
     Draggable.create("#introP");
+    Draggable.create("#textH2");
+    Draggable.create("#textP");
+    Draggable.create("#invH2");
+    Draggable.create("#invP");
+    
+    Draggable.create("#contentH2");
+    Draggable.create("#contentP");
     
     const imgMod = document.querySelector(".intro img");
 
