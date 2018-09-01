@@ -46,6 +46,7 @@ navBar.addEventListener('mousemove', function () {
 
 const navItems = document.querySelectorAll('.nav-link');
 navItems.forEach(navItem => {
+    event.preventDefault();
     navItem.addEventListener('click', function () {
         navItem.style.color = 'red';
     })
