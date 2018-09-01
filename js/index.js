@@ -5,7 +5,9 @@ const adventurePic = document.querySelector(".img-content img");
 const navLinks = document.querySelectorAll("a");
 const bodCont = document.querySelector("body");
 const funImg = document.querySelector(".funImg");
-
+const destImg = document.querySelector("#destImg");
+const divs = document.querySelectorAll(".destination h4");
+const titles = document.querySelectorAll(".content-section");
 
 //new images for effects
 const rick = document.createElement('img');
@@ -30,7 +32,6 @@ function mouseOverImage() {
 };
 
 //dabbing cactus img over fun img
-
 funImg.addEventListener("dblclick", dblClickImg);
 
 function dblClickImg() {
@@ -39,6 +40,12 @@ function dblClickImg() {
     } else if (funImg.src.includes("img/dabbingCactus.jpg")) {
         funImg.src = "img/fun.jpg"
     }
+};
+
+//image alert event
+function drag(ev) {
+    destImg.style.display = "none";
+    alert ("HEY!!! PUT THAT BACK!!!");
 };
 //end img events
 //button event
@@ -49,10 +56,6 @@ buttonList.forEach(function(button) {
 function goAway(event){
     event.target.style.display = "none";
 };
-
-
-
-// needs debugging
 
 //logo effects
 logo.addEventListener("mouseover", function() {
@@ -97,3 +100,19 @@ function bodyDefault() {
 bodCont.addEventListener("keydown", blackWhite);
 bodCont.addEventListener("keyup", bodyDefault);
 
+//h4 effect
+divs.forEach(function(element){
+    element.addEventListener("wheel", function(event){ 
+        event.target.style.border = "2px solid black";
+        event.target.style.backgroundColor = "aqua";
+    });
+});
+
+//h2 effect
+titles.forEach(function(element){
+    element.addEventListener("contextmenu", function(event){
+        event.target.style.border = "2px solid black";
+        event.target.style.backgroundColor = "aqua";
+        event.target.style.padding = "25px";
+    })
+})
