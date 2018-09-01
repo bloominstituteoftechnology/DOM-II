@@ -102,7 +102,7 @@ function boxes() {
 }
 
 
-// Adding scrolling
+// Adding scrolling happy figured out scrolling!
 let mainNav = document.querySelector('.main-navigation');
 
 function scroll(){
