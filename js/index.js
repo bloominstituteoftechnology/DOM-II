@@ -35,9 +35,9 @@ window.addEventListener('resize', function (event) {
     yellowBus.style.display = 'none';
 })
 
-document.addEventListener('scroll', function() {
-    alert('You have encounterd the Scroll Lock monster.  Please Do not do this again!');
-})
+// document.addEventListener('scroll', function() {
+//     alert('You have encounterd the Scroll Lock monster.  Please Do not do this again!');
+// })
 
 const nav = document.querySelector('.nav');
 window.addEventListener('contextmenu', function() {
@@ -92,9 +92,11 @@ document.addEventListener("keydown", function(event)    {
         })
     }
 })
-// document.addEventListener('keydown', function(event) {
-//     const keyName = event.key;
-//     alert('keydown event\n\n' + 'key: ' + keyName);
-//   });
-// .intro img 
-// yellow bus image
+
+const navs = document.querySelectorAll('.nav a');
+for(let i = 0; i < navs.length; i++) {
+    navs[i].addEventListener('click',(event) => {
+      event.stopPropagation();
+      event.preventDefault();
+    });
+  }
