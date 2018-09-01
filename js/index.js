@@ -37,7 +37,7 @@ function showContextMenu (e) {
     li.style.backgroundColor= "whitesmoke"
     li.style.fontSize = '16px';
     li.style.width =" 100px";
-    li.style.heigh ="25px";
+    li.style.height ="25px";
     li.style.listStyleType = 'none';
     contentDiv.appendChild(li);
 }
@@ -100,3 +100,20 @@ function boxes() {
    this.style.color ="white";
 
 }
+
+
+// Adding scrolling
+let mainNav = document.querySelector('.main-navigation');
+
+function scroll(){
+
+var pos = window.pageYOffset;
+
+if(pos > 200) {
+    mainNav.style.height = "60px";
+}
+else {
+    mainNav.style.height = "100px"
+}
+}
+window.addEventListener("scroll", scroll);
