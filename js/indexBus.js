@@ -7,17 +7,30 @@ function funBus() {
     const imgAdventure = document.querySelector(".img-content img");
     const imgFun = document.querySelector(".img-fluid");
     const imgDestination = document.querySelector(".content-destination img");
+    
     const title = document.querySelector(".logo-heading");
     const nav = document.querySelector(".nav");
+    
     const introH2 = document.querySelector(".intro h2");
     const introP = document.querySelector(".intro p");
+    
     const textH2 = document.querySelector(".text-content h2");
     const textP = document.querySelector(".text-content p");
+    
     const invH2 = document.querySelector(".inverse-content .text-content h2");
     const invP = document.querySelector(".inverse-content .text-content p");
     
     const contentH2 = document.querySelector(".content-destination h2");
     const contentP = document.querySelector(".content-destination p");
+
+   // const destination2 = document.querySelectorAll(".destination p");
+    
+    let h4 = document.querySelectorAll('h4');
+
+    let destination = document.querySelectorAll('.destination p');
+
+    const btns = document.querySelectorAll('.btn');
+
     //console.log(invH2)
  
     /******* ADD LISTENERS *************/
@@ -26,7 +39,7 @@ function funBus() {
     /**** FOR USE WITH THE GSAP GREENSOCK PLUGIN *******/
     imgBus.id = "imgBus";
     imgAdventure.id = "imgAdventure";
-    imgFun.id = "imgFun";
+    imgFun.id = "imgFun";  
     imgDestination.id = "imgDestination";
    title.id = "title";
    nav.id = "nav";
@@ -36,6 +49,21 @@ function funBus() {
    textP.id = "textP";
    invH2.id = "invH2";
    invP.id = "invP";
+   
+   for (let i = 0; i < h4.length; i++) { 
+        h4[i].id = `h4${i}`;
+        Draggable.create(`#h4${i}`);
+    };
+
+    for (let i = 0; i < destination.length; i++) { 
+        destination[i].id = `destination${i}`;
+        Draggable.create(`#destination${i}`);
+    };
+
+    for (let i = 0; i < btns.length; i++) { 
+        btns[i].id = `btns${i}`;
+        Draggable.create(`#btns${i}`);
+    };
    
    contentH2.id = "contentH2";
    contentP.id = "contentP";
@@ -56,6 +84,7 @@ function funBus() {
     
     Draggable.create("#contentH2");
     Draggable.create("#contentP");
+    
     
     const imgMod = document.querySelector(".intro img");
 
@@ -173,9 +202,9 @@ function funBus() {
         alert('screen has been resized');
     });
 
-    let h4 = document.querySelectorAll('h4');
+   
 
-    let destination = document.querySelectorAll('.destination');
+    
 
 
     for (i = 0; i < h4.length; i++) {
