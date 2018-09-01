@@ -61,6 +61,7 @@ function textContent(){
   sectionText[0].innerHTML = 'At last the great hall was filled with asgardians waiting for a glimpse of the new king. ';
   sectionText[1].innerHTML = 'Queen frigga sat at her vanity putting her jewellery on in the mirror she saw her husband turn and walk to the centre of the chamber. His blue eyes were dark with worry. ';
   sectionText[2].innerHTML = 'Labeled "Earth\'s Mightiest Heroes", the Avengers originally consisted of Ant-Man, the Hulk, Iron Man, Thor, and the Wasp. Ant-Man had become Giant-Man by issue #2. The original Captain America was discovered trapped in ice in issue #4, and joined the group after they revived him.';
+  sectionText[3].innerHTML = 'Without a double Thor was a great warrior but a warror king, that was still a lesson to learn. ';
 }
 
 
