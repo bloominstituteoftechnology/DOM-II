@@ -20,6 +20,14 @@ headerpic.addEventListener("mouseleave", function(event){
 
 //keydown
 
+window.addEventListener("keydown", checkKeyPress, false);
+
+function checkKeyPress(event) {
+    if (event.keyCode == '65') {
+        alert("The 'a' letter key has been pressed!");
+    }
+}
+
 
 //click - each click rotates Hue by 90deg - pic1
 let picHue = document.getElementById('pic1');
