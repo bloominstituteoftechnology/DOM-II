@@ -9,6 +9,11 @@ const footerText = document.querySelector('footer > p');
 const images = document.querySelectorAll('.img-content > img');
 const paragraph = document.querySelectorAll('p');
 const boat = document.querySelector('.content-destination > img');
+const containerCloseButtons = document.querySelectorAll('.box span');
+const containers = document.querySelectorAll('.box');
+
+console.log(containerCloseButtons);
+console.log(containers);
 
 anchor.forEach(a => {
     a.addEventListener("click", function(event){
@@ -100,3 +105,21 @@ paragraph.forEach(p => {
 });
 
 boat.addEventListener('contextmenu', borderImage);
+
+const containerCloseHandler = function(event){
+    // prevents event bubbling
+    event.stopPropagation()
+    
+    this.parentNode.style.display = 'none';
+  }
+  
+ containerCloseButtons.addEventListener('click', containerCloseHandler);
+  
+  
+  const containerClickHandler = function(event){
+    // change the bg color of the entire container to blue;
+    // event.target.style.backgroundColor = 'blue';
+    this.style.backgroundColor = 'dodgerblue';
+  }
+  
+containers.addEventListener('click', containerClickHandler);
