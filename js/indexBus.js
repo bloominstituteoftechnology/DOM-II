@@ -21,18 +21,15 @@ function funBus() {
     const invP = document.querySelector(".inverse-content .text-content p");
     
     const contentH2 = document.querySelector(".content-destination h2");
-    const contentP = document.querySelector(".content-destination p");
-
-   // const destination2 = document.querySelectorAll(".destination p");
+    const contentP = document.querySelector(".content-destination p");  
     
-    let h4 = document.querySelectorAll('h4');
+    const h4 = document.querySelectorAll('h4');
 
-    let destination = document.querySelectorAll('.destination p');
+    const destination = document.querySelectorAll('.destination p');
 
     const btns = document.querySelectorAll('.btn');
 
-    //console.log(invH2)
- 
+    let savedRadius = 0;
     /******* ADD LISTENERS *************/
    
     
@@ -87,26 +84,27 @@ function funBus() {
     
     
     const imgMod = document.querySelector(".intro img");
-
-   // Window.onload = function(){
-       // var logo = document.getElementById("logo");    
-    //   TweenLite.to(imgBus, 1, {left:"632px"});
-   // }
-    
-    /*******EVENT 1*************/
-    imgMod.addEventListener("mouseover", mouseHandler);
-
-    /*******EVENT 2*************/
-   // imgMod.addEventListener("mouseout", mouseOutHandler);
-
+ 
+   function mouseWheelHandler(e) {
+    let moveAmt = event.deltaY;
+    if (moveAmt > 0) {
+        savedRadius = (savedRadius + 10);
+        imgMod.style.borderRadius = savedRadius + "px";
+        event.stopPropagation();
+        console.log(imgMod.style.borderRadius);
+        console.log(event);
+    } else {
+        savedRadius = (savedRadius - 10);
+        event.stopPropagation();
+        console.log(savedRadius);
+        imgMod.style.borderRadius = savedRadius + "px";
+        console.log(event);
+    }
+  }
 
     function mouseHandler() {
        // imgMod.style.borderRadius = "50%";
     }
-
-   // function mouseOutHandler() {
-  //      imgMod.style.borderRadius = "0";
-  //  }
 
     const txtMod = document.querySelector(".content-section");
 
@@ -116,11 +114,14 @@ function funBus() {
     /*******EVENT 4*************/
     txtMod.addEventListener("mouseout", txtOutHandler);
 
-    function txtModHandler() {
+    
+    function txtModHandler(e) {
         txtMod.style.backgroundColor = "tomato";
         txtMod.style.Color = "saddleBrown";
         txtMod.style.padding = "10px";
         txtMod.style.borderRadius = "15px";
+        let moveAmt = event.deltaY;
+        console.log(moveAmt);
     }
 
     function txtOutHandler() {
@@ -155,21 +156,7 @@ function funBus() {
         alert('right mouse click');
     });
 
-
     let h2 = document.querySelectorAll('h2');
-
-   // for (i = 0; i < h2.length; i++) {
-        /*******EVENT 8*************/
-   //     h2[i].addEventListener('mouseover', h2Handler);
-  //  }
-
-   // function h2Handler() {
-    //    for (i = 0; i < h2.length; i++) {
-           // if (h2[i].innerHTML === "") {
-    //            h2[i].innerHTML = "LAMBDA STUDENTS HAVE BEEN HERE!";
-        //    } h2[i].innerHTML = "";
-   //     }
-  //  };
 
     let navLink = document.querySelectorAll('.nav-link');
 
@@ -202,12 +189,7 @@ function funBus() {
         alert('screen has been resized');
     });
 
-   
-
-    
-
-
-    for (i = 0; i < h4.length; i++) {
+   for (i = 0; i < h4.length; i++) {
         h4[i].addEventListener('click', h4ClickHandler, false);
     };
 
