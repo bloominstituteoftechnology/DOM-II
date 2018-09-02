@@ -20,7 +20,7 @@ const centerTitleTop = document.querySelector(".content-section h2");
 const centerTitleBottom = document.querySelector(".inverse-content h2");
 const topPic = document.querySelector(".intro img");
 
-// 1 navbar borders pop in and out with mouseover
+// 1 & 2 navbar borders pop in with mouseover and return to normal with mouseleave
 const borderBoxOn = function() {
   this.style.border = "1px solid black";
 };
@@ -35,7 +35,7 @@ navButtons.forEach(
   })
 );
 
-// 2 last pic on the page increases and decreases in size with wheel
+// 3 last pic on the page increases and decreases in size with wheel
 let size = 100;
 let switchDir = -1;
 const increaseSize = function() {
@@ -50,7 +50,7 @@ const increaseSize = function() {
 
 lastPic.addEventListener("wheel", increaseSize);
 
-// 3 each individual destination paragraph increases width on click of the buttons
+// 4 each individual destination paragraph increases width on click of the buttons - demonstrates bubbling fix
 const bumpOut = function() {
   event.stopPropagation();
   if (this.parentNode.style.width === "35%") {
@@ -60,47 +60,66 @@ const bumpOut = function() {
 
 destinations.forEach((item = elem => elem.addEventListener("click", bumpOut)));
 
-// 4 middle destination paragraph turn pink when clicked - demonstrates bubbling fix
+// 5 middle destination paragraph turn pink when clicked
 destinationDivs[1].addEventListener("click", function() {
   if (destinationDivs[1].style.backgroundColor === "pink") {
     destinationDivs[1].style.backgroundColor = "white";
   } else destinationDivs[1].style.backgroundColor = "pink";
 });
 
-// 5 provide a target to drag "Let's Go" to
+// 6 provide a target to drag "Let's Go" to
 const dragTarget = function() {
   centerTitleBottom.style.color = "red";
+  centerTitleTop.style.opacity = ".5";
 };
 
 centerTitleTop.addEventListener("dragstart", dragTarget);
 
-// 6 change the background of target location to show ready for drop
-const dragApproveLoc = function() {
+// 7 & 8 change the background of target location to show ready for drop and change it back if it leaves without being dropped
+const dragApproveLocEnter = function() {
   centerTitleBottom.style.backgroundColor = "grey";
+  event.preventDefault();
 };
 
-centerTitleBottom.addEventListener("dragover", dragApproveLoc);
+const dragApproveLocLeave = function() {
+  centerTitleBottom.style.backgroundColor = "";
+};
 
-// 7 swap "Let's Go" onto "Adventure Awaits" to at dragend and clear style changes
+centerTitleBottom.addEventListener("dragover", dragApproveLocEnter);
+centerTitleBottom.addEventListener("dragleave", dragApproveLocLeave);
+
+// 9 swap "Let's Go" onto "Adventure Awaits" at drop and clear style changes
 const dragSwap = function() {
   centerTitleBottom.style.backgroundColor = "";
   centerTitleBottom.style.color = "";
+  centerTitleTop.style.opacity = "1";
   tempString = centerTitleBottom.innerHTML;
   centerTitleBottom.innerHTML = centerTitleTop.innerHTML;
   centerTitleTop.innerHTML = tempString;
 };
 
-centerTitleTop.addEventListener("dragend", dragSwap);
+document.addEventListener("drop", dragSwap);
 
-//8 TODO this isn't done
-let timeKeeper = 0;
-const inverseTopImg = function() {
-  const timer = setInterval(inverseTopImg, 50);
-  timeKeeper += 50;
-  while (timeKeeper > 2000) {
-    topPic.style.transform("scaleX(-1)");
+// 10 & 11 flips the header image every 50ms on page load until double-click  
+// TODO need to figure out why the image is overriding the navbar 
+let running = true;
+let flipDigit = 1;
+const timerFunction = function() {
+  const intervalID = window.setInterval(inverseTopImg, 50);
+  function inverseTopImg() {
+    if (!running) {
+      clearInterval(intervalID);
+    } else {
+      flipDigit = flipDigit * -1;
+      let scale = `scaleX(${flipDigit})`;
+      topPic.style.transform = scale;
+    }
   }
-  clearInterval(timer);
 };
 
-topPic.addEventListener("load", inverseTopImg);
+const timerStop = function() {
+  running = false;
+};
+
+topPic.addEventListener("load", timerFunction);
+topPic.addEventListener("dblclick", timerStop);
