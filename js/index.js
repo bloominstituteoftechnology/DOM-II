@@ -21,11 +21,31 @@ window.addEventListener('keyup', function(event){
         let cityImg = document.querySelectorAll('img')[2];
         cityImg.style.display = 'none';
     }
-})
+});
 
 let contentSec = document.querySelector('.content-section');
-contentSec.addEventListener('mouseenter',)
-console.log(contentSec);
-
 let inverseSec = document.querySelector('.inverse-content');
-console.log(inverseSec);
+contentSec.addEventListener('mouseenter', function(event){
+    if (contentSec.style.background === ''){
+        event.stopPropagation()
+        contentSec.style.background = 'green';
+    } else {
+        inverseSec.addEventListener('mouseleave', function(){
+            inverseSec.style.background = 'green';
+        });
+    }
+});
+
+let header = document.querySelector('.intro');
+let contentDestination = document.querySelector('.content-destination');
+header.addEventListener('dblclick', function(){
+    header.style.background = 'blue';
+    contentDestination.style.background = 'blue';
+});
+
+let navATags = document.querySelectorAll('nav a');
+window.addEventListener('click', function(e){
+    e.preventDefault();
+
+})
+
