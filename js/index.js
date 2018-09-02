@@ -6,7 +6,7 @@
 	// * [ ] `drag / drop`
 	// * [ ] `load`
 	// * [ ] `focus`
-	// * [ ] `resize`
+	// * [x] `resize`
 	// * [ ] `scroll`
     // * [ ] `select`
     // * [x] `dblclick`
@@ -44,6 +44,9 @@ para.forEach(graph => {
     graph.addEventListener('mouseout', pHandlerOut)
 });//3 all <p> tags turn orange when the mouseover, turns to black when mouseout
 
+window.addEventListener('resize', (e) => {
+    document.querySelector('h2').innerHTML = "WELCOME TO FUNBUS! WE LIKE TO GET WEIRD AROUND HERE.";
+});
 
 
 
