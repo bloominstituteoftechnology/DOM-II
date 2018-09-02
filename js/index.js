@@ -84,7 +84,7 @@ logo.addEventListener('mouseleave', () => {//animates the logo header
         }
     }
 })
-/* not working yet
+
 allImg[0].addEventListener('mouseover', () => {//animates top img
     TweenMax.to(allImg[0], 5, {x:400});
-}) */
+}) 
