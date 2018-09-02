@@ -29,6 +29,9 @@ function fadeOut() {
 };
 topPic.addEventListener("mouseover", fade);
 topPic.addEventListener("mouseout", fadeOut);
+topPic.addEventListener("load", function(){
+    TweenMax.to(topPic, 2, {x:20});
+});
 
 const destPic = document.querySelector(".content-destination img");
 function changePic() {
