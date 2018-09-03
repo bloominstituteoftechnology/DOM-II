@@ -16,39 +16,32 @@ each.call( nav, function(e)
 );
 
 // This was my first try ad adding a right click. It works only once.
-window.onclick = hideContextMenu;
+let menu = document.querySelector('.context-menu');
+console.log(menu);
+menu.classList.add('off');
 
-const funBus = document.querySelector('.logo-heading');
-funBus.addEventListener("contextmenu", showContextMenu);
-const contentDiv = document.querySelector(".main-navigation");
-var li = document.createElement("li");
+let bodie = document.querySelector('body');
+bodie.addEventListener('contextmenu', showmenu);
+
+//add a listener for leaving the menu and hiding it
+menu.addEventListener('mouseleave', hidemenu);
 
 
-// Right Click Function with Escape
-function showContextMenu (e) {
-    funBus.style.display = 'block';
-    funBus.style.left = event.clientX + 'px';
-    funBus.style.top = event.clientY + "px";
-    e.preventDefault();
-    li.innerHTML = "Cool Menu";
-    li.style.border = '1px Solid Black';
-    li.style.padding = '10px 5px';
-    li.style.borderLeft = "4px solid orangered";
-    li.style.backgroundColor= "whitesmoke"
-    li.style.fontSize = '16px';
-    li.style.width =" 100px";
-    li.style.height ="25px";
-    li.style.listStyleType = 'none';
-    contentDiv.appendChild(li);
+function showmenu(ev) {
+    //stop the real right click menu
+    ev.preventDefault();
+    //show the custom menu
+    console.log(ev.clientX, ev.clientY);
+    menu.style.top = `${ev.clientY - 20}px`;
+    menu.style.left = `${ev.clientX - 20}px`;
+    menu.classList.remove('off');
 }
 
-function hideContextMenu(){
-    list = li.style;
-    list.display = 'none';
+function hidemenu(ev) {
+    menu.classList.add('off');
+    menu.style.top = '-200%';
+    menu.style.left = '-200%';
 }
-
-
-
 
 // Wheel in the Bus Img 
 let intro = document.querySelector('.intro img'); 
@@ -92,31 +85,14 @@ document.querySelector('div .destination p').innerHTML= txt;
 //adding color to the lower section like water
 
 const boxed = document.querySelectorAll('div .destination');
-const headers = document.querySelectorAll('div .destination h4');
-const para = document.querySelectorAll('div .destination p');
-boxed.forEach( boxed => {
-  
-    boxed.addEventListener('click', boxes)
-    
-  }) 
-
-  const clearHandler = function(event){
-    event.stopPropagation();
-    this.parentNode.style.display = 'None';
- }
- 
-const boxes = function(event) {
-this.style.backgroundColor = 'dodgerblue';
-this.style.color ="white";
-
+const boxes = function () {
+    this.style.backgroundColor = 'dodgerblue';
+    this.style.color = "white";
 }
-headers.array.forEach((head)=> {
-    head.addEventListener('click', boxes);
-});
+boxed.forEach(boxed => boxed.addEventListener('click', boxes));
 
-para.forEach((clearContainer) => {
-    clearContainer.addEventListener('click', clearHandler);
-})
+
+
 
 
 
