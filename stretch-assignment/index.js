@@ -7,9 +7,18 @@ let clickBlock = document.querySelectorAll('.block'); //Nodelist = array-like ob
 // let clickBlock = document.querySelectorAll('.block');
 console.log(clickBlock)
 
-clickBlock[1].addEventListener('click', function(event){
-    event.target.style.backgroundColor = 'black';
-})
+
+function allClickBlock (arr) {
+    arr.forEach((element, index) => element.addEventListener('click', function(event){
+        event.target.style.backgroundColor = 'yellow';
+    }))
+}
+
+allClickBlock(clickBlock);
+
+// clickBlock[1].addEventListener('click', function(event){
+//     event.target.style.backgroundColor = 'black';
+// })
 
 
 
