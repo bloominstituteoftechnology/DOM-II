@@ -187,6 +187,10 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+.logo-heading {
+  cursor: pointer;
+}
+
 @media (max-width: 500px) {
   .main-navigation .nav-container {
     flex-wrap: wrap;

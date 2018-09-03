@@ -2,7 +2,7 @@
     // * [x] `mouseover`
     // * [x] 'mouseout'
     // * [ ] `keydown`
-	// * [ ] `wheel`
+	// * [x] `wheel`
 	// * [ ] `drag / drop`
 	// * [ ] `load`
 	// * [ ] `focus`
@@ -16,6 +16,9 @@
 const head = document.querySelector('.logo-heading');
 const allATags = document.querySelectorAll('.nav-link');
 const para = document.querySelectorAll('p');
+const h2 = document.querySelectorAll('h2');
+
+
 
 //handlers
 const aClickHandler = function(e) {
@@ -29,6 +32,7 @@ const pHandler = function(e) {
  const pHandlerOut = function(e) {
      this.style.color = "black";
  }
+
 
 //add 10 Event Listeners
 head.addEventListener('dblclick', (e) => {
@@ -47,6 +51,16 @@ para.forEach(graph => {
 window.addEventListener('resize', (e) => {
     document.querySelector('h2').innerHTML = "WELCOME TO FUNBUS! WE LIKE TO GET WEIRD AROUND HERE.";
 });
+
+h2.forEach(e => {
+    e.addEventListener('wheel', function() {
+        this.style.fontSize = '5rem';
+    })
+})
+
+
+
+
 
 
 
