@@ -19,6 +19,7 @@ const destinationDivs = document.querySelectorAll(".destination");
 const centerTitleTop = document.querySelector(".content-section h2");
 const centerTitleBottom = document.querySelector(".inverse-content h2");
 const topPic = document.querySelector(".intro img");
+const topTitle = document.querySelector('.logo-heading');
 
 // 1 & 2 navbar borders pop in with mouseover and return to normal with mouseleave
 const borderBoxOn = function() {
@@ -123,3 +124,71 @@ const timerStop = function() {
 
 topPic.addEventListener("load", timerFunction);
 topPic.addEventListener("dblclick", timerStop);
+
+// 12 Playing with TweenMax - animating the title
+TweenMax.from('.t1', 2, {
+  rotationX: 180,
+  x:150,
+  y:20,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.from('.t2', 2.4, {
+  rotationY: 260,
+  rotationX: 50,
+  x:75,
+  y:-120,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.from('.t3', 1.5, {
+  rotation: 100,
+  x:-130,
+  y:-80,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.from('.t4', 2.3, {
+  rotationY: 360,
+  x:40,
+  y:190,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.from('.t5', 1.8, {
+  rotationX: 360,
+  rotationY: 180,
+  x:650,
+  y:-50,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.from('.t6', 1.3, {
+  rotation: 180,
+  x:-250,
+  scale:3,
+  ease: Elastic.easeOut.config(1, 0.3)
+});
+
+TweenMax.to('.logo-heading', 1, {
+  rotationX: 80, 
+  delay:2.5
+});
+TweenMax.to('.logo-heading', 1, {
+  rotationX: 0, 
+  delay:3.5
+});
+
+
+
+// TweenMax.from('.logo-heading', 2, {
+//   x: 50,
+//   opacity: 0,
+//   scale: 0, 
+//   rotationX: 360
+// });

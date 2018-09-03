@@ -194,10 +194,16 @@ img {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .logo-heading {
+  display: flex;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
   }
+}
+.main-navigation .nav-container .logo-heading span {
+  display: block;
 }
 .main-navigation .nav-container .nav {
   width: 350px;
