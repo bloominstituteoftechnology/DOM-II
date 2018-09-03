@@ -15,7 +15,7 @@ each.call( nav, function(e)
 }
 );
 
-// This was my first try ad adding a right click. It works only once.
+// Second attemp much more successfull right click works!!!!
 let menu = document.querySelector('.context-menu');
 console.log(menu);
 menu.classList.add('off');
