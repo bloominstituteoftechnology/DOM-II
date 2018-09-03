@@ -15,38 +15,49 @@ class Rocket {
     // The animation probably needs to happen using an additional CSS class
     // that includes transition and transform properties
     blastOff() {
-        console.log("Inside blastoff() " + event.currentTarget)
-        if (event.currentTarget === redRocket) {
-            redRocket.style.order = "1"; 
-            blueRocket.style.order = "0";
-            greenRocket.style.order = "0";
-            pinkRocket.style.order = "0";
-            grayRocket.style.order = "0";
-        } else if (event.currentTarget === blueRocket) {
-            redRocket.style.order = "0";
-            blueRocket.style.order = "1";
-            greenRocket.style.order = "0";
-            pinkRocket.style.order = "0";
-            grayRocket.style.order = "0";
-        } else if (event.currentTarget === greenRocket) {
-            redRocket.style.order = "0";
-            blueRocket.style.order = "0";
-            greenRocket.style.order = "1";
-            pinkRocket.style.order = "0";
-            grayRocket.style.order = "0";
-        } else if (event.currentTarget === pinkRocket) {
-            redRocket.style.order = "0";
-            blueRocket.style.order = "0";
-            greenRocket.style.order = "0";
-            pinkRocket.style.order = "1";
-            grayRocket.style.order = "0";
-        } else {
-            redRocket.style.order = "0";
-            blueRocket.style.order = "0";
-            greenRocket.style.order = "0";
-            pinkRocket.style.order = "0";
-            grayRocket.style.order = "1";
-        }
+        // h/t to @john_spraul
+        // Filter out all of the elements that aren't the current target
+        const filtered = rockets.filter(elem => elem.item !== event.currentTarget);
+
+        // Set the current target to order 1
+        event.currentTarget.style.order = "1";
+
+        // Set everything that's not the current target to order 0
+        filtered.forEach(rocket => {
+            rocket.item.style.order = "0";
+        });
+        
+        // if (event.currentTarget === redRocket) {
+        //     redRocket.style.order = "1"; 
+        //     blueRocket.style.order = "0";
+        //     greenRocket.style.order = "0";
+        //     pinkRocket.style.order = "0";
+        //     grayRocket.style.order = "0";
+        // } else if (event.currentTarget === blueRocket) {
+        //     redRocket.style.order = "0";
+        //     blueRocket.style.order = "1";
+        //     greenRocket.style.order = "0";
+        //     pinkRocket.style.order = "0";
+        //     grayRocket.style.order = "0";
+        // } else if (event.currentTarget === greenRocket) {
+        //     redRocket.style.order = "0";
+        //     blueRocket.style.order = "0";
+        //     greenRocket.style.order = "1";
+        //     pinkRocket.style.order = "0";
+        //     grayRocket.style.order = "0";
+        // } else if (event.currentTarget === pinkRocket) {
+        //     redRocket.style.order = "0";
+        //     blueRocket.style.order = "0";
+        //     greenRocket.style.order = "0";
+        //     pinkRocket.style.order = "1";
+        //     grayRocket.style.order = "0";
+        // } else {
+        //     redRocket.style.order = "0";
+        //     blueRocket.style.order = "0";
+        //     greenRocket.style.order = "0";
+        //     pinkRocket.style.order = "0";
+        //     grayRocket.style.order = "1";
+        // }
 
         console.log('Blast off 🚀')
     }
