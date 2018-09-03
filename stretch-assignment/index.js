@@ -1,24 +1,48 @@
 // When a block is clicked, it should go to the top of the stack.
 
-// document.getElementsByTagName('body').style.backgroundColor = 'black';
+const selectParent = document.querySelector('.blocks');
+console.log(selectParent);
 
+let clickBlock = document.querySelectorAll('.block');  // returns array-like 
+console.log(clickBlock);
 
-let clickBlock = document.querySelectorAll('.block'); //Nodelist = array-like object
-// let clickBlock = document.querySelectorAll('.block');
-console.log(clickBlock)
+//ES6 way to turn NodeList into Array
+let newArray = Array.from(clickBlock);
+console.log(newArray);
 
-
-function allClickBlock (arr) {
-    arr.forEach((element, index) => element.addEventListener('click', function(event){
-        event.target.style.backgroundColor = 'yellow';
+// remove 1 element from index 3
+function moveElement(arr) {
+    arr.forEach((element, index, array) => element.addEventListener('click', function(index){
+        newArray.pop(element);
+        // newArray.unshift(arr[index]);
+        console.log(newArray);
     }))
 }
+moveElement(clickBlock);
+// newArray.splice(3,1);
+// console.log(newArray);
 
-allClickBlock(clickBlock);
 
-// clickBlock[1].addEventListener('click', function(event){
-//     event.target.style.backgroundColor = 'black';
-// })
+//////// FIRST ATTEMPT PREPEND
+// function allClickBlock(arr) {
+//     arr.forEach((element, index) => element.addEventListener('click', selectParent.prepend(element)));
+// }
+
+// allClickBlock(clickBlock);
+
+/////// CHANGE COLOR
+// let clickBlock = document.querySelectorAll('.block'); //Nodelist = array-like object
+// console.log(clickBlock)
+
+// function allClickBlock (arr) {
+//     arr.forEach((element, index) => element.addEventListener('click', function(event){
+//         event.target.style.backgroundColor = 'goldenrod';
+//     }))
+// }
+
+// allClickBlock(clickBlock);
+
+
 
 
 
