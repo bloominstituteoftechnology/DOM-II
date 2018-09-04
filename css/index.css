@@ -284,6 +284,9 @@ img {
     order: 1;
   }
 }
+.home .inverse-content .text-content h2:first-child {
+  margin-top: 25px;
+}
 .home .inverse-content .img-content {
   padding-right: 1%;
   padding-left: 0;
@@ -292,6 +295,39 @@ img {
   .home .inverse-content .img-content {
     order: 2;
   }
+}
+.home #imagine {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  align-items: center;
+}
+.home #imagine .slot {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  align-items: center;
+}
+.home #imagine .slot h2 {
+  margin: 20px;
+}
+.home #imagine .slot #dragMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  border: 5px solid black;
+}
+.home #imagine .slot #dropHere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  border: 5px solid black;
 }
 .home .content-destination {
   width: 75%;
