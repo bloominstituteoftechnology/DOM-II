@@ -353,7 +353,6 @@ img {
 .home .fill {
   background: url('../img/beach-bird-s-eye-view-blue-water-1236504.jpg');
   background-position: center;
-  border: 1px solid red;
   background-size: cover;
   height: 250px;
   width: 370px;
