@@ -1,45 +1,65 @@
 // Your code goes here
-const fluidImg = document.querySelector('.img-fluid');
-const adventureImg = document.querySelector('.adventure-img');
-const mainHeading = document.querySelector('.main-heading');
-const firstHeading = document.querySelector('.first-heading');
-const mainNavigation = document.querySelector('.main-navigation');
-const logoHeading = document.querySelector('.logo-heading');
-const contentDestination = document.querySelector('.content-destination');
-const destination1 = document.querySelector('.destination1');
-const destination2 = document.querySelector('.destination2');
-const destination3 = document.querySelector('.destination3');
-const footer = document.querySelector('.footer');
- mainNavigation.addEventListener('mouseover', (event) => {
-   event.currentTarget.style.backgroundColor = '#ffff00';
+let count = 0;
+window.addEventListener('load', () => {
+    alert('The page has successfully loaded!'); // Load
 });
- mainHeading.addEventListener('click', (event) => {
-   event.currentTarget.style.fontSize = '400%'; 
+ window.addEventListener('online', () => {
+    console.log('Server is online...'); // Online
 });
- firstHeading.addEventListener('dblclick', (event) => {
-   event.currentTarget.style.color = 'red'; 
+ let h2s = document.querySelectorAll('h2');
+window.addEventListener('keydown', () => { //Keydown
+    h2s.forEach(item => {
+        item.classList.toggle('h2s-display-none');
+    });
+}, false);
+ let anchors = document.querySelectorAll('a');
+window.addEventListener('keyup', () => { // Keyup
+    anchors.forEach(item => {
+        item.classList.toggle('anchors-bold');
+    });
+}, false);
+ anchors.forEach(element => { // Focus
+    element.addEventListener('focus', () => {
+        element.classList.add('anchors-aqua');
+    });
 });
- logoHeading.addEventListener('mousemove', (event) => {
-   event.currentTarget.style.textDecoration = 'underline'; 
+ let imgs = document.querySelectorAll('img');
+imgs.forEach(img => { // Mouseenter
+    img.addEventListener('mouseenter', () => {
+        img.classList.add('img-border');
+    });
 });
- adventureImg.addEventListener('mouseenter', (event) => {
-   event.currentTarget.style.border = '5px solid black'; 
+ imgs.forEach(img => { // Mouseleave
+    img.addEventListener('mouseleave', () => {
+        img.classList.remove('img-border');
+    });
 });
- fluidImg.addEventListener('mouseenter', (event) => {
-   event.currentTarget.style.border = '5px solid black'; 
+ let h1 = document.querySelector('h1');
+h1.addEventListener('click', () => { // Click
+    if (h1.innerHTML == 'Fun Bus') {
+        h1.innerHTML = 'suB nuF';
+    } else {
+        h1.innerHTML = 'Fun Bus';
+    }
 });
- contentDestination.addEventListener('mousedown', (event) => {
-    event.currentTarget.style.opacity = '.6';
+ h1.addEventListener('dblclick', () => { // DblClick
+    h1.innerHTML = 'Robin is my name';
 });
- destination1.addEventListener('mouseout', (event) => {
-    event.currentTarget.style.backgroundColor = '#ffff00';
+ anchors.forEach(element => {
+    element.addEventListener('drag', () => { // Drag
+        console.log('drag');
+    });
 });
- destination2.addEventListener('mouseleave', (event) => {
-    event.currentTarget.style.display = 'none';
-});
- destination3.addEventListener('mouseup', (event) => {
-    event.currentTarget.style.display = 'none';
-});
- footer.addEventListener('contextmenu', (event) => {
-    event.currentTarget.style.display = 'none';
-});
+ let div = document.createElement('div');
+let p = document.createElement('p');
+div.style.textAlign = 'center';
+p.style.fontSize = '45px';
+div.appendChild(p);
+document.body.appendChild(div);
+window.addEventListener('click', () => {
+    count++;
+    p.style.fontWeight = 'bold';
+    p.innerHTML = count;
+}); // Adding a div and paragraph 
+    // Adding an event listener that increments a count
+    // when clicked and adds it to the paragraph
