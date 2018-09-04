@@ -15,9 +15,9 @@ window.addEventListener('keydown', function(event){
         mapImg.style.display = 'none';
     }
 });
-
 window.addEventListener('keyup', function(event){
     if(event.key === 'a') {
+        
         let cityImg = document.querySelectorAll('img')[2];
         cityImg.style.display = 'none';
     }
@@ -47,5 +47,23 @@ let navATags = document.querySelectorAll('nav a');
 window.addEventListener('click', function(e){
     e.preventDefault();
 
+});
+const inputArea = document.createElement('input');
+inputArea.type = 'text';
+inputArea.value = 'Type your destination here!'
+inputArea.style.fontSize = '18px'
+let chosenDestination = document.querySelector('.content-destination h2');
+chosenDestination.appendChild(inputArea);
+
+let boatImg = document.querySelector('.content-destination img')
+inputArea.addEventListener('select', function(){
+    boatImg.src ='http://source.unsplash.com/random/600x200'
 })
 
+inputArea.addEventListener('focus', function(e){
+    e.target.style.background= 'yellow';
+}, true)
+
+inputArea.addEventListener('blur', function(e){
+    e.target.style.background= '';
+}, true)
