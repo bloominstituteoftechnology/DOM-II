@@ -20,6 +20,7 @@ const centerTitleTop = document.querySelector(".content-section h2");
 const centerTitleBottom = document.querySelector(".inverse-content h2");
 const topPic = document.querySelector(".intro img");
 const topTitle = document.querySelector(".logo-heading");
+const navBarTotal = document.querySelector('.main-navigation');
 
 // 1 & 2 navbar borders pop in with mouseover and return to normal with mouseleave
 const borderBoxOn = function() {
@@ -102,7 +103,6 @@ const dragSwap = function() {
 document.addEventListener("drop", dragSwap);
 
 // 10 & 11 flips the header image every 50ms on page load until double-click
-// TODO need to figure out why the image is overriding the navbar
 let running = true;
 let flipDigit = 1;
 const timerFunction = function() {
@@ -113,6 +113,7 @@ const timerFunction = function() {
     } else {
       flipDigit = flipDigit * -1;
       let scale = `scaleX(${flipDigit})`;
+      navBarTotal.style.zIndex = '2';
       topPic.style.transform = scale;
     }
   }
@@ -181,6 +182,7 @@ const tweenPlayer = function() {
 };
 
 window.addEventListener("load", tweenPlayer);
+topTitle.addEventListener("click", tweenPlayer);
 
 // TweenMax.from('.logo-heading', 2, {
 //   x: 50,
