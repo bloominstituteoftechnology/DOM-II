@@ -12,6 +12,9 @@ mouseover [done]
 
 click [done]
 
+mousemove
+mouseout
+dragend
 load [done]
 
 drag [done]
@@ -111,4 +114,14 @@ middleImg.addEventListener('drag', function getRandomColor(event) {
       ;
 })
 
+
+
+
+middleImg.addEventListener('dragend', function(event){
+    event.target.style.backgroundColor = 'initial';
+    headerClass.style.color = '';
+    headerClass.style.backgroundColor = ''
+    logoHeader[0].innerText = 'Fun Bus';
+    body.style.backgroundColor = '';
+})
 
