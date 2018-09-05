@@ -19,6 +19,12 @@ logoHeading.addEventListener('click', function() {
 });
 
 navAnchors.forEach((anchor) => {
+  anchor.addEventListener('click', function(event) {
+    event.preventDefault();
+  });
+});
+
+navAnchors.forEach((anchor) => {
   anchor.addEventListener('mouseenter', function() {
     logoHeading.classList.add('color-me');
   });
