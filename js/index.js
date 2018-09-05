@@ -4,7 +4,7 @@
     // * [ ] `keydown`
 	// * [x] `wheel`
 	// * [ ] `drag / drop`
-	// * [ ] `load`
+	// * [x] `load`
 	// * [ ] `focus`
 	// * [x] `resize`
 	// * [ ] `scroll`
@@ -17,8 +17,8 @@ const head = document.querySelector('.logo-heading');
 const allATags = document.querySelectorAll('.nav-link');
 const para = document.querySelectorAll('p');
 const h2 = document.querySelectorAll('h2');
-
-
+const buttons = document.querySelectorAll('.btn');
+const contain = document.querySelector(".container");
 
 //handlers
 const aClickHandler = function(e) {
@@ -39,34 +39,34 @@ head.addEventListener('dblclick', (e) => {
     head.style.color = 'purple';
 });//1 Fun Bus logo turns purple when double clicked
 
-allATags.forEach( nav => {
-    nav.addEventListener('click', aClickHandler)
-});//2 a tags turn aqua when clicked once
+allATags.forEach(e => {
+    e.addEventListener('click', aClickHandler)
+});//2 <a> tags turn aqua when clicked once
 
-para.forEach(graph => {
-    graph.addEventListener('mouseover', pHandler)
-    graph.addEventListener('mouseout', pHandlerOut)
-});//3 all <p> tags turn orange when the mouseover, turns to black when mouseout
+para.forEach(e => {
+    e.addEventListener('mouseover', pHandler)
+    e.addEventListener('mouseout', pHandlerOut)
+});//3 & 4 All <p> tags turn orange when the mouseover, turns to black when mouseout
 
 window.addEventListener('resize', (e) => {
     document.querySelector('h2').innerHTML = "WELCOME TO FUNBUS! WE LIKE TO GET WEIRD AROUND HERE.";
-});
+}); //5 All h2 innerHTML changes to new text when resized
 
 h2.forEach(e => {
-    e.addEventListener('wheel', function() {
+    e.addEventListener('wheel', function(e) {
         this.style.fontSize = '5rem';
     })
-})
+}) //6 Font size changes to 5rem when wheel over h2 elements
+
+window.addEventListener("load", (e) => {
+    alert("Load 'em up!!!");
+  });//7 alerts when page is loaded
+
+  
 
 
 
-
-
-
-
-
-
-    
+ 
 
 
 
