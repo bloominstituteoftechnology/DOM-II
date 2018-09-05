@@ -12,9 +12,9 @@ mouseover [done]
 
 click [done]
 
-mousemove
+mousemove [done]
 mouseout
-dragend
+dragend [done]
 load [done]
 
 drag [done]
@@ -23,12 +23,10 @@ drag [done]
 /*Default prevention.*/
 let navLinks = document.querySelectorAll('.nav-link');
 let adventureImg = document.querySelector('.img-content img');
-console.log(navLinks);
 
 navLinks.forEach(item => {
     item.addEventListener('click', function(event){
         event.preventDefault();
-        console.log(event);
     })
 })
 
@@ -59,7 +57,6 @@ adventureImg.addEventListener('dblclick', function(){
     adventureImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2016/11/29/09/49/adventure-1868817_1280.jpg');
 })
 
-console.log(adventureImg);
 
 let buttonSet = Array.from(document.getElementsByClassName('btn'));
 buttonSet.forEach(item => {
@@ -73,7 +70,6 @@ buttonSet.forEach(item => {
         item.style.backgroundColor = '#17A2B8';
     })
 })
-console.log(buttonSet);
 
 let headerImg = document.querySelector('.intro img');
 
@@ -86,7 +82,6 @@ headerImg.addEventListener('load', function(event){
 
 let body = document.querySelector('html');
 let logoHeader = Array.from(document.getElementsByClassName('logo-heading'));
-console.log(logoHeader);
 let middleImg = document.querySelector('.content-destination img')
 
 let headerClass = document.querySelector('.main-navigation');
@@ -125,3 +120,14 @@ middleImg.addEventListener('dragend', function(event){
     body.style.backgroundColor = '';
 })
 
+let funBusImages = Array.from(document.getElementsByTagName('img'));
+console.log(funBusImages);
+
+
+
+funBusImages.forEach(function(item){
+
+item.addEventListener('mousemove', function(e){
+    item.style.filter = 'invert(100%)'
+})
+})
