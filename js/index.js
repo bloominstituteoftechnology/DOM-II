@@ -102,3 +102,19 @@ destinationH2.addEventListener('click', function() {
 destinationH2.addEventListener('mousedown', function(event) {
   event.preventDefault();
 });
+
+const funInTheSun = document.querySelector('.sun');
+
+funInTheSun.addEventListener('click', function() {
+  funInTheSun.style.backgroundColor = 'black';
+  funInTheSun.style.color = 'white';
+});
+
+const allButtons = document.querySelectorAll('.btn');
+
+allButtons[0].addEventListener('click', function(event) {
+  event.stopPropagation();
+});
+
+
+
