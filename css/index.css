@@ -350,3 +350,9 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.hide-me {
+  display: none;
+}
+.color-me {
+  color: red;
+}
