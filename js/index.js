@@ -13,7 +13,7 @@ mouseover [done]
 click [done]
 
 mousemove [done]
-mouseout
+mouseout [done]
 dragend [done]
 load [done]
 
@@ -41,7 +41,17 @@ navLinks.forEach(item => {
     item.addEventListener('click', function(){
         item.style.fontStyle = 'bold';
     })
+
+    item.addEventListener('mouseout', function(event){
+        if (item.style.fontStyle === 'italic'){
+            item.style.fontStyle = '';
+        }
+    })
 })
+
+// navLinks.forEach(item => {
+    
+// })
 
 let fontColor = function(){
     this.style.color = 'purple'
