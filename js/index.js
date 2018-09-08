@@ -38,3 +38,28 @@ window.addEventListener("wheel", function(){
 window.addEventListener("load", function(){
 	this.alert("Welcome to the Fun Bus!");
 });
+
+
+//Click
+for (let j = 0; j < buttons.length; j++) {
+	buttons[j].addEventListener("click", function(){
+		this.style.background = 'hotpink';
+	})
+};
+
+
+//Double Click
+for (let i = 0; i < navLinks.length; i++) {
+	navLinks[i].addEventListener("dblclick", function(){
+		this.style.color = 'hotpink';
+	})
+};
+
+
+//Resize
+window.addEventListener("resize", (event) => {
+	paragraphs.forEach(function(element) {
+		element.style.color = "hotpink";
+		element.style.background = "darkgray";
+	})
+});
