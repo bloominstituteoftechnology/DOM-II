@@ -32,6 +32,7 @@ function rocket(){
         if (block[i].style.order < this.style.order) {
             block[i].removeAttribute('id');
             block[i].style.order = parseInt(block[i].style.order) + 1;
+            block[i].style.zIndex = 0;
             }
 }
 
@@ -44,12 +45,13 @@ let startY = parseInt(selected.offsetTop) - 100//51;
 let endY = 0;
 
 //animation for rocket from startY to endY
-TweenLite.fromTo(selected, 2, {
-    y: startY}, {y: endY, ease: Power4.easeInOut});
+TweenMax.fromTo(selected, 3, {
+    y: startY, rotationY:-360}, {y: endY, rotationY: 360, ease: Back.easeOut});
 
 //set new flex order for rocket element;
 this.style.order = 1;
 this.style.marginLeft = '';
+this.style.zIndex = 1;
 
 }//end rocket function
 
@@ -111,7 +113,7 @@ this.style.marginLeft = '';
 
 //new traveler function with tweening
 function traveler(){
-      let tween = TweenMax.to(this, 5, {x: 1000});
+      let tween = TweenMax.to(this, 5, {x: 900});
       tween.delay(.25);
       window.addEventListener('mouseup', function(){
         tween.pause();
