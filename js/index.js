@@ -2,7 +2,7 @@
 // EVENT LISTENER #1 - mouseover
 let navLinks = document.querySelectorAll('a');
 navLinks.forEach(link => link.addEventListener("mouseover", function(event){
-    link.style.color = 'green';
+    link.style.color = 'blue';
     link.style.textDecoration = 'underline';
     event.preventDefault();
 }));
@@ -15,10 +15,8 @@ navLinks.forEach(link => link.addEventListener("mouseout", function(){
 
 // EVENT LISTENER #3 - mouseup
 const text = document.querySelectorAll('p');
-console.log(text);
 text.forEach(p => {
     p.addEventListener('mouseup', function(event) {
-        console.log(event.target);
         event.target.style.background = 'yellow'
     })    
 });
@@ -54,8 +52,8 @@ window.addEventListener('transitionend', function(event) {
 
 // EVENT LISTENER #8 - Double Click
 document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('dblclick', function(event) {
-        event.target.innerHTML = 'Why are you <br> double-clicking?'
+    button.addEventListener('click', function(event) {
+        event.target.innerHTML = 'Try double-clicking'
         event.target.style.fontSize = '15px';
         event.target.style.textAlign = 'center';
     })    
@@ -68,7 +66,14 @@ window.addEventListener('copy', function(event) {
 
 // EVENT LISTENER #10 - click
 document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(event) {
+    button.addEventListener('dblclick', function(event) {
         confirm(`Is ${event.target.parentNode.firstChild.nextSibling.innerText} the trip you want to go on?`);
     })    
 });
+
+// EVENT LISTENER #11 - stop Propagation of click
+document.querySelector('.content-pick').addEventListener('click', function(event){
+    event.target.style.fontFamily = 'Helvetica';
+    event.stopPropagation(); 
+    // I feel like this is not doing anything. The events are not bothering each other for whatever reason.
+})
