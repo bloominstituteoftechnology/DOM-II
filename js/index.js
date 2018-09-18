@@ -1,6 +1,7 @@
 // Your code goes here
 let logoHeading = document.querySelector('.logo-heading');
 let navA = document.querySelectorAll('.nav-link');
+let header = document.querySelector('.intro');
 let headerImg = document.querySelector('.intro img');
 let headerH2 = document.querySelector('.intro h2');
 let contentImg = document.querySelectorAll('.img-content img');
@@ -61,3 +62,30 @@ btns.forEach(btn => btn.addEventListener('dblclick', () => {
   btn.style.backgroundColor = 'white';
   btn.style.color = '#00a5bb';
 }))
+
+window.sr = ScrollReveal();
+sr.reveal('.intro', {
+  origin: "left",
+  delay: 200,
+  distance: "300px"
+})
+sr.reveal('.content-section', {
+  origin: "right",
+  delay: 200,
+  distance: "300px"
+})
+sr.reveal('.inverse-content', {
+  origin: "left",
+  delay: 200,
+  distance: "300px"
+})
+sr.reveal('.content-destination', {
+  origin: "left",
+  delay: 200,
+  distance: "300px"
+})
+sr.reveal('.content-pick', {
+  origin: "left",
+  delay: 200,
+  distance: "300px"
+})

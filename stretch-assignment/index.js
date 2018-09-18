@@ -9,7 +9,7 @@ blocks.forEach(block => block.addEventListener('mousedown', () => {
     x >= 800 ? x = 800 : x += 10;
     block.style.transform = `translateX(${x}px)`;
   }, 100);
-}))
-blocks.forEach(block => block.addEventListener('mouseup', () => {
-  clearInterval(rocket);
+  blocks.forEach(block => block.addEventListener('mouseup', () => {
+    clearInterval(rocket);
+  }))
 }))
