@@ -53,8 +53,9 @@ const signUp = document.querySelector('.btn');
 const body = document.querySelector('body');
 
 signUp.addEventListener('dblclick', function(e){
-    body.style.display = 'hidden';
-    console.log('btn clicked')
+    body.style.display = 'none';
+    alert('Why are you pressing my buttons?') 
+    // console.log('btn clicked')
 });
 
 
