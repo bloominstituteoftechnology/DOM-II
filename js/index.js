@@ -46,6 +46,14 @@ document.querySelector('body').addEventListener('dblclick', () => {
   inverted = inverted ? false : true
 })
 
+// added rotations for nav links
+const navItems = document.querySelectorAll('nav a')
+const rotations = [...Array(navItems.length)].map(() => 30)
+navItems.forEach((item, i) => item.addEventListener('click', () => {
+  item.style.transform = `rotateZ(${rotations[i]}deg)`
+  rotations[i] += 30
+}))
+
 //
 // keydown
 //
@@ -55,4 +63,4 @@ document.querySelector('body').addEventListener('dblclick', () => {
 // resize
 // scroll
 // select
-// dblclick
+// 
