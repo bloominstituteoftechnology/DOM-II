@@ -4,12 +4,16 @@
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
+  opacity: 1;
+
+  
 
   .nav-container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 1;
 
     @media @mobile {
       flex-wrap: wrap;
@@ -18,11 +22,14 @@
     }
 
     .logo-heading {
+      cursor: pointer;
       @media @mobile {
         font-size: 3rem;
+      
       }
     }
 
+  
     .nav {
       width: 350px;
       display: flex;
@@ -38,6 +45,7 @@
         font-size: 1.6rem;
         color: @font-color;
         text-decoration: none;
+
       }
     }
   }

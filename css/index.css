@@ -180,12 +180,14 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  opacity: 1;
 }
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: 1;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container {
@@ -193,6 +195,9 @@ img {
     justify-content: center;
     padding-top: 10px;
   }
+}
+.main-navigation .nav-container .logo-heading {
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
