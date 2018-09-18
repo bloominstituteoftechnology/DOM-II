@@ -20,3 +20,11 @@ busImg.addEventListener("mouseover", event => {
     opacity: 0.5
   });
 });
+
+const bod = document.querySelector(".body");
+const btn = document.querySelector(".btn");
+btn.addEventListener("dblclick", event => {
+  bod.classList.toggle("chromium");
+  event.stopPropagation();
+});
+h;
