@@ -1,20 +1,35 @@
-// Your code goes here
 
-const navItems = document.querySelectorAll('a');
 
-navItems.addEventListener('click', ()=>{
+const navItemOne = document.querySelector('.nav-link1');
+const navItemTwo = document.querySelector('.nav-link2');
+const navItemThree = document.querySelector('.nav-link3');
+const navItemFour = document.querySelector('.nav-link4');
+navItemOne.addEventListener('click', (event)=>{
+    event.preventDefault();
+});
+navItemTwo.addEventListener('click', (event)=>{
+    event.preventDefault();
+});
+navItemThree.addEventListener('click', (event)=>{
+    event.preventDefault();
+});
+navItemFour.addEventListener('click', (event)=>{
     event.preventDefault();
 });
 
 
-const bottomButtons = document.querySelectorAll('btn');
 
-bottomButtons.addEventListener('click', (event) => {
-    event.target.innerText = 'GO!';
+const bottomButtons = document.querySelector('.btn');
+
+bottomButtons.addEventListener('mouseenter', () => {
+    bottomButtons.classList.toggle('display');
+});
+bottomButtons.addEventListener('mouseleave', () =>{
+    bottomButtons.classList.toggle('display');
 });
 
-const destinationImg = document.querySelector('.content-destination .img');
+const backgroundAdjust = document.querySelector('html');
 
-destinationImg.addEventListener('click', ()=>{
-    destinationImg.classList.toggle('img-source');
-});
+backgroundAdjust.addEventListener('wheel', ()=>{
+    backgroundAdjust.style.backgroundColor = 'lightpink';
+})

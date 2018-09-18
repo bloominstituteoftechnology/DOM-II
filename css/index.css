@@ -350,6 +350,9 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
-.img-display {
+.visibility {
+  visibility: hidden;
+}
+.display {
   visibility: hidden;
 }
