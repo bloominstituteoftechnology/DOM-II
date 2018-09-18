@@ -110,5 +110,10 @@ navContainer.addEventListener("mouseup", event => {
   event.currentTarget.style.backgroundColor = "gray";
 });
 
-TweenMax.to(".intro h2", 3, {x:230})
+TweenMax.to(".intro h2", 3, {x:240})
 TweenMax.to(".img-content img", 2, {rotation:360})
+TweenMax.to(".main-navigation", 1, {rotation:720, y: 400, onComplete: myFunction});
+
+function myFunction(){
+  TweenMax.to(".main-navigation", 1, {rotation:0, y: 0});
+}
