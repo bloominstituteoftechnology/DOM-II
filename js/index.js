@@ -39,10 +39,37 @@ document.querySelectorAll('.content-pick > *').forEach(n => {
     });
 });
 
-const randomRGB = () => Math.floor(Math.random() * Math.floor(255));
 
 
 // keydown
+const randomRGB = () => Math.floor(Math.random() * Math.floor(255));
 document.querySelector('body').addEventListener('keydown', e => {
     e.target.style.background = `rgba(${randomRGB()},${randomRGB()},${randomRGB()},0.1)`
+});
+
+
+//wheel
+
+let content = document.querySelectorAll('.home > *');
+content.forEach((n, i) => {
+    if(i === 0 || i === 1){return}
+    n.style.transform = 'translateY(1000px)';
+    // n.style.transition = 'all 1500ms ease-in-out';
+});
+
+document.querySelector('body').addEventListener('wheel', e => {
+    console.log(e.pageY);
+
+    if(e.pageY >= 300){
+        content[2].style.transition = 'all 1500ms ease-in-out';
+        content[2].style.transform = 'translateY(0px)';
+    }
+    if(e.pageY >= 900){
+        content[3].style.transition = 'all 1500ms ease-in-out';
+        content[3].style.transform = 'translateY(0px)';
+    }
+    if(e.pageY >= 1250){
+        content[4].style.transition = 'all 1500ms ease-in-out';
+        content[4].style.transform = 'translateY(0px)';
+    }
 });
