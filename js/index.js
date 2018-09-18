@@ -3,13 +3,22 @@ let logoHeading = document.querySelector('.logo-heading');
 let navA = document.querySelectorAll('.nav-link');
 let headerImg = document.querySelector('.intro img');
 let headerH2 = document.querySelector('.intro h2');
+let contentImg = document.querySelectorAll('.img-content img');
+let btns = document.querySelectorAll('.btn');
 
 window.addEventListener('load', () => {
   document.body.style.backgroundColor = 'lightgrey';
 })
-
 window.addEventListener('keydown', e => {
-  headerH2.innerText = 'Welcome to Fun ' + e.key + 'us!';
+  headerH2.innerText = 'Welcome To Fun ' + e.key + 'us!';
+})
+window.addEventListener('scroll', () => {
+  contentImg[0].classList.toggle('imgRotate');
+})
+window.addEventListener('resize', e => {
+  let newP = document.createElement('p');
+  headerImg.parentNode.prepend(newP);
+  newP.innerText = 'Width: ' + e.target.innerWidth + ' Height: ' + e.target.innerHeight;
 })
 
 logoHeading.addEventListener('click', () => {
@@ -17,6 +26,18 @@ logoHeading.addEventListener('click', () => {
 })
 
 navA.forEach(link => link.addEventListener('click', e => { e.preventDefault() }))
+navA[0].addEventListener('focus', () => {
+  navA.forEach(item => item.style.color = 'blue');
+})
+navA[1].addEventListener('focus', () => {
+  navA.forEach(item => item.style.color = 'green');
+})
+navA[2].addEventListener('focus', () => {
+  navA.forEach(item => item.style.color = 'red');
+})
+navA[3].addEventListener('focus', () => {
+  navA.forEach(item => item.style.color = 'purple');
+})
 
 headerImg.addEventListener('mouseover', () => {
   headerImg.style.opacity = '0.3';
@@ -25,3 +46,11 @@ headerImg.addEventListener('mouseleave', () => {
   headerImg.style.opacity = '1';
 })
 
+contentImg[1].addEventListener('drag', e => {
+  document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},100)`;
+})
+
+btns.forEach(btn => btn.addEventListener('dblclick', () => {
+  btn.style.backgroundColor = 'white';
+  btn.style.color = '#00a5bb'
+}))
