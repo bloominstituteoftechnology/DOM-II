@@ -4,7 +4,6 @@ const images = document.querySelectorAll("img");
 const background = document.querySelector("body");
 const header = document.querySelector(".main-navigation");
 const links = document.querySelectorAll(".nav-link");
-const prevent = document.querySelector(".prevent");
 
 logo.addEventListener("mouseover", () =>{
     logo.classList.add("logo-move");
@@ -36,6 +35,12 @@ links.forEach((link) => {
         this.style.boxShadow = "";
         this.style.transform = "scale(1)";
     });
+
+    link.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        link.style.color = "green";
+    });
 });
 
 background.addEventListener("dblclick", () => {
@@ -44,11 +49,6 @@ background.addEventListener("dblclick", () => {
     logo.style.color = "black"
 });
 
-prevent.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    prevent.style.color = "green";
-});
 header.addEventListener("click", () => {
     header.style.backgroundColor = "purple";
 });
