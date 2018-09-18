@@ -209,17 +209,35 @@ img {
   visibility: hidden;
 }
 .main-navigation .nav-container .wiggle-bus {
-  animation: wiggle 1.5s;
+  animation: backflip 1s;
 }
-@keyframes wiggle {
-  25% {
+@keyframes backflip {
+  10% {
+    transform: rotate(-50deg);
+  }
+  20% {
     transform: rotate(-90deg);
   }
-  50% {
-    transform: rotate(-180deg);
+  30% {
+    transform: rotate(-120deg);
   }
-  75% {
-    transform: rotate(-270deg);
+  40% {
+    transform: rotate(-150deg);
+  }
+  50% {
+    transform: rotate(-200deg);
+  }
+  60% {
+    transform: rotate(-230deg);
+  }
+  70% {
+    transform: rotate(-260deg);
+  }
+  80% {
+    transform: rotate(-290deg);
+  }
+  90% {
+    transform: rotate(-330deg);
   }
   100% {
     transform: rotate(-360deg);

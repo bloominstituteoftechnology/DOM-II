@@ -38,10 +38,37 @@ navBar.addEventListener("mouseout", e => {
   logoHeadingBus.classList.add("logo-toggle-no-bus");
 });
 
-// When clicking on img of bus, wiggle the bus
+// When clicking on img of bus, do a backflip
 logoHeadingBus.addEventListener("click", e => {
   logoHeadingBus.classList.toggle("wiggle-bus");
 });
+
+// double clicking "About Us" changes the text to "But What About You?"
+navItems[1].addEventListener("dblclick", e => {
+  navItems[1].innerHTML = "What About You?";
+  console.log("click");
+});
+
+// press "spacebar" key to make all of the text white
+document.addEventListener("keydown", e => {
+  if (e.keyCode === 32) {
+    document.querySelector("body").style.color = "white";
+  }
+});
+
+// onload, popup an alert
+window.addEventListener("load", e => {
+    alert("press space to whiten text, scroll to change colors");
+});
+
+// 8th event change background color to pink when resizing window
+window.addEventListener("resize", e => {
+    background.style.background = "pink";    
+});
+
+
+
+
 
 let red = 0;
 let r = 0;
@@ -89,6 +116,10 @@ background.addEventListener("wheel", e => {
     console.log(`${red}${red2}${green}${green2}${blue}${blue2}`);
   }
 
+  if(r2 > 10 && g2 > 10 && b2 > 10){
+      document.querySelector('body').style.color = "black";
+  }
+   // F2A5FF
   background.style.background = `#${red}${red2}${green}${green2}${blue}${blue2}`;
 });
 background.style.background = `#${red}${red2}${green}${green2}${blue}${blue2}`;
