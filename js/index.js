@@ -24,15 +24,16 @@ header.addEventListener('dblclick', (event) => {
   event.currentTarget.classList.toggle('flipped');
 });
 
-//nav bar background changes color when doubleclicked NOT PROPOGATED
+// nav bar background changes color when doubleclicked NOT PROPOGATED
 const navBar = document.querySelector('.nav');
 navBar.addEventListener('dblclick', (event) => {
   event.target.style.backgroundColor = getRandomColor();
   event.stopPropagation();
-})
-//links are randomly colored when moused over
+});
+
+// links are randomly colored when moused over, back to normal on mouseout
 const links = document.querySelectorAll('.main-navigation .container nav a');
-links.forEach(function(link) {
+links.forEach((link) => {
   link.addEventListener('mouseover', (event) => {
     event.target.style.color = `${getRandomColor()}`;
     event.target.style.fontWeight = 'bolder';
@@ -45,7 +46,7 @@ links.forEach(function(link) {
 
 // images are inverted when clicked
 const images = document.querySelectorAll('img');
-images.forEach(function(image) {
+images.forEach((image) => {
   image.addEventListener('click', (event) => {
     event.target.classList.toggle('inverted');
   });
@@ -60,7 +61,7 @@ document.body.addEventListener('keydown', (event) => {
 });
 
 // log when page has loaded
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
   console.log('the page has loaded!');
 });
 
@@ -79,4 +80,9 @@ inputs.forEach(function(input) {
 const submit = inputs[inputs.length - 1];
 submit.addEventListener('click', (event) => {
   event.preventDefault();
+});
+
+// console log on resizing
+window.addEventListener('resize', (event) => {
+  console.log('I\'m being resized!');
 });
