@@ -157,6 +157,10 @@ h2 {
   transform: scaleY(2);
   transform: scaleX(1);
 }
+
+.hide-this {
+  display:none;
+}
 .color {
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
