@@ -41,15 +41,19 @@ document.querySelectorAll('.content-pick > *').forEach(n => {
 
 
 
-// keydown
+// keydown + key up
 const randomRGB = () => Math.floor(Math.random() * Math.floor(255));
-document.querySelector('body').addEventListener('keydown', e => {
+let body = document.querySelector('body');
+body.addEventListener('keydown', e => {
     e.target.style.background = `rgba(${randomRGB()},${randomRGB()},${randomRGB()},0.1)`
+});
+
+body.addEventListener('keyup', e => {
+    e.target.style.background = `white`
 });
 
 
 //wheel
-
 let content = document.querySelectorAll('.home > *');
 content.forEach((n, i) => {
     if(i === 0 || i === 1){return}
@@ -58,8 +62,7 @@ content.forEach((n, i) => {
 });
 
 document.querySelector('body').addEventListener('wheel', e => {
-    console.log(e.pageY);
-
+    // console.log(e.pageY);
     if(e.pageY >= 300){
         content[2].style.transition = 'all 1500ms ease-in-out';
         content[2].style.transform = 'translateY(0px)';
@@ -73,3 +76,4 @@ document.querySelector('body').addEventListener('wheel', e => {
         content[4].style.transform = 'translateY(0px)';
     }
 });
+
