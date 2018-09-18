@@ -4,10 +4,10 @@
 2. scroll 
 3. auxclick
 4. mouse over 
-5. on cut
-4. on copy 
-5. on dbl click
-6. touch list  
+5. Print
+6. on copy 
+7. on dbl click
+8. wheel  
 9. on error - 
 10. on text select -
 */
@@ -49,6 +49,44 @@ printText.addEventListener ('beforeprint',() => {
     alert ("Happy Printing!");
  });
  console.log(printText);
+
+ //--- 6 --- COPY
+const copyText = document.querySelector("#homePage");
+copyText.addEventListener ('copy',() => {
+    console.log("Stealing isn't nice");
+ });
+ console.log(copyText);
+
+ //--- 7 --- DBL Click
+ const logoClick = document.querySelector(".logo-heading");
+ logoClick.addEventListener ('dblclick',() => {
+     console.log("Let's go for a ride!!");
+  });
+  console.log(logoClick);
+
+
+ //--- 8 --- WHEEL
+ const textWheel = document.querySelectorAll("#homePage p");
+ textWheel[5].addEventListener ('wheel',() => {
+    console.log("Woah - need me to take some notes for you?");
+});
+  console.log(textWheel);
+
+
+ //--- 9 --- MOUSE DOWN
+ const mouseColor = document.querySelector(".main-navigation");
+ mouseColor.addEventListener ('mousedown',(event) => {
+    event.target.parentNode.style.backgroundColor = "red";   
+});
+  console.log(mouseColor);
+
+//--- 10 --- MOUSE UP
+const mouseColorReverse = document.querySelector(".main-navigation");
+ mouseColorReverse.addEventListener ('mouseup',(event) => {
+   event.target.parentNode.style.backgroundColor = "white";   
+});
+ console.log(mouseColorReverse);
+
 
 /* --- TO TRY LATER --- 
 /*
