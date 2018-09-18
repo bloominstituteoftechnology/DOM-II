@@ -53,3 +53,10 @@ input.addEventListener(
   },
   true
 );
+
+// =========== DOUBLE CLICK ==========
+let destinationImg = document.querySelector(".content-destination img");
+destinationImg.addEventListener("dblclick", function(e) {
+  e.target.src =
+    "https://coolsurfstuff.com/wp-content/uploads/2017/10/5-1-600x200.jpg";
+});
