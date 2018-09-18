@@ -4,6 +4,12 @@ let block = document.querySelectorAll('.block');
 block.forEach(item => {
     item.addEventListener('click', rocket, {once: false});
     item.addEventListener('mousedown', traveler);
+    item.addEventListener('click', function(event){
+      event.stopPropagation();
+    });
+    item.addEventListener('mousedown', function(event){
+      event.stopPropagation();
+    })
 })
 
 //variables for ease of testing
@@ -39,7 +45,7 @@ let endY = 0;
 
 //animation for rocket from startY to endY
 TweenLite.fromTo(selected, 2, {
-    y: startY}, {y: endY, ease: Power4.easeInOut});
+    y: startY}, {x: 0, y: endY, ease: Power4.easeInOut});
 
 //set new flex order for rocket element;
 this.style.order = 1;
@@ -48,36 +54,38 @@ this.style.order = 1;
 
 //variables for traveler function
 
-function minmax(value, min, max)
-{
-    if(parseInt(value) < min || isNaN(parseInt(value)))
-        return min;
-    else if(parseInt(value) > max)
-        return max;
-    else return value;
-}
+
 let curLeft = 10;
 // let curLeft = Math.min(Math.max(parseInt(curLeft), 1), 100);
 function traveler() {
-    for (let i = 0; i<block.length; i++){
+    for (let i = 0; i < block.length; i++){
         block[i].removeAttribute('id');
     }
     this.setAttribute('id', 'traveler');
 
-    let selected = document.getElementById('traveler');
     go = setInterval(function(){
+      let selected = document.getElementById('traveler');
       curLeft = Math.min(Math.max(parseInt(curLeft) + 10, 10), 500);
         // curLeft = parseInt(curLeft) + 10;
         selected.style.marginLeft = curLeft + 'px';
-        console.log(curLeft);
+        return curLeft;
     }, 100);
 
 
    window.addEventListener('mouseup', function(){
     if (go) clearInterval(go);
     // selected.style.marginLeft = '10px';
-    console.log(curLeft);
+
     let back = setInterval(function(){
+      let selected = document.getElementById('traveler');
+      if (curLeft == 10){
+        clearInterval(back);
+        selected.style.marginLeft = '';
+        return curLeft;
+        for (let i = 0; i < block.length; i++){
+            block[i].removeAttribute('id');
+        }
+      }
         curLeft = Math.min(Math.max(parseInt(curLeft) - 10, 10), 500);
         selected.style.marginLeft = curLeft + 'px';
         return curLeft;
