@@ -34,11 +34,18 @@ for (let i = 0; i < navItems.length; i++) {
     })
 }
 
-const contImages = document.querySelectorAll(".img-content");
-console.log(contImages);
+//mousemove ~ five
+const contImages = document.querySelectorAll(".img-content img");
+for (let i = 0; i < contImages.length; i++) {
+    contImages[i].addEventListener('mousemove', () => {
+        contImages[i].style.borderRadius = "50%";
+        contImages[i].style.border = "solid hotpink 5px";
+        event.preventDefault();
+    })
+}
 
+//toggle ~ six
 const body = document.querySelector('body');
-
 const smuButtons = document.querySelectorAll(".btn");
 for (i = 0; i < smuButtons.length; i++) {
     smuButtons[i].addEventListener('click', () => {
@@ -47,25 +54,38 @@ for (i = 0; i < smuButtons.length; i++) {
 }
 
 
-//mouseenter ~ five
+//mouseenter ~ seven
 const funBus = document.querySelector(".intro img");
 funBus.addEventListener('mouseenter', () => {
         funBus.style.borderRadius = "50%"
     })
-    //mouseleave ~ six
+    //mouseleave ~ eight
 funBus.addEventListener('mouseleave', () => {
     funBus.style.borderRadius = "0"
 })
 
-//wheel ~ seven
+//wheel ~ nine
 const siteText = document.querySelectorAll("p");
 for (let i = 0; i < siteText.length; i++) {
     siteText[i].addEventListener('wheel', () => {
         siteText[i].style.color = "lightblue"
 
     });
-
 }
+//toggle ~ ten
+const boatImg = document.querySelector(".content-destination img");
+boatImg.addEventListener('dragend', () => {
+        boatImg.classList.toggle('jello');
+    })
+    //prevent prop
+const headH2 = document.querySelector(".intro h2");
+const headP = document.querySelector(".intro p");
 
+headH2.addEventListener('click', () => {
+    console.log("I just clicked the h2");
+    event.stopPropagation();
+})
 
-siteHead.classList.toggle('change');
+headP.addEventListener('click', () => {
+    console.log("I just clicked the p");
+})
