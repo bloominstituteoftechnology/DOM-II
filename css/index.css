@@ -215,6 +215,9 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.lime-glow {
+  text-shadow: 0 0 8px lime;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
