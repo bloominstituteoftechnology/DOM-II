@@ -50,5 +50,10 @@ const contentImg= document.querySelector('.content-destination img');
 contentImg.addEventListener('drag', (event)=>{
     event.target.style.borderRadius='50%';
     event.stopPropagation();
-
+});
+document.addEventListener('keydown',(event)=>{
+    contentP.style.color="blue";
+});
+document.addEventListener('keyup',(event)=>{
+    contentP.style.color="black";
 });
