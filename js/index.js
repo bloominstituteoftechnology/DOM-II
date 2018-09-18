@@ -25,7 +25,7 @@ const busimage = document.querySelector('.intro img');
 const contentsection = document.querySelector('.content-section');
 const navlinks = document.querySelector('a');
 const intro = document.querySelector('.intro');
-
+const text = document.querySelector('.text-content p');
 //console.log(busimage);
 // const home = document.querySelector('.home');
 // const myBtn = document.querySelector('.btn');
@@ -64,6 +64,7 @@ window.addEventListener("load", function(event) {
 //Currently just does the first one, need to update using forEach.
 navlinks.addEventListener("focus", function(event) {
   navlinks.style.color = 'red';
+  event.preventDefault();
 });
 
 //Event 6
@@ -75,7 +76,40 @@ window.addEventListener("resize", function(event) {
 });
 
 //Event 7
-//Logs the window size every time it is re-sized. 
+//Changes intro section background to lightblue on scroll 
 window.addEventListener("scroll", function(event) {
+  event.stopPropagation();
   intro.style.background = 'lightblue';
 });
+
+//Event 8
+//Paragraph disappears on select. DOESN'T WORK YET
+window.addEventListener("select", function(event) {
+  text.display = 'none';
+});
+
+//Event 9
+//Adds a red border if bus image is double clicked. 
+busimage.addEventListener("dblclick", function(event) {
+  busimage.style.border = 'solid red';
+});
+
+//Event 9
+//Bus image border is solid blue if fullscreen 
+document.addEventListener("fullscreenchange", function(event) {
+  busimage.style.border = 'solid blue';
+});
+
+//Event 10
+//Bus image goes away i 
+intro.addEventListener("ontouchstart", function(event) {
+  busimage.style.border = 'solid blue';
+});
+
+//Event 11
+//Changes footer section background to lightred on scroll. Not propagated from earlier. 
+document.addEventListener("scroll", function(event) {
+  intro.style.background = 'lightred';
+});
+
+
