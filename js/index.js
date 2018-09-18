@@ -18,6 +18,18 @@ home.addEventListener('wheel', (event) => {
   event.currentTarget.style.backgroundColor = `${randomColor}`;
 });
 
+// header text is flipped when double-clicked
+const header = document.querySelector('header');
+header.addEventListener('dblclick', (event) => {
+  event.currentTarget.classList.toggle('flipped');
+});
+
+//nav bar background changes color when doubleclicked NOT PROPOGATED
+const navBar = document.querySelector('.nav');
+navBar.addEventListener('dblclick', (event) => {
+  event.target.style.backgroundColor = getRandomColor();
+  event.stopPropagation();
+})
 //links are randomly colored when moused over
 const links = document.querySelectorAll('.main-navigation .container nav a');
 links.forEach(function(link) {
@@ -39,11 +51,6 @@ images.forEach(function(image) {
   });
 });
 
-// header text is flipped when double-clicked
-const header = document.querySelector('header');
-header.addEventListener('dblclick', (event) => {
-  event.target.classList.toggle('flipped');
-});
 
 // everything hides when the 'h' key is pressed
 document.body.addEventListener('keydown', (event) => {
