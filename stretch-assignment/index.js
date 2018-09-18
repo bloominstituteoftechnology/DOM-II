@@ -45,10 +45,11 @@ let endY = 0;
 
 //animation for rocket from startY to endY
 TweenLite.fromTo(selected, 2, {
-    y: startY}, {x: 0, y: endY, ease: Power4.easeInOut});
+    y: startY}, {y: endY, ease: Power4.easeInOut});
 
 //set new flex order for rocket element;
 this.style.order = 1;
+this.style.marginLeft = '';
 
 }//end rocket function
 
@@ -56,40 +57,62 @@ this.style.order = 1;
 
 
 let curLeft = 10;
-// let curLeft = Math.min(Math.max(parseInt(curLeft), 1), 100);
-function traveler() {
-    for (let i = 0; i < block.length; i++){
-        block[i].removeAttribute('id');
-    }
-    this.setAttribute('id', 'traveler');
 
-    go = setInterval(function(){
-      let selected = document.getElementById('traveler');
-      curLeft = Math.min(Math.max(parseInt(curLeft) + 10, 10), 500);
-        // curLeft = parseInt(curLeft) + 10;
-        selected.style.marginLeft = curLeft + 'px';
-        return curLeft;
-    }, 100);
+// function traveler() {
+//     for (let i = 0; i < block.length; i++){
+//         block[i].removeAttribute('id');
+//     }
+//     this.setAttribute('id', 'traveler');
+//
+//     go = setInterval(function(){
+//       let selected = document.getElementById('traveler');
+//       curLeft = Math.min(Math.max(parseInt(curLeft) + 10, 10), 500);
+//         // curLeft = parseInt(curLeft) + 10;
+//         selected.style.marginLeft = curLeft + 'px';
+//         return curLeft;
+//     }, 200);
+//
+//
+//    window.addEventListener('mouseup', function(){
+//     if (go) clearInterval(go);
+//
+//     let back = setInterval(function(){
+//       let selected = document.getElementById('traveler');
+//       if (curLeft == 10){
+//         clearInterval(back);
+//         selected.style.marginLeft = '';
+//         return curLeft;
+//         for (let i = 0; i < block.length; i++){
+//             block[i].removeAttribute('id');
+//         }
+//       } //end clear interval check and reset
+//         curLeft = Math.min(Math.max(parseInt(curLeft) - 10, 10), 500);
+//         selected.style.marginLeft = curLeft + 'px';
+//         return curLeft;
+//     }, 200)//end setInterval(back)
+//    });
+// }; //end traveler
 
 
-   window.addEventListener('mouseup', function(){
-    if (go) clearInterval(go);
-    // selected.style.marginLeft = '10px';
-
-    let back = setInterval(function(){
-      let selected = document.getElementById('traveler');
-      if (curLeft == 10){
-        clearInterval(back);
-        selected.style.marginLeft = '';
-        return curLeft;
-        for (let i = 0; i < block.length; i++){
-            block[i].removeAttribute('id');
-        }
+function traveler(){
+      for (let i = 0; i < block.length; i++){
+          block[i].removeAttribute('id');
       }
-        curLeft = Math.min(Math.max(parseInt(curLeft) - 10, 10), 500);
-        selected.style.marginLeft = curLeft + 'px';
-        return curLeft;
-    }, 100)//end setInterval(back)
-   });
+      this.setAttribute('id', 'traveler');
 
-}; //end traveler
+      function go(){
+
+        let tween = TweenMax.to('#traveler', 4, {x: 1000});
+        window.addEventListener('mouseup', function(){
+          tween.pause();
+        });
+        window.addEventListener('mouseup', function(){
+          tween.reverse();
+        });
+        // window.addEventListener('mousedown', function(){
+        //   tween.play();
+        // })
+      }
+      go();
+
+}
