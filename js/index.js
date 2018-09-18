@@ -55,7 +55,24 @@ keypress.addEventListener('keydown', (event) => {
 //contextmenu
 const contextmenu = document.querySelector('.intro p')
 contextmenu.addEventListener('contextmenu', (event) => {
-  const text = document.querySelector('.intro p')
-  text.innerHTML = "You did it!"
-  text.style.fontSize = "30px"
+  //text.target.style.innerHTML = "You did it!"
+  event.target.style.fontSize = "30px"
+
+  setTimeout(function () {
+    event.target.style.fontSize = "";
+  }, 1000);
 })
+
+//scroll
+let content = document.querySelectorAll(".text-content")
+content = Array.prototype.slice.call(content);
+
+content.forEach(function(i) {
+  i.addEventListener('scroll', (event) => {
+    event.target.style.background = "blue"
+  })
+})
+
+//
+
+
