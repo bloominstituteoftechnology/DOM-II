@@ -27,3 +27,8 @@ window.addEventListener('keyup', (e) => {
         mainContent[0].style.width = '';
     }   
 });
+const wholePage = document.querySelector('.home');
+window.addEventListener('resize', () => {
+    wholePage.style.maxWidth = '100%';
+    document.querySelector('.intro img').style.width = '100%';
+});
