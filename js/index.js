@@ -1,17 +1,21 @@
+// mouseover
 document.querySelector('.logo-heading').addEventListener('mouseover', (event) => { 
     event.currentTarget.innerHTML = 'Fun Bus!!!'
     event.currentTarget.style.color = 'orange';
 });
 
+// wheel
 const container = document.querySelector('html');
 document.addEventListener('wheel', () => {
     container.style.backgroundColor = '#ffdae0';
 });
 
+// scroll
 document.addEventListener('scroll', () => {
     container.style.backgroundColor = '#ffedcc';
 });
 
+// click
 const btns = document.querySelectorAll('.btn');
 btns.forEach((btn) => { 
     btn.addEventListener('click', (event) => {
@@ -19,6 +23,7 @@ btns.forEach((btn) => {
     });
 });
 
+// focus, blur, keyup, keydown
 const inputs = document.querySelectorAll('.input');
 inputs.forEach((input) => { 
     input.addEventListener('focus', (event) => {
@@ -35,12 +40,13 @@ inputs.forEach((input) => {
     });
 });
 
+// resize
 const nav = document.querySelector('nav');
 window.addEventListener('resize', () => {
     nav.classList.toggle('reverse');
 });
 
-
+// dblclick
 const h2s = document.querySelectorAll('h2');
 h2s.forEach((h2) => {
     h2.addEventListener('dblclick', (event) => {
@@ -48,7 +54,7 @@ h2s.forEach((h2) => {
     });
 });
 
-
+// click
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach((a) => {
     a.addEventListener('click', (event) => {
@@ -57,10 +63,12 @@ navLinks.forEach((a) => {
     });
 });
 
+// mouseover
 nav.addEventListener('mouseover', (event) => {
     event.target.style.fontWeight = 'bold';
 });
 
+// mouseover
 document.querySelector('#first-nav').addEventListener('mouseover', (event) => {
     event.stopPropagation();
     event.target.style.fontStyle = 'italic';
