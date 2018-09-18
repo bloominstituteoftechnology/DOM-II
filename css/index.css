@@ -350,3 +350,11 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+.newHeaders {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  transform: skewY(2deg);
+}
