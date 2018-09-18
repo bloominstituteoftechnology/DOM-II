@@ -14,6 +14,7 @@ navHeader.addEventListener("click", event => {
   event.stopPropagation();
 });
 
+//makes img fade slightly when moused over
 const busImg = document.querySelector(".intro img");
 busImg.addEventListener("mouseover", event => {
   TweenMax.to(".intro img", 2, {
@@ -21,6 +22,7 @@ busImg.addEventListener("mouseover", event => {
   });
 });
 
+//made button that can make background color constantly change on dblclick
 const bod = document.querySelector(".body");
 const btn = document.querySelector(".btn");
 btn.addEventListener("dblclick", event => {
@@ -28,7 +30,19 @@ btn.addEventListener("dblclick", event => {
   event.stopPropagation();
 });
 
-const contentHeader = document.querySelector(".content-section");
-contentHeader.addEventListener("mousemove", event => {
-  contentHeader.style.color = "red";
+//intro section turns red when mousedover
+const intro = document.querySelector(".intro");
+intro.addEventListener("mousemove", event => {
+  intro.style.color = "red";
+});
+
+//text-content turns green on keydown
+const textSec = document.querySelector(".text-content");
+bod.addEventListener("keydown", event => {
+  textSec.style.color = "green";
+});
+
+//page background turns purple when resized
+window.addEventListener("resize", event => {
+  bod.style.backgroundColor = "purple";
 });
