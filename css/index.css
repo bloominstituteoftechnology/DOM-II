@@ -209,20 +209,20 @@ img {
   visibility: hidden;
 }
 .main-navigation .nav-container .wiggle-bus {
-  animation: wiggle 2s;
+  animation: wiggle 1.5s;
 }
 @keyframes wiggle {
   25% {
-    transform: rotate(10deg);
+    transform: rotate(-90deg);
   }
   50% {
-    transform: rotate(-10deg);
+    transform: rotate(-180deg);
   }
   75% {
-    transform: rotate(10deg);
+    transform: rotate(-270deg);
   }
   100% {
-    transform: rotate(-10deg);
+    transform: rotate(-360deg);
   }
 }
 .main-navigation .nav-container .nav {

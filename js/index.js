@@ -89,8 +89,6 @@ background.addEventListener("wheel", e => {
     console.log(`${red}${red2}${green}${green2}${blue}${blue2}`);
   }
 
-
-
   background.style.background = `#${red}${red2}${green}${green2}${blue}${blue2}`;
 });
 background.style.background = `#${red}${red2}${green}${green2}${blue}${blue2}`;
