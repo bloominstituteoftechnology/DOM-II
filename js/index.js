@@ -8,10 +8,9 @@ window.addEventListener('keydown', (e) => {
 let wheels = document.querySelector('.wtfb');
 let letsGo = document.querySelector('.firstOne');
 window.addEventListener('wheel',  (e) => {
-  document.querySelector('.firstOne').textContent = 'All the way to town!';
   document.querySelector('.wtfb').textContent = 'The whells on the bus go round and round!';
+  document.querySelector('.firstOne').textContent = 'All the way to town!';
 });
-
 
 let adventure = document.querySelector('.map');
 window.addEventListener('drag', (e) => {
@@ -31,7 +30,6 @@ window.addEventListener('mouseover', (e) => {
   bottomImage.classList.toggle('flash');
   document.querySelector('.logo-heading').textContent = 'suB nuF';
 });
-
 
 const logo = document.querySelector('.logo-heading');
 logo.addEventListener('mousedown', (e) => {
