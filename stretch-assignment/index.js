@@ -1,10 +1,10 @@
 let block = document.querySelectorAll('.block');
 
-for (let i = 0; i < block.length; i++) {
-    block[i].addEventListener('mousedown', (event) => {
-    TweenMax.to(block[i], 1, {x:100});
-    });
-}
+// for (let i = 0; i < block.length; i++) {
+//     block[i].addEventListener('mousedown', (event) => {
+//     TweenMax.to(block[i], 1, {x:100});
+//     });
+// }
 
 // block[3].addEventListener('click', (event) => {
 //     block[0].replaceWith(block[3]);
@@ -26,3 +26,13 @@ for (let i = 0; i < block.length; i++) {
 // }
 
 // setInterval(movement(), 1000);
+
+let movement = (event) => {
+    TweenMax.to(event.currentTarget, 1, {x:100});
+}
+
+for (let i = 0; i < block.length; i++) {
+    block[i].addEventListener('mousedown', (event) => {
+    setInterval(movement(event), 1000);
+    });
+}
