@@ -85,7 +85,7 @@ body.addEventListener('wheel', e => {
 // 8. mousemove
 function randomCursor() {
     const cursors = ['n-resize', 'e-resize', 's-resize', 'w-resize', 'ne-resize', 'nw-resize', 'se-resize', 'sw-resize', 'ew-resize', 'ns-resize', 'nesw-resize', 'nwse-resize']
-    const num = Math.floor(Math.random() * Math.floor(cursors.length));
+    const num = Math.floor(Math.random() * Math.floor(cursors.length - 1));
     return cursors[num];
 }
 
@@ -96,7 +96,8 @@ body.addEventListener('mousemove', (e) => {
 
 // 9. mouseover 
 //10. mouseout
-document.querySelectorAll('img').forEach(n => {
+const allImages = document.querySelectorAll('img');
+allImages.forEach(n => {
     n.addEventListener('mouseover', e => {
         e.target.style.filter = 'invert(100%)';
     })
@@ -105,5 +106,15 @@ document.querySelectorAll('img').forEach(n => {
     })
 
 })
+
+
+//Animations
+setInterval(() => {
+    const num = Math.floor(Math.random() * Math.floor(allImages.length - 1));
+    const tl = new TimelineMax();
+    tl.to(allImages[num], 0.25, {scale: 1.01, rotate: 1});
+    tl.to(allImages[num], 0.25, {scale: 1.01, rotation: -1});
+    tl.to(allImages[num], 0.25, {scale: 1, rotation: 0});
+}, 1000)
 
 
