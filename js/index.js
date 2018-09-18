@@ -1,14 +1,19 @@
 // Your code goes here
 
+
+
+
 //=====================1==================== nav bar
 const topNav = document.querySelector('.main-navigation') 
-topNav.addEventListener ('scroll', (event) => {
-    topNav.classList.add('fade')
+topNav.addEventListener ('mousedown', (event) => {
+    topNav.classList.toggle('fade')
 })
 
+
 //======================2====================== nav bar items
-const navItems = document.querySelectorAll('.nav a')
+const navItems = document.querySelector('.nav-link')
 navItems.addEventListener ('mouseenter', (event) => {
+    event.preventDefault()
     navItems.style.color = 'teal'
 })
 
@@ -37,36 +42,34 @@ bottomContent.addEventListener ('wheel', (event) => {
 //=================6======================== part with buttons inside
 const signUpContent = document.querySelector('.content-pick')
 signUpContent.addEventListener ('mouseover', (event) => {
-    signUpContent.innerText="Go on vacation, take some photos, get crazy, get wild, let's party, and however that song fromt that annoying show goes.... yay."
+   signUpContent.style.color= 'blue'
 })
 
 
-//==================7================ btns
-const btns = document.querySelectorAll('.btn')
-btns.addEventListener ('click', (event) => {
-    btns.classList.toggle 
-    if (btn.innerText === 'Sign Me Up!') {
-        return btn.innerText = 'You Just Signed Up'
-      }
-      btn.innerText = 'Sign Me Up!'
+//==================7================ h2
+const introH2 = document.querySelector('.intro h2')
+introH2.addEventListener ('click', (event) => {
+    introH2.innerText="I know what to do, but I suck at being creative I guess"
 })
 
 
 //===================8============== img
 const imgBigOne = document.querySelector('img')
-imgBigOne.addEventListener ('keydown', (event) => {
+imgBigOne.addEventListener ('mouseup', (event) => {
     imgBigOne.classList.toggle('change')
 })
 
 
 //===================9============= logo
-const logoUpper = document.querySelector('.logo-heading')
-logoUpper.addEventListener ('keyup', (event) => {
-    logoUpper.style.font-size: 4rem;
+const logoUpper = document.querySelector('.logo-heading')  
+logoUpper.addEventListener ('contextmenu', (event) => {
+    event.stopPropagation(); 
+    logoUpper.style.color = "blue";
+
 })
 
 //===================10==============Footer
 const footerBottom = document.querySelector('.footer')
-footerBottom.addEventListener ('click', (event) => {
-    footerBottom.style.background-color: green;
+footerBottom.addEventListener ('scroll', (event) => {
+    footerBottom.style.color = "green";
 })
