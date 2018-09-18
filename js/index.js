@@ -7,12 +7,12 @@ const titleText = document.querySelector('.logo-heading');
   });
 
 // keydown
-const borderFlash = document.querySelectorAll('.text-content h2');
+// const borderFlash = document.querySelectorAll('.text-content h2');
 
-  borderFlash.addEventListener('keypress', (event) => {
-        event.target.style = 'border: 2px dashed orange';
+//   borderFlash.addEventListener('keypress', (event) => {
+//         event.target.style = 'border: 2px dashed orange';
     
-  });
+//   });
 
 // // wheel
 // const myWheel = document.querySelector('.container home');
@@ -21,37 +21,38 @@ const borderFlash = document.querySelectorAll('.text-content h2');
 //     event.target.
 //   });
 
-// // drag / drop
-// const myParagraph = document.querySelector('.testing');
+// drag / drop
+const dragDrop = document.querySelectorAll('.content-pick .btn');
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+  dragDrop.addEventListener('dragstart', (event) => {
+        dragDrop.event.target.style.opacity = '.5';
+  });
 
-// // load
-// const myParagraph = document.querySelector('.testing');
+// load **Not working?**
+window.addEventListener('load', (event) => {
+    console.log('Fun Bus page is done loading!');
+  });
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
 
-// myBtn.addEventListener('click', (event) => {});
-// // focus
-// const myParagraph = document.querySelector('.testing');
+// focus **Not working?**
+const logIn = document.querySelector('.main-navigation .login');
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+  logIn.addEventListener('focus', (event) => {
+    event.target.style.background = 'gray';
+  }, true);
+  logIn.addEventListener('blur', (event) => {
+      event.target.style.background = "";
+  }, true);
 
-// myBtn.addEventListener('click', (event) => {});
-// // resize
-// const myParagraph = document.querySelector('.testing');
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+// copy **Not working?**
+const copyText = document.querySelector('.intro p');
 
-// myBtn.addEventListener('click', (event) => {});
+  copyText.addEventListener('copy', (event) => {
+    event.clipboardData.setData('text/plain', 'You copied some text from the Fun Bus website!');
+    event.preventDefault();
+  });
+
 // // scroll
 // const myParagraph = document.querySelector('.testing');
 
@@ -59,7 +60,7 @@ const borderFlash = document.querySelectorAll('.text-content h2');
 //     event.preventDefault();
 //   });
 
-// myBtn.addEventListener('click', (event) => {});
+
 // // select
 // const myParagraph = document.querySelector('.testing');
 
@@ -67,12 +68,10 @@ const borderFlash = document.querySelectorAll('.text-content h2');
 //     event.preventDefault();
 //   });
 
-// myBtn.addEventListener('click', (event) => {});
+
 // // dblclick
 // const myParagraph = document.querySelector('.testing');
 
 //   homeTag.addEventListener('click', (event) => {
 //     event.preventDefault();
 //   });
-
-// myBtn.addEventListener('click', (event) => {});
