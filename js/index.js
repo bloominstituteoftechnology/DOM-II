@@ -97,9 +97,10 @@ funBusMain.addEventListener('mouseout', (event) =>{
     // body.style.backgroundImage = "url(img/fun-bus.jpg)";
 // })
 
-//button color change animation
+//button color change animation with stop propagation.
 button.forEach((element) => {  
     element.addEventListener('click', (event) => {
+        event.stopPropagation();
         if (event.target.style.backgroundColor != 'blue'){
         event.target.style.backgroundColor = 'blue';
         event.target.style.color = 'white';
