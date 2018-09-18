@@ -7,7 +7,7 @@
 // focus -------- Used on form
 // resize -------
 // scroll ------- Used on fixed icon - to animate
-// select -------
+// select ------- Used on textarea
 // dblclick ---- Used on pick
 
 // =========== MOUSEOVER ==========
@@ -20,7 +20,7 @@ imgContent[0].addEventListener("mouseover", function(e) {
 // =========== KEYDOWN ==========
 let body = document.querySelector("body");
 body.addEventListener("keydown", function(e) {
-  e.target.style.backgroundColor = "#ccc";
+  e.target.style.backgroundColor = "#aaa";
   e.target.style.transition = "5s";
 });
 
@@ -54,14 +54,17 @@ let html = document.querySelector("html");
 window.addEventListener(
   "scroll",
   function() {
-    funBusIcon.style.border = "1px solid red";
-    funBusIcon.style.display = "block";
-    funBusIcon.style.transition = "1s";
+    // funBusIcon.style.border = "1px solid red";
+    funBusIcon.style.marginRight = "90%";
+    funBusIcon.style.transition = "7s";
   },
   true
 );
 
 // =========== SELECT ==========
+body.addEventListener("select", function(e) {
+  e.target.style.fontSize = "4em";
+});
 
 // =========== DOUBLE CLICK ==========
 let destinationImg = document.querySelector(".content-destination img");
