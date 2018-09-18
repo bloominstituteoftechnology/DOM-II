@@ -43,7 +43,7 @@ let form = document.querySelector(".cta-form");
 form.addEventListener(
   "focus",
   function(e) {
-    e.target.style.backgroundColor = "#f4f4f4";
+    e.target.style.backgroundColor = "#17A2B8";
   },
   true
 );
@@ -79,4 +79,10 @@ destinationImg.addEventListener("dblclick", function(e) {
 destinationSection.addEventListener("dblclick", function() {
   destinationSection.parentNode.style.backgroundColor = "#17A2B8";
   body.style.color = "white";
+});
+
+// =========== PREVENT DEFAULT ==========
+let submitBtn = document.querySelector("#submit");
+submitBtn.addEventListener("click", function(e) {
+  e.preventDefault();
 });
