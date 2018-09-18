@@ -18,11 +18,31 @@
     }
 
     .logo-heading {
+      
+
       @media @mobile {
         font-size: 3rem;
       }
     }
-
+    .logo-heading-bus {
+      width: 115px;
+      
+    }
+    .logo-toggle-no-text {
+      display: none;
+    }
+    .logo-toggle-no-bus {
+      visibility: hidden;
+    }
+    .wiggle-bus {
+      animation: wiggle 2s;
+    }
+    @keyframes wiggle {
+      25%  {transform: rotate(10deg)}
+      50%  {transform: rotate(-10deg)}
+      75%  {transform: rotate(10deg)}
+      100% {transform: rotate(-10deg)}
+    }
     .nav {
       width: 350px;
       display: flex;
