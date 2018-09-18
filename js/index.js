@@ -24,6 +24,7 @@ const sitetitle = document.querySelector('.logo-heading');
 const busimage = document.querySelector('.intro img');
 const contentsection = document.querySelector('.content-section');
 const navlinks = document.querySelector('a');
+const intro = document.querySelector('.intro');
 
 //console.log(busimage);
 // const home = document.querySelector('.home');
@@ -63,4 +64,18 @@ window.addEventListener("load", function(event) {
 //Currently just does the first one, need to update using forEach.
 navlinks.addEventListener("focus", function(event) {
   navlinks.style.color = 'red';
+});
+
+//Event 6
+//Logs the window size every time it is re-sized. 
+window.addEventListener("resize", function(event) {
+  var w = window.outerWidth;
+  var h = window.outerHeight;
+  console.log(`The window is ${w} by ${h}`);
+});
+
+//Event 7
+//Logs the window size every time it is re-sized. 
+window.addEventListener("scroll", function(event) {
+  intro.style.background = 'lightblue';
 });
