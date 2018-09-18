@@ -73,3 +73,8 @@ imgSpan[2].addEventListener("mouseover", () => {
 imgSpan[2].addEventListener("mouseleave", () => {
   imgSpan[2].style.transform = "scale(1)";
 });
+
+// fade body in on load
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("body").style.animation = "fadeIn";
+});
