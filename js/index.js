@@ -29,13 +29,52 @@ dblClick.forEach((img) => {
     }, false);
 });
 
-
 document.addEventListener('keydown', (e) => {
     e.key;
     alert('WHY DID YOU DO THAT?!?!?!?! ');
 });
 
 
+var dragged;
+document.addEventListener('drag', (e) => {
+
+}, false);
+
+document.addEventListener("dragstart", (e) => {
+    dragged = e.target;
+    e.target.style.opacity = .5;
+}, false);
+
+document.addEventListener("dragend", (e) => {
+    e.target.style.opacity = "";
+}, false);
 
 
+document.addEventListener("dragover", (e) => {
+    e.preventDefault();
+}, false);
 
+
+document.addEventListener("dragenter", (e) => {
+    if ( e.target.className == "dropzone" ) {
+        e.target.style.background = "blue";
+    }
+
+}, false);
+
+document.addEventListener("dragleave", (e) => {
+    if (e.target.className == "dropzone" ) {
+        e.target.style.background = "";
+    }
+
+}, false);
+
+document.addEventListener("drop", (e) => {
+    e.preventDefault();
+    if ( e.target.className == "dropzone" ) {
+        e.target.style.background = "";
+        dragged.parentNode.removeChild( dragged );
+        e.target.appendChild( dragged );
+    }
+  
+}, false);
