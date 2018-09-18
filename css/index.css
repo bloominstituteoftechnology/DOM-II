@@ -174,12 +174,40 @@ img {
     margin: 0 5%;
   }
 }
+.dark {
+  background: #000 !important;
+  color: #fff !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 100 !important;
+}
+.dark .main-navigation {
+  background: #000;
+}
+.dark .main-navigation .nav .nav-link {
+  color: #fff;
+}
+.dark h1 {
+  color: #ea3223;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 100;
+}
+.dark h2 {
+  color: #fefd54;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 100;
+}
+.dark h4 {
+  color: #76fa4c;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 100;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 1000;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -256,12 +284,56 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+  position: relative;
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {
     width: 100%;
     padding: 0;
   }
+}
+.home .content-section .img-content .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  width: 98%;
+  height: 99%;
+  border-radius: 10px;
+  margin-left: 1%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #FFFFFF;
+  font-size: 2rem;
+  display: none;
+}
+.home .content-section .img-content .img-overlay .btn {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  border: 1px solid #C0C0C0;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+@media (max-width: 500px) {
+  .home .content-section .img-content .img-overlay .btn {
+    width: 100%;
+  }
+}
+.home .content-section .img-content .img-overlay .btn:hover {
+  background: #FFFFFF;
+  color: #17A2B8;
 }
 .home .content-section .img-content img {
   border-radius: 10px;
