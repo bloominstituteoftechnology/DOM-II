@@ -10,6 +10,8 @@
           border-radius: @radius;
 }
 
+
+
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
   .border-radius(15px);
   .center;
@@ -29,4 +31,28 @@
     background: @white;
     color: @button-bg;
   }
+}
+
+.gradient{
+background: linear-gradient(270deg, #fbf840, #fbe6b2, #fffff9);
+background-size: 600% 600%;
+
+-webkit-animation: gradient 6s ease infinite;
+-moz-animation: gradient 6s ease infinite;
+animation: gradient 6s ease infinite;
+}
+@-webkit-keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradient { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
