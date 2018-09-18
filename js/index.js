@@ -109,3 +109,6 @@ body.addEventListener("keydown", event => {
 navContainer.addEventListener("mouseup", event => {
   event.currentTarget.style.backgroundColor = "gray";
 });
+
+TweenMax.to(".intro h2", 3, {x:230})
+TweenMax.to(".img-content img", 2, {rotation:360})
