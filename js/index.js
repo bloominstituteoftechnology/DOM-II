@@ -73,5 +73,6 @@ all.addEventListener('click', ()=> {
 for(i=0; i<nav.length; i++) {
     nav[i].addEventListener('click',() => {
         event.preventDefault();
+        
     })
 }
