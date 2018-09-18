@@ -134,14 +134,17 @@ html {
 }
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  overflow-x: hidden;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 h1 {
   font-size: 4rem;
@@ -180,6 +183,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 10000;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -430,7 +434,7 @@ img {
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 10001;
   background: lightblue;
   display: flex;
   justify-content: center;

@@ -78,3 +78,67 @@ imgSpan[2].addEventListener("mouseleave", () => {
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("body").style.animation = "fadeIn";
 });
+
+// scroll reveal animations
+window.sr = ScrollReveal({ mobile: false });
+
+sr.reveal(".logo-heading", {
+  origin: "left",
+  delay: 200,
+  distance: "300px"
+});
+
+// prevent nav items from refreshing
+const nav = document.querySelectorAll(".nav-container a");
+nav.forEach(function(e) {
+  e.preventDefault;
+  // nav animations
+  sr.reveal(e, {
+    origin: "right",
+    delay: 500,
+    distance: "300px"
+  });
+});
+
+sr.reveal(".home .intro", {
+  origin: "left",
+  delay: 800,
+  distance: "600px"
+});
+
+const contentSection = document.querySelectorAll(".content-section");
+sr.reveal(contentSection[0], {
+  origin: "right",
+  delay: 1200,
+  distance: "600px"
+});
+
+sr.reveal(contentSection[1], {
+  origin: "left",
+  delay: 500,
+  distance: "600px",
+  viewFactor: 0.4
+});
+
+sr.reveal(".content-destination", {
+  origin: "right",
+  delay: 800,
+  distance: "600px"
+});
+
+const destination = document.querySelectorAll(".destination");
+sr.reveal(destination[0], {
+  origin: "left",
+  delay: 200,
+  distance: "600px"
+});
+sr.reveal(destination[1], {
+  origin: "bottom",
+  delay: 400,
+  distance: "600px"
+});
+sr.reveal(destination[2], {
+  origin: "right",
+  delay: 600,
+  distance: "600px"
+});
