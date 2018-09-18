@@ -199,6 +199,9 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .change-color {
+  color: #17A2B8;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -349,4 +352,81 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.content-pick .destination .modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+.content-pick .destination .modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 25%;
+  padding: 40px 2%;
+  border-radius: 5px;
+}
+.content-pick .destination .modal .modal-content .close-btn {
+  float: right;
+  width: 6%;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.content-pick .destination .modal .modal-content .close-btn:hover {
+  color: #C0C0C0;
+}
+.content-pick .destination .modal .modal-content .form-container {
+  margin: 50px 0;
+}
+.content-pick .destination .modal .modal-content .form-container .form-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: column;
+}
+.content-pick .destination .modal .modal-content .form-container .form-group label {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.content-pick .destination .modal .modal-content .form-container .form-group input {
+  border: 1px solid #C0C0C0;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding: 13px 2%;
+  font-size: 1.6rem;
+}
+.content-pick .destination .modal .modal-content .form-container .form-group button {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  border: 1px solid #C0C0C0;
+  cursor: pointer;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .content-pick .destination .modal .modal-content .form-container .form-group button {
+    width: 100%;
+  }
+}
+.content-pick .destination .modal .modal-content .form-container .form-group button:hover {
+  background: #FFFFFF;
+  color: #17A2B8;
+}
+.content-pick .destination .show-modal {
+  opacity: 1;
+  visibility: visible;
 }

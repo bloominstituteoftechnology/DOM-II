@@ -10,6 +10,12 @@
           border-radius: @radius;
 }
 
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
   .border-radius(15px);
   .center;
@@ -24,7 +30,7 @@
   @media @mobile {
     width: 100%;
   }
-  
+
   &:hover {
     background: @white;
     color: @button-bg;
