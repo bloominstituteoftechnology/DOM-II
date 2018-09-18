@@ -18,3 +18,12 @@ window.addEventListener('keydown', (e) => {
         mainContent[0].style.width = '100%';
     }   
 });
+// Add back in main content images with keyup with 's'
+window.addEventListener('keyup', (e) => {
+    if (e.keyCode == '83') {
+        // firstImg.style.border = '3px solid red';
+        img[0].style.display = '';
+        img[1].style.display = '';
+        mainContent[0].style.width = '';
+    }   
+});
