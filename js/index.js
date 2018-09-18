@@ -18,3 +18,11 @@ mouseOver.forEach((h2) => {
         }, false);
 });
 
+let dblClick = document.querySelector('.intro img');
+dblClick.addEventListener('dblclick', () => {
+    dblClick.classList.toggle('display');
+
+    setTimeout(function() {
+        dblClick.classList.toggle('display');
+      }, 10000);
+    }, false);
