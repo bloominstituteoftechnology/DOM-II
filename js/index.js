@@ -47,6 +47,13 @@ window.addEventListener('copy', (event) => {
 });
 
 
+for (let i = 0; i < p.length; i++) {
+    p[i].addEventListener('copy', (event) => {
+    alert('Please give credit to the author. (message 2)');
+    event.stopPropagation();
+    });      
+}
+
 
 for (let i = 0; i < p.length; i++) {
     p[i].addEventListener('auxclick', (event) => {
@@ -56,6 +63,14 @@ for (let i = 0; i < p.length; i++) {
 
 
 let h1 = document.querySelector('h1');
-    h1.addEventListener('contextmenu', (event) => {
-        TweenMax.to(h1, 3, {x:100})
-    });
+
+h1.addEventListener('contextmenu', (event) => {
+    TweenMax.to(h1, 3, {x:100})
+});
+
+
+let mainNavigationContainer = document.querySelector('.main-navigation');
+
+mainNavigationContainer.addEventListener('wheel', (event) => {
+    event.currentTarget.style.borderBottom = '2px dashed black';
+});
