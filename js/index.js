@@ -14,64 +14,58 @@ const titleText = document.querySelector('.logo-heading');
     
 //   });
 
-// // wheel
-// const myWheel = document.querySelector('.container home');
-
-//   homeTag.addEventListener('wheel', (event) => {
-//     event.target.
-//   });
 
 // drag / drop
-const dragDrop = document.querySelectorAll('.content-pick .btn');
+// const dragDrop = document.querySelectorAll('.content-pick .btn');
 
-  dragDrop.addEventListener('dragstart', (event) => {
-        dragDrop.event.target.style.opacity = '.5';
-  });
+//   dragDrop.addEventListener('dragstart', (event) => {
+//         dragDrop.event.target.style.opacity = '.5';
+//   });
 
-// load **Not working?**
+// load
 window.addEventListener('load', (event) => {
     console.log('Fun Bus page is done loading!');
   });
 
 
-// focus **Not working?**
+// focus
 const logIn = document.querySelector('.main-navigation .login');
 
   logIn.addEventListener('focus', (event) => {
     event.target.style.background = 'gray';
+    event.target.style.color = 'white';
   }, true);
+
+  //blur
   logIn.addEventListener('blur', (event) => {
       event.target.style.background = "";
   }, true);
 
 
-// copy **Not working?**
-const copyText = document.querySelector('.intro p');
+// copy
 
-  copyText.addEventListener('copy', (event) => {
+  document.addEventListener('copy', (event) => {
     event.clipboardData.setData('text/plain', 'You copied some text from the Fun Bus website!');
     event.preventDefault();
   });
 
-// // scroll
-// const myParagraph = document.querySelector('.testing');
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+// scroll
+  window.addEventListener('scroll', (event) => {
+    console.log('scrolled!');
+  });
 
+// select **Not working**
+const colorChange = document.querySelectorAll('.main-navigation a');
 
-// // select
-// const myParagraph = document.querySelector('.testing');
-
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+colorChange.addEventListener('select', (event) => {
+    event.target.style.color = 'pink';
+}, false);
 
 
 // // dblclick
-// const myParagraph = document.querySelector('.testing');
+const hideImg = document.querySelector('.pic1');
 
-//   homeTag.addEventListener('click', (event) => {
-//     event.preventDefault();
-//   });
+  hideImg.addEventListener('dblclick', (event) => {
+    event.target.classList.toggle('hide');
+  });
