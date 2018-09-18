@@ -5,7 +5,6 @@ const navBar = document.querySelector(".main-navigation");
 let navBarOpacity = 0.2;
 navBar.style.backgroundColor = `rgba(71, 37, 14, ${navBarOpacity})`;
 navBar.addEventListener("wheel", navBarChange);
-
 function navBarChange(e) {
     e.preventDefault();
     // console.log(e);
@@ -89,6 +88,11 @@ body.addEventListener("click", function(e) {
     newO.style.top = `${e.clientY - 12}px`;
     e.currentTarget.prepend(newO);
 });
+
+// Make background blue if you resize window
+window.addEventListener("resize", e => 
+    body.style.background = "skyblue"
+);
 
 // Zap paragraphs with right mouse click
 const allPs = document.querySelectorAll("p");
