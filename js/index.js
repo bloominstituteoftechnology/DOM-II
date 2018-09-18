@@ -2,6 +2,8 @@
 const logo = document.querySelector(".logo-heading");
 const images = document.querySelectorAll("img");
 const background = document.querySelector("body");
+const header = document.querySelector(".main-navigation");
+const links = document.querySelectorAll(".nav-link");
 
 logo.addEventListener("mouseover", () =>{
     logo.classList.add("logo-move");
@@ -35,6 +37,12 @@ function randomColor() {
 
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
-window.addEventListener("resize", () => {
+
+function changeBg(){
     background.style.backgroundColor = randomColor();
-});
+}
+function crazyLogo() {
+    logo.style.color = randomColor();
+}
+window.addEventListener("resize", changeBg);
+window.addEventListener('scroll', crazyLogo);
