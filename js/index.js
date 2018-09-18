@@ -12,23 +12,32 @@ mainImage.addEventListener('mouseover', (event) => {
 
 // keydown
 
-const backgroundColorChange = document.querySelector('html')
+const background = document.querySelector('html')
 
-backgroundColorChange.addEventListener('keydown', (event) =>{
+background.addEventListener('keydown', (event) =>{
     event.target.style.backgroundImage = 'linear-gradient(#FF5F6D, #FFC371)';
 });
 
 // wheel
 
-backgroundColorChange.addEventListener('wheel', (event) =>{
-    event.target.style.backgroundImage = 'linear-gradient(#EECDA3, #EF629F)';
-});
+
 
 // drag / drop
 // load
 // focus
 // resize
 // scroll
+
+const mainNavigation = document.querySelector('.main-navigation');
+const mainNavLogo = document.querySelector('.logo-heading');
+const mainNavText = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', (event) => {
+    mainNavigation.style.backgroundColor = 'black';
+    mainNavText.forEach(item => item.style.color = 'white');
+    mainNavLogo.style.color = 'white';
+});
+
 // select
 // dblclick
 
