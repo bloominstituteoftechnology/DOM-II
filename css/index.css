@@ -157,6 +157,13 @@ h2 {
   transform: scaleY(2);
   transform: scaleX(1);
 }
+.color {
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
 h4 {
   font-size: 2.5rem;
   padding-bottom: 10px;
@@ -243,6 +250,9 @@ img {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
 }
+.home .intro p {
+  cursor:pointer;
+}
 .home .intro img {
   max-width: 100%;
   height: auto;
@@ -310,6 +320,7 @@ img {
 .home .content-destination {
   width: 75%;
   margin: 0 auto 30px;
+
 }
 @media (max-width: 500px) {
   .home .content-destination {
