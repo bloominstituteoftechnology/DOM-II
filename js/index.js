@@ -13,13 +13,13 @@ const input = document.querySelector('#email');
 
 //1
 contactNav.addEventListener('mouseover', (event) => {
-    event.target.style.fontWeight = 'bold';   
-    event.preventDefault();
+    event.target.style.fontWeight = 'bold';  
+    event.target.style.color = "blue";
+    event.stopPropagation();
 });
 
 aNav[0].addEventListener('mouseover', (event) => {
     event.target.style.color = "Orange";
-    event.stopPropagation();
 });
 
 //2
@@ -75,6 +75,18 @@ input.addEventListener('select', (event) => {
 
 //10 
 
+aNav[1].addEventListener('click', (event) => {
+    event.target.style.color = "Orange";
+    event.stopPropagation();
+});
 
+
+
+
+    [].forEach.call(aNav, function (curr, i) {
+        aNav[i].addEventListener('click', (event) => {
+            event.preventDefault();
+         });
+    });
 
 
