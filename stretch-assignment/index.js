@@ -31,8 +31,14 @@ let movement = (event) => {
     TweenMax.to(event.currentTarget, 1, {x:100});
 }
 
-for (let i = 0; i < block.length; i++) {
-    block[i].addEventListener('mousedown', (event) => {
+// for (let i = 0; i < block.length; i++) {
+//     block[i].addEventListener('mousedown', (event) => {
+//     setInterval(movement(event), 1000);
+//     });
+// }
+
+block.forEach(item => {
+    item.addEventListener('mousedown', (event) => {
     setInterval(movement(event), 1000);
     });
-}
+})
