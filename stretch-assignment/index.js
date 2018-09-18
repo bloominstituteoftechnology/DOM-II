@@ -17,17 +17,20 @@ rocket[4].addEventListener("click", event => {
 });
 
 rocket[0].addEventListener("mousedown", event => {
-  TweenMax.to(event.currentTarget, 2, { x: 1000 });
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
+});
+rocket[0].addEventListener("mouseup", event => {
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
 });
 rocket[1].addEventListener("mousedown", event => {
-  TweenMax.to(event.currentTarget, 2, { x: 1000 });
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
 });
 rocket[2].addEventListener("mousedown", event => {
-  TweenMax.to(event.currentTarget, 2, { x: 1000 });
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
 });
 rocket[3].addEventListener("mousedown", event => {
-  TweenMax.to(event.currentTarget, 2, { x: 1000 });
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
 });
 rocket[4].addEventListener("mousedown", event => {
-  TweenMax.to(event.currentTarget, 2, { x: 1000 });
+  TweenMax.to(event.currentTarget, 2, { left: window.outerWidth });
 });
