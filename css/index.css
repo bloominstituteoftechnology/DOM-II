@@ -350,3 +350,44 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+@keyframes jumpDownAnim {
+  0% {
+    transform: translate(0px, 100px); }
+  15% {
+    transform: translate(0px, 15px); }
+  30% {
+    transform: translate(0px, 0px); }
+  45% {
+    transform: translate(0px, 15px); }
+  60% {
+    transform: translate(0px, 0px); }
+  75% {
+    transform: translate(0px, 15px); }
+  100% {
+    transform: translate(0px, 0px); } }
+
+    .everybodyJump {
+      animation-name: jumpDownAnim;
+      animation-duration: 500.5ms;
+      
+    }
+
+    .fadeDown {
+      animation-name: fadeDownOut;
+      animation-duration: 5000.5ms;
+    }
+
+    @keyframes fadeDownOut {
+      0% {
+        opacity: 1;
+        transform: translate(0px, 0px); }
+      10% {
+        opacity: 0.6777369479537847;
+        transform: translate(0px, 0px); }
+      20% {
+        opacity: 0.3;
+        transform: translate(0px, 24px); }
+      100% {
+        opacity: 0;
+        transform: translate(0px, 110px); } }
