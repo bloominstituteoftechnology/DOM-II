@@ -21,11 +21,15 @@ window.addEventListener('resize', e => {
   newP.innerText = 'Width: ' + e.target.innerWidth + ' Height: ' + e.target.innerHeight;
 })
 
-logoHeading.addEventListener('click', () => {
+logoHeading.parentNode.addEventListener('click', () => {
+  console.log('clicked');
+})
+logoHeading.addEventListener('click', e => {
+  e.stopPropagation();
   headerImg.classList.toggle('busTrip');
 })
 
-navA.forEach(link => link.addEventListener('click', e => { e.preventDefault() }))
+navA.forEach(link => link.addEventListener('click', e => { e.preventDefault(); e.stopPropagation() }))
 navA[0].addEventListener('focus', () => {
   navA.forEach(item => item.style.color = 'blue');
 })
