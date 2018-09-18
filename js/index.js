@@ -27,4 +27,8 @@ btn.addEventListener("dblclick", event => {
   bod.classList.toggle("chromium");
   event.stopPropagation();
 });
-h;
+
+const contentHeader = document.querySelector(".content-section");
+contentHeader.addEventListener("mousemove", event => {
+  contentHeader.style.color = "red";
+});
