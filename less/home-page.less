@@ -150,6 +150,7 @@
 .image-modal img {
   width: 100%;
   cursor: zoom-out;
+  animation: 1s fadeIn;
 }
 
 .image-modal-content-wrapper {
@@ -170,4 +171,36 @@
 }
 .modal-span img {
   cursor: zoom-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fullscreen-spinner {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 2s fadeOut;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
