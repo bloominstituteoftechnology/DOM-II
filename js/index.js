@@ -7,13 +7,20 @@ const adventureAwaits = document.querySelector('.adventure')
 const adventureImg = document.querySelector('.img-content .one')
 const destination = document.querySelector('.destination')
 const formName = document.querySelector('form .name')
+const form = document.querySelector('form')
 const body = document.querySelector('body')
 const formBtn = document.querySelector('form .btn')
-// console.log(formBtn)
+const contentSection = document.querySelector('.content-section')
+console.log(form)
 
 
 // 1. mouseover
 busImg.addEventListener('mouseover', () => {
+  console.log('mouse went over')
+  busImg.style.width = '95%';
+});
+
+welcome.addEventListener('mouseover', () => {
   console.log('mouse went over')
   busImg.style.width = '95%';
 });
@@ -25,9 +32,16 @@ busImg.addEventListener('mouseout', () => {
   busImg.style.width = '100%';
 });
 
-// 3. click
-letsGo.addEventListener('click', () => {
-  console.log('clicked')
+// 3. click and stopPropagation()
+letsGo.addEventListener('click', (e) => {
+  console.log('header clicked')
+  letsGoParagraph.style.color = 'blue';
+  letsGoParagraph.classList.toggle('change');
+  e.stopPropagation()
+});
+
+contentSection.addEventListener('click', () => {
+  console.log('section clicked')
   letsGoParagraph.style.color = 'blue';
   letsGoParagraph.classList.toggle('change');
 });
@@ -47,12 +61,18 @@ destination.addEventListener('scroll', () => {
   console.log('scrolled')
 });
 
-//7. select
-formName.addEventListener('select', () => {
-  console.log('selected')
-
+//7. select plus stopPropagation()
+formName.addEventListener('select', (e) => {
+  console.log('name form selected')
   formName.style.fontSize = '2rem'
+  e.stopPropagation()
 });
+
+form.addEventListener('select', () => {
+  console.log(' whole form selected')
+  form.style.fontSize = '2.5'
+});
+
 
 // 8. resize
 window.addEventListener('resize', () => {
