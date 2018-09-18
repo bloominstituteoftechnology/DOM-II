@@ -12,6 +12,7 @@ logoTag.addEventListener('click', (event) => {
   event.stopPropagation();
   event.target.style.background = "red";
     console.log(event.target);
+    TweenMax.to(event.target, 10, {background:"blue", scale : 1.5, rotation:180});
 });
 
 document.querySelector(".main-navigation").addEventListener('click', (event)=>{
@@ -21,6 +22,8 @@ document.querySelector(".main-navigation").addEventListener('click', (event)=>{
 introImgTag.addEventListener('mouseover', (event) => {
      event.target.style.border = "2px red solid";
 //    console.log(event.target);
+TweenMax.to(event.target, 10, {x:300,rotation:360});
+
   });
   
   introImgTag.addEventListener('wheel', (event) => {
