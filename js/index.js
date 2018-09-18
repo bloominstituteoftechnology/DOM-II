@@ -6,7 +6,11 @@ const footer = document.querySelector('.footer');
 const imgs = document.querySelectorAll("img");
 const body = document.querySelector("body");
 const button = document.querySelectorAll('.btn');
-
+const anchorText = document.querySelectorAll('a');
+const paragraphText = document.querySelectorAll('p');
+const h1 = document.querySelector('h1');
+const h2 = document.querySelectorAll('h2');
+const h4 = document.querySelectorAll('h4');
 
 
 /*===================Event listeners===================*/
@@ -30,17 +34,33 @@ for (let i = 0; i < nav.length; i++){
         nav[i].style.color = 'black';
     });
 }
-//scrolling changes background
-window.addEventListener('scroll', function() {
-    document.body.style.backgroundColor = "aliceblue";
-});
 
-//scroll over nav makes it blue
+//mouse over nav makes it blue
 mainNav.addEventListener('mouseover', (event) => {  
     event.preventDefault();
     event.stopPropagation();
     event.currentTarget.style.backgroundColor = 'aliceblue';
  });
+
+ //Night mode
+ document.addEventListener('keydown', (event) => { 
+    if (event.key === 'n') {
+        body.style.backgroundColor = 'rgb(71, 71, 73';
+        mainNav.style.background = 'rgb(50, 50, 52)';
+        footer.style.background = 'rgb(50, 50, 52)';
+        anchorText.forEach((element) => {element.style.color = 'white';});
+        paragraphText.forEach((element) => {element.style.color = 'white';});
+        h1.style.color = 'white';
+        h2.forEach((element) => {element.style.color = 'white';});
+        h4.forEach((element) => {element.style.color = 'white';});
+    }
+});
+
+//scrolling changes background
+window.addEventListener('scroll', function() {
+    event.stopPropagation();
+    document.body.style.backgroundColor = "aliceblue";
+});
 
 //clicking the body makes it white
 body.addEventListener('click',   function()  {   
@@ -70,11 +90,22 @@ funBusMain.addEventListener('mouseout', (event) =>{
     funBusMain.style.fontSize = '3rem';
 });
 
+// button.addEventListener('blur', e => {
+//     e.target.style.background = '';
+    // e.preventDefault();
+    // e.stopPropagation();
+    // body.style.backgroundImage = "url(img/fun-bus.jpg)";
+// })
 
-
-
-imgs.addEventListener('click', e => {
-    e.preventDefault();
-    e.stopPropagation();
-    e.target.style.backgroundImage = "src = img/fun-bus.jpg ";
-})
+//button color change animation
+button.forEach((element) => {  
+    element.addEventListener('click', (event) => {
+        if (event.target.style.backgroundColor != 'blue'){
+        event.target.style.backgroundColor = 'blue';
+        event.target.style.color = 'white';
+        }
+        else if (event.target.style.backgroundColor === 'blue'){
+            event.target.style.backgroundColor = '#17A2B8';
+        }
+    });
+});
