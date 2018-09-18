@@ -326,7 +326,27 @@ img {
     margin: 0 auto 30px;
   }
 }
-.home .content-pick .destination .btn {
+.home .content-pick .select-package {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.home .form .input {
+  padding: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  width: 70%;
+}
+@media (max-width: 750px) {
+  .home .form .input {
+    padding: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+}
+.home .btn {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
@@ -342,11 +362,11 @@ img {
   font-size: 1.8rem;
 }
 @media (max-width: 500px) {
-  .home .content-pick .destination .btn {
+  .home .btn {
     width: 100%;
   }
 }
-.home .content-pick .destination .btn:hover {
+.home .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
 }

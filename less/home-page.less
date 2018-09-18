@@ -105,10 +105,24 @@
         width: 80%;
         margin: 0 auto 30px;
       }
-      
-      .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+    }
+    .select-package {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  .form {
+    .input {
+      .formElements(70%);
+      @media @tablet {
+        .formElements(80%);
       }
     }
+  }
+  .btn {
+    .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
   }
 }// home
