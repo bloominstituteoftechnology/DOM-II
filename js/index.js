@@ -27,8 +27,15 @@ window.addEventListener('keyup', (e) => {
         mainContent[0].style.width = '';
     }   
 });
+
+// Add make container with 100% of screen when resized
 const wholePage = document.querySelector('.home');
 window.addEventListener('resize', () => {
     wholePage.style.maxWidth = '100%';
     document.querySelector('.intro img').style.width = '100%';
+});
+
+// Added alert when page load
+window.addEventListener('load', () => {
+    alert('Welcome to Fun Bus!');
 });
