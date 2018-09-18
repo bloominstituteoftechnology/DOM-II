@@ -37,6 +37,7 @@ links.forEach((link) => {
   link.addEventListener('mouseover', (event) => {
     event.target.style.color = `${getRandomColor()}`;
     event.target.style.fontWeight = 'bolder';
+    event.preventDefault();
   });
   link.addEventListener('mouseout', (event) => {
     event.target.style.color = 'black';
