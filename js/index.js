@@ -4,6 +4,7 @@ const images = document.querySelectorAll("img");
 const background = document.querySelector("body");
 const header = document.querySelector(".main-navigation");
 const links = document.querySelectorAll(".nav-link");
+const prevent = document.querySelector(".prevent");
 
 logo.addEventListener("mouseover", () =>{
     logo.classList.add("logo-move");
@@ -24,11 +25,34 @@ images.forEach((img) => {
     });
 });
 
+
+links.forEach((link) => {
+    link.addEventListener("keydown", function () {
+        this.style.boxShadow = "10px 10px 5px grey";
+        this.style.transform = "scale(1.1)";
+    });
+
+    link.addEventListener("keyup", function () {
+        this.style.boxShadow = "";
+        this.style.transform = "scale(1)";
+    });
+});
+
 background.addEventListener("dblclick", () => {
     background.style.backgroundColor = "black";
     background.style.color = "white";
     logo.style.color = "black"
 });
+
+prevent.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    prevent.style.color = "green";
+});
+header.addEventListener("click", () => {
+    header.style.backgroundColor = "purple";
+});
+
 
 function randomColor() {
     const r = Math.floor(Math.random() * 256);
