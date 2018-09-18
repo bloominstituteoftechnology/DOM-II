@@ -350,3 +350,30 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.header {
+  background-color: #FFEBCD;
+}
+.logoHeading {
+  font-family: sans-serif;
+}
+.button1 {
+  font-size: 20px;
+}
+.button2 {
+  color: #17A2B8;
+}
+.button3 {
+  color: #17A2B8;
+}
+.button4 {
+  text-decoration: underline;
+}
+.image1 {
+  border-radius: 20px;
+}
+.image2 {
+  width: 80%;
+}
+.image3 {
+  width: 80%;
+}
