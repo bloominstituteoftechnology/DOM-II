@@ -19,7 +19,12 @@ contentPick.addEventListener('click', () => {
 //   });
 
 myHeader.forEach(item => item.addEventListener('mouseover', (event) => {
-    event.target.style.color = 'darkorange';
+    event.stopPropagation();
+    event.target.parentNode.style.backgroundColor = 'darkblue';
+    event.target.parentNode.style.color ='orange';
+    
+    
+    event.target.style.color = 'red';
 
     setTimeout(() => {
         event.target.style.color = '';
@@ -41,3 +46,5 @@ window.addEventListener("scroll", () => {
     let max = document.body.scrollHeight - innerHeight;
     readerProgress.style.width = `${(pageYOffset / max) * 100}%`;
   });
+
+  
