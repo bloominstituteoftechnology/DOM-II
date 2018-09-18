@@ -74,3 +74,8 @@ let mainNavigationContainer = document.querySelector('.main-navigation');
 mainNavigationContainer.addEventListener('wheel', (event) => {
     event.currentTarget.style.borderBottom = '2px dashed black';
 });
+
+
+window.addEventListener('beforeprint', (event) => {
+    alert('Please click on link for printer friendly page structure. (there is none)');
+})
