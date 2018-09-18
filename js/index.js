@@ -67,8 +67,16 @@ body.addEventListener("select", function(e) {
 });
 
 // =========== DOUBLE CLICK ==========
+let destinationSection = document.querySelector(".content-destination");
 let destinationImg = document.querySelector(".content-destination img");
 destinationImg.addEventListener("dblclick", function(e) {
+  e.stopPropagation();
   e.target.src =
     "https://coolsurfstuff.com/wp-content/uploads/2017/10/5-1-600x200.jpg";
+});
+
+// =========== STOP PROPAGATION ==========
+destinationSection.addEventListener("dblclick", function() {
+  destinationSection.parentNode.style.backgroundColor = "#17A2B8";
+  body.style.color = "white";
 });
