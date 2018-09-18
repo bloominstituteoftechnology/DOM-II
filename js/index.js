@@ -5,7 +5,7 @@ const page = document.querySelector("html")
 const image = document.querySelectorAll("img")
 const btn = document.querySelectorAll(".btn")
 const all = document.querySelector("html")
-
+const nav = document.querySelectorAll("nav")
 
 //click image to make it vanish
 bus.addEventListener('click', ()=> {
@@ -56,6 +56,7 @@ image[3].addEventListener("drag", ()=>{
 
 //gets your images back 
 btn[0].addEventListener("click", ()=> {
+    event.stopPropagation();
     for(i=0; i<image.length; i++) {
         image[i].style.visibility = "visible"
     }
@@ -63,6 +64,14 @@ btn[0].addEventListener("click", ()=> {
 
 
 //changes text to black and resets rainbow
-html.addEventListener('click', ()=> {
-    
+all.addEventListener('click', ()=> {
+  all.style.color = "black"
+  i=0
 })
+
+//changes links so they dont refresh page
+for(i=0; i<nav.length; i++) {
+    nav[i].addEventListener('click',() => {
+        event.preventDefault();
+    })
+}
