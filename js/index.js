@@ -40,9 +40,14 @@ function randomColor() {
 
 function changeBg(){
     background.style.backgroundColor = randomColor();
+    background.style.transition = "0.5s";
 }
 function crazyLogo() {
     logo.style.color = randomColor();
 }
 window.addEventListener("resize", changeBg);
 window.addEventListener('scroll', crazyLogo);
+
+window.addEventListener("load", () =>{
+    alert("Website finished loading!");
+});
