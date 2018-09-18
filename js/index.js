@@ -21,15 +21,35 @@
 
 // Event Listeners - Step 1: Get the reference
 const sitetitle = document.querySelector('.logo-heading');
-// const homeTag = document.querySelector('#home-tag');
+const busimage = document.querySelector('.intro img');
+//console.log(busimage);
 // const home = document.querySelector('.home');
 // const myBtn = document.querySelector('.btn');
 // const myParagraph = document.querySelector('.testing');
 
 // // Step 2 & 3: Add Event Listener to the reference & do something in {}. 
+
+//Event 1 - Mouseover Fun Bus turns it blue. 
 sitetitle.addEventListener('mouseover', (event) =>  
   {sitetitle.style.color = 'blue';
 });
+
+//Event 2 - If "f" is pressed an alert is displayed. 
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  if(keyName === 'f') {
+    alert(`You pressed ${keyName}! You get 1 free bus!`);
+  }
+});
+
+//Event 3 - Swap bus image if wheel is used over the bus image. 
+busimage.addEventListener('wheel', (event) =>  {
+  busimage.setAttribute('src', 'beachbus.jpg')
+});
+
+
+
+
 // homeTag.addEventListener('click', (event) => {
 //   event.preventDefault();
 // });
