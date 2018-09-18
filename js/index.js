@@ -8,7 +8,7 @@ const signUpButton = document.querySelectorAll('.btn');
 const intro = document.querySelector('.intro');
 const search = document.querySelector(".fa-search");
 const destHeader = document.querySelectorAll('.destination h4')
-
+const contentHeader = document.querySelectorAll('.text-content h2');
 
 //locks up the page | doesnt allow scrolling
 wholePage.addEventListener('wheel', (e) => {
@@ -45,3 +45,9 @@ destHeader.forEach(e => {
     })
 })
 
+contentHeader.forEach(e => {
+    e.addEventListener('select', function( event ) {
+        event.target.parentNode.childNodes.style.color = 'pink';
+    })
+})
+console.log(contentHeader);
