@@ -33,7 +33,6 @@ h1.forEach(cb => cb.addEventListener('mouseout', e => e.target.style.color = '#2
 html.forEach(cb => window.addEventListener('wheel', () => cb.style.fontSize = '75%'));
 html.forEach(cb => window.addEventListener('scroll', () => cb.style.textDecoration = 'overline underline'));
 
-
 h4.forEach(cb => cb.addEventListener('copy', e => e.target.style.color = 'green'));
 
 footer.forEach(cb => cb.addEventListener('click', e => e.target.style.background = 'gray'));
