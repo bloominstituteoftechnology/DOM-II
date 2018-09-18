@@ -1,5 +1,4 @@
 .home {
-
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
@@ -20,8 +19,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
@@ -105,10 +102,79 @@
         width: 80%;
         margin: 0 auto 30px;
       }
-      
+
       .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
       }
     }
   }
-}// home
+
+  .cta-form {
+    width: 60%;
+    margin: 50px auto;
+    padding: 40px 14%;
+    background: @eastern-blue;
+    color: @white;
+    font-size: 1.6rem;
+
+    @media @tablet {
+      width: 80%;
+    }
+
+    @media @mobile {
+      width: 100%;
+    }
+
+    h2 {
+      font-family: "Indie Flower";
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    form {
+      font-family: "Roboto";
+
+      select {
+        margin-bottom: 20px;
+        padding: 5px 15px;
+        width: 100%;
+        color: @shark;
+      }
+
+      input {
+        margin-bottom: 20px;
+        padding: 5px 15px;
+        width: 100%;
+      }
+
+      textarea {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        font-family: "Roboto";
+        font-size: 1.6rem;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .btn {
+        .cta-btn(@eastern-dark, @shark, @silver, @white, 100%);
+        border: none;
+      }
+    }
+  }
+} // home
+
+#bus-icon img {
+  display: none;
+  position: fixed;
+  right: 60px;
+  bottom: 45px;
+}
