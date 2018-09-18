@@ -350,3 +350,21 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.moveLink{
+  margin-top:40px;
+}
+.makeBlink{
+  animation: blinker 1s linear infinite; 
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.changeBG{
+  background-color: aqua;
+}
+.changeBG2{
+  background-color: yellow;
+}
