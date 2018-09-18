@@ -46,3 +46,24 @@ bod.addEventListener("keydown", event => {
 window.addEventListener("resize", event => {
   bod.style.backgroundColor = "purple";
 });
+
+//nav section background turns blue when you rightclick on the page
+window.addEventListener("contextmenu", event => {
+  wholeNav.style.backgroundColor = "blue";
+});
+
+//second image disappears when the mouse leaves it
+const vanishingImg = document.querySelector(".disappear");
+vanishingImg.addEventListener("mouseleave", event => {
+  vanishingImg.style.display = "none";
+});
+
+//when you scroll the text in the nav bar fades slightly
+const mainHeader = document.querySelector(".main-navigation");
+window.addEventListener("scroll", event => {
+  mainHeader.style.opacity = 0.5;
+});
+
+bod.addEventListener("select", event => {
+  event.currentTarget.style.textDecoration = "underline";
+});
