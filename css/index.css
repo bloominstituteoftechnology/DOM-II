@@ -357,7 +357,7 @@ img {
   font-family: sans-serif;
 }
 .button1 {
-  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .button2 {
   color: #17A2B8;
@@ -376,4 +376,13 @@ img {
 }
 .image3 {
   width: 80%;
+}
+.footerButton1 {
+  background-color: #212529;
+}
+.footerButton2 {
+  font-family: Helvetica;
+}
+.footerButton3 {
+  line-height: 20px;
 }

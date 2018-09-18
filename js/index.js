@@ -1,13 +1,36 @@
 // Your code goes here
 const header = document.querySelector('.main-navigation');
 
+header.addEventListener('click', () => {
+    header.classList.toggle('header')
+})
+
 const logoHeading = document.querySelector('.logo-heading');
+
+logoHeading.addEventListener('click', (event) => {
+    event.stopPropagation();
+    logoHeading.classList.toggle('logoHeading');
+})
 
 const button = document.querySelectorAll('.nav-link');
 
 const button1 = button[0];
 
+button1.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    let home = document.querySelector('.home');
+    home.classList.toggle('button1');
+})
+
 const button2 = button[1];
+
+button2.addEventListener('click', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    let home = document.querySelector('.home');
+    home.classList.toggle('button2');
+})
 
 const button3 = button[2];
 
@@ -27,8 +50,3 @@ const footerButton2 = footerButtons[1];
 
 const footerButton3 = footerButtons[2];
 
-
-
-console.log(footerButton1);
-console.log(footerButton2);
-console.log(footerButton3);
