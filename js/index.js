@@ -58,7 +58,7 @@ document.addEventListener("keydown", e => {
 
 // onload, popup an alert
 window.addEventListener("load", e => {
-    alert("press space to whiten text, scroll to change colors");
+    alert("press space to whiten text, scroll to change colors, SHIFT + k to flip colors");
 });
 
 // 8th event change background color to pink when resizing window
@@ -66,8 +66,20 @@ window.addEventListener("resize", e => {
     background.style.background = "pink";    
 });
 
+// keypress when "K" is pressed, change background to "orange"
+document.addEventListener("keypress", e => {
+    if(e.keyCode === 75) {
+        console.log(e.keyCode);
+        background.style.background = "orange";
+    }
+}); 
 
-
+// keyup when K is released, change background to "green"
+document.addEventListener("keyup", e => {
+    if(e.keyCode === 75) {
+        background.style.background = "green";
+    }
+});
 
 
 let red = 0;
