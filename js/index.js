@@ -49,7 +49,7 @@ document.querySelector('body').addEventListener('dblclick', () => {
 // added rotations for nav links
 const headerSelector = document.querySelector('header')
 headerSelector.addEventListener('click', () => {
-  console.log('header clicked')
+  alert('header clicked')
 })
 
 const navItems = document.querySelectorAll('nav a')
@@ -98,7 +98,6 @@ firstImage.addEventListener('load', () => {
       }
       firstImageBorder--
     }
-
   }, 10)
 })
 
@@ -118,8 +117,17 @@ document.querySelector('body').addEventListener('keypress', event => {
 const bodySelector = document.querySelector('body')
 let backgroundGrey = false
 document.querySelector('body').addEventListener('wheel', () => {
-  bodySelector.style.background = !backgroundGrey ? '#efefef' : 'white'
+  bodySelector.style.background = !backgroundGrey ? 'yellow' : 'white'
   backgroundGrey = !backgroundGrey ? true : false
 })
 
+// green sock animations
+TweenMax.to('.logo-heading', 1, { rotation: 360 })
 
+const allSubHeaders = document.querySelectorAll('h2')
+allSubHeaders.forEach(subHeader => {
+  subHeader.addEventListener('click', event => {
+    event.stopPropagation()
+    TweenMax.to(subHeader, 1, { rotation: 360 })
+  })
+})
