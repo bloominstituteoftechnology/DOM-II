@@ -58,6 +58,17 @@ document.querySelector('.intro h2').addEventListener('mouseout', (e) => {
     e.target.innerHTML = 'Welcome to Fun Bus!';
 });
 
-document.querySelectorAll('.nav a').addEventListener('click' (e) => {
+document.querySelector('.container').addEventListener('click', (e) => {
+    console.log('container was clicked');
+    e.stopPropagation();
+    e.target.style.color = 'red';
+});
+
+document.querySelector('.content-destination p').addEventListener('click', (e) => {
+    console.log('p was clicked');
+    e.target.style.color = 'red';
+});
+
+document.querySelectorAll('.nav a').addEventListener('click', (e) => {
     e.preventDefault();
-})
+});
