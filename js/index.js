@@ -62,22 +62,45 @@ let borderThickness = 0
 const firstSectionImage = document.querySelector('section img')
 firstSectionImage.addEventListener('drag', event => {
   console.log(event)
-  //firstSectionImage.style.visibility = 'hidden'
   firstSectionImage.style.border = `${borderThickness}px solid red`
   borderThickness++
 })
 
 firstSectionImage.addEventListener('dragend', event => {
   console.log(event)
-  firstSectionImage.style.visibility = 'visible'
   firstSectionImage.style.border = ''
   borderThickness = 0
 })
 
+// added bounching border to first image on load
+let firstImageBorder = 0
+let assending = true
+
+const firstImage = document.querySelector('.home img')
+firstImage.addEventListener('load', () => {
+  setInterval(() => {
+    firstImage.style.border = `${firstImageBorder}px solid black`
+    if (assending) {
+      if (firstImageBorder === 10) {
+        assending = false
+      }
+      firstImageBorder++
+    } else {
+      if (firstImageBorder === 0) {
+        assending = true
+      }
+      firstImageBorder--
+    }
+
+  }, 10)
+})
+
+
+
 //
 // keydown
 //
-// drag / drop
+// 
 // load
 // focus
 // resize
