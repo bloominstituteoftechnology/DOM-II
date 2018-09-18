@@ -36,6 +36,15 @@ window.addEventListener('resize', () => {
 });
 
 // Added alert when page load
-window.addEventListener('load', () => {
-    alert('Welcome to Fun Bus!');
+// window.addEventListener('load', () => {
+//     alert('Welcome to Fun Bus!');
+// });
+
+//Added click to add border and dbl click to remove border
+document.querySelector('.intro').addEventListener('click', (e) => {
+    e.target.style.border = '2px solid black';
+});
+
+document.querySelector('.intro').addEventListener('dblclick', (e) => {
+    e.target.style.border = '';
 });
