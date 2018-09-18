@@ -1,6 +1,8 @@
 // Your code goes here
 
-// pointerover + pointerout + prevent default
+// 1. pointerover
+// 2. pointerout
+// prevent default
 document.querySelectorAll('nav > a').forEach(n => {
     n.addEventListener('click', e => {
         e.preventDefault();
@@ -15,7 +17,9 @@ document.querySelectorAll('nav > a').forEach(n => {
     });
 });
 
-// doubleclick + click + preventing event propagation
+// 3. doubleclick 
+// 4. click
+// preventing event propagation
 document.querySelectorAll('.btn').forEach(n => {
     n.addEventListener('click', e => {
         e.stopPropagation();
@@ -41,7 +45,8 @@ document.querySelectorAll('.content-pick > *').forEach(n => {
 
 
 
-// keydown + key up
+// 5. keydown 
+// 6. key up
 const randomRGB = () => Math.floor(Math.random() * Math.floor(255));
 let body = document.querySelector('body');
 body.addEventListener('keydown', e => {
@@ -53,7 +58,7 @@ body.addEventListener('keyup', e => {
 });
 
 
-//wheel
+// 7. wheel
 let content = document.querySelectorAll('.home > *');
 content.forEach((n, i) => {
     if(i === 0 || i === 1){return}
@@ -61,7 +66,7 @@ content.forEach((n, i) => {
     // n.style.transition = 'all 1500ms ease-in-out';
 });
 
-document.querySelector('body').addEventListener('wheel', e => {
+body.addEventListener('wheel', e => {
     // console.log(e.pageY);
     if(e.pageY >= 300){
         content[2].style.transition = 'all 1500ms ease-in-out';
@@ -76,4 +81,16 @@ document.querySelector('body').addEventListener('wheel', e => {
         content[4].style.transform = 'translateY(0px)';
     }
 });
+
+// 8. mousemove
+function randomCursor() {
+    const cursors = ['n-resize', 'e-resize', 's-resize', 'w-resize', 'ne-resize', 'nw-resize', 'se-resize', 'sw-resize', 'ew-resize', 'ns-resize', 'nesw-resize', 'nwse-resize']
+    const num = Math.floor(Math.random() * Math.floor(cursors.length));
+    return cursors[num];
+}
+
+body.addEventListener('mousemove', (e) => {
+    e.target.style.cursor = randomCursor();
+
+})
 
