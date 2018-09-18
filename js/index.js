@@ -92,3 +92,12 @@ getImg[0].addEventListener('mouseenter', (event) => {
         rotate: 360,
      });
     });
+
+
+    getImg[0].addEventListener('load', (event) => {
+        getImg[1].style.backgroundColor = "red";
+    });
+
+        getImg[0].addEventListener('focus', (event) => {
+            getImg[1].style.backgroundColor = "blue";
+        });
