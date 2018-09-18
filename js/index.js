@@ -1,11 +1,11 @@
 // Your code goes here
 
 //=====================1==================== nav bar
-const mainNav = document.querySelector('.main-navigation') 
-mainNav8.addEventListener ('click', (event) => {
+const mainNav9 = document.querySelector('.main-navigation') 
+mainNav9.addEventListener ('click', (event) => {
     mainNav.classList.add('fade')
 })
-console.log(mainNav8)
+console.log(mainNav9)
 //======================2====================== nav bar items
 const navItems = document.querySelectorAll('.nav a')
 navItems.addEventListener ('click', (event) => {
