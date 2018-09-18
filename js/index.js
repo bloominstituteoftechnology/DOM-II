@@ -62,23 +62,22 @@ body.addEventListener('keyup', e => {
 let content = document.querySelectorAll('.home > *');
 content.forEach((n, i) => {
     if(i === 0 || i === 1){return}
-    n.style.transform = `translateY(${window.innerHeight + 100}px)`;
-    // n.style.transition = 'all 1500ms ease-in-out';
+    n.style.opacity = '0';
 });
 
 body.addEventListener('wheel', e => {
     // console.log(e.pageY);
     if(e.pageY >= 300){
         content[2].style.transition = 'all 1500ms ease-in-out';
-        content[2].style.transform = 'translateY(0px)';
+        content[2].style.opacity = '1';
     }
     if(e.pageY >= 900){
         content[3].style.transition = 'all 1500ms ease-in-out';
-        content[3].style.transform = 'translateY(0px)';
+        content[3].style.opacity = '1';
     }
     if(e.pageY >= 1250){
         content[4].style.transition = 'all 1500ms ease-in-out';
-        content[4].style.transform = 'translateY(0px)';
+        content[4].style.opacity = '1';
     }
 });
 
@@ -115,6 +114,6 @@ setInterval(() => {
     tl.to(allImages[num], 0.25, {scale: 1.01, rotate: 1});
     tl.to(allImages[num], 0.25, {scale: 1.01, rotation: -1});
     tl.to(allImages[num], 0.25, {scale: 1, rotation: 0});
-}, 1000)
+}, 2000)
 
 
