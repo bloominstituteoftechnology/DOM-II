@@ -17,3 +17,15 @@ home.addEventListener('wheel', (event) => {
   console.log(randomColor);
   event.currentTarget.style.backgroundColor = `${randomColor}`;
 });
+
+const links = document.querySelectorAll('.main-navigation .container nav a');
+links.forEach(function(link) {
+  link.addEventListener('mouseover', (event) => {
+    event.target.style.color = `${getRandomColor()}`;
+    event.target.style.fontWeight = 'bolder';
+  });
+  link.addEventListener('mouseout', (event) => {
+    event.target.style.color = 'black';
+    event.target.style.fontWeight = 'normal';
+  });
+});
