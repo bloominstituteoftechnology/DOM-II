@@ -41,3 +41,7 @@ for (let i = 0; i < p.length; i++) {
     p[i].style.fontWeight = 'bold';
     });       
 }
+
+window.addEventListener('copy', (event) => {
+    alert('Please give credit to the author.');
+});
