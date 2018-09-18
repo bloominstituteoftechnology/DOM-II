@@ -1,6 +1,6 @@
 // Your code goes here
 // mouseover ---- Used on "Let's Go!" img
-// keydown ------
+// keydown ------ Used on body bg color
 // wheel -------- Used on nav
 // drag / drop --
 // load --------- Used on window
@@ -17,6 +17,13 @@ imgContent[0].addEventListener("mouseover", function(e) {
   e.target.style.transition = ".4s";
 });
 
+// =========== KEYDOWN ==========
+let body = document.querySelector("body");
+body.addEventListener("keydown", function(e) {
+  e.target.style.backgroundColor = "#ccc";
+  e.target.style.transition = "5s";
+});
+
 // =========== WHEEL ==========
 let nav = document.querySelector(".main-navigation");
 window.addEventListener("wheel", function() {
@@ -31,6 +38,16 @@ window.addEventListener("load", function() {
   alert("Welcome to Fun Bus!");
 });
 
+// =========== FOCUS ==========
+let form = document.querySelector(".cta-form");
+form.addEventListener(
+  "focus",
+  function(e) {
+    e.target.style.backgroundColor = "#f4f4f4";
+  },
+  true
+);
+
 // =========== SCROLL ==========
 let funBusIcon = document.querySelector("#bus-icon img");
 let html = document.querySelector("html");
@@ -44,15 +61,7 @@ window.addEventListener(
   true
 );
 
-// =========== FOCUS ==========
-let input = document.querySelector(".cta-form");
-input.addEventListener(
-  "focus",
-  function(e) {
-    e.target.style.backgroundColor = "#f4f4f4";
-  },
-  true
-);
+// =========== SELECT ==========
 
 // =========== DOUBLE CLICK ==========
 let destinationImg = document.querySelector(".content-destination img");
