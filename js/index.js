@@ -2,9 +2,9 @@
 /*
 1. click 
 2. scroll 
-3. submit
+3. auxclick
 4. mouse over 
-5. reset 
+5. on cut
 4. on copy 
 5. on dbl click
 6. touch list  
@@ -12,10 +12,12 @@
 10. on text select -
 */
 
+
 //--- 1 --- CLICK 
 const imageClick = document.querySelectorAll('img');
-imageClick.addEventListener ('click', () => {
-    console.log("hey look - you clicked me!");
+
+imageClick[0].addEventListener ('click', () => {
+ console.log("hey look - you clicked me!");
 });
 console.log(imageClick);
 
@@ -27,8 +29,26 @@ scrollOptIn.addEventListener ('scroll',() => {
  console.log(scrollOptIn);
 
 
-//--- 3 --- SCROLL
+//--- 3 --- AUXCLICK
+const auxClick = document.querySelector("#homePage");
+auxClick.addEventListener ('auxclick',() => {
+    console.log("woah - weird click");
+ });
+ console.log(auxClick);
 
+//--- 4 --- MOUSE OVER
+const mouseTickle = document.querySelectorAll("img");
+mouseTickle[1].addEventListener ('mouseover',() => {
+    console.log("hehehe - that's a ticklish spot");
+ });
+ console.log(mouseTickle);
+
+//--- 5 --- PRINT !!! not working
+const printText = document.querySelector("#homePage");
+printText.addEventListener ('beforeprint',() => {
+    alert ("Happy Printing!");
+ });
+ console.log(printText);
 
 /* --- TO TRY LATER --- 
 /*
