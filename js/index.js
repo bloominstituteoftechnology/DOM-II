@@ -29,3 +29,11 @@ links.forEach(function(link) {
     event.target.style.fontWeight = 'normal';
   });
 });
+
+const images = document.querySelectorAll('img');
+
+images.forEach(function(image) {
+  image.addEventListener('click', (event) => {
+    event.target.classList.toggle('inverted');
+  });
+});
