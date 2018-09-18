@@ -40,7 +40,7 @@ for (let i = 0; i < contImages.length; i++) {
     contImages[i].addEventListener('mousemove', () => {
         contImages[i].style.borderRadius = "50%";
         contImages[i].style.border = "solid hotpink 5px";
-        event.preventDefault();
+
     })
 }
 
