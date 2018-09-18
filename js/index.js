@@ -64,6 +64,16 @@ window.addEventListener("scroll", event => {
   mainHeader.style.opacity = 0.5;
 });
 
-bod.addEventListener("select", event => {
-  event.currentTarget.style.textDecoration = "underline";
+//added wheel event that changes footer to green
+const foot = document.addEventListener(".footer");
+window.addEventListener("wheel", event => {
+  foot.style.backgroundColor = "green";
 });
+
+//stopped default behaivor of anchor tags refreshing page on click
+const anchors = document.querySelectorAll("a");
+anchors.forEach(anchor =>
+  anchor.addEventListener("click", event => {
+    event.preventDefault();
+  })
+);
