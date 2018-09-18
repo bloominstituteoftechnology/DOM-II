@@ -16,3 +16,12 @@ imgContent[0].addEventListener("mouseover", function(e) {
   e.target.style.opacity = ".6";
   e.target.style.transition = ".4s";
 });
+
+// =========== WHEEL ==========
+let nav = document.querySelector(".main-navigation");
+window.addEventListener("wheel", function() {
+  nav.style.backgroundColor = "#17A2B8";
+  nav.style.color = "white";
+  nav.style.border = "2px solid #17A2B8";
+  nav.style.transition = "1s";
+});
