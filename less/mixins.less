@@ -30,3 +30,11 @@
     color: @button-bg;
   }
 }
+
+.transform(@scaleX, @scaleY) {
+    -moz-transform: scale(@scaleX, @scaleY);
+    -webkit-transform: scale(@scaleX, @scaleY);
+    -o-transform: scale(@scaleX, @scaleY);
+    -ms-transform: scale(@scaleX, @scaleY);
+    transform: scale(@scaleX, @scaleY);
+}

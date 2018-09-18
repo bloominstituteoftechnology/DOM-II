@@ -1,7 +1,7 @@
 // Your code goes here
 //
-// use wheel to change home container background color
-//
+// generate a random color
+
 function getRandomColor() {
   const colors = [];
   for (let i = 0; i < 3; i++) {
@@ -10,6 +10,8 @@ function getRandomColor() {
   }
   return `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
 }
+
+// scrolling applies random color to container background
 const home = document.querySelector('.home');
 home.addEventListener('wheel', (event) => {
   console.log('hello');
@@ -18,6 +20,7 @@ home.addEventListener('wheel', (event) => {
   event.currentTarget.style.backgroundColor = `${randomColor}`;
 });
 
+//links are randomly colored when moused over
 const links = document.querySelectorAll('.main-navigation .container nav a');
 links.forEach(function(link) {
   link.addEventListener('mouseover', (event) => {
@@ -30,10 +33,16 @@ links.forEach(function(link) {
   });
 });
 
+// images are inverted when clicked
 const images = document.querySelectorAll('img');
-
 images.forEach(function(image) {
   image.addEventListener('click', (event) => {
     event.target.classList.toggle('inverted');
   });
 });
+
+// header text is flipped when double-clicked
+const header = document.querySelector('header');
+header.addEventListener('dblclick', (event) => {
+  event.target.classList.toggle('flipped');
+})
