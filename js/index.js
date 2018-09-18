@@ -85,3 +85,11 @@ destH3.addEventListener('mousemove', (e) => {
     destH3.classList.toggle('dest-h3')
 })
 
+// Remove default functionality of nav
+
+const myNav = document.querySelector('.nav');
+console.log(myNav)
+
+myNav.addEventListener('click', (e) => {
+    e.preventDefault();
+})
