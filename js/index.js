@@ -6,7 +6,7 @@ const wholePage = document.querySelector('body');
 const funBus = document.querySelector('#funBus');
 const signUpButton = document.querySelectorAll('.btn');
 const intro = document.querySelector('.intro');
-const search = document.querySelector(".fa-search");
+const lock = document.querySelector(".lock");
 const destHeader = document.querySelectorAll('.destination h4')
 const contentHeader = document.querySelectorAll('.text-content h2');
 
@@ -45,9 +45,25 @@ destHeader.forEach(e => {
     })
 })
 
+//changes all the color for the parent element to pink
 contentHeader.forEach(e => {
-    e.addEventListener('select', function( event ) {
-        event.target.parentNode.childNodes.style.color = 'pink';
+    e.addEventListener('mouseenter', function( event ) {
+        event.target.parentNode.style.color = 'pink';
     })
 })
-console.log(contentHeader);
+
+lock.addEventListener('click', function( e ) {
+    lock.classList.toggle('fa-lock-open');
+    lock.classList.toggle('fa-lock');
+})
+
+wholePage.addEventListener('keydown', function( e ) {
+    e.target.style.backgroundColor = 'red';
+})
+
+wholePage.addEventListener('keyup', function( e ) {
+    e.target.style.color = 'yellow';
+})
+
+
+    // < i class="fas fa-lock" ></i >
