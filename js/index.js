@@ -62,12 +62,16 @@ const logIn = document.querySelector('.main-navigation .login');
 
 //click
 const myHeading = document.querySelector('.intro p');
+const headingSection = document.querySelector('.intro');
 
-myHeading.addEventListener('click', (event) => {
-    event.target.style.color = "magenta";
-    event.stopPropagation();
+headingSection.addEventListener('click', (event) => {
+    event.target.style = 'background-color: magenta';
 });
 
+myHeading.addEventListener('click', (event) => {
+    event.target.style.color = "yellow";
+    event.stopPropagation();
+})
 
  
 
