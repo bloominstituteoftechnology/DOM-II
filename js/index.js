@@ -10,3 +10,11 @@ for (let i = 0; i<animateBTN.length; i++) {
  })
 }
 //------------------------------------------------------------------------
+window.addEventListener("load", function(event) {
+    alert("Prepare for Fun Bus!!!");
+  });
+//------------------------------------------------------------------------
+let animateForm = document.querySelector('.intro')
+animateForm.addEventListener("blur", function( event ) {
+    event.target.style.background = "black";    
+  }, true);
