@@ -19,7 +19,7 @@ let wordIndex = 0
 
 const introParagraph = document.querySelector('.home p')
 const introParagraphContent = introParagraph.innerHTML
-introParagraph.addEventListener('wheel', () => {
+introParagraph.addEventListener('mousemove', () => {
   introParagraph.innerHTML = introParagraphContent
     .split(' ')
     .map(
@@ -95,7 +95,7 @@ firstImage.addEventListener('load', () => {
   }, 10)
 })
 
-// 
+// overwrite text on keypress
 const sectionToOverwrite = document.querySelector('.ready-to-be-overwritten')
 let overwriteMode = false
 document.querySelector('body').addEventListener('keypress', event => {
@@ -106,6 +106,16 @@ document.querySelector('body').addEventListener('keypress', event => {
     sectionToOverwrite.innerHTML += event.key
   }
 })
+
+// rotate background color on scroll
+const bodySelector = document.querySelector('body')
+let backgroundGrey = false
+document.querySelector('body').addEventListener('wheel', () => {
+  bodySelector.style.background = !backgroundGrey ? '#efefef' : 'white'
+  backgroundGrey = !backgroundGrey ? true : false
+})
+
+
 
 
 
