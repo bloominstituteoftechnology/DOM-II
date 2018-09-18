@@ -49,3 +49,61 @@ img {
     margin: 0 5%;
   }
 }
+
+
+.display-none {
+  animation-name: fadeIn;
+  animation-duration: 5s;
+}
+
+@keyframes fadeIn {
+  20% {opacity: .5} 
+  40% {opacity: .3}
+  60% {opacity: .1}
+  80% {opacity: .05}
+  100% {opacity: .0}
+}
+
+.greyscale {
+  filter: grayscale(100%);
+}
+
+.zoom {
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.flash {
+  opacity: 1;
+	-webkit-animation: flash 2.5s;
+	animation: flash 2.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+
