@@ -18,11 +18,24 @@ mouseOver.forEach((h2) => {
         }, false);
 });
 
-let dblClick = document.querySelector('.intro img');
-dblClick.addEventListener('dblclick', () => {
-    dblClick.classList.toggle('display');
+let dblClick = document.querySelectorAll('.home img');
+dblClick.forEach((img) => {
+    img.addEventListener('dblclick', () => {
+        img.classList.toggle('display');
 
     setTimeout(function() {
-        dblClick.classList.toggle('display');
+        img.classList.toggle('display');
       }, 10000);
     }, false);
+});
+
+
+document.addEventListener('keydown', (e) => {
+    e.key;
+    alert('WHY DID YOU DO THAT?!?!?!?! ');
+});
+
+
+
+
+
