@@ -215,6 +215,29 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .logo-move {
+  animation: logoAnimation 0.5s infinite;
+}
+@keyframes logoAnimation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    color: #E91E63;
+  }
+  25% {
+    color: #0a3d62;
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+    color: #3dc1d3;
+  }
+  75% {
+    color: #3ae374;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    color: #FFC107;
+  }
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;

@@ -41,4 +41,27 @@
       }
     }
   }
+  .logo-move{
+    animation: logoAnimation .5s infinite;
+  }
+  @keyframes logoAnimation{
+    0%{
+        transform: rotate(0deg) scale(1);
+        color:#E91E63; 
+    }
+    25% {
+        color:#0a3d62;
+    }
+    50% {
+        transform: rotate(360deg) scale(1.20);
+        color:#3dc1d3;
+    }
+    75% {
+        color:#3ae374;
+    }
+    100%{
+        transform: rotate(720deg) scale(1);
+        color:#FFC107; 
+    }
+  }
 } // .main-navigation
