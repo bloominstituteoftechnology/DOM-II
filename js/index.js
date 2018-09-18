@@ -47,10 +47,17 @@ document.querySelector('body').addEventListener('dblclick', () => {
 })
 
 // added rotations for nav links
+const headerSelector = document.querySelector('header')
+headerSelector.addEventListener('click', () => {
+  console.log('header clicked')
+})
+
 const navItems = document.querySelectorAll('nav a')
 const rotations = [...Array(navItems.length)].map(() => 30)
 navItems.forEach((item, i) =>
-  item.addEventListener('click', () => {
+  item.addEventListener('click', event => {
+    event.stopPropagation()
+    event.preventDefault()
     item.style.transform = `rotateZ(${rotations[i]}deg)`
     rotations[i] += 30
   })
@@ -116,16 +123,3 @@ document.querySelector('body').addEventListener('wheel', () => {
 })
 
 
-
-
-
-//
-// keydown
-//
-// 
-// load
-// focus
-// resize
-// scroll
-// select
-//
