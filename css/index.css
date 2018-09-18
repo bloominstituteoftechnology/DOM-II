@@ -365,7 +365,7 @@ img {
 }
 .content-pick .destination .modal .modal-content {
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;

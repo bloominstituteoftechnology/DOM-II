@@ -18,7 +18,6 @@ function changeColor(event) {
 logoHeading.addEventListener('mouseover', changeColor);
 logoHeading.addEventListener('mouseout', changeColor);
 
-
 // #3 when keydown, Home link hidden
 // #4 when keyup, Home link shown
 const navItems = document.querySelectorAll('.main-navigation nav a');
@@ -72,10 +71,18 @@ adventureImg.addEventListener('mouseleave', () => {
 const funImg = document.querySelector('.inverse-content .img-content img');
 funImg.addEventListener('mousedown', () => {
   funImg.src = '../img/adventure.jpg';
+  // stretch
+  TweenMax.from(".inverse-content .img-content img", 3, {y:-100, ease:Power4.easeOut});
 });
 funImg.addEventListener('mousemove', () => {
   funImg.src = '../img/fun.jpg';
 });
+
+// stretch
+const destinationImg = document.querySelector('.content-destination img');
+destinationImg.addEventListener('click', function() {
+  TweenMax.from(".content-destination img", 3, {x:50, opacity:0, scale:0.5});
+})
 
 
 // #10 when button clicked, toggle modal
@@ -85,6 +92,8 @@ const closeButton = document.querySelectorAll('.destination .modal .modal-conten
 
 function toggleModal() {
   modal[0].classList.toggle("show-modal");
+  // stretch
+  TweenMax.to(".modal-content", 2, {y:50, ease:Bounce.easeOut});
 }
 
 trigger[0].addEventListener('click', toggleModal);
