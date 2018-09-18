@@ -226,6 +226,9 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.home {
+  background: gray;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
@@ -233,6 +236,7 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+  border: dotted blue 10px;
 }
 .home .intro h2 {
   margin-top: 20px;
@@ -246,6 +250,7 @@ img {
 .home .content-section .text-content {
   width: 48%;
   padding-right: 1%;
+  border: dotted green 8px;
 }
 @media (max-width: 500px) {
   .home .content-section .text-content {
