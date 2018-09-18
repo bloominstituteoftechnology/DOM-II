@@ -47,8 +47,8 @@ contentDes.addEventListener('click', (event)=>{
     event.target.style.backgroundColor='pink';
 });
 const contentImg= document.querySelector('.content-destination img');
-contentImg.addEventListener('click', (event)=>{
-    event.target.style.border.radius='50%';
+contentImg.addEventListener('drag', (event)=>{
+    event.target.style.borderRadius='50%';
     event.stopPropagation();
 
 });
