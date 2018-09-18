@@ -22,6 +22,9 @@
 // Event Listeners - Step 1: Get the reference
 const sitetitle = document.querySelector('.logo-heading');
 const busimage = document.querySelector('.intro img');
+const contentsection = document.querySelector('.content-section');
+const navlinks = document.querySelector('a');
+
 //console.log(busimage);
 // const home = document.querySelector('.home');
 // const myBtn = document.querySelector('.btn');
@@ -44,28 +47,20 @@ document.addEventListener('keydown', (event) => {
 
 //Event 3 - Swap bus image if wheel is used over the bus image. 
 busimage.addEventListener('wheel', (event) =>  {
-  busimage.setAttribute('src', 'beachbus.jpg')
+  busimage.setAttribute('src', 'img/beachbus.jpeg')
 });
 
+//Event 4
+//Adds a message to the console once the page loads. 
+window.addEventListener("load", function(event) {
+  console.log("All resources finished loading! Start!");
+});
 
+//Event 5
+//Changes Nav items to red when focused. 
+// Definition and Usage. The focus event occurs when an element gets focus (when selected by a mouse click or by "tab-navigating" to it). The focus() method triggers the focus event, or attaches a function to run when a focus event occurs. Tip: This method is often used together with the blur() method.
 
-
-// homeTag.addEventListener('click', (event) => {
-//   event.preventDefault();
-// });
-// myBtn.addEventListener('click', (event) => {
-
-
-//Step 3: Do something!
-//   TweenMax.to(".main-nav", 10, {
-//     opacity: 0
-//   });
-
-// event.target is whatever we are interacting with
-//console.log(event.target);
-
-// event.currentTarget is whatever we assigned the event listener to
-//console.log(event.currentTarget);
-  
-//event.currentTarget.style.color = "red";
-//myParagraph.classList.toggle('change');
+//Currently just does the first one, need to update using forEach.
+navlinks.addEventListener("focus", function(event) {
+  navlinks.style.color = 'red';
+});
