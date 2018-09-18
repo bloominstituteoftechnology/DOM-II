@@ -15,9 +15,12 @@ let images = document.querySelectorAll('img');
 
 for (let i = 0; i < images.length; i++){
     images[i].addEventListener('mouseover', (event) => {
-        // event.target.style.filter = 'grayscale(100%)';
-        //console.log(images);
-        // 
+    images[i].classList.toggle('grayscale');
+    });
+}
+
+for (let i = 0; i < images.length; i++){
+    images[i].addEventListener('mouseleave', (event) => {
     images[i].classList.toggle('grayscale');
     });
 }
