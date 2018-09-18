@@ -4,8 +4,9 @@ const myBtn = document.querySelector('.btn');
 const contentPick = document.querySelector('.content-pick');
 const myHeader = document.querySelectorAll('.home h2');
 const myNav = document.querySelector('body');
+const readerProgress = document.querySelector('.progress');
 
-console.log(myNav);
+
 
 contentPick.addEventListener('click', () => {
     contentPick.classList.toggle('change-background');
@@ -30,9 +31,13 @@ myNav.addEventListener('keydown', (e) => {
         document.body.style.background = 'darkblue';
     }
 });
-myNav.addEventListener('keydown', e => {
+myNav.addEventListener('keydown', (e) => {
     if (e.key =='a'){
         document.body.style.background = 'white';
     }
 });
 
+window.addEventListener("scroll", () => {
+    let max = document.body.scrollHeight - innerHeight;
+    readerProgress.style.width = `${(pageYOffset / max) * 100}%`;
+  });
