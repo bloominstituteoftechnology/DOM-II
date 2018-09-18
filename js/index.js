@@ -7,7 +7,6 @@ window.addEventListener("load", (event) => {
       });
 });
 
-//let mainNavItem = document.querySelectorAll('.nav a');
 
 let images = document.querySelectorAll('img');
 
@@ -78,4 +77,12 @@ mainNavigationContainer.addEventListener('wheel', (event) => {
 
 window.addEventListener('beforeprint', (event) => {
     alert('Please click on link for printer friendly page structure. (there is none)');
+});
+
+
+let mainNavItems = document.querySelectorAll('.nav a');
+
+for (let i = 0; i < mainNavItems.length; i++)
+mainNavItems[i].addEventListener('click', (event) => {
+    event.preventDefault();
 })
