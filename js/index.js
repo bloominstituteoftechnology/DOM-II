@@ -32,4 +32,28 @@ const backgroundAdjust = document.querySelector('html');
 
 backgroundAdjust.addEventListener('wheel', ()=>{
     backgroundAdjust.style.backgroundColor = 'lightpink';
-})
+});
+
+const foots = document.querySelector('.footer');
+
+foots.addEventListener('dblclick', () => {
+    foots.style.backgroundColor = 'yellow';
+});
+
+const mainHeader = document.querySelector('.main-navigation');
+
+mainHeader.addEventListener('dblclick', ()=>{
+    mainHeader.style.backgroundColor = 'cornflowerblue';
+    mainHeader.stopPropagation();
+});
+
+backgroundAdjust.addEventListener('keydown', ()=>{
+    backgroundAdjust.style.backgroundColor = 'mediumslateblue';
+}); 
+
+window.addEventListener('resize', ()=>{
+    backgroundAdjust.style.backgroundColor = 'orange'
+});
+
+
+  
