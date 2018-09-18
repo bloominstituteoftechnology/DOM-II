@@ -181,6 +181,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
+
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -351,4 +352,14 @@ img {
   color: #17A2B8;
 }
 
-gg
+.fade {
+  opacity: 0.5;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.change {
+  visibility: hidden;
+}
