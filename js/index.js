@@ -2,11 +2,10 @@
 
 //=====================1==================== nav bar
 const mainNav = document.querySelector('.main-navigation') 
-mainNav.addEventListener ('click', (event) => {
-    something
+mainNav8.addEventListener ('click', (event) => {
+    mainNav.classList.add('fade')
 })
-console.log(mainNav)
-
+console.log(mainNav8)
 //======================2====================== nav bar items
 const navItems = document.querySelectorAll('.nav a')
 navItems.addEventListener ('click', (event) => {
@@ -17,7 +16,7 @@ console.log(navItems)
 //====================3==================== let's go part
 const upperContent = document.querySelector('.content-section')
 upperContent.addEventListener ('click', (event) => {
-    something
+    
 })
 console.log(upperContent)
 
