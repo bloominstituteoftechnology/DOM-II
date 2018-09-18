@@ -7,7 +7,7 @@ let contentImg = document.querySelectorAll('.img-content img');
 let btns = document.querySelectorAll('.btn');
 
 window.addEventListener('load', () => {
-  document.body.style.backgroundColor = 'lightgrey';
+  TweenMax.from(document.body, 2.5, {opacity: 0});
 })
 window.addEventListener('keydown', e => {
   headerH2.innerText = 'Welcome To Fun ' + e.key + 'us!';
@@ -21,8 +21,11 @@ window.addEventListener('resize', e => {
   newP.innerText = 'Width: ' + e.target.innerWidth + ' Height: ' + e.target.innerHeight;
 })
 
-logoHeading.parentNode.addEventListener('click', () => {
-  console.log('clicked');
+logoHeading.parentNode.addEventListener('mouseover', () => {
+  logoHeading.innerText = 'Click me!';
+})
+logoHeading.parentNode.addEventListener('mouseleave', () => {
+  logoHeading.innerText = 'Fun Bus';
 })
 logoHeading.addEventListener('click', e => {
   e.stopPropagation();
@@ -44,10 +47,10 @@ navA[3].addEventListener('focus', () => {
 })
 
 headerImg.addEventListener('mouseover', () => {
-  headerImg.style.opacity = '0.3';
+  TweenMax.to(headerImg, 1, {opacity: 0.3});
 })
 headerImg.addEventListener('mouseleave', () => {
-  headerImg.style.opacity = '1';
+  TweenMax.to(headerImg, 1, {opacity: 1});
 })
 
 contentImg[1].addEventListener('drag', e => {
@@ -56,5 +59,5 @@ contentImg[1].addEventListener('drag', e => {
 
 btns.forEach(btn => btn.addEventListener('dblclick', () => {
   btn.style.backgroundColor = 'white';
-  btn.style.color = '#00a5bb'
+  btn.style.color = '#00a5bb';
 }))
