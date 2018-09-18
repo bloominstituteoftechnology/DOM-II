@@ -1,10 +1,11 @@
 var logoz = document.querySelector('.logo-heading');
 const travelz = document.getElementById('traveling');
 const learnButton = document.getElementById('learnMore');
-console.log(learnButton);
+const sign = document.querySelectorAll('.btn');
+const picz = document.querySelectorAll('img');
+console.log(sign);
 
-
-
+console.log(picz);
 
 // #1
 
@@ -24,14 +25,32 @@ learnButton.addEventListener('click', () => {
     console.log("#2 works!");
 });
 
-
 // #3
 
 // #4
+sign[0].addEventListener('click', (event) => {
+    event.target.innerHTML = "Signed up!";
+    event.target.style.color = "white";
+    event.target.style.background =  'red';
+});
 
-// #5
+sign[1].addEventListener('click', (event) => {
+    event.target.innerHTML = "Signed up!";
+    event.target.innerHTML = "Signed up!";
+
+    event.target.style.color = "red";
+    event.target.style.background =  'White';
+});
+
+sign[2].addEventListener('click', (event) => {
+    event.target.innerHTML = "Signed up!";
+    event.target.style.color = "white";
+    event.target.style.background =  'blue';
+});
 
 // #6
+
+
 
 // #7
 
