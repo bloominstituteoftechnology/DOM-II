@@ -45,3 +45,17 @@ for (let i = 0; i < p.length; i++) {
 window.addEventListener('copy', (event) => {
     alert('Please give credit to the author.');
 });
+
+
+
+for (let i = 0; i < p.length; i++) {
+    p[i].addEventListener('auxclick', (event) => {
+    p[i].style.fontSize = '2rem';
+    });      
+}
+
+
+let h1 = document.querySelector('h1');
+    h1.addEventListener('contextmenu', (event) => {
+        TweenMax.to(h1, 3, {x:100})
+    });
