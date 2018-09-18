@@ -1,13 +1,13 @@
 // Your code goes here
 const header = document.querySelector('.main-navigation');
 
-header.addEventListener('click', () => {
+header.addEventListener('dblclick', () => {
     header.classList.toggle('header')
 })
 
 const logoHeading = document.querySelector('.logo-heading');
 
-logoHeading.addEventListener('click', (event) => {
+logoHeading.addEventListener('mouseenter', (event) => {
     event.stopPropagation();
     logoHeading.classList.toggle('logoHeading');
 })
@@ -52,20 +52,20 @@ button4.addEventListener('click', (event) => {
 
 const image1 = document.querySelector('.intro img');
 
-image1.addEventListener('click', (event) => {
+image1.addEventListener('mouseup', (event) => {
     event.stopPropagation();
     image1.classList.toggle('image1');
 })
 const image2 = document.querySelector('.img-content img');
 
-image2.addEventListener('click', (event) => {
+image2.addEventListener('mousedown', (event) => {
     event.stopPropagation();
     image2.classList.toggle('image2');
 })
 
 const image3 = document.querySelector('.inverse-content img');
 
-image3.addEventListener('click', (event) => {
+image3.addEventListener('select', (event) => {
     event.stopPropagation();
     image3.classList.toggle('image3');
 })
@@ -74,7 +74,7 @@ const footerButtons = document.querySelectorAll('.btn');
 
 const footerButton1 = footerButtons[0];
 
-footerButton1.addEventListener('click', (event) => {
+footerButton1.addEventListener('keydown', (event) => {
     event.stopPropagation();
     const contentPick = document.querySelector('.content-pick');
     contentPick.classList.toggle('footerButton1');
@@ -82,7 +82,7 @@ footerButton1.addEventListener('click', (event) => {
 
 const footerButton2 = footerButtons[1];
 
-footerButton2.addEventListener('click', (event) => {
+footerButton2.addEventListener('keyup', (event) => {
     event.stopPropagation();
     const contentPick = document.querySelector('.content-pick');
     contentPick.classList.toggle('footerButton2');
@@ -90,23 +90,16 @@ footerButton2.addEventListener('click', (event) => {
 
 const footerButton3 = footerButtons[2];
 
-footerButton3.addEventListener('click', (event) => {
+footerButton3.addEventListener('keypress', (event) => {
     event.stopPropagation();
     const contentPick = document.querySelector('.content-pick');
     contentPick.classList.toggle('footerButton3');
 })
 
 
-const bigOlButton = document.querySelector('.btn-big');
-bigOlButton.addEventListener('click', (event) => {
-    event.stopPropagation();
-    event.
-    const contentPick = document.querySelector('.content-pick');
-    const newDiv = document.createElement('div');
-    newDiv.style.height = "100px";
-    newDiv.style.width = "200px";
-    newDiv.style.margin = "50px auto"
-    newDiv.style.backgroundColor = 'rgb(100,230,100)';
-    contentPick.append(newDiv);
+const colorDiv = document.querySelector('.colorDiv');
 
+colorDiv.addEventListener('mousemove', (event) => {
+    event.stopPropagation();
+    colorDiv.style.backgroundColor = 'rgb('+event.offsetX+','+event.offsetY+',40)'
 })
