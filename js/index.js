@@ -128,6 +128,6 @@ const allSubHeaders = document.querySelectorAll('h2')
 allSubHeaders.forEach(subHeader => {
   subHeader.addEventListener('click', event => {
     event.stopPropagation()
-    TweenMax.to(subHeader, 1, { rotation: 360 })
+    TweenMax.from(subHeader, 1, { rotation: -360 })
   })
 })
