@@ -174,12 +174,19 @@ img {
     margin: 0 5%;
   }
 }
+#loading-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-top: 2rem solid black;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 1000;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -265,6 +272,8 @@ img {
 }
 .home .content-section .img-content img {
   border-radius: 10px;
+  filter: blur(10px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media (max-width: 500px) {
   .home .content-section .img-content img {
