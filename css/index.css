@@ -350,6 +350,30 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .btn-big {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 45px;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  border: 1px solid #C0C0C0;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  .home .btn-big {
+    width: 100%;
+  }
+}
+.home .btn-big:hover {
+  background: #FFFFFF;
+  color: #17A2B8;
+}
 .header {
   background-color: #FFEBCD;
 }
@@ -363,7 +387,7 @@ img {
   color: #17A2B8;
 }
 .button3 {
-  color: #17A2B8;
+  background-color: #17A2B8;
 }
 .button4 {
   text-decoration: underline;
@@ -381,8 +405,8 @@ img {
   background-color: #212529;
 }
 .footerButton2 {
-  font-family: Helvetica;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .footerButton3 {
-  line-height: 20px;
+  line-height: 50px;
 }
