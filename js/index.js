@@ -26,65 +26,58 @@ homeLink.addEventListener('click', (event) => {
   });
 
 
-// mouseover
+// mouseover - 1
 titleText.addEventListener('mouseover', (event) => {
     event.target.style.color = 'orange';
   });
 
-//keydown
+//keydown - 2
 window.addEventListener('keydown', (event) => {
-        navBar.style.color = 'magenta';
+        event.navBar.style.color = 'magenta';
   });
 
-// drag / drop
+// drag - 3
 buttons[0].addEventListener('dragstart', (event) => {
-    buttons[0].event.target.style.opacity = '.5';
+    event.target.style.opacity = '.5';
 });
 buttons[1].addEventListener('dragstart', (event) => {
-    buttons[1].event.target.style.opacity = '.5';
+    event.target.style.opacity = '.5';
 });
 buttons[2].addEventListener('dragstart', (event) => {
-    buttons[2].event.target.style.opacity = '.5';
+    event.target.style.opacity = '.5';
 });
 
-// load
-window.addEventListener('load', (event) => {
+// load - 4
+window.addEventListener('load', () => {
     console.log('Fun Bus page is done loading!');
   });
 
-// focus
+// focus - 5
 logIn.addEventListener('focus', (event) => {
     event.target.style.background = 'gray';
     event.target.style.color = 'white';
   }, true);
 
-//blur
+//blur - 6
 logIn.addEventListener('blur', (event) => {
       event.target.style.background = "";
   }, true);
 
 
-// copy
+// copy - 7
 document.addEventListener('copy', (event) => {
     event.clipboardData.setData('text/plain', 'You copied some text from the Fun Bus website!');
     event.preventDefault();
   });
 
 
-// scroll
+// scroll - 8
 window.addEventListener('scroll', () => {
           console.log('scrolled!');
   });
 
-// select **Not working**
-// const colorChange = document.querySelector('.main-navigation a');
 
-// colorChange.addEventListener('select', (event) => {
-//     event.target.style.color = 'pink';
-// }, false);
-
-
-//click
+//click - 9
 headingSection.addEventListener('click', (event) => {
     event.target.style = 'background-color: magenta';
 });
@@ -94,7 +87,7 @@ myHeading.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
-// dblclick
+// dblclick - 10
 introImg.addEventListener('dblclick', (event) => {
     event.currentTarget.classList.toggle('hide');
   });
