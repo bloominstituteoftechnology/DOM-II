@@ -2,7 +2,7 @@
 const headerH1 = document.querySelector('h1.logo-heading');
 const header = document.querySelector('.main-navigation');
 const funBusImg = document.querySelector('.container.home .intro img');
-const creepBusBtn = document.querySelector('a.nav-link');
+const links = document.querySelectorAll('a.nav-link');
 const body = document.querySelector('body');
 const mainHeading = document.querySelector('.container.home .intro h2');
 const letsGoH2 = document.querySelectorAll('.text-content h2')[0];
@@ -35,25 +35,33 @@ window.addEventListener('load', () => {
     })
   });
 
+  for (let i = 0; i < links.length; i++) {
+    if (links[i] == links[0]) {
+      links[0].addEventListener('click', (e) => {
+        // headerH1.preventPropagation;
+        e.target.preventPropagation;
+        headerH1.style.transition = '0.3s ease-in';
+        headerH1.innerText = 'Not so Fun Bus!';
+        funBusImg.removeAttribute('src');
+        funBusImg.setAttribute('src', 'img/creepyBus.jpg');
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        mainHeading.innerText = 'Welcome to the Creepy Bus!';
+        letsGoH2.innerText = 'Leave us a message';
+        yourMessage.innerText = '';
+        input.type = 'text';
+        input.className = 'myInput';
+        textContent.appendChild(input);
+        newP.className = 'newP';
+        textContent.appendChild(newP);
+      });
+    } else {
+      links[i].addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    }
+  }
 
-  creepBusBtn.addEventListener('click', (e) => {
-    // headerH1.preventPropagation;
-    e.target.preventPropagation;
-    headerH1.style.transition = '0.3s ease-in';
-    headerH1.innerText = 'Not so Fun Bus!';
-    funBusImg.removeAttribute('src');
-    funBusImg.setAttribute('src', 'img/creepyBus.jpg');
-    body.style.backgroundColor = 'black';
-    body.style.color = 'white';
-    mainHeading.innerText = 'Welcome to the Creepy Bus!';
-    letsGoH2.innerText = 'Leave us a message';
-    yourMessage.innerText = '';
-    input.type = 'text';
-    input.className = 'myInput';
-    textContent.appendChild(input);
-    newP.className = 'newP';
-    textContent.appendChild(newP);
-  })
 
   input.addEventListener('keyup', (e) => {
     e.target.preventPropagation;
@@ -82,7 +90,6 @@ window.addEventListener('load', () => {
     }
     //console.log(scrollYHome);
   })
-
 
 })
 
