@@ -350,6 +350,10 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home form {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
 .inverted {
   filter: invert(100%);
 }
@@ -359,4 +363,7 @@ img {
   -o-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
+}
+.hidden {
+  visibility: hidden;
 }

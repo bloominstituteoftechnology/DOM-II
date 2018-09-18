@@ -14,9 +14,7 @@ function getRandomColor() {
 // scrolling applies random color to container background
 const home = document.querySelector('.home');
 home.addEventListener('wheel', (event) => {
-  console.log('hello');
   const randomColor = getRandomColor();
-  console.log(randomColor);
   event.currentTarget.style.backgroundColor = `${randomColor}`;
 });
 
@@ -45,4 +43,33 @@ images.forEach(function(image) {
 const header = document.querySelector('header');
 header.addEventListener('dblclick', (event) => {
   event.target.classList.toggle('flipped');
-})
+});
+
+// everything hides when the 'h' key is pressed
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'h') {
+    document.body.classList.toggle('hidden');
+  }
+});
+
+// log when page has loaded
+window.addEventListener('load', (event) => {
+  console.log('the page has loaded!');
+});
+
+// focus and blur events for text inputs
+const inputs = document.querySelectorAll('input');
+inputs.forEach(function(input) {
+  input.addEventListener('focus', (event) => {
+    event.target.style.backgroundColor= 'slateblue';
+  });
+  input.addEventListener('blur', (event) => {
+    event.target.style.backgroundColor= 'white';
+  });
+});
+
+// preventDefault on submit button
+const submit = inputs[inputs.length - 1];
+submit.addEventListener('click', (event) => {
+  event.preventDefault();
+});
