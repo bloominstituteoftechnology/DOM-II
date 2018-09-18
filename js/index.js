@@ -66,6 +66,25 @@ window.addEventListener('load', () => {
   console.log('the page has loaded!');
 });
 
+// flipping the logo
+const funBus = document.querySelector('.logo-heading');
+const tl = new TimelineLite();
+tl.to(funBus, .5, {
+  delay: .5,
+  x:100, 
+  rotation:360,
+  scale: 2,
+  opacity: .5,
+  color: 'red'
+}).to(funBus, .3, {
+  x: 0,
+  rotation: -360,
+  scale: 1,
+  opacity: 1,
+  color: 'black',
+});
+
+
 // focus and blur events for inputs
 const inputs = document.querySelectorAll('input');
 inputs.forEach(function(input) {
