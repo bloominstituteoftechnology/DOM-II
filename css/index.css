@@ -253,6 +253,27 @@ img {
     padding: 0;
   }
 }
+.home .content-section .text-content .myInput {
+  width: 100%;
+  height: 100px;
+  border-radius: 25px;
+}
+.home .content-section .text-content .newP {
+  text-align: center;
+  text-decoration: none;
+  max-width: 100%;
+  margin-top: 20px;
+  height: 200px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 2px;
+  transition: 0.2s ease-in-out;
+  font-size: 2.5rem;
+  padding: 25px;
+  display: flex;
+}
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
@@ -293,9 +314,16 @@ img {
     order: 2;
   }
 }
+.home .bottom-stuff {
+  visibility: hidden;
+}
+.home .visible {
+  visibility: visible;
+}
 .home .content-destination {
   width: 75%;
   margin: 0 auto 30px;
+  transition: 0.3s ease-in-out;
 }
 @media (max-width: 500px) {
   .home .content-destination {
