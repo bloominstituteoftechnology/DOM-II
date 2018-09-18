@@ -55,9 +55,9 @@ this.style.marginLeft = '';
 
 //variables for traveler function
 
-
-let curLeft = 10;
-
+// old traveler function (no tweening)
+// let curLeft = 10;
+//
 // function traveler() {
 //     for (let i = 0; i < block.length; i++){
 //         block[i].removeAttribute('id');
@@ -70,10 +70,11 @@ let curLeft = 10;
 //         // curLeft = parseInt(curLeft) + 10;
 //         selected.style.marginLeft = curLeft + 'px';
 //         return curLeft;
-//     }, 200);
+//     }, 100);
 //
 //
 //    window.addEventListener('mouseup', function(){
+//      window.addEventListener('mousedown', traveler);
 //     if (go) clearInterval(go);
 //
 //     let back = setInterval(function(){
@@ -89,30 +90,37 @@ let curLeft = 10;
 //         curLeft = Math.min(Math.max(parseInt(curLeft) - 10, 10), 500);
 //         selected.style.marginLeft = curLeft + 'px';
 //         return curLeft;
-//     }, 200)//end setInterval(back)
+//     }, 100)//end setInterval(back)
 //    });
 // }; //end traveler
+// trying to put tweening in the old function
+// function go(){
+//
+//   let tween = TweenMax.to('#traveler', 4, {x: 1000});
+//   window.addEventListener('mouseup', function(){
+//     tween.pause();
+//   });
+//   window.addEventListener('mouseup', function(){
+//     tween.reverse();
+//   });
+//   window.addEventListener('mousedown', function(){
+//     tween.resume();
+//   })
+// }
+// go();
 
-
+//new traveler function with tweening
 function traveler(){
-      for (let i = 0; i < block.length; i++){
-          block[i].removeAttribute('id');
-      }
-      this.setAttribute('id', 'traveler');
-
-      function go(){
-
-        let tween = TweenMax.to('#traveler', 4, {x: 1000});
-        window.addEventListener('mouseup', function(){
-          tween.pause();
-        });
-        window.addEventListener('mouseup', function(){
-          tween.reverse();
-        });
-        // window.addEventListener('mousedown', function(){
-        //   tween.play();
-        // })
-      }
-      go();
-
+      let tween = TweenMax.to(this, 5, {x: 1000});
+      tween.delay(.25);
+      window.addEventListener('mouseup', function(){
+        tween.pause();
+      });
+      window.addEventListener('mouseup', function(){
+        tween.reverse();
+      });
+      window.addEventListener('mousedown', function(){
+        tween.reversed() ? tween.play() : tween.reverse();
+        tween.resume();
+      })
 }
