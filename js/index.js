@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
   console.log('the page has loaded!');
 });
 
-// focus and blur events for text inputs
+// focus and blur events for inputs
 const inputs = document.querySelectorAll('input');
 inputs.forEach(function(input) {
   input.addEventListener('focus', (event) => {
