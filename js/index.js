@@ -37,11 +37,21 @@ var pageHeight = 0;
   // The entire page height is found
   console.log('Page height is', pageHeight);
 })();
+const progressBar = document.getElementById('progress-bar');
+document.addEventListener('scroll', e => {
+  progressBar.setAttribute('style', `
+    width: ${(window.pageYOffset / viewportEnd)*100}%
+  `);
+})
 
+var viewportEnd = pageHeight - window.innerHeight;
 window.addEventListener('keydown' , e => {
-  let key = Number.parseInt(e.key) / 9
-  window.scroll({
-    top: pageHeight * key,
-    behavior: "instant"
-  })
+  console.log(e.keyCode)
+  if (e.keyCode >= 48 || e.keyCode <= 57) {
+    let key = Number.parseInt(e.key) / 9
+    window.scroll({
+      top: pageHeight * key,
+      behavior: "instant"
+    })
+  }
 });
