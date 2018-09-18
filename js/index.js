@@ -18,6 +18,10 @@ console.log(form)
 busImg.addEventListener('mouseover', () => {
   console.log('mouse went over')
   busImg.style.width = '95%';
+  TweenMax.to(busImg, .5, {
+    width: "740px",
+    height: "200px"
+  });
 });
 
 welcome.addEventListener('mouseover', () => {
