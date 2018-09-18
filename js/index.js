@@ -13,17 +13,21 @@ navLinks.forEach(link => link.addEventListener("mouseout", function(){
     link.style.textDecoration = 'none';
 }));
 
-// EVENT LISTENER #3 - select
-// document.querySelector('p').addEventListener("select", function(event){
-//     console.log(event.target)
-//     event.target.style.backgroundColor = 'yellow';
-// })
+// EVENT LISTENER #3 - mouseup
+const text = document.querySelectorAll('p');
+console.log(text);
+text.forEach(p => {
+    p.addEventListener('mouseup', function(event) {
+        console.log(event.target);
+        event.target.style.background = 'yellow'
+    })    
+});
 
 // EVENT LISTENER #4 - load 
 window.addEventListener("load", function(event) {
     setTimeout(function(){
         document.querySelector('.modal').style.display = 'none';
-    },1000);
+    },1000); //change to 3000
 });   
 
 // EVENT LISTENER #5 - Keydown
@@ -61,7 +65,6 @@ document.querySelectorAll('.btn').forEach(button => {
 window.addEventListener('copy', function(event) {
     alert('Why are you copying our site?');
 });   
-
 
 // EVENT LISTENER #10 - click
 document.querySelectorAll('.btn').forEach(button => {
