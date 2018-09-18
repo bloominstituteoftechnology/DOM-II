@@ -11,6 +11,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  opacity: 0;
+  transition: opacity 800ms;
+}
+
 h1,
 h2,
 h3,
@@ -88,4 +93,13 @@ img {
     font-family: 'Lato', sans-serif !important;
     font-weight: 100;
   }
+}
+
+.vanish {
+  opacity: 0;
+  transition: 500ms;
+}
+
+.show {
+  opacity: 1 !important;
 }

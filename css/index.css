@@ -136,6 +136,10 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
 }
+body {
+  opacity: 0;
+  transition: opacity 800ms;
+}
 h1,
 h2,
 h3,
@@ -201,6 +205,13 @@ img {
   font-family: 'Lato', sans-serif !important;
   font-weight: 100;
 }
+.vanish {
+  opacity: 0;
+  transition: 500ms;
+}
+.show {
+  opacity: 1 !important;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -208,6 +219,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
   z-index: 1000;
+  transition: height 400ms;
 }
 .main-navigation .nav-container {
   height: 100%;
