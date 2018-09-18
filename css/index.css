@@ -350,3 +350,7 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .change-background {
+  background-color: #17A2B8;
+  color: white;
+}
