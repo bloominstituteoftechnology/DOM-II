@@ -43,3 +43,13 @@ window.addEventListener(
   },
   true
 );
+
+// =========== FOCUS ==========
+let input = document.querySelector(".cta-form");
+input.addEventListener(
+  "focus",
+  function(e) {
+    e.target.style.backgroundColor = "#f4f4f4";
+  },
+  true
+);
