@@ -103,7 +103,7 @@ mountain.addEventListener('click', moveMountain);
 //header wiggle (7 - scroll)
 function headerWiggle(){
   let tl5 = new TimelineMax({repeat:0})
-  .to(headerImg,  1, {rotation:190})
+  .to(headerImg,  1, {rotation:360})
   .to(headerImg, 2,{rotation:0, ease:Power1.easeOut});
 }
 
