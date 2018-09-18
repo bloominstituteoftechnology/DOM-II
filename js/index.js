@@ -11,12 +11,13 @@ boldLink.addEventListener('mouseover', (event) => {
 }, false);
 
 // `keydown`
-const navGone = document.querySelector('a');
-navGone.addEventListener('keydown', (event) => {
-  if(event.keyCode >= 65 && event.keyCode <= 90){
-    event.target.style.display = "none"
-  }
-});
+//didn't listen to keydown because imgs dont have focus?
+const noNav = document.querySelectorAll('a')
+noNav[3].addEventListener('keydown', (event) => {
+  // event.stopPropagation(); 
+  event.target.style.display = 'none';
+})
+
 // `wheel`
 // `drag / drop`
 // `load`
@@ -24,7 +25,22 @@ navGone.addEventListener('keydown', (event) => {
 // `resize`
 // `scroll`
 // `select`
+//only works in textarea and input
+const selection = document.querySelector('input')
+console.log(selection)
+selection.addEventListener('select', (event) => {
+  alert('You made a selection, bro!')
+}, false)
+
 // `dblclick`
+const firstButton = document.querySelectorAll('.btn')
+firstButton[0].addEventListener('dblclick', (event) => {
+  event.target.style.border = '2px dotted purple'
+
+  setTimeout(function () {
+    event.target.style.display = "";
+  }, 500);
+})
 
 //on click
 const midButton = document.querySelectorAll('.btn');
