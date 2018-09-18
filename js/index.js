@@ -23,7 +23,7 @@ document.querySelectorAll('nav > a').forEach(n => {
 document.querySelectorAll('.btn').forEach(n => {
     n.addEventListener('click', e => {
         e.stopPropagation();
-        console.log('button clicked')
+        // console.log('button clicked')
         e.target.style.transform = 'scale(0.95)';
         setTimeout(() => {
             e.target.style.transition = 'all 100ms ease-in-out'
@@ -62,7 +62,7 @@ body.addEventListener('keyup', e => {
 let content = document.querySelectorAll('.home > *');
 content.forEach((n, i) => {
     if(i === 0 || i === 1){return}
-    n.style.transform = 'translateY(1000px)';
+    n.style.transform = `translateY(${window.innerHeight + 100}px)`;
     // n.style.transition = 'all 1500ms ease-in-out';
 });
 
@@ -93,4 +93,17 @@ body.addEventListener('mousemove', (e) => {
     e.target.style.cursor = randomCursor();
 
 })
+
+// 9. mouseover 
+//10. mouseout
+document.querySelectorAll('img').forEach(n => {
+    n.addEventListener('mouseover', e => {
+        e.target.style.filter = 'invert(100%)';
+    })
+    n.addEventListener('mouseout', e => {
+        e.target.style.filter = 'invert(0%)';
+    })
+
+})
+
 
