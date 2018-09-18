@@ -25,3 +25,8 @@ window.addEventListener("wheel", function() {
   nav.style.border = "2px solid #17A2B8";
   nav.style.transition = "1s";
 });
+
+// =========== LOAD ==========
+window.addEventListener("load", function() {
+  alert("Welcome to Fun Bus!");
+});
