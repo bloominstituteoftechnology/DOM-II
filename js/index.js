@@ -12,23 +12,16 @@ boldLink.addEventListener('mouseover', (event) => {
 
 // `keydown`
 //didn't listen to keydown because imgs dont have focus?
-const noNav = document.querySelectorAll('a')
-noNav[3].addEventListener('keydown', (event) => {
+const keydown = document.querySelector('input')
+keydown.addEventListener('keydown', (event) => {
   // event.stopPropagation(); 
-  event.target.style.display = 'none';
+  event.target.style.background = 'red';
 })
 
-// `wheel`
-// `drag / drop`
-// `load`
-// `focus`
-// `resize`
-// `scroll`
-// `select`
+// `copy`
 //only works in textarea and input
 const selection = document.querySelector('input')
-console.log(selection)
-selection.addEventListener('select', (event) => {
+selection.addEventListener('copy', (event) => {
   alert('You made a selection, bro!')
 }, false)
 
@@ -50,4 +43,19 @@ midButton[1].addEventListener('click', (event) => {
   setTimeout(function () {
     event.target.style.display = "";
   }, 1000);
+})
+
+//keypress
+const keypress = document.querySelector('input')
+keypress.addEventListener('keydown', (event) => {
+  // event.stopPropagation(); 
+  event.target.style.color = 'orange';
+})
+
+//contextmenu
+const contextmenu = document.querySelector('.intro p')
+contextmenu.addEventListener('contextmenu', (event) => {
+  const text = document.querySelector('.intro p')
+  text.innerHTML = "You did it!"
+  text.style.fontSize = "30px"
 })
