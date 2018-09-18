@@ -34,3 +34,20 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.number-one {
+  order: -1;
+}
+
+/* .move-right {
+  position: absolute;
+  animation-name: run;
+  animation-duration: 10s;
+}
+
+@keyframes run {
+  25% {right: 25%;}
+  50% {right: 50%;}
+  75% {right: 75%;}
+  100% {right: 100%;}
+} */
