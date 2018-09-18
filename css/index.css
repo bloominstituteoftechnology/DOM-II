@@ -3,11 +3,12 @@
   text-transform: uppercase;
   border: 10px solid black;
 }
-.navLink {
+.uppercase {
   text-transform: uppercase;
 }
 .blackAndWhite {
   filter: grayscale(1);
+  z-index: -1;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -191,6 +192,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 9999;
 }
 .main-navigation .nav-container {
   height: 100%;
