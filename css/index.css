@@ -346,3 +346,6 @@ img {
     width: 100%;
   }
 }
+.change {
+  visibility: hidden;
+}

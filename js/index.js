@@ -19,6 +19,36 @@ logo.addEventListener('mouseout', (event) =>{
 })
 const busImg= document.querySelector('.intro img');
 busImg.addEventListener('click',(event)=>{
-    alert('Why clicked bus?');
-})
+    alert('clicked bus');
+});
+const walkPlace= document.querySelector('header h2');
+walkPlace.addEventListener('click',(event)=>{
+    event.target.classList.toggle('change');
+});
+logo.addEventListener('dblclick',(event)=>{
+    alert('Doubled clicked');
+});
+logo.addEventListener('mousemove',(event)=>{
+    walkPlace.style.color='pink';
+});
+const navBar = document.querySelectorAll("a");
+for(let i=0; i<navBar.length; i++){
+    navBar[i].addEventListener('mousedown', (event) => {
+        //event.preventDefault();
+        event.target.style.color='#17A2B8';
+      });
+    navBar[i].addEventListener('mouseup', (event) => {
+        event.target.style.color='black';
+      });
+}
+const contentDes= document.querySelector('.content-destination');
+const contentP=document.querySelector('.content-destination p')
+contentDes.addEventListener('click', (event)=>{
+    event.target.style.backgroundColor='pink';
+});
+const contentImg= document.querySelector('.content-destination img');
+contentImg.addEventListener('click', (event)=>{
+    event.target.style.border.radius='50%';
+    event.stopPropagation();
 
+});
