@@ -35,6 +35,13 @@ window.addEventListener('resize', () => {
     homeNav.style.fontSize = '88px';
   });
 
+  // 5. On page load an alert will appear
+
+window.addEventListener('load', () => {
+    alert('Alakazam! Prepare to be amazed by another Lambda School project! This alert displays because it has an event listener that is triggered by the initial page load.')
+  }); 
+  
+
 
 
 
