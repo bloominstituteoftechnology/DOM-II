@@ -177,7 +177,7 @@ img {
 .main-navigation {
   width: 100%;
   height: 90px;
-  background: #FFFFFF;
+  background: red;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
@@ -218,7 +218,7 @@ img {
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
-  background: #FFEBCD;
+  background: red;
 }
 .footer p {
   text-align: center;
@@ -335,7 +335,8 @@ img {
   align-items: center;
   width: 200px;
   height: 45px;
-  background-color: #17A2B8;
+  background-color:red;
+   
   color: #FFFFFF;
   border: 1px solid #C0C0C0;
   cursor: pointer;
