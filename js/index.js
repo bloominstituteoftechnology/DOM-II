@@ -5,25 +5,26 @@
  * Main Nav
  * 
  ***************/
+function hideNav() {
+  const navBar = document.querySelector(".main-navigation");
+  console.log(navBar);
 
-let prevYoff = 0;
-const navBar = document.querySelector("#main-navigation");
+  window.addEventListener("scroll", function (event) {
+    let currentYoff = window.scrollY;
+    let navClasses = navBar.classList;
 
-window.addEventListener('onscroll', (event) => {
-  let currentYoff = window.scrollY;
-  let getDown = currentYoff < prevYoff;
-  let navClasses = navBar.classList;
+    if (currentYoff > 40 && !navClasses.contains("scrolled")) {
+      navClasses.add("scrolled");
+    } else if (currentYoff < 40) {
+      navClasses.remove("scrolled");
+    }
 
-  if (getDown && !navClasses.contains("scrolled")) {
-    navClasses.add("scrolled");
-  } else if (!getDown) {
-    navClasses.remove("scrolled");
-  }
+    prevYoff = currentYoff;
 
-  prevYoff = currentYoff;
-
-  console.log(prevYoff);
-});
+    console.log(prevYoff);
+  });
+};
+hideNav();
 
 const navItems = document.querySelectorAll('.nav-link');
 
@@ -44,6 +45,7 @@ navItems.forEach(navItem => navItem.addEventListener('mouseout', (event) => {
  * 
  ***************/
 
+
 /****************
  * 
  * inverse content 
@@ -63,6 +65,7 @@ navItems.forEach(navItem => navItem.addEventListener('mouseout', (event) => {
  ***************/
 
 const contentPick = document.querySelectorAll('.destination');
+
 contentPick.forEach(pick => pick.addEventListener('click', (event) => {
   event.preventDefault();
 
