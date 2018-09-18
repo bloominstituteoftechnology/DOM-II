@@ -6,19 +6,17 @@ const titleText = document.querySelector('.logo-heading');
     event.target.style.color = 'orange';
   });
 
-// keydown
-// const borderFlash = document.querySelectorAll('.text-content h2');
-
-//   borderFlash.addEventListener('keypress', (event) => {
-//         event.target.style = 'border: 2px dashed orange';
-    
-//   });
+//keydown
+const navBar = document.querySelector('.main-navigation .nav');
+window.addEventListener('keydown', (event) => {
+        navBar.style.color = 'magenta';
+  });
 
 
 // drag / drop
-// const dragDrop = document.querySelectorAll('.content-pick .btn');
+// const dragIt = document.querySelector('.content-pick .btn');
 
-//   dragDrop.addEventListener('dragstart', (event) => {
+//   dragIt.addEventListener('dragstart', (event) => {
 //         dragDrop.event.target.style.opacity = '.5';
 //   });
 
@@ -43,7 +41,6 @@ const logIn = document.querySelector('.main-navigation .login');
 
 
 // copy
-
   document.addEventListener('copy', (event) => {
     event.clipboardData.setData('text/plain', 'You copied some text from the Fun Bus website!');
     event.preventDefault();
@@ -51,21 +48,32 @@ const logIn = document.querySelector('.main-navigation .login');
 
 
 // scroll
-  window.addEventListener('scroll', (event) => {
+  window.addEventListener('scroll', () => {
     console.log('scrolled!');
   });
 
 // select **Not working**
-const colorChange = document.querySelectorAll('.main-navigation a');
+// const colorChange = document.querySelector('.main-navigation a');
 
-colorChange.addEventListener('select', (event) => {
-    event.target.style.color = 'pink';
-}, false);
+// colorChange.addEventListener('select', (event) => {
+//     event.target.style.color = 'pink';
+// }, false);
 
 
-// // dblclick
-const hideImg = document.querySelector('.pic1');
+//click
+const myHeading = document.querySelector('.intro p');
+
+myHeading.addEventListener('click', (event) => {
+    event.target.style.color = "magenta";
+    event.stopPropagation();
+});
+
+
+ 
+
+// dblclick
+const hideImg = document.querySelector('.intro img');
 
   hideImg.addEventListener('dblclick', (event) => {
-    event.target.classList.toggle('hide');
+    event.currentTarget.classList.toggle('hide');
   });
