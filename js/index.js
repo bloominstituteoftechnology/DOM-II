@@ -52,3 +52,16 @@ navLinks.forEach(element =>{
     })
     
 })
+
+
+window.addEventListener('scroll',event=>{
+    TweenMax.to('.logo',1,{left:1500});
+})
+
+
+
+
+setInterval(()=>{
+    TweenMax.to('.logo',1,{right:1500});
+},2000)
+

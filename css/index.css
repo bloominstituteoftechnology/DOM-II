@@ -368,3 +368,7 @@ img {
 .changeBG2{
   background-color: yellow;
 }
+.logo{
+  position: relative;
+  overflow-x: hidden;
+}
