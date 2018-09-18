@@ -37,7 +37,7 @@ window.addEventListener('resize', () => {
 
 // Added alert when page load
 // window.addEventListener('load', () => {
-//     alert('Welcome to Fun Bus!');
+    alert('Welcome to Fun Bus!');
 // });
 
 //Added click to add border and dbl click to remove border
@@ -47,4 +47,13 @@ document.querySelector('.intro').addEventListener('click', (e) => {
 
 document.querySelector('.intro').addEventListener('dblclick', (e) => {
     e.target.style.border = '';
+});
+
+// Added mouse enter and mouse out event of Intro h2
+document.querySelector('.intro h2').addEventListener('mouseenter', (e) => {
+    e.target.innerHTML = 'This is Fun Bus!';
+});
+
+document.querySelector('.intro h2').addEventListener('mouseout', (e) => {
+    e.target.innerHTML = 'Welcome to Fun Bus!';
 });
