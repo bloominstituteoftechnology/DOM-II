@@ -62,7 +62,7 @@ window.addEventListener("load", function(e) {
     foot.appendChild(loadAlert);
 });
 
-// Make nav links glow lime green on click until another is clicked
+// Make nav links glow lime green on click until another element is clicked
 const navLinks = document.querySelectorAll(".nav-container nav a");
 navLinks.forEach(link => {
     link.addEventListener("focus", function(e) {
@@ -107,3 +107,12 @@ allPs.forEach(function(paragraph) {
     //     }
     // });
 });
+
+// Should be simple: h2's turn blue when you click on them
+const allH2s = document.querySelectorAll("h2, h4");
+allH2s.forEach(header => 
+    header.addEventListener("click", e => {
+        e.stopPropagation();
+        e.currentTarget.style.color = "blue";
+    })
+);
