@@ -32,8 +32,9 @@ titleText.addEventListener('mouseover', (event) => {
   });
 
 //keydown - 2
-window.addEventListener('keydown', (event) => {
-        event.navBar.style.color = 'magenta';
+document.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        alert(`You just pressed the letter ${keyName}!`);
   });
 
 // drag - 3
