@@ -8,8 +8,8 @@ const footer = document.querySelector('footer');
 const mainNav = document.querySelector('.main-navigation');
 const allImg = document.querySelectorAll('img');
 const allP = document.querySelectorAll('p');
-const home = document.querySelector('.container.home')
-console.log(aNav);
+const home = document.querySelector('.container.home');
+const input = document.querySelector('#email');
 
 //1
 contactNav.addEventListener('mouseover', (event) => {
@@ -69,7 +69,9 @@ window.addEventListener("load", function(event) {
 });
 
 //9 
-
+input.addEventListener('select', (event) => {
+    alert(`Welcome`);
+})
 
 //10 
 
