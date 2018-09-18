@@ -49,10 +49,30 @@ document.querySelector('body').addEventListener('dblclick', () => {
 // added rotations for nav links
 const navItems = document.querySelectorAll('nav a')
 const rotations = [...Array(navItems.length)].map(() => 30)
-navItems.forEach((item, i) => item.addEventListener('click', () => {
-  item.style.transform = `rotateZ(${rotations[i]}deg)`
-  rotations[i] += 30
-}))
+navItems.forEach((item, i) =>
+  item.addEventListener('click', () => {
+    item.style.transform = `rotateZ(${rotations[i]}deg)`
+    rotations[i] += 30
+  })
+)
+
+// increasing border thickness on image as it gets dragged
+let borderThickness = 0
+
+const firstSectionImage = document.querySelector('section img')
+firstSectionImage.addEventListener('drag', event => {
+  console.log(event)
+  //firstSectionImage.style.visibility = 'hidden'
+  firstSectionImage.style.border = `${borderThickness}px solid red`
+  borderThickness++
+})
+
+firstSectionImage.addEventListener('dragend', event => {
+  console.log(event)
+  firstSectionImage.style.visibility = 'visible'
+  firstSectionImage.style.border = ''
+  borderThickness = 0
+})
 
 //
 // keydown
@@ -63,4 +83,4 @@ navItems.forEach((item, i) => item.addEventListener('click', () => {
 // resize
 // scroll
 // select
-// 
+//
