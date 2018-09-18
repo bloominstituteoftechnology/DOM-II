@@ -1,5 +1,5 @@
 // Variables
-const mainNav = document.querySelector('.main-navigation .nav-container');
+const mainNav = document.querySelector('.main-navigation');
 const funBusMain = document.querySelector('.logo-heading');
 const nav = document.querySelectorAll('.nav-link');
 const footer = document.querySelector('.footer');
