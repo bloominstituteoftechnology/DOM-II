@@ -21,3 +21,10 @@ images.forEach((img) => {
         this.style.transform = "scale(1)";
     });
 });
+
+background.addEventListener("dblclick", () => {
+    background.style.backgroundColor = "black";
+    background.style.color = "white";
+    logo.style.color = "black"
+});
+
