@@ -88,8 +88,11 @@ destH3.addEventListener('mousemove', (e) => {
 // Remove default functionality of nav
 
 const myNav = document.querySelector('.nav');
-console.log(myNav)
+
 
 myNav.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
 })
+
+
