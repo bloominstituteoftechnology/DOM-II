@@ -7,6 +7,8 @@ nav.addEventListener('mouseover', function(event) {
     event.target.style.color = "white";
 });
 
+
+
 // __________________________________KEYDOWN
 document.addEventListener('keydown', function(event) {
     if (event.keyCode == '65') {
@@ -57,6 +59,22 @@ signUp.addEventListener('dblclick', function(e){
     alert('Why are you pressing my buttons?') 
     // console.log('btn clicked')
 });
+
+const contact = document.querySelectorAll('a');
+
+contact[3].addEventListener('click', function (e){
+    contact[3].style.color = 'red';
+    contact[3].innerText = 'STOP CLICKING MY STUFF'
+    console.log('clicked');
+});
+
+const bus = document.querySelector('.bus')
+
+bus.addEventListener('mouseover', function(e){
+    bus.style.display = 'none';
+});
+
+
 
 
 
