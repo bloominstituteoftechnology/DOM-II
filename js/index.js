@@ -1,11 +1,11 @@
 // Your code goes here
 
-const myBtn = document.querySelector('.btn');
+const myBtn = document.querySelector('.content-pick .btn');
 const contentPick = document.querySelector('.content-pick');
 const myHeader = document.querySelectorAll('.home h2');
 const myNav = document.querySelector('body');
 const readerProgress = document.querySelector('.progress');
-
+const introImg = document.querySelector('.intro img');
 
 
 contentPick.addEventListener('click', () => {
@@ -13,6 +13,10 @@ contentPick.addEventListener('click', () => {
 });
 
 
+myBtn.addEventListener('click', () => {
+    contentPick.style.color ='red';
+    event.stopPropagation();
+});
 // myBtn.addEventListener('click', () => {
     // Step 3: Do something!
 //     console.log("still works");
@@ -47,4 +51,10 @@ window.addEventListener("scroll", () => {
     readerProgress.style.width = `${(pageYOffset / max) * 100}%`;
   });
 
+  introImg.addEventListener('mouseover', (event) => {
+    event.target.src ='http://2.bp.blogspot.com/-euazKXrGMNs/T56zLMVzWKI/AAAAAAAAAV4/29hCX8d7Usw/s1600/Mystery+machine+cartoon+version-ScoobyDoo.jpg'
   
+    setTimeout(() => {
+        event.target.src = 'img/fun-bus.jpg';
+    }, 5000);
+    }, false);
