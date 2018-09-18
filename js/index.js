@@ -95,6 +95,18 @@ firstImage.addEventListener('load', () => {
   }, 10)
 })
 
+// 
+const sectionToOverwrite = document.querySelector('.ready-to-be-overwritten')
+let overwriteMode = false
+document.querySelector('body').addEventListener('keypress', event => {
+  if (!overwriteMode) {
+    overwriteMode = true
+    sectionToOverwrite.innerHTML = ''
+  } else {
+    sectionToOverwrite.innerHTML += event.key
+  }
+})
+
 
 
 //
