@@ -127,20 +127,20 @@ window.addEventListener('scroll', headerWiggle);
 
 destinationImg.addEventListener('mousedown', imgShift)
 
-//middle image wiggle on (10 - mousemove)
+//middle image flip on (10 - keydown) and back (on BONUS 11 - keyup)
 function middleWiggle1(){
  TweenMax.to(adventureImg,  2, {rotation:360});
- adventureImg.addEventListener('mouseleave', function(){
+ window.addEventListener('keyup', function(){
    TweenMax.to(adventureImg, 2, {rotation: 0});
  });
 }
 
 function middleWiggle2(){
-    TweenMax.to(funImg,  .7, {rotation:180});
-    funImg.addEventListener('mouseleave', function(){
+    TweenMax.to(funImg,  .7, {rotation:360});
+    window.addEventListener('keyup', function(){
       TweenMax.to(funImg, 2, {rotation: 0});
     });
 }
 
-adventureImg.addEventListener('mousemove', middleWiggle1);
-funImg.addEventListener('mousemove', middleWiggle2);
+window.addEventListener('keydown', middleWiggle1);
+window.addEventListener('keydown', middleWiggle2);
