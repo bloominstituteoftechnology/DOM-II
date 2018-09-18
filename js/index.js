@@ -23,7 +23,10 @@ let animateHome = document.querySelectorAll('.nav-link')
  for (let x = 0; x < animateHome.length; x++) {
         animateHome[x].addEventListener('keydown', (event) => {
         alert('You clicked a non working link then clicked shift!');
-      })
+      });
+      animateHome[x].addEventListener('click', (event) => {
+        event.preventDefault()
+    })
  }
  //-----------------------------------------------------------------------
  let removeImg = document.querySelector('.firstImg')
@@ -39,3 +42,4 @@ let animateHome = document.querySelectorAll('.nav-link')
         })
     })
     }
+//-----------------------------------------------------------------------
