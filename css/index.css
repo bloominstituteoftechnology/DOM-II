@@ -356,3 +356,6 @@ img {
 .display {
   visibility: hidden;
 }
+.border-radius {
+  border-radius: 50%;
+}

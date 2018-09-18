@@ -55,5 +55,8 @@ window.addEventListener('resize', ()=>{
     backgroundAdjust.style.backgroundColor = 'orange'
 });
 
+const busImg = document.querySelector('.intro img');
 
-  
+busImg.addEventListener('click', ()=>{
+    busImg.classList.toggle('border-radius');
+})
