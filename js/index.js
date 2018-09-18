@@ -18,7 +18,7 @@ navLinks.forEach(x => x.addEventListener('click', (e) => {
 }));
 
 navBar.addEventListener('click', e => {
-    logo.style.color = 'red';
+    logo.style.color = randomColor();
     setTimeout(()=>{
         logo.style.color = 'black';
         logo.style.transition = 'all 1s';
@@ -98,4 +98,8 @@ window.addEventListener('scroll', e => {
     })
 })
 
-window.addEventListener('mouseup', e => footer.style.backgroundColor = randomColor())
+window.addEventListener('mouseup', e => {
+    footer.style.backgroundColor = randomColor();
+    TweenMax.to(contentIMG[1], 2, {y:"-1200px"})
+  
+})
