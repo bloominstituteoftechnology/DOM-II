@@ -8,9 +8,9 @@ const btn = document.querySelectorAll(".btn");
 const destination = document.querySelectorAll(".destination");
 const destinationH2 = document.querySelectorAll(".destination h4");
 const navLink = document.querySelectorAll(".nav-link");
-const body = document.querySelector("body");
-const navContainer = document.querySelector(".nav-container");
 const nav = document.querySelector(".nav");
+const body = document.querySelector("body");
+const navContainer = document.querySelector(".main-navigation");
 
 navH1.addEventListener("mouseover", event => {
   event.currentTarget.style.color = "blue";
@@ -80,10 +80,32 @@ destinationH2[2].addEventListener("contextmenu", event => {
 navLink[0].addEventListener("click", event => {
   event.currentTarget.style.color = "blue";
   event.preventDefault();
-
+  event.stopPropagation();
+});
+navLink[1].addEventListener("click", event => {
+  event.currentTarget.style.color = "red";
+  event.preventDefault();
+  event.stopPropagation();
+});
+navLink[2].addEventListener("click", event => {
+  event.currentTarget.style.color = "green";
+  event.preventDefault();
+  event.stopPropagation();
+});
+navLink[3].addEventListener("click", event => {
+  event.currentTarget.style.color = "pink";
+  event.preventDefault();
   event.stopPropagation();
 });
 
 nav.addEventListener("click", event => {
   event.currentTarget.style.backgroundColor = "blue";
+});
+
+body.addEventListener("keydown", event => {
+  event.currentTarget.style.backgroundColor = "purple";
+});
+
+navContainer.addEventListener("mouseup", event => {
+  event.currentTarget.style.backgroundColor = "gray";
 });
