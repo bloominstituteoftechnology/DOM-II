@@ -30,3 +30,16 @@ window.addEventListener("wheel", function() {
 window.addEventListener("load", function() {
   alert("Welcome to Fun Bus!");
 });
+
+// =========== SCROLL ==========
+let funBusIcon = document.querySelector("#bus-icon img");
+let html = document.querySelector("html");
+window.addEventListener(
+  "scroll",
+  function() {
+    funBusIcon.style.border = "1px solid red";
+    funBusIcon.style.display = "block";
+    funBusIcon.style.transition = "1s";
+  },
+  true
+);
