@@ -63,7 +63,7 @@ contextmenu.addEventListener('contextmenu', (event) => {
   }, 1000);
 })
 
-//scroll
+//scroll -attempt
 let content = document.querySelectorAll(".text-content")
 content = Array.prototype.slice.call(content);
 
