@@ -226,8 +226,13 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
-.home {
-  background: gray;
+.home .popup-ad {
+  height: 650;
+  width: 900;
+  border: dashed yellow 10px;
+  background: green;
+  color: red;
+  z-index: 1000;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -236,7 +241,6 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
-  border: dotted blue 10px;
 }
 .home .intro h2 {
   margin-top: 20px;
@@ -250,7 +254,6 @@ img {
 .home .content-section .text-content {
   width: 48%;
   padding-right: 1%;
-  border: dotted green 8px;
 }
 @media (max-width: 500px) {
   .home .content-section .text-content {
@@ -308,7 +311,7 @@ img {
   }
 }
 .home .content-destination img {
-  border-radius: 10px;
+  border-radius: 50px;
 }
 .home .content-pick {
   padding-top: 30px;
@@ -354,4 +357,7 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .display-none {
+  display: none;
 }

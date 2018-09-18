@@ -1,7 +1,14 @@
 // main: index.less
 .home {
-  background: gray;
-
+   // background: gray;
+   .popup-ad {
+     height: 650;
+     width: 900;
+     border: dashed yellow 10px;
+     background: green;
+     color: red;
+     z-index: 1000;
+   }
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
@@ -9,7 +16,7 @@
     img {
       max-width: 100%;
       height: auto;
-      border: dotted blue 10px;
+      // border: dotted blue 10px;
     }
 
     h2 {
@@ -26,7 +33,7 @@
     .text-content {
       width: 48%;
       padding-right: 1%;
-  border: dotted green 8px;
+  // border: dotted green 8px;
 
       @media @mobile {
         width: 100%;
@@ -85,7 +92,7 @@
     }
 
     img {
-      border-radius: 10px;
+      border-radius: 50px;
     }
   }
 
@@ -112,5 +119,8 @@
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
       }
     }
+  }
+  .display-none {
+    display: none;
   }
 }// home
