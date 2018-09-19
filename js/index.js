@@ -78,7 +78,7 @@ getInput.addEventListener('keyup', (event) => {
     TweenMax.from(".logo-heading",5,{
         marginLeft:1000,
         ease: SlowMo.ease.config( 0.8, 0.7, false),
-        rotate: 360,
+        rotation: 360,
      });
     });
 
@@ -89,7 +89,7 @@ getImg[0].addEventListener('mouseenter', (event) => {
     TweenMax.from(".intro",5,{
         paddingLeft:1000,
         ease: SlowMo.ease.config( 0.8, 0.7, false),
-        rotate: 360,
+        rotation: 360,
      });
     });
 
