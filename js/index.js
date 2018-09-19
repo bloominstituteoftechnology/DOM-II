@@ -85,3 +85,78 @@ sweetRelease.addEventListener('submit', (event) => {
 });
 sweetRelease.appendChild(submitButton);
 document.querySelector('footer').appendChild(sweetRelease);
+
+//-- 9: keydown, 10: keyup ------------------------
+function okayJustOneMore(){
+    let keyState = [];
+    let bigStar = {
+        element: document.createElement('span'),
+        x: 0,
+        y: 0,
+        speed: 5,
+        reposition(){
+            this.element.style.left = `${this.x}px`;
+            this.element.style.top  = `${this.y}px`;
+        },
+        move(){
+            let deltaX = 0;
+            let deltaY = 0;
+            if(keyState['north']){ deltaY-=this.speed;}
+            if(keyState['south']){ deltaY+=this.speed;}
+            if(keyState['east' ]){ deltaX+=this.speed;}
+            if(keyState['west' ]){ deltaX-=this.speed;}
+            this.x += deltaX;
+            this.y += deltaY;
+            this.reposition();
+        }
+    }
+    bigStar.element.innerHTML = '&star;';
+    bigStar.element.style.position = 'fixed';
+    bigStar.element.style.fontSize = '50px';
+    document.body.addEventListener('keydown', (event) => {
+        switch(event.key){
+            case 'ArrowUp': {
+                keyState['north'] = true;
+                break;
+            }
+            case 'ArrowDown': {
+                keyState['south'] = true;
+                break;
+            }
+            case 'ArrowLeft': {
+                keyState['west'] = true;
+                break;
+            }
+            case 'ArrowRight': {
+                keyState['east'] = true;
+                break;
+            }
+        }
+    });
+    document.body.addEventListener('keyup', (event) => {
+        switch(event.key){
+            case 'ArrowUp': {
+                keyState['north'] = false;
+                break;
+            }
+            case 'ArrowDown': {
+                keyState['south'] = false;
+                break;
+            }
+            case 'ArrowLeft': {
+                keyState['west'] = false;
+                break;
+            }
+            case 'ArrowRight': {
+                keyState['east'] = false;
+                break;
+            }
+        }
+    });
+    document.body.appendChild(bigStar.element);
+    let repainter = () => {
+        bigStar.move();
+        requestAnimationFrame(repainter);
+    };
+    repainter();
+}
