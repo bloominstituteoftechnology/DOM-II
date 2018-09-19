@@ -9,16 +9,16 @@ const introImg = document.querySelector('.intro img');
 const imgScooby = document.querySelector('.content-section img');
 const imgWendy = document.querySelector('.inverse-content img');
 const navPrevent = document.querySelectorAll('.nav-container a');
+const logoText = document.querySelector('.nav-container .logo-heading');
 
 
-
-console.log(navPrevent);
+console.log(logoText);
 
 window.addEventListener('load', () => {
     alert('Press g to change the background color, w to change it back')
 });
 
-//button click
+
 contentPick.addEventListener('click', () => {
     contentPick.classList.toggle('change-background');
 });
@@ -29,7 +29,6 @@ myBtn.addEventListener('click', () => {
     event.stopPropagation();
 });
 
-//changes color of text and headers
 
 myHeader.forEach(item => item.addEventListener('mouseover', (event) => {
     event.stopPropagation();
@@ -88,8 +87,16 @@ event.target.src = 'img/adventure.jpg';
 }, false);
 
 
-
-
 navPrevent.forEach(item => item.addEventListener('click', (e) => {
     event.preventDefault();
 }));
+
+logoText.addEventListener('click', (e) => {
+    TweenMax.to('.logo-heading', 10, {
+        opacity:0
+    });
+});
+
+TweenMax.from('.logo-heading', 3, {x:300,
+opacity:0, scale:0.5});
+
