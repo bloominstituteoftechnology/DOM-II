@@ -7,7 +7,9 @@ function playSound(soundfile) {
 
 const funBusHeading = document.querySelectorAll(".nav-link");
 const funBusImages = document.querySelectorAll("img");
+const destinationContainer = document.querySelectorAll("destination");
 const destinationButton = document.querySelectorAll(".btn");
+
 //// Home link
 
 funBusHeading[0].addEventListener("mouseover", e => {
@@ -102,7 +104,8 @@ funBusHeading[3].addEventListener("mouseout", e => {
 })
 
 funBusHeading[3].addEventListener("click", e => {
-    playSound("Krueger.mp3")
+    playSound("Krueger.mp3");
+    e.preventDefault()
 });
 
 /// Images
@@ -131,6 +134,14 @@ funBusImages[3].addEventListener("mouseover", e => {
     playSound("Hahahahaha.mp3")
 })
 
+////// destination containers
+
+// destinationContainer[0].addEventListener("mouseover", () => {
+//     destinationContainer[0].style.color = "green";
+// })
+
+
+
 ////// buttons
 
 destinationButton[0].addEventListener("mouseover", e => {
@@ -138,11 +149,13 @@ destinationButton[0].addEventListener("mouseover", e => {
     destinationButton[0].style.background = "green";
     destinationButton[0].style.padding = "3%";
     destinationButton[0].style.borderRadius = "20%";
-    destinationButton[0].style.boxShadow = "2px 17px 35px 1px #8E0000"
+    destinationButton[0].style.boxShadow = "2px 17px 35px 1px #8E0000";
+    e.stopPropagation()
 })
 
 destinationButton[0].addEventListener("click", e => {
-    playSound("message.mp3")
+    playSound("message.mp3");
+    e.preventDefault()
 })
 
 destinationButton[1].addEventListener("mouseover", e => {
@@ -150,11 +163,13 @@ destinationButton[1].addEventListener("mouseover", e => {
     destinationButton[1].style.background = "green";
     destinationButton[1].style.padding = "3%";
     destinationButton[1].style.borderRadius = "20%";
-    destinationButton[1].style.boxShadow = "2px 17px 35px 1px #8E0000"
+    destinationButton[1].style.boxShadow = "2px 17px 35px 1px #8E0000";
+    e.stopPropagation()
 })
 
 destinationButton[1].addEventListener("click", e => {
-    playSound("Krueger.mp3")
+    playSound("Krueger.mp3");
+    e.preventDefault()
 })
 
 destinationButton[2].addEventListener("mouseover", e => {
@@ -162,9 +177,11 @@ destinationButton[2].addEventListener("mouseover", e => {
     destinationButton[2].style.background = "green";
     destinationButton[2].style.padding = "3%";
     destinationButton[2].style.borderRadius = "20%";
-    destinationButton[2].style.boxShadow = "2px 17px 35px 1px #8E0000"
+    destinationButton[2].style.boxShadow = "2px 17px 35px 1px #8E0000";
+    e.stopPropagation()
 })
 
 destinationButton[2].addEventListener("click", e => {
-    playSound("freeys_come.mp3")
+    playSound("freeys_come.mp3");
+    e.preventDefault()
 })
