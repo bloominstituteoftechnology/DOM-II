@@ -9,6 +9,15 @@ const funBusHeading = document.querySelectorAll(".nav-link");
 const funBusImages = document.querySelectorAll("img");
 const destinationContainer = document.querySelectorAll("destination");
 const destinationButton = document.querySelectorAll(".btn");
+const theBody = document.querySelector("body");
+
+///This was my attempt at getting 
+///event propogation to work. 
+/// It just ended up breaking the page
+
+// body.addEventListener("click", e => {
+//     alert("What are you trying to click?");
+// })
 
 //// Home link
 
@@ -105,7 +114,8 @@ funBusHeading[3].addEventListener("mouseout", e => {
 
 funBusHeading[3].addEventListener("click", e => {
     playSound("Krueger.mp3");
-    e.preventDefault()
+    e.preventDefault();
+    e.stopPropagation();
 });
 
 /// Images
@@ -155,7 +165,8 @@ destinationButton[0].addEventListener("mouseover", e => {
 
 destinationButton[0].addEventListener("click", e => {
     playSound("message.mp3");
-    e.preventDefault()
+    e.preventDefault();
+    e.stopPropagation;
 })
 
 destinationButton[1].addEventListener("mouseover", e => {
@@ -169,7 +180,8 @@ destinationButton[1].addEventListener("mouseover", e => {
 
 destinationButton[1].addEventListener("click", e => {
     playSound("Krueger.mp3");
-    e.preventDefault()
+    e.preventDefault();
+    e.stopPropagation;
 })
 
 destinationButton[2].addEventListener("mouseover", e => {
@@ -183,5 +195,6 @@ destinationButton[2].addEventListener("mouseover", e => {
 
 destinationButton[2].addEventListener("click", e => {
     playSound("freeys_come.mp3");
-    e.preventDefault()
+    e.preventDefault();
+    e.stopPropagation();
 })
