@@ -3,12 +3,22 @@ const header = document.querySelector('header');
 const logoHeading = document.querySelector('.logo-heading');
 const navItems = document.querySelectorAll('.nav-link');
 const funBus = document.querySelector('.intro img');
+let scrollTimeout;
 
 /*-- functions ---------------------------------*/
 const randomNum = num => Math.floor(Math.random() * num);
 
 const randomColor = () => `rgb(${randomNum(256)}, ${randomNum(256)}, ${randomNum(256)})`;
 const randomRadius = num => `${randomNum(num)} px`;
+
+const scrollThrottler = () => {
+  if (!scrollTimeout) {
+    scrollTimeout = setTimeout(() => {
+      scrollTimeout = null;
+      navItems[2].style.background = randomColor();
+    }, 2000);
+  }
+}
 
 const tacoNuke = duration => {
 	setTimeout(() => {
@@ -17,8 +27,14 @@ const tacoNuke = duration => {
 };
 
 /*-- event listeners ---------------------------*/
+window.addEventListener('scroll', scrollThrottler);
+
 logoHeading.addEventListener('mouseover', () => {
 	logoHeading.style.color = randomColor();
+});
+
+window.addEventListener('keydown', () => {
+	header.style.backgroundColor = 'blue';
 });
 
 window.addEventListener('keydown', () => {
@@ -45,10 +61,6 @@ navItems[0].addEventListener('blur', () => {
 
 window.addEventListener('resize', () => {
 	navItems[1].style.background = randomColor();
-});
-
-window.addEventListener('scroll', () => {
-	navItems[2].style.background = randomColor();
 });
 
 navItems[3].addEventListener('dblclick', () => {
