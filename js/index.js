@@ -86,6 +86,7 @@ window.addEventListener('scroll', () => {
 });
 
 // 9. load
+
 window.addEventListener('load', () => {
   // fade in site
   document.querySelector('body').classList.add('show');

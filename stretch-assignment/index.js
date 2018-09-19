@@ -16,18 +16,25 @@ blocks.forEach(block => {
   let moveRight;
   block.addEventListener('mousedown', () => {
     initTime = Date.now();
-    moveRight = setInterval(blockInterval, 10);
+    moveRight = setInterval(blockInterval, 1);
   });
 
   // mouseup on window
   window.addEventListener('mouseup', () => {
     clearInterval(moveRight);
+    TweenMax.to(block, 2, {
+      x: 0,
+      ease: Elastic.easeOut
+    });
   });
 
   // callback for setInterval()
   function blockInterval() {
-    let counter = Math.floor((Date.now() - initTime) / 100);
-    console.log(counter);
-    block.style.transform = `translateX(${counter}px)`;
+    let counter = Math.floor((Date.now() - initTime) / 10);
+    // block.style.transform = `translateX(${counter}px)`;
+    TweenMax.to(block, 0.01, {
+      x: counter,
+      ease: Sine.easeOut
+    });
   }
 });
