@@ -3,10 +3,20 @@
 const CPRButton = document.querySelector('.CPRButton')
 const copyText = document.querySelector('.testing')
 
+console.log(copyText)
 
 CPRButton.addEventListener('click', () => {
     copyText.classList.toggle('testing')
 })
+
+// Global click event
+
+const divCont = document.querySelector('body')
+
+divCont.addEventListener('click', () => {
+    console.log('test1')
+})
+
 
 
 // doubleclick event
@@ -96,3 +106,8 @@ myNav.addEventListener('click', (e) => {
 })
 
 
+const advAwaits = document.querySelector('#advAwaits');
+
+advAwaits.addEventListener('click', () => {
+    advAwaits.style.color = 'green';
+})
