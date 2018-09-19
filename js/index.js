@@ -5,7 +5,7 @@ document.querySelectorAll('a').forEach( link => {
     e.preventDefault();
   })
 })
-
+const home = document.querySelector('.home');
 const images = document.querySelectorAll('img');
 images.forEach(img => {
   img.addEventListener('mouseover', e => {
@@ -15,13 +15,21 @@ images.forEach(img => {
       box-shadow: 0;
     `);
   });
+  img.addEventListener('dblclick', e => {
+    let imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-expand');
+    imgContainer.appendChild(e.target.cloneNode(false));
+    imgContainer.addEventListener('click', e => {
+      imgContainer.remove();
+    })
+    home.prepend(imgContainer);
+  });
 })
 
 // finds height of page in pixels
 // https://stackoverflow.com/a/41180900
 var pageHeight = 0;
 ;(function() {
-
   function findHighestNode(nodesList) {
       for (var i = nodesList.length - 1; i >= 0; i--) {
           if (nodesList[i].scrollHeight && nodesList[i].clientHeight) {
@@ -31,20 +39,20 @@ var pageHeight = 0;
           if (nodesList[i].childNodes.length) findHighestNode(nodesList[i].childNodes);
       }
   }
-
   findHighestNode(document.documentElement.childNodes);
-
   // The entire page height is found
   console.log('Page height is', pageHeight);
 })();
+
+var viewportEnd = pageHeight - window.innerHeight;
 const progressBar = document.getElementById('progress-bar');
-document.addEventListener('scroll', e => {
+const updateProgressBar = e => {
   progressBar.setAttribute('style', `
     width: ${(window.pageYOffset / viewportEnd)*100}%
   `);
-})
+}
+document.addEventListener('scroll', updateProgressBar)
 
-var viewportEnd = pageHeight - window.innerHeight;
 window.addEventListener('keydown' , e => {
   console.log(e.keyCode)
   if (e.keyCode >= 48 || e.keyCode <= 57) {

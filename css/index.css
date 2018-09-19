@@ -175,10 +175,11 @@ img {
   }
 }
 #progress-bar {
-  position: fixed;
+  width: 0%;
   top: 0;
   border-top: 2rem solid black;
-  z-index: 1001;
+  z-index: 3;
+  margin-top: -2rem;
 }
 .main-navigation {
   width: 100%;
@@ -186,7 +187,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -358,4 +359,19 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.img-expand {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  cursor: pointer;
+}
+.img-expand img {
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+  margin: auto;
 }
