@@ -64,15 +64,41 @@ contextmenu.addEventListener('contextmenu', (event) => {
 })
 
 //scroll
-let content = document.querySelectorAll(".text-content")
-content = Array.prototype.slice.call(content);
+//works but only sometimes. Trying to figure it out
+//scroll only affects window or an textarea where scroll has been created
+window.addEventListener('scroll', (event) => {
+  //scrollY is a read-only Web API that returns the number of pixels
+  //that the document has scrolled vertically. May not be a whole number.
+  //scrollX is horizontal 
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
 
-content.forEach(function(i) {
-  i.addEventListener('scroll', (event) => {
-    event.target.style.background = "blue"
+  if (Math.ceil(scrolled) === scrollable) {
+    alert("You've reached the bottom!")
+    
+  }
+})
+
+//need to test
+//wheel
+const myImage = Array.prototype.slice.call(document.querySelectorAll('img'));
+console.log(myImage)
+myImage.forEach(function(e) {
+  e.addEventListener('wheel', (event) => {
+  alert('You moved the mousewheel on an image!')
+  e.target.style.border = "2px dotted purple"
   })
 })
 
-//
+// mouseover*
+// keydown*
+// wheel
+// drag / drop
+// load
+// focus
+// resize
+// scroll*
+// select
+// dblclick*
 
 
