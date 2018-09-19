@@ -134,12 +134,18 @@ funBusImages[3].addEventListener("mouseover", e => {
     playSound("Hahahahaha.mp3")
 })
 
+////// buttons
+
 destinationButton[0].addEventListener("mouseover", e => {
     destinationButton[0].style.color = "red";
     destinationButton[0].style.background = "green";
     destinationButton[0].style.padding = "3%";
     destinationButton[0].style.borderRadius = "20%";
     destinationButton[0].style.boxShadow = "2px 17px 35px 1px #8E0000"
+})
+
+destinationButton[0].addEventListener("click", e => {
+    playSound("message.mp3")
 })
 
 destinationButton[1].addEventListener("mouseover", e => {
@@ -150,10 +156,18 @@ destinationButton[1].addEventListener("mouseover", e => {
     destinationButton[1].style.boxShadow = "2px 17px 35px 1px #8E0000"
 })
 
+destinationButton[1].addEventListener("click", e => {
+    playSound("Krueger.mp3")
+})
+
 destinationButton[2].addEventListener("mouseover", e => {
     destinationButton[2].style.color = "red";
     destinationButton[2].style.background = "green";
     destinationButton[2].style.padding = "3%";
     destinationButton[2].style.borderRadius = "20%";
     destinationButton[2].style.boxShadow = "2px 17px 35px 1px #8E0000"
+})
+
+destinationButton[2].addEventListener("click", e => {
+    playSound("freeys_come.mp3")
 })
