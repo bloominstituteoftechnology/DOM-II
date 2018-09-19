@@ -4,6 +4,7 @@ const navTag = document.querySelectorAll('.main-navigation .nav-link');
 const headingTag = document.querySelectorAll('h2'); 
 const pTag = document.querySelectorAll('p');
 const btn = document.querySelectorAll('.btn');
+const img = document.querySelectorAll('img');
 
 const header = document.querySelector('.main-navigation');
 
@@ -18,12 +19,12 @@ navTag[0].addEventListener('mouseover',(e) => {
 
 bodyTag.addEventListener('wheel', (e) => {
     e.stopPropagation();
-    bodyTag.style.backgroundColor = 'lightgray';
+    e.currentTarget.style.backgroundColor = 'lightgray';
 })
 
 pTag[0].addEventListener('mousemove', (e) => {
     e.stopPropagation();
-    console.log('u moveover me');
+    img[0].removeAttribute('src');
 })
 
 window.addEventListener('load',(e) => {
@@ -32,27 +33,27 @@ window.addEventListener('load',(e) => {
 
 btn[1].addEventListener('dblclick', (e) => {
     e.stopPropagation();
-    btn[1].style.backgroundColor = 'blue';
+    e.target.style.backgroundColor = 'blue';
 })
 
 window.addEventListener('scroll', (e) => {
     e.stopPropagation();
-    console.log('u are scoll');
+    pTag[1].style.color = 'red';
 })
 
 window.addEventListener('resize', (e) => {
     e.stopPropagation();
-    console.log('u are resize');
+    pTag[2].style.color = 'green';
 })
 
 btn[2].addEventListener('contextmenu', (e) => {
     e.stopPropagation();
-    console.log('u right-click');
+    pTag[3].style.color = 'yellow';
 })
 
 window.addEventListener('copy', (e) => {
     e.stopPropagation();
-    console.log('just copy a item');
+    pTag[4].style.color = 'purple';
 })
 
 for (let i=0; i < navTag.length; i++) {
