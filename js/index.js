@@ -5,7 +5,7 @@
 
 
 ///Navigation
-let aLinks = document.querySelectorAll("a");
+const aLinks = document.querySelectorAll("a");
 aLinks.forEach((link) => {
 
     link.addEventListener("mouseover", (event) => {
@@ -17,17 +17,25 @@ aLinks.forEach((link) => {
     });
 });
 
+//navigation line preventDefault
+const navigation = document.querySelector(".nav a");
+
+navigation.setAttribute("href", "http://LambdaSchool.com");
+
+navigation.addEventListener("click", (event) => {
+    event.preventDefault();
+})
 
 
-let images = document.querySelectorAll("img");
-let txtContent = document.querySelectorAll(".text-content");
+///window scroll event
+const images = document.querySelectorAll("img");
+const txtContent = document.querySelectorAll(".text-content");
 let imgContent = document.querySelectorAll(".img-content");
 
 let imgArray = Array.from(images).map((image => {
     image.style.opacity = 0;
     image.style.width = "10%";
 }));
-
 
 
 images.forEach((image) => {
@@ -50,7 +58,8 @@ images.forEach((image) => {
         image.style.zIndex = -9999;
         image.style.transition = "width 3s, opacity 4s";
     });
-    console.log(image)
 });
+
+
 
 
