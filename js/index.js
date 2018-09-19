@@ -8,7 +8,6 @@ function playSound(soundfile) {
 const funBusHeading = document.querySelectorAll(".nav-link");
 const funBusImages = document.querySelectorAll("img");
 const destinationButton = document.querySelectorAll(".btn");
-
 //// Home link
 
 funBusHeading[0].addEventListener("mouseover", e => {
@@ -121,8 +120,6 @@ funBusImages[1].addEventListener("mouseover", e => {
 funBusImages[1].addEventListener("mouseout", e => {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "red";
-    nav.style.backgroundColor = "black";
-    nav.style.color = "red";
 })
 
 funBusImages[2].addEventListener("mouseover", e => {
