@@ -350,3 +350,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.picDrop {
+  width: 100%;
+  height: 20rem;
+  border: 2px dashed peachpuff;
+}

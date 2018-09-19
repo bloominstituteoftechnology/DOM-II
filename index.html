@@ -11,6 +11,7 @@
 
   <script src="js/index.js" async></script>
 
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -60,7 +61,7 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-      <img src="img/destination.jpg" alt="Second slide">
+      <img src="img/destination.jpg" alt="Second slide" draggable ="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
     </section>
     <section class="content-pick">
 
@@ -81,7 +82,9 @@
       </div>
     </section>
   </div><!-- container -->
+<div class="picDrop">
 
+</div>
   <footer class="footer">
     <p>Copyright Fun Bus 2018</p>
   </footer>
