@@ -44,7 +44,6 @@ const mainHeader = document.querySelector('.main-navigation');
 
 mainHeader.addEventListener('dblclick', ()=>{
     mainHeader.style.backgroundColor = 'cornflowerblue';
-    mainHeader.stopPropagation();
 });
 
 backgroundAdjust.addEventListener('keydown', ()=>{
@@ -60,3 +59,14 @@ const busImg = document.querySelector('.intro img');
 busImg.addEventListener('click', ()=>{
     busImg.classList.toggle('border-radius');
 });
+
+const imageContent = document.querySelector('.img-content');
+
+imageContent.addEventListener('mouseover', () => {
+    imageContent.style.border = '10px dashed blue';
+    imageContent.style.height = '100%';
+});
+
+mainHeader.addEventListener('auxclick', () => {
+    mainHeader.alert('Double Click this');
+})
