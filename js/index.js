@@ -1,7 +1,14 @@
 const mainNav = document.querySelector('.main-navigation');
 const navItems = mainNav.querySelector('.nav');
+const navLinks = navItems.querySelectorAll('a');
 const title = mainNav.querySelector('h1');
 const home = document.querySelector('.home');
+navLinks.forEach(element => {
+  element.addEventListener('click', event => {
+    event.preventDefault();
+  });
+});
+
 document.addEventListener('keydown', () => {
   navItems.classList.toggle('vis');
 });
@@ -31,6 +38,18 @@ pics[2].addEventListener('dblclick', () => {
   pics[2].classList.toggle('cntrst');
 });
 
-pics[3].addEventListener('load', () => {
+window.addEventListener('load', () => {
   pics[3].classList.add('cntrst');
 });
+
+home.addEventListener('select', () => {
+  console.log(event.target);
+  event.target.style.color = yellow;
+});
+// const headers = home.querySelectorAll('h2');
+
+// headers.forEach(element => {
+//   headers.element.addEventListener('select', () => {
+//     headers.element.style['text-decoration'] = 'underline';
+//   });
+// });
