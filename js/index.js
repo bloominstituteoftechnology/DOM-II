@@ -6,8 +6,19 @@ const myHeader = document.querySelectorAll('.home h2');
 const myNav = document.querySelector('body');
 const readerProgress = document.querySelector('.progress');
 const introImg = document.querySelector('.intro img');
+const imgScooby = document.querySelector('.content-section img');
+const imgWendy = document.querySelector('.inverse-content img');
+const navPrevent = document.querySelectorAll('.nav-container a');
 
 
+
+console.log(navPrevent);
+
+window.addEventListener('load', () => {
+    alert('Press g to change the background color, w to change it back')
+});
+
+//button click
 contentPick.addEventListener('click', () => {
     contentPick.classList.toggle('change-background');
 });
@@ -17,10 +28,8 @@ myBtn.addEventListener('click', () => {
     contentPick.style.color ='red';
     event.stopPropagation();
 });
-// myBtn.addEventListener('click', () => {
-    // Step 3: Do something!
-//     console.log("still works");
-//   });
+
+//changes color of text and headers
 
 myHeader.forEach(item => item.addEventListener('mouseover', (event) => {
     event.stopPropagation();
@@ -38,11 +47,14 @@ myHeader.forEach(item => item.addEventListener('mouseover', (event) => {
 myNav.addEventListener('keydown', (e) => {
     if (event.key == 'g'){
         document.body.style.background = 'darkblue';
+        document.body.style.color= 'orange';
     }
 });
+
 myNav.addEventListener('keydown', (e) => {
-    if (e.key =='a'){
-        document.body.style.background = 'white';
+    if (e.key =='w'){
+        document.body.style.background = '';
+        document.body.style.color= '';
     }
 });
 
@@ -56,5 +68,28 @@ window.addEventListener("scroll", () => {
   
     setTimeout(() => {
         event.target.src = 'img/fun-bus.jpg';
-    }, 5000);
+    }, 3000);
     }, false);
+
+imgScooby.addEventListener('mouseover', (event) => {
+event.target.src ='https://www.wbkidsgo.com/Portals/4/Images/Content/Characters/Scooby/characterArt-scooby-SD.png'
+      
+setTimeout(() => {
+event.target.src = 'img/adventure.jpg';
+}, 3000);
+}, false);
+
+imgWendy.addEventListener('mouseover', (event) => {
+event.target.src ='https://vignette.wikia.nocookie.net/p__/images/e/ec/Daphne.png/revision/latest?cb=20130504082505&path-prefix=protagonist'
+          
+setTimeout(() => {
+event.target.src = 'img/adventure.jpg';
+}, 3000);
+}, false);
+
+
+
+
+navPrevent.forEach(item => item.addEventListener('click', (e) => {
+    event.preventDefault();
+}));
