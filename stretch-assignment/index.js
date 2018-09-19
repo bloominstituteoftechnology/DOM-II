@@ -1,4 +1,3 @@
-let blocks = document.querySelectorAll('.block');
 let i = -1;
 let click;
 
