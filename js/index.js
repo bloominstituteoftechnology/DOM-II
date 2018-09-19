@@ -7,6 +7,8 @@ function playSound(soundfile) {
 
 const funBusHeading = document.querySelectorAll(".nav-link");
 const funBusImages = document.querySelectorAll("img");
+const destinationButton = document.querySelectorAll("destination");
+
 //// Home link
 
 funBusHeading[0].addEventListener("mouseover", e => {
@@ -21,8 +23,8 @@ funBusHeading[0].addEventListener("mouseover", e => {
 })
 
 funBusHeading[0].addEventListener("mouseout", e => {
-    funBusHeading[0].style.background = "black";
-    funBusHeading[0].style.color = "red";
+    funBusHeading[0].style.background = "white";
+    funBusHeading[0].style.color = "black";
     funBusHeading[0].style.padding = "0%";
     funBusHeading[0].style.boxShadow = "none";
     funBusHeading[1].style.fontSize = "16px";
@@ -44,8 +46,8 @@ funBusHeading[1].addEventListener("mouseover", e => {
 })
 
 funBusHeading[1].addEventListener("mouseout", e => {
-    funBusHeading[1].style.background = "black";
-    funBusHeading[1].style.color = "red";
+    funBusHeading[1].style.background = "white";
+    funBusHeading[1].style.color = "black";
     funBusHeading[1].style.padding = "0%";
     funBusHeading[1].style.boxShadow = "none";
     funBusHeading[0].style.fontSize = "16px";
@@ -68,8 +70,8 @@ funBusHeading[2].addEventListener("mouseover", e => {
 })
 
 funBusHeading[2].addEventListener("mouseout", e => {
-    funBusHeading[2].style.background = "black";
-    funBusHeading[2].style.color = "red";
+    funBusHeading[2].style.background = "white";
+    funBusHeading[2].style.color = "black";
     funBusHeading[2].style.padding = "0%";
     funBusHeading[2].style.boxShadow = "none";
     funBusHeading[0].style.fontSize = "16px";
@@ -91,8 +93,8 @@ funBusHeading[3].addEventListener("mouseover", e => {
 })
 
 funBusHeading[3].addEventListener("mouseout", e => {
-    funBusHeading[3].style.background = "black";
-    funBusHeading[3].style.color = "red";
+    funBusHeading[3].style.background = "white";
+    funBusHeading[3].style.color = "black";
     funBusHeading[3].style.padding = "0%";
     funBusHeading[3].style.boxShadow = "none";
     funBusHeading[0].style.fontSize = "16px";
@@ -119,6 +121,8 @@ funBusImages[1].addEventListener("mouseover", e => {
 funBusImages[1].addEventListener("mouseout", e => {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "red";
+    nav.style.backgroundColor = "black";
+    nav.style.color = "red";
 })
 
 funBusImages[2].addEventListener("mouseover", e => {
@@ -127,4 +131,5 @@ funBusImages[2].addEventListener("mouseover", e => {
 
 funBusImages[3].addEventListener("mouseover", e => {
     funBusImages[3].src = "https://i0.wp.com/riversofgrue.com/wp-content/uploads/2013/06/noesf.gif?resize=450%2C253&ssl=1";
+    playSound("Hahahahaha.mp3")
 })
