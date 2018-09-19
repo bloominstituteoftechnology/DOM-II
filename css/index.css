@@ -285,7 +285,7 @@ img {
 }
 .home .content-section .text-content {
   width: 48%;
-  padding-right: 1%;
+  padding-right: 2%;
 }
 @media (max-width: 500px) {
   .home .content-section .text-content {
@@ -295,8 +295,8 @@ img {
 }
 .home .content-section .img-content {
   width: 48%;
-  padding-left: 1%;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {
@@ -307,11 +307,10 @@ img {
 .home .content-section .img-content .img-overlay {
   position: absolute;
   top: 0;
-  left: 1%;
-  width: 98%;
-  height: 99%;
+  left: 0;
+  width: 100%;
+  height: 0%;
   border-radius: 10px;
-  margin-left: 1%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -320,7 +319,9 @@ img {
   flex-direction: column;
   color: #FFFFFF;
   font-size: 2rem;
+  opacity: 0;
   display: none;
+  animation: growHeight 300ms ease-in-out forwards;
 }
 .home .content-section .img-content .img-overlay .btn {
   -webkit-border-radius: 15px;
@@ -360,7 +361,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
 }
 .home .inverse-content .text-content {
-  padding-left: 1%;
+  padding-left: 2%;
   padding-right: 0;
 }
 @media (max-width: 500px) {
@@ -369,7 +370,6 @@ img {
   }
 }
 .home .inverse-content .img-content {
-  padding-right: 1%;
   padding-left: 0;
 }
 @media (max-width: 500px) {
@@ -433,4 +433,17 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+@keyframes growHeight {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  75% {
+    height: 99%;
+  }
+  100% {
+    opacity: 1;
+    height: 99%;
+  }
 }

@@ -1,5 +1,7 @@
 const container = document.querySelector('.blocks');
 
+// Uncomment for rockets
+
 // container.addEventListener('click', e => {
 //   let topBlock = e.target;
 //   container.prepend(topBlock);

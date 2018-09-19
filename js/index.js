@@ -22,7 +22,7 @@ const adventureImg = document.querySelector('.adventure-img');
 
 hoverBtns.forEach(btn => {
   btn.addEventListener('dblclick', () => {
-    adventureImg.src = 'https://picsum.photos/376/282';
+    adventureImg.src = 'https://picsum.photos/384/288';
   });
 });
 
@@ -61,10 +61,12 @@ contentPick.addEventListener('click', e => {
 
 // 7.2
 
-const contentPickBtn = document.querySelector('.content-pick .btn');
-contentPickBtn.addEventListener('click', e => {
-  e.stopPropagation();
-  contentPickBtn.innerText = 'Signed Up!';
+const contentPickBtn = document.querySelectorAll('.content-pick .btn');
+contentPickBtn.forEach(button => {
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    button.innerText = 'Signed Up!';
+  });
 });
 
 // 8. scroll
