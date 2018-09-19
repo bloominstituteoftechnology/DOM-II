@@ -37,6 +37,10 @@
   border: 10px solid black;
 }
 
+.resize {
+  border: 20px solid red;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -44,4 +48,30 @@
 .blackAndWhite {
   filter: grayscale(1);
   z-index: -1;
+}
+
+.blackOut {
+  display: none !important;
+  background-color: black !important;
+  color: black;
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-duration: 15s;
+  animation-play-state: running;
+  animation-iteration-count: 1;
+}
+
+@keyframes rotate {
+  10%  {transform: rotate(-50deg)}
+  20%  {transform: rotate(-90deg)}
+  30%  {transform: rotate(-120deg)}
+  40%  {transform: rotate(-150deg)}
+  50% {transform: rotate(-200deg)}
+  60% {transform: rotate(-230deg)}
+  70% {transform: rotate(-260deg)}
+  80% {transform: rotate(-290deg)}
+  90% {transform: rotate(-330deg)}
+  100% {transform: rotate(-360deg)}
 }
