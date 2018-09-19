@@ -7,7 +7,7 @@ function playSound(soundfile) {
 
 const funBusHeading = document.querySelectorAll(".nav-link");
 const funBusImages = document.querySelectorAll("img");
-const destinationButton = document.querySelectorAll("destination");
+const destinationButton = document.querySelectorAll(".btn");
 
 //// Home link
 
@@ -132,4 +132,28 @@ funBusImages[2].addEventListener("mouseover", e => {
 funBusImages[3].addEventListener("mouseover", e => {
     funBusImages[3].src = "https://i0.wp.com/riversofgrue.com/wp-content/uploads/2013/06/noesf.gif?resize=450%2C253&ssl=1";
     playSound("Hahahahaha.mp3")
+})
+
+destinationButton[0].addEventListener("mouseover", e => {
+    destinationButton[0].style.color = "red";
+    destinationButton[0].style.background = "green";
+    destinationButton[0].style.padding = "3%";
+    destinationButton[0].style.borderRadius = "20%";
+    destinationButton[0].style.boxShadow = "2px 17px 35px 1px #8E0000"
+})
+
+destinationButton[1].addEventListener("mouseover", e => {
+    destinationButton[1].style.color = "red";
+    destinationButton[1].style.background = "green";
+    destinationButton[1].style.padding = "3%";
+    destinationButton[1].style.borderRadius = "20%";
+    destinationButton[1].style.boxShadow = "2px 17px 35px 1px #8E0000"
+})
+
+destinationButton[2].addEventListener("mouseover", e => {
+    destinationButton[2].style.color = "red";
+    destinationButton[2].style.background = "green";
+    destinationButton[2].style.padding = "3%";
+    destinationButton[2].style.borderRadius = "20%";
+    destinationButton[2].style.boxShadow = "2px 17px 35px 1px #8E0000"
 })
