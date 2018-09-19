@@ -21,19 +21,35 @@ red.addEventListener('click', function(event){
 
 let r = 0;
 red.addEventListener("mousedown", redMove);
-red.addEventListener('mouseup', stop);
+red.addEventListener('mouseup', redStop);
 
 function redMove() {
-    click = setInterval(moverRed, 100);
+    clearInterval(click);
+    click = setInterval(moverRed, 1);
 }
 
 function moverRed() {
     if (r < 1400){
-        r+=20;
+        r++;
         red.style.marginLeft = `${r}px`;
         console.log(r);
     }
-    
+}
+
+function redStop() {
+    clearInterval(click);
+    click = setInterval(stopperRed, 1);
+}
+
+function stopperRed() {
+    if (r > 10){
+        r--;
+        red.style.marginLeft = `${r}px`;
+        console.log(r);
+    }
+    else {
+        r = 10;
+    }
 }
 
 
@@ -45,19 +61,35 @@ blue.addEventListener('click', function(event){
 
 let b = 0;
 blue.addEventListener("mousedown", blueMove);
-blue.addEventListener('mouseup', stop);
+blue.addEventListener('mouseup', blueStop);
 
 function blueMove() {
-    click = setInterval(moverBlue, 100);
+    clearInterval(click);
+    click = setInterval(moverBlue, 1);
 }
 
 function moverBlue() {
     if (b < 1400){
-        b+=20;
+        b++;
         blue.style.marginLeft = `${b}px`;
     }
+    
 }
 
+function blueStop() {
+    clearInterval(click);
+    click = setInterval(stopperBlue, 1);
+}
+
+function stopperBlue() {
+    if (b > 10){
+        b--;
+        blue.style.marginLeft = `${b}px`;
+    }
+    else {
+        b = 10;
+    }
+}
 
 // GREEN --------------------------------------------------------------------------------------
 green.addEventListener('click', function(event){
@@ -67,18 +99,36 @@ green.addEventListener('click', function(event){
 
 let g = 0;
 green.addEventListener("mousedown", greenMove);
-green.addEventListener('mouseup', stop);
+green.addEventListener('mouseup', greenStop);
 
 function greenMove() {
-    click = setInterval(moverGreen, 100);
+    clearInterval(click);
+    click = setInterval(moverGreen, 1);
 }
 
 function moverGreen() {
     if (g < 1400){
-        g+=20;
+        g++;
         green.style.marginLeft = `${g}px`;
     }
+    
 }
+
+function greenStop() {
+    clearInterval(click);
+    click = setInterval(stopperGreen, 1);
+}
+
+function stopperGreen() {
+    if (g > 10){
+        g--;
+        green.style.marginLeft = `${g}px`;
+    }
+    else {
+        g = 10;
+    }
+}
+
 
 
 // PINK --------------------------------------------------------------------------------------
@@ -89,19 +139,35 @@ pink.addEventListener('click', function(event){
 
 let p = 0;
 pink.addEventListener("mousedown", pinkMove);
-pink.addEventListener('mouseup', stop);
+pink.addEventListener('mouseup', pinkStop);
 
 function pinkMove() {
-    click = setInterval(moverPink, 100);
+    clearInterval(click);
+    click = setInterval(moverPink, 1);
 }
 
 function moverPink() {
     if (p < 1400){
-        p+=20;
+        p++;
         pink.style.marginLeft = `${p}px`;
     }
+    
 }
 
+function pinkStop() {
+    clearInterval(click);
+    click = setInterval(stopperPink, 1);
+}
+
+function stopperPink() {
+    if (p > 10){
+        p--;
+        pink.style.marginLeft = `${p}px`;
+    }
+    else {
+        p = 10;
+    }
+}
 
 // GRAY --------------------------------------------------------------------------------------
 gray.addEventListener('click', function(event){
@@ -111,15 +177,32 @@ gray.addEventListener('click', function(event){
 
 let y = 0;
 gray.addEventListener("mousedown", grayMove);
-gray.addEventListener('mouseup', stop);
+gray.addEventListener('mouseup', grayStop);
 
 function grayMove() {
-    click = setInterval(moverGray, 100);
+    clearInterval(click);
+    click = setInterval(moverGray, 1);
 }
 
 function moverGray() {
     if (y < 1400){
-        y+=20;
+        y++;
         gray.style.marginLeft = `${y}px`;
+    }
+    
+}
+
+function grayStop() {
+    clearInterval(click);
+    click = setInterval(stopperGray, 1);
+}
+
+function stopperGray() {
+    if (y > 10){
+        y--;
+        gray.style.marginLeft = `${y}px`;
+    }
+    else {
+        y = 10;
     }
 }
