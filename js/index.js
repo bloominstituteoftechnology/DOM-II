@@ -10,12 +10,22 @@
 // select ------- Used on textarea
 // dblclick ---- Used on pick
 
+// ---------- SELECTORS ----------
+let destinationSection = document.querySelector(".content-destination");
+let destinationImg = document.querySelector(".content-destination img");
+const home = document.querySelector(".home");
+
 // =========== MOUSEOVER ==========
 let imgContent = document.querySelectorAll(".content-section .img-content img");
 imgContent[0].addEventListener("mouseover", function(e) {
   e.target.style.opacity = ".6";
   e.target.style.transition = ".4s";
 });
+
+destinationImg.addEventListener(
+  "mouseover",
+  e => (e.target.style.cursor = "pointer")
+);
 
 // =========== KEYDOWN ==========
 let body = document.querySelector("body");
@@ -29,13 +39,19 @@ let nav = document.querySelector(".main-navigation");
 window.addEventListener("wheel", function() {
   nav.style.backgroundColor = "#17A2B8";
   nav.style.color = "white";
-  nav.style.border = "2px solid #17A2B8";
+  nav.style.borderBottom = "2px dashed #1782B8";
   nav.style.transition = "1s";
 });
 
 // =========== LOAD ==========
+let tl = new TimelineMax();
+let logo = document.querySelector(".logo-heading");
+let navLinks = document.querySelectorAll(".nav-link");
 window.addEventListener("load", function() {
-  alert("Welcome to Fun Bus!");
+  // alert("Welcome to Fun Bus!");
+  TweenMax.from(logo, 1, { y: -100 });
+  tl.staggerFrom(navLinks, 1, { y: 35 }, 0.2);
+  tl.from(home, 1, { opacity: 0 }, 1);
 });
 
 // =========== FOCUS ==========
@@ -51,15 +67,14 @@ form.addEventListener(
 // =========== SCROLL ==========
 let funBusIcon = document.querySelector("#bus-icon img");
 let html = document.querySelector("html");
-window.addEventListener(
-  "scroll",
-  function() {
-    // funBusIcon.style.border = "1px solid red";
-    funBusIcon.style.marginRight = "90%";
-    funBusIcon.style.transition = "7s";
-  },
-  true
-);
+window.addEventListener("scroll", function() {
+  funBusIcon.style.marginRight = "90%";
+  funBusIcon.style.transition = "7s";
+  navLinks.forEach(link => {
+    link.style.color = "white";
+    link.style.transition = "1s";
+  });
+});
 
 // =========== SELECT ==========
 body.addEventListener("select", function(e) {
@@ -67,8 +82,7 @@ body.addEventListener("select", function(e) {
 });
 
 // =========== DOUBLE CLICK ==========
-let destinationSection = document.querySelector(".content-destination");
-let destinationImg = document.querySelector(".content-destination img");
+
 destinationImg.addEventListener("dblclick", function(e) {
   e.stopPropagation();
   e.target.src =
