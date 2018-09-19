@@ -1,35 +1,27 @@
-// Your code goes here
+// mouse click on the first of nav 1
+document.querySelectorAll(".nav-link")[0].addEventListener("click", (event) => {
+  event.currentTarget.style.color = "red";
+  preventDefault()
+})
 
-//variable assignment area
+// double click on second of nav 2
+document.querySelectorAll(".nav-link")[1].addEventListener("dblclick", (event) => {
+  event.currentTarget.style.color = "blue";
+  preventDefault()
+})
 
-// 1st var
-const logoheading = document.querySelector('.logo-heading');
-// 2nd var
-const welcomeH2 = document.querySelector('.container .intro h2');
-// 3rd var
-const introp = document.querySelector('.container .intro p');
-// 4th var
-const cstch2 = document.querySelector('.container .content-section .text-content h2');
-// 5th var
-const csimg = document.querySelector('.container .content-section .img-content ');
-// 6th var
-const cont = document.querySelectorall('.container .content-pick .destination')[0];
-// 7th var
-const cont = document.querySelectorall('.container .content-pick .destination')[1];
-// 8th var
-const cont = document.querySelectorall('.container .content-pick .destination')[2];
-// 9th var
-const cont = document.querySelectorall('.main-navigation .nav-container .nav nav-link')[0];
-// 10th var
-const introp = document.querySelector('.footer');
-
-// * [ ] `mouseover`
-// * [ ] `keydown`
-// * [ ] `wheel`
-// * [ ] `drag / drop`
-// * [ ] `load`
-// * [ ] `focus`
-// * [ ] `resize`
-// * [ ] `scroll`
-// * [ ] `select`
-// * [ ] `dblclick`
+// mouse-over on third of nav 3
+document.querySelectorAll(".nav-link")[2].addEventListener("mouseover", (event) => {
+  event.currentTarget.style.color = "green";
+  preventDefault()
+})
+// wheel over on fourth of nav 4
+document.querySelectorAll(".nav-link")[3].addEventListener("wheel", (event) => {
+  event.currentTarget.style.color = "orange";
+  preventDefault()
+})
+// scroll top paragraphs 5
+document.addEventListener("scroll", (event) => {
+  document.querySelector(".home p").style.fontSize="xx-large";
+})
+ 
