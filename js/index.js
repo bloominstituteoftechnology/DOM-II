@@ -38,8 +38,30 @@ let animateHome = document.querySelectorAll('.nav-link')
  for (let y=0; y<animateTextContent.length; y++) {
     animateTextContent[y].addEventListener('click', (event) => {
         TweenMax.to(".text-content", 3, {
-          rotationY: 360
+          opacity: .7,
+          rotationY: 360,
+          color: 'red',
         })
     })
     }
 //-----------------------------------------------------------------------
+let selectFooter = document.querySelector('.form').querySelector('input')
+selectFooter.addEventListener('select', () => {
+    alert('text selected!')
+})
+//-----------------------------------------------------------------------
+let animateBottomText = document.querySelector('.destination')
+animateBottomText.addEventListener('mouseup', () => {
+    alert('Hey you cliked on me!')
+})
+//----------------------------------------------------------------------
+let rightClick = document.querySelector('.content-destination')
+rightClick.addEventListener('contextmenu', () => {
+    alert('you right clicked me!')
+})
+//---------------------------------------------------------------------
+let changeHeader = document.querySelector('.main-navigation')
+changeHeader.addEventListener('click', () => {
+    event.stopPropagation();
+    event.target.style.backgroundColor = 'red'
+})
