@@ -320,8 +320,6 @@ img {
   color: #FFFFFF;
   font-size: 2rem;
   opacity: 0;
-  display: none;
-  animation: growHeight 300ms ease-in-out forwards;
 }
 .home .content-section .img-content .img-overlay .btn {
   -webkit-border-radius: 15px;

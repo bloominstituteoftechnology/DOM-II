@@ -5,24 +5,32 @@ const imgContent = Array.from(document.querySelectorAll('.img-content'));
 
 imgContent.forEach(img => {
   img.addEventListener('mouseover', () => {
-    img.firstElementChild.style.display = 'flex';
+    TweenMax.to(img.firstElementChild, 1, {
+      height: '99%',
+      opacity: 1,
+      ease: Power4.easeInOut
+    });
   });
 });
 
 // 2. mouseout
 imgContent.forEach(img => {
-  img.addEventListener('mouseout', () => {
-    img.firstElementChild.style.display = 'none';
+  img.firstElementChild.addEventListener('mouseleave', () => {
+    TweenMax.to(img.firstElementChild, 0.5, {
+      height: 0,
+      opacity: 0,
+      ease: Power4.easeInOut
+    });
   });
 });
 
 // 3. doubleclick
 const hoverBtns = document.querySelectorAll('.btn-hover');
-const adventureImg = document.querySelector('.adventure-img');
+const adventureImgs = document.querySelectorAll('.adventure-img');
 
-hoverBtns.forEach(btn => {
+hoverBtns.forEach((btn, i) => {
   btn.addEventListener('dblclick', () => {
-    adventureImg.src = 'https://picsum.photos/384/288';
+    adventureImgs[i].src = 'https://picsum.photos/384/288';
   });
 });
 
