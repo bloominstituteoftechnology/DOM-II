@@ -7,26 +7,33 @@ navLink.forEach((link) => {
 });
 
 
-let mouseOver = document.querySelectorAll('h2');
-mouseOver.forEach((h2) => {
-    h2.addEventListener('mouseover', (e) => {
+let mouseOver = document.querySelectorAll('.home h2');
+mouseOver.forEach((e) => {
+    e.addEventListener('mouseover', (e) => {
         e.target.style.color = "teal";
         
-        setTimeout(function() {
+        setTimeout(() => {
             e.target.style.color = "";
-          }, 1000);
+          }, 2000);
         }, false);
 });
+
 
 let dblClick = document.querySelectorAll('.home img');
 dblClick.forEach((img) => {
     img.addEventListener('dblclick', () => {
         img.classList.toggle('display');
 
-    setTimeout(function() {
+    setTimeout(() => {
         img.classList.toggle('display');
-      }, 10000);
+      }, 9000);
     }, false);
+});
+
+let dblclick2 = document.querySelector('#intro-image');
+dblclick2.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+
 });
 
 document.addEventListener('keydown', (e) => {
