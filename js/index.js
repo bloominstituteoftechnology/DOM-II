@@ -1,9 +1,9 @@
 // Your code goes here
+let all = document.querySelectorAll('.container');
+all.forEach(addEventListener('mouseover', (e) => {
+    event.target.style.color = 'blue';
+}))
 
-let funTitle = document.querySelector('h1');
-funTitle.addEventListener('mouseover', (e) => {
-    event.target.style.color = 'purple';
-})
 
 document.addEventListener('keydown', (e) => {
     let aKey = event.key;
@@ -20,6 +20,10 @@ nav.addEventListener('focus', (event) => {
 nav.addEventListener('blur', (event) => {
    event.target.style.fontSize = '';
 }, true);
+
+nav.addEventListener('mouseover', (event) => {
+    event.stopPropagation();
+})
 
 
 
@@ -59,3 +63,4 @@ let aTags = document.querySelectorAll('a');
 aTags.addEventListener("click", (event) => {
     event.preventDefault();
 })
+
