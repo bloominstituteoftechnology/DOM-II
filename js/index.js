@@ -33,3 +33,33 @@ header.addEventListener("mouseenter", e => {
 header.addEventListener("mouseleave", e => {
     e.target.classList.remove("hide");
 });
+
+const letsGoText = document.querySelector('.text-content p');
+const letsGo = document.querySelector('#lets-go');
+letsGo.addEventListener("drag", () => {
+    letsGoText.style.border = "2px solid black";
+    letsGoText.style.textAlign = "center";
+});
+
+window.addEventListener("resize", () => {
+    let header = document.querySelector('.main-navigation');
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    header.style.background = `#${randomColor}`;
+
+});
+
+let prize = Math.round(Math.random() * 100);
+
+function prizeE(event) {
+    alert(`Congrats!  You will receive ${prize}% off!`);
+    window.removeEventListener('keydown', prizeE, false);
+    const newEle = document.createElement('p');
+    newEle.innerHTML = `You get ${prize}% off!`;
+    (document.querySelector(`div.nav-container`)).appendChild(newEle);
+}
+window.addEventListener('keydown', prizeE, false);
+
+
+window.addEventListener("load", () => {
+    alert("CLICK OK and then press any key to get a prize!");
+});
