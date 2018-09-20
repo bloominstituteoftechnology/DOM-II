@@ -430,18 +430,9 @@ img {
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 10001;
+  z-index: 100000;
   background: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: 2s fadeOut;
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }

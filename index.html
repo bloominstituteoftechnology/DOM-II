@@ -119,7 +119,17 @@
     <p>Copyright Fun Bus 2018</p>
   </footer>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-  <script src="js/index.js"></script>
+  <script aysnc src="js/index.js"></script>
+  <script>
+    // hide spinner on load event
+    window.addEventListener("load", fadeOut)
+
+
+    function fadeOut() {
+      document.querySelector(".fullscreen-spinner").style.display = "none";
+    }
+
+  </script>
 </body>
 
 </html>

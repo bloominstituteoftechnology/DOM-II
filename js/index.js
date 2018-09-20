@@ -22,57 +22,22 @@ imgSpan[2].addEventListener("click", () => {
 // close modal functions
 // close modal on image modal span click
 function modalClose() {
-  document.querySelector(".image-modal span").addEventListener("click", () => {
+  document.querySelector(".image-modal span").addEventListener("click", e => {
     modal.style.display = "none";
+    e.stopEventPropagation();
   });
+  function modalCloseTwo() {
+    modalImg.addEventListener("click", () => {
+      modal.style.display = "none";
+      e.stopEventPropagation();
+    });
+  }
+  modalCloseTwo();
 }
 
 modalClose();
 
 // close img modal on img modal click
-function modalCloseTwo() {
-  modalImg.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-}
-modalCloseTwo();
-
-// hide spinner on load event
-window.addEventListener("load", () => {
-  document.querySelector(".fullscreen-spinner").style.display = "none";
-});
-
-// mouse over img events
-
-imgSpan[0].addEventListener("mouseover", () => {
-  imgSpan[0].style.transform = "scale(1.1)";
-  imgSpan[0].style.transition = "500ms ease-in-out";
-});
-
-imgSpan[0].addEventListener("mouseleave", () => {
-  imgSpan[0].style.transform = "scale(1)";
-});
-
-// img two mouse over
-imgSpan[1].addEventListener("mouseover", () => {
-  imgSpan[1].style.transform = "scale(1.1)";
-  imgSpan[1].style.transition = "500ms ease-in-out";
-});
-
-imgSpan[1].addEventListener("mouseleave", () => {
-  imgSpan[1].style.transform = "scale(1)";
-});
-
-// img three mouse over
-
-imgSpan[2].addEventListener("mouseover", () => {
-  imgSpan[2].style.transform = "scale(1.1)";
-  imgSpan[2].style.transition = "500ms ease-in-out";
-});
-
-imgSpan[2].addEventListener("mouseleave", () => {
-  imgSpan[2].style.transform = "scale(1)";
-});
 
 // fade body in on load
 document.addEventListener("DOMContentLoaded", () => {
