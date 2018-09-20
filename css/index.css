@@ -215,7 +215,7 @@ img {
   color: #212529;
   text-decoration: none;
 }
-.animated {
+.main-navigation .nav-container .nav .red {
   color: red;
 }
 .footer {
@@ -228,6 +228,9 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.hide {
+  visibility: hidden;
 }
 .home .intro {
   padding: 90px 0 10px;
