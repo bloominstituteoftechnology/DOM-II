@@ -8,6 +8,7 @@ btns.forEach(function (btn) {
     });
 });
 
+
 const navlink = document.querySelectorAll('a.nav-link');
 navlink.forEach(link => {
     link.addEventListener("click", e => e.preventDefault());
@@ -27,11 +28,11 @@ h2.forEach(h => {
 
 const header = document.querySelector('.intro');
 header.addEventListener("mouseenter", e => {
-    e.target.classList.add("hide");
+    e.target.classList.add("border");
 });
 
 header.addEventListener("mouseleave", e => {
-    e.target.classList.remove("hide");
+    e.target.classList.remove("border");
 });
 
 const letsGoText = document.querySelector('.text-content p');
@@ -63,3 +64,15 @@ window.addEventListener('keydown', prizeE, false);
 window.addEventListener("load", () => {
     alert("CLICK OK and then press any key to get a prize!");
 });
+
+
+let btn = document.querySelector('.btn');
+btn.addEventListener("click", () => alert("Button clicked"));
+
+let h1 = document.querySelector('.intro p');
+h1.addEventListener("click", (e) => {
+    e.stopPropagation();
+    h1.style.border = "2px solid black";
+});
+
+header.addEventListener("click", () => header.style.border = "5px solid black");
