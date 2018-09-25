@@ -24,6 +24,13 @@ document.addEventListener('scroll', (event) => {
 
 });
 
+document.addEventListener('cut copy paste', (event) => {
+
+    alert('This content is copyright protected!');
+    event.preventDefault();
+
+});
+
 navItems.addEventListener('click', (event) => {
 
     event.preventDefault();
