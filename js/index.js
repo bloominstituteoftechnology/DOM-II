@@ -1,8 +1,10 @@
 // Your code goes here
 const home = document.querySelector('.home');
 const navItems = document.querySelector('nav');
+const intro = document.querySelector('.intro');
 const sunFun = document.querySelector('h4');
 const btn = document.querySelector('.btn');
+
 
 document.addEventListener('keypress', (event) => {
 
@@ -28,6 +30,12 @@ navItems.addEventListener('click', (event) => {
 
 });
 
+intro.addEventListener('dblclick', (event) => {
+
+    intro.style.display = 'none';
+
+});
+
 btn.addEventListener('click', (event) => {
 
     //event.stopPropagation();
@@ -47,4 +55,5 @@ sunFun.addEventListener('click', (event) => {
     console.log('Fun In The Sun!');
 
 });
+
 
