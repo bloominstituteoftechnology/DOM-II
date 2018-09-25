@@ -43,7 +43,7 @@ intro.addEventListener('dblclick', (event) => {
 
 });
 
-btn.addEventListener('click', (event) => {
+btn.addEventListener('mouseup', (event) => {
 
     //event.stopPropagation();
     alert('Adventure Time!');
@@ -57,7 +57,7 @@ sunFun.addEventListener('mouseover', (event) => {
 });
 
 
-sunFun.addEventListener('click', (event) => {
+sunFun.addEventListener('mousedown', (event) => {
 
     console.log('Fun In The Sun!');
 
