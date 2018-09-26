@@ -24,9 +24,14 @@ document.addEventListener('scroll', function(){
 })
 
 let click=
-document.addEventListener('click', function(){
-    document.getElementsByName('.bus').style.transform='rotate(360deg)';
+document.addEventListener('click', function(event){
+    document.getElementsByClassName('.SPIN').style.transform='rotate(360deg)';
 })
+
+let leave=
+document.addEventListener("mouseout", function(event){
+    event.target.style.color='orange';
+},500);
 
 
 
