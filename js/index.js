@@ -18,16 +18,18 @@ coolNav.forEach(element => {
 
 //2
 let imageFun = document.getElementsByClassName(".intro img")
-imageFun.target()
+imageFun.addEventListener('click', ()=>{
+    element.style.transform = "rotate(180deg)";
+})
 
 //3
-let
+// let
 
 //4
-let
+// let
 
 //5
-let
+// let
 
 
 
