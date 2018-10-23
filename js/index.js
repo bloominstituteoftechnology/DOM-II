@@ -24,8 +24,23 @@ navLinks.forEach(link => {
 
 
 
+// *** === Home Page Events === ***
+
+// ** == Variables == **
+let pictures = document.querySelectorAll('img');
+
+//  ** == Events == **
+pictures.forEach(pic => {
+    pic.addEventListener('mouseenter', event => {
+
+        // Testing Log
+        console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
+    });
+});
+
+
 
 // Testing Log
-/*
-console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
-*/
+
+
+//console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
