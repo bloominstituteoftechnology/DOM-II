@@ -9,6 +9,11 @@ const txtAreaElem = document.querySelector('textarea');
 const h2LetsElem = document.querySelector('.h2-lets');
 const pTgsElem = document.querySelectorAll('p');
 
+// ==================== Mouse click =================   CLICK
+document.addEventListener('click', function(event){
+    console.log ('You have clicked the mouse button!');
+});
+
 
 // ==============  Navigation Links =======  MOUSEOVER & MOUSEOUT
 // (hovering over will show line under text and remove when not on text)
@@ -90,5 +95,26 @@ h2LetsElem.addEventListener('copy', function(event){
 pTgsElem.forEach(lemon => {
     lemon.addEventListener('contextmenu', function(){
         lemon.style.backgroundColor = 'lightgray';
+    });
+});
+
+
+// ================ Window ============== LOAD
+window.addEventListener('load', function(){
+    alert ('loading complete');
+});
+
+
+// ============= PREVENT DEFAULT
+const aNavAbout = document.querySelector('.nav-link-1');
+aNavAbout.addEventListener('click', function(event){
+    event.preventDefault();
+});
+
+// ================ STOP PROPAGATE
+aNavElem.forEach(banana => {
+    banana.addEventListener('click', function(event){
+        event.stopPropagation();
+        console.log('Clicked on Nav Link');
     });
 });
