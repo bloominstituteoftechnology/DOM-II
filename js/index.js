@@ -63,7 +63,7 @@ document.addEventListener('copy', (event) => {
 });
 
 window.addEventListener('scroll', () => {
-    console.log('scrolled!');
+    console.log('scrolling away!');
 });
 
 headingSection.addEventListener('click', (event) => {
