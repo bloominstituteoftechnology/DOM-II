@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll('.nav a');
 const btnList = document.querySelectorAll('.btn');
 const imgList = document.querySelectorAll('img');
 const pTags = document.querySelectorAll('p');
+const intro = document.querySelector('.intro');
+const introImg = document.querySelector('.intro img');
 
 window.addEventListener('load', event => {
 
@@ -23,7 +25,7 @@ window.addEventListener('blur', event => {
 
 });
 
-navLinks.forEach(item => {
+navLinks.forEach(function(item) {
 
   item.addEventListener('mouseover', event => {
 
@@ -34,6 +36,12 @@ navLinks.forEach(item => {
   item.addEventListener('mouseout', event => {
 
     TweenMax.to(event.target, 1, {css:{scale: 1.0, color: 'green', fontWeight: 'normal'}, ease:Power2.easeInOut});
+
+  });
+
+  item.addEventListener('click', function(event) {
+
+    preventDefault(event);
 
   });
 
@@ -130,5 +138,18 @@ pTags.forEach(item => {
     event.target.textContent = newText;
 
   });
+
+});
+
+intro.addEventListener('click', event => {
+
+  alert(`yo, you clicked on ${event.target}.`);
+
+});
+
+introImg.addEventListener('click', event => {
+
+  alert(`You clicked on the image! Good job!`);
+  event.stopPropagation();
 
 })
