@@ -10,40 +10,41 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   
 
-* [ ] Fork the project into your GitHub user account
+* [x] Fork the project into your GitHub user account
 
-* [ ] Clone the forked project into a directory on your machine
+* [x] Clone the forked project into a directory on your machine
 
-* [ ] You are now ready to build this project with your preferred IDE
+* [x] You are now ready to build this project with your preferred IDE
 
   
 
 ## Task 2: Set Up LESS Preprocessor
 
-* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
+* [x] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
 
-* [ ] Open your terminal and navigate to your preprocessing project by using the `cd` command
+* [x] Open your terminal and navigate to your preprocessing project by using the `cd` command
 
-* [ ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
+* [x] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
 
-* [ ] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
+* [x] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
 
-* [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
+* [x] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
 ## Task 3: Create Unique Event Listeners
 
 * [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
-	* [ ] `mouseover`
-	* [ ] `keydown`
-	* [ ] `wheel`
-	* [ ] `drag / drop`
-	* [ ] `load`
-	* [ ] `focus`
-	* [ ] `resize`
-	* [ ] `scroll`
-	* [ ] `select`
-	* [ ] `dblclick`
-
+	* [ ] `mouseover` - when mouse is over 1st picture it slides back and forth
+	* [ ] `keydown` - background of html changes
+	* [ ] `mouseenter` - when mouse on element, turns the sentence from white to black.
+	* [ ] `dragstart` - change text content to 'This is not allowed'
+	* [ ] `load` -
+	* [ ] `focus` - 
+	* [ ] `resize` - 
+	* [ ] `scroll` - 
+	* [ ] `copy` - text turns pink and bold. 
+	* [ ] `select` - select paragraph text it changes color.
+	* [ ] `dblclick` - make "fun bus" rotate 360;
+    * [ ] `cut` - when selection is cut, display none. 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
