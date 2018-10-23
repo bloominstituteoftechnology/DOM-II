@@ -135,8 +135,9 @@ mainHeaderNavContact.addEventListener('mouseout', function(event){
 *******************************************************************************/
 //=========================== Main Nav ===========================
 //------------------- Sign Me Up! (button) -----------------
-const contentPickDestinationSignUpBtns = document.querySelector('.content-pick').querySelector('.destination').querySelectorAll('.btn');
+const contentPickDestinationSignUpBtns = document.querySelector('.content-pick').querySelectorAll('.btn');
 contentPickDestinationSignUpBtns.forEach(function(btn){
+  console.log(btn);
   btn.addEventListener('mousedown', function(event){
     event.currentTarget.style.color = "white";
     event.currentTarget.style.backgroundColor = "#17A2B8"; // @button-bg
@@ -155,6 +156,6 @@ contentPickDestinationSignUpBtns.forEach(function(btn){
     event.currentTarget.style.backgroundColor = "#17A2B8"; // @button-bg
   });
   btn.addEventListener('click', function(event){
-    
+
   })
 })
