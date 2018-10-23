@@ -32,7 +32,7 @@ let pictures = document.querySelectorAll('img');
 //  ** == Events == **
 pictures.forEach(pic => {
     pic.addEventListener('mouseenter', event => {
-
+        pic.classList.toggle('hover-effect');
         // Testing Log
         console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
     });
