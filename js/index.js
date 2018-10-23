@@ -13,6 +13,11 @@
 10. click -> use on "Sign Me Up!" to play a click sound.
 */
 /******************************************************************************
+******************************** Global Methods *******************************
+*******************************************************************************/
+var clickSound = new Audio('Sounds/signUpClickSound.mp3');
+
+/******************************************************************************
 ************************************* Body ************************************
 *******************************************************************************/
 const body = document.querySelector('body');
@@ -155,7 +160,5 @@ contentPickDestinationSignUpBtns.forEach(function(btn){
     event.currentTarget.style.color = "white";
     event.currentTarget.style.backgroundColor = "#17A2B8"; // @button-bg
   });
-  btn.addEventListener('click', function(event){
-
-  })
+  btn.addEventListener('click', function(event){clickSound.play();})
 })
