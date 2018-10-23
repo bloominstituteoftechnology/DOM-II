@@ -52,4 +52,9 @@
     TweenLite.to([h1Tag, h2Tag, h4Tag, navItems], .5, {fontWeight: 'bold'});
     TweenLite.to([h1Tag, h2Tag, h4Tag, navItems], .5, {fontWeight: 'normal', delay: .5});
   })
+
+  // animate for keyDown
+  window.addEventListener('keydown', function(e) {
+    TweenLite.to(allImg, 3, {bezier:{curviness:1.25, values:[{x:10, y:0}, {x:-10, y:0}, {x:10, y:0}, {x:-10, y:0}]}, ease:Power1.easeOut});
+  })
 })();
