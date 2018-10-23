@@ -87,5 +87,6 @@ const myDestination = document.querySelector('.content-destination');
 myDestination.addEventListener('mousedown', function(event) {
     event.stopPropagation();
     event.target.style.backgroundColor = "green";
+    TweenMax.to(".home", 100, {rotation:1080, scale:50, x:150, ease:Power4.easeOut});
 });
 
