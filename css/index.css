@@ -271,6 +271,9 @@ img {
     width: 100%;
   }
 }
+.home .content-section .display-change {
+  order: -2;
+}
 .home .inverse-content {
   padding-bottom: 30px;
   border-bottom: 2px dashed #C0C0C0;
@@ -292,6 +295,9 @@ img {
   .home .inverse-content .img-content {
     order: 2;
   }
+}
+.home .inverse-content .display-change {
+  order: 2;
 }
 .home .content-destination {
   width: 75%;
