@@ -226,6 +226,86 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.form {
+  width: 100%;
+  font-size: 1.6rem;
+  background: #17a2b8;
+  padding: 5.5%;
+  margin-bottom: 3%;
+  border-radius: 20px;
+}
+.form fieldset legend {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+}
+.form fieldset div {
+  float: left;
+  width: 33%;
+  display: flex;
+  margin: 3% 0;
+}
+.form fieldset div input[type="radio"] {
+  margin: 5%;
+}
+.form fieldset div label {
+  margin: 5%;
+}
+.form legend,
+.form input[type=submit],
+.form input[type=button],
+.form input[type=text],
+.form input[type=email],
+.form textarea,
+.form label {
+  color: #fff;
+}
+.form label {
+  margin-bottom: 1%;
+  display: flex;
+}
+.form label span {
+  width: 25%;
+  margin-bottom: 3%;
+}
+.form input[type=text],
+.form input[type=email] {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dashed #c0c0c0;
+  width: 65%;
+  outline: none;
+  padding: 0;
+  font-style: italic;
+}
+.form textarea {
+  font-style: italic;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px dashed #c0c0c0;
+  width: 65%;
+  overflow: hidden;
+  resize: none;
+  height: 2%;
+}
+.form input[type=submit],
+.form input[type=button] {
+  background: #ffebcd;
+  border: none;
+  margin-top: 2%;
+  padding: 1.5% 29.5%;
+  border-radius: 5px;
+  color: #17a2b8;
+  font-size: 1.5rem;
+}
+.form input[type=submit]:hover,
+.form input[type=button]:hover {
+  background: #17a2b8;
+  border: 1px solid #ffebcd;
+  color: #ffebcd;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #c0c0c0;

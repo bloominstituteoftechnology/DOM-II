@@ -1,0 +1,85 @@
+.form{
+  width: 100%;
+  font-size: 1.6rem;
+  background: @button-bg;
+  padding: 5.5%;
+  margin-bottom: 3%;
+  border-radius: 20px;
+  fieldset {
+    // display: flex;
+    legend {
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+    }
+    div {
+      float: left;
+      width: 33%;
+      display: flex;
+      margin: 3% 0;
+      input[type="radio"] {
+        margin: 5%;
+      }
+      label {
+        margin: 5%;
+      }
+    }
+  }
+  legend,
+  input[type=submit],
+  input[type=button],
+  input[type=text],
+  input[type=email],
+  textarea,
+  label
+  {
+    color: #fff;
+  }
+  label {
+    margin-bottom: 1%;
+    display: flex;
+    span{
+      width: 25%;
+      margin-bottom: 3%;
+    }
+  }
+  input[type=text],
+  input[type=email] 
+  {
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed @silver;
+    width: 65%;
+    outline: none;
+    padding: 0;
+    font-style: italic;
+  }
+  textarea{
+    font-style: italic;
+    padding: 0px 0px 0px 0px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px dashed @silver;
+    width: 65%;
+    overflow: hidden;
+    resize:none;
+    height:2%;
+  }
+  input[type=submit],
+  input[type=button]{
+    background: @footer-bg;
+    border: none;
+    margin-top: 2%;
+    padding: 1.5% 29.5%;
+    border-radius: 5px;
+    color: @button-bg;
+    font-size: 1.5rem;
+  }
+}
+.form input[type=submit]:hover,
+.form input[type=button]:hover{
+background: @button-bg;
+border: 1px solid @footer-bg;
+color: @footer-bg;
+} 
