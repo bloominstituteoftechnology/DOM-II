@@ -11,4 +11,16 @@
     TweenLite.to(this, .5, {autoAlpha:.5});
     TweenLite.to(this, .5, {autoAlpha:1, delay:.5});
   }));
+
+  const navItems = document.querySelectorAll('.nav-link');
+  navItems.forEach(e => {
+    e.addEventListener('focus', function() {
+      this.style.fontWeight = 'bold';
+    });
+  });
+  navItems.forEach(e => {
+    e.addEventListener('blur', function() {
+      this.style.fontWeight = 'normal';
+    });
+  });
 })();
