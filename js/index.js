@@ -78,3 +78,5 @@ body.addEventListener('keydown', function(){
 footer.addEventListener('copy', function(){
     this.style.borderTop = '15px double red'
 })
+
+TweenMax.to(".nav-link", 2.5, {ease: Back.easeIn, x:60} )
