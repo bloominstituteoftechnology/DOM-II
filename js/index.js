@@ -8,6 +8,8 @@ const allImgs = document.querySelector(".img-content img");
 const allH2s = document.querySelectorAll("h2");
 const navA = document.querySelectorAll(".nav-link");
 const buttons = document.querySelectorAll(".btn");
+const footer = document.querySelector('footer');
+
 
 for (let i = 0; i < navA.length; i++) {
   navA[i].addEventListener("click", function(event) {
@@ -29,6 +31,13 @@ navH1.addEventListener("wheel", function() {
   }
   this.style.fontSize = `${fontSize}rem`;
 });
+
+body.addEventListener('mousemove', function(){
+    let num1 = Math.random()*255;
+    let num2 = Math.random()*255;
+    let num3 = Math.random()*255;
+    navH1.style.color = `rgb(${num1},${num2},${num3})`
+})
 
 home.addEventListener("drag", function() {
     event.target.style.transform = "scaleX(-1)";
@@ -64,4 +73,8 @@ body.addEventListener('keydown', function(){
     let num2 = Math.random()*255;
     let num3 = Math.random()*255;
     this.style.backgroundColor = `rgb(${num1},${num2},${num3})`
+})
+
+footer.addEventListener('copy', function(){
+    this.style.borderTop = '15px double red'
 })
