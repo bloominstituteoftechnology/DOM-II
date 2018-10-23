@@ -43,4 +43,13 @@
     TweenLite.to(htmlBody, .5, {autoAlpha: 1, delay: .5});
     console.log('resize')
   })
+
+  // animate for wheel
+  const h1Tag = document.querySelectorAll('h1');
+  const h2Tag = document.querySelectorAll('h2');
+  const h4Tag = document.querySelectorAll('h4');
+  window.addEventListener('wheel', function(e) {
+    TweenLite.to([h1Tag, h2Tag, h4Tag, navItems], .5, {fontWeight: 'bold'});
+    TweenLite.to([h1Tag, h2Tag, h4Tag, navItems], .5, {fontWeight: 'normal', delay: .5});
+  })
 })();
