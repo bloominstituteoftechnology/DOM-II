@@ -4,6 +4,9 @@ const logoHeading = document.querySelector('.intro-heading');
 const contentImg = document.querySelector('.content-img');
 const paragraph = document.querySelector('#test');
 const funImage = document.querySelector('.img-fluid');
+const footer = document.querySelector('footer');
+const nav = document.querySelectorAll('.nav a');
+
 
 // 1 - mouseover
 introImg.addEventListener('mouseover', (event) => {
@@ -58,24 +61,44 @@ paragraph.addEventListener('mouseout', (event) => {
 
 // 6 Click 
 funImage.addEventListener('click', (event) => {
-    TweenLite.to(funImage, 2.5, { ease: Circ.easeOut, x: -50 });
+    TweenLite.to(funImage, 2.5, { 
+        ease: Circ.easeOut, 
+        x: -50,
+        borderRadius: 200 
+    });
 });
 
 
+// 7 mousemove
+footer.addEventListener('mousemove', (event) => {
+    TweenMax.to(footer, 2, {
+        scale: 1.05,
+        ease: Elastic.easeOut.config(1, 0.3), 
+        y: 100 
+    });
+});
 
-// TweenMax.from(".logo", 0.5, {
-//     opacity: 0,
-//     scale: 0,
-//     ease:Bounce.easeOut
 
+// 8 mouseenter	
+nav[0].addEventListener('mouseenter', (event ) => {
+    TweenMax.to(nav[0], 2, {
+        scale: 1.1,
+        rotation: 360,
+    });
+}) 
 
+// 9 mouseup
+nav[1].addEventListener('mouseup', (event ) => {
+    TweenMax.to(nav[1], 2, {
+        scale: 1.1,
+        rotation: -360,
+    });
+}) 
 
-// 7 focus
-// 5 drag / drop
-// 6 load
-
-// 8 resize
-// 9 scroll
-// 10 select
-
-// 11 keydown
+// 10 mousedown
+nav[2].addEventListener('mousedown', (event ) => {
+    TweenMax.to(nav[2], 2, {
+        scale: 1.6,
+        rotation: -360,
+    });
+}) 
