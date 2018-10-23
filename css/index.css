@@ -350,3 +350,17 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+@keyframes flashing {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: black;
+  }
+}
+.blink {
+  cursor: pointer;
+  animation-name: flashing;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}

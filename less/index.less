@@ -16,3 +16,20 @@
 // html {
 //     background-color: red;
 // }
+
+@keyframes flashing {
+    from {
+        background-color: yellow;
+    }
+    to {
+        background-color: black;
+    }
+}
+
+.blink {
+    cursor: pointer;
+    animation-name: flashing;
+    animation-duration:  1s;
+    animation-iteration-count: infinite;// timing-function delay infinite direction fill-mode;
+}
+
