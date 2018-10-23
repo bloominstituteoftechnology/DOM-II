@@ -69,4 +69,10 @@
     e.preventDefault();
     signUpForm.classList.toggle('hidden')
   })
+
+  // change input text when selected
+  document.addEventListener("select", function(event) {
+    console.log('select');
+    event.target.value = `You're being hacked by the Cat in The Hat`;
+  })
 })();
