@@ -167,6 +167,7 @@ img {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .container {
@@ -349,7 +350,4 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
-}
-html {
-  background-color: pink;
 }

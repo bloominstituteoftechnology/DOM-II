@@ -33,22 +33,20 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 ## Task 3: Create Unique Event Listeners
 
 * [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
-	* [ ] `mouseover` - when mouse is over 1st picture it slides back and forth
-	* [ ] `keydown` - background of html changes
-	* [ ] `mouseenter` - when mouse on element, turns the sentence from white to black.
-	* [ ] `dragstart` - change text content to 'This is not allowed'
-	* [ ] `load` -
-	* [ ] `focus` - 
-	* [ ] `resize` - 
-	* [ ] `scroll` - 
-	* [ ] `copy` - text turns pink and bold. 
-	* [ ] `select` - select paragraph text it changes color.
-	* [ ] `dblclick` - make "fun bus" rotate 360;
-    * [ ] `cut` - when selection is cut, display none. 
+	* [ ] `mouseover` 
+	* [ ] `keydown`
+	* [ ] `mouseenter` 
+	* [ ] `dragstart` 
+	* [ ] `resize` 
+	* [ ] `scroll` 
+	* [ ] `copy`
+	* [ ] `select` 
+	* [ ] `dblclick` 
+    * [ ] `cut`
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation from items from refreshing the page by using `preventDefault()`
+* [x] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [x] Stop the navigation from items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 
