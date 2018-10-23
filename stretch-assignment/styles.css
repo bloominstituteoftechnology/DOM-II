@@ -34,3 +34,7 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.ordered {
+  order: -1;
+}
