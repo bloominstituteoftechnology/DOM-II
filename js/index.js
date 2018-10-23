@@ -62,6 +62,9 @@ document.addEventListener('wheel', (event) => {
 const nav = document.querySelector(".nav");
 
 nav.addEventListener("dblclick", function(big) {
+    //also need these guys to not refresh the page
+    big.preventDefault();
+    //and i need this to not break if i do something later with dblclick
     big.stopPropagation();
 
     big.target.style.fontSize = "40px"
