@@ -5,6 +5,7 @@ const navBar = document.querySelector("nav");
 navBar.addEventListener('click', function(event) {
     event.preventDefault();
     event.target.style.color = "green";
+    TweenMax.to("a", 1, {x:100});
 });
 
 const smallBus = document.querySelector('.fun-bus');
@@ -42,8 +43,10 @@ document.addEventListener('dragstart', function(event) {
     alert("Put me back!");
 });
 
+
 document.addEventListener('keydown', function(event) {
-    window.alert("Welcome! So glad you're interested!")
+    const tl = new TimelineMax({repeat:6, repeatDelay:1, yoyo:true});
+    tl.staggerTo("p", 0.2, {className:"+=superShadow", top:"-=10px", ease:Power1.easeIn}, "0.3", "start")
 });
 
 document.addEventListener('dragend', function(event) {
