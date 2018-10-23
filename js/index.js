@@ -23,6 +23,11 @@ busImg.addEventListener("mouseenter", function() {
   this.style.filter = `hue-rotate(${hue}deg)`;
 });
 
+busImg.addEventListener('mouseover', function(){
+    TweenMax.to(".home", 2.5, {ease: Bounce.easeOut, y:260});
+    TweenMax.to("footer", 2.5, {ease: Bounce.easeOut, y:260})
+})
+
 navH1.addEventListener("wheel", function() {
   if (event.deltaY > 0 && fontSize >= 1) {
     fontSize--;
