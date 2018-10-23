@@ -34,7 +34,6 @@ var once = function(event) {
     event.target.textContent = "don't touch me";
     event.target.fontSize = '1.8rem';
     event.target.margin = '0 auto';
-    event.stopPropagation();
     window.removeEventListener('click', once, false);
 }
 const footer = document.querySelector('.footer');
@@ -56,16 +55,17 @@ window.addEventListener("resize", () => {
 })
 
 const words = document.querySelectorAll('.text-content');
-console.log(words);
 const content = document.querySelectorAll('.img-content');
 for (let i = 0; i < words.length; i++) {
     content[i].addEventListener('mouseover', (event) => {
-        event.target.style.display = 'none';
-    }, false)
+        event.target.style.display = 'block';
+        event.target.style.width = '100%';
+    })
     words[i].addEventListener('click', (event) => {
-        event.target.style.margin = '0 auto';
-        event.target.style.display = 'none';
-    }, true)
+        event.target.parentElement.style.margin = '0 auto';
+        event.target.style.paddingTop = '10px';
+        event.target.parentElement.style.width = '100%';
+    })
 }
 
 document.addEventListener('keydown', (event) => {
