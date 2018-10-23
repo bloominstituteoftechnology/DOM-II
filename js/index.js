@@ -26,8 +26,9 @@ console.log(headerPic)
 
 headerPic.addEventListener("dragleave",letItgo)
 
-function letItgo(){
+function letItgo(event){
     alert("let it go! let it go! Can't hold it back anymore!!")
+    event.stopPropagation();
 }
 
 headerPic.addEventListener("dragend", thanks)
@@ -35,14 +36,22 @@ headerPic.addEventListener("dragend", thanks)
 function thanks(){
     alert("much appreciation")
 }
+let header  = document.querySelector(".intro")
 
-//delete pic
+header.addEventListener('click',testPropogation)
+
+function testPropogation(){
+    console.log("parent")
+}
+//change pic
 let headerText = document.querySelector('.intro h2')
 headerPic.addEventListener('click',displayNone)
 
-function displayNone(){
+function displayNone(event){
+    console.log("child")
     headerPic.src = "img/i-cant-believe.gif";
     headerText.textContent = "I can't believe you've done this";
+    event.stopPropagation();
 
 }
 
@@ -52,12 +61,15 @@ function changeColor(){
     headerText.style.color = 'red';
 }
 
-headerPic.addEventListener('mouseover',function(){
+headerPic.addEventListener('mouseover',function(event){
     headerPic.style.transform = "scale(1.2)";
+    event.stopPropagation();
 })
-headerPic.addEventListener('mouseleave', function () {
+headerPic.addEventListener('mouseleave', function (event) {
     headerPic.style.transform = "scale(1.0)";
+    event.stopPropagation();
 })
+
 
 let headerP = document.querySelector('.intro p') 
 console.log(headerP)
@@ -66,7 +78,7 @@ document.addEventListener('scroll',yeet)
 
 function yeet(){
     headerP.innerHTML = "Where did I go!";
-    
+
 }
 
 document.addEventListener('keydown',logKey)
