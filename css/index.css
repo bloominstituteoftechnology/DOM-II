@@ -233,6 +233,7 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+  opacity: 100%;
 }
 .home .intro h2 {
   margin-top: 20px;
