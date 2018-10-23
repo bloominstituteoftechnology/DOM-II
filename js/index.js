@@ -25,9 +25,14 @@
   });
 
   const destButtons = document.querySelectorAll('.destination .btn');
-  destButtons.forEach(e => e.addEventListener('dblclick', function(e) {
-    this.classList.add('lowOp');
-  }));
+  destButtons.forEach(e => {
+    e.addEventListener('dblclick', function(e) {
+      this.classList.add('lowOp');
+    });
+    e.addEventListener('click', function(e) {
+      signUpForm.classList.toggle('hidden');
+    })
+    });
 
   //animate main navigation during scroll
   const mainNav = document.querySelector('.main-navigation');
@@ -56,5 +61,12 @@
   // animate for keyDown
   window.addEventListener('keydown', function(e) {
     TweenLite.to(allImg, 3, {bezier:{curviness:1.25, values:[{x:10, y:0}, {x:-10, y:0}, {x:10, y:0}, {x:-10, y:0}]}, ease:Power1.easeOut});
+  })
+
+  // prevent default on form button
+  const signUpForm = document.querySelector('.signup-form');
+  document.querySelector('#submitBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    signUpForm.classList.toggle('hidden')
   })
 })();
