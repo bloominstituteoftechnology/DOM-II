@@ -35,4 +35,12 @@
     TweenLite.to(mainNav, 1, {autoAlpha: .5});
     TweenLite.to(mainNav, 1, {autoAlpha: 1, delay: .5});
   });
+
+  // animate for resize
+  const htmlBody = document.querySelector('body');
+  window.addEventListener('resize', function(e) {
+    TweenLite.to(htmlBody, .5, {autoAlpha: .8});
+    TweenLite.to(htmlBody, .5, {autoAlpha: 1, delay: .5});
+    console.log('resize')
+  })
 })();
