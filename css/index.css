@@ -220,11 +220,12 @@ img {
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
 }
-.footer p {
+.footer h5 {
   text-align: center;
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+  font-weight: bold;
 }
 .home .intro {
   padding: 90px 0 10px;
