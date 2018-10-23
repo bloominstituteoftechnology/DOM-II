@@ -1,12 +1,15 @@
 // Your code goes here
 let myBody = document.querySelector('body');
-myBody.addEventListener('keydown', function(){
+myBody.addEventListener('keypress', function(){
   alert('This is MY TEXT, you cant type here');
 });
 myBody.addEventListener('wheel', function(){
   event.target.style.backgroundColor = 'aqua';
   event.target.style.color = 'darkred';
-})
+});
+myBody.addEventListener('copy', function(){
+  alert('No stealing!');
+});
 // myBody.addEventListener()
 
 let myTitle = document.querySelector('h1')
@@ -41,16 +44,7 @@ contentP.forEach((element) =>{
   element.addEventListener('dblclick', function(){
     alert('OW stop clicking me!');
   })
-})
-
-let introImg = document.querySelector('.intro img');
-//this works
-
-let contentImg = document.querySelector('.content-section .img-content img');
-//this works
-
-let lastImg = document.querySelector('.content-destination img')
-//this works
+});
 
 let myButtons = document.querySelectorAll('.btn');
 myButtons[0].addEventListener('mousedown', function(){
