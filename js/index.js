@@ -5,7 +5,6 @@ const navBar = document.querySelector("nav");
 navBar.addEventListener('click', function(event) {
     event.preventDefault();
     event.target.style.color = "green";
-    TweenMax.to("a", 1, {x:100});
 });
 
 const smallBus = document.querySelector('.fun-bus');
@@ -52,5 +51,3 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('dragend', function(event) {
     alert("Thanks!");
 });
-
-console.log(funInSun);
