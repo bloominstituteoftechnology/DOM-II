@@ -18,6 +18,7 @@ myHeader.addEventListener('mouseleave', function(event){
 })
 myHeader.addEventListener('dblclick', function(event){
     event.stopPropagation();
+    TweenMax.to("img", 5, {rotation:360, scale:1, opacity: 1, skewX: 0, ease:Power4.easeOut});
 })
 
 //document funcitons
@@ -31,6 +32,13 @@ document.addEventListener('keyup', function(event){
 document.addEventListener('dblclick', function(event){
     event.target.style.fontWeight = "bold";
     event.target.style.textDecoration = "underline";
+    // let tl = new TimeLineMax();
+
+    // tl.to("img", 5, {rotation:360, scale:0.9, opacity: 0.6, skewX: 35, ease:Power4.easeOut})
+    // .to(".intro img", 1, {x:200, scale:0.2})
+    // .to(".img-content img", 1, {x:200, scale:2, y:20});
+    TweenMax.to("img", 5, {rotation:360, scale:0.9, opacity: 0.6, skewX: 35, ease:Power4.easeOut});
+    
 })
 document.addEventListener('scroll', function(event){
     myImg.style.display = "none";
