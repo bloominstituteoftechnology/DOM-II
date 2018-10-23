@@ -14,7 +14,7 @@ navLinks.forEach(link => {
         // Prevent Default
         event.preventDefault();
 
-        link.style.color = 'red';
+        link.classList.toggle('clicked');
         alert(`Coming Soon !! Be on the look out for our ${event.target.innerText.toUpperCase()} page !!`);
 
         // Testing Log
