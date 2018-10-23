@@ -8,10 +8,23 @@ buttons.forEach(button => {
     });
 });
 
+const nav = document.querySelector('nav');
+nav.addEventListener('mouseover', event => {
+    event.target.style.color = 'white';
+    event.target.style.backgroundColor = 'black';
+
+    setTimeout(() => {
+        event.target.style.color = 'white';
+    }, 200);
+})
+
 const navItems = document.querySelectorAll('.nav-link');
 navItems.forEach(item => {
     item.addEventListener('mouseover', item => {
+        item.stopPropagation();
+        item.target.style.backgroundColor = 'white';
         item.target.style.color = 'red';
+        item.preventDefault();
 
         setTimeout(() => {
             item.target.style.color = '#212529';
@@ -65,11 +78,11 @@ body.addEventListener('wheel', event => {
 
 body.addEventListener('keydown', event => {
     event.target.style.backgroundImage = 'url(img/vroom.jpg)';
-
-    setTimeout(() => {
-        event.target.style.backgroundImage = '';
-    }, 500);
 });
+
+body.addEventListener('keyup', event => {
+    event.target.style.backgroundImage = '';
+})
 
 const inputForms = document.querySelectorAll('.notes');
 inputForms.forEach(form => {
