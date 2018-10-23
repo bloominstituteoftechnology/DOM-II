@@ -3,6 +3,7 @@ let headline = document.querySelector("h1");
 let subHeadings = document.querySelectorAll("h2");
 let contentSections = document.querySelectorAll(".content-section");
 let destination = document.querySelector(".content-destination");
+let image = document.querySelectorAll("img");
 
 headline.addEventListener("mouseenter", function(event) {
   event.target.parentNode.style.color = "purple";
@@ -59,4 +60,20 @@ window.addEventListener("contextmenu", function() {
 
 destination.querySelector("p").addEventListener("mouseleave", function(event) {
   event.target.style["font-style"] = 'italic';
+});
+
+image[0].addEventListener("click", function(event) {
+  TweenMax.to(image[0], 3, {opacity:0.5});
+});
+
+image[1].addEventListener("click", function(event) {
+  TweenMax.to(image[1], 3, {opacity:0.25});
+});
+
+image[2].addEventListener("click", function(event) {
+  TweenMax.to(image[2], 3, {opacity:0.25});
+});
+
+image[3].addEventListener("click", function(event) {
+  TweenMax.to(image[3], 3, {opacity:0.25});
 });
