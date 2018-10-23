@@ -28,10 +28,17 @@ navLinks.forEach(link => {
 
 // ** == Variables == **
 let pictures = document.querySelectorAll('img');
+let buttons = document.querySelector('.btn');
 
 //  ** == Events == **
 pictures.forEach(pic => {
     pic.addEventListener('mouseenter', event => {
+        pic.classList.toggle('hover-effect');
+        // Testing Log
+        console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
+    });
+
+    pic.addEventListener('mouseleave', event => {
         pic.classList.toggle('hover-effect');
         // Testing Log
         console.log('type', event.type, 'current target', event.currentTarget, 'target', event.target);
