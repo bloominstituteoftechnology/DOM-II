@@ -1,6 +1,7 @@
 body {
   display: flex;
   /*justify-content: center;*/
+  transition: all, .3s;
 }
 
 .blocks {
@@ -33,4 +34,5 @@ body {
 
 .block--gray {
   background-color: gray;
+  
 }
