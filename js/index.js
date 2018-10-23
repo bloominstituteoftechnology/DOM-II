@@ -67,5 +67,10 @@ document.addEventListener('keydown', (event) => {
     alert('keydown event\n\n' + 'key: ' + keyName);
   });
 
-  
+  const button = document.querySelectorAll('.btn');
+  console.log(button);
+  button.forEach((item) => item.addEventListener('mouseleave', () => {
+      alert("Don't miss out on our awesome 20% off sale on all vacation packages!");
+  }))
+
 
