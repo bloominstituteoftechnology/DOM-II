@@ -52,11 +52,11 @@ imgsElem.forEach(apple => {
 
 // ================= Navigation Bar ========== WHEEL
 bodyElem.addEventListener('wheel', function(event){
-    if(event.deltaY > 0){
+    if(event.deltaY > 0 && window.scrollY > 0){
     navBarElem.style.backgroundColor = "lightblue";
     navBarElem.style.borderColor = "blue";
     }
-    if(event.deltaY < 0){
+    if(event.deltaY < 0 && window.scrollY === 0){
     navBarElem.style.backgroundColor = "white";
     navBarElem.style.borderColor = 'silver';
     }
@@ -118,3 +118,5 @@ aNavElem.forEach(banana => {
         console.log('Clicked on Nav Link');
     });
 });
+
+
