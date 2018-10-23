@@ -12,6 +12,7 @@ nav.addEventListener('mouseover', function(event) {
 }, false);
 
 // `keydown`
+
 // const home = document.querySelector('.home')
 //
 // mainNav.addEventListener('keydown', function(event) {
@@ -23,12 +24,36 @@ nav.addEventListener('mouseover', function(event) {
 
 // `wheel`
 
-// * [ ] `drag / drop`
-// * [ ] `load`
-// * [ ] `focus`
-// * [ ] `resize`
-// * [ ] `scroll`
-// * [ ] `select`
+// const contentTop = document.querySelector('content-selection > .text-content')
+//
+// contentTop.addEventListener('wheel', function(event) {
+//     event.target.style.fontSize = "40px";
+//     setTimeout(function() {
+//       event.target.style.fontSize = "";
+//     }, 500);
+// }, false);
+
+// `drag / drop`
+
+
+// `load`
+
+
+// `focus`
+
+
+// `resize`
+
+
+// `scroll`
+
+
+// `select`
+const intro = document.querySelector('.intro')
+
+intro.addEventListener('select', function(event) {
+  event.target.parentNode.innerHTML = 'Selected elements!';
+})
 
 // `dblclick`
 const button = document.querySelector('.content-destination > img')
