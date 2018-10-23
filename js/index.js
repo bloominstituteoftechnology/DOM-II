@@ -9,6 +9,8 @@ const img = document.querySelector('img')
 const introText = document.querySelector('.intro p');
 const body = document.querySelector('body');
 const navLink = document.querySelectorAll('.nav-link');
+const testBtn = document.querySelector('.test-btn');
+const testDiv = document.querySelector('.test-div');
 
 
 // Events
@@ -73,4 +75,15 @@ navLink.forEach(function(item) {
     item.addEventListener('mousedown', event => {
         event.target.style.fontSize = '4rem';
     })
+})
+
+// Nest two similar events somewhere in the site and prevent the event propagation properly. Stop the navigation from items from refreshing the page by using `preventDefault()`
+testBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    event.target.style.fontSize = '.5rem';
+})
+
+testDiv.addEventListener('click', event => {
+    // event.stopPropagation();
+    event.target.style.backgroundColor = 'purple';
 })
