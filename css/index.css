@@ -288,6 +288,9 @@ img {
   padding-right: 1%;
   padding-left: 0;
 }
+.home .inverse-content .img-content .display-none {
+  display: none;
+}
 @media (max-width: 500px) {
   .home .inverse-content .img-content {
     order: 2;
