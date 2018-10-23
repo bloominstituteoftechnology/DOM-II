@@ -76,7 +76,7 @@ window.addEventListener("scroll", () => {
 });
 
 function complete() {
-    // alert("Logo on the move. Repeat: logo on the move!!")
+    alert("The logo just moved. Repeat: the logo just moved!!")
 }
 
 // When 'Fun in the Sun' text is copied 
@@ -104,15 +104,37 @@ window.addEventListener('keypress', () => {
     document.body.style.backgroundColor = "black";
 })
 
-// Propagation practice
+// .stopPropagation practice
 
 const body = document.querySelector('body');
 body.addEventListener('click', (event) => { 
     console.log(event.target)
-    // event.target.style.color = "red";
 });
 
 contentPick.addEventListener('click', (event) => { 
     event.stopPropagation();
     console.log(event.target)
 });
+
+// .preventDefault() practice. I've created a nav bar that links 
+// to Google and then stop the default from happening.
+// .preventDefault() stops the event from happening but 
+// doesn't stop the event from bubbling up the DOM
+
+const newElement = document.createElement('a');
+const navList = document.querySelector('.nav');
+newElement.innerText = "Go Google";
+newElement.href = "https://www.google.com";
+navList.prepend(newElement);
+
+newElement.addEventListener('click', (event) => {
+    event.preventDefault();
+})
+
+// The default # href attribute in the nav tags causes the 
+// page to jump back to the top. .preventDefault stops this
+
+blogNav.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(event.target)
+})
