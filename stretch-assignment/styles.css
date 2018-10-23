@@ -1,7 +1,7 @@
 body {
   display: flex;
-  /*justify-content: center;*/
-  transition: all, .3s;
+  /* justify-content: center; */
+  transition: all 3s;
 }
 
 .blocks {

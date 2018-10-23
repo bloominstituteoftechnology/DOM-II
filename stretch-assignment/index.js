@@ -40,7 +40,7 @@ myRed.addEventListener('mouseup', function(event) {
     myTop--;
 });
 
-const myStart = 360;
+const myStart = 2;
 let myGrayX = myStart;
 let myPinkX = myStart;
 let myGreenX = myStart;
@@ -48,35 +48,35 @@ let myBlueX = myStart;
 let myRedX = myStart;
 
 //Traveler??????
-myGray.addEventListener('mousedown', function(event) {
+myGray.addEventListener('mousemove', function(event) {
     // only has to deal with event bubbling
     //event.stopPropagation();
     TweenMax.to(".block--gray", 3, {rotation:myGrayX, x:myGrayX, ease:Power4.easeOut});
     myGrayX+=myStart;
 });
 
-myPink.addEventListener('mousedown', function(event) {
+myPink.addEventListener('mousemove', function(event) {
     // only has to deal with event bubbling
     //event.stopPropagation();
     TweenMax.to(".block--pink", 3, {rotation:myPinkX, x:myPinkX, ease:Power4.easeOut});
     myPinkX+=myStart;
 });
 
-myGreen.addEventListener('mousedown', function(event) {
+myGreen.addEventListener('mousemove', function(event) {
     // only has to deal with event bubbling
     //event.stopPropagation();
     TweenMax.to(".block--green", 3, {rotation:myGreenX, x:myGreenX, ease:Power4.easeOut});
     myGreenX+=myStart;
 });
 
-myBlue.addEventListener('mousedown', function(event) {
+myBlue.addEventListener('mousemove', function(event) {
     // only has to deal with event bubbling
     //event.stopPropagation();
     TweenMax.to(".block--blue", 3, {rotation:myBlueX, x:myBlueX, ease:Power4.easeOut});
     myBlueX+=myStart;
 });
 
-myRed.addEventListener('mousedown', function(event) {
+myRed.addEventListener('mousemove', function(event) {
     // only has to deal with event bubbling
     //event.stopPropagation();
     TweenMax.to(".block--red", 3, {rotation:myRedX, x:myRedX, ease:Power4.easeOut});

@@ -5,7 +5,7 @@ const myTitle = document.querySelector('.logo-heading');
 
 myTitle.addEventListener('mouseover', function(event) {
     // only has to deal with event bubbling
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.fontSize = "70px";
 });
 
@@ -26,7 +26,7 @@ myHome[0].addEventListener('mouseleave', function(event) {
 myHome[1].addEventListener('wheel', function(event) {
     // only has to deal with event bubbling
     event.preventDefault();
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.color = "blue";
 });
 
@@ -34,7 +34,7 @@ myHome[1].addEventListener('wheel', function(event) {
 myHome[2].addEventListener('drag', function(event) {
     // only has to deal with event bubbling
     event.preventDefault();
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.color = "yellow";
 });
 
@@ -42,7 +42,7 @@ myHome[2].addEventListener('drag', function(event) {
 myHome[3].addEventListener('mouseenter', function(event) {
     // only has to deal with event bubbling
     event.preventDefault();
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.color = "green";
 });
 
@@ -50,28 +50,28 @@ myHome[3].addEventListener('mouseenter', function(event) {
 const myImg = document.querySelectorAll('img')
 myImg[0].addEventListener('click', function(event) {
     // only has to deal with event bubbling
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.border = "10px solid green";
 });
 
 //7
 myImg[1].addEventListener('dblclick', function(event) {
     // only has to deal with event bubbling
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.border = "10px solid blue";
 });
 
 //8
 myImg[2].addEventListener('contextmenu', function(event) {
     // only has to deal with event bubbling
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.border = "10px solid purple";
 });
 
 //9
 myImg[3].addEventListener('mouseover', function(event) {
     // only has to deal with event bubbling
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.border = "10px solid orange";
 });
 
