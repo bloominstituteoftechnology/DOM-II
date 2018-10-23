@@ -15,12 +15,12 @@ for (let i=0; i<navLink.length; i++) {
     })
 }
 
-navLink.forEach((item) => item.addEventListener('focus', (event) => {
+navLink.forEach((item) => item.addEventListener('focusin', (event) => {
     event.target.style.color = 'blue';
     event.target.style.textDecoration = 'underline';
 }))
 
-navLink.forEach((item) => item.addEventListener('blur', (event) => {
+navLink.forEach((item) => item.addEventListener('focusout', (event) => {
     event.target.style.color = 'black';
     event.target.style.textDecoration = 'none';
 }));
@@ -70,7 +70,6 @@ for (let i = 0; i < words.length; i++) {
 
 document.addEventListener('keydown', (event) => {
     const keyName = event.key;
-    console.log(keyName);
     if (keyName == 'Tab') {
         document.querySelector('.content-section').style.display = 'none';
         document.querySelector('.inverse-content').style.display = 'none';
@@ -81,7 +80,6 @@ document.addEventListener('keydown', (event) => {
   });
 
   const button = document.querySelectorAll('.btn');
-  console.log(button);
   button.forEach((item) => item.addEventListener('mouseleave', () => {
       alert("Don't miss out on our awesome 20% off sale on all vacation packages!");
   }))
