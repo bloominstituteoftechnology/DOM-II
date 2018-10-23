@@ -17,12 +17,15 @@ const myHome = document.querySelectorAll('.nav-link');
 myHome[0].addEventListener('mouseleave', function(event) {
     // only has toded deal with event bubbling
    // event.stopPropagation();
+   event.preventDefault();
     event.target.style.color = "red";
+    
 });
 
 //3
 myHome[1].addEventListener('wheel', function(event) {
     // only has to deal with event bubbling
+    event.preventDefault();
     event.stopPropagation();
     event.target.style.color = "blue";
 });
@@ -30,6 +33,7 @@ myHome[1].addEventListener('wheel', function(event) {
 //4
 myHome[2].addEventListener('drag', function(event) {
     // only has to deal with event bubbling
+    event.preventDefault();
     event.stopPropagation();
     event.target.style.color = "yellow";
 });
@@ -37,6 +41,7 @@ myHome[2].addEventListener('drag', function(event) {
 //5
 myHome[3].addEventListener('mouseenter', function(event) {
     // only has to deal with event bubbling
+    event.preventDefault();
     event.stopPropagation();
     event.target.style.color = "green";
 });
@@ -70,8 +75,17 @@ myImg[3].addEventListener('mouseover', function(event) {
     event.target.style.border = "10px solid orange";
 });
 
+//10
 const myEverything = document.querySelector('.home');
 myEverything.addEventListener('mousedown', function(event) {
-    event.stopPropagation();
+    //event.stopPropagation();
     event.target.style.backgroundColor = "red";
 })
+
+//Nested event
+const myDestination = document.querySelector('.content-destination');
+myDestination.addEventListener('mousedown', function(event) {
+    event.stopPropagation();
+    event.target.style.backgroundColor = "green";
+});
+
