@@ -12,6 +12,7 @@ for (let i=0; i<navLink.length; i++) {
     navLink[i].addEventListener('click', () => {
         alert("don't touch me bro");
         event.preventDefault();
+        console.log('we did a thing');
     })
 }
 
