@@ -61,7 +61,7 @@ funBusBanner.addEventListener('drag', (e) => e.target.style.transform = 'scale(1
 
 // ON DOCUMENT LOAD AN ALERT WILL APEAR TELLING THE USER THE 9 OTHER THINGS THEY CAN DO WITH THE SITE
 window.addEventListener("load", function(event) {
-  alert("All resources finished loading! Ready for some Fun?!?!?! Try scrolling the page, try hovering over the nav logo heading, try dblclicking the nav links, try dragging the funbus banner image, try pressing a key on your keyboard...but wait...where did the navbar go?!?!?...thats ok, just hover over anywhere inside it to bring it back! Focus the name field in the form to see its background color change and leave its focus, aka blur event, to remove the background color. Try resizing the window and see what happens. Click on the Fun In The Sun Packages div and look in the console to see that you clicked it...do the same with the Sign Me Up button inside that div and notice it console logs its own message without console logging that the div was clicked...thats the power of the stopPropagation method...and thats all folks!!!");
+  alert("All resources finished loading! Ready for some Fun?!?!?! Try scrolling the page, try hovering over the nav logo heading, try dblclicking the nav links, try dragging the funbus banner image, try pressing a key on your keyboard...but wait...where did the navbar go?!?!?...thats ok, just hover over anywhere inside it to bring it back! Focus the name field in the form to see its background color change and leave its focus, aka blur event, to remove the background color. Input something into the email field then highlight it and see what happens. Try resizing the window and see what happens. Click on the Fun In The Sun Packages div and look in the console to see that you clicked it...do the same with the Sign Me Up button inside that div and notice it console logs its own message without console logging that the div was clicked...thats the power of the stopPropagation method...and thats all folks!!!");
 });
 
 const sunPackage = document.querySelector("#sun");
@@ -77,7 +77,8 @@ const emailForm = document.querySelector("#emailForm");
 const phoneForm = document.querySelector("phoneForm");
 const specialInstructionsForm = document.querySelector("#specialForm");
 
-
+// ALERTS DONT DELETE ME WHEN SELECTING TEXT IN THE EMAIL FORM
+emailForm.addEventListener("select", ()=> alert("DONT DELETE ME!!!!"))
 // ADDS A BACKGROUND COLOR THE THE NAME INPUT WHEN IT IS FOCUSED
 nameInput.addEventListener("focus", (e) => {
   nameInput.style.backgroundColor = "orangered"});
