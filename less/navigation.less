@@ -28,12 +28,39 @@
       display: flex;
       justify-content: space-evenly;
 
+      animation-name: colorful-diagonal-slide;
+      animation-duration: 60s;
+
+      @keyframes colorful-diagonal-slide {
+        from {
+          left: 0;
+          top: 0;
+        }
+
+        10% {
+          background-color: blue;
+        }
+
+        10% {
+          background-color: green;
+        }
+
+        25%,
+        75% {
+          background-color: red;
+        }
+
+        100% {
+          left: 100px;
+          top: 100px;
+        }
+      }
+
       @media @mobile {
         width: 100%;
         justify-content: space-around;
       }
-      
-      
+
       a {
         font-size: 1.6rem;
         color: @font-color;
