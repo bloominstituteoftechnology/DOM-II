@@ -13,25 +13,25 @@ nav.addEventListener('mouseover', function(event) {
 
 // `keydown`
 
-// const home = document.querySelector('.home')
-//
-// mainNav.addEventListener('keydown', function(event) {
-//   event.style.backgroundColor = #B7D9E3;
-//   setTimeout(function() {
-//     event.style.backgroundColor = '';
-//   }, 200);
-// }, false);
+const home = document.querySelector('.home')
+
+mainNav.addEventListener('keydown', function(event) {
+  event.style.backgroundColor = #B7D9E3;
+  setTimeout(function() {
+    event.style.backgroundColor = '';
+  }, 200);
+}, false);
 
 // `wheel`
 
-// const contentTop = document.querySelector('content-selection > .text-content')
-//
-// contentTop.addEventListener('wheel', function(event) {
-//     event.target.style.fontSize = "40px";
-//     setTimeout(function() {
-//       event.target.style.fontSize = "";
-//     }, 500);
-// }, false);
+const contentTop = document.querySelector('content-selection > .text-content')
+
+contentTop.addEventListener('wheel', function(event) {
+    event.target.style.fontSize = "40px";
+    setTimeout(function() {
+      event.target.style.fontSize = "";
+    }, 500);
+}, false);
 
 // `drag / drop`
 
