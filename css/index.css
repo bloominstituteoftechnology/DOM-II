@@ -350,3 +350,6 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .content-pick .destination .lowOp {
+  opacity: 0.5;
+}

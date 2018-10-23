@@ -23,4 +23,9 @@
       this.style.fontWeight = 'normal';
     });
   });
+
+  const destButtons = document.querySelectorAll('.destination .btn');
+  destButtons.forEach(e => e.addEventListener('dblclick', function(e) {
+    this.classList.add('lowOp');
+  }));
 })();
