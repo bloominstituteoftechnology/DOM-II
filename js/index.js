@@ -1,5 +1,6 @@
 // Your code goes here
 
+// Sign Up Button gives an alert when clicked
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
@@ -7,6 +8,8 @@ buttons.forEach(button => {
         alert(`Signups are closed at the moment!`);
     });
 });
+
+// Nav changes color when hovered over
 
 const nav = document.querySelector('nav');
 nav.addEventListener('mouseover', event => {
@@ -17,6 +20,8 @@ nav.addEventListener('mouseover', event => {
         event.target.style.color = 'white';
     }, 200);
 })
+
+// Nav Anchors change text color to red and resets background color when hovered over
 
 const navItems = document.querySelectorAll('.nav-link');
 navItems.forEach(item => {
@@ -32,6 +37,8 @@ navItems.forEach(item => {
     }, false);
 });
 
+// When the bus is dragged, opacity decreases
+
 const mainBus = document.querySelector('header img');
 
 mainBus.addEventListener('drag', event => {
@@ -42,6 +49,8 @@ mainBus.addEventListener('drag', event => {
     }, 1000);
 }, false);
 
+// When p text is copied, alert is launched
+
 const text = document.querySelectorAll('p');
 
 text.forEach(item => {
@@ -49,6 +58,9 @@ text.forEach(item => {
         alert(`Text has been copied!`);
     });
 });
+
+// images disappear when doubleclicked
+// images decrease opacity when mouse moves around on them
 
 const images = document.querySelectorAll('img');
 
@@ -65,6 +77,8 @@ images.forEach(image => {
         }, 1000)
     });
 });
+
+// (vroom) appears when user uses wheel or presses any key
 
 const body = document.querySelector('body');
 
@@ -83,6 +97,8 @@ body.addEventListener('keydown', event => {
 body.addEventListener('keyup', event => {
     event.target.style.backgroundImage = '';
 })
+
+// input forms change background color when text inside is selected
 
 const inputForms = document.querySelectorAll('.notes');
 inputForms.forEach(form => {
