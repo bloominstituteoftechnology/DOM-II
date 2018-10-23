@@ -12,5 +12,6 @@ let navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
         console.log(event);
+        event.preventDefault();
     });
 });
