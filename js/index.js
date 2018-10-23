@@ -35,9 +35,13 @@ var once = function(event) {
     event.target.textContent = "don't touch me";
     event.target.fontSize = '1.8rem';
     event.target.margin = '0 auto';
+    event.stopPropagation();
     window.removeEventListener('click', once, false);
 }
 const footer = document.querySelector('.footer');
+footer.addEventListener('mouseover', () => {
+    console.log("don't touch my foot(er)");
+})
 const footyP = footer.querySelector('p');
 footyP.addEventListener('mouseover', once, false);
 
@@ -84,5 +88,4 @@ document.addEventListener('keydown', (event) => {
   button.forEach((item) => item.addEventListener('mouseleave', () => {
       alert("Don't miss out on our awesome 20% off sale on all vacation packages!");
   }))
-
 
