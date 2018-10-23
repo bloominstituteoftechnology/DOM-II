@@ -28,4 +28,11 @@
   destButtons.forEach(e => e.addEventListener('dblclick', function(e) {
     this.classList.add('lowOp');
   }));
+
+  //animate main navigation during scroll
+  const mainNav = document.querySelector('.main-navigation');
+  window.addEventListener('scroll', function() {
+    TweenLite.to(mainNav, 1, {autoAlpha: .5});
+    TweenLite.to(mainNav, 1, {autoAlpha: 1, delay: .5});
+  });
 })();
