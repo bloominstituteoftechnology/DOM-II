@@ -5,6 +5,7 @@ const conDesTealBack = document.querySelector('.content-destination')
 const introTealBack = document.querySelector('.intro');
 const destTealBack = document.querySelectorAll('.destination')
 const textConTealBack = document.querySelectorAll('.text-content');
+const wheelOnBus = document.querySelector('.container .home');
 // console.log('text-content', textConTealBack[0].children[0])
 for (let i = 0; i < textConTealBack.length; i++) {
     console.log(textConTealBack[i].children[i]);
@@ -19,8 +20,7 @@ conDesTealBack.addEventListener('mouseenter', function (event) {
 });
 
 conDesTealBack.addEventListener('mouseleave', function (event) {
-    event.target.style.backgroundColor = 'white';
-    console.log("is this working?")
+    event.target.style.backgroundColor = 'white';    
 });
 
 introTealBack.addEventListener('mouseenter', function(event) {
@@ -52,16 +52,19 @@ for (let i = 0; i < destTealBack.length; i++) {
 for (let i = 0; i < destTealBack.length; i++) {
     destTealBack[i].addEventListener('mouseleave', function (event) {
         event.target.style.backgroundColor = 'white';
-        console.log("is this working?")
     });
 }    
 
+noThankYou.addEventListener('dblclick', function (event) {
+    event.target.style.display = 'none';
+    console.log("double click working?")
+});
 
+wheelOnBus.addEventListener('wheel', function (event){
+    event.stopPropagation();
+    console.log("The wheels on the Fun Bus go round and round, round and round, round and round");
+});
 
-
-
-
-// noThankYou.addEventListener('dblclick', function (event) {
-//     event.target.style.display = 'none';
-//     console.log("double click working?")
-// })
+document.addEventListener('copy', () => {
+    alert("Don't you dare copy me!!!");
+})
