@@ -85,7 +85,6 @@ window.addEventListener('keyup', function(event) {
 
   if (event.key == "Alt") {
     altKeyPressed = false;
-    window.onscroll = function(){};
   }
 
 });
@@ -103,11 +102,7 @@ imgList.forEach(item => {
 
     if (altKeyPressed) {
 
-      let x = window.scrollX;
-      let y = window.scrollY;
-      window.onscroll=function(){window.scrollTo(x, y);};
-
-      console.log("GOING");
+      event.preventDefault();
 
       if (event.deltaY < 0)
         this.scale += 0.1;
