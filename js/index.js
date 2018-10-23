@@ -69,10 +69,15 @@ for (let i = 0; i < words.length; i++) {
 }
 
 document.addEventListener('keydown', (event) => {
-    // const keyName = event.key;
-    document.querySelector('.content-section').style.display = 'none';
-    document.querySelector('.inverse-content').style.display = 'none';
-    // alert('keydown event\n\n' + 'key: ' + keyName);
+    const keyName = event.key;
+    console.log(keyName);
+    if (keyName == 'Tab') {
+        document.querySelector('.content-section').style.display = 'none';
+        document.querySelector('.inverse-content').style.display = 'none';
+    }
+    if (keyName !== 'Meta' && keyName !== 'Tab') {
+         alert('keydown event\n\n' + 'key: ' + keyName);
+    }
   });
 
   const button = document.querySelectorAll('.btn');
