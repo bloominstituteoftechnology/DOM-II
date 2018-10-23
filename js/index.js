@@ -83,3 +83,16 @@ window.addEventListener('resize', function(event) {
 });
 
 
+//stop propagation
+const nav = document.querySelector(".main-navigation .nav");
+​
+// nav.addEventListener("dblclick", function(event) {
+//   event.stopPropagation();
+// ​  event.preventDefault();
+//   event.target.style.fontSize = "40px";
+// });
+
+nav.addEventListener('dblclick', function(){
+    alert('Dblclick');
+});
+
