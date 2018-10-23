@@ -1,7 +1,53 @@
 // Your code goes here
 
-const navBar = document.querySelectorAll('.nav-link');
+const navBar = document.querySelector("nav");
 
-navBar.addEventListener('mouseover', function(event) {
-    event.target.style.color = 'red';
+navBar.addEventListener('click', function(event) {
+    event.preventDefault();
+    event.target.style.color = "green";
 });
+
+const smallBus = document.querySelector('.fun-bus');
+
+smallBus.addEventListener('mouseover', function(event) {
+    event.target.style.display = "none";
+});
+
+const btn1 = document.querySelector('.btn1');
+btn1.addEventListener('dblclick', function(event) {
+    event.stopPropagation();
+    event.target.style.fontSize = "3rem";
+})
+
+const btn2 = document.querySelector('.btn2');
+btn2.addEventListener('wheel', function(event) {
+    event.target.style.fontSize = "3rem";
+})
+
+const btn3 = document.querySelector('.btn3');
+btn3.addEventListener('mouseout', function(event) {
+    event.target.style.fontSize = "3rem";
+})
+
+const funInSun = document.querySelector('.fun-in-sun');
+funInSun.addEventListener('copy', function(event) {
+    event.target.style.color = "yellow";
+});
+
+document.addEventListener("contextmenu", function(event) {
+    console.log("Hello fellow developer");
+});
+
+document.addEventListener('dragstart', function(event) {
+    alert("Put me back!");
+});
+
+document.addEventListener('keydown', function(event) {
+    window.alert("Welcome! So glad you're interested!")
+});
+
+document.addEventListener('dragend', function(event) {
+    alert("Thanks!");
+});
+
+console.log(funInSun);
