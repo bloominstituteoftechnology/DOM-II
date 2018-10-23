@@ -19,8 +19,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-   
     
     .text-content {
       width: 48%;
@@ -39,6 +37,10 @@
       @media @mobile {
         width: 100%;
         padding: 0;
+      }
+
+      .expand {
+        max-width: 105%;
       }
 
       img {
@@ -67,8 +69,9 @@
     .img-content {
       padding-right: 1%;
       padding-left: 0;
-      .display-none {
-        display: none;
+
+      .expand {
+        max-width: 105%;
       }
 
       @media @mobile {
@@ -86,7 +89,13 @@
     }
 
     img {
+      width:100%;
       border-radius: 10px;
+    }
+
+    .expand {
+      width:105%;
+      max-width: 105%;
     }
   }
 

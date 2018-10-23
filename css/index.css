@@ -215,6 +215,9 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.nav-container-color {
+  background: lightblue;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -263,6 +266,9 @@ img {
     padding: 0;
   }
 }
+.home .content-section .img-content .expand {
+  max-width: 105%;
+}
 .home .content-section .img-content img {
   border-radius: 10px;
 }
@@ -288,8 +294,8 @@ img {
   padding-right: 1%;
   padding-left: 0;
 }
-.home .inverse-content .img-content .display-none {
-  display: none;
+.home .inverse-content .img-content .expand {
+  max-width: 105%;
 }
 @media (max-width: 500px) {
   .home .inverse-content .img-content {
@@ -306,7 +312,12 @@ img {
   }
 }
 .home .content-destination img {
+  width: 100%;
   border-radius: 10px;
+}
+.home .content-destination .expand {
+  width: 105%;
+  max-width: 105%;
 }
 .home .content-pick {
   padding-top: 30px;
