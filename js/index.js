@@ -1,4 +1,29 @@
 // Your code goes here
+const titleText = document.querySelector('.logo-heading');
+const navBar = document.querySelector('.main-navigation .nav');
+const logIn = document.querySelector('.main-navigation .login');
+const buttons = document.querySelectorAll('.content-pick .btn');
+const myHeading = document.querySelector('.intro p');
+const headingSection = document.querySelector('.intro');
+const introImg = document.querySelector('.intro img');
+const homeLink = document.querySelector('#home-tag');
+const aboutLink = document.querySelector('#about-tag');
+const blogLink = document.querySelector('#blog-tag');
+const contactLink = document.querySelector('#contact-tag');
+
+homeLink.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+  aboutLink.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+  blogLink.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+  contactLink.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+
 
 titleText.addEventListener('mouseover', (event) => {
     event.target.style.color = 'red';
@@ -6,7 +31,7 @@ titleText.addEventListener('mouseover', (event) => {
 
   document.addEventListener('keydown', (event) => {
     const keyName = event.key;
-    alert(`You just pressed the letter ${keyName}!`);
+    alert(`You pressed ${keyName}!`);
 });
 
 buttons[0].addEventListener('dragstart', (event) => {
@@ -20,7 +45,7 @@ buttons[2].addEventListener('dragstart', (event) => {
 });
 
 window.addEventListener('load', () => {
-    console.log('Fun Bus is Loading!');
+    console.log('Fun Bus Loading!');
   });
 
   logIn.addEventListener('focus', (event) => {
@@ -33,7 +58,7 @@ window.addEventListener('load', () => {
 }, true);
 
 document.addEventListener('copy', (event) => {
-    event.clipboardData.setData('text/plain', 'You copied some text from the Fun Bus website!');
+    event.clipboardData.setData('text/plain', 'You copied from the Fun Bus website!');
     event.preventDefault();
 });
 
