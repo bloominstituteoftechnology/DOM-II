@@ -1,16 +1,6 @@
 // Your code goes here
 
 
-/* Possible Listeners to Use 
-    
-    1. resize
-    2. select
-    3. scroll
-    4. resize
-    5. wheel
-
-*/
-
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', event => {
@@ -53,5 +43,38 @@ images.forEach(image => {
     image.addEventListener('dblclick', item => {
         event.target.style.display = 'none';
     });
+
+    image.addEventListener('mousemove', event => {
+        event.target.style.opacity = .5;
+        
+        setTimeout(() => {
+            event.target.style.opacity = 1;
+        }, 1000)
+    });
 });
 
+const body = document.querySelector('body');
+
+body.addEventListener('wheel', event => {
+    event.target.style.backgroundImage = 'url(img/vroom.jpg)';
+
+    setTimeout(() => {
+        event.target.style.backgroundImage = '';
+    }, 500);
+});
+
+body.addEventListener('keydown', event => {
+    event.target.style.backgroundImage = 'url(img/vroom.jpg)';
+
+    setTimeout(() => {
+        event.target.style.backgroundImage = '';
+    }, 500);
+});
+
+const inputForms = document.querySelectorAll('.notes');
+inputForms.forEach(form => {
+    form.addEventListener('select', function() {
+        event.target.style.backgroundColor = 'black';
+        event.target.style.color = 'white';
+    });
+});

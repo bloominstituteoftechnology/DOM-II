@@ -163,6 +163,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+body {
+  background-image: '';
+  background-repeat: no-repeat;
+  background-position: right;
+}
 .container {
   max-width: 800px;
   width: 100%;
@@ -325,6 +330,9 @@ img {
     width: 80%;
     margin: 0 auto 30px;
   }
+}
+.home .content-pick .destination .notes {
+  margin: 10px 0;
 }
 .home .content-pick .destination .btn {
   -webkit-border-radius: 15px;
