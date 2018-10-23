@@ -14,6 +14,16 @@ for (let i=0; i<navLink.length; i++) {
     })
 }
 
+navLink.forEach((item) => item.addEventListener('focus', (event) => {
+    event.target.style.color = 'blue';
+    event.target.style.textDecoration = 'underline';
+}))
+
+navLink.forEach((item) => item.addEventListener('blur', (event) => {
+    event.target.style.color = 'black';
+    event.target.style.textDecoration = 'none';
+}));
+
 const logo = document.querySelector('.logo-heading');
 logo.addEventListener('dblclick', (event) => {
     event.target.style.display = 'none';
@@ -49,9 +59,6 @@ console.log(words);
 const content = document.querySelectorAll('.img-content');
 for (let i = 0; i < words.length; i++) {
     content[i].addEventListener('mouseover', (event) => {
-        // event.target.style.flexwrap = 'nowrap';
-        // event.target.style.width = '100%';
-        // event.target.style.margin = '0 auto';
         event.target.style.display = 'none';
     }, false)
     words[i].addEventListener('click', (event) => {
@@ -61,10 +68,10 @@ for (let i = 0; i < words.length; i++) {
 }
 
 document.addEventListener('keydown', (event) => {
-    const keyName = event.key;
+    // const keyName = event.key;
     document.querySelector('.content-section').style.display = 'none';
     document.querySelector('.inverse-content').style.display = 'none';
-    alert('keydown event\n\n' + 'key: ' + keyName);
+    // alert('keydown event\n\n' + 'key: ' + keyName);
   });
 
   const button = document.querySelectorAll('.btn');
