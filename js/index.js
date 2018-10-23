@@ -52,8 +52,8 @@ contentDestination.addEventListener('dblclick', function(event){
 });
 
 window.addEventListener('scroll', function(){
-    
-    for(let i = 0; i<textContent.length; i++){
+    //console.log(textContent[]);
+    for(let i = 0; i<3; i++){
     destination[i].style.background = 'rgba(237, 201, 175, .4)';
     }
 });
@@ -61,15 +61,15 @@ window.addEventListener('scroll', function(){
 
 //destination select 
 
-destination.addEventListener('select', function(event){
-        event.target.style.color = 'blue';
-});
-
-//copy
-// const footerP = document.querySelector('footer p');
-// window.addEventListener('copy', function(event){
-//     footerP.style.color = 'pink';
+// destination.addEventListener('select', function(event){
+//         event.target.style.color = 'blue';
 // });
+
+copy
+const footerP = document.querySelector('footer p');
+window.addEventListener('copy', function(event){
+    footerP.style.color = 'pink';
+});
 
 document.addEventListener('copy', () => {
     alert("Copied to clipboard!");
@@ -78,7 +78,7 @@ document.addEventListener('copy', () => {
 //resize
 window.addEventListener('resize', function(event) {
 
-    alert('Testing');
+    console.log('Testing');
     
 });
 
