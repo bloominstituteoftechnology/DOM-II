@@ -354,3 +354,6 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .hover-effect {
+  border: 2px dashed #C0C0C0;
+}
