@@ -1,1 +1,4 @@
-// Your code goes here
+(function() {
+  console.log('JavaScript is running');
+
+})();
