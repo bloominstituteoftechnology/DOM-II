@@ -70,6 +70,7 @@ const footerP = document.querySelector('footer p');
 
 footerP.addEventListener('mousedown', function(event){
     footerP.style.color = 'brown';
+    TweenMax.to(introH2, 2, {rotation:1080});
 });
 
 
@@ -104,8 +105,8 @@ button.forEach(item => {
 });
 
 //changing background of the body
-const body = document.querySelector('body');
+//const footerP = document.querySelector('body');
 
-body.addEventListener('click', function(event){
-    event.target.style.background = 'yellow';
+footerP.addEventListener('click', function(event){
+    footerP.style.background = 'lightgreen';
 })
