@@ -11,11 +11,11 @@ const blockContainer = document.querySelector('.blocks');
 
 
 blocks.forEach(element => element.addEventListener('click',(event)=>{
-   event.target = blocks[0];
+    event.target.parentNode.insertBefore(event.target, event.target.parentNode.firstChild);
    
 }));
 
-console.log(blocks);
+console.log(blocks.lastChild);
 console.log(blockContainer);
 //position changer  
 // const positionChange = (x)=>{
