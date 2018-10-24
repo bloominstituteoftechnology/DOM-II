@@ -7,7 +7,7 @@ const thePar = document.querySelector("p");
 const theHeader = document.querySelector("h2");
 const theNav = document.querySelector(".nav");
 const theMap = document.querySelector(".img-content");
-const btnOne = document.querySelector(".btn");
+const btnOne = document.querySelector("#btn1");
 const btnTwo = document.querySelector(".destImg");
 const btnThree = document.querySelector("#btn3");
 const theCR = document.querySelector(".footer");
@@ -50,7 +50,7 @@ theBus.addEventListener("mouseover", function(event) {
 
   btnOne.addEventListener("click", function(event) {
     // only has to deal with event bubbling
-    TweenMax.to(".btn", 1, {x:250});
+    TweenMax.to("#btn1", 1, {x:250});
     console.log("click");
   });
 
@@ -60,11 +60,11 @@ theBus.addEventListener("mouseover", function(event) {
     console.log("dragstart");
   });
 
-  // btnThree.addEventListener("scroll", function(event) {
-  //   // only has to deal with event bubbling
-  //   TweenMax.to("#btn3", 1, {x:250});
-  //   console.log("scroll");
-  // });
+  btnThree.addEventListener("load", function(event) {
+    // only has to deal with event bubbling
+    TweenMax.to("#btn3", 1, {x:250});
+    console.log("load");
+  });
 
   theCR.addEventListener("dblclick", function(event) {
     // only has to deal with event bubbling
