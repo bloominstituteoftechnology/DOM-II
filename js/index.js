@@ -65,15 +65,15 @@ window.addEventListener('scroll', function(){
 //         event.target.style.color = 'blue';
 // });
 
-copy
+
 const footerP = document.querySelector('footer p');
 window.addEventListener('copy', function(event){
     footerP.style.color = 'pink';
 });
 
-document.addEventListener('copy', () => {
-    alert("Copied to clipboard!");
-});
+// document.addEventListener('copy', () => {
+//     alert("Copied to clipboard!");
+// });
 
 //resize
 window.addEventListener('resize', function(event) {
@@ -84,11 +84,11 @@ window.addEventListener('resize', function(event) {
 
 
 //stop propagation
-const nav = document.querySelector(".main-navigation .nav");
-​
+const nav = document.querySelector(".main-navigation .nav a");
+
 nav.addEventListener("dblclick", function(event) {
   event.stopPropagation();
-​  event.preventDefault();
+  event.preventDefault();
   event.target.style.fontSize = "40px";
 });
 
