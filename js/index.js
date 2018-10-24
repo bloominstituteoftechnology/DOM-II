@@ -67,13 +67,11 @@ window.addEventListener('scroll', function(){
 
 
 const footerP = document.querySelector('footer p');
-window.addEventListener('copy', function(event){
-    footerP.style.color = 'pink';
+
+footerP.addEventListener('mousedown', function(event){
+    footerP.style.color = 'brown';
 });
 
-// document.addEventListener('copy', () => {
-//     alert("Copied to clipboard!");
-// });
 
 //resize
 window.addEventListener('resize', function(event) {
@@ -98,3 +96,11 @@ nav.addEventListener("dblclick", function(event) {
 });
 
 
+//mouseup on buttons
+const button = document.querySelectorAll('.destination .btn');
+
+button.forEach(item => {
+    item.addEventListener('mouseup', function(event){
+        item.style.background = 'blue';
+    });
+});
