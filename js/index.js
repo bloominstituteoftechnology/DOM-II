@@ -3,10 +3,11 @@ const aTags = document.querySelector('a');
 const myNav = document.querySelector('.nav');
 myNav.addEventListener('animationstart', function() {});
 
-const myDest = document.querySelector('div.destination');
-myDest.addEventListener('click', function() {
-    event.target.style.color = 'red';
-});
+// const myBus = document.querySelector('h1');
+// console.log(myBus);
+// myBus.addEventListener('resize', function() {
+//     event.target.style.borderColor = 'yellow';
+// });
 
 const myBtn = document.querySelectorAll('.btn');
 console.log(myBtn);
@@ -39,17 +40,17 @@ myBody.addEventListener('keydown', function() {
 });
 
 const headings = document.querySelectorAll('h4');
-console.log(headings[0]);
-headings[0].addEventListener('click', function() {
+console.log(headings[1]);
+headings[1].addEventListener('click', function() {
     event.target.style.background = "red";
 }, true)
 
 
-const myMount = document.querySelector('.mountain');
-console.log(myMount);
-myMount.addEventListener('blur', function(event) {
-    event.target.style.background = "";
-}, true);
+// const myMount = document.querySelector('.mountain');
+// console.log(myMount);
+// myMount.addEventListener('blur', function(event) {
+//     event.target.style.background = "";
+// }, true);
 
 const myContent = document.querySelector('.home');
 console.log(myContent);
@@ -65,3 +66,9 @@ myPick.addEventListener('paste', function(event) {
         alert('Pasted!');
     });
 });
+
+const myLogo = document.querySelector('.logo-heading');
+console.log(myLogo);
+myLogo.addEventListener('mousedown', function() {
+    event.target.style.opacity = '0.5';
+}, true);
