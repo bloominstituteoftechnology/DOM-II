@@ -6,8 +6,10 @@ funBus.addEventListener('mouseover', function(event){
 
 const navItems = document.querySelectorAll('.nav-link');
 navItems.forEach(function(item) {
+    console.log(item);
     item.addEventListener('click',(item) => { item.preventDefault()});
     item.addEventListener('mouseenter', function() {
+        console.log(event);
         event.target.style.color = 'white';
         event.target.style.background = 'red';
         event.target.style.fontSize = '2.4rem';
