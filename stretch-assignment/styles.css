@@ -1,6 +1,6 @@
-body {
+.container {
   display: flex;
-  /*justify-content: center;*/
+  /* justify-content: center; */
 }
 
 .blocks {
@@ -13,6 +13,9 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block--red {
@@ -33,4 +36,15 @@ body {
 
 .block--gray {
   background-color: gray;
+}
+.fa-cat{
+  color:white;
+  /* border:1px solid black; */
+}
+img {
+  width:100%;
+  height:auto;
+}
+h1{
+  display:block;
 }
