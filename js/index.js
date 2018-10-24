@@ -102,3 +102,10 @@ button.forEach(item => {
         item.style.background = 'blue';
     });
 });
+
+//changing background of the body
+const body = document.querySelector('body');
+
+body.addEventListener('click', function(event){
+    event.target.style.background = 'yellow';
+})
