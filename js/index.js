@@ -8,67 +8,67 @@ const theHeader = document.querySelector("h2");
 const theNav = document.querySelector(".nav");
 const theMap = document.querySelector(".img-content");
 const btnOne = document.querySelector(".btn");
-const btnTwo = document.querySelector(".topBus");
-const btnThree = document.querySelector(".topBus");
+const btnTwo = document.querySelector(".destImg");
+const btnThree = document.querySelector("#btn3");
 const theCR = document.querySelector(".footer");
 
 theBus.addEventListener("mouseover", function(event) {
     // only has to deal with event bubbling
     TweenMax.to(".topBus", 1, {x:-50,x:250});
-    console.log("love");
+    console.log("mouseover");
   });
 
-  theLogo.addEventListener("click", function(event) {
-    // only has to deal with event bubbling
-    TweenMax.to(".logo-heading", 1, {x:250});
-    console.log("love");
-  });
+  // theLogo.addEventListener("keyup", function(event) {
+  //   // only has to deal with event bubbling
+  //   TweenMax.to(".testing", 3, {rotation:360, scale:0.5, ease:Power4.easOut});
+  //   console.log("keyup");
+  // });
 
-  thePar.addEventListener("keydown", function(event) {
+  thePar.addEventListener("copy", function(event) {
     // only has to deal with event bubbling
     TweenMax.to("p", 1, {x:250});
-    console.log("love");
+    console.log("copy");
   });
 
   theHeader.addEventListener("wheel", function(event) {
     // only has to deal with event bubbling
     TweenMax.to("h2", 1, {x:250});
-    console.log("love");
+    console.log("wheel");
   });
 
   theNav.addEventListener("drag/drop", function(event) {
     // only has to deal with event bubbling
     TweenMax.to(".nav", 1, {x:250});
-    console.log("love");
+    console.log("drag/drop");
   });
 
-  theMap.addEventListener("focus", function(event) {
+  theMap.addEventListener("mouseleave", function(event) {
     // only has to deal with event bubbling
     TweenMax.to(".img-content", 1, {x:250});
-    console.log("love");
+    console.log("mouseleave");
   });
 
-  btnOne.addEventListener("resize", function(event) {
+  btnOne.addEventListener("click", function(event) {
     // only has to deal with event bubbling
-    TweenMax.to(".topBus", 1, {x:250});
-    console.log("love");
+    TweenMax.to(".btn", 1, {x:250});
+    console.log("click");
   });
 
-  btnTwo.addEventListener("scroll", function(event) {
+  btnTwo.addEventListener("dragstart", function(event) {
     // only has to deal with event bubbling
-    TweenMax.to(".topBus", 1, {x:250});
-    console.log("love");
+    TweenMax.to(".destImg", 1, {x:250});
+    console.log("dragstart");
   });
 
-  btnThree.addEventListener("select", function(event) {
-    // only has to deal with event bubbling
-    TweenMax.to(".topBus", 1, {x:250});
-    console.log("love");
-  });
+  // btnThree.addEventListener("scroll", function(event) {
+  //   // only has to deal with event bubbling
+  //   TweenMax.to("#btn3", 1, {x:250});
+  //   console.log("scroll");
+  // });
 
   theCR.addEventListener("dblclick", function(event) {
     // only has to deal with event bubbling
     TweenMax.to(".footer", 1, {x:250});
-    console.log("love");
+    console.log("double click");
   });
 
