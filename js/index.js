@@ -67,7 +67,7 @@ footie.addEventListener('wheel', function(event) {
 });
 
 
-//allPics. Will have a border when Double clicled.
+//allPics. Drag start and top coupled img manipulation event.
 
 const allPics = document.querySelectorAll('img');
 
@@ -114,7 +114,7 @@ allPs.forEach((coconut2) => {
 
 //keydown;
 //volumechange;
-
+//Will have a border when Double clicled.
 
 // const allSections1 = document.querySelectorAll('section');
 
