@@ -1,3 +1,11 @@
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.just-center {
+  display: flex;
+  justify-content: center;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -167,6 +175,8 @@ img {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 @media (max-width: 500px) {
   .container {
@@ -230,9 +240,12 @@ img {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
 }
-.home .intro img {
+.home .intro .topBus {
+  position: absolute;
   max-width: 100%;
-  height: auto;
+  height: 240px;
+  display: flex;
+  align-items: center;
 }
 .home .intro h2 {
   margin-top: 20px;

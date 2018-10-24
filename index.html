@@ -3,13 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fun Bus Travel Agency - Solution</title>
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
-
-  <script src="js/index.js" async></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -31,8 +29,14 @@
   </header>
      
   <div class="container home">
-    <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
+      <header class="intro">
+        <div class="topBus">
+            <img  src="img/bus.png" alt="bus in the sand">
+        </div>
+        <div id="bottom-beach">
+          <img class="headImg" src="img/beach.png" alt="bus in the sand">
+        </div>
+      
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
@@ -86,5 +90,8 @@
     <p>Copyright Fun Bus 2018</p>
   </footer>
 
-</body>
+  <script src="js/index.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script> 
+
+  </body>
 </html>
