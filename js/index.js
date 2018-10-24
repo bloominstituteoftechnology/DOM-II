@@ -84,7 +84,8 @@ window.addEventListener('resize', function(event) {
 
 
 //stop propagation
-const nav = document.querySelector(".main-navigation .nav a");
+const nav = document.querySelector(".main-navigation .nav");
+console.log(nav);
 
 nav.addEventListener("dblclick", function(event) {
   event.stopPropagation();
@@ -92,7 +93,8 @@ nav.addEventListener("dblclick", function(event) {
   event.target.style.fontSize = "40px";
 });
 
-window.addEventListener('dblclick', function(){
+ window.addEventListener('dblclick', function(){
     alert('Dblclick');
 });
+
 
