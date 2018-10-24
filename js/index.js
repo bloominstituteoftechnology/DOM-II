@@ -75,9 +75,7 @@ footerP.addEventListener('mousedown', function(event){
 
 //resize
 window.addEventListener('resize', function(event) {
-
-    console.log('Testing');
-    
+    footerP.style.background = 'green'; 
 });
 
 
