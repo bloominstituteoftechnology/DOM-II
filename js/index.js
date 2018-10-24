@@ -1,15 +1,16 @@
 // Your code goes here
+// TweenMax.to(document.getElementsByClassName('.busMove'), 2 {left:600});
 const noThankYou = document.querySelector('.footer');
 const funButton = document.querySelector('.btn');
-const conDesTealBack = document.querySelector('.content-destination')
+const conDesTealBack = document.querySelector('.content-destination');
 const introTealBack = document.querySelector('.intro');
-const destTealBack = document.querySelectorAll('.destination')
+const destTealBack = document.querySelectorAll('.destination');
 const textConTealBack = document.querySelectorAll('.text-content');
 const wheelOnBus = document.querySelector('.container .home');
 // console.log('text-content', textConTealBack[0].children[0])
-for (let i = 0; i < textConTealBack.length; i++) {
-    console.log(textConTealBack[i].children[i]);
-}
+// for (let i = 0; i < textConTealBack.length; i++) {
+//     console.log(textConTealBack[i].children[i]);
+// }
 
 funButton.addEventListener('click', function(event) {
     event.stopPropagation();
@@ -60,10 +61,10 @@ noThankYou.addEventListener('dblclick', function (event) {
     console.log("double click working?")
 });
 
-wheelOnBus.addEventListener('wheel', function (event){
-    event.stopPropagation();
-    console.log("The wheels on the Fun Bus go round and round, round and round, round and round");
-});
+// wheelOnBus.addEventListener('wheel', function (event){
+//     // event.stopPropagation();
+//     console.log("The wheels on the Fun Bus go round and round, round and round, round and round");
+// });
 
 document.addEventListener('copy', () => {
     alert("Don't you dare copy me!!!");
