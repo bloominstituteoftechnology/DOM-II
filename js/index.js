@@ -28,14 +28,14 @@ btnText.forEach(btn => {
   });
 });
 
-//====Event 4: Change nav height to 200px====
+//====Event 4: Wheek over document changes text and background-colors====
 
-const mainNav = document.querySelector('.main-navigation');
-
-filterInput.addEventListener('select', () => {
-  console.log('selected');
-  mainNav.style.height = '200px';
-});
+document.addEventListener('wheel', (event) => {
+  
+    console.log('is this working?');
+    event.target.style.color = "blue";
+    event.target.style.background= "yellow";
+  });
 
 //====Event 5: Add scroll====
 
@@ -46,8 +46,54 @@ window.addEventListener('scroll', () => {
     }, 1000);
   });
 
-//====Event 6: Site fade-in on load====
+//====Event 6: Change text on selection====
 
-window.addEventListener('load', () => {
-    document.querySelector('body').classList.add('show');
+document.addEventListener("select", function(event) {
+    event.target.value = `I see you driving round town/with the girl I love/and I'm like HAIKU!`;
+  })
+
+
+ //====Event 7: Add blur increase height====
+
+ filterInput.addEventListener('blur', () => {
+    filterInput.value = '';
+    mainNav.style.height = '90px';
   });
+
+
+  //====Event 8: toggle over 'let's have fun image' to display none====
+  
+  let funImage = document.querySelectorAll('.img-fluid')
+  console.log(funImage);
+  funImage.addEventListener('mouseover', function(event){
+      funImg.classList.toggle('display-none')
+  });
+
+
+//====Event 9: Add background color red to all sections====
+
+let allSections = document.querySelectorAll('section');
+
+allSections.forEach((redRum) => {
+    return redRum.addEventListener('click', function(event) {
+        event.stopPropagation();
+        event.target.style.backgroundColor = 'red';
+    });
+
+});
+
+
+//====Event 10: Change nav to green text and increase size on dbl click====
+
+let header1 = document.querySelector('.main-navigation');
+
+
+console.log(header1);
+header1.addEventListener('dblclick', function(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    event.target.style.color = 'green';
+    event.target.style.fontSize = '4.6rem';
+    event.target.prompt();
+});
+
