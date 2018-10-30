@@ -1,4 +1,6 @@
 // Your code goes here
+
+TweenLite.from('.busMove', 10, { opacity: 0});
 // TweenMax.to(document.getElementsByClassName('.busMove'), 2 {left:600});
 const noThankYou = document.querySelector('.footer');
 const funButton = document.querySelector('.btn');
@@ -6,7 +8,10 @@ const conDesTealBack = document.querySelector('.content-destination');
 const introTealBack = document.querySelector('.intro');
 const destTealBack = document.querySelectorAll('.destination');
 const textConTealBack = document.querySelectorAll('.text-content');
-const wheelOnBus = document.querySelector('.container .home');
+const wheelOnBus = document.querySelector('.container.home');
+const hotelCalifornia = document.querySelectorAll('.nav-link');
+const keyLogger = document.querySelector('body');
+const dragKidnappedImgHelp = document.querySelectorAll('img');
 // console.log('text-content', textConTealBack[0].children[0])
 // for (let i = 0; i < textConTealBack.length; i++) {
 //     console.log(textConTealBack[i].children[i]);
@@ -61,11 +66,46 @@ noThankYou.addEventListener('dblclick', function (event) {
     console.log("double click working?")
 });
 
-// wheelOnBus.addEventListener('wheel', function (event){
-//     // event.stopPropagation();
-//     console.log("The wheels on the Fun Bus go round and round, round and round, round and round");
-// });
+wheelOnBus.addEventListener('wheel', function (event){
+    event.stopPropagation();
+    alert("The wheels on the Fun Bus go round and round, round and round, round and round");
+});
 
 document.addEventListener('copy', () => {
     alert("Don't you dare copy me!!!");
-})
+});
+
+for (let i = 0; i < hotelCalifornia.length; i++) {
+    hotelCalifornia[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        alert(`Welcome to the Hotel California! We are programmed to receive.
+You can check out any time you like, But you can never leave!`);
+    });
+}
+
+keyLogger.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    console.log(`${keyName}`);
+//    console.log('keydown event\n\n' + 'key: ' + keyName);
+ });
+
+for (let i = 0; i < hotelCalifornia.length; i++) {
+    hotelCalifornia[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        alert(`Welcome to the Hotel California! We are programmed to receive.
+You can check out any time you like, But you can never leave!`);
+    });
+}
+
+for (let i = 0; i < dragKidnappedImgHelp.length; i++) {
+    dragKidnappedImgHelp[i].addEventListener('drag', function (event) {
+        event.stopPropagation();
+        console.log(`Help I am being kidnapped!!`);
+    });
+}
+
+window.addEventListener("load", function (event) {
+    console.log("All resources finished loading!");
+});
+
+// TweenLite.from(logo, 2, { opacity: 0, left: "300px" });
