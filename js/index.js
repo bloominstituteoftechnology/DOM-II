@@ -73,12 +73,22 @@ mouseEnter[3].addEventListener('mouseenter', event => {
 })
 
 // `dblclick`
-const dblClick = document.querySelector('.main-navigation')
+const dblClick1 = document.querySelector('.intro')
 
-dblClick.addEventListener('dblclick', function(event) {
+dblClick1.addEventListener('dblclick', function(event) {
+  console.log('Test Intro')
+})
+const dblClick2 = document.querySelector('button')
+
+dblClick2.addEventListener('dblclick', function(event) {
   event.stopPropagation();
-  event.target.parentNode.style.backgroundColor = "#BDDBE6";
-  setTimeout(function() {
-    event.target.parentNode.style.backgroundColor = "";
-  }, 3000)
+  console.log('Test double clicked')
+})
+
+// preventDefault()
+const home = document.querySelector('.nav-link')
+
+home.addEventListener('click', event => {
+  event.preventDefault();
+  console.log('.prevelDefault()')
 })
