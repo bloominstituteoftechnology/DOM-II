@@ -17,7 +17,7 @@ mouseOver.addEventListener('mouseover', event => {
 
 // `keydown`
 const keyDown = window.addEventListener('keydown', event => {
-  alert("Don't press me further!")
+  console.log('button being pressed!')
 })
 
 // `wheel`
@@ -29,9 +29,15 @@ const wheel = window.addEventListener('wheel', function(event) {
   }, 3000)
 })
 
-// `drag / drop`
+// 'cut'
+document.addEventListener('cut', function(event) {
+  alert("Don't cut me!");
+})
 
-// `focus`
+// `copy`
+document.addEventListener('copy', function(event) {
+  alert("Stop trying to copy me!");
+})
 
 // `resize`
 const reSize = window.addEventListener('resize', function() {
