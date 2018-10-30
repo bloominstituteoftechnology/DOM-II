@@ -34,6 +34,11 @@ const wheel = window.addEventListener('wheel', function(event) {
 // `focus`
 
 // `resize`
+const reSize = window.addEventListener('resize', function() {
+  if(document.documentElement.clientWidth <= 500) {
+    alert('Mobile Mode!');
+  }
+})
 
 // `mousemove`
 const mouseMove = document.querySelector('.btn')
