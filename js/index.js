@@ -73,10 +73,10 @@ mouseEnter[3].addEventListener('mouseenter', event => {
 })
 
 // `dblclick`
-const dblClick = document.querySelector('body')
+const dblClick = document.querySelector('.main-navigation')
 
 dblClick.addEventListener('dblclick', function(event) {
-  // event.stopPropagation();
+  event.stopPropagation();
   event.target.parentNode.style.backgroundColor = "#BDDBE6";
   setTimeout(function() {
     event.target.parentNode.style.backgroundColor = "";
