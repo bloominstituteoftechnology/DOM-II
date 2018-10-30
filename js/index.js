@@ -25,3 +25,23 @@ document.addEventListener('load', event => {
 });
 
 'focus';
+
+document.addEventListener('resize', event => {
+    alert('Pls stop');
+});
+
+document.addEventListener('scroll', event => {
+    alert('weeeeeeeee');
+});
+
+let paragraph = document.querySelectorAll('nav a');
+
+paragraph.addEventListener('select', event => {
+    paragraph.style.color = 'blue';
+});
+
+let body = document.querySelector('body');
+
+body.addEventListener('dblclick', event => {
+    body.style.color = 'blue';
+});
