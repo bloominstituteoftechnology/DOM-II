@@ -1,6 +1,7 @@
 // Your code goes here
 
-TweenLite.from('.busMove', 10, { opacity: 0});
+TweenLite.from('.busMove', 5, { rotation:360, opacity: 0});
+TweenMax.from('.welcome', 5, {x: 2400, scale: 5});
 // TweenMax.to(document.getElementsByClassName('.busMove'), 2 {left:600});
 const noThankYou = document.querySelector('.footer');
 const funButton = document.querySelector('.btn');
