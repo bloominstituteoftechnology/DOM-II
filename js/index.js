@@ -1,18 +1,26 @@
 // Your code goes here
 
+let linkedLinks = document.querySelectorAll('a');
+let stopIt = Array.from(linkedLinks);
+// console.log(linkedLinks);
+linkedLinks.forEach((link) => {link.href = 'https://www.youtube.com/watch?v=7qnd-hdmgfk'});
 
-const navigatinHome = document.getElementById("homeLink").href = "https://www.youtube.com/watch?v=7qnd-hdmgfk";
-const navigatinAbout = document.getElementById("aboutLink").href = "https://www.youtube.com/watch?v=7qnd-hdmgfk";
-const navigatinBlog = document.getElementById("blogLink").href = "https://www.youtube.com/watch?v=7qnd-hdmgfk";
-const navigatinContact = document.getElementById("contactLink").href = "https://www.youtube.com/watch?v=7qnd-hdmgfk";
+let magicWord = document.querySelectorAll('.btn');
+let magicArr = Array.from(magicWord);
+// console.log(magicWord);
+for (var i = 0; i < magicWord.length; i++) {
+    magicWord[i].addEventListener('click', event => {
+        // console.log('You clicked it, by golly.');
+        window.open('http://jurassicsystems.com/theking')
+    });
+}
 
-let demButtons = document.querySelector('.btn');
-demButtons.addEventListener('click', function(event) {
-        window.open("http://jurassicsystems.com/theking");
+document.addEventListener('scroll', () => {
+    // console.log('You scrolled, yessiry.');
+    alert('Oookay. Slow down, there, Speed Racer.');
 })
 
-let headerImg = document.querySelector(document.getElementById("sand bus"));
-headerImg.addEventListener('pointerover', function bigImg(x) {
-        x.style.height = "10000px";
-        x.style.width = "10000px";
+document.addEventListener('dblclick', () => {
+    // console.log('Yeaaah, dubs that click.')
+    window.open('https://media.giphy.com/media/3o6gb1PVQMDy9ySJFe/giphy.gif');
 })
