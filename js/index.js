@@ -4,7 +4,7 @@
 let btnHover = document.querySelectorAll('.btn-hover');
 let adventure = document.querySelectorAll('.adventure-img');
 
-img-content.forEach((btn, i) => {
+btnHover.forEach((btn, i) => {
   btn.addEventListener('dblclick', () => {
     adventure[i].src = 'hhttps://cdn.pixabay.com/photo/2018/10/16/10/15/halloween-3751095_1280.jpg';
   });
@@ -19,11 +19,12 @@ contentPick.addEventListener('click', e => {
 
 
 //====Event 3: Change sign-up btns to read 'Hi Ash!'====
+
 let btnText = document.querySelectorAll('.content-pick .btn');
-btnText.forEach(button => {
-  button.addEventListener('click', e => {
+btnText.forEach(btn => {
+  btn.addEventListener('click', e => {
     e.stopPropagation();
-    button.innerText = 'Hi Ash!';
+    btn.innerText = 'Hi Ash!';
   });
 });
 
@@ -35,3 +36,18 @@ filterInput.addEventListener('select', () => {
   console.log('selected');
   mainNav.style.height = '200px';
 });
+
+//====Event 5: Add scroll====
+
+window.addEventListener('scroll', () => {
+    document.querySelector('.intro h2').style.fontSize = '4rem';
+    setTimeout(() => {
+      document.querySelector('.intro h2').style.fontSize = '2.5rem';
+    }, 1000);
+  });
+
+//====Event 6: Site fade-in on load====
+
+window.addEventListener('load', () => {
+    document.querySelector('body').classList.add('show');
+  });
