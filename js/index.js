@@ -26,3 +26,12 @@ btnText.forEach(button => {
     button.innerText = 'Hi Ash!';
   });
 });
+
+//====Event 4: Change nav height to 200px====
+
+const mainNav = document.querySelector('.main-navigation');
+
+filterInput.addEventListener('select', () => {
+  console.log('selected');
+  mainNav.style.height = '200px';
+});
