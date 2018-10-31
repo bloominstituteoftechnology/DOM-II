@@ -120,3 +120,9 @@ document.addEventListener("copy", function( event ) {
 });
 
 })
+
+const navEl = document.getElementById('a')
+document.addEventListener("click", function(event){
+	alert('You are not going anywhere!')
+	preventDefault()
+});
