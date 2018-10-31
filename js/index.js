@@ -53,22 +53,24 @@ document.addEventListener("select", function(event) {
   })
 
 
- //====Event 7: Add blur increase height====
+ //====Event 7: Add no copying event listener====
 
- filterInput.addEventListener('blur', () => {
-    filterInput.value = '';
-    mainNav.style.height = '90px';
-  });
+ document.addEventListener('copy',nope);
+
+function nope(){
+    alert("Swiper no swiping!!");
+}
 
 
   //====Event 8: toggle over 'let's have fun image' to display none====
-  
-  let funImage = document.querySelectorAll('.img-fluid')
+  //needs to be a list of items for queryselectorall 
+  //use for loop
+  /* let funImage = document.querySelectorAll('.img-fluid')
   console.log(funImage);
   funImage.addEventListener('mouseover', function(event){
       funImg.classList.toggle('display-none')
   });
-
+ */
 
 //====Event 9: Add background color red to all sections====
 
@@ -79,7 +81,7 @@ allSections.forEach((redRum) => {
         event.stopPropagation();
         event.target.style.backgroundColor = 'red';
     });
-
+   
 });
 
 
