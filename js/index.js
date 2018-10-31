@@ -67,40 +67,31 @@ document.addEventListener("dragend", function( event ) {
 	// reset the transparency
 	event.target.style.opacity = "";
 	alert('Put Me Back!')
-}, false);
-
-//load
-
-document.addEventListener("load", function( event ) {
-	
-});
+}, false)
 
 
 //focus
 
 document.addEventListener("focus", function( event ) {
-	
-});
-
-
-//resize
-
-document.addEventListener("resize", function( event ) {
-	
+	document.querySelector(".home .intro .content-section").style.background = "yellow";
 });
 
 
 //scroll
 
-document.addEventListener("scroll", function( event ) {
-	
+window.addEventListener("scroll", function( event ) {
+	var x = 0; {
+	document.querySelectorAll(".home").innerHTML = x += 1;
+	console.log(event);
+	alert('Scroll On By!')
+	}
 });
 
 
 //select
 
 document.addEventListener("select", function( event ) {
-	
+	alert('Pick me!')	
 },false);
 
 
@@ -116,11 +107,16 @@ document.addEventListener("dblclick", function( event ) {
 });
 
 
-//copy
+//copy + stop propagation
+const copyCat = document.querySelector('.home .intro')
 document.addEventListener("copy", function( event ) {
 	alert ('Stop that, copy cat!')
+	event.stopPropagation()
+
+//cut is nested
+	document.addEventListener("cut", function( event ) {
+		alert ('Murderer!')	
+		document.querySelector('.home .intro').style.visibility = "hidden";
 });
 
-
-/* * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation from items from refreshing the page by using `preventDefault()` */
+})
