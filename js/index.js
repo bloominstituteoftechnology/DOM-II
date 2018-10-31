@@ -17,11 +17,11 @@
 const imgMouseOver = document.querySelector(".main-navigation .nav-container .logo-heading")
 //removed .container from in front of nav-container
 
-// document.addEventListener("mouseover", function( event ) {
-//     console.log(event);
-//     TweenMax.to(".logo-heading", 5, {rotation:360, scale:0.5, x:50, ease:Power4.easeOut});
-
-// });
+document.addEventListener("mouseover", function( event ) {
+    console.log(event);
+    // TweenMax.to(".logo-heading", 5, {rotation:360, scale:0.5, x:50, ease:Power4.easeOut});
+	document.querySelector(".main-navigation .nav-container .logo-heading").style.height = "100px";
+});
 
 //keydown
 
