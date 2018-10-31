@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+  
+    <title>Fun Bus Travel Agency - Solution</title>
+  
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+  
+    <script src="js/index.js" async></script>
+  
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+<body>
+
+        <a class="nav-link-blog" href="index.html">Home</a>
+        <script>
+          let myContact = document.querySelector('.nav-link-blog');
+          myContact.style.fontSize = '20px';
+          myContact.stlye.textDecoration = 'none';
+        </script>
+
+<p>Select your character to start the game.</p>
+
+<select id="character" onchange="myFunction()">
+  <option value="Player One">Player1
+  <option value="Player Two">Player2
+  <option value="Player Three">Player3
+  <option value="Player Four">Player4
+</select>
+
+<p id="selectPlayer"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("character").value;
+    document.getElementById("selectPlayer").textContent = "You selected: " + x;
+}
+</script>
+</body>
+</html>
+
