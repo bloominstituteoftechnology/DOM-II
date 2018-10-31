@@ -71,17 +71,56 @@ document.addEventListener("dragend", function( event ) {
 
 //load
 
+document.addEventListener("load", function( event ) {
+	
+});
+
 
 //focus
+
+document.addEventListener("focus", function( event ) {
+	
+});
 
 
 //resize
 
+document.addEventListener("resize", function( event ) {
+	
+});
+
 
 //scroll
+
+document.addEventListener("scroll", function( event ) {
+	
+});
 
 
 //select
 
+document.addEventListener("select", function( event ) {
+	
+},false);
+
 
 //dblclick
+const dblClick = document.querySelector('.main-navigation')
+
+document.addEventListener("dblclick", function( event ) {
+	//need a container to reference
+	clicked = event.target;
+	// make it transparent
+	event.target.style.opacity = 0;	
+	alert('Where did navigation go?')
+});
+
+
+//copy
+document.addEventListener("copy", function( event ) {
+	alert ('Stop that, copy cat!')
+});
+
+
+/* * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [ ] Stop the navigation from items from refreshing the page by using `preventDefault()` */
