@@ -1,21 +1,15 @@
 
-//==== Event 1: change to halloween picture on dblclick to adventure-img
+//==== Event 1: change to halloween picture on dblclick to document====
 
-let btnHover = document.querySelectorAll('.btn-hover');
-let adventure = document.querySelectorAll('.adventure-img');
 
-btnHover.forEach((btn, i) => {
-  btn.addEventListener('dblclick', () => {
-    adventure[i].src = 'hhttps://cdn.pixabay.com/photo/2018/10/16/10/15/halloween-3751095_1280.jpg';
-  });
-});
+document.addEventListener('dblclick', () => {
+  // console.log('I put a spell on you, and now you're mine!)
+  window.open('https://cdn.pixabay.com/photo/2018/10/16/10/15/halloween-3751095_1280.jpg');
+})
+
 
 //====Event 2: make items in section vanish + mickey mouse hand====
-let contentPick = document.querySelector('.content-pick');
-contentPick.style.cursor = 'pointer';
-contentPick.addEventListener('click', e => {
-  e.target.classList.add('vanish');
-});
+
 
 
 //====Event 3: Change sign-up btns to read 'Hi Ash!'====
@@ -28,29 +22,51 @@ btnText.forEach(btn => {
   });
 });
 
-//====Event 4: Wheek over document changes text and background-colors====
+//====Event 4: Wheel over document changes text and pageColor-colors====
 
 document.addEventListener('wheel', (event) => {
   
     console.log('is this working?');
     event.target.style.color = "blue";
-    event.target.style.background= "yellow";
+    event.target.style.pageColor= "yellow";
   });
 
-//====Event 5: Add scroll====
+//====Event 5: Add random color on mouse-over, return to normal on mouse-out====
 
-window.addEventListener('scroll', () => {
-    document.querySelector('.intro h2').style.fontSize = '4rem';
-    setTimeout(() => {
-      document.querySelector('.intro h2').style.fontSize = '2.5rem';
-    }, 1000);
+function getRandomColor() {
+  const colors = [];
+  for (let i = 0; i < 3; i++) {
+    const randomColor = Math.floor(Math.random() * 256);
+    colors.push(randomColor);
+  }
+  return `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+}
+const allLinks = document.querySelectorAll('.main-navigation .container nav a');
+allLinks.forEach((link) => {
+  link.addEventListener('mouseover', (event) => {
+    event.target.style.color = `${getRandomColor()}`;
+    event.target.style.fontWeight = 'bolder';
+    event.preventDefault();
   });
+  link.addEventListener('mouseout', (event) => {
+    event.target.style.color = 'black';
+    event.target.style.fontWeight = 'normal';
+  });
+});
 
 //====Event 6: Change text on selection====
 
-document.addEventListener("select", function(event) {
-    event.target.value = `I see you driving round town/with the girl I love/and I'm like HAIKU!`;
-  })
+const fbText = document.querySelector('.logo-heading');
+fbText.addEventListener(
+    "mouseover",
+        event => {
+            event.target.style.color = "purple";
+        setTimeout(function() {
+            event.target.style.color = "";
+        }, 500);
+    },
+    false
+    );
 
 
  //====Event 7: Add no copying event listener====
@@ -62,24 +78,26 @@ function nope(){
 }
 
 
-  //====Event 8: toggle over 'let's have fun image' to display none====
-  //needs to be a list of items for queryselectorall 
-  //use for loop
-  /* let funImage = document.querySelectorAll('.img-fluid')
-  console.log(funImage);
-  funImage.addEventListener('mouseover', function(event){
-      funImg.classList.toggle('display-none')
-  });
- */
+  //====Event 8: Add picture drag to main image====
 
-//====Event 9: Add background color red to all sections====
+  let topPic = document.querySelector('.intro img')
+console.log(topPic)
+
+topPic.addEventListener("dragleave",dropIt)
+
+function dropIt(event){
+    alert("Snoop says, 'Drop it like it's hot!")
+    event.stopPropagation();
+}
+
+//====Event 9: Add pageColor color red to all sections====
 
 let allSections = document.querySelectorAll('section');
 
 allSections.forEach((redRum) => {
     return redRum.addEventListener('click', function(event) {
         event.stopPropagation();
-        event.target.style.backgroundColor = 'red';
+        event.target.style.pageColorColor = 'red';
     });
    
 });
@@ -96,6 +114,6 @@ header1.addEventListener('dblclick', function(event) {
     event.preventDefault();
     event.target.style.color = 'green';
     event.target.style.fontSize = '4.6rem';
-    event.target.prompt();
+   // event.target.prompt();
 });
 
