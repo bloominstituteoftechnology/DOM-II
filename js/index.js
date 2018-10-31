@@ -45,21 +45,29 @@ document.addEventListener('keydown', (event) => {
 //   });
 
 const wheelScroll = window.addEventListener('wheel',function (event) {
-    event.target.style.
+    document.querySelector(".main-navigation .nav-container .logo-heading").style.visibility = "hidden";
 });
-
-// home.addEventListener('click', function(event) {
-//   // whatever you are targeting with your mouse
-//   console.log(event.target);
-//   //event.currentTarget.style.color = "green";
-//   // whatever you added the event listener to
-//   console.log(event.currentTarget);
-//   //event.target.style.color = "green";
-// });
-
 
 //drag-drop
 
+const dragDrop = document.querySelector(".home .intro img")
+
+document.addEventListener("drag", function( event ) {
+
+}, false);
+
+document.addEventListener("dragstart", function( event ) {
+	// store a ref. on the dragged elem
+	dragged = event.target;
+	// make it half transparent
+	event.target.style.opacity = 0;
+}, false);
+
+document.addEventListener("dragend", function( event ) {
+	// reset the transparency
+	event.target.style.opacity = "";
+	alert('Put Me Back!')
+}, false);
 
 //load
 
