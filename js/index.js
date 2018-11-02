@@ -11,7 +11,9 @@
 let you = prompt("Enter Your Name: ");
 let title = document.querySelector(".intro h2");
 document.addEventListener("copy", e => {
-  title.textContent = `Please don't forge, ${you}`;
+  title.textContent = `Check what you actually copied lol`;
+  e.clipboardData.setData("text/plain", "ùwú");
+  e.preventDefault();
 });
 document.addEventListener("keydown", e => {
   title.textContent = `Please don't press ${e.key}, ${you}`;
