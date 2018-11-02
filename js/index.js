@@ -19,10 +19,26 @@ header.addEventListener('mouseover', (event) => {
 
 // Remind people to pay attention and scroll
 
-doc.addEventListener('keydown', (event) => {
-    const keydown = event.key;
-    alert('Typing any keys while reading our page including: ' + keydown + ' is strictly prohibited. Yes, even ' + keydown + '.');
+// doc.addEventListener('keydown', (event) => {
+//     const keydown = event.key;
+//     alert('Typing any keys while reading our page including: ' + keydown + ' is strictly prohibited. Yes, even ' + keydown + '.');
+// });
+
+
+const counterNav = doc.createElement('span');
+counterNav.innerHTML = 0;
+// counterNav.style.cssFloat = 'right';
+let counterDescription = doc.createElement('span');
+counterDescription.innerHTML = 'Scroll Counter: '
+
+const body = doc.querySelector('body');
+body.addEventListener('wheel', (event) => {
+    event.stopPropagation;
+    counterNav.innerHTML++;
 });
+
+doc.querySelector('.main-navigation').append(counterDescription);
+doc.querySelector('.main-navigation').append(counterNav);
 
 
 
