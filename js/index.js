@@ -147,6 +147,11 @@ function runEvent(e){(input1.value = 'You are so focused')};
 
 //`resize`
 
+renav = document.querySelector('.nav-container');
+window.addEventListener('resize', function(){
+  renav.style.backgroundColor = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
+});
+console.log(renav);
 // `scroll`
 
 //`select`
