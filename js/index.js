@@ -153,6 +153,10 @@ window.addEventListener('resize', function(){
 });
 console.log(renav);
 // `scroll`
+window.addEventListener('scroll', function() {
+  renav.style.backgroundColor = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
+});
+console.log(bod[0]);
 
 //`select`
 
