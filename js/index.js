@@ -3,8 +3,8 @@
 //Sign Up Thank You
 const signUp = document.querySelectorAll('.btn');
 
-signUp.forEach(btn => btn.addEventListener('click', function() {
-  alert('Thank You For Signing Up!');
+signUp.forEach(btn => btn.addEventListener('click', function(event) {
+  event.target.innerText = 'Thank You!';
 }));
 
 
