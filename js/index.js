@@ -22,7 +22,6 @@ document.addEventListener('keydown', function (event) {
 })
 
 const welcomeText = document.querySelector('.intro p');
-console.log(welcomeText);
 welcomeText.addEventListener('dblclick', function (event) {
    event.target.classList.toggle('active');
 })
@@ -33,4 +32,17 @@ introImg.addEventListener('drag', function (event) {
  })
  introImg.addEventListener('dblclick', function (event) {
     event.target.style.border = "none";
+ })
+
+ const destImage = document.querySelector('.content-destination img');
+ destImage.addEventListener('mousedown', function (event) {
+    event.target.classList.toggle('active');
+ })
+ destImage.addEventListener('mouseup', function (event) {
+    event.target.classList.toggle('active');
+ })
+
+ const foot = document.querySelector('.footer');
+ foot.addEventListener('mouseenter', function (event) {
+    event.target.classList.toggle('active');
  })

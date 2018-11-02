@@ -318,6 +318,9 @@ img {
 .home .content-destination img {
   border-radius: 10px;
 }
+.home .content-destination img.active {
+  border: solid dodgerblue 3rem;
+}
 .home .content-pick {
   padding-top: 30px;
   border-top: 2px dashed #C0C0C0;
