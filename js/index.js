@@ -119,12 +119,13 @@ function dragDrop(){
   this.append(iDrag);
 }
 //`load`
-
-//  const script = document.createElement("script");
-//   script.addEventListener("load", function(event) {
-//     alert("The Bus is getting ready for launch!!");
-//   });
-  
+let contain = document.querySelector('.home');
+contain.addEventListener('load',function () {
+  setTimeout(() => {
+    console.log("Loading now complete");
+  // alert("The fun bus is now loading ")
+  kdTarget.style.backgroundColor = "lightgrey";
+},true);}, 500);
 
 //`focus`
 
