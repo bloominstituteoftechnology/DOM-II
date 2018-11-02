@@ -49,7 +49,7 @@ banner.addEventListener('wheel', function() {
 //Logo Flip on Click
 const logoImg = document.querySelector('.logo-heading');
 
-logoImg.addEventListener('click', function() {
+logoImg.addEventListener('dblclick', function() {
     TweenMax.to(".logo-heading", 1.5, {rotationX:720});
 });
 
@@ -61,3 +61,17 @@ letsGoImg.addEventListener('load', function() {
   TweenMax.from(letsGoImg, 1, {opacity: 0});
   TweenMax.from(letsGoImg, 1, {scale: 0.25});
 })
+
+
+//Image rotates to flat upon mouse enter, returns to normal view with animation on mouse off
+const adventureImg = document.querySelectorAll('.img-content')[1];
+const tween = TweenMax.fromTo(adventureImg, 1, {x: 0, rotationX: 0}, {x: -250, rotationX:90});
+tween.pause();
+
+adventureImg.addEventListener('mouseover', function() {
+  tween.resume();
+});
+
+adventureImg.addEventListener('mouseout', function() {
+  tween.reverse();
+});
