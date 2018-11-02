@@ -35,6 +35,93 @@ pWheel.addEventListener('wheel', event => {
 }
   );
 //`drag / drop`
+const iDrag = document.querySelector('.intro img');
+iDrag.setAttribute('draggable',true);
+
+const fDock1 = document.createElement("div");
+fDock1.innerText='Drag img here';
+fDock1.style.border='1px dashed grey';
+fDock1.classList.add("empty");
+const fDock2 = document.createElement("div");
+fDock2.innerText='Drag img here';
+fDock2.style.border='1px dashed grey';
+fDock2.classList.add("empty");
+const fDock3 = document.createElement("div");
+fDock3.innerText='Drag img here';
+fDock3.style.border='1px dashed grey';
+fDock3.classList.add("empty");
+const fDock4 = document.createElement("div");
+fDock4.innerText='Drag img here';
+fDock4.style.border='1px dashed grey';
+fDock4.classList.add("empty");
+const fDock5 = document.createElement("div");
+fDock5.innerText='Drag img here';
+fDock5.style.border='1px dashed grey';
+fDock5.classList.add("empty");
+const fDock6 = document.createElement("div");
+fDock6.innerText='Drag img here';
+fDock6.style.border='1px dashed grey';
+fDock6.classList.add("empty");
+const fDock7 = document.createElement("div");
+fDock7.innerText='Drag img here';
+fDock7.style.border='1px dashed grey';
+fDock7.classList.add("empty");
+const fDock8 = document.createElement("div");
+fDock8.innerText='Drag img here';
+fDock8.style.border='1px dashed grey';
+fDock8.classList.add("empty");
+const fDock9 = document.createElement("div");
+fDock9.innerText='Drag img here';
+fDock9.style.border='1px dashed grey';
+fDock9.classList.add("empty");
+const fDock10 = document.createElement("div");
+fDock10.innerText='Drag img here';
+fDock10.style.border='1px dashed grey';
+fDock10.classList.add("empty");
+pTarget[0].appendChild(fDock1);
+pTarget[1].appendChild(fDock2);
+pTarget[2].appendChild(fDock3);
+pTarget[3].appendChild(fDock4);
+pTarget[4].appendChild(fDock5);
+pTarget[5].appendChild(fDock6);
+pTarget[6].appendChild(fDock7);
+pTarget[7].appendChild(fDock8);
+pTarget[8].appendChild(fDock9);
+pTarget[9].appendChild(fDock10);
+const empties = document.querySelectorAll('.empty');
+// listener starts here
+iDrag.addEventListener('dragstart', dragStart);
+iDrag.addEventListener('dragend', dragEnd);
+for (const empt of empties){
+  empt.addEventListener('dragover',dragOver);
+  empt.addEventListener('dragenter',dragEnter);
+  empt.addEventListener('dragleave',dragLeave);
+  empt.addEventListener('drop',dragDrop);
+}
+function dragStart(){
+console.log('start');
+setTimeout(()=>(iDrag.style.display = 'none',0))
+}
+function dragEnd(){
+  iDrag.style.display = 'inline';
+console.log('end');
+}
+function dragOver(e){
+  e.preventDefault();
+console.log ('over')
+}
+function dragEnter(e){
+  e.preventDefault();
+console.log('enter')
+}
+function dragLeave(){
+}
+function dragDrop(){
+  this.append(iDrag);
+}
+
+
+
 
 //`load`
 
