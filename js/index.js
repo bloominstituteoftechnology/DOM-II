@@ -1,5 +1,11 @@
 // Your code goes here
 
+document.addEventListener('copy', function (event) {
+    alert('you cannot copy that');
+    event.preventDefault();
+    
+})
+
 const myNavLogo = document.querySelector('.logo-heading');
 myNavLogo.addEventListener('click', function (event) {
     event.target.classList.toggle('active');
