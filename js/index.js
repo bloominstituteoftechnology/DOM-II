@@ -32,8 +32,7 @@ pWheel.addEventListener('wheel', event => {
   pTarget[7].style.color = 'blue'
   pTarget[8].style.color='green'
   pTarget[9].style.color='orange'
-}
-  );
+});
 //`drag / drop`
 const iDrag = document.querySelector('.intro img');
 iDrag.setAttribute('draggable',true);
@@ -119,13 +118,31 @@ function dragLeave(){
 function dragDrop(){
   this.append(iDrag);
 }
-
-
-
-
 //`load`
 
+//  const script = document.createElement("script");
+//   script.addEventListener("load", function(event) {
+//     alert("The Bus is getting ready for launch!!");
+//   });
+  
+
 //`focus`
+
+let form1 = fDock1.appendChild(document.createElement('form'));
+form1.name = 'input';
+form1.action = 'html_form_action.asp';
+form1.method = 'get';
+form1.appendChild(document.createTextNode('Take Notes: '));
+let input1 = form1.appendChild(document.createElement('input'));
+input1.type = 'text';
+input1.name = 'tex';
+input1.value = 'type here';
+input1 = form1.appendChild(document.createElement('input'));
+input1.type = 'submit';
+input1.value = 'Submit';
+let iteminput1 = document.querySelector('input[type="text"]');
+iteminput1.addEventListener('focus',runEvent);
+function runEvent(e){(input1.value = 'You are so focused')};
 
 //`resize`
 
