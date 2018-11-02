@@ -10,8 +10,13 @@ h2Mouse.addEventListener('mouseover', event => {
   h2Target[3].style.color = 'orange'}
   );
 //`keydown`
-
-
+//When the space bar is pressed this will change the background of the body black please note text will not be visible unless user runs mouse icon ovr the first h2 and wheelscrolls over the first paragraph
+const kdTarget = document.querySelector('body');
+document.addEventListener('keydown', (event) => {
+  if (event.keyCode == "32") {
+    kdTarget.style.backgroundColor = "black";
+};
+});
 // `wheel`
 // when the first paragragh is wheeled over it changes the color of all text in the paragraphs
 const pWheel = document.querySelector('.intro p');
