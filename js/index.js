@@ -1,7 +1,7 @@
 // Your code goes here
 const logoHeading = document.querySelector('.logo-heading');
 const body = document.querySelector('body');
-const introH2 = document.querySelector('.intro h2');
+const introP = document.querySelector('.intro p');
 const navLink = document.querySelectorAll('.nav-link');
 
 window.addEventListener("load", function(event) {
@@ -26,4 +26,14 @@ body.addEventListener('wheel', function(event) {
 
 body.addEventListener('dblclick', function(event) {
     event.target.style.color = 'black';
-})
+});
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.querySelector('.intro p').className = "greenPara";
+    } else {
+        document.querySelector('.intro p').className = "";
+    }
+}
