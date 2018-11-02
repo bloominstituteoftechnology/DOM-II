@@ -3,10 +3,9 @@ const imgs = document.querySelectorAll('img');
 const signUpButtons = document.querySelectorAll('.btn');
 
 // creates an alert when the user leave the
-document.addEventListener('mouseleave', function(event) {
-  alert(
-    'Are you sure you want to leave the Page. We have some cool trips comming up',
-  );
+window.addEventListener('beforeunload', function(event) {
+  event.preventDefault();
+  event.returnValue = 'Leave Site?';
 });
 
 // eases the h2 in on window load
