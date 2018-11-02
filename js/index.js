@@ -32,6 +32,8 @@ textContentP.forEach(text => text.addEventListener('copy', function(event) {
     event.target.style.fontSize = '72px';
 }));
 
+
+//Banner image sizer, scroll up to increase, down to decrease
 const banner = document.querySelector('img');
 
 banner.addEventListener('wheel', function() {
@@ -42,4 +44,11 @@ banner.addEventListener('wheel', function() {
   } else {
     banner.style.width = (width - 10).toString() + 'px';
   }
+});
+
+//Logo Flip on Click
+const letsGoImg = document.querySelector('.logo-heading');
+
+  letsGoImg.addEventListener('click', function() {
+    TweenMax.to(".logo-heading", 1.5, {rotationX:720});
 });
