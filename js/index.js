@@ -75,3 +75,12 @@ adventureImg.addEventListener('mouseover', function() {
 adventureImg.addEventListener('mouseout', function() {
   tween.reverse();
 });
+
+
+//First H2 Element bounces back an fourth with mouse move
+const firstH2 = document.querySelector('h2');
+
+firstH2.addEventListener('mousemove', function(event) {
+  TweenLite.to(firstH2, 1.5, {x:500, ease:Elastic.easeOut.config(1.25, 0.25)});
+  firstH2.style.width = '300px';
+});
