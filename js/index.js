@@ -84,3 +84,18 @@ firstH2.addEventListener('mousemove', function(event) {
   TweenLite.to(firstH2, 1.5, {x:500, ease:Elastic.easeOut.config(1.25, 0.25)});
   firstH2.style.width = '300px';
 });
+
+
+//Hides navigation on scroll, reappears on scroll stop
+const navBar = document.querySelector('.main-navigation');
+let isScrolling;
+
+window.addEventListener('scroll', function ( event ) {
+  navBar.style.display = 'none';
+	window.clearTimeout( isScrolling );
+
+  isScrolling = setTimeout(function() {
+      navBar.style.display = 'flex';
+	}, 66);
+
+}, false);
