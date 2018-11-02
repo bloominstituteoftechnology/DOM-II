@@ -160,7 +160,6 @@ p {
   padding-bottom: 10px;
 }
 img {
-  max-width: 100%;
   height: auto;
 }
 .container {
@@ -231,7 +230,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
 }
 .home .intro img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .home .intro h2 {

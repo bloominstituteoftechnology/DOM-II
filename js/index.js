@@ -24,10 +24,22 @@ window.addEventListener('keypress', function(event) {
 })
 
 
-//Plagiarism protection against copy on all paragraphs 
+//Plagiarism protection against copy on all paragraphs
 const textContentP = document.querySelectorAll('p');
 
 textContentP.forEach(text => text.addEventListener('copy', function(event) {
     event.target.innerText = "Plagiarism  is wrong!"
     event.target.style.fontSize = '72px';
 }));
+
+const banner = document.querySelector('img');
+
+banner.addEventListener('wheel', function() {
+  let width = event.target.width;
+
+  if(event.wheelDelta > 0) {
+    banner.style.width = (width + 10).toString() + 'px';
+  } else {
+    banner.style.width = (width - 10).toString() + 'px';
+  }
+});
