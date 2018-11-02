@@ -20,8 +20,31 @@ nav.addEventListener('mouseout',e=>{
 
 // section content pick event delegation
 const  contentPick= document.querySelector('section.content-pick');
+const signupForm= document.querySelector('.sign-up')
+console.log(signupForm)
 contentPick.addEventListener('click',e=>{
-    if(e.target &&e.target.matches('div.btn')  ){
+    if(e.target &&e.target.matches('div.btn')){
         console.log(e.target)
+        signupForm.classList.toggle('display-none')
     }
 })
+
+signupForm.addEventListener('click',e=>{
+    if(e.target){
+        if(e.target.matches('div.close')){
+            console.log(e.target)
+            signupForm.classList.toggle('display-none')
+        }
+        if(e.target.matches(' input[type= submit]')){
+            e.preventDefault();
+            signupForm.classList.toggle('display-none')
+
+        }
+    }
+    
+ })
+
+
+
+//  const homeContainer= document.querySelector('div.home');
+//  homeContainer.addEventListener('mouse over')

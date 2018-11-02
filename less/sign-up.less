@@ -1,0 +1,31 @@
+div.sign-up{
+    background-color: bisque;
+    font-size: 2rem;
+    max-width: 500px;
+    width:100%;
+    margin :0 auto;
+    position: absolute;
+    transform: translate(25%,-150%);
+    
+    .close{
+        color: red;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        
+        padding:1rem;
+        
+        *{
+            flex-basis: 100%;
+            margin: .5rem 0rem;
+        }
+        div.close{
+            align-self: flex-end;
+            justify-self: end;
+            text-align: right;
+            cursor: pointer;
+        }
+    }
+}

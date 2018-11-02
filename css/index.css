@@ -2,6 +2,9 @@
   font-weight: bold;
   color: pink;
 }
+.display-none {
+  display: none;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -353,4 +356,31 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+div.sign-up {
+  background-color: bisque;
+  font-size: 2rem;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  transform: translate(25%, -150%);
+}
+div.sign-up .close {
+  color: red;
+}
+div.sign-up form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+div.sign-up form * {
+  flex-basis: 100%;
+  margin: 0.5rem 0rem;
+}
+div.sign-up form div.close {
+  align-self: flex-end;
+  justify-self: end;
+  text-align: right;
+  cursor: pointer;
 }
