@@ -16,8 +16,8 @@ window.addEventListener('keypress', function(event) {
   console.log(keyLog.join(''))
   if(keyLog.join('') === 'hello world') {
     alert('Hello Back To You');
-  } else if (keyLog.length > 11) {
-    for(let i = 0; i < keyLog.length;) {
+  } else if (keyLog.length > 10) {
+    for(let i = 0; i !== keyLog.length;) {
       keyLog.pop();
     }
   }
@@ -47,8 +47,17 @@ banner.addEventListener('wheel', function() {
 });
 
 //Logo Flip on Click
-const letsGoImg = document.querySelector('.logo-heading');
+const logoImg = document.querySelector('.logo-heading');
 
-  letsGoImg.addEventListener('click', function() {
+logoImg.addEventListener('click', function() {
     TweenMax.to(".logo-heading", 1.5, {rotationX:720});
 });
+
+//Image rotates, grows, and becomes more opaque upon load
+const letsGoImg = document.querySelector('.img-content img');
+
+letsGoImg.addEventListener('load', function() {
+  TweenMax.from(letsGoImg, 1, {rotationY: 1080});
+  TweenMax.from(letsGoImg, 1, {opacity: 0});
+  TweenMax.from(letsGoImg, 1, {scale: 0.25});
+})
