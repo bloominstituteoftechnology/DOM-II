@@ -199,6 +199,9 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .logo-heading.active {
+  color: red;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -214,6 +217,9 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.main-navigation .nav-container .nav-link.active {
+  font-size: 2rem;
 }
 .footer {
   width: 100%;
