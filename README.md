@@ -37,12 +37,11 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 	* [X] `mouseleave`
 	* [X] `keydown`
 	* [X] `wheel`
-	* [ ] `drag / drop`
 	* [X] `load`
-	* [ ] `focus`
-	* [ ] `resize`
-	* [ ] `scroll`
-	* [ ] `select`
+	* [X] `focus`
+	* [X] `resize`
+	* [X] `onscroll`
+	* [X] `select`
 	* [X] `dblclick`
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
