@@ -22,3 +22,12 @@ window.addEventListener('keypress', function(event) {
     }
   }
 })
+
+
+//Plagiarism protection against copy on all paragraphs 
+const textContentP = document.querySelectorAll('p');
+
+textContentP.forEach(text => text.addEventListener('copy', function(event) {
+    event.target.innerText = "Plagiarism  is wrong!"
+    event.target.style.fontSize = '72px';
+}));
