@@ -7,10 +7,19 @@
     img {
       max-width: 100%;
       height: auto;
+      z-index: 5;
     }
 
     h2 {
       margin-top: 20px;
+    }
+
+    .dragged {
+      color: red;
+    }
+
+    .greened {
+      background-color: green;
     }
   }
 
@@ -35,6 +44,14 @@
     .img-content {
       width: 48%;
       padding-left: 1%;
+      
+      img {
+        transition: transform 3s linear;
+      }
+
+      img.spin {
+        transform: rotate(360deg);
+      }
 
       @media @mobile {
         width: 100%;
@@ -109,6 +126,10 @@
       .btn {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
       }
+    }
+
+    .hovered {
+      background-color: red ;
     }
   }
 }// home

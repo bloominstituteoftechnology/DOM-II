@@ -11,6 +11,23 @@
     align-items: center;
     justify-content: space-between;
 
+    .bus::before {
+      content: '';
+      width: 105px;
+      height: 70px;
+      background-image: url(../img/bus.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      position: absolute;
+      right: 90vw;
+      z-index: -10;
+    }
+
+    .drive::before {
+      .go-bus(drive; 3s)
+    }
+
     @media @mobile {
       flex-wrap: wrap;
       justify-content: center;

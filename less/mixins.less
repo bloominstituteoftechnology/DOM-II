@@ -30,3 +30,15 @@
     color: @button-bg;
   }
 }
+
+.go-bus(@name; @duration;@timing: ease-in; @iteration: 1) {
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-timing-function: @timing;
+  animation-iteration-count: @iteration;
+}
+
+@keyframes drive {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(120vw); opacity: 1;}
+}

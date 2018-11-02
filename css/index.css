@@ -1,3 +1,13 @@
+@keyframes drive {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120vw);
+    opacity: 1;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -187,6 +197,24 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+.main-navigation .nav-container .bus::before {
+  content: '';
+  width: 105px;
+  height: 70px;
+  background-image: url(../img/bus.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  position: absolute;
+  right: 90vw;
+  z-index: -10;
+}
+.main-navigation .nav-container .drive::before {
+  animation-name: drive;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container {
     flex-wrap: wrap;
@@ -233,9 +261,16 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+  z-index: 5;
 }
 .home .intro h2 {
   margin-top: 20px;
+}
+.home .intro .dragged {
+  color: red;
+}
+.home .intro .greened {
+  background-color: green;
 }
 .home .content-section {
   margin: 30px 0;
@@ -256,6 +291,12 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+}
+.home .content-section .img-content img {
+  transition: transform 3s linear;
+}
+.home .content-section .img-content img.spin {
+  transform: rotate(360deg);
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {
@@ -349,4 +390,7 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .content-pick .hovered {
+  background-color: red ;
 }
