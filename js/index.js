@@ -15,6 +15,10 @@ const myNavLinks = document.querySelector('.nav');
 myNavLinks.addEventListener('mouseover', function (event) {
     event.target.classList.toggle('active');
 })
+myNavLinks.addEventListener('click', function (event) {
+    event.preventDefault();
+})
+
 myNavLinks.addEventListener('mouseout', function (event) {
     event.target.classList.toggle('active');
 })
