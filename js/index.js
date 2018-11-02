@@ -8,7 +8,7 @@ signUp.forEach(btn => btn.addEventListener('click', function() {
 }));
 
 
-//Hello World Easter Egg
+//Hello World Easter Egg (Click Window Type hello world)
 const keyLog = [];
 
 window.addEventListener('keypress', function(event) {
@@ -16,5 +16,9 @@ window.addEventListener('keypress', function(event) {
   console.log(keyLog.join(''))
   if(keyLog.join('') === 'hello world') {
     alert('Hello Back To You');
+  } else if (keyLog.length > 11) {
+    for(let i = 0; i < keyLog.length;) {
+      keyLog.pop();
+    }
   }
 })
