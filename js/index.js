@@ -2,14 +2,11 @@
 const logoHeading = document.querySelector('.logo-heading');
 const body = document.querySelector('body');
 const introH2 = document.querySelector('.intro h2');
+const navLink = document.querySelectorAll('.nav-link');
 
 window.addEventListener("load", function(event) {
     alert("All resources finished loading!");
   });
-
-introH2.addEventListener('drop', function() {
-    alert('Sorry, cannot drag or drop');
-});
 
 body.addEventListener('keydown', function() {
     alert('Please select a menu item. Thank you!');
@@ -25,5 +22,8 @@ logoHeading.addEventListener('mouseleave', function(event) {
 
 body.addEventListener('wheel', function(event) {
     event.target.style.color = 'red';
-    //event.stopPropagation();
 });
+
+body.addEventListener('dblclick', function(event) {
+    event.target.style.color = 'black';
+})
