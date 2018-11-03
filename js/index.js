@@ -152,18 +152,17 @@ window.addEventListener('scroll', function() {
   renav.style.backgroundColor = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
 });
 
-//`select`
-// let selbut = document.querySelectorAll('.destination .btn');
+// 'dblclick
 let selp = document.querySelectorAll('.destination p')
-// iteminput1.addEventListener('select', function () {
-//   pTarget[0].style.color = 'pink';
-// },true);
-// console.log (iteminput1);
-// console.log (selp);
-//`dblclick`
 let butTarget = document.querySelectorAll('.btn');
 let h4Target = document.querySelectorAll('.destination h4');
 butTarget[0].addEventListener('dblclick', function () {
 selp[0].style.backgroundColor='lightblue';
 h4Target[0].style.backgroundColor='lightgreen';
 })
+
+//'mouseup'
+
+butTarget[1].addEventListener('mouseup',function (){
+  h4Target[1].style.fontSize = "xx-large";
+}) 
