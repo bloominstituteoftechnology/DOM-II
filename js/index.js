@@ -4,8 +4,10 @@ logo.style.cursor = 'pointer';
 logo.addEventListener('click', () => logo.style.color = logo.style.color === 'blue' ? 'black' : 'blue');
 
 const headerPicture = document.querySelector('.intro img');
-headerPicture.addEventListener('mouseover', () => 
-	headerPicture.style.opacity = headerPicture.style.opacity === '0.7' ? '1.0' : '0.7');
+headerPicture.addEventListener('mouseover', () => {
+	headerPicture.style.opacity = headerPicture.style.opacity === '0.7' ? '1.0' : '0.7';
+	document.querySelector('header').style.zIndex = headerPicture.style.opacity === '0.7' ? '1' : '0';
+});
 	
 const bodyPictures = document.querySelectorAll('.img-content img');
 for (let pic of bodyPictures){
@@ -20,6 +22,7 @@ window.addEventListener('load', () => {
 	window.addEventListener('resize', () => destRect = destinationPic.getBoundingClientRect());
 
 	destinationPic.addEventListener('drag', (e) => {
+	destinationPic.style.zIndex = '-1';
 	destinationPic.style.position = 'relative';
 	let currentX = e.clientX - destRect.x;
 	destinationPic.style.left = `${currentX - (destRect.width / 2)}px`;
@@ -40,15 +43,13 @@ for (let link of navLinks){
 const footerButtons = document.querySelectorAll('.btn');
 const footerDivs = document.querySelectorAll('.destination');
 
-for (let button of footerButtons){
-	button.addEventListener('click', (e) => {
-		button.style.borderRadius =
-		button.style.borderRadius === '0px' ? '15px' : '0px'
+for (let i = 0; i < footerButtons.length; i++){
+	footerButtons[i].addEventListener('click', (e) => {
+		footerButtons[i].style.borderRadius =
+		footerButtons[i].style.borderRadius === '0px' ? '15px' : '0px'
 		e.stopPropagation();
 	});
-}
 
-for (let div of footerDivs){
-	div.addEventListener('click', () => div.style.backgroundColor =
-	div.style.backgroundColor === 'rgb(23, 162, 184)' ? '#FFFFFF' : '#17A2B8');
+	footerDivs[i].addEventListener('click', () => footerDivs[i].style.backgroundColor =
+	footerDivs[i].style.backgroundColor === 'rgb(23, 162, 184)' ? '#FFFFFF' : '#17A2B8');
 }
