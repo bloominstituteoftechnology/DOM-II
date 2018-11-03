@@ -50,19 +50,22 @@ document.addEventListener('mouseup', function(){
 	images[1].src = "none"
 })
 
-//dbclick
-// const bottomButtons = document.querySelector('.btn')
+// dbclick
+const bottomButtons = document.querySelector('.btn')
 
-// console.log(bottomButtons)
+console.log(bottomButtons)
 
-// bottomButtons.addEventListener('dbclick', function(){
-// 	alert('I get it! stop clicking so much!')
-// })
+bottomButtons.addEventListener('dbclick', function(){
+	alert('I get it! stop clicking so much!')
+})
 
-// const text = document.getElementsByTagName('p')
 
-// console.log(text)
+// select
+const text = document.getElementsByTagName('p')
 
-// text[3].addEventListener('select', function(){
-// alert("don't do that")})
+console.log(text)
 
+text[3].addEventListener('select', function(){
+alert("don't do that")})
+
+//load 
