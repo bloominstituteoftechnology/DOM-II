@@ -1,6 +1,20 @@
 const navBar = document.querySelectorAll('.nav a');
 const imgs = document.querySelectorAll('img');
 const signUpButtons = document.querySelectorAll('.btn');
+const body = document.querySelector('body');
+const easyReadParag = document.querySelectorAll('p');
+
+// creates a gradient that follows the mouse around
+window.addEventListener('mousemove', function(event) {
+  body.style.background =
+    'radial-gradient( circle at ' +
+    event.clientX +
+    'px ' +
+    event.clientY +
+    'px, ' +
+    '#c0c0c0, ' +
+    '#ffffff';
+});
 
 // creates an alert when the user leave the
 window.addEventListener('beforeunload', function(event) {
@@ -49,5 +63,22 @@ imgs.forEach((img, index) => {
 signUpButtons.forEach(button => {
   button.addEventListener('mouseleave', function() {
     alert("You haven't pick a trip yet. Pick one now for best savings");
+  });
+  button.addEventListener('click', function(event) {
+    TweenLite.to(event.target, 1, {scale: 0.5});
+  });
+});
+
+// maginifies the paragraph for easy reading, also changes background and font color
+easyReadParag.forEach(paragraph => {
+  paragraph.addEventListener('dblclick', function(event) {
+    TweenLite.to(event.target, 1, {scale: 2});
+    paragraph.style.backgroundColor = 'black';
+    paragraph.style.color = 'white';
+  });
+  paragraph.addEventListener('mouseleave', function(event) {
+    TweenLite.to(event.target, 1, {scale: 1});
+    paragraph.style.backgroundColor = 'inherit';
+    paragraph.style.color = 'inherit';
   });
 });
