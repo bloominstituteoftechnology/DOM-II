@@ -14,7 +14,7 @@ logo.addEventListener('mouseover', (event) => {
 // Event 2
 for (let i = 0; i < nav.length; i++) {
   nav[i].addEventListener('focus', () => {
-    nav[i].stopPropogation();
+    nav[i].preventDefault();
     nav[i].classList.toggle('toggle');
   });
 }
