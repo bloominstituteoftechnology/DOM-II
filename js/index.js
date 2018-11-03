@@ -43,6 +43,7 @@ footer.addEventListener('click', function(event) {
 const page = document.querySelector('body');
 page.addEventListener('dblclick', function() {
   window.alert("What are you poking at?");
+
 })
 
 // Background color of parent div will change randomly with each click of any "Sign Me Up" button
@@ -74,3 +75,11 @@ paragraph.forEach(item => item.addEventListener('mouseenter', event => {
 paragraph.forEach(item => item.addEventListener('mouseleave', event => {
   event.target.style.color = 'black';
 }))
+
+// Double clicking on h2 elements, window alert displays.  Stop propogation stops overall document dblclick event from firing
+const divHeaders = document.querySelectorAll('h2');
+function headAlert(event) {
+  window.alert(`${event.target.textContent}`);
+  event.stopPropogation();
+}
+divHeaders.forEach(item => item.addEventListener('dblclick', divHeaders));
