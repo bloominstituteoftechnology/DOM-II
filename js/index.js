@@ -28,7 +28,6 @@ document.addEventListener('wheel', function (event) {
   // console.log(event)
   hex += 50;
   event.target.style = ` background-color: #${hex.toString("16")}`
-  
 })
 
 
@@ -52,11 +51,18 @@ document.addEventListener('mouseup', function(){
 })
 
 //dbclick
+// const bottomButtons = document.querySelector('.btn')
 
-const bottomButtons = document.querySelectorAll('.btn')
+// console.log(bottomButtons)
 
-console.log(bottomButtons)
+// bottomButtons.addEventListener('dbclick', function(){
+// 	alert('I get it! stop clicking so much!')
+// })
 
-bottomButtons[2].addEventListener('dbclick', function(){
-		alert('I get it! stop clicking so much!')
-})
+// const text = document.getElementsByTagName('p')
+
+// console.log(text)
+
+// text[3].addEventListener('select', function(){
+// alert("don't do that")})
+
