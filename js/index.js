@@ -1,6 +1,6 @@
 // Your code goes here
 const funBus = document.querySelector('.logo-heading');
-console.log(funBus);
+// console.log(funBus);
 
 
 
@@ -57,7 +57,7 @@ const pics = document.querySelectorAll('img');
 pics.forEach(item => item.addEventListener('mouseover', function(event) {
   event.target.classList.toggle('fade');
   document.querySelector('.main-navigation').style.zIndex = 10;
-  console.log(event.target);
+  // console.log(event.target);
 }))
 
 // Makes links larger when clicked
@@ -81,7 +81,25 @@ paragraph.forEach(item => item.addEventListener('mouseleave', event => {
 const divHeaders = document.querySelectorAll('h2');
 function headAlert(event) {
   window.alert(`${event.target.textContent}`);
-  event.stopPropogation();
-
+  event.stopPropagation();
 }
+
 divHeaders.forEach(item => item.addEventListener('dblclick', headAlert));
+
+// Clicking on the nav header logo will change the page's background color to the current color of the nav header logo
+
+funBus.addEventListener('click', function(item) {
+  event.stopPropagation();
+  if(!event.target.style.color) page.style.backgroundColor = 'black';
+  else page.style.backgroundColor = event.target.style.color;
+})
+
+// Changes font of links to monospace when nav bar element is clicked on
+const navBar = document.querySelector('.nav-container');
+navBar.addEventListener('click', function(event) {
+  links.forEach(item => item.style.fontFamily = 'monospace')
+})
+
+// page.addEventListener('click', function(event) {
+//   console.log(event.target);
+// })
