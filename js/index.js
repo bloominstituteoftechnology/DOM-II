@@ -2,6 +2,14 @@
 // `focus`
 // `resize`
 // `select`
+let navs = document.querySelectorAll(".nav-link");
+
+for (let i = 0; i < navs.length; i++) {
+  navs[i].addEventListener("click", e => {
+    e.preventDefault();
+  });
+}
+
 let you = prompt("Enter Your Name: ");
 let title = document.querySelector(".intro h2");
 let span = document.querySelector(".intro span");
