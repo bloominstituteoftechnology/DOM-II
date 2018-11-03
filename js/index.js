@@ -32,7 +32,8 @@ function app(){
         let bus = document.createElement('span')
         bus.textContent = '🚌'
         bus.style = `position:absolute;top:${e.clientY}px;left:${e.clientX}px;`
-        document.body.appendChild(bus);
+        // document.body.appendChild(bus);
+        header.appendChild(bus);
         // console.log(e.clientY,e.clientX);
     })
 
