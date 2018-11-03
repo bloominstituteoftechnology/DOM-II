@@ -55,3 +55,9 @@ img2.addEventListener('contextmenu', function(event){
 img2.addEventListener('mouseout', function(event){
   event.target.style.border = 'none';
 });
+
+const navStop = document.querySelector('nav');
+navStop.addEventListener('click', function(event){
+  event.preventDefault();
+  alert(`You can't click that!`);
+})
