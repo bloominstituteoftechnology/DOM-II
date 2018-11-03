@@ -226,6 +226,10 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.footer .background-change {
+  background-color: black;
+  color: white;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
