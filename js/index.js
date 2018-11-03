@@ -166,3 +166,27 @@ h4Target[0].style.backgroundColor='lightgreen';
 butTarget[1].addEventListener('mouseup',function (){
   h4Target[1].style.fontSize = "xx-large";
 }) 
+
+// stop propagation example:
+let navA = document.querySelectorAll('.nav-link')
+renav.addEventListener('click', function () {
+  renav.style.backgroundColor = 'lightblue';
+  
+
+} )
+navA[0].addEventListener ('click', function (e) {
+  alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
+  e.stopPropagation();
+})
+navA[1].addEventListener ('click', function (e) {
+  alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
+  e.stopPropagation();
+})
+navA[2].addEventListener ('click', function (e) {
+  alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
+  e.stopPropagation();
+})
+navA[3].addEventListener ('click', function (e) {
+  alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
+  e.stopPropagation();
+})
