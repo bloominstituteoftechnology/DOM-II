@@ -109,6 +109,44 @@
       .btn {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
       }
+      
     }
   }
+
+  .cart {
+    display: flex;
+    justify-content: space-evenly;
+    .fill {
+      background-image: url('../img/next.jpeg');
+      position: relative;
+      height: 150px;
+      width: 150px;
+      top: 2px;
+      left: 2px;
+      cursor: pointer;
+    }
+    
+    .hold {
+      border: solid 5px #ccc;
+    }
+    
+    .empty {
+      display: inline-block;
+      height: 160px;
+      width: 160px;
+      margin: 10px;
+      border: solid 3px salmon;
+      background: white;
+    }
+    .message {
+      align-self: center;
+    }
+    .hovered {
+      background: #f4f4f4;
+      border-style: dashed;
+    }
+  }
+  
+
+
 }// home
