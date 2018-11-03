@@ -180,6 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 10;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -233,6 +234,7 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+  opacity: 1;
 }
 .home .intro h2 {
   margin-top: 20px;
@@ -363,6 +365,8 @@ img {
   font-size: 2rem;
   padding: 2%;
   border-radius: 5px;
+  transition: all 0.1s;
+  opacity: 0;
 }
 .purple-box {
   background: rgba(160, 32, 240, 0.5);

@@ -7,6 +7,7 @@
 const logo = document.getElementsByClassName('logo-heading')[0];
 const menuItem = document.getElementsByClassName('nav-link');
 const headerImg = document.querySelectorAll('.intro img')[0];
+const mainNav = document.querySelector('.main-navigation');
 
 logo.addEventListener('mouseenter', function(event){
   event.target.style.color = 'pink';
@@ -21,8 +22,8 @@ logo.addEventListener('mouseleave', function(event){
 // --------------------------------
 const textSec = document.querySelectorAll('.text-content p');
 const containerHome = document.querySelector('.container.home');
-const introLoad = document.querySelector('.intro-load');
 const visitMsg = document.getElementById('visit-msg');
+const intro = document.querySelector('.intro');
 
 headerImg.addEventListener('dblclick', function(event){
   TweenMax.to(headerImg, 2, {rotation:360});
@@ -42,14 +43,13 @@ document.addEventListener('contextmenu', function(event){
   alert(`Please don't copy and paste!`);
 })
 window.addEventListener('load', function(event){
-  introLoad.textContent = 'The page is done loading!';
-  introLoad.style.textAlign = 'center';
-  introLoad.style.textTransform = 'uppercase';
-  introLoad.style.margin = '20px 0 10px 0';
+  TweenMax.from(mainNav, 1, {x:-1000});
+  TweenMax.from(intro, 1, {autoAlpha: 0, delay: .5});
 })
 document.addEventListener('scroll', function(event){
   visitMsg.style.display = 'block';
   visitMsg.textContent = "Thanks for visiting our site! Scroll to the bottom to sign up for a package!";
+  TweenMax.to(visitMsg, 1, {opacity: 1});
 })
 window.addEventListener('resize', function(event){
   this.alert(`I've been resized!`);
