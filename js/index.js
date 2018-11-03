@@ -6,6 +6,9 @@ let titleHeader = document.querySelector('.intro h2');
 let imgAdventure = document.querySelector('.img-content img');
 let btnSignUp = document.querySelectorAll('.btn');
 let destinations = document.querySelectorAll('.destination');
+let inverseContent = document.querySelector('.inverse-content');
+let adventurePara = document.querySelector('.inverse-content div p');
+let adventureTitle = document.querySelector('div.text-content:nth-of-type(2)');
 
 imgHeader.addEventListener('click', function() {
   bus.classList.toggle('drive');
@@ -49,3 +52,14 @@ btnSignUp[2].addEventListener('focus', function() {
     btn.textContent = 'Sign Me up!'
   })
 });
+
+inverseContent.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+  event.currentTarget.classList.toggle('inverse-horizontal');
+});
+
+adventurePara.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  adventureTitle.classList.toggle('inverse-vertical');
+})
