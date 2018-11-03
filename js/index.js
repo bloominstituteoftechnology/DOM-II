@@ -34,7 +34,6 @@ let adventure = document.querySelector(".img-content");
 let text = document.querySelector(".text-content");
 adventure.addEventListener("click", e => {
   text.style.color = "slateblue";
-  e.stopPropogation();
 });
 adventure.addEventListener("mouseover", e => {
   title.textContent = "Wanna go here?";
@@ -52,9 +51,10 @@ for (let i = 0; i < imageC.length; i++) {
     imageC[i].style.justifyContent = "center";
     imageC[i].style.alignItems = "center";
     imageC[i].style.top = `${window.scrollY}px`;
-    imageC[i].style.left = `${window.innerWidth / 2 - 420}px`;
+    imageC[i].style.left = `${window.innerWidth / 2 - window.innerWidth / 4}px`;
+    TweenMax.to(imageC[i], 1, { left: `${window.innerWidth / 2 - 420}px` });
     imageC[i].style.height = "100vh";
-    imageC[i].style.width = "800px";
+    TweenMax.to(imageC[i], 1, { width: `800px` });
     images[i].style.maxWidth = "200vw";
     images[i].style.width = "100%";
     body.style.overflow = "hidden";
@@ -86,3 +86,5 @@ window.addEventListener("cut", e => {
   e.clipboardData.setData("text/plain", "ùwú");
   e.preventDefault();
 });
+
+TweenMax.to(logo, 1, { x: 100 });
