@@ -110,6 +110,12 @@ function app(){
             window.open(`${e.target.src}`,'_blank') 
         }
     })
+
+    // replaces user's copy function
+    document.addEventListener('copy',e=>{
+        e.clipboardData.setData('text/plain','Don\'t copy that floppy!')
+        e.preventDefault()
+    })
 }
 
 window.addEventListener('load', app)
