@@ -171,22 +171,26 @@ butTarget[1].addEventListener('mouseup',function (){
 let navA = document.querySelectorAll('.nav-link')
 renav.addEventListener('click', function () {
   renav.style.backgroundColor = 'lightblue';
-  
-
 } )
 navA[0].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
   e.stopPropagation();
+  e.preventDefault()
+  console.log(e);
 })
 navA[1].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
   e.stopPropagation();
+  e.preventDefault()
 })
 navA[2].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
   e.stopPropagation();
+  e.preventDefault()
 })
 navA[3].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
   e.stopPropagation();
+  e.preventDefault()
 })
+console.log(navA[0]);
