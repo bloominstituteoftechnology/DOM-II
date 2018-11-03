@@ -104,8 +104,15 @@ formey.addEventListener('focus', (event) => {
     console.log(event.target);
 });
 
+// Focus Blus Listener
 formey.addEventListener('blur', (event) => {
     event.target.style.border = '3px dashed red';
     event.target.innerHTML = 'I guess not : (';
     console.log(event.target);
+});
+
+// Focus Resize Listener
+window.addEventListener('resize', (event) => {
+    console.log(event);
+    alert('No cheating here. We know if you are rezing');
 });
