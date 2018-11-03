@@ -10,6 +10,7 @@ let inverseContent = document.querySelector('.inverse-content');
 let adventurePara = document.querySelector('.inverse-content div p');
 let adventureTitle = document.querySelector('div.text-content:nth-of-type(2)');
 
+
 imgHeader.addEventListener('click', function() {
   bus.classList.toggle('drive');
 });
@@ -27,7 +28,7 @@ titleHeader.addEventListener('wheel', function() {
 }); 
 
 imgAdventure.addEventListener('dblclick', function() {
-  event.target.classList.toggle('spin');
+  TweenLite.to('.img-content:nth-of-type(2)', 3, {rotation:360});
 });
 
 btnArray = [];
@@ -62,4 +63,4 @@ adventurePara.addEventListener('contextmenu', function(event) {
   event.preventDefault();
   event.stopPropagation();
   adventureTitle.classList.toggle('inverse-vertical');
-})
+});
