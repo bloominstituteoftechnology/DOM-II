@@ -1,5 +1,5 @@
 .active {
-  background-color: tomato;
+  color: tomato;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -177,6 +177,16 @@ img {
     margin: 0 5%;
   }
 }
+.scroll-active {
+  background-color: aqua;
+  padding: 10px 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: block !important;
+  font-size: 1.6rem;
+  position: fixed;
+  float: right;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -206,6 +216,9 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+}
+.main-navigation .nav-container .nav .active {
+  color: tomato;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {

@@ -7,6 +7,14 @@ const doc = document;
 
 const header = doc.querySelector('.main-navigation');
 
+const navlinks = doc.querySelector('.nav');
+
+navlinks.addEventListener('mouseover', (event) => {
+    event.target.classList.toggle('active');
+});
+navlinks.addEventListener('mouseout', (event) => {
+    event.target.classList.toggle('active');
+});
 // Bolden up our header to make it more prominent
 
 header.addEventListener('mouseover', (event) => {
@@ -31,20 +39,26 @@ header.addEventListener('mouseover', (event) => {
 // Show how much pixels people are scrolling through
 
 
-const counterNav = doc.createElement('span');
-counterNav.innerHTML = 0;
-// counterNav.style.cssFloat = 'right';
-let counterDescription = doc.createElement('span');
-counterDescription.innerHTML = 'Scroll Counter: '
+const scrollPixelNav = doc.createElement('span');
+scrollPixelNav.innerHTML = 0;
+scrollPixelNav.style.fontSize = '1.6rem';
+// onst scrollPixelNav = doc.createElement('span');
+// scrollPixelNav.innerHTML = 0;
+
+
+// scrollPixelNav.style.cssFloat = 'right';
+let scrollPixelDescription = doc.createElement('span');
+scrollPixelDescription.innerHTML = 'Scroll Pixel Counter: '
+scrollPixelDescription.style.fontSize = '1.6rem';
 
 const body = doc.querySelector('body');
 body.addEventListener('wheel', (event) => {
     event.stopPropagation;
-    counterNav.innerHTML++;
+    scrollPixelNav.innerHTML++;
 });
 
-doc.querySelector('.main-navigation').append(counterDescription);
-doc.querySelector('.main-navigation').append(counterNav);
+doc.querySelector('.main-navigation').append(scrollPixelDescription);
+doc.querySelector('.main-navigation').append(scrollPixelNav);
 
 
 // Drag and Drop
@@ -115,4 +129,15 @@ formey.addEventListener('blur', (event) => {
 window.addEventListener('resize', (event) => {
     console.log(event);
     alert('No cheating here. We know if you are rezing');
+});
+
+// Scroll Listener
+
+const funBox = doc.createElement('div');
+funBox.innerHTML = 'funbox';
+funBox.style.display = 'none';
+header.appendChild(funBox);
+
+window.addEventListener('scroll', (event) => {
+    setTimeout(() => (funBox.className = 'scroll-active'), 1000);
 });
