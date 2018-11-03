@@ -31,10 +31,17 @@ norefreshing.forEach((navItem, index)=>{
         console.log('default prevented');
     })
 });
+const destination = document.querySelectorAll('.destination')
+destination.forEach((item,index)=>{
+    item.addEventListener('click',(event)=>{
+        item.style.backgroundColor = 'green';
+    })
+})
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach((button,idx)=>{
-    button.addEventListener('focus',(event)=>{
+    button.addEventListener('click',(event)=>{
         button.style.display = 'none';
+        event.stopPropagation();
     })
 })
