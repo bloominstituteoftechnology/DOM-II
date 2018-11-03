@@ -2,10 +2,11 @@ const logoHeading = document.querySelector(".logo-heading");
 const body = document.querySelector("body");
 const introP = document.querySelector(".intro p");
 const navLink = document.querySelectorAll(".nav-link");
-const Name = document.querySelector("#name");
+//const cName = document.querySelector("#cname");
 const dest1 = document.querySelector(".content-pick .dest1");
 const dest1Btn = document.querySelector(".content-pick .dest1 .btn1");
 const navItem = document.querySelectorAll(".nav-item");
+const footer = document.querySelector(".footer");
 
 for (var i = 0; i < navLink.length; i++) {
   navLink[i].addEventListener("click", function(event) {
@@ -53,22 +54,24 @@ function myFunction() {
   }
 }
 
-// Name.addEventListener("select", function() {
+// cName.addEventListener("select", function() {
 //   alert("you selected some text!");
 // });
 
-// Name.addEventListener("focus", function(event) {
+// cName.addEventListener("focus", function(event) {
 //   event.target.style.backgroundColor = "silver";
 // });
 
 dest1.addEventListener("click", function(event) {
-  alert("it works");
-  console.log('paragraph clicked');
-  event.target.style.color = 'blue';
+  event.target.style.color = "blue";
+  alert("Have fun in the sun");
 });
 
 dest1Btn.addEventListener("click", function() {
-  alert("button works");
-  console.log('button pressed');
-  //event.stopPropagation();
+  alert("Button pressed");
+  event.stopPropagation();
+});
+
+footer.addEventListener("click", function(event) {
+  event.target.classList.toggle("jsFooter");
 });
