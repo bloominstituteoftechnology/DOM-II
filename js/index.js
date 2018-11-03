@@ -18,7 +18,23 @@ body.addEventListener('keydown', function(event){
     //Need to fix colors
 })
 
+//Bus img moves side to side
 sandBus.addEventListener('wheel', function(event){
     sandBus.classList.toggle('.vrooom');
+    //fix, class is being toggled, but style isn't being added
 })
 
+//Dblclicked text changes colors except for h1
+body.addEventListener('dblclick', function(event){
+    const cursorTarget = event.target;
+    console.log(cursorTarget)
+    if(cursorTarget === h1){
+    }else{
+      if(cursorTarget.style.color === 'black' 
+      || cursorTarget.style.color === 'white'){
+          cursorTarget.style.color = 'khaki';
+      }else{
+          cursorTarget.style.color = 'black';
+      }
+}
+})
