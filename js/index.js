@@ -19,16 +19,20 @@ body.addEventListener('copy', function(event) {
   event.target.style.visibility = 'hidden';
 });
 
-// Event 3: If you mouse over an image, it gets bigger, if you mouse out it goes back to original size
-images.forEach(image => {
-  image.addEventListener('mouseenter', function() {
-    const str = image.width - 200;
-    image.style.width = `${str}px`.toString();
-  });
-  image.addEventListener('mouseleave', function() {
-    const str = image.width + 200;
-    image.style.width = `${str}px`.toString();
-  });
+// Event 3: If you mouse over the bus image, it gets smaller, if you mouse out it goes back to original size
+images[0].addEventListener('mouseenter', function(event) {
+  const str = event.target.width - 200;
+  event.target.style.width = `${str}px`.toString();
+
+  // stretch: moves to the right and bounces
+  TweenMax.to(event.target, 2, {x:200, ease:Bounce.easeOut});
+});
+images[0].addEventListener('mouseleave', function(event) {
+  const str = event.target.width + 200;
+  event.target.style.width = `${str}px`.toString();
+
+  // stretch: moves back and bounces  
+  TweenMax.to(event.target, 2, {x:0, ease:Bounce.easeOut});
 });
 
 // Event 4: If you drag a header (h2) it changes to red
@@ -44,6 +48,9 @@ paragraphs.forEach(p => {
     // Since the body had a copy event listener too, have to stop bubbling
     event.stopPropagation();
     p.classList.add('changeColor');
+
+    //Stretch: start small, gets bigger
+    TweenMax.from(p, 2, {x:300, opacity:0, scale:0.5});
   });
 });
 
@@ -53,6 +60,9 @@ navLinks.forEach(a => {
     //Stop the navigation from items from refreshing the page
     event.preventDefault();
     images.forEach(image => image.classList.toggle('remove'));
+
+    //Stretch: rotate logo
+    TweenMax.to(logo, 1, {rotation:360});
   });
 });
 
@@ -71,11 +81,17 @@ destinations.forEach(destination => {
 // Event 9: If any key is down, the logo turns red
 document.addEventListener('keydown', function() {
   logo.classList.add('changeColor');
+
+  //Stretch: move logo to the right
+  TweenMax.to(logo, 1, {x:150});
 });
 
 // Event 10: If the mouse is over any sign me up button, the button turns red  
 buttons.forEach(button => {
   button.addEventListener('mouseover', function(event) {
     event.target.style.backgroundColor = 'red';
+
+    //Stretch: get smaller
+    TweenMax.to(event.target, 2, {scale:0.5});
   });
 });
