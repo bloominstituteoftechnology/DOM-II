@@ -6,7 +6,8 @@ const containerHome = document.querySelector('.container.home');
 const introLoad = document.querySelector('.intro-load');
 const visitMsg = document.getElementById('visit-msg');
 const menuItem = document.getElementsByClassName('nav-link');
-console.log(introLoad)
+const destination = document.getElementsByClassName('destination');
+const btn = document.querySelectorAll('.btn');
 
 logo.addEventListener('mouseenter', function(event){
   event.target.style.color = 'pink';
@@ -44,3 +45,28 @@ document.addEventListener('scroll', function(event){
 window.addEventListener('resize', function(event){
   this.alert(`I've been resized!`);
 })
+for(let i = 0; i < destination.length; i++){
+  destination[i].addEventListener('mouseenter', function(event){
+    destination[i].style.backgroundColor = 'rgba(160,32,240,0.5)';
+    console.log('mouseenter dest');
+  })
+  destination[i].addEventListener('mouseleave', function(event){
+    destination[i].style.backgroundColor = 'inherit';
+    console.log('mouseleave dest');
+  })
+}
+for(let i = 0; i < btn.length; i++){
+  btn[i].addEventListener('mouseenter', function(event){
+    event.stopPropagation();
+    btn[i].style.backgroundColor = 'none';
+    console.log('click btn');
+  })
+}
+for(let i = 0; i < menuItem.length; i++) {
+  menuItem[i].addEventListener('click', function(event){
+  event.preventDefault();
+  })
+}
+  
+
+

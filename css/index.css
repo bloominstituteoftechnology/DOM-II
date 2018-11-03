@@ -319,6 +319,8 @@ img {
 .home .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
+  padding: 2%;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .home .content-pick .destination {
