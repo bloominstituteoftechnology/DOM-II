@@ -50,3 +50,9 @@ const destinationButtons = document.querySelectorAll('.btn');
 destinationButtons.forEach(item => item.addEventListener('click', function(event) {
   event.target.parentNode.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
 }))
+
+// Images will fade when moused over
+const pics = document.querySelectorAll('img');
+pics.forEach(item => item.addEventListener('mouseover', function(event) {
+  event.target.style.opacity = '0.5';
+}))
