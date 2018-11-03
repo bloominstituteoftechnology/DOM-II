@@ -167,7 +167,7 @@ butTarget[1].addEventListener('mouseup',function (){
   h4Target[1].style.fontSize = "xx-large";
 }) 
 
-// stop propagation example:
+// stop propagation and prevent default
 let navA = document.querySelectorAll('.nav-link')
 renav.addEventListener('click', function () {
   renav.style.backgroundColor = 'lightblue';
@@ -176,7 +176,6 @@ navA[0].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
   e.stopPropagation();
   e.preventDefault()
-  console.log(e);
 })
 navA[1].addEventListener ('click', function (e) {
   alert('Event propagation has been prevented by maintaining the current nav backgroundColor.')
@@ -193,4 +192,6 @@ navA[3].addEventListener ('click', function (e) {
   e.stopPropagation();
   e.preventDefault()
 })
-console.log(navA[0]);
+let img = document.querySelectorAll('img');
+TweenMax.to(img, 8, {padding:25, borderRadius:90});
+TweenMax.from(img, 8, {opacity: 0, scale:0, x:600, rotation:360})
