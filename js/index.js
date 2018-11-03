@@ -26,6 +26,7 @@ let adventure = document.querySelector(".img-content");
 let text = document.querySelector(".text-content");
 adventure.addEventListener("click", e => {
   text.style.color = "slateblue";
+  e.stopPropogation();
 });
 adventure.addEventListener("mouseover", e => {
   title.textContent = "Wanna go here?";
