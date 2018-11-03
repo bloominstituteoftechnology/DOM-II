@@ -104,6 +104,12 @@ function app(){
     // })
 
 
+    // opens all images and a new tab
+    document.addEventListener('dblclick',e=>{
+        if(e.target&&e.target.matches('img') ){
+            window.open(`${e.target.src}`,'_blank') 
+        }
+    })
 }
 
 window.addEventListener('load', app)
