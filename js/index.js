@@ -161,3 +161,7 @@ footerColor.addEventListener('dblclick', (event) => {
     event.target.style.backgroundColor = 'red';
     
 });
+
+navlinks.addEventListener('click', (event) => {
+    event.preventDefault();
+});
