@@ -247,11 +247,20 @@ footer.active {
   margin-top: 20px;
 }
 .home .intro h2.active {
-  display: none;
+  border: black dashed 1rem;
 }
 .home .intro p.active {
-  color: red;
-  background-color: grey;
+  background-color: #6E9CC8;
+  font-size: 3rem;
+  color: white;
+}
+.home .intro.active {
+  background-color: yellow;
+}
+.home .intro.active p.active {
+  background-color: #6E9CC8;
+  font-size: 3rem;
+  color: white;
 }
 .home .content-section {
   margin: 30px 0;

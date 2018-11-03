@@ -17,24 +17,32 @@ myNavLinks.addEventListener('mouseover', function (event) {
 })
 myNavLinks.addEventListener('click', function (event) {
     event.preventDefault();
+    event.target.style.color = 'blue';
 })
 
 myNavLinks.addEventListener('mouseout', function (event) {
     event.target.classList.toggle('active');
 })
 
-const welcomeHeader = document.querySelector('.intro h2');
-document.addEventListener('keydown', function (event) {
-    const keyName = event.key;
-    if (keyName !== 'Control') {
-        welcomeHeader.classList.toggle('active'); 
-    }
-})
+const welcomeDiv = document.querySelector('.intro');
+welcomeDiv.addEventListener('dblclick', function (event) {
+    event.target.classList.toggle('active');
+ })
+
+ const welcomeHeader = document.querySelector('.intro h2');
+ document.addEventListener('keydown', function (event) {
+     const keyName = event.key;
+     if (keyName === 'f') {
+         welcomeHeader.classList.toggle('active'); 
+     }
+ })
 
 const welcomeText = document.querySelector('.intro p');
 welcomeText.addEventListener('dblclick', function (event) {
    event.target.classList.toggle('active');
+   event.stopPropagation();
 })
+
 
 const introImg = document.querySelector('.intro img');
 introImg.addEventListener('drag', function (event) {
@@ -56,3 +64,5 @@ introImg.addEventListener('drag', function (event) {
  foot.addEventListener('mouseenter', function (event) {
     event.target.classList.toggle('active');
  })
+
+ 
