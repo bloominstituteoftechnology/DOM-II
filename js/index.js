@@ -54,5 +54,13 @@ destinationButtons.forEach(item => item.addEventListener('click', function(event
 // Images will fade when moused over
 const pics = document.querySelectorAll('img');
 pics.forEach(item => item.addEventListener('mouseover', function(event) {
-  event.target.style.opacity = '0.5';
+  event.target.classList.toggle('fade');
+  console.log(event.target);
 }))
+
+// Makes links larger when clicked
+const links = document.querySelectorAll('a');
+links.forEach(item=> item.addEventListener('click', event => {
+  event.preventDefault();
+  event.target.style.fontSize = '200%';
+}));
