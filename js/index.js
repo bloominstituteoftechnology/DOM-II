@@ -31,8 +31,9 @@ function app(){
         console.log(e)
         let bus = document.createElement('span')
         bus.textContent = '🚌'
-        bus.style = `position:absolute;top:${e.screenY}px;left:${e.screenX}px;`
+        bus.style = `position:absolute;top:${e.clientY}px;left:${e.clientX}px;`
         document.body.appendChild(bus);
+        // console.log(e.clientY,e.clientX);
     })
 
     // section content pick event delegation
