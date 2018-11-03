@@ -162,6 +162,28 @@ footerColor.addEventListener('dblclick', (event) => {
     
 });
 
+//Propagation
+
+const topElement = doc.querySelector('header');
+const bottomElement = doc.querySelector('.nav-container');
+
+console.log(bottomElement);
+// Prevent Default Nav Links Page Refresh
+bottomElement.addEventListener('click', (event) => {
+    event.stopPropagation();
+    event.target.style.backgroundColor = 'navy';
+});
+
+topElement.addEventListener('click', (event) => {
+    event.target.style.backgroundColor = 'red';
+});
+
+
+// Prevent Default Nav Links Page Refresh
+
 navlinks.addEventListener('click', (event) => {
     event.preventDefault();
 });
+
+
+
