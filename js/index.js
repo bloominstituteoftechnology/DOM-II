@@ -1,7 +1,3 @@
-// `drag / drop`
-// `focus`
-// `resize`
-// `select`
 let navs = document.querySelectorAll(".nav-link");
 
 for (let i = 0; i < navs.length; i++) {
