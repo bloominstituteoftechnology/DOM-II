@@ -1,13 +1,12 @@
 // Your code goes here
+
+
+// --------------------------------
+// Header
+// --------------------------------
 const logo = document.getElementsByClassName('logo-heading')[0];
-const headerImg = document.querySelectorAll('.intro img')[0];
-const textSec = document.querySelectorAll('.text-content p');
-const containerHome = document.querySelector('.container.home');
-const introLoad = document.querySelector('.intro-load');
-const visitMsg = document.getElementById('visit-msg');
 const menuItem = document.getElementsByClassName('nav-link');
-const destination = document.getElementsByClassName('destination');
-const btn = document.querySelectorAll('.btn');
+const headerImg = document.querySelectorAll('.intro img')[0];
 
 logo.addEventListener('mouseenter', function(event){
   event.target.style.color = 'pink';
@@ -15,6 +14,16 @@ logo.addEventListener('mouseenter', function(event){
 logo.addEventListener('mouseleave', function(event){
   event.target.style.color = 'inherit';
 })
+
+
+// --------------------------------
+// Main Content
+// --------------------------------
+const textSec = document.querySelectorAll('.text-content p');
+const containerHome = document.querySelector('.container.home');
+const introLoad = document.querySelector('.intro-load');
+const visitMsg = document.getElementById('visit-msg');
+
 headerImg.addEventListener('dblclick', function(event){
   TweenMax.to(headerImg, 2, {rotation:360});
 })
@@ -24,13 +33,13 @@ document.addEventListener('keydown', function(event){
   }
 })
 document.addEventListener('drag', function(event){
-  containerHome.style.background = 'red';
+  containerHome.style.background = 'rgba(255, 0, 0,0.5)';
 })
 document.addEventListener('dragend', function(event){
   containerHome.style.background = 'inherit';
 })
-document.addEventListener('select', function(event){
-  event.target.style.backgroundColor = 'purple';
+document.addEventListener('contextmenu', function(event){
+  alert(`Please don't copy and paste!`);
 })
 window.addEventListener('load', function(event){
   introLoad.textContent = 'The page is done loading!';
@@ -45,21 +54,24 @@ document.addEventListener('scroll', function(event){
 window.addEventListener('resize', function(event){
   this.alert(`I've been resized!`);
 })
+
+// --------------------------------
+// Contact Section
+// --------------------------------
+const destination = document.getElementsByClassName('destination');
+const btn = document.querySelectorAll('.btn');
+
 for(let i = 0; i < destination.length; i++){
-  destination[i].addEventListener('mouseenter', function(event){
-    destination[i].style.backgroundColor = 'rgba(160,32,240,0.5)';
-    console.log('mouseenter dest');
-  })
-  destination[i].addEventListener('mouseleave', function(event){
-    destination[i].style.backgroundColor = 'inherit';
-    console.log('mouseleave dest');
+  destination[i].addEventListener('click', function(event){
+    destination[i].classList.toggle('purple-box'); 
+    console.log('clicked destination');
   })
 }
 for(let i = 0; i < btn.length; i++){
-  btn[i].addEventListener('mouseenter', function(event){
+  btn[i].addEventListener('click', function(event){
     event.stopPropagation();
     btn[i].style.backgroundColor = 'none';
-    console.log('click btn');
+    console.log('clicked btn');
   })
 }
 for(let i = 0; i < menuItem.length; i++) {
