@@ -1,7 +1,12 @@
 // Your code goes here
 const logo = document.querySelector('.logo-heading');
 logo.style.cursor = 'pointer';
-logo.addEventListener('click', () => logo.style.color = logo.style.color === 'blue' ? 'black' : 'blue');
+logo.addEventListener('click', () => {
+	logo.style.color = logo.style.color === 'blue' ? 'black' : 'blue'
+	TweenMax.to('.nav-link', 2, logo.style.color === 'blue' ? 
+	{transform: 'translateX(-7vw)'} : 
+	{transform: 'translateX(0)'});
+});
 
 const headerPicture = document.querySelector('.intro img');
 headerPicture.addEventListener('mouseover', () => {
