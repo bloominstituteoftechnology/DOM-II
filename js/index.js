@@ -19,20 +19,28 @@ const destBtn = document.querySelector('.btn')
  	console.log(logoExpansion)
  });
 
-  const expandNavigation = document.querySelector('.nav-link')
+  const navLink = document.querySelectorAll('.nav-link')
+  console.log(navLink);
+
+  // mouseenter event 
+  for (let i = 0; i < navLink.length; i++){
+   navLink[i].addEventListener('mouseenter', (event) => {
+      // event.stopPropagation()
+      // if (event.target.classList.contains('.nav-link')){
+        event.preventDefault();
+        event.target.style.fontSize = '20px';
+        event.target.style.color = 'silver';
+      // }
+      console.log(event.target)
+    // }, false);
+    });
+  }
 
 
-  // document.addEventListener('mouseenter', (event) => {
-  // 	event.stopPropagation()
-  // 	if (event.target.classList.contains('.nav-link')){
-  // 		event.target.style.fontSize = '20px';
-  // 		event.target.style.color = 'silver';
-  // 	}
-  // 	console.log(event.target)
-  // }, false);
-
-  const busImg = document.querySelector('img')
-
+  const busImg = document.querySelector('#funBus')
+// dblclick event with opacity
   busImg.addEventListener('dblclick', (event) => {
   		event.target.style.opacity = 0.5;
   })
+
+  
