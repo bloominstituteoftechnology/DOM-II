@@ -1,5 +1,4 @@
 const blockParent = document.querySelector('.blocks');
-const blocks = document.querySelectorAll('.block');
 blockParent.addEventListener('click', (e) => {
     if (e.target === blockParent) return;
         const temp = e.target;
