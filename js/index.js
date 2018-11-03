@@ -26,10 +26,19 @@ const colorSpinner = () => {
     // console.log(event)
   }
 }
+
+// The logo heading will cycle through colors when the mouse wheel is spun while pointing at the element
 const paraSpinner = colorSpinner();
 funBus.addEventListener('wheel', paraSpinner);
 
+// Footer will change colors and then back again on a mouse click
 const footer = document.querySelector('footer');
 footer.addEventListener('click', function(event) {
   event.target.classList.toggle('background-change');
+})
+
+// Causes popup window to appear when anywhere on the page is double-clicked on
+const page = document.querySelector('body');
+page.addEventListener('dblclick', function() {
+  window.alert("Back for more?");
 })
