@@ -35,6 +35,13 @@ let text = document.querySelector(".text-content");
 adventure.addEventListener("click", e => {
   text.style.color = "slateblue";
 });
+text.addEventListener("click", e => {
+  e.stopPropagation();
+  alert("let's go was clicked; propagation was also stopped");
+});
+document.addEventListener("click", e => {
+  alert("body was clicked");
+});
 adventure.addEventListener("mouseover", e => {
   title.textContent = "Wanna go here?";
 });
