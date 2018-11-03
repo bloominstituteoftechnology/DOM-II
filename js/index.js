@@ -127,7 +127,6 @@ formey.addEventListener('blur', (event) => {
 
 // Focus Resize Listener
 window.addEventListener('resize', (event) => {
-    console.log(event);
     alert('No cheating here. We know if you are rezing');
 });
 
@@ -141,3 +140,12 @@ header.appendChild(funBox);
 window.addEventListener('scroll', (event) => {
     setTimeout(() => (funBox.className = 'scroll-active'), 1000);
 });
+
+// Select Listener
+
+var elem = document.getElementById('jojo');
+
+elem.addEventListener('select', (event) => {
+    event.target.style.backgroundColor = 'yellow';
+    
+}, false);
