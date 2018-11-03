@@ -10,11 +10,11 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   
 
-* [ ] Fork the project into your GitHub user account
+* [X] Fork the project into your GitHub user account
 
-* [ ] Clone the forked project into a directory on your machine
+* [X] Clone the forked project into a directory on your machine
 
-* [ ] You are now ready to build this project with your preferred IDE
+* [X] You are now ready to build this project with your preferred IDE
 
   
 
