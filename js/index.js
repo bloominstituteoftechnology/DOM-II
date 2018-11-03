@@ -46,8 +46,17 @@ document.addEventListener('dragstart', function(){
 })
 
 
-//resize
-
+//mouseup
 document.addEventListener('mouseup', function(){
 	images[1].src = "none"
+})
+
+//dbclick
+
+const bottomButtons = document.querySelectorAll('.btn')
+
+console.log(bottomButtons)
+
+bottomButtons[2].addEventListener('dbclick', function(){
+		alert('I get it! stop clicking so much!')
 })
