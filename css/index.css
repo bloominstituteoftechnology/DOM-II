@@ -225,6 +225,11 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .border-bar {
+  height: 2px;
+  width: 0%;
+  background-color: #C0C0C0;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;

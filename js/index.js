@@ -93,15 +93,13 @@ function app(){
         }
     })
 
-    // const body = document.querySelector('Body');
-    // document.addEventListener('scroll',e=>{
-    //     console.log(window.pageYOffset)
-    //     console.log('yeh ' + body.scrollHeight);
-    //     console.log(`'meh' + ${  window.pageYOffset }`)
-    //     console.log((body.scrollHeight - window.pageYOffset))
-    //     let  scrollBarPosition= (body.scrollHeight - window.pageYOffset) 
-
-    // })
+    // sets the width of the div based on the percentage of the page scrolled
+    const body = document.querySelector('Body');
+    const percentDiv = document.querySelector('.border-bar')
+    document.addEventListener('scroll',e=>{
+        let percentScrolled= Math.round(body.parentNode.scrollTop /(body.parentNode.scrollHeight-body.parentNode.clientHeight) * 100) 
+        percentDiv.setAttribute('style',`width: ${percentScrolled}%;`)
+    })
 
 
     // opens all images and a new tab
