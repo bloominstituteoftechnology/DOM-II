@@ -20,7 +20,7 @@ const colorSpinner = () => {
       if(counter <= 0) counter = 0.95;
     }
     // console.log(counter);
-    let colorIndex = Math.floor(counter*10); //takes counter value, and provides
+    let colorIndex = Math.floor(counter * 10); //takes counter value, and provides
     // console.log(colorIndex);
     event.target.style.color = color[colorIndex];
     // console.log(event)
@@ -31,6 +31,8 @@ const colorSpinner = () => {
 const paraSpinner = colorSpinner();
 funBus.addEventListener('wheel', paraSpinner);
 
+
+
 // Footer will change colors and then back again on a mouse click
 const footer = document.querySelector('footer');
 footer.addEventListener('click', function(event) {
@@ -40,5 +42,11 @@ footer.addEventListener('click', function(event) {
 // Causes popup window to appear when anywhere on the page is double-clicked on
 const page = document.querySelector('body');
 page.addEventListener('dblclick', function() {
-  window.alert("Back for more?");
+  window.alert("What are you poking at?");
 })
+
+// Background color of parent div will change randomly with each click of any "Sign Me Up" button
+const destinationButtons = document.querySelectorAll('.btn');
+destinationButtons.forEach(item => item.addEventListener('click', function(event) {
+  event.target.parentNode.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+}))
