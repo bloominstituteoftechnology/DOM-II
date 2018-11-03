@@ -18,9 +18,25 @@ function app(){
             // console.log(e.target.classList.toggle('.emphasize'))
         }
     })
+    // prevents the default of the links opening in a new page
+    nav.addEventListener('click',e=>{
+        if(e.target&&e.target.matches('a.nav-link')){
+            e.preventDefault()
+            e.stopPropagation()
+        }
+    })
+
+    const header= document.querySelector('.main-navigation')
+    header.addEventListener('click',e=>{
+        console.log(e)
+        let bus = document.createElement('span')
+        bus.textContent = '🚌'
+        bus.style = `position:absolute;top:${e.screenY}px;left:${e.screenX}px;`
+        document.body.appendChild(bus);
+    })
 
     // section content pick event delegation
-    const  contentPick= document.querySelector('section.content-pick');
+    const contentPick= document.querySelector('section.content-pick');
     const signupForm= document.querySelector('.sign-up')
     console.log(signupForm)
     contentPick.addEventListener('click',e=>{
@@ -96,6 +112,7 @@ function app(){
     // sets the width of the div based on the percentage of the page scrolled
     const body = document.querySelector('Body');
     const percentDiv = document.querySelector('.border-bar')
+
     document.addEventListener('scroll',e=>{
         let percentScrolled= Math.round(body.parentNode.scrollTop /(body.parentNode.scrollHeight-body.parentNode.clientHeight) * 100) 
         percentDiv.setAttribute('style',`width: ${percentScrolled}%;`)
