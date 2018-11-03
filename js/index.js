@@ -46,3 +46,12 @@ const p = document.querySelector('p');
 p.addEventListener('copy', function(event){
   alert('Why are you copying my paragraph!?')
 });
+
+const img2 = document.querySelector('#img2');
+img2.addEventListener('contextmenu', function(event){
+  event.target.style.border = '2px solid yellow';
+});
+
+img2.addEventListener('mouseout', function(event){
+  event.target.style.border = 'none';
+});
