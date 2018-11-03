@@ -70,7 +70,6 @@ function dragStart() {
     setTimeout(() => (this.className = 'invisible'), 0);
 }
 
-
 function dragEnd() {
     this.className = 'fill';
 }
@@ -90,3 +89,8 @@ function dragDrop() {
     this.append(fill);
 }
 
+// Load Event Listener
+
+window.addEventListener("load", function(event) {
+    setTimeout(() => (alert("Are you ready? Because this webpage is.."), 0));
+});
