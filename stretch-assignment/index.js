@@ -17,7 +17,7 @@ blockParent.addEventListener('mousedown', (e) => {
                 e.target.style.transform = '';
                 clearInterval(move);
             });
-        }, 50);
+        }, 10);
     }, 500);
     blockParent.addEventListener('mouseup', () => clearTimeout(timer));
 });
