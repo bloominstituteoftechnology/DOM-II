@@ -4,6 +4,10 @@ const signUpButtons = document.querySelectorAll('.btn');
 const body = document.querySelector('body');
 const easyReadParag = document.querySelectorAll('p');
 
+window.addEventListener('click', function(event) {
+  alert('Created this listener to showcase propagation');
+});
+
 // creates a gradient that follows the mouse around
 window.addEventListener('mousemove', function(event) {
   body.style.background =
@@ -13,7 +17,7 @@ window.addEventListener('mousemove', function(event) {
     event.clientY +
     'px, ' +
     '#c0c0c0, ' +
-    '#ffffff';
+    '#212529';
 });
 
 // creates an alert when the user leave the
@@ -41,8 +45,12 @@ navBar.forEach(link => {
   link.addEventListener('mouseleave', function(event) {
     event.target.classList.toggle('navLink');
   });
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+  });
 });
 
+// toggles image size on mouse enter and leave via class implementation
 imgs.forEach((img, index) => {
   if (index > 0) {
     img.addEventListener('mouseenter', function(event) {
@@ -51,7 +59,6 @@ imgs.forEach((img, index) => {
   }
 });
 
-// enlarges img on hover
 imgs.forEach((img, index) => {
   if (index > 0) {
     img.addEventListener('mouseleave', function(event) {
@@ -65,12 +72,17 @@ signUpButtons.forEach(button => {
     alert("You haven't pick a trip yet. Pick one now for best savings");
   });
   button.addEventListener('click', function(event) {
+    event.stopPropagation();
     TweenLite.to(event.target, 1, {scale: 0.5});
   });
 });
 
 // maginifies the paragraph for easy reading, also changes background and font color
 easyReadParag.forEach(paragraph => {
+  paragraph.style.cursor = 'zoom-in';
+  paragraph.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
   paragraph.addEventListener('dblclick', function(event) {
     TweenLite.to(event.target, 1, {scale: 2});
     paragraph.style.backgroundColor = 'black';
