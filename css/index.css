@@ -174,6 +174,23 @@ img {
     margin: 0 5%;
   }
 }
+@keyframes funColors {
+  0% {
+    color: black;
+  }
+  25% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  75% {
+    color: yellow;
+  }
+  100% {
+    color: black;
+  }
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -198,6 +215,10 @@ img {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
   }
+}
+.main-navigation .nav-container .logo-colors {
+  animation-name: funColors;
+  animation-duration: 5s;
 }
 .main-navigation .nav-container .nav {
   width: 350px;
@@ -226,6 +247,35 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+@keyframes vroom {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 100px;
+  }
+  50% {
+    left: 200px;
+  }
+  75% {
+    left: 300px;
+  }
+  100% {
+    left: 400px;
+  }
+}
+.dark-mode .main-navigation {
+  background-color: #17A2B8;
+}
+.dark-mode .container {
+  background-color: #212529;
+}
+.dark-mode .footer {
+  background-color: #C0C0C0;
+}
+.dark-mode body {
+  color: white;
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
@@ -233,6 +283,9 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+}
+.home .intro .vrooom {
+  display: none;
 }
 .home .intro h2 {
   margin-top: 20px;

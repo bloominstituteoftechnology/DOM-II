@@ -1,3 +1,25 @@
+@keyframes vroom{
+  0% {left: 0px}
+  25% {left:100px;}
+  50% {left:200px;}
+  75% {left:300px;}
+  100% {left:400px;}
+}
+.dark-mode{
+  .main-navigation{
+    background-color: @eastern-blue;
+  }
+  .container{
+    background-color: @shark;
+  }
+  .footer{
+    background-color: @silver;
+  }
+  body{
+    color:white;
+  }
+
+}
 .home {
 
   .intro {
@@ -7,6 +29,13 @@
     img {
       max-width: 100%;
       height: auto;
+    }
+
+    .vrooom{
+      // position: absolute;
+      // animation-name: vroom;
+      // animation-duration: 5s;
+      display: none;
     }
 
     h2 {
