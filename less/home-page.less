@@ -1,5 +1,6 @@
 .home {
 
+
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
@@ -85,6 +86,10 @@
     img {
       border-radius: 10px;
     }
+   
+
+  
+
   }
 
   .content-pick {
@@ -93,21 +98,35 @@
     display: flex;
     justify-content: space-between;
 
+    .btn-toggle {
+      background: black;
+      color: lightseagreen;
+    }
+
     @media @mobile {
       flex-wrap: wrap;
     }
+
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
 
+
       @media @mobile {
         width: 80%;
         margin: 0 auto 30px;
       }
+
+    //    .btn-toggle {
+    //   background: black;
+    //   color: lightseagreen;
+    // }
       
+    
       .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);    
+
       }
     }
   }

@@ -194,6 +194,9 @@ img {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .toggleIcon {
+  font-size: 50px;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
@@ -203,6 +206,10 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+}
+.main-navigation .nav-container .nav .navEvent {
+  font-size: 20px;
+  color: silver;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {
@@ -225,6 +232,10 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.footer .background-color {
+  background-color: #aff7f3;
+  font-size: 1.8rem;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -310,6 +321,10 @@ img {
   border-top: 2px dashed #C0C0C0;
   display: flex;
   justify-content: space-between;
+}
+.home .content-pick .btn-toggle {
+  background: black;
+  color: lightseagreen;
 }
 @media (max-width: 500px) {
   .home .content-pick {
