@@ -126,9 +126,7 @@ contain.addEventListener('load',function () {
   // alert("The fun bus is now loading ")
   kdTarget.style.backgroundColor = "lightgrey";
 },true);}, 500);
-
 //`focus`
-
 let form1 = fDock1.appendChild(document.createElement('form'));
 form1.name = 'input';
 form1.action = 'html_form_action.asp';
@@ -144,20 +142,28 @@ input1.value = 'Submit';
 let iteminput1 = document.querySelector('input[type="text"]');
 iteminput1.addEventListener('focus',runEvent);
 function runEvent(e){(input1.value = 'You are so focused')};
-
 //`resize`
-
 renav = document.querySelector('.nav-container');
 window.addEventListener('resize', function(){
   renav.style.backgroundColor = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
 });
-console.log(renav);
 // `scroll`
 window.addEventListener('scroll', function() {
   renav.style.backgroundColor = '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6);
 });
-console.log(bod[0]);
 
 //`select`
-
+// let selbut = document.querySelectorAll('.destination .btn');
+let selp = document.querySelectorAll('.destination p')
+// iteminput1.addEventListener('select', function () {
+//   pTarget[0].style.color = 'pink';
+// },true);
+// console.log (iteminput1);
+// console.log (selp);
 //`dblclick`
+let butTarget = document.querySelectorAll('.btn');
+let h4Target = document.querySelectorAll('.destination h4');
+butTarget[0].addEventListener('dblclick', function () {
+selp[0].style.backgroundColor='lightblue';
+h4Target[0].style.backgroundColor='lightgreen';
+})
