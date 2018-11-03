@@ -37,6 +37,22 @@ introImg.addEventListener('click', () => {
 //   p.innerHTML = "One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... ";
 // })
 
+const body = document.querySelector('body')
+document.addEventListener('cut', function (event) {
+  body.style.background = 'red'
+  console.log(`Bloooood`)
+})
+
+document.addEventListener('paste', function (event) {
+  body.style.background = 'mediumspringgreen'
+  console.log(`Healed`)
+})
+
+document.addEventListener('copy', function (event) {
+  body.style.background = 'dodgerblue'
+  console.log(`Copycat!`)
+})
+
 
 // event 4
 imgOne.addEventListener('click', () => {
