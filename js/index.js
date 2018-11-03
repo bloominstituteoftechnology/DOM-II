@@ -64,3 +64,13 @@ links.forEach(item=> item.addEventListener('click', event => {
   event.preventDefault();
   event.target.style.fontSize = '200%';
 }));
+
+// Changes paragraph colors when mouse is over, and changes back when mouse leaves
+const paragraph = document.querySelectorAll('p');
+paragraph.forEach(item => item.addEventListener('mouseenter', event => {
+  event.target.style.color = '#f70496';
+}))
+
+paragraph.forEach(item => item.addEventListener('mouseleave', event => {
+  event.target.style.color = 'black';
+}))
