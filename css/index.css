@@ -350,3 +350,15 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+#visit-msg {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 200px;
+  background: rgba(0, 100, 165, 0.5);
+  color: white;
+  width: 15%;
+  font-size: 2rem;
+  padding: 2%;
+  border-radius: 5px;
+}
