@@ -20,13 +20,16 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 ## Task 2: Set Up LESS Preprocessor
 
-* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
+* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal,
+if you don't get a version message back, reach out to your project manager for help.
 
 * [ ] Open your terminal and navigate to your preprocessing project by using the `cd` command
 
-* [ ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
+* [ ] Once in your project's root folder, run the following command
+ `less-watch-compiler less css index.less`
 
-* [ ] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
+* [ ] Verify your compiler is working correctly by changing the
+ `background-color` on the `html` selector to `red` in your `index.less` file.
 
 * [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
@@ -44,17 +47,20 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 	* [ ] `select`
 	* [ ] `dblclick`
 
-Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
+Using the 10 unique events, find ways to update the DOM in creative ways.
+ For example you could change colors, animate objects, remove objects, etc.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
 * [ ] Stop the navigation from items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 
-* [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
+* [ ] Go look at [GSAP](https://greensock.com/) and implement the animations
+ found in that library with your custom events.
 
   
 
 ## Stretch assignment
 
-* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
+* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow
+the instructions in the read me file.
