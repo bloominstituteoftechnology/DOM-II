@@ -7,6 +7,7 @@ blockParent.addEventListener('click', (e) => {
 });
 
 blockParent.addEventListener('mousedown', (e) => {
+    if (e.target === blockParent) return;
     const timer = setTimeout(() => {
         let position = 0;
         const move = setInterval(() => {
