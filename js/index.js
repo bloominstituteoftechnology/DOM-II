@@ -39,11 +39,25 @@ function app(){
             if(e.target.matches(' input[type= submit]')){
                 e.preventDefault();
                 signupForm.classList.toggle('display-none')
-
             }
         }
-        
     })
+
+    // add and remove dash border to elements that are not the submit button
+    signupForm.addEventListener('focus',e=>{
+        if(e.target && !e.target.matches("input[type= sumbit]") ){
+            console.log(e.target)
+            e.target.classList.toggle('text-highlight') 
+        }
+    },true)
+
+    signupForm.addEventListener('blur',e=>{
+        if(e.target && !e.target.matches("input[type= sumbit]") ){
+            console.log(e.target)
+            e.target.classList.toggle('text-highlight') 
+        }
+    },true)
+
 
     //  konami code key press event
 
@@ -78,6 +92,17 @@ function app(){
                 alert(`30 lives granted`)
         }
     })
+
+    // const body = document.querySelector('Body');
+    // document.addEventListener('scroll',e=>{
+    //     console.log(window.pageYOffset)
+    //     console.log('yeh ' + body.scrollHeight);
+    //     console.log(`'meh' + ${  window.pageYOffset }`)
+    //     console.log((body.scrollHeight - window.pageYOffset))
+    //     let  scrollBarPosition= (body.scrollHeight - window.pageYOffset) 
+
+    // })
+
 
 }
 
