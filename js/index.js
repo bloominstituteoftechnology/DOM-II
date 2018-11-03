@@ -56,6 +56,7 @@ destinationButtons.forEach(item => item.addEventListener('click', function(event
 const pics = document.querySelectorAll('img');
 pics.forEach(item => item.addEventListener('mouseover', function(event) {
   event.target.classList.toggle('fade');
+  document.querySelector('.main-navigation').style.zIndex = 10;
   console.log(event.target);
 }))
 
@@ -73,7 +74,7 @@ paragraph.forEach(item => item.addEventListener('mouseenter', event => {
 }))
 
 paragraph.forEach(item => item.addEventListener('mouseleave', event => {
-  event.target.style.color = 'black';
+  event.target.removeAttribute('style');
 }))
 
 // Double clicking on h2 elements, window alert displays.  Stop propogation stops overall document dblclick event from firing
@@ -81,5 +82,6 @@ const divHeaders = document.querySelectorAll('h2');
 function headAlert(event) {
   window.alert(`${event.target.textContent}`);
   event.stopPropogation();
+
 }
-divHeaders.forEach(item => item.addEventListener('dblclick', divHeaders));
+divHeaders.forEach(item => item.addEventListener('dblclick', headAlert));
