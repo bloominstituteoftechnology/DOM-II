@@ -1,4 +1,7 @@
 // Your code goes here
+
+const navItems = document.querySelectorAll('.nav-link');
+navItems.forEach.call(navItems,function(e){e.addEventListener('click', event => event.preventDefault())})
 const images = document.querySelectorAll('img');
 
 images.forEach.call(images,function(e){e.addEventListener('mouseenter', event => event.target.style.opacity = '0.8')});
@@ -63,10 +66,11 @@ const body = document.querySelector('body');
 
 body.addEventListener('mousewheel', function(event) {
     let scrollStop 
-    event.target.classList.add('bodyBG');
+    body.classList.add('bodyBG');
+    event.stopPropagation();
     clearTimeout(scrollStop);
     scrollStop = setTimeout(function() {
-        event.target.classList.remove('bodyBG')
+        body.classList.remove('bodyBG')
 	}, 2000);
 }, true)
 
