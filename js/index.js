@@ -29,6 +29,7 @@ document.addEventListener("wheel", e => {
 let adventure = document.querySelector(".img-content");
 let text = document.querySelector(".text-content");
 adventure.addEventListener("click", e => {
+  e.stopPropagation();
   text.style.color = "slateblue";
 });
 text.addEventListener("click", e => {
