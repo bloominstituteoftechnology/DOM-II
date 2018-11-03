@@ -215,6 +215,9 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .nav-container .nav .toggle {
+  color: dodgerblue;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -236,6 +239,9 @@ img {
 }
 .home .intro h2 {
   margin-top: 20px;
+}
+.home .intro .imgToggle {
+  border: 2px solid dodgerblue;
 }
 .home .content-section {
   margin: 30px 0;
