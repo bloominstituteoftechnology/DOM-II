@@ -353,7 +353,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
-.home .cart {
+.home .cart,
+.home .contact {
   display: flex;
   justify-content: space-evenly;
 }
@@ -383,4 +384,18 @@ img {
 .home .cart .hovered {
   background: #f4f4f4;
   border-style: dashed;
+}
+.home .contact {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 17px auto;
+  width: 50%;
+}
+.home .contact h1 {
+  margin: 20px auto;
+}
+.home .contact textarea {
+  height: 130px;
+  display: block;
 }

@@ -113,9 +113,11 @@
     }
   }
 
-  .cart {
+  .cart, .contact{
     display: flex;
     justify-content: space-evenly;
+  }
+  .cart {
     .fill {
       background-image: url('../img/next.jpeg');
       position: relative;
@@ -144,6 +146,20 @@
     .hovered {
       background: #f4f4f4;
       border-style: dashed;
+    }
+  }
+  .contact {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 17px auto;
+    width: 50%;
+    h1 {
+      margin: 20px auto;
+    }
+    textarea {
+      height: 130px;
+      display: block;
     }
   }
   

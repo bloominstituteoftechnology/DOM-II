@@ -91,6 +91,21 @@ function dragDrop() {
 
 // Load Event Listener
 
-window.addEventListener("load", function(event) {
-    setTimeout(() => (alert("Are you ready? Because this webpage is.."), 0));
+// window.addEventListener("load", function(event) {
+//     setTimeout(() => (alert("Are you ready? Because this webpage is.."), 0));
+// });
+
+// Focus Event Listener
+const formey = doc.getElementById('message');
+formey.innerHTML = '';
+formey.addEventListener('focus', (event) => {
+    event.target.style.border = '3px dashed green';
+    event.target.innerHTML = 'I noticed you want to send me a message';
+    console.log(event.target);
+});
+
+formey.addEventListener('blur', (event) => {
+    event.target.style.border = '3px dashed red';
+    event.target.innerHTML = 'I guess not : (';
+    console.log(event.target);
 });
