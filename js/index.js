@@ -149,3 +149,15 @@ elem.addEventListener('select', (event) => {
     event.target.style.backgroundColor = 'yellow';
     
 }, false);
+
+// Double Click Listener
+
+var footerColor = document.querySelector('footer');
+
+console.log(footerColor);
+footerColor.addEventListener('dblclick', (event) => {
+    console.log(footerColor);
+    console.log(event);
+    event.target.style.backgroundColor = 'red';
+    
+});
