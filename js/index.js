@@ -1,28 +1,39 @@
 const logoHeading = document.querySelector(".logo-heading");
+const navContainer = document.querySelector('.nav-container');
 const body = document.querySelector("body");
 const introP = document.querySelector(".intro p");
+const introH = document.querySelector('.intro h2');
 const navLink = document.querySelectorAll(".nav-link");
-//const cName = document.querySelector("#cname");
 const dest1 = document.querySelector(".content-pick .dest1");
 const dest1Btn = document.querySelector(".content-pick .dest1 .btn1");
 const navItem = document.querySelectorAll(".nav-item");
 const footer = document.querySelector(".footer");
 
-for (var i = 0; i < navLink.length; i++) {
+for (let i = 0; i < navLink.length; i++) {
   navLink[i].addEventListener("click", function(event) {
     event.preventDefault();
   });
 }
 
+navContainer.addEventListener('click', () => {
+  //TweenMax.to("h2.title", 1, {opacity:0.3});
+  //TweenMax.to(".box", 3, {x:300});
+  TweenMax.to(".logo-heading", 3, {rotation:360, scale:0.5});
+});
+
+// logoHeading.addEventListener('click', () => {
+//   TweenLite.to(".logoHeading", 2.5, {ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false}), x: 500, opacity: 0 });
+// })
+
 window.addEventListener("load", function(event) {
   alert("All resources finished loading!");
 });
 
-logoHeading.addEventListener("mouseover", function(event) {
+introH.addEventListener("mouseover", function(event) {
   event.target.style.fontSize = "6rem";
 });
 
-logoHeading.addEventListener("mouseleave", function(event) {
+introH.addEventListener("mouseleave", function(event) {
   event.target.style.fontSize = "4rem";
 });
 
@@ -53,14 +64,6 @@ function myFunction() {
     document.querySelector(".intro p").className = "";
   }
 }
-
-// cName.addEventListener("select", function() {
-//   alert("you selected some text!");
-// });
-
-// cName.addEventListener("focus", function(event) {
-//   event.target.style.backgroundColor = "silver";
-// });
 
 dest1.addEventListener("click", function(event) {
   event.target.style.color = "blue";
