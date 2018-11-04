@@ -5,11 +5,15 @@ const sandBus = document.querySelector('.intro img');
 const button = document.querySelectorAll('.btn');
 const container = document.querySelector('.container');
 const anchors = document.querySelectorAll('a');
+const focusMe = document.querySelector('#focusMe');
+const selectMe = document.querySelector('#selectMe');
 
 //Hovering cursor over 'Fun Bus' title toggles a palette of text colors
 h1.addEventListener('mouseover', function(event){
     h1.classList.toggle('logo-colors');
-    //need to remove class before next mouseover
+    setTimeout(function(){
+        h1.classList.toggle('logo-colors');
+    }, 6000)
 })
 
 //Toggles website dark palette by pressing '-'
@@ -18,7 +22,6 @@ body.addEventListener('keydown', function(event){
     if(keyName === '-'){
         body.classList.toggle('dark-mode');
     }
-    //Need to fix colors
 })
 
 //Bus img disappears
@@ -37,12 +40,13 @@ window.addEventListener('load', function(event){
 })
 
 //focus
-// button.addEventListener('click',function(event){
-//     button.focus();
-// })
-// button.addEventListener('focus', function(event){
-//     alert("Pysche!!!!")
-// })
+focusMe.addEventListener('focus', function(event){
+    event.target.style.background = 'yellow';
+})
+
+focusMe.addEventListener('blur', function(event){
+    event.target.style.background = "";
+})
 
 //resize
 window.addEventListener('resize', function(event){
@@ -56,12 +60,10 @@ window.addEventListener('scroll', function(event){
     })
 })
 
-//select
-// anchors.addEventListener('select', function(event){
-//     anchors.forEach(function(anchor){
-//         anchor.style.color = "black";
-//     })
-// })
+// select
+selectMe.addEventListener('select', function(event){
+    alert("Thanks bro!");
+})
 
 
 //Dblclicked text changes colors except for h1

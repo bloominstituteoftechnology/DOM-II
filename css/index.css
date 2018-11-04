@@ -247,17 +247,12 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
-.dark-mode .main-navigation {
-  background-color: #17A2B8;
-}
 .dark-mode .container {
   background-color: #212529;
+  color: white !important;
 }
 .dark-mode .footer {
   background-color: #C0C0C0;
-}
-.dark-mode body {
-  color: white;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -385,4 +380,10 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .newForm {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
 }
