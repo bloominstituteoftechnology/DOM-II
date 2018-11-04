@@ -14,9 +14,10 @@ document.addEventListener('keydown', function (event) {
 })
 
 // wheel --- unique event 
-const centerImg = document.querySelector('.img-content');
-centerImg.addEventListener('wheel', function (event) {
-    console.log(event)
+const pageTitle2 = document.querySelector('.logo-heading');
+document.addEventListener('wheel', function (event) {
+    let deltaY = event.deltaY * 10
+    pageTitle2.textContent = `change in vertical scroll: ${deltaY}`
 })
 
 // drag / drop --- unique event 
