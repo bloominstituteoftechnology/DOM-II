@@ -13,6 +13,7 @@ const navA = document.querySelectorAll('.nav-link');
 for (let i = 0; i < navA.length; i++) {
       navA[i].addEventListener('mouseover', function () {
         navA[i].style.fontSize = '20px';
+        preventDefault();
       });
     };
 
