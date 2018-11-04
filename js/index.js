@@ -7,6 +7,19 @@
 	console.log(event.target)
  }, false);
 
+
+const colors = ['tomato', 'orange', 'lavender', 'purple', 'black', '#FFEBCD', '#17A2B8', 'red', 'silver', 'pink', 'blue']
+let h1Color = 0
+const navH1 = document.querySelector('.nav-container h1')
+
+navH1.addEventListener('mouseup', () => {
+ navH1.style.color = colors[h1Color]
+})
+navH1.addEventListener('mousedown', () => {
+ navH1.style.color = 'black'
+ h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
+})
+
  const pushedKeyOnH2 = document.querySelector('h2');
 
  document.addEventListener("keydown", event => {
@@ -46,13 +59,13 @@
     console.log(resizeParagraph)
   })
 
-  const colorHeader = document.querySelectorAll('h2')
-  for (let i = 0; i < colorHeader.length; i++){
-    colorHeader[i].addEventListener('load', (event) => {
-      setTimeout(() => {event.target.style.color = ['tomato', 'orange', 'lavender', 'purple', 'black', '#FFEBCD', '#17A2B8'];
-    }, 1000)
-  })
-  }
+  // const colorHeader = document.querySelectorAll('h2')
+  // for (let i = 0; i < colorHeader.length; i++){
+  //   colorHeader[i].addEventListener('load', (event) => {
+  //     setInterval(() => {event.target.style.color = ['tomato', 'orange', 'lavender', 'purple', 'black', '#FFEBCD', '#17A2B8'];
+  //   }, 1000)
+  // })
+  // }
 
   // resize event listener
     window.addEventListener('resize', function (event){
