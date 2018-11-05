@@ -44,14 +44,14 @@ headerImg.addEventListener("mouseenter", function(event) {
 
 
 // Load Event
-window.addEventListener("load", function(event) {
-    let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
-    let orinalText = document.querySelector('.intro h2')
-    console.log(orinalText)
-    if (user !== "" && user != null) {
-        orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
-    }
-});
+// window.addEventListener("load", function(event) {
+//     let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
+//     let orinalText = document.querySelector('.intro h2')
+//     console.log(orinalText)
+//     if (user !== "" && user != null) {
+//         orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
+//     }
+// });
 
 
 // Mouseover Event
@@ -98,3 +98,9 @@ imgParent[1].addEventListener("click", function(event) {
         console.log(counter)
    }
 });
+
+// Keydown Event
+document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    alert('keydown event\n\n' + 'Did you press ' + keyName + '?');
+  });
