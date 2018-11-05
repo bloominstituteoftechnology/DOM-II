@@ -7,7 +7,7 @@ nav.addEventListener('mouseover', function (event) {
 })
 
 // keydown --- unique event 
-const pageTitle = document.querySelector('.logo-heading');
+let pageTitle = document.querySelector('.logo-heading');
 document.addEventListener('keydown', function (event) {
     let keyName = event.key
     pageTitle.textContent = `key pressed: ${keyName}`
@@ -21,13 +21,24 @@ document.addEventListener('wheel', function (event) {
 })
 
 // drag / drop --- unique event 
-
+const images = document.getElementsByTagName('img');
+document.addEventListener('drag', function (event) {
+    let itemPosX = event.clientX
+    let itemPosY = event.clientY
+    pageTitle.textContent = `item position: X: ${itemPosX}, Y: ${itemPosY}`
+     
+})
 
 // load --- unique event 
-
+window.addEventListener('load', function (event) {
+    alert("Load Complete")
+})
 
 // focus --- unique event 
-
+const buttons = document.querySelector('.btn');
+document.addEventListener('focus', function (event) {
+    event.target.style = `background-color: red`
+}, true)
 
 // resize --- unique event 
 
