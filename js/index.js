@@ -44,25 +44,25 @@ headerImg.addEventListener("mouseenter", function(event) {
 
 
 // Load Event
-// window.addEventListener("load", function(event) {
-//     let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
-//     let orinalText = document.querySelector('.intro h2')
-//     console.log(orinalText)
-//     if (user !== "" && user != null) {
-//         orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
-//     }
-// });
+window.addEventListener("load", function(event) {
+    let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
+    let orinalText = document.querySelector('.intro h2')
+    console.log(orinalText)
+    if (user !== "" && user != null) {
+        orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
+    }
+});
+
 
 // Mouseover Event
+let header = document.querySelector('header').setAttribute("style", "z-index: 1;");
 let imgTages = document.querySelectorAll('.content-section img');
-console.log(imgTages)
-
 let imgParent = document.querySelectorAll('.img-content')
-let title = document.createElement("div");
-    title.textContent = "Hi there!"
+let title, title2; 
+title = title2 = document.createElement("div");
     
 imgTages[0].addEventListener("mouseover", function(event) { 
-
+    title.textContent = "Hi there!"
     imgParent[0].setAttribute("style", "position: relative;")
     imgParent[0].prepend(title);
     
@@ -74,3 +74,27 @@ imgTages[0].addEventListener("mouseover", function(event) {
 }, false);
 
 
+// Click Event
+let counter = 0;
+imgParent[1].addEventListener("mouseover", function(event) {
+    title2.textContent = "Click here to find Location"
+    imgParent[1].setAttribute("style", "position: relative;")
+    imgParent[1].prepend(title2);
+
+    title2.setAttribute("style", "width: 98%; text-align: center; background-color: rgba(255, 255, 255, 0.6); font-family: Indie Flower, cursive; font-size: 50px; color: white; position: absolute; top: 32%; display: block;");
+});
+
+imgParent[1].addEventListener("click", function(event) {
+       counter++
+    if (counter < 5){
+        console.log(counter)
+    }
+   else if (counter >= 5 && counter < 8 ){
+        title2.textContent = "Wow already 5+ Click! ok Lets go!"
+        console.log(counter)
+   }
+   else {
+        title2.textContent = "Haha ok to Peru we go!"
+        console.log(counter)
+   }
+});
