@@ -8,9 +8,9 @@ const introImg = document.querySelector('.intro img');
 const nav = document.querySelector(".main-navigation")
 const imgOne = document.querySelector('.img1 img');
 const imgTwo = document.querySelector('.img2 img');
-const btn = document.querySelector('.btn');
+const btn = document.querySelectorAll('.btn');
 const footer = document.querySelector('.footer');
-const paragraphs = document.querySelector('.dText');
+const paragraphs = document.querySelectorAll('.dText');
 const img = document.querySelector('.img-content img');
 
 // event 1
@@ -37,21 +37,6 @@ introImg.addEventListener('click', () => {
 //   p.innerHTML = "One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... One of us.... ";
 // })
 
-const body = document.querySelector('body')
-document.addEventListener('cut', function (event) {
-  body.style.background = 'red'
-  console.log(`Bloooood`)
-})
-
-document.addEventListener('paste', function (event) {
-  body.style.background = 'mediumspringgreen'
-  console.log(`Healed`)
-})
-
-document.addEventListener('copy', function (event) {
-  body.style.background = 'dodgerblue'
-  console.log(`Copycat!`)
-})
 
 
 // event 4
@@ -79,17 +64,12 @@ imgTwo.addEventListener('click', () => {
 
 // event 6
 
-////i need to practice for loops with event listeners
-// for (let i=0; i < btn.length; i++) {
-//   btn[i].addEventListener('mouseover', () => {
-//     btn.innerHTML = "GET OFF ME";
-//   })
-// }
 
-btn.addEventListener('mouseenter', () => {
-  btn.innerHTML = "GET OFF ME";
-  btn.classList.toggle('black');
-})
+for (let i=0; i < btn.length; i++) {
+  btn[i].addEventListener('mouseover', () => {
+    btn[i].innerHTML = "GET OFF ME";
+  })
+}
 
 
 // event 7
@@ -99,18 +79,20 @@ footer.addEventListener('dblclick', () => {
 
 
 // event 8
-paragraphs.addEventListener('mouseenter', () => {
-  paragraphs.style.color = "red";
-})
+
+  for (i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].addEventListener('mouseenter', () => {
+    paragraphs[i].style.color = "red";
+  })
+}
 
 
 
 // event 9
 
-//wont change the text
 for (let i = 0; i < paragraphs.length; i++) {
   paragraphs[i].addEventListener('click', () => {
-    paragraphs[i].innerHTML = "One of us...";
+    paragraphs[i].textContent = "One of us... One of us... One of us... One of us... One of us... One of us... One of us... One of us... ";
   })
 }
 
@@ -122,5 +104,27 @@ img.addEventListener('wheel', () => {
 })
 
 
+// event 11
+const body = document.querySelector('body')
+document.addEventListener('cut', function (event) {
+  body.style.background = 'red'
+})
 
+// event 12
+document.addEventListener('paste', function (event) {
+  body.style.background = 'mediumspringgreen'
+})
 
+// event 13
+document.addEventListener('copy', function (event) {
+  body.style.background = 'dodgerblue'
+})
+
+//using .preventDefault()
+
+for (let i = 0; i < aTags.length; i++) {
+  aTags[i].addEventListener('click', () => {
+      preventDefault();
+      });
+      
+}
