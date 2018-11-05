@@ -76,7 +76,7 @@ imgTages[0].addEventListener("mouseover", function(event) {
 
 // Click Event
 let counter = 0;
-imgParent[1].addEventListener("mouseover", function(event) {
+imgParent[1].addEventListener("mouseover", (event) => {
     title2.textContent = "Click here to find Location"
     imgParent[1].setAttribute("style", "position: relative;")
     imgParent[1].prepend(title2);
@@ -84,7 +84,7 @@ imgParent[1].addEventListener("mouseover", function(event) {
     title2.setAttribute("style", "width: 98%; text-align: center; background-color: rgba(255, 255, 255, 0.6); font-family: Indie Flower, cursive; font-size: 50px; color: white; position: absolute; top: 32%; display: block;");
 });
 
-imgParent[1].addEventListener("click", function(event) {
+imgParent[1].addEventListener("click", (event) => {
        counter++
     if (counter < 5){
         console.log(counter)
@@ -99,8 +99,28 @@ imgParent[1].addEventListener("click", function(event) {
    }
 });
 
+
 // Keydown Event
 document.addEventListener('keydown', (event) => {
     const keyName = event.key;
     alert('keydown event\n\n' + 'Did you press ' + keyName + '?');
   });
+
+
+//Wheel Event
+let wheelCount = 0;
+document.addEventListener("wheel", (event) => {
+
+    let header = document.querySelector('header')
+    
+    if (wheelCount < 1 ){
+        let newElement = document.createElement("div");
+        newElement.setAttribute("style", "width: 173px; height: 89px; text-align: center; font-size: 2rem; color: salmon;     border: 2px dashed lightcyan; background-color: rgba(255, 255, 255, 0.6); position: fixed; top: 100px; left: 25px");
+        
+        newElement.textContent = "Don't forget to contact our rep about your new trip with Fun Bus!";
+        header.prepend(newElement);
+
+        wheelCount++
+    }
+ 
+});
