@@ -44,14 +44,14 @@ headerImg.addEventListener("mouseenter", function(event) {
 
 
 // Load Event
-// window.addEventListener("load", function(event) {
-//     let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
-//     let orinalText = document.querySelector('.intro h2')
-//     console.log(orinalText)
-//     if (user !== "" && user != null) {
-//         orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
-//     }
-// });
+window.addEventListener("load", function(event) {
+    let user = prompt("Hello and welcome to Fun Bus! What is your name?", "");
+    let orinalText = document.querySelector('.intro h2')
+    console.log(orinalText)
+    if (user !== "" && user != null) {
+        orinalText.innerHTML = `Hello ${user}! ${orinalText.textContent}`;
+    }
+});
 
 
 // Mouseover Event
@@ -116,7 +116,7 @@ document.addEventListener("wheel", (event) => {
     if (wheelCount < 1 ){
         let newElement = document.createElement("div");
         newElement.setAttribute("style", "width: 173px; height: 89px; text-align: center; font-size: 2rem; color: salmon;     border: 2px dashed lightcyan; background-color: rgba(255, 255, 255, 0.6); position: fixed; top: 100px; left: 25px");
-        
+
         newElement.textContent = "Don't forget to contact our rep about your new trip with Fun Bus!";
         header.prepend(newElement);
 
