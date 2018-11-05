@@ -11,27 +11,23 @@
 const colors = ['tomato', 'orange', 'lavender', 'purple', 'black', '#FFEBCD', '#17A2B8', 'red', 'silver', 'pink', 'blue']
 let h1Color = 0
 const navH1 = document.querySelector('.nav-container h1')
-
-navH1.addEventListener('mouseup', () => {
- navH1.style.color = colors[h1Color]
+// const navH1 = document.querySelectorAll('.nav-container h1')
+  navH1.addEventListener('mouseup', () => {
+  navH1.style.color = colors[h1Color]
+  event.preventDefault();
 })
 navH1.addEventListener('mousedown', () => {
- navH1.style.color = 'black'
- h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
+  navH1.style.color = 'black'
+  h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
+   event.preventDefault();
 })
-
- const pushedKeyOnH2 = document.querySelector('h2');
-
- document.addEventListener("keydown", event => {
-  pushedKeyOnH2.textContent = `If interested, click on sign me up!`;
-  console.log(`${event.key} was pushed!`)
-});
 
  const logoExpansion = document.querySelector('.logo-heading')
 
 // mouseover event
   logoExpansion.addEventListener('mouseover', (event) => {
    event.target.classList.toggle('toggleIcon')
+   event.preventDefault();
  });
 
   const navLink = document.querySelectorAll('.nav-link')
@@ -49,6 +45,14 @@ navH1.addEventListener('mousedown', () => {
   busImg.addEventListener('mouseout', (event) => {
       event.target.style.opacity = 0.5;
   })
+
+  const pushedKeyOnH2 = document.querySelector('.intro h2');
+
+  document.addEventListener("keydown", event => {
+   pushedKeyOnH2.textContent = `If interested, click on sign me up!`;
+   console.log(`${event.key} was pushed!`)
+ });
+ 
 
 
 
@@ -97,20 +101,11 @@ navH1.addEventListener('mousedown', () => {
   })
   
 
+  let allHome = document.querySelector('.home');
+  console.log(allHome)
+  let elements = document.querySelector('.text-content h2');
 
-  // let elements = document.querySelectorAll('.block')
 
-  // const travelerEvent = (event) => {
-  //   let distance = 0;
-
-  //   const moveRight = () => {
-  //     distance += 10;
-  //     event.target.style.borderLeft = `${distance}px solid white`
-  //   }
-
-  //   setInterval (moveRight, 10)
-  // }
-
-  // for (let i = 0; i <elements.length; i++){
-  //   elements[i].addEventListener('click', travelerEvent)
-  // }
+  allHome.addEventListener('dblclick', () =>{
+    TweenMax.fromTo('.text-content h2', 2, {x: 600, scale:0, opacity: 0}, {x: 100, rotation:360, scale:1.5, opacity: 1})
+  })
