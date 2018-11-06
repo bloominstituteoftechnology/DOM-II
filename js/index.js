@@ -76,5 +76,13 @@ footer.addEventListener('contextmenu', function(){
     event.target.style.color = 'dodgerblue';
 })
 
+// use event.stopPropagation()
+//  BUG: event.stopPropagation() is not working
+intro = document.querySelector('.intro');
+intro.addEventListener('copy', function(event){
+    event.stopPropagation();
+    alert('You also copied intro');
+})
+
 
 
