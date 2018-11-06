@@ -87,3 +87,17 @@ homeTag.addEventListener('click', (event) =>{
 event.preventDefault()
 })
 
+//propagation
+
+funInTheSunSingIn.addEventListener('click', (event)=>{
+    console.log(event.target.parentNode);
+    event.target.parentNode.style.color = 'red';
+    event.stopPropagation();
+    console.log ("Button was clicked!")
+    })
+   
+    const parentNode = document.querySelector('.destination')
+    parentNode.addEventListener('click', (event) =>{
+        console.log ("Parent was clicked!")
+    })
+    
