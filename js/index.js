@@ -1,4 +1,4 @@
-//Drag and drop navbar
+//Drag AND drop navbar
 const navBar = document.querySelector('.main-navigation');
 navBar.addEventListener('dragstart', () => {
     if(navBar.style.height = "90px"){
@@ -45,4 +45,15 @@ banner.addEventListener('dblclick', () => {
         window.addEventListener('scroll', () => {
             banner.style.display = "block";
     });
+});
+
+//CONSOLE LOG SCROLL
+window.addEventListener('scroll', () => {
+    console.log("Just Keep Scrolling");
+});
+
+// alert on home a tag
+const anchors = document.querySelector('a');
+    anchors.addEventListener('click', () => {
+    alert("the a-team")
 });
