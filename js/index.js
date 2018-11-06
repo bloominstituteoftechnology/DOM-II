@@ -106,6 +106,7 @@ navH1.addEventListener('mousedown', () => {
   let elements = document.querySelector('.text-content h2');
 
 
-  allHome.addEventListener('dblclick', () =>{
+  elements.addEventListener('dblclick', () =>{
     TweenMax.fromTo('.text-content h2', 2, {x: 600, scale:0, opacity: 0}, {x: 100, rotation:360, scale:1.5, opacity: 1})
+    // TweenMax.fromTo()
   })
