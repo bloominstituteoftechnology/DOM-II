@@ -48,7 +48,7 @@ window.addEventListener("load", function(event) {
 //focus
 
 const form = document.getElementById("form");
-form.addEventListener("focus", function( event ) {
+form.addEventListener("focus", function(event) {
   event.target.style.background = "pink";    
 }, true);
 form.addEventListener("blur", function( event ) {
@@ -56,12 +56,30 @@ form.addEventListener("blur", function( event ) {
 }, true);
 
 //resize
-
-window.addEventListener('resize', function (event) {
-
+window.addEventListener("resize", function() {
+    document.querySelector("body").style.backgroundColor = 'pink'
 })
 
- 
+//scroll
+
+
+document.addEventListener("scroll", function() {
+  console.log("Don't scroll!");
+
+})
+//dblclick
+
+logoHeading.addEventListener('dblclick', (event) => {
+    event.target.style.fontSize = '100px';
+    console.log(logoHeading)
+
+})
+//select
+const textOpacity = document.querySelectorAll('p');
+textOpacity.forEach(item => item.addEventListener('select', function(event) {
+  event.target.style.opacity = '0.4';
+}))
+
 // * [ ] `mouseover`
 // * [ ] `keydown`
 // * [ ] `wheel`
