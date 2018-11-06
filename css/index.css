@@ -180,20 +180,31 @@ img {
   cursor: pointer;
 }
 .navBar {
-  -webkit-animation-name: cssAnimation;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: 1;
+  animation-name: cssAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 @keyframes cssAnimation {
   from {
-    -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
   }
   to {
-    -webkit-transform: rotate(360deg) scale(2) skew(0deg) translate(10px);
+    transform: rotate(360deg) scale(2) skew(0deg) translate(10px);
   }
 }
 .headerH2 {
-  transition: margin-right 2s ease;
+  animation-name: cssAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+@keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(0px, 0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(100px, 0);
+  }
 }
 .main-navigation {
   width: 100%;
