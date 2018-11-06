@@ -49,3 +49,56 @@ img {
     margin: 0 5%;
   }
 }
+
+.funBusHeading {
+  font-size: 60px;
+  color: orange;
+  cursor: pointer;
+}
+
+.navBar {
+
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration:3s;
+    -webkit-animation-iteration-count: 1;
+    // -webkit-animation-timing-function: ease;
+    // -webkit-animation-fill-mode: forwards;
+
+  @keyframes cssAnimation {
+    from {
+      -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(10px);
+    }
+    to {
+      -webkit-transform: rotate(360deg) scale(2) skew(0deg) translate(10px);
+    }
+  }
+
+}
+
+.headerH2 {
+  // color: 'orange' !important;
+  // transition-property: margin-right;
+  // transition-duration: 2s;
+  // transition-timing-function: ease;
+
+  transition: margin-right 2s ease;
+
+  // -webkit-animation-name: cssAnimation;
+  // animation-duration:2s;
+  // animation-iteration-count: 1;
+  // animation-timing-function: ease;
+  // -webkit-animation-fill-mode: forwards;
+
+// @keyframes cssAnimation {
+//   from {
+//     -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(0px);
+//   }
+//   to {
+//     -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(30px);
+//   }
+// }
+
+}
+
+
+
