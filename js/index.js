@@ -80,13 +80,10 @@ textOpacity.forEach(item => item.addEventListener('select', function(event) {
   event.target.style.opacity = '0.4';
 }))
 
-// * [ ] `mouseover`
-// * [ ] `keydown`
-// * [ ] `wheel`
-// * [ ] `drag / drop`
-// * [ ] `load`
-// * [ ] `focus`
-// * [ ] `resize`
-// * [ ] `scroll`
-// * [ ] `select`
-// * [ ] `dblclick`
+
+//preventDefault
+const homeTag = document.querySelector('#home-tag')
+homeTag.addEventListener('click', (event) =>{
+event.preventDefault()
+})
+
