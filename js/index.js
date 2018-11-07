@@ -38,11 +38,13 @@ containerHome.addEventListener('wheel', function (event){
     else{
         fontsize--;
     }
-    event.currentTarget.style.fontsize = `${fontsize}rem`
+    event.currentTarget.style.fontsize = `${fontsize}px`
 })
 
 // `load`
-
+window.addEventListener("load", function(event) {
+    console.log("All resources finished loading!");
+  });
 
 // nesting two events
 
@@ -52,8 +54,21 @@ myClass.getElementsByTagName("h2")[0].addEventListener('click', function(event){
     event.currentTarget.style.backgroundColor = "grey"
 })
 
+// preventDefault()
 
+const navItems = document.querySelectorAll(".nav-link")
+navItems.forEach(function(item){
+    item.addEventListener('click',(event) =>{
+        event.preventDefault()
+    })
+})
 
-
-
-
+// green sock 
+const cHome = document.querySelector(".container home")
+cHome.addEventListener('mouseover', () => {
+    TweenMax.to(".intro", 2, {
+        marginLeft:100,
+        ease: Power4.easeOut
+       
+    })
+})
