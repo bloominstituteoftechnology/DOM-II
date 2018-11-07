@@ -192,20 +192,6 @@ img {
     transform: rotate(360deg) scale(2) skew(0deg) translate(10px);
   }
 }
-.headerH2 {
-  animation-name: cssAnimation;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-@keyframes cssAnimation {
-  from {
-    -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(0px, 0);
-  }
-  to {
-    -webkit-transform: rotate(0deg) scale(0) skew(0deg) translate(100px, 0);
-  }
-}
 .main-navigation {
   width: 100%;
   height: 90px;

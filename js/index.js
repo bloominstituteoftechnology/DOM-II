@@ -21,13 +21,14 @@ funBusHeading.addEventListener('mouseleave', function() {
 })
 
 //  Rotates the entire nav bar at keydown
-navBar.addEventListener('keydown', function(){
+navBar.addEventListener('keydown', function(event){
+    event.preventDefault();
     this.classList.add('navBar');
     // the following commented line only does it per nav item
     // event.target.classList.add('navBar');
     console.log('navBar');
-    this.addEventListener("animationend", myEndFunction)
-    // TweenMax.fromTo('.text-content h2', 2, {x: 600, scale:0, opacity: 0}, {x: 100, rotation:360, scale:1.5, opacity: 1})
+    this.addEventListener('animationend', myEndFunction)
+    // TweenMax.fromTo('.navBar', 2, {x: 600, scale:0, opacity: 0}, {x: 100, rotation:360, scale:1.5, opacity: 1})
 })
 
 //  this callback allows for the animation to be executed more than once
@@ -37,23 +38,16 @@ function myEndFunction() {
 
 //  Changes the color of each nav item at dblclick
 navItems.forEach(node => {
-    node.addEventListener('dblclick', function(event) {
+    node.addEventListener('click', function(event) {
+        event.preventDefault();
         event.target.style.color = 'red';
     })
 })
 
-//  transition of header 'Welcome to Fun Bus'
-//  BUG: it does not execute transitions
-headerH2.addEventListener('drag', function(){
+//  change color of header 'Welcome to Fun Bus'
+headerH2.addEventListener('drag', function(event){
     console.log('h2 selected');
-    this.classList.add('headerH2')
-})
-
-//  alert when a paragraph is copied
-allParagraphs.forEach(node =>{
-    node.addEventListener('copy', function(event){
-        alert("You are copying a paragraph!");
-    })
+    this.style.color = 'red';
 })
 
 //  Highlights the expeditions title
@@ -65,7 +59,7 @@ allExpeditionsTitle.forEach(node => {
 
 //  prompt an input box
 allButtons.forEach(node => {
-    node.addEventListener('click', function(){
+    node.addEventListener('dblclick', function(){
        let name = prompt('Enter name');
         console.log(name + ' you are signed up!');
     })
@@ -76,13 +70,24 @@ footer.addEventListener('contextmenu', function(){
     event.target.style.color = 'dodgerblue';
 })
 
-// use event.stopPropagation()
-//  BUG: event.stopPropagation() is not working
+// alet when copied any child of intro. Also, use event.stopPropagation()
 intro = document.querySelector('.intro');
 intro.addEventListener('copy', function(event){
-    event.stopPropagation();
-    alert('You also copied intro');
+    alert('You copied Intro');
 })
+
+//  alert when a paragraph is copied. work along with event.stopPropagation()
+//  if event.stopPropagation() is not added on this block, when copying the paragraph
+//  on the 'Welcome to the Fun Bus' section, two alerts will pop up
+//  event.stopPropagation() prevents this from happening, so only the paragraph alert will pop up
+allParagraphs.forEach(node =>{
+    node.addEventListener('copy', function(event){
+        event.stopPropagation();
+        alert("You are copying a paragraph!");
+    })
+})
+
+
 
 
 
