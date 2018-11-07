@@ -4,7 +4,7 @@
 //even listener to see all instances of html clicks and the preventDefault feature for the home page
  document.addEventListener('click', (event) => {
   event.preventDefault();
-	console.log(event.target)
+  console.log(event.target)
  }, false);
 
 
@@ -14,12 +14,12 @@ const navH1 = document.querySelector('.nav-container h1')
 // const navH1 = document.querySelectorAll('.nav-container h1')
   navH1.addEventListener('mouseup', () => {
   navH1.style.color = colors[h1Color]
-  event.preventDefault();
+  // event.preventDefault();
 })
 navH1.addEventListener('mousedown', () => {
   navH1.style.color = 'black'
   h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
-   event.preventDefault();
+   // event.preventDefault();
 })
 
  const logoExpansion = document.querySelector('.logo-heading')
@@ -27,7 +27,7 @@ navH1.addEventListener('mousedown', () => {
 // mouseover event
   logoExpansion.addEventListener('mouseover', (event) => {
    event.target.classList.toggle('toggleIcon')
-   event.preventDefault();
+   // event.preventDefault();
  });
 
   const navLink = document.querySelectorAll('.nav-link')
@@ -73,6 +73,7 @@ navH1.addEventListener('mousedown', () => {
 
   // resize event listener
     window.addEventListener('resize', function (event){
+        event.stopPropagation();
     console.log(`The window has been resized!`)
   })
 
@@ -96,6 +97,7 @@ navH1.addEventListener('mousedown', () => {
   const footerElement = document.querySelector('footer');
 // mouseenter event
   footerElement.addEventListener('mouseover', (event) => {
+    event.stopPropagation();
     event.target.classList.toggle('background-color');
     console.log(footerElement)
   })
