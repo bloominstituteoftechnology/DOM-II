@@ -174,6 +174,12 @@ img {
     margin: 0 5%;
   }
 }
+.display-none {
+  display: none;
+}
+.change-color {
+  color: red;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
