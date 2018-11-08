@@ -60,6 +60,12 @@ const navItems = document.querySelectorAll(".nav-link")
 navItems.forEach(function(item){
     item.addEventListener('click',(event) =>{
         event.preventDefault()
+        TweenMax.to(".footer", 1, {
+            x: function(index, target) {
+              console.log(index, target);
+              return (index + 1) * 100 // 100, 200, 300
+            }
+          })
     })
 })
 
