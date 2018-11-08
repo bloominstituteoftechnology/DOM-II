@@ -64,10 +64,10 @@ navItems.forEach(function(item){
 })
 
 // green sock 
-const cHome = document.querySelector(".container home")
+const cHome = document.querySelector("header")
 cHome.addEventListener('mouseover', () => {
     TweenMax.to(".intro", 2, {
-        marginLeft:100,
+        marginLeft:400,
         ease: Power4.easeOut
        
     })
