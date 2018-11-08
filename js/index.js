@@ -8,3 +8,8 @@ logoHeading.addEventListener('mouseover', (event) => {
 });
 
 //Keydown
+document.querySelector('body').addEventListener('keydown', myFunction)
+
+function myFunction() {
+    alert('UH-OH, you pressed a button!')
+}
