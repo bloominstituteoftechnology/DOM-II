@@ -20,13 +20,27 @@ document.querySelector('.home').addEventListener('wheel', myWheelFunc);
 
 function myWheelFunc() {
     this.style.color = 'dodgerblue';
+
 }
 
 
 //Click
 
-document.querySelector('.text-content h2').addEventListener('click', myFunction)
+document.querySelector('.text-content h2').addEventListener('click', myClick)
 
-function myFunction() {
+function myClick() {
     document.querySelector(".text-content h2").textContent = "CLICK BAIT!!!"
 }
+
+//Load
+
+window.addEventListener('load', function(event) {
+   alert('Hurry and jump on in. The bus is loaded!');
+})
+
+//dblclick
+
+const introHeading = document.querySelector('.intro h2');
+introHeading.addEventListener('dblclick', (event) => {
+    introHeading.classList.toggle('display-none');
+});
