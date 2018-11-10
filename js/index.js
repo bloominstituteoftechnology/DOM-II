@@ -18,7 +18,6 @@ function myKeydownFunc() {
     alert('UH-OH, you pressed a button!');
 }
 
-
 //Wheel
 document.querySelector('.home').addEventListener('wheel', myWheelFunc);
 
@@ -52,3 +51,9 @@ window.addEventListener('scroll', () => {
     document.querySelector('header').style.backgroundColor = 'yellow';
 })
 
+
+//resize
+window.addEventListener('resize', myResizeFunc)
+function myResizeFunc() {
+    alert('window has been resize')
+}
