@@ -3,9 +3,13 @@
 //Mouseover
 const logoHeading = document.querySelector('.logo-heading');
 logoHeading.addEventListener('mouseover', () => {
-    console.log('change color')
     logoHeading.classList.toggle('change-color');
 });
+
+//Mouseout
+logoHeading.addEventListener('mouseout', () => {
+    logoHeading.classList.toggle('change-color-again')
+})
 
 //Keydown
 document.querySelector('body').addEventListener('keydown', myKeydownFunc);
@@ -47,3 +51,4 @@ window.addEventListener('scroll', () => {
     console.log('scrolled!')
     document.querySelector('header').style.backgroundColor = 'yellow';
 })
+
