@@ -11,7 +11,10 @@ const headerPicture = document.querySelector('.intro img');
     headerPicture.addEventListener('mouseout', () => headerPicture.style.borderRadius = '20px');
 	
 //keyDown
-
+document.querySelector('body').addEventListener('keydown', key);
+ function key() {
+    alert('No container selected!')
+} 
 
 //wheel
 document.querySelector('.home').addEventListener('wheel', wheel);
@@ -23,18 +26,25 @@ document.querySelector('.home').addEventListener('wheel', wheel);
 
 
 //load
-window.addEventListener('load', function(event) {
-    alert('What are you waiting for?! Start your vaca today!');
- })
+window.addEventListener('load', load);
+  function load(){
+      alert('What are you waiting for?! Start your vaca today!');
+ }
 
 //focus
 
 
 //resize
-
+window.addEventListener('resize', resize)
+function resize() {
+    this.style.backgroundColor = 'yellow';
+} 
 
 //scroll
-
+document.querySelector('.home').addEventListener('wheel', wheel);
+ function wheel() {
+    this.style.color = 'teal';
+}
 
 //select
 
