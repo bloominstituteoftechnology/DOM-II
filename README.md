@@ -30,7 +30,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
       _ [X] `wheel`
       _ [X] `mouseleave`
       _ [X] `click`
-      _ [ ] `focus`
+      _ [X] `mouseout`
       _ [X] `resize`
       _ [ ] `scroll`
       _ [ ] `select`
@@ -39,7 +39,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 - [x] Nest two similar events somewhere in the site and prevent the event propagation properly
-- [ ] Stop the navigation from items from refreshing the page by using `preventDefault()`
+- [x] Stop the navigation from items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 

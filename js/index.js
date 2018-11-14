@@ -3,6 +3,7 @@ const body = document.querySelector('body');
 const destinationImg = document.querySelector('.content-destination img');
 const btn = document.querySelectorAll('.btn');
 const destinationDivs = document.querySelectorAll('.destination');
+const nav = document.querySelectorAll('nav a');
 
 // 1. keydown
 body.addEventListener('keydown', function() {
@@ -65,4 +66,19 @@ mouseLeave.addEventListener('mouseleave', function() {
 // 7. resize
 window.addEventListener('resize', function() {
 	alert('You have changed the size of the screen!');
+});
+
+// 8. mixture of mouseover, mouseout, and click with preventDefault()
+nav.forEach(function(element) {
+	element.addEventListener('mouseover', function() {
+		this.style.color = 'red';
+	});
+	element.addEventListener('mouseout', function() {
+		this.style.color = 'black';
+	});
+	element.addEventListener('click', function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		this.style['text-decoration'] = 'underline';
+	});
 });
