@@ -51,9 +51,34 @@ window.addEventListener('scroll', () => {
     document.querySelector('header').style.backgroundColor = 'yellow';
 })
 
-
 //resize
 window.addEventListener('resize', myResizeFunc)
 function myResizeFunc() {
     alert('window has been resize')
 }
+
+//mousemove
+const destination = document.querySelector('.content-destination');
+destination.addEventListener('mouseover', () => {
+    destination.classList.toggle('change-color');
+});
+
+//stopPropagation()
+myBtn= document.querySelector('.btn')
+myHome= document.querySelector('.home')
+
+myBtn.addEventListener('click', (event) => {
+    console.log('btn was clicked')
+    event.stopPropagation()
+    event.target.style.color = 'blue'
+})
+
+myHome.addEventListener('click', () => {
+    console.log('home was clicked')
+})
+
+//preventDefault()
+mainNav = document.querySelector('.nav')
+mainNav.addEventListener('click', (event) => {
+    event.preventDefault();
+})
