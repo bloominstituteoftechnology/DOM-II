@@ -4,6 +4,8 @@ const destinationImg = document.querySelector('.content-destination img');
 const btn = document.querySelectorAll('.btn');
 const destinationDivs = document.querySelectorAll('.destination');
 const nav = document.querySelectorAll('nav a');
+const mainNav = document.querySelector('.main-navigation');
+const mouseLeave = document.querySelector('.intro h2');
 
 // 1. keydown
 body.addEventListener('keydown', function() {
@@ -58,7 +60,6 @@ btn.forEach(function(element) {
 });
 
 // 6. mouseleave
-const mouseLeave = document.querySelector('.intro h2');
 mouseLeave.addEventListener('mouseleave', function() {
 	mouseLeave.innerHTML = 'Welcome To Fun Bus!  Enjoy The Ride!';
 });
@@ -81,4 +82,15 @@ nav.forEach(function(element) {
 		event.stopPropagation();
 		this.style['text-decoration'] = 'underline';
 	});
+});
+
+// 9. scroll
+document.addEventListener('scroll', function() {
+	mainNav.style.backgroundColor = 'lightseagreen';
+});
+
+// 10. load
+window.addEventListener('load', function() {
+	const busSound = new Audio('sound/bus-door-open.wav');
+	busSound.play();
 });
