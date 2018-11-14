@@ -1,7 +1,8 @@
 //variables
-let body = document.querySelector('body');
-let destinationImg = document.querySelector('.content-destination img');
-let btn = document.querySelectorAll('.btn');
+const body = document.querySelector('body');
+const destinationImg = document.querySelector('.content-destination img');
+const btn = document.querySelectorAll('.btn');
+const destinationDivs = document.querySelectorAll('.destination');
 
 // 1. keydown
 body.addEventListener('keydown', function() {
@@ -37,14 +38,20 @@ body.addEventListener('click', function() {
 // 3. wheel
 body.addEventListener('wheel', function() {
 	const colors = ['skyblue', 'goldenrod', 'yellow', 'dodgerblue'];
-	let random = Math.floor(Math.random() * 4);
+	const random = Math.floor(Math.random() * 4);
 	this.style.backgroundColor = colors[random];
 });
 
 // 4. mouseover
-const destinationDivs = document.querySelectorAll('.destination');
 destinationDivs.forEach(function(element) {
 	element.addEventListener('mouseover', function() {
 		element.style.color = 'red';
+	});
+});
+
+// 5. dblclick
+btn.forEach(function(element) {
+	element.addEventListener('dblclick', function() {
+		alert('You only have to click once!');
 	});
 });
