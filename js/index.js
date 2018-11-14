@@ -55,3 +55,14 @@ btn.forEach(function(element) {
 		alert('You only have to click once!');
 	});
 });
+
+// 6. mouseleave
+const mouseLeave = document.querySelector('.intro h2');
+mouseLeave.addEventListener('mouseleave', function() {
+	mouseLeave.innerHTML = 'Welcome To Fun Bus!  Enjoy The Ride!';
+});
+
+// 7. resize
+window.addEventListener('resize', function() {
+	alert('You have changed the size of the screen!');
+});
