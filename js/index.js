@@ -40,3 +40,11 @@ body.addEventListener('wheel', function() {
 	let random = Math.floor(Math.random() * 4);
 	this.style.backgroundColor = colors[random];
 });
+
+// 4. mouseover
+const destinationDivs = document.querySelectorAll('.destination');
+destinationDivs.forEach(function(element) {
+	element.addEventListener('mouseover', function() {
+		element.style.color = 'red';
+	});
+});
