@@ -21,13 +21,14 @@
 
   <header class="main-navigation">
     <div class="container nav-container">
-      <h1 class="logo-heading">Fun Bus</h1>
+      <h1 draggable="true" class="logo-heading">Fun Bus</h1>
       <nav class="nav">
         <a class="nav-link" href="#">Home</a>
         <a class="nav-link" href="#">About Us</a>
         <a class="nav-link" href="#">Blog</a>
         <a class="nav-link" href="#">Contact</a>
       </nav>
+      <div class="empty">drag the Fun Bus here!</div>
     </div>
   </header>
      
@@ -82,7 +83,7 @@
       </div>
     </section>
     <input type="text" id="myText" value="A text field for .focus()">
-    <a href="#" class="inputBtn">CLICK TO FOCUS</a>
+    <a onclick="focusMethod()" class="inputBtn">Click to FOCUS and SELECT</a>
   </div><!-- container -->
   <audio src="sounds/bus.mp3"></audio>
   <footer class="footer">
