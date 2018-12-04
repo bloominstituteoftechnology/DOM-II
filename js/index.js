@@ -4,8 +4,12 @@
 
 window.addEventListener("keydown", function(element){
     let keyName = element.key;
-    alert ("Watch the keyboard, you hit " + keyName);
+    this.alert ("Watch the keyboard, you hit " + keyName);
 } );
+
+window.addEventListener("contextmenu", function(element){
+    this.alert("Thanks for right clicking!");
+});
 
 // Nav Bar
 
