@@ -1,1 +1,5 @@
-// Your code goes here
+// ============= Variables
+
+// ============= Functions
+
+// ============= Event Listeners
