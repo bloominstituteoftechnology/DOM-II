@@ -10,14 +10,13 @@ pageHeader.addEventListener('mouseenter', function(e) {
 
 const links = document.querySelectorAll('nav-links');
 for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('mouseover', function(e) {
-        //links[i].style.color = 'white';
-        links[i].classList.toggle('FFFFFF');
+    links[i].addEventListener('click', function(e) {
+        e.preventDefault;
+        e.stopPropagation();
+        links[i].style.color = '#FFFFFF';
+        
     })
 }
-// pageHeader.removeEventListener('mouseenter', function(e) {
-//     pageHeader.style.backgroundColor = '#17A2B8';
-// })
 
 
 //==========  entire page/window event listeners
@@ -27,10 +26,9 @@ home.addEventListener('wheel', function(e) {
 })
 
 
-
 //========== Main content event listeners
 const busPic = document.querySelector('.bus-pic');
-busPic.addEventListener('click', function(e) {
+busPic.addEventListener('dragend', function(e) {
     busPic.src = 'img/photo-1464851707681-f9d5fdaccea8.jpeg'
 })
 
@@ -50,6 +48,11 @@ const buttons = document.querySelectorAll('.btn');
 for (let i=0; i<buttons.length; i++) {
     buttons[i].addEventListener('mouseover', function(e) {
         buttons[i].style.backgroundColor = '#FCB74A';
+    })
+}
+for (let i=0; i<buttons.length; i++) {
+    buttons[i].addEventListener('dblclick', function(e) {
+        alert('Form page loading....');
     })
 }
 
