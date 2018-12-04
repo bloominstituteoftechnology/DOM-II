@@ -30,7 +30,7 @@ const keyChange = document.querySelector('.intro h2');
 
 window.addEventListener('keydown', function(e) {
     keyChange.textContent = e.key;
-})
+});
 
 // ======================  4. drag   ((figure out drop))
 const mapImg = document.querySelector('.adventure');
@@ -43,8 +43,35 @@ mapImg.addEventListener('drag', function(e) {
 const body = document.querySelector('body');
 window.addEventListener('load', function(e) {
     body.style.background = 'lightblue';
+});
+
+// ====================== 6. FOCUS on the input to get the background to change to a random color
+const focus = document.querySelector('.focus');
+focus.addEventListener('focus', function(e) {
+    focus.style.background = getColor();
 })
 
+// ====================== 7. RESIZE the window to change the background of body to a different color
+window.addEventListener('resize', function(e) {
+    body.style.background = getColor();
+})
+
+// ====================== 8. SCROLL on the page to see some effects
+const navContainer = document.querySelector('.nav-container');
+window.addEventListener('scroll', function(e) {
+    navContainer.style.background = getColor();
+})
+
+// ====================== 9. SELECT text from the focus input box and get an alert
+focus.addEventListener('select', function(e) {
+    alert(`You selected text!`)
+})
+
+// ====================== 10. DBLCLICK the first sign-up button
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(() => addEventListener('dblclick', function(e) {
+    e.target.style.background = getColor();
+}));
 
 
 
@@ -52,3 +79,16 @@ window.addEventListener('load', function(e) {
 
 
 
+
+
+
+// ================ Stop the propagation of an event
+const stopProp = document.querySelector('.stopProp');
+stopProp.addEventListener('click', function(e) {
+    stopProp.style.background = getColor();
+    e.stopPropagation();
+})
+
+window.addEventListener('click', function(e) {
+    stopProp.style.background = 'white';
+})
