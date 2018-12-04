@@ -52,11 +52,21 @@ window.addEventListener('load', () => {
 })
 
 
+window.addEventListener('copy', () => {
+    alert(`You just copied some text`)
+})
 
 
 
+const buttons = document.querySelectorAll('.btn');
+console.log(buttons);
 
+buttons.forEach((btn) => {
+    btn.addEventListener('mouseenter', (e) => {
+        e.target.classList.toggle('vibrate-1');
+    });
 
+})
 
 
 
