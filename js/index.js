@@ -10,6 +10,7 @@ const buttons = document.querySelectorAll('.btn');
 const images = document.querySelectorAll('.img-content img')
 const destinationImage = document.querySelector('.content-destination img')
 const text = document.querySelectorAll('p');
+const home = document.querySelector('.home');
 
 // [x] mouseenter
 // [x] mouseleave
@@ -17,15 +18,18 @@ const text = document.querySelectorAll('p');
 // [x] wheel
 // [x] drag / drop
 // [x] resize
-// [x] dblclick
 // [x] click
-// [] propogation
+// [x] dblclick
+
+
+// [x] propogation
 // [x] preventDefault
 
 
 
 
 // ================================= Event Listeners
+
 // logo
 logo.textContent = "wheel over me";
 logo.style.fontSize = "20px";
@@ -52,10 +56,9 @@ for (let i = 0; i < navigation.length; i++) {
 for (let i = 0; i < navigation.length; i++) {
   navigation[i].addEventListener('click', (e) => {
     e.preventDefault();
+    console.log("a tag was clicked!")
   });
 };
-
-
 
 
 // main image
@@ -84,7 +87,6 @@ destinationImage.addEventListener('click', (e) => {
 });
 
 
-
 // buttons
 buttons[0].textContent = "double click";
 buttons[1].textContent = "the buttons";
@@ -100,13 +102,27 @@ for (let i = 0; i < buttons.length; i++) {
 
 
 // keydown event listener
-// document.addEventListener('keydown', (e) => {
-//   const keyName = e.key;
-//   alert('keydown event\n\n' + 'key: ' + keyName);
-// });
+document.addEventListener('keydown', (e) => {
+  const keyName = e.key;
+  introH2.style.color = 'blue';
+});
 
 
 // container resize
 window.addEventListener("resize", (e) => {
   alert("Don't resize this window!");
 });
+
+
+// propagation
+
+home.addEventListener('click', function (e) {
+  console.log("Home fired!")
+});
+
+for (let i = 0; i < text.length; i++) {
+  text[i].addEventListener('click', function (e) {
+    console.log("Paragraph fired!")
+    e.stopPropagation();
+  });
+};
