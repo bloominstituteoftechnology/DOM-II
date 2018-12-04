@@ -9,13 +9,15 @@ navAnchors.forEach(function(index, i){
         e.target.style.textShadow= '1px 1px 1px black';
         e.target.style.textDecoration = 'underline';
     });
-});
 
-navAnchors.forEach(function(index, i){
     navAnchors[i].addEventListener('mouseout', function(e) {
         e.target.style.color = '';
         e.target.style.textShadow= '';
         e.target.style.textDecoration = 'none';
+    });
+
+    navAnchors[i].addEventListener("click", function(e){
+        e.preventDefault();
     });
 });
 
@@ -29,15 +31,6 @@ window.addEventListener('scroll', function(e) {
 
 
 // ===== MAIN CONTENT =====
-
-var elem = document.querySelectorAll('h2');
-
-elem.forEach(function(index, i){
-    elem[i].addEventListener('select', function() {
-        alert('Selection changed!');
-    });
-});
-
 
 let button = document.querySelectorAll('.btn');
 
