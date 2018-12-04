@@ -12,13 +12,13 @@ window.addEventListener("load", function(e) {
         container.forEach((selection) => {
             selection.style.opacity = "1";
         })
-    }, 1000)
+    }, 500)
     
   });
 
 window.addEventListener("scroll", function(e){
     console.log("The scroll works");
-    logoHeading.style.marginLeft = "200px";
+    logoHeading.style.transform= "rotate(180deg)";
 })
 // Header Img: Appear when nav heading is moused over with a delay
 
