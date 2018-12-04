@@ -64,10 +64,22 @@ window.addEventListener('load', ()=>{
     home.classList.add("scaleUp")
 } )
 const navigation = document.querySelector('.main-navigation');
-//#8 Hide Nav On Animation 
+//#8-9 Hide Nav On Animation and Reveal at End
 home.addEventListener('animationstart',  ()=>{
     navigation.style.display="none";
 });
 home.addEventListener('animationend',  ()=>{
     navigation.style.display="flex";
+});
+
+//#10 On Fun Bus Logo DoubleClicks Rave Fun-Bus image
+const logoHeading = document.querySelector('.logo-heading');
+const body = document.querySelector("body");
+console.log(body);
+logoHeading.addEventListener('dblclick', ()=>{
+    setInterval(
+    ()=>{
+        bus.classList.add("scale-up-center");
+        body.style.background = getRandomColor();
+    },1000);
 });
