@@ -28,10 +28,16 @@ console.log('Home was clicked');
     e.target.style.color = 'blue';
 })
 
-const docHeaders = document.querySelector('h2');
-
-window.addEventListener('scroll',function(e){
-    console.log('scroll');
-    docHeaders.style.color = 'orange';
-});
+const docHeaders = document.querySelectorAll('h2');
+docHeaders.forEach(function(f){
+    
+    window.addEventListener('scroll',function(e){
+        console.log('scroll');
+        f.style.color = 'orange';
+    });
+})
+// window.addEventListener('scroll',function(e){
+//     console.log('scroll');
+//     docHeaders.style.color = 'orange';
+// });
 
