@@ -350,3 +350,15 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+@keyframes innout {
+  0% {
+    height: unset;
+  }
+  50% {
+    height: 75px;
+    width: 150px;
+  }
+  100% {
+    height: unset;
+  }
+}
