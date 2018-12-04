@@ -42,3 +42,10 @@ window.addEventListener('scroll', function (e) {
 window.addEventListener('load', function (e) {
     alert('Hello! Welcome to my website.');
 });
+
+// IMG () //
+const img = document.getElementsByTagName('img')[0];
+//console.log(img);
+window.addEventListener('resize', function (e) {
+    img.style.opacity = 0.8;
+})
