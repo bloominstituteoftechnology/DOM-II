@@ -33,6 +33,29 @@ headers.forEach((item) => {
 
 
 
+const img = document.querySelectorAll('img');
+console.log(img);
+
+img.forEach((item) => {
+    item.addEventListener('dblclick', (e) => {
+        
+        e.target.classList.toggle('jello-horizontal');
+    })
+});
+
+
+const logo = document.querySelector('.logo-heading');
+console.log(logo);
+
+window.addEventListener('load', () => {
+    logo.classList.toggle('focus-in-expand')
+})
+
+
+
+
+
+
 
 
 
