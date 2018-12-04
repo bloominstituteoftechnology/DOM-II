@@ -316,6 +316,14 @@ img {
     flex-wrap: wrap;
   }
 }
+.home .content-pick .fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+.home .content-pick .fa:hover {
+  color: red;
+}
 .home .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
