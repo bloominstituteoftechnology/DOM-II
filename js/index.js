@@ -34,9 +34,17 @@ window.addEventListener("resize", function(e) {
 
 //bus animation
 const busIcon = document.querySelector(".bus-icon")
-window.addEventListener("click", function(e) {
+window.addEventListener("keydown", function(e) {
     TweenMax.to(busIcon, 5, {
         marginLeft:"100%",
         ease: Power4.easeOut
     });
 })
+
+//
+const destinationImg = document.querySelector(".content-destination img")
+window.addEventListener("scroll", function(e) {
+    TweenMax.to(destinationImg, 3, {
+        rotationY: 360
+    });
+});
