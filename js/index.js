@@ -49,14 +49,22 @@ docText.forEach(function(f){
 
 
 const docClick = document.querySelectorAll('.container');
-docClick.forEach(function(e){
-    e.addEventListener('click', function(e){
+docClick.forEach(function(f){
+    f.addEventListener('click', function(e){
         console.log('click fired');
         e.target.style.color = "green";
     });
 });
 
-// const darkMode = document.querySelector('.container');
+
+
+const doc = document.querySelectorAll('h1');
+doc.forEach(function(f){
+    window.addEventListener('resize',function(e){
+        console.log('resized')
+        f.style.backgroundColor = "yellow";
+    })
+})
 
 // document.addEventListener('fullscreenchange',function(e){
 //     console.log(e);
