@@ -4,34 +4,51 @@
 // keydown
 // load
 // resize
+// dblclick
+// click
 
 // scroll
 // select
-// dblclick
 // wheel
 // focus
 // drag / drop
 
 // ==================== loading the page alert using 'load'
 window.addEventListener("load", function() {
-  alert("Welcome to Fun Bus!!!");
+  //alert("Welcome to Fun Bus!!!");
 });
 
 // ==================== Changing window color using 'resize'
 window.addEventListener("resize", function(event) {
   // if current width is 500px or less, change background
   if (window.outerWidth <= 400) {
-    this.console.log("updating style");
+    console.log("updating style");
     document.body.style.backgroundColor = "lightblue";
   } else {
     document.body.style.backgroundColor = "white";
   }
 });
 
-// ==================== Setting nav bar color
+// ==================== updated navigation
+//changed nav bar color
 const mainNav = document.querySelector(".main-navigation");
-//changed nav color
 mainNav.style.backgroundColor = "#FFEBCD";
+
+//changed a tag color using 'dblclick'
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(item => {
+  item.addEventListener("dblclick", function() {
+    item.style.color = "red";
+  });
+});
+
+//added animation to Fun Bus heading using 'keydown' on 'F'
+const mainHeading = document.querySelector(".logo-heading");
+document.addEventListener("keydown", function(event) {
+  if (event.key === "f") {
+    mainHeading.style.fontSize = "50px";
+  }
+});
 
 // ==================== Pick your Destination image using 'mouseover' and 'mouseout'
 const desImage = document.querySelector(".content-destination img");
@@ -46,12 +63,8 @@ desImage.addEventListener("mouseout", function() {
 
 // ==================== sign me up button using 'click'
 const signUpBtn = document.querySelectorAll(".btn");
-signUpBtn[0].addEventListener("click", function() {
-  prompt("Enter Your Email:");
-});
-signUpBtn[1].addEventListener("click", function() {
-  prompt("Enter Your Email:");
-});
-signUpBtn[2].addEventListener("click", function() {
-  prompt("Enter Your Email:");
+signUpBtn.forEach(item => {
+  item.addEventListener("click", function() {
+    prompt("Enter Your Email:");
+  });
 });
