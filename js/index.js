@@ -41,6 +41,11 @@ for (let i=0; i<contentSection.length; i++) {
     })
 }
 
+const destinationContent = document.querySelector('.content-destination');
+destinationContent.addEventListener('dragstart', function(e){
+    alert('This image is copyrighted!');
+})
+
 const buttons = document.querySelectorAll('.btn');
 for (let i=0; i<buttons.length; i++) {
     buttons[i].addEventListener('mouseover', function(e) {
