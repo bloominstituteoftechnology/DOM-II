@@ -63,6 +63,24 @@ content.addEventListener("wheel", function( event ) {
     yoyo.restart()
 }, false);
 
+let contentp = document.querySelector(".content-section p")
+
+let nestedyoyo = TweenMax.to(".content-section p", 1, {
+    x: 200,
+    opacity:1,
+    paused: true,
+    yoyo: true,
+    repeat: 1,
+})
+
+//stops propagation so you can wheel the inner paragraph tags without the outside, or separately
+
+contentp.addEventListener("wheel", function( event ) {   
+    event.stopPropagation();
+    nestedyoyo.play();
+    nestedyoyo.restart();
+}, false);
+
 let condest = document.querySelector(".content-destination img")
 
 condest.addEventListener("load", function( event ) {   
