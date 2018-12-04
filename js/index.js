@@ -8,7 +8,7 @@
 // click
 // focus
 // blur
-// select
+// mousemove
 
 // ==================== loading the page alert using 'load'
 window.addEventListener("load", function() {
@@ -24,6 +24,11 @@ window.addEventListener("resize", function(event) {
   } else {
     document.body.style.backgroundColor = "white";
   }
+});
+
+// ==================== log mouse location to console using 'mousemove'
+document.addEventListener("mousemove", function(event) {
+  console.log(`Mouse Location: X: ${event.clientX} Y: ${event.clientY}`);
 });
 
 // ==================== updated navigation
@@ -54,7 +59,7 @@ navLinks.forEach(item => {
 const mainHeading = document.querySelector(".logo-heading");
 document.addEventListener("keydown", function(event) {
   if (event.key === "f") {
-    mainHeading.style.fontSize = "50px";
+    mainHeading.style.fontSize = "60px";
   }
 });
 
