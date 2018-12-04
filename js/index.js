@@ -14,6 +14,12 @@ nav.forEach((currentvalue) => {
     });
 });
 
+//Sets the nav anchors from refreshing the page
+nav.forEach((currentvalue) => {
+    currentvalue.addEventListener("click", (e) => {
+        e.preventDefault();
+    });
+});
 // Keydown event listener 
 
 const home = document.querySelector(".home");
