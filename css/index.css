@@ -187,14 +187,14 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 500px) {
+@media (max-width: 880px) {
   .main-navigation .nav-container {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 10px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 880px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
   }
@@ -204,10 +204,15 @@ img {
   display: flex;
   justify-content: space-evenly;
 }
-@media (max-width: 500px) {
+@media (max-width: 880px) {
   .main-navigation .nav-container .nav {
     width: 100%;
     justify-content: space-around;
+  }
+}
+@media (max-width: 880px) {
+  .main-navigation .nav-container .nav .nav-link {
+    display: none;
   }
 }
 .main-navigation .nav-container .nav a {

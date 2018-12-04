@@ -11,14 +11,14 @@
     align-items: center;
     justify-content: space-between;
 
-    @media @mobile {
+    @media @tablet {
       flex-wrap: wrap;
       justify-content: center;
       padding-top: 10px;
     }
 
     .logo-heading {
-      @media @mobile {
+      @media @tablet {
         font-size: 3rem;
       }
     }
@@ -28,12 +28,18 @@
       display: flex;
       justify-content: space-evenly;
 
-      @media @mobile {
+      @media @tablet {
         width: 100%;
         justify-content: space-around;
+
       }
       
-      
+      .nav-link {
+        @media @tablet {
+          display: none;
+        }
+      }
+
       a {
         font-size: 1.6rem;
         color: @font-color;
