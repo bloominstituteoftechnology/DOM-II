@@ -190,6 +190,9 @@ img {
   position: fixed;
   z-index: 99;
 }
+.main-navigation #test {
+  padding: 10px 30px;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -366,4 +369,18 @@ img {
   width: 100%;
   height: 100%;
   z-index: 99;
+}
+.drag_drop {
+  display: flex;
+  justify-content: space-around;
+}
+.drag_drop p {
+  width: 150px;
+  height: 150px;
+  border: 1px solid green;
+}
+.drag_drop div {
+  width: 150px;
+  height: 150px;
+  border: 1px solid orange;
 }

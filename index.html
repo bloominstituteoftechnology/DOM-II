@@ -23,6 +23,12 @@
     <header class="main-navigation">
       <div class="container nav-container">
         <h1 class="logo-heading">Fun Bus</h1>
+        <input
+          type="text"
+          placeholder="Search..."
+          id="test"
+          value="This is the default text"
+        />
         <nav class="nav">
           <a class="nav-link" href="#">Home</a>
           <a class="nav-link" href="#">About Us</a>
@@ -34,6 +40,19 @@
     <div class="fullscreen"></div>
     <div class="container home">
       <header class="intro">
+        <div class="drag_drop">
+          <p id="p1" draggable="true" ondragstart="dragstart_handler(event);">
+            This element is draggable. <span>🚌</span>
+          </p>
+
+          <div
+            id="target"
+            ondrop="drop_handler(event);"
+            ondragover="dragover_handler(event);"
+          >
+            Drop Zone
+          </div>
+        </div>
         <img src="img/fun-bus.jpg" alt="bus in the sand" />
         <h2>Welcome To Fun Bus!</h2>
         <p>
@@ -43,9 +62,6 @@
           travelblogger. Adventure fun traveler pretty design website
           expedition.
         </p>
-        <button type="button" onclick="focusScrollMethod()">
-          Click me to focus on the button!
-        </button>
       </header>
       <section class="content-section">
         <div class="text-content">
