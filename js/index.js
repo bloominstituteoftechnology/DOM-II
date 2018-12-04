@@ -6,12 +6,10 @@ const allImgs = document.querySelectorAll("img");
 const allPs = document.querySelectorAll("p");
 const container = document.querySelectorAll(".container");
 const navLinks = document.querySelectorAll(".nav-link");
+const textContentDiv = document.querySelectorAll(".text-content");
 
-navLinks.forEach((link) => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-    })
-})
+
+// window: "delayed" load of content
 
 window.addEventListener("load", function(e) {
     setTimeout(() => {
@@ -21,6 +19,9 @@ window.addEventListener("load", function(e) {
     }, 500)
     
   });
+
+
+// Header Img: Flip 180deg when user scrolls
 
 window.addEventListener("scroll", function(e){
     console.log("The scroll works");
@@ -81,10 +82,22 @@ allImgs.forEach((img) => {
 })
 
 
+textContentDiv.forEach((div) => {
+    div.addEventListener("mousedown", function(e) {
+        e.target.style.backgroundColor = "gold";
+        e.target.style.color = "brown";
+    })
+    div.addEventListener("mouseup", function(e){
+        e.target.style.backgroundColor = "transparent";
+        e.target.style.color = "black";
+    })
+})
+
 // Ps: change colors on mousedown, return to normal on mouseup
 
 allPs.forEach((p) => {
     p.addEventListener("mousedown", function(e) {
+        e.stopPropagation();
         e.target.style.backgroundColor = "lightsteelblue";
         e.target.style.color = "gold";
     })
@@ -93,3 +106,13 @@ allPs.forEach((p) => {
         e.target.style.color = "black";
     })
 })
+
+
+// Nav Links: Prevent default behavior
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+    })
+});
+
