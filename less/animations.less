@@ -9,6 +9,68 @@
 
 
   .scale-up-center {
-	animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+
+
+
+// ==== Fade Out
+
+@keyframes fade-out-bck {
+    0% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateZ(-80px);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+
+  .fade-out-bck {
+	animation: fade-out-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) .3s forwards;
+}
+
+
+
+@keyframes shake-top {
+    0%,
+    100% {
+      transform: rotate(0deg);
+      transform-origin: 50% 0;
+    }
+    10% {
+      transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: rotate(4deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(2deg);
+    }
+  }
+
+  
+  .shake-top {
+	animation: shake-top 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+  
+
+
+
+
 
