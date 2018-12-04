@@ -41,7 +41,6 @@ blocks.forEach(b => {
             let newMargin = current + 1;
             TweenMax.to(e.target, 0.001, {marginLeft: `${newMargin}px`});
             }
-            
         }, 10);
     });
 
@@ -49,6 +48,8 @@ blocks.forEach(b => {
     b.addEventListener('mouseup', (e) => {
         e.target.dataset.flying = 'false';
         clearInterval(interval);
+        //Return to original position on mouse up.
+        TweenMax.to(e.target, 1, {marginLeft: `10px`});
     });
     b.addEventListener('mouseleave', (e) => {
         e.target.dataset.flying = 'false';
