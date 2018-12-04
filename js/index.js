@@ -53,3 +53,11 @@ btns.forEach((btn)=>{
         prompt("Enter Your Email");
     })
 });
+
+//#6 On window Resize Images spin.
+const images = document.querySelectorAll('img');
+window.addEventListener('resize', ()=>{
+    images.forEach((img)=>{
+        img.classList.add("rotate-center")
+    })
+});
