@@ -20,6 +20,7 @@ blocks.forEach(b => {
         neg -= 1;
         e.target.style.zIndex = '5';
         TweenMax.to(e.target, 1, {y: `-${distanceToTravelUp}px`});
+        animateSeniors(e.target.offsetTop); //Animates movement of elements above `this` one.
         //Set final values after animation
         setTimeout(() => {
             e.target.style.zIndex = 'auto';
@@ -54,3 +55,15 @@ blocks.forEach(b => {
         clearInterval(interval);
     });
 });
+
+function animateSeniors(offset) {
+    blocks.forEach(b => {
+        //If this element is above the element that is being moved to the top, then animate getting pushed down by the moving element.
+        if(b.offsetTop < offset) {
+            TweenMax.to(b, 1, {y: `120px`});
+            setTimeout(() => {
+                TweenMax.to(b, 0, {y: `0px`}); //After animation, reset offset to original so animation is smooth.
+            }, 1000);
+        }
+    });
+}
