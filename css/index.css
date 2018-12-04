@@ -350,3 +350,6 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.font-change {
+  font-family: comic Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
