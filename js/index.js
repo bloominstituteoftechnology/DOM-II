@@ -30,3 +30,18 @@ wheelData.addEventListener("wheel", function(event) {
 });
 
 //4. Drag / Drop 
+
+//5. Load
+window.addEventListener("load", function(event) {
+    console.log("Fun Bus is ready to go!");
+  });
+
+
+//6. Focus
+const focusEv = document.querySelector('.nav-container');
+
+focusEv.addEventListener("focus", function(event) {
+    event.target.style.background = "lightGrey";
+    
+}, true);
+
