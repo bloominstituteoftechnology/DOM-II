@@ -3,8 +3,11 @@
 const navMouseOver = document.querySelectorAll('.nav a');
 
 navMouseOver[0].addEventListener("mouseover", function(event) {
+    
     event.target.style.color = "green";
+    event.preventDefault()
 })
+
 navMouseOver[1].addEventListener("mouseover", function(event) {
     event.target.style.color = "red";
 })
@@ -25,7 +28,7 @@ document.addEventListener('keydown', (event) => {
 const wheelData = document.querySelector('.home');
 
 wheelData.addEventListener("wheel", function(event) {
-    event.target.style.fontSize = "4.2rem";
+    event.target.style.fontSize = "2.2rem";
     // console.log(`I'm wheeling!`);
 });
 
@@ -33,6 +36,7 @@ wheelData.addEventListener("wheel", function(event) {
 const signBtn = document.querySelectorAll('.btn');
 
 signBtn[0].addEventListener('click', function(event) {
+   
     console.log("Fun in the sun button was clicked!");
 });
 signBtn[1].addEventListener('click', function(event) {
@@ -58,12 +62,11 @@ focusEv.addEventListener("focus", function(event) {
     
 }, true);
 
-//7. Mouse double click 
-const funDblClick = document.querySelector('.home');
+//7. Mousedown
+const mouseDownWelcome = document.querySelector('.intro h2');
 
-funDblClick.addEventListener('dblclick', function(event) {
-    if ( event.target.style.text === "Fun" )
-    console.log("fun was double clicked")
+mouseDownWelcome.addEventListener('mousedown', function(event) {
+    console.log("Welcome mousedown")
 })
 
 //8. Scroll
@@ -80,3 +83,24 @@ const mouseUpLetsGo = document.querySelector('.text-content h2');
 mouseUpLetsGo.addEventListener('mouseup', function(event) {
     console.log("Mouseup over Let's Go!")
 })
+
+//10. Double click
+const dblClick = document.querySelector('.footer p');
+
+dblClick.addEventListener('dblclick', function(event) {
+    event.target.textContent = "Dont steal anything from here!"
+});
+
+//stopPropagation 
+const content = document.querySelector('.content-destination');
+const contenth2 = document.querySelector('.content-destination h2');
+
+content.addEventListener('click', function(e) {
+    
+    console.log('Content destination clicked!')
+});
+
+contenth2.addEventListener('click', function(e) {
+    e.stopPropagation();
+    console.log('Content h2 clicked!')
+});
