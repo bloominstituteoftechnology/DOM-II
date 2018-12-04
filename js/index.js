@@ -16,3 +16,14 @@ const navLinks = document.querySelectorAll('.nav a');
 home.addEventListener('click', function(e) {
     e.target.classList.toggle('font-change');
 });
+
+home.addEventListener('mouseover', function(e) {
+    e.target.classList.toggle('josh-class');
+})
+
+const introHeading = document.querySelector('.intro h2');
+
+document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    introHeading.textContent += keyName;
+  });
