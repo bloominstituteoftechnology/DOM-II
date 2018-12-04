@@ -1,3 +1,16 @@
+// ===== WEBPAGE =====
+
+window.addEventListener('contextmenu', function(e) {
+    alert('You Right Click!');
+});
+
+window.addEventListener('keydown', function(e) {
+    let keyName = e.key;
+    if (e.key != 'Control'){
+        alert('You pressed this key: ' + keyName);
+    }
+});
+
 // ===== NAVIGATION HEADER =====
 let nav = document.querySelector('.main-navigation');
 let navAnchors = document.querySelectorAll('.nav-link');
