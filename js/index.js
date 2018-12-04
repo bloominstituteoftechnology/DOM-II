@@ -5,7 +5,13 @@ const contentPick = document.querySelector(".content-pick");
 const allImgs = document.querySelectorAll("img");
 const allPs = document.querySelectorAll("p");
 const container = document.querySelectorAll(".container");
+const navLinks = document.querySelectorAll(".nav-link");
 
+navLinks.forEach((link) => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+    })
+})
 
 window.addEventListener("load", function(e) {
     setTimeout(() => {
