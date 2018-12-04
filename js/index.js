@@ -12,7 +12,6 @@ yellowbus.addEventListener("mouseover", function(event) {
 const home = document.querySelector("body");
 
 home.addEventListener('keydown', function(event) {
-    // event.stopPropagation();
     home.classList.toggle("goblue");
 });
 
@@ -25,4 +24,11 @@ midImg.addEventListener('contextmenu', function(event) {
 });
 
 
-console.log(midImg);
+const title = document.querySelector(".logo-heading");
+
+console.log(title);
+
+title.addEventListener('wheel', function(event) {
+    title.style.color = 'red';
+    title.style.fontSize = "5rem"
+  });
