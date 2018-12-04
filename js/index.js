@@ -37,16 +37,16 @@ let millisecondsCount = 0;
 
 // When the page finally loads
 window.addEventListener("load", e => {
-  // let loadScreen = document.querySelector("#loading-container");
-  // document.body.removeChild(loadScreen);
-  // document.body.removeAttribute("style");
-  // mainContainer.removeAttribute("style");
+  let loadScreen = document.querySelector("#loading-container");
+  document.body.removeChild(loadScreen);
+  document.body.removeAttribute("style");
+  mainContainer.removeAttribute("style");
 
-  // const minutesStr = String(minutesCount).padStart(2, '0');
-  // const secondsStr = String(secondsCount).padStart(2, '0');
-  // const millisecondsStr = (millisecondsCount === 1 ? "<=" : ">=") + String(millisecondsCount * 10);
+  const minutesStr = String(minutesCount).padStart(2, '0');
+  const secondsStr = String(secondsCount).padStart(2, '0');
+  const millisecondsStr = (millisecondsCount === 1 ? "<=" : "") + String(millisecondsCount * 10);
 
-  // alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
+  alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
 });
 
 // AFTER PAGE HAS BEEN LOADED
@@ -54,12 +54,20 @@ window.addEventListener("load", e => {
 
 
 // Query selectors
+const headerLogo = document.querySelector(".logo-heading");
 const aTagElements = document.querySelectorAll("a");
 
-// Event to disable default <a> element behavior and display alert
+// Click event to disable default <a> element behavior and display alert
 aTagElements.forEach(element => {
   element.addEventListener("click", e => {
     e.preventDefault();
     alert("Sorry, user. You are confined to this page (for now).");
-  });
+  })
+});
+
+// Mouseover and click events to make the header logo behave like a link
+headerLogo.addEventListener("mouseover", e => headerLogo.style.cursor = "pointer");
+headerLogo.addEventListener("click", e => {
+  e.preventDefault();
+  alert("Sorry, user. You are confined to this page (for now).");
 });
