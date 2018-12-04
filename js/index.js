@@ -80,15 +80,31 @@ body.addEventListener('copy', (e) => {
     });
 });
 
+//On Right Click/Context Menu
+body.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+}); //Good for creating custom right click menus on websites
+
 //On Click
 let buttons = document.querySelectorAll('.btn');
 buttons.forEach(b => {
     b.addEventListener('click', (e) => {
         e.target.textContent = 'Signed Up!';
+        e.stopPropagation();
     });
 });
 
-//On Right Click/Context Menu
-body.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-}); //Good for creating custom right click menus on websites
+//Parent container event listener to buttons above ^
+let destinations = document.querySelectorAll('.destination');
+destinations.forEach(d => {
+    d.addEventListener('click', (e) => {
+        e.currentTarget.style.border = '1px solid red';
+    });
+});
+
+//Prevent default of navLinks click
+navLinks.forEach(n => {
+    n.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+})
