@@ -35,12 +35,15 @@ for (let i = 0; i < paragraphs.length; i++) {
     paragraphs[i].addEventListener('mouseover', function() {
         paragraphs[i].classList.add('color-changer');
     })
-}
-for (let i = 0; i < paragraphs.length; i++) {
     paragraphs[i].addEventListener('mouseout', function() {
         paragraphs[i].classList.remove('color-changer');
     })
-}
+    paragraphs[i].addEventListener('mouseover', function(){setTimeout(function(){
+            paragraphs[i].textContent = 'Dude why are you hovering over me so long lol';
+        },3000)});
+    } 
+
+
 
 const busImg = document.querySelector('.intro img'); 
 busImg.addEventListener('mouseover', function() {
