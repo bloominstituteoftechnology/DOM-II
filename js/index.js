@@ -31,7 +31,7 @@ buttonAnim[2].addEventListener("mouseout", function(event){
     event.target.textContent = "Sign Me Up!";
   })
 
-  // Header Color Change
+  // H2 Color Change
 
 const headerTwos = Array.from(document.querySelectorAll("h2"));
 headerTwos[0].addEventListener("click", function(event){
@@ -59,3 +59,31 @@ headerTwos[2].addEventListener("dblclick", function(event){
 headerTwos[3].addEventListener("dblclick", function(event){
     event.target.style.color = "black";
 });
+
+// 
+
+const inputForm = document.createElement('form');
+inputForm.textContent = "Enter Your Email For Travel Updates!";
+inputForm.style.textAlign = "center";
+inputForm.style.fontSize = "1.4rem";
+inputForm.style.paddingBottom = "1.2rem";
+
+const footerForm = document.querySelector("footer");
+footerForm.appendChild(inputForm);
+
+const inputData = document.createElement('input');
+inputForm.appendChild(inputData);
+inputData.style.marginLeft = "1rem";
+inputData.style.textContent = "Input Email Here";
+
+inputForm.addEventListener("focus", function(event) {
+  event.target.style.background = "lightblue";   
+}, true);
+
+inputForm.addEventListener("click", function(event){
+    event.target.textContent = "Enter Email Here";
+});
+
+inputForm.addEventListener("blur", function(event) {
+  event.target.style.background = white;    
+}, true);
