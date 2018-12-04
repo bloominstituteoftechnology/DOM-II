@@ -74,5 +74,6 @@ window.addEventListener("resize", function() {
 
 // ========= Stretch Goal
 window.addEventListener("load", _ => {
-  TweenMax.to(headerImage, 5, { rotation: "360deg" });
+  TweenMax.to(headerImage, 5, { ease: Bounce.easeOut, rotation: "360deg" });
+  TweenMax.to(footer, 5, { ease: Expo.easeOut, rotation: "-360deg" });
 });
