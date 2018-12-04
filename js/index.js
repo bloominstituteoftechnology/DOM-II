@@ -26,9 +26,20 @@ midImg.addEventListener('contextmenu', function(event) {
 
 const title = document.querySelector(".logo-heading");
 
-console.log(title);
-
 title.addEventListener('wheel', function(event) {
     title.style.color = 'red';
     title.style.fontSize = "5rem"
   });
+
+
+// document.getElementsByTagName("body").addEventListener("scroll", navFunction);
+
+// const navFunction = function(event) {
+//     document.querySelector(".main-navigation").style.backgroundColor = "blue";
+// }
+
+const nav = document.querySelector(".main-navigation");
+
+nav.addEventListener('dblclick', function(event) {
+    nav.classList.toggle("goBluer");
+});
