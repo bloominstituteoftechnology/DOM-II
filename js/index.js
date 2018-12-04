@@ -7,7 +7,17 @@ const h2= document.querySelector(".content-destination");
 const h1 = document.querySelector("h1");
 const btn=document.querySelectorAll(".btn");
 const dest = document.querySelector(".destination");
+const nav = document.querySelector('.main-navigation');
 
+
+window.addEventListener('scroll', function (e) {
+    nav.style.backgroundColor = "turquoise";
+
+    setTimeout (function(e) {
+        nav.stye.backgroundColor = '';
+    }, 1000);
+
+});
 
 //mouseover- when mousover content-destination text will turn red
 h2.addEventListener("mouseover", function (e) {
@@ -48,9 +58,9 @@ aTag[3].addEventListener('click', function (e) {
 
 
 
-btn[0].addEventListener('focus', function (e) {
+btn[0].addEventListener('mousemove', function (e) {
     e.preventDefault();
-    e.target.style.background= 'yellow';
+    e.target.style.backgroundColor= 'yellow';
     console.log("button working");
 }, true);
 
