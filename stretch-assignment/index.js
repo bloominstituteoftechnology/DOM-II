@@ -6,5 +6,5 @@ individualBlocks.forEach((item) => item.addEventListener('click', function(e) {
 }))
 
 individualBlocks.forEach((item) => item.addEventListener('mousedown', function(e) {
-    TweenMax.to(item, 5000, {xPercent: 1200000});
+    TweenMax.to(item, 50, {xPercent: 1200});
 }));
