@@ -10,7 +10,7 @@ for (i=0; i<aTags.length; i++) {
 
 //make nav bar turn yellow 
 const mainNav = document.querySelector(".nav-container")
-mainNav.addEventListener("click", function(e) {
+mainNav.addEventListener("dblclick", function(e) {
     mainNav.style.backgroundColor = "yellow";
 })
 
@@ -41,10 +41,30 @@ window.addEventListener("keydown", function(e) {
     });
 })
 
-//
+//add spin animation to bottom image
 const destinationImg = document.querySelector(".content-destination img")
 window.addEventListener("scroll", function(e) {
     TweenMax.to(destinationImg, 3, {
         rotationY: 360
     });
 });
+
+//change text when copying text 
+const introHeading = document.querySelector(".intro h2")
+introHeading.addEventListener("copy", function(e) {
+    introHeading.innerText = "Don't copy me!"
+})
+
+//
+const allButtons = document.querySelectorAll(".btn") 
+allButtons[0].addEventListener("mousedown", function(e) {
+    TweenMax.to(allButtons[0], 2, {
+        marginBottom: 50
+    });
+})
+
+allButtons[1].addEventListener("mouseup", function(e) {
+    TweenMax.to(allButtons[0], 2, {
+        marginBottom: -50
+    });
+})
