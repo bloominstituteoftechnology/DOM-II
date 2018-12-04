@@ -16,10 +16,13 @@ const text = document.querySelectorAll('p');
 // [x] keydown
 // [x] wheel
 // [x] drag / drop
-
 // [x] resize
 // [x] dblclick
 // [x] click
+// [] propogation
+// [x] preventDefault
+
+
 
 
 // ================================= Event Listeners
@@ -37,13 +40,22 @@ logo.addEventListener('wheel', (e) => {
 
 // link animations
 for (let i = 0; i < navigation.length; i++) {
-  navigation[i].addEventListener('mouseenter', () => {
+  navigation[i].addEventListener('mouseenter', (e) => {
     navigation[i].style.borderBottom = '1px solid black';
   });
-  navigation[i].addEventListener('mouseleave', () => {
+  navigation[i].addEventListener('mouseleave', (e) => {
     navigation[i].style.border = 'none';
   });
 };
+
+// blocks default link behavior
+for (let i = 0; i < navigation.length; i++) {
+  navigation[i].addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+};
+
+
 
 
 // main image
