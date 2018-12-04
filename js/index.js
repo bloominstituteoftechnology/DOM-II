@@ -7,31 +7,40 @@
 const contactNav = document.querySelectorAll(".nav-link");
 const destination = document.querySelectorAll(".destination");
 const btn = document.querySelectorAll("btn");
-const mainNavigation = document.querySelector("main-navigation")
+const mainNavigation = document.querySelector(".main-navigation")
 const img = document.querySelectorAll("img");
 const nav = document.querySelectorAll(".nav")
+const logoHeading = document.querySelector(".logo-heading");
 
-//=====- new elements
-// const burgerArrow = document.createElement("span");
-// burgerArrow.textContent = "&#8964;";
-// mainNavigation.appendChild(burgerArrow);
+// =====- new elements
+const burgerArrow = document.createElement("span");
+burgerArrow.textContent = "&#8964;";
+mainNavigation.appendChild(burgerArrow);
 
 // if 
-mainNavigation.addEventListener("click", ()=>{
-  counter = 0;
-  counter++;
-  return ()=>{
-    if (count % 3 === 0 ){
 
-    } else if (count % 5 === 0){
-      
-    } else if (count % 3 === 0 && i % 5=== 0){
-      
+counter = 0
+
+mainNavigation.addEventListener("click", ()=>{
+  counter++;
+  console.log('This is the parent you are clicking on')
+    if (counter % 3 === 0 ){
+      logoHeading.style.color = "red";
+      logoHeading.style.fontSize = "8rem"
+    } else if (counter % 5 === 0){
+      logoHeading.style.color = "purple";
+      logoHeading.style.fontSize = "8rem"
+    } else if (counter % 3 === 0 && i % 5=== 0){
+      logoHeading.style.color = "green";
+      logoHeading.style.fontSize = "8rem"
     } else {
-     
+      logoHeading.style.color = "cyan";
+      logoHeading.style.fontSize = "8rem"
     }
-  }
 })
+
+
+
 
 img[1].addEventListener("mouseover", ()=>{
   img[1].style.opacity = ".5"
