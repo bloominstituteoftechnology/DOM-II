@@ -6,7 +6,7 @@ window.addEventListener('contextmenu', function(e) {
 
 window.addEventListener('keydown', function(e) {
     let keyName = e.key;
-    if (e.key != 'Control'){
+    if (e.key != 'Control' || e.key != 'Meta'){
         alert('You pressed this key: ' + keyName);
     }
 });
@@ -45,22 +45,17 @@ logo.addEventListener('mousedown', function(e){
     e.target.style.border = '1px solid #fcc100';
     e.target.style.borderRadius = '50%';
     e.target.style.backgroundColor = '#fcc100';
+    TweenMax.to(logo, 2, {opacity:0});
+    TweenMax.to(logo, 2, {x:300});
+
 });
 
 nav.addEventListener('mouseup', function(e){
     e.target.style.border = '';
     e.target.style.backgroundColor = '';
+    TweenMax.to(logo, 1, {opacity:1});
+    TweenMax.to(logo, 1, {x:0});
 });
-
-// function func1(e) {
-//     alert("DIV 1");
-//     if (document.getElementById("check").checked) {
-//       e.stopPropagation();
-//     }
-//   }
-//   function func2() {
-//     alert("DIV 2");
-//   }
 
 // === Navigation & Anchors ===
 
@@ -105,6 +100,7 @@ let button = document.querySelectorAll('.btn');
 button.forEach(function(index, i){
     button[i].addEventListener('click', function(e) {
         e.target.textContent = 'You\'re Signed Up!';
+        TweenMax.to(button[i], 1, {rotation:360});
     });
 });
 
