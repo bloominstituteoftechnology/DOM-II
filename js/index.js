@@ -1,6 +1,31 @@
 // Your code goes here
 
-// Button Animations
+// Nav Bar
+
+const navBtn = document.querySelectorAll('a');
+
+navBtn[1].addEventListener("click", function(event) {
+  event.preventDefault();
+});
+
+// Scroll and Wheel for container
+
+const mainPage = document.querySelectorAll(".content-section");
+mainPage[0].addEventListener("wheel", function(event) {
+    event.target.style.background = "pink";
+});
+mainPage[1].addEventListener("wheel", function(event) {
+    event.target.style.background = "pink";
+});
+
+const mainParas = document.querySelectorAll(".text-content");
+mainParas[0].addEventListener("wheel", function(event){
+    event.stopPropagation();
+    event.target.style.background = "gray";
+});
+
+
+// Button Events
 
 buttonAnim = Array.from(document.querySelectorAll(".btn"));
 
@@ -60,7 +85,7 @@ headerTwos[3].addEventListener("dblclick", function(event){
     event.target.style.color = "black";
 });
 
-// 
+// Footer Input Form
 
 const inputForm = document.createElement('form');
 inputForm.textContent = "Enter Your Email For Travel Updates!";
@@ -85,5 +110,5 @@ inputForm.addEventListener("click", function(event){
 });
 
 inputForm.addEventListener("blur", function(event) {
-  event.target.style.background = white;    
+  event.target.style.background = "white";    
 }, true);
