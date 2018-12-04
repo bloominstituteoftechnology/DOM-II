@@ -38,7 +38,7 @@ window.addEventListener('scroll', function (e) {
     e.stopPropagation();
 });
 
-// Window (Load) //
+// Window (Load & Copy) //
 window.addEventListener('load', function (e) {
     //alert('Hello! Welcome to my website.'); Comment back for StandUp
 });
@@ -55,3 +55,11 @@ const img1 = document.getElementsByTagName('img')[0];
 window.addEventListener('resize', function (e) {
     img1.style.opacity = 0.8;
 })
+
+let help = document.querySelector('.logo-heading');
+help.addEventListener('dragstart', function (e) {
+    e.target.textContent = 'Help. I\'m being held hostage.';
+});
+help.addEventListener('dragend', function (e) {
+    e.target.textContent = 'Fun Bus';
+});
