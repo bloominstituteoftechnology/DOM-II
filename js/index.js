@@ -1,6 +1,6 @@
 // Your code goes here
 
-// Buttons (MouseOver & DoubleClick) //
+// Buttons (MouseOver, DoubleClick, MouseClick) //
 const myButton1 = document.getElementsByClassName('btn')[0];
 //console.log(myButton1);
 myButton1.addEventListener('mouseover', function (e) {
@@ -16,7 +16,7 @@ myButton2.addEventListener('dblclick', function (e) {
 });
 const myButton3 = document.getElementsByClassName('btn')[2];
 //console.log(myButton3);
-myButton3.addEventListener('mouseover', function (e) {
+myButton3.addEventListener('click', function (e) {
     myButton3.style.color = 'black';
     myButton3.style.backgroundColor = 'yellow';
 });
@@ -37,3 +37,5 @@ window.addEventListener('scroll', function (e) {
     navLinks.forEach(item => item.style.color = randomColors());
     e.stopPropagation();
 });
+
+// Img () //
