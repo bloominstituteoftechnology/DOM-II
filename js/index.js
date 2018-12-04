@@ -2,11 +2,11 @@
 const html = document.querySelector("html");
 const headerLogo = document.querySelector(".logo-heading");
 const nav = document.querySelector(".main-navigation");
-
 const intro = document.querySelector(".intro");
-const invContent = document.querySelector(".inverse-content");
-const pickContent = document.querySelector(".content-pick");
-const mainContainer = document.getElementsByClassName("container");
+
+// const invContent = document.querySelector(".inverse-content");
+// const pickContent = document.querySelector(".content-pick");
+// const mainContainer = document.getElementsByClassName("container");
 
 // ============= Functions
 
@@ -20,4 +20,9 @@ headerLogo.addEventListener("mouseover", function() {
 html.addEventListener("wheel", function(event) {
   html.style.background = "lightgray";
   nav.style.background = "lightgray";
+});
+
+nav.addEventListener("dblclick", function() {
+  nav.style.height = "300px";
+  intro.style.paddingTop = "320px";
 });
