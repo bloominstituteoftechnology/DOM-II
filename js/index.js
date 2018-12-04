@@ -3,7 +3,7 @@ const destBtn = document.querySelectorAll('.destination .btn');
 
 for (let i = 0; i < destBtn.length; i++) {
     destBtn[i].addEventListener('mousedown', (event) => {
-        event.target.style.animation = 'innout 1s ease-in-out 0s 1 alternate';
+        event.target.style.animation = 'hinge 1s ease-in-out 0s 1 alternate';
     });
 }
 
@@ -20,7 +20,7 @@ const imgapp = document.querySelectorAll('img');
 
 for (let i = 0; i < imgapp.length; i++) {
     imgapp[i].addEventListener('mouseup', (event) => {
-        event.target.style.animation = 'imgapp 1s linear 0s 1 forwards';
+        event.target.style.animation = 'flipInX 1s linear 0s 1 forwards';
     });
 }
 
@@ -41,6 +41,7 @@ for (let i = 0; i < imgapp.length; i++) {
 const funText = document.querySelector('.logo-heading');
 
 funText.addEventListener('dblclick', (event) => {
+    event.target.innerHTML = 'Serious Bus';
     event.target.style.fontFamily = 'Courier';
 });
 
@@ -79,16 +80,16 @@ for (let i = 0; i < destdiv.length; i++) {
 
 const h2go = document.getElementById("h2go");
 
-h2go.addEventListener("click", (event) =>{
+h2go.addEventListener("click", (event) => {
     event.target.style.fontSize = "13em";
-    h2go.addEventListener("dblclick", (event) =>{
+    h2go.addEventListener("dblclick", (event) => {
         event.target.style.fontSize = "3em";
         document.addEventListener("scroll", function () {
             mainp.addEventListener("click", (event) => {
                 event.target.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             })
-        
+
         });
-        
+
     })
 })
