@@ -4,6 +4,7 @@ let navList = document.querySelectorAll("nav");
 let navOne = document.querySelector("nav .nav-link");
 
 navOne.addEventListener("click", function (e) {
+    //event propagation + click event
     e.stopPropagation();
     navList.forEach(function (element) {
         element.style.textDecoration = "line-through"
@@ -77,3 +78,24 @@ document.getElementById("myForm").addEventListener("submit", myother);
 function myother() {
     alert("The form was submitted");
 }
+//*********************************stop propagation() */
+let home = document.querySelector('.home');
+let myButton = document.querySelector('.btn');
+home.addEventListener("click",function(){
+    console.log("home clicked");
+})
+myButton.addEventListener("click", function(e){
+    e.stopPropagation();
+    console.log("Button was clicked!");
+})
+
+
+//********************************prevent default */
+
+const tags = document.querySelectorAll('a');
+
+tags[0].addEventListener('click', function(e) { 
+  // Don't do the default behavior in HTML
+  e.preventDefault();
+  console.log("a tag was clicked!")
+});
