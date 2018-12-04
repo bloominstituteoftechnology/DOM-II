@@ -3,6 +3,9 @@ const button1 = document.querySelector(".btn")
 
 button1.addEventListener('click', () => {
     button1.textContent = 'The button works';
+    TweenMax.to(".animationBtn1", 1, {
+        rotation:360,
+    })
 })
 
 //end 1st listener
@@ -11,6 +14,9 @@ const button2 = document.querySelectorAll(".btn")[1];
 
 button2.addEventListener('dblclick', () => {
     button2.textContent = 'Wow double click';
+    TweenMax.to(".animationBtn2", 1, {
+        rotation:360,
+    })
 })
 
 //end 2nd listener
@@ -84,6 +90,9 @@ destinationDiv3.addEventListener('click', (event) => {
 button3.addEventListener('click', function(event) {
     event.stopPropagation();
     console.log("Button clicked!");
+    TweenMax.to(".animationBtn3", 1, {
+        rotation:360,
+    })
 })
 
 // preventDefault();
