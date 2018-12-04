@@ -5,6 +5,7 @@ const busImg = document.querySelector(".home img")
 const mapImg = document.querySelector(".img-content")
 const inverseMapImg = document.querySelector(".inverse-content .img-content")
 const text = document.querySelector(".content-section p")
+const welcomeP = document.querySelector("header p")
 
 
 title.addEventListener("click", function(e) {
@@ -25,11 +26,13 @@ busImg.addEventListener("mouseup", function(e) {
 });
 
 mapImg.addEventListener("mouseover", function(e) {
-    e.target.style.display = "none";
+    e.target.style.height = "500px";
+    e.target.style.width = "500px";
 });
 
 inverseMapImg.addEventListener("mouseout", function(e) {
-    e.target.style.display = "none";
+    e.target.style.height = "500px";
+    e.target.style.width = "500px";
 });
 
 text.addEventListener("contextmenu", function(e) {
@@ -37,5 +40,18 @@ text.addEventListener("contextmenu", function(e) {
 });
 
 text.addEventListener("mouseenter", function(e) {
+    e.stopPropagation();
     e.target.style.color = "purple";
 });
+
+welcomeP.addEventListener("mouseleave", function(e) {
+    e.stopPropagation();
+    e.target.style.fontSize = "4rem";
+});
+
+welcomeP.addEventListener("wheel", function(e) {
+    e.target.style.fontSize = "2rem";
+});
+
+
+
