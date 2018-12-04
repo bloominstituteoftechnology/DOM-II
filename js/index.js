@@ -43,3 +43,37 @@ let paragrpaph = document.querySelector("h2");
 paragrpaph.addEventListener("select",function(){
     alert("You just selected " + paragrpaph );
 })
+
+//************************** load */
+window.addEventListener("load", function(event) {
+    alert("Load event ......!");
+  });
+
+  /*************************keydown */
+
+  let input = document.querySelector("input");
+  input.addEventListener("keydown",function(){
+      alert("keydown event");
+  })
+
+  //*************************resize */
+  window.addEventListener("resize", myFunction);
+var x = 0;
+function myFunction() {
+    let txt = x += 1;
+    document.getElementById("demo").innerText = "The value of resizing the window " +  txt;
+}
+
+//***************************Focus */
+document.getElementById("focus").addEventListener("focus", myFunction);
+
+function myFunction() {
+    document.getElementById("focus").style.backgroundColor = "red";
+}
+
+//***************************submit */
+document.getElementById("myForm").addEventListener("submit", myother);
+
+function myother() {
+    alert("The form was submitted");
+}
