@@ -54,3 +54,41 @@ window.addEventListener('resize', (e) => {
         img.style.boxShadow = `1px 2px 2px ${getRandomColor()}`;
     });
 });
+
+//Double Click
+images.forEach(i => {
+    i.addEventListener('dblclick', (e) => {
+        if(e.target.style.transform !== 'scale(1.2)'){
+            e.target.style.transform = 'scale(1.2)';
+        } else {
+            e.target.style.transform = 'scale(1.0)';
+        }
+        
+    });
+});
+
+//Scroll
+let header = document.querySelector('header');
+window.addEventListener('scroll', (e) => {
+    header.style.backgroundColor = getRandomColor();
+});
+
+//Copy
+body.addEventListener('copy', (e) => {
+    navigator.clipboard.readText().then(t => {
+        alert(`"${t}" was copied to your clipboard.`);
+    });
+});
+
+//On Click
+let buttons = document.querySelectorAll('.btn');
+buttons.forEach(b => {
+    b.addEventListener('click', (e) => {
+        e.target.textContent = 'Signed Up!';
+    });
+});
+
+//On Right Click/Context Menu
+body.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+}); //Good for creating custom right click menus on websites
