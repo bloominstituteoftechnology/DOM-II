@@ -32,6 +32,27 @@ window.addEventListener('scroll', function(e) {
 
 // ===== MAIN CONTENT =====
 
+const destination = document.querySelectorAll('.destination');
+
+const dir0 = document.createElement('p');
+dir0.textContent = '';
+dir0.style.fontSize = '1.2em';
+
+const dir1 = document.createElement('p');
+dir1.textContent = 'Click Above Buttons to Register';
+dir1.style.textAlign = 'center';
+dir1.style.fontSize = '1.2em';
+
+const dir2 = document.createElement('p');
+dir2.textContent = 'Double-Click Above Buttons to Un-Register';
+dir2.style.textAlign = 'center';
+dir2.style.fontSize = '1.2em';
+
+destination[1].append(dir0);
+destination[1].append(dir1);
+destination[1].append(dir2);
+
+
 let button = document.querySelectorAll('.btn');
 
 button.forEach(function(index, i){
