@@ -4,10 +4,12 @@
 let navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(a => {
     a.addEventListener('mouseover', (e) => {
-        e.target.style.transform = 'scale(1.1)';
+        // e.target.style.transform = 'scale(1.1)';
+        TweenMax.to(e.target, .2, {transform: 'scale(1.1)'});
     });
     a.addEventListener('mouseleave', (e) => {
-        e.target.style.transform = 'scale(1.0)';
+        // e.target.style.transform = 'scale(1.0)';
+        TweenMax.to(e.target, .2, {transform: 'scale(1.0)'});
     });
 });
 
@@ -58,12 +60,15 @@ window.addEventListener('resize', (e) => {
 //Double Click
 images.forEach(i => {
     i.addEventListener('dblclick', (e) => {
-        if(e.target.style.transform !== 'scale(1.2)'){
-            e.target.style.transform = 'scale(1.2)';
+        if(e.target.dataset.big !== 'true'){
+            // e.target.style.transform = 'scale(1.2)';
+            e.target.dataset.big = 'true';
+            TweenMax.to(e.target, .2, {transform: 'scale(1.2)'});
         } else {
-            e.target.style.transform = 'scale(1.0)';
+            // e.target.style.transform = 'scale(1.0)';
+            e.target.dataset.big = 'false';
+            TweenMax.to(e.target, .2, {transform: 'scale(1.0)'});
         }
-        
     });
 });
 
@@ -107,4 +112,7 @@ navLinks.forEach(n => {
     n.addEventListener('click', (e) => {
         e.preventDefault();
     });
-})
+});
+
+//Fades in the page
+TweenMax.to("body", 2, {opacity: 1}); 
