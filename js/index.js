@@ -121,3 +121,6 @@ navItems.forEach(item => {
     e.preventDefault();
   });
 });
+
+// GreenSock
+TweenMax.to(".logo-heading", 4, { x: -50, ease: Bounce.easeOut });
