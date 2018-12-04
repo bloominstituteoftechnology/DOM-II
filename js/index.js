@@ -18,7 +18,7 @@ window.addEventListener("load", function(e) {
 
 window.addEventListener("scroll", function(e){
     console.log("The scroll works");
-    logoHeading.style.marginLeft = "20px";
+    logoHeading.style.marginLeft = "200px";
 })
 // Header Img: Appear when nav heading is moused over with a delay
 
@@ -67,6 +67,15 @@ allImgs.forEach((img) => {
         e.target.style.transform = "skewX(-15deg)";
     })
 });
+
+allImgs.forEach((img) => {
+    img.addEventListener("drag", function(e) {
+        e.target.style.opacity = "0";
+    })
+})
+
+
+// Ps: change colors on mousedown, return to normal on mouseup
 
 allPs.forEach((p) => {
     p.addEventListener("mousedown", function(e) {
