@@ -31,3 +31,12 @@ const funBusImg = document.querySelector(".intro img")
 window.addEventListener("resize", function(e) {
     funBusImg.style.borderRadius = "50%";
 })
+
+//bus animation
+const busIcon = document.querySelector(".bus-icon")
+window.addEventListener("click", function(e) {
+    TweenMax.to(busIcon, 5, {
+        marginLeft:"100%",
+        ease: Power4.easeOut
+    });
+})
