@@ -21,7 +21,7 @@ mainPage[1].addEventListener("wheel", function(event) {
 const mainParas = document.querySelectorAll(".text-content");
 mainParas[0].addEventListener("wheel", function(event){
     event.stopPropagation();
-    event.target.style.background = "gray";
+    event.target.style.background = "lightblue";
 });
 
 
@@ -99,16 +99,21 @@ footerForm.appendChild(inputForm);
 const inputData = document.createElement('input');
 inputForm.appendChild(inputData);
 inputData.style.marginLeft = "1rem";
-inputData.style.textContent = "Input Email Here";
 
 inputForm.addEventListener("focus", function(event) {
   event.target.style.background = "lightblue";   
 }, true);
 
-inputForm.addEventListener("click", function(event){
-    event.target.textContent = "Enter Email Here";
-});
-
 inputForm.addEventListener("blur", function(event) {
   event.target.style.background = "white";    
 }, true);
+
+inputData.addEventListener("mousedown", function(event) {
+    event.target.textContent = "Press enter to submit";
+})
+
+// const formButton = document.createElement('button');
+// inputForm.appendChild(formButton);
+// formButton.style.marginLeft = "1rem";
+// formButton.style.padding = "1.2rem 3rem .8rem 3rem";
+// formButton.style.innerHTML = "Click to Submit";
