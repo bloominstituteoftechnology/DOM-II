@@ -51,3 +51,16 @@ const all = document.querySelector('html');
 all.addEventListener('click', function(event) {
     event.target.style.color = 'purple';
   });
+
+
+// window.addEventListener("resize", myFunction);
+
+// function myFunction() {
+
+// }
+
+const footer = document.querySelector("footer");
+
+window.addEventListener('resize', function(event) {
+    footer.classList.toggle("goRed");
+});
