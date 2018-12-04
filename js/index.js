@@ -15,3 +15,22 @@ html.addEventListener("keydown", function (){
 html.addEventListener("keyup", function (){
   html.classList.remove("vibrate");
 });
+
+const aBus = document.querySelector("#a-bus");
+let busOffset = 200;
+let goLeft = false;
+html.addEventListener("wheel", function (){
+  aBus.style.marginLeft = `${busOffset}px`;
+  if (busOffset > 900){
+    aBus.classList.toggle("a-bus-flipped");
+    goLeft = true;
+  } else if (busOffset < -300) {
+    aBus.classList.toggle("a-bus-flipped");
+    goLeft = false;
+  }
+  if (goLeft) {
+    busOffset -= 70;
+  } else {
+    busOffset += 70;
+  }
+});

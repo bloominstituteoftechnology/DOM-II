@@ -317,6 +317,14 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container #a-bus {
+  position: absolute;
+  z-index: -1;
+  margin-left: 200px;
+}
+.main-navigation .nav-container .a-bus-flipped {
+  transform: scaleX(-1);
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
