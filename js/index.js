@@ -67,6 +67,40 @@ const homePage = document.querySelector('.home')
         homePage.style.color = '#ffcb05';
         homePage.style.backgroundColor = '#00274c';
     });
+
+
+// Prevent Nav Items from doing what they want to do
+// I was able to prove this works by changing the href in the html to ., which causes a page reload.  With this in place, the reload did not happen
     
-   
+    let navItems = document.querySelectorAll('.nav-link');
+    navItems = Array.from(navItems);
+    
+    navItems.forEach((element) => {
+        element.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+    });
+
+
+    //Assignment is to "Nest two similar events somewhere in the site and prevent the event propagation properly"
+    // Not sure what that means, but I am going to try to make the logo do something other than the nav bar when using mousedown
+// I'm assuming it would also work with click, but I need to use mousedown to get to 10
+// Seems to work. Fun Bus logo turns Scarlet when clicked, with or without stopPropagation. With that line commented out though, 
+// the entire heading turns Maize when logo is clicked. With stopPropagation, on background turns Michigan maize if a nav item
+// is clicked, but not if just logo is clicked
+
+    const logoEvent = document.querySelector('.logo-heading')
+
+
+logoEvent.addEventListener('mousedown', () => {
+    logoEvent.style.color = '#bb0000';
+    event.stopPropagation();
+});
+
+const mainNavigationEvent = document.querySelector('.main-navigation')
+
+mainNavigationEvent.addEventListener('mousedown', () => {
+    //mainNavigationEvent.style.color = '#ffcb05';
+    mainNavigationEvent.style.backgroundColor = '#ffcb05'
+});
 
