@@ -29,7 +29,20 @@ wheelData.addEventListener("wheel", function(event) {
     // console.log(`I'm wheeling!`);
 });
 
-//4. Drag / Drop 
+//4. Mouse click
+const signBtn = document.querySelectorAll('.btn');
+
+signBtn[0].addEventListener('click', function(event) {
+    console.log("Fun in the sun button was clicked!");
+});
+signBtn[1].addEventListener('click', function(event) {
+    console.log("Mountain Excursion button was clicked!");
+});
+
+signBtn[2].addEventListener('click', function(event) {
+    console.log("Island Getaway button was clicked!");
+});
+
 
 //5. Load
 window.addEventListener("load", function(event) {
@@ -45,3 +58,25 @@ focusEv.addEventListener("focus", function(event) {
     
 }, true);
 
+//7. Mouse double click 
+const funDblClick = document.querySelector('.home');
+
+funDblClick.addEventListener('dblclick', function(event) {
+    if ( event.target.style.text === "Fun" )
+    console.log("fun was double clicked")
+})
+
+//8. Scroll
+const homeScroll = document.querySelector(".home");
+
+window.addEventListener("scroll", function(e){
+    console.log("Logging scroll for no reason!!!");
+    
+})
+
+//9. mouseup over Let's Go!
+const mouseUpLetsGo = document.querySelector('.text-content h2');
+
+mouseUpLetsGo.addEventListener('mouseup', function(event) {
+    console.log("Mouseup over Let's Go!")
+})
