@@ -6,12 +6,9 @@
 // resize
 // dblclick
 // click
-
-// scroll
-// select
-// wheel
 // focus
-// drag / drop
+// blur
+// select
 
 // ==================== loading the page alert using 'load'
 window.addEventListener("load", function() {
@@ -37,8 +34,19 @@ mainNav.style.backgroundColor = "#FFEBCD";
 //changed a tag color using 'dblclick'
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(item => {
+  //changed a tag color using 'dblclick'
   item.addEventListener("dblclick", function() {
+    item.style.fontWeight = "bold";
     item.style.color = "red";
+  });
+  // updated anchor tags using 'focus' for keyboard navigation
+  item.addEventListener("focus", function() {
+    item.style.color = "blue";
+  });
+
+  // using 'blur' previously focused element resets to normal style.
+  item.addEventListener("blur", function() {
+    item.style.color = "black";
   });
 });
 
