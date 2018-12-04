@@ -11,12 +11,13 @@ pageHeader.addEventListener('mouseenter', function(e) {
 const links = document.querySelectorAll('nav-links');
 for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('mouseover', function(e) {
-        links[i].style.color = 'white';
+        //links[i].style.color = 'white';
+        links[i].classList.toggle('FFFFFF');
     })
 }
-pageHeader.removeEventListener('mouseenter', function(e) {
-    pageHeader.style.backgroundColor = '#17A2B8';
-})
+// pageHeader.removeEventListener('mouseenter', function(e) {
+//     pageHeader.style.backgroundColor = '#17A2B8';
+// })
 
 
 //==========  page event listeners
@@ -41,3 +42,8 @@ for (let i=0; i<buttons.length; i++) {
         buttons[i].style.backgroundColor = '#FCB74A';
     })
 }
+
+const footer = document.querySelector('.footer p');
+footer.addEventListener('mousemove', function(e) {
+    footer.style.color = '#17A2B8';
+})
