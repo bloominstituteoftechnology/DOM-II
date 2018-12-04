@@ -69,18 +69,9 @@ focus.addEventListener('select', function(e) {
 
 // ====================== 10. DBLCLICK the first sign-up button
 const buttons = document.querySelectorAll('.btn');
-buttons.forEach(() => addEventListener('dblclick', function(e) {
-    e.target.style.background = getColor();
+buttons.forEach((item) => item.addEventListener('dblclick', function(e) {
+    item.style.background = getColor();
 }));
-
-
-
-
-
-
-
-
-
 
 // ================ Stop the propagation of an event
 const stopProp = document.querySelector('.stopProp');
@@ -92,3 +83,9 @@ stopProp.addEventListener('click', function(e) {
 window.addEventListener('click', function(e) {
     stopProp.style.background = 'white';
 })
+
+// ================= Stop the 'a' tags from refreshing the page
+const aTags = document.querySelectorAll('a');
+aTags.forEach((item) => item.addEventListener('click', function(e) {
+    e.preventDefault();
+}));
