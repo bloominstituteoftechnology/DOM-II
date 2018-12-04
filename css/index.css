@@ -231,6 +231,7 @@ img {
   border-bottom: 2px dashed #C0C0C0;
 }
 .home .intro img {
+  display: none;
   max-width: 100%;
   height: auto;
 }
