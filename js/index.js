@@ -7,7 +7,7 @@ const intro = document.querySelector(".intro");
 const headline = document.querySelector(".intro h2");
 const headerImage = document.querySelector(".intro img");
 const footer = document.querySelector(".footer");
-
+const body = document.querySelector("body");
 const headerText = document.querySelector(".intro textarea");
 
 // ============= Functions
@@ -19,6 +19,7 @@ const headerText = document.querySelector(".intro textarea");
       link.style.border = "1px dotted #C0C0C0";
     });
     link.addEventListener("focus", function(event) {
+      event.stopPropagation();
       link.style.background = "red";
     });
   });
@@ -34,6 +35,10 @@ headerLogo.addEventListener("mouseover", _ => {
   headerLogo.style.fontSize = "7rem";
   headerLogo.style.fontWeight = "500";
   headerLogo.style.opacity = 0.5;
+});
+
+window.addEventListener("load", function() {
+  headerLogo.style.background = "green";
 });
 
 html.addEventListener("wheel", _ => {
@@ -64,5 +69,10 @@ headerText.addEventListener("select", function() {
 });
 
 window.addEventListener("resize", function() {
-  body.style.opacity = 0;
+  body.style.border = "20px solid red";
+});
+
+// ========= Stretch Goal
+window.addEventListener("load", _ => {
+  TweenMax.to(headerImage, 5, { rotation: "360deg" });
 });
