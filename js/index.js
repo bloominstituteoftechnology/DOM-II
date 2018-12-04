@@ -1,7 +1,55 @@
-// ===== NAVIGATION =====
-
-let navAnchors = document.querySelectorAll('.nav-link');
+// ===== NAVIGATION HEADER =====
 let nav = document.querySelector('.main-navigation');
+let navAnchors = document.querySelectorAll('.nav-link');
+let logo = document.querySelector('.logo-heading');
+
+
+window.addEventListener('scroll', function(e) {
+    nav.style.backgroundColor = '#fcc100';
+
+    setTimeout(function(e) {
+        nav.style.backgroundColor = '';
+    }, 1000);
+});
+
+nav.addEventListener('mousedown', function(e){
+    nav.style.backgroundColor = '#fcc100';
+    logo.style.fontSize = '5em';
+    navAnchors.forEach(navAnchor => navAnchor.style.fontSize = '2em');;
+});
+
+nav.addEventListener('mouseup', function(e){
+    nav.style.backgroundColor = '';
+    logo.style.fontSize = '';
+    navAnchors.forEach(navAnchor => navAnchor.style.fontSize = '');;
+
+});
+
+// === Logo ===
+
+logo.addEventListener('mousedown', function(e){
+    e.stopPropagation();
+    e.target.style.border = '1px solid #fcc100';
+    e.target.style.borderRadius = '50%';
+    e.target.style.backgroundColor = '#fcc100';
+});
+
+nav.addEventListener('mouseup', function(e){
+    e.target.style.border = '';
+    e.target.style.backgroundColor = '';
+});
+
+// function func1(e) {
+//     alert("DIV 1");
+//     if (document.getElementById("check").checked) {
+//       e.stopPropagation();
+//     }
+//   }
+//   function func2() {
+//     alert("DIV 2");
+//   }
+
+// === Navigation & Anchors ===
 
 navAnchors.forEach(function(index, i){
     navAnchors[i].addEventListener('mouseenter', function(e) {
@@ -19,14 +67,6 @@ navAnchors.forEach(function(index, i){
     navAnchors[i].addEventListener('click', function(e){
         e.preventDefault();
     });
-});
-
-window.addEventListener('scroll', function(e) {
-    nav.style.backgroundColor = '#fcc100';
-
-    setTimeout(function(e) {
-        nav.style.backgroundColor = '';
-    }, 1000);
 });
 
 
