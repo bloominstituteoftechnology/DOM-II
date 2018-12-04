@@ -9,11 +9,18 @@ window.addEventListener("load", function(e) {
     console.log("All resources finished loading!");
   });
 
-logoHeading.addEventListener("mouseover", function() {
-    introImg.style.display = "initial";
-})
 
-// Buttons: Scale up on hover
+// Header Img: Appear when nav heading is moused over with a delay
+
+logoHeading.addEventListener("mouseover", function() {
+    setTimeout(() => {
+        introImg.style.display = "initial";
+    }, 500);
+    
+});
+
+
+// Buttons: Scale up on mouseenter, return to normal on mouseout
 
 buttons.forEach((btn) => {
     btn.addEventListener("mouseenter", function(e) {
@@ -26,6 +33,9 @@ buttons.forEach((btn) => {
     })
 });
 
+
+// Buttons: Create and show new p tag below when clicked
+
 buttons.forEach((btn) => {
     btn.addEventListener("click", function(e) {
         contentPick.style.flexWrap = "wrap";
@@ -37,10 +47,13 @@ buttons.forEach((btn) => {
         newH1.style.textAlign = "center";
         contentPick.appendChild(newH1);
     })
-})
+});
+
+
+// Images: skew -15deg when double clicked
 
 allImgs.forEach((img) => {
     img.addEventListener("dblclick", function(e) {
         e.target.style.transform = "skewX(-15deg)";
     })
-})
+});
