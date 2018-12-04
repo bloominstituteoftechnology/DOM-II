@@ -1,5 +1,7 @@
 #loading-container {
+    max-width: 800px;
     width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,8 +13,17 @@
     }
 
     img {
+        margin-bottom: 50px;
+
         @media @mobile {
             max-width: 75%;
+            margin-bottom: 10px;
+        }
+    }
+
+    h2 {
+        @media @mobile {
+            font-size: 1.6rem;
         }
     }
 
@@ -21,11 +32,21 @@
         justify-content: center;
 
         * {
-            width: 150px;
+            width: @loading-font-size-desktop * 1.75;
             height: auto;
-            font-size: 10rem;
+            font-size: @loading-font-size-desktop;
             text-align: center;
             margin: 20px 0;
+
+            @media @mobile {
+                width: @loading-font-size-mobile * 1.75;
+                font-size: @loading-font-size-mobile;
+            }
         }
+    }
+
+    @media @mobile {
+        width: 90%;
+        margin: 0 5%;
     }
 }

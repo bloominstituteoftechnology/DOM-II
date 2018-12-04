@@ -175,7 +175,9 @@ img {
   }
 }
 #loading-container {
+  max-width: 800px;
   width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,9 +187,18 @@ img {
   font-family: "Orbitron";
   color: snow;
 }
+#loading-container img {
+  margin-bottom: 50px;
+}
 @media (max-width: 500px) {
   #loading-container img {
     max-width: 75%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 500px) {
+  #loading-container h2 {
+    font-size: 1.6rem;
   }
 }
 #loading-container .timer-display {
@@ -195,11 +206,23 @@ img {
   justify-content: center;
 }
 #loading-container .timer-display * {
-  width: 150px;
+  width: 17.5rem;
   height: auto;
   font-size: 10rem;
   text-align: center;
   margin: 20px 0;
+}
+@media (max-width: 500px) {
+  #loading-container .timer-display * {
+    width: 5.6875rem;
+    font-size: 3.25rem;
+  }
+}
+@media (max-width: 500px) {
+  #loading-container {
+    width: 90%;
+    margin: 0 5%;
+  }
 }
 .main-navigation {
   width: 100%;

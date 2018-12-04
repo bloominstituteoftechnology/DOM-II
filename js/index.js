@@ -37,16 +37,16 @@ let millisecondsCount = 0;
 
 // When the page finally loads
 window.addEventListener("load", e => {
-  let loadScreen = document.querySelector("#loading-container");
-  document.body.removeChild(loadScreen);
-  document.body.removeAttribute("style");
-  mainContainer.removeAttribute("style");
+  // let loadScreen = document.querySelector("#loading-container");
+  // document.body.removeChild(loadScreen);
+  // document.body.removeAttribute("style");
+  // mainContainer.removeAttribute("style");
 
-  const minutesStr = String(minutesCount).padStart(2, '0');
-  const secondsStr = String(secondsCount).padStart(2, '0');
-  const millisecondsStr = (millisecondsCount === 1 ? "<=" : ">=") + String(millisecondsCount * 10);
+  // const minutesStr = String(minutesCount).padStart(2, '0');
+  // const secondsStr = String(secondsCount).padStart(2, '0');
+  // const millisecondsStr = (millisecondsCount === 1 ? "<=" : ">=") + String(millisecondsCount * 10);
 
-  alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
+  // alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
 });
 
 // AFTER PAGE HAS BEEN LOADED
