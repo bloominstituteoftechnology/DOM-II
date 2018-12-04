@@ -27,7 +27,7 @@ TweenMax.from(logo, 1.5, {
 window.addEventListener('load', (event) => {
     alert('Website has been loaded');
 });
-window.addEventListener('rezise', (event) => {
+window.addEventListener('resize', (event) => {
     console.log('The window has been resized')
 });
 //Greensock
@@ -40,7 +40,7 @@ TweenMax.staggerFrom(".btn", 1, {
 
 buttons.forEach((element) => {
     element.addEventListener('mouseenter',(event) => {
-        TweenMax.to(element, 1, {
+        TweenMax.to(element,0.5, {
             scale: 1.1,
             backgroundColor: 'rgb(45, 97, 105)',
             color: 'white'
@@ -48,7 +48,7 @@ buttons.forEach((element) => {
     });
     element.addEventListener('mouseout',(event) => {
         console.log('mouse exited!');
-        TweenMax.to(element, 1, {
+        TweenMax.to(element, 0.5, {
             scale:1,
             backgroundColor: '#17A2B8'
         });
