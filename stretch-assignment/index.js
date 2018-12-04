@@ -35,31 +35,3 @@ blockContainer.addEventListener('click', e => {
 
   e.target.style.order = 0;
 });
-
-// blockContainer.addEventListener('mousedown', e => {
-//   window.setInterval(function(){
-//     marginstuff++;
-//     e.target.style.marginLeft = marginstuff + 'px';
-//   },100);
-  
-// });
-
-
-// function rocketFly(rocket) {
-//   let rocketH = rocket.style.marginLeft;
-//   let rocketnew = rocketH.split('px');
-  
-//   // rocketH.pop();
-//   // rocketH.pop();
-//   // rocketH.join('');
-//   console.log('/////////////////////////////////' + rocketH);
-
-//   window.setInterval(function () {
-//     console.log(rocket.style.marginLeft);
-//     if (fly === true) {
-//       rocket.style.marginLeft = `${rocketH++}px`;
-//     } else if(rocketH > 0) {
-//       rocket.style.marginLeft = `${rocketH--}px`;
-//     }
-//   }, 10)
-// }
