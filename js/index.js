@@ -14,6 +14,28 @@ navLinks.forEach((navLink)=>{
     }
 )});
 
-// #2 Wheel Opacity turns up
+// #2 Wheel - bus Tilts
 const bus = document.querySelector('.fun-bus');
 bus.addEventListener('wheel', ()=>{bus.style.transform = "rotate(7deg)"});
+
+
+
+// // #Doublick - colorful words.
+const paras = document.querySelectorAll('section p');
+paras.forEach((p)=>{
+    p.addEventListener('dblclick', ()=>{
+        
+        p.style.color=`${getRandomColor()}`;
+    })
+});
+
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color
+  }
+  
