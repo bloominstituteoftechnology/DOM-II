@@ -17,9 +17,6 @@ navLinks.forEach((navLink)=>{
 // #2 Wheel - bus Tilts
 const bus = document.querySelector('.fun-bus');
 bus.addEventListener('wheel', ()=>{bus.style.transform = "rotate(7deg)"});
-
-
-
 // // #3 Doublick - colorful words.
 window.addEventListener('keydown', ()=>{
     const paras = document.querySelectorAll('section p');
@@ -35,11 +32,18 @@ function getRandomColor() {
     }
     return color
   }
-  
 // #4 Enlage Headers on scroll
 document.addEventListener('scroll', ()=>{
     const htags = document.querySelectorAll('.container h2')
     htags.forEach((h)=>{
         h.style.fontSize = "5rem";
+    })
+});
+// #5 Form Popup on Sign Me Up Button
+const btns = document.querySelectorAll('.btn');
+console.log(btns);
+btns.forEach((btn)=>{
+    btn.addEventListener('click',()=>{
+        prompt("Enter Your Email");
     })
 });
