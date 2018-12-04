@@ -131,7 +131,6 @@ table {
 }
 html {
   font-size: 62.5%;
-  background: coral;
 }
 html,
 body {
@@ -160,6 +159,11 @@ p {
   font-size: 1.6rem;
   padding-bottom: 10px;
 }
+.bigP {
+  line-height: 1.9;
+  font-size: 3rem;
+  padding-bottom: 8px;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -174,6 +178,21 @@ img {
     width: 90%;
     margin: 0 5%;
   }
+}
+.load-animation {
+  position: fixed;
+  top: 3px;
+  left: 3px;
+  z-index: 100;
+  display: flex;
+  align-items: baseline;
+  border: 1px solid grey;
+  background: white;
+  padding: 5px;
+}
+.load-animation img {
+  width: 25px;
+  height: 25px;
 }
 .main-navigation {
   width: 100%;
@@ -204,12 +223,16 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+  align-items: baseline;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {
     width: 100%;
     justify-content: space-around;
   }
+}
+.main-navigation .nav-container .nav .hoverGlow {
+  font-size: 1.7rem;
 }
 .main-navigation .nav-container .nav a {
   font-size: 1.6rem;
