@@ -28,12 +28,21 @@ console.log('Home was clicked');
     e.target.style.color = 'blue';
 })
 
-const docHeaders = document.querySelectorAll('h2');
+const docHeaders = document.querySelectorAll('h1');
 docHeaders.forEach(function(f){
     
     window.addEventListener('scroll',function(e){
         console.log('scroll');
-        f.style.color = 'orange';
+        f.style.color = 'red';
+    });
+})
+
+const docText = document.querySelectorAll('p');
+docText.forEach(function(f){
+    
+    window.addEventListener('keydown',function(e){
+        console.log('button pressed');
+        f.style.color = 'blue';
     });
 })
 // window.addEventListener('scroll',function(e){
