@@ -9,6 +9,11 @@ html {
 html, body {
   font-family: 'Roboto', sans-serif;
 }
+body{
+  opacity:1;
+
+  transition:1.1s opacity;
+}
 
 h1, h2, h3, h4, h5 {
   font-family: 'Indie Flower', cursive;
@@ -37,8 +42,33 @@ p {
 img {
   max-width: 100%;
   height: auto;
+  transition: transform .25s;
 }
 
+.zoom{
+  transform: scale(1.05);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+    animation-name:            rotate;
+    animation-duration:        0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+body.fade{
+  opacity: 0;
+  transition:none;
+}
 .container {
   max-width: 800px;
   width: 100%;
