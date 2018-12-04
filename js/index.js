@@ -72,11 +72,42 @@ condest.addEventListener("load", function( event ) {
     }, 1500);
 }, false);
 
-let dest = document.querySelector(".destination")
+let dest = document.querySelectorAll(".destination h4")
 
-dest.addEventListener("select", function( event ) {   
-    event.target.classList.add("wobble-hor-bottom")
-    setTimeout(function() {
-    event.target.classList.remove("wobble-hor-bottom")
-    }, 1500);
-}, false);
+for (let i = 0; i < dest.length; i++){
+    dest[i].addEventListener("click", function( event ) {   
+        event.target.classList.add("wobble-hor-bottom")
+        setTimeout(function() {
+        event.target.classList.remove("wobble-hor-bottom")
+        }, 1500);
+    }, false);
+}
+
+let hey = document.querySelectorAll(".destination p")
+for (let i = 0; i < hey.length; i++){
+    hey[i].addEventListener("mouseenter", function( event ) {   
+        event.target.classList.add("jello-horizontal")
+        setTimeout(function() {
+        event.target.classList.remove("jello-horizontal")
+        }, 1500);
+    }, false);
+}
+
+
+let buttons = document.querySelectorAll(".destination .btn")
+
+
+
+for (let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("mouseenter", function( event ) {   
+        let banim = TweenMax.to(buttons[i], 1, {
+            rotation: 180,
+            opacity:1,
+            paused: true,
+            yoyo: true,
+            repeat: 1,
+        })
+        banim.play()
+        banim.restart()
+    }, false);
+}
