@@ -1,6 +1,5 @@
 // Your code goes here
 
-
 //Mouse over event listener for Navigation Anchor tags
 
 const nav = document.querySelectorAll(".nav-link");
@@ -10,7 +9,7 @@ nav.forEach((currentvalue) => {
         currentvalue.style.color = "red";
         setTimeout(function() {
             e.target.style.color = "";
-          }, 500);
+          }, 300);
     });
 });
 
@@ -93,17 +92,19 @@ window.addEventListener("mousemove", (e) => {
 //Mouseover Rotate bus imgevent listener
 
 bus.addEventListener("mouseover", (e) => {
-    e.target.style.transform = "rotate(30deg)";
-    setTimeout(function() {
-        e.target.style.transform = "";
-      }, 1000);
+    // e.target.style.transform = "rotate(30deg)";
+    // setTimeout(function() {
+    //     e.target.style.transform = "";
+    //   }, 1000);
+    TweenMax.fromTo(e.target, 0.05, {x:-15, y: -10}, {x:15, y:10, clearProps:"x",clearProps:"y", repeat:20});
 });
 
 //click move event listener
 //moves any element in the home container move to the right by 100px
 
 home.addEventListener("click", (e) => {
-    e.target.style.transform = "translateX(100px)";
+    //e.target.style.transform = "translateX(100px)";
+     TweenMax.to(e.target, 1, {x:100}); //Using greensock API to transform the click event target
 });
 
 //Click event listener for the Fun Bus logo heading
@@ -111,5 +112,6 @@ home.addEventListener("click", (e) => {
 const logoHeading = document.querySelector(".logo-heading");
 
 logoHeading.addEventListener("click", (e) => {
-    e.target.style.cssText = "font-size: 1rem";
+    // e.target.style.cssText = "font-size: 1rem";
+    TweenMax.to(e.target, 3, {rotationY:360, repeat:-1, repeatDelay: -.5});
 });
