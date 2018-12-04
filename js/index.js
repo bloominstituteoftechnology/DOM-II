@@ -1,3 +1,9 @@
 // Your code goes here
-const html = document.querySelector('html');
-html.style.backgroundColor = 'red';
+const pageHeader = document.querySelector('.main-navigation');
+pageHeader.addEventListener('mouseenter', function(e) {
+    pageHeader.style.backgroundColor = '#17A2B8';
+})
+pageHeader.addEventListener('mouseleave', function(e){
+    e.stopPropagation();
+    pageHeader.style.backgroundColor = 'none';
+})
