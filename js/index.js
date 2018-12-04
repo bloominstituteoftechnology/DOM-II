@@ -114,3 +114,10 @@ navItems.forEach(item => {
     }, 1000);
   });
 });
+
+// PreventDefault
+navItems.forEach(item => {
+  item.addEventListener("click", e => {
+    e.preventDefault();
+  });
+});
