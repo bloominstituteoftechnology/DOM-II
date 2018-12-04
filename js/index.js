@@ -20,7 +20,7 @@ for (let i = 0; i < links.length; i++) {
 // })
 
 
-//==========  page event listeners
+//==========  entire page/window event listeners
 const home = document.querySelector('.home');
 home.addEventListener('wheel', function(e) {
     console.log("Wheeeee! We're scrolling, now.");
@@ -34,7 +34,12 @@ busPic.addEventListener('click', function(e) {
     busPic.src = 'img/photo-1464851707681-f9d5fdaccea8.jpeg'
 })
 
-
+const contentSection = document.querySelectorAll('.content-section');
+for (let i=0; i<contentSection.length; i++) {
+    contentSection[i].addEventListener('drag', function(e) {
+        contentSection[i].style.display = 'none';
+    })
+}
 
 const buttons = document.querySelectorAll('.btn');
 for (let i=0; i<buttons.length; i++) {
