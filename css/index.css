@@ -215,6 +215,10 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.hover-effect {
+  text-decoration: underline;
+  color: grey;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
