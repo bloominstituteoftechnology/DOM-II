@@ -38,4 +38,7 @@ window.addEventListener('scroll', function (e) {
     e.stopPropagation();
 });
 
-// Img () //
+// Window (Load) //
+window.addEventListener('load', function (e) {
+    alert('Hello! Welcome to my website.');
+});
