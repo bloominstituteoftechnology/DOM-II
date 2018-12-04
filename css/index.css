@@ -215,6 +215,12 @@ img {
   color: #212529;
   text-decoration: none;
 }
+/* New Styles Start */
+.nav-link {
+  background-color: red;
+  border: 1px solid black;
+}
+/* New Styles End */
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
