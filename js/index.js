@@ -22,7 +22,8 @@ function getColor() {
 const topImg = document.querySelector('.intro img');
 
 topImg.addEventListener('mouseover', function(e) {
-    TweenMax.to('.intro img', 1, {rotationY:180});
+    TweenMax.to('.intro img', 3, {rotationY:360});
+    TweenMax.set(topImg, {clearProps:'all'});
 });
 
 // ======================  3. KEYDOWN anywhere in the window to change the textContent of 'Welcome to Fun Bus'
@@ -32,17 +33,17 @@ window.addEventListener('keydown', function(e) {
     keyChange.textContent = e.key;
 });
 
-// ======================  4. drag   ((figure out drop))
+// ======================  4. drag  
 const mapImg = document.querySelector('.adventure');
 const mapParagraph = document.querySelector('.intro p')
 mapImg.addEventListener('drag', function(e) {
     mapParagraph.style.color = 'blue';
 });
 
-// ====================== 5. load
+// ====================== 5. LOAD the page and set the background to a random color
 const body = document.querySelector('body');
 window.addEventListener('load', function(e) {
-    body.style.background = 'lightblue';
+    body.style.background = getColor();
 });
 
 // ====================== 6. FOCUS on the input to get the background to change to a random color
