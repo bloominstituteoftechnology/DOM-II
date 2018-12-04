@@ -3,6 +3,7 @@ const aButtons = document.querySelectorAll('a');
  aButtons.forEach(function(e){
 e.addEventListener('click', function(e){
     e.preventDefault();
+    e.stopPropagation();
 })
  });
 
@@ -28,7 +29,7 @@ console.log('Home was clicked');
     e.target.style.color = 'blue';
 })
 
-const docHeaders = document.querySelectorAll('h1');
+const docHeaders = document.querySelectorAll('h2');
 docHeaders.forEach(function(f){
     
     window.addEventListener('scroll',function(e){
@@ -45,8 +46,28 @@ docText.forEach(function(f){
         f.style.color = 'blue';
     });
 })
+
+
+const docClick = document.querySelectorAll('.container');
+docClick.forEach(function(e){
+    e.addEventListener('click', function(e){
+        console.log('click fired');
+        e.target.style.color = "green";
+    });
+});
+
+// const darkMode = document.querySelector('.container');
+
+// document.addEventListener('fullscreenchange',function(e){
+//     console.log(e);
+//     console.log('entered full screen');
+//     darkMode.classList.toggle('blackout');
+// })
+
+
 // window.addEventListener('scroll',function(e){
 //     console.log('scroll');
 //     docHeaders.style.color = 'orange';
 // });
+
 

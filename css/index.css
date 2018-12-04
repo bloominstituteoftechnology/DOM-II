@@ -350,3 +350,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+.blackout {
+background-color:black;
+color: white;
+}
