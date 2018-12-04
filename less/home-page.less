@@ -9,6 +9,10 @@
       height: auto;
     }
 
+    .grayscale {
+	    filter: grayscale(95%);
+    }
+
     h2 {
       margin-top: 20px;
     }
@@ -109,6 +113,17 @@
       .btn {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
       }
+
+      .getBigger {
+        transform: scale(1.25);
+      }
+
+      .shiftText {
+        transform: skewX(25deg);
+      }
+
+
+
     }
   }
 }// home

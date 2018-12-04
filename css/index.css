@@ -234,6 +234,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.home .intro .grayscale {
+  filter: grayscale(95%);
+}
 .home .intro h2 {
   margin-top: 20px;
 }
@@ -349,4 +352,10 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .content-pick .destination .getBigger {
+  transform: scale(1.25);
+}
+.home .content-pick .destination .shiftText {
+  transform: skewX(25deg);
 }
