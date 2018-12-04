@@ -67,7 +67,15 @@ home.addEventListener('contextmenu', function(e){
     e.target.style.color = 'red';
 })
 
-// ********* 10
-imgs.forEach(x => x.addEventListener('drag', function(){
+// ********* 10 - stopImmediatePropagation
+imgs.forEach(x => x.addEventListener('dblclick', function(e){
     x.style.display = 'none';
+    e.stopImmediatePropagation();
 }))
+
+// ********* preventDefault
+navItems.forEach(a => {
+    a.addEventListener('click', function(e){
+        e.preventDefault();
+    })
+});
