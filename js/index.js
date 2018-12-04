@@ -43,3 +43,11 @@ const nav = document.querySelector(".main-navigation");
 nav.addEventListener('dblclick', function(event) {
     nav.classList.toggle("goBluer");
 });
+
+
+
+const all = document.querySelector('html');
+
+all.addEventListener('click', function(event) {
+    event.target.style.color = 'purple';
+  });
