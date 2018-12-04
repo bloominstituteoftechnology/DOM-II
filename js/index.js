@@ -12,11 +12,17 @@ document.body.addEventListener("contextmenu", function(e){
   alert("Whatcha doin' there...?");
 });
 
+//for purposes of using stopPropagation(), in next part
+document.querySelectorAll('.container ').forEach(function(heading){heading.addEventListener("copy", function(e){
+  alert("Don't copy my headings!");
+})});
 
 //When copying text page, alerts user with request for credit
 
 document.querySelectorAll('p').forEach(function(text){text.addEventListener("copy", function(e){
   alert("Be sure to give us credit for that!");
+  e.stopPropagation();
+
 })});
 
 //When you press mouse button down on image, it scales up to 1.05 times its normal size...
