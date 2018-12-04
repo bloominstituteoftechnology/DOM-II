@@ -5,11 +5,13 @@ body {
 
 .blocks {
   margin-top: 5%;
+  margin-left: 0px;
   display: flex;
   flex-direction: column;
 }
 
 .block {
+  position: relative;
   width: 100px;
   height: 100px;
   margin: 10px;
