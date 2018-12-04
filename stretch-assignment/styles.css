@@ -17,20 +17,25 @@ body {
 
 .block--red {
   background-color: red;
+  order: 0;
 }
 
 .block--blue {
   background-color: blue;
+  order: 0;
 }
 
 .block--green {
   background-color: green;
+  order: 0;
 }
 
 .block--pink {
   background-color: pink;
+  order: 0;
 }
 
 .block--gray {
   background-color: gray;
+  order: 0;
 }
