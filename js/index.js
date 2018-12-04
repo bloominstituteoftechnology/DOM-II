@@ -8,7 +8,7 @@ const headline = document.querySelector(".intro h2");
 const headerImage = document.querySelector(".intro img");
 const footer = document.querySelector(".footer");
 
-const body = document.querySelector("body");
+const headerText = document.querySelector(".intro p").textContent;
 
 // ============= Functions
 (function() {
@@ -17,6 +17,9 @@ const body = document.querySelector("body");
       event.preventDefault();
       link.style.border = "1px dotted #C0C0C0";
       alert("It's the Fun Bus, dude!");
+    });
+    link.addEventListener("focus", event => {
+      link.style.background = "red";
     });
   });
 })();
@@ -50,3 +53,7 @@ html.addEventListener("keydown", _ => {
 headerImage.addEventListener("drag", _ => {
   headerImage.style.border = "5px solid black";
 });
+
+// headerText.addEventListener("select", function() {
+//   headerText.style.lineHeight = 3;
+// });
