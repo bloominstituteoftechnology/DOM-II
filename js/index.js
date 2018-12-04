@@ -32,11 +32,6 @@ title.addEventListener('wheel', function(event) {
   });
 
 
-// document.getElementsByTagName("body").addEventListener("scroll", navFunction);
-
-// const navFunction = function(event) {
-//     document.querySelector(".main-navigation").style.backgroundColor = "blue";
-// }
 
 const nav = document.querySelector(".main-navigation");
 
@@ -53,14 +48,20 @@ all.addEventListener('click', function(event) {
   });
 
 
-// window.addEventListener("resize", myFunction);
 
-// function myFunction() {
-
-// }
 
 const footer = document.querySelector("footer");
 
 window.addEventListener('resize', function(event) {
     footer.classList.toggle("goRed");
+});
+
+
+
+
+
+const welcome = document.querySelector(".intro h2");
+
+welcome.addEventListener("mouseover", function(event) {
+    welcome.classList.toggle("goGreen");
 });

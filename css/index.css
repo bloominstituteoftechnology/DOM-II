@@ -362,3 +362,6 @@ img {
 .displayNone {
   display: none;
 }
+.goGreen {
+  background-color: green;
+}
