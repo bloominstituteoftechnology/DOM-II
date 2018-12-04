@@ -12,8 +12,8 @@ let minutesCount = 0;
 let secondsCount = 0;
 let millisecondsCount = 0;
 
-// Code for oading time counter
-(loadingTimeCounter => {
+// Code for loading time counter IIFE
+(() => {
   const timerDisplay = document.querySelector(".timer-display");
 
   const minutesDisplay = document.querySelector("#min");
@@ -36,7 +36,7 @@ let millisecondsCount = 0;
 })();
 
 // When the page finally loads
-window.addEventListener("load", function() {
+window.addEventListener("load", e => {
   let loadScreen = document.querySelector("#loading-container");
   document.body.removeChild(loadScreen);
   document.body.removeAttribute("style");
@@ -47,4 +47,17 @@ window.addEventListener("load", function() {
   const millisecondsStr = (millisecondsCount === 1 ? "<=" : "") + String(millisecondsCount * 10);
 
   alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
+});
+
+// After page has been loaded
+// --------------------------
+
+const aTagElements = document.querySelectorAll("a");
+
+// Event to disable default <a> element behavior and display alert
+aTagElements.forEach(element => {
+  element.addEventListener("click", e => {
+    e.preventDefault();
+    alert("Sorry user, you are confined to this page (for now).");
+  });
 });
