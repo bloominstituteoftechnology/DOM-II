@@ -5,21 +5,21 @@ const logo = document.querySelector('.logo-heading');
 const navigation = document.querySelectorAll('nav .nav-link');
 const mainImage = document.querySelector('.intro img');
 const container = document.querySelector('.container');
+const introH2 = document.querySelector('.intro h2');
 const buttons = document.querySelectorAll('.btn');
 const images = document.querySelectorAll('.img-content img')
+const destinationImage = document.querySelector('.content-destination img')
+const text = document.querySelectorAll('p');
 
-
-
-// [x] mouseover
-// [ ] keydown
+// [x] mouseenter
+// [x] mouseleave
+// [x] keydown
 // [x] wheel
 // [x] drag / drop
-// [ ] load
-// [ ] focus
-// [ ] resize
-// [ ] scroll
-// [ ] select
-// [ ] dblclick
+
+// [x] resize
+// [x] dblclick
+// [x] click
 
 
 // ================================= Event Listeners
@@ -34,6 +34,18 @@ logo.addEventListener('wheel', (e) => {
   logo.textContent = 'Fun Bus';
 });
 
+
+// link animations
+for (let i = 0; i < navigation.length; i++) {
+  navigation[i].addEventListener('mouseenter', () => {
+    navigation[i].style.borderBottom = '1px solid black';
+  });
+  navigation[i].addEventListener('mouseleave', () => {
+    navigation[i].style.border = 'none';
+  });
+};
+
+
 // main image
 mainImage.addEventListener('mouseenter', (e) => {
   TweenMax.to(mainImage, 1, {
@@ -47,15 +59,6 @@ mainImage.addEventListener('mouseleave', (e) => {
   });
 });
 
-// container resize 
-container.addEventListener('resize', (e) => {
-  container.style.backgroundColor = "red";
-});
-console.log(container);
-
-window.addEventListener("resize", () => {
-  container.style.display = "none";
-});
 
 // content section images, drag them to remove from page
 for (let i = 0; i < images.length; i++) {
@@ -64,19 +67,34 @@ for (let i = 0; i < images.length; i++) {
   });
 };
 
-
-
-// ctaButton.addEventListener('click', () => {
-//   cta.classList.toggle('toggleMeRed');
-// });
+destinationImage.addEventListener('click', (e) => {
+  destinationImage.style.border = '1px solid red';
+});
 
 
 
 // buttons
+buttons[0].textContent = "double click";
+buttons[1].textContent = "the buttons";
+buttons[2].textContent = "for animation";
+
 for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', (e) => {
+  buttons[i].addEventListener('dblclick', (e) => {
     TweenLite.to(buttons[i], 1, {
       rotation: 360
     });
   });
 };
+
+
+// keydown event listener
+// document.addEventListener('keydown', (e) => {
+//   const keyName = e.key;
+//   alert('keydown event\n\n' + 'key: ' + keyName);
+// });
+
+
+// container resize
+window.addEventListener("resize", (e) => {
+  alert("Don't resize this window!");
+});
