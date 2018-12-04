@@ -179,7 +179,7 @@ form {
   flex-direction: column;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .dim {
   opacity: 0.2;
@@ -204,10 +204,17 @@ form {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .logo-heading {
+  align-self: center;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
   }
+}
+.main-navigation .nav-container .logo-heading .logoImg {
+  width: 50px;
+  height: 50px;
 }
 .main-navigation .nav-container .nav {
   width: 350px;
