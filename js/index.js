@@ -6,8 +6,10 @@ btn[0].addEventListener('mouseover', _ => {
 });
 
 // 2
-btn[1].addEventListener('click', _ => {
+btn[1].addEventListener('click', e => {
+  e.stopPropagation();
   btn[1].textContent = 'You got it chief';
+  console.log('Destination button clicked');
 });
 
 // 3
@@ -67,3 +69,8 @@ const copyright = document.querySelector('footer p');
 window.addEventListener('offline', _ => {
   copyright.textContent = 'Looks like you lost connection to the internet';
 });
+
+const destinations = document.querySelectorAll('.destination');
+destinations[1].addEventListener('click', _ => {
+  console.log('Destination container clicked');
+})
