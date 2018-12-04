@@ -34,7 +34,7 @@
 .animate-wobble {
   // from http://animista.net/play/attention/wobble
   -webkit-animation: wobble-hor-bottom 0.8s both;
-  animation: wobble-hor-bottom 0.8s both;
+            animation: wobble-hor-bottom 0.8s both;
 }
 @-webkit-keyframes wobble-hor-bottom {
   // from http://animista.net/play/attention/wobble
@@ -152,5 +152,29 @@
   100% {
     -webkit-transform: translate(0);
             transform: translate(0);
+  }
+}
+
+.fade-in {
+  // from http://animista.net/play/entrances/fade-in
+  -webkit-animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+  // from http://animista.net/play/entrances/fade-in
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

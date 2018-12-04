@@ -38,6 +38,7 @@ html.addEventListener("wheel", function (){
 });
 
 // --- allow drag/drop of draggable elements
+// for now drop will toggle vibrate animation on drop target
 function dragstart_handler(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
   // console.log("dragging!");
@@ -57,3 +58,11 @@ function drop_handler(e) {
   // console.log(src, srcParent, dropTarget);
   e.target.classList.toggle("vibrate");
 }
+
+const imgs = document.querySelectorAll("img");
+imgs.forEach(element => {
+  element.addEventListener("load", function(){
+    // console.log(`loaded ${element.src}`);
+    element.classList.add("fade-in");
+  })
+});
