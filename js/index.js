@@ -59,6 +59,7 @@ function drop_handler(e) {
   e.target.classList.toggle("vibrate");
 }
 
+// --- images fade in on load event
 const imgs = document.querySelectorAll("img");
 imgs.forEach(element => {
   element.addEventListener("load", function(){
@@ -66,3 +67,15 @@ imgs.forEach(element => {
     element.classList.add("fade-in");
   })
 });
+
+// --- change input field color on focus/blur event
+const inputs = document.querySelectorAll("input");
+inputs.forEach(element => {
+  element.addEventListener("focus", function(){
+    element.style.background = "lightblue";
+  });
+  element.addEventListener("blur", function(){
+    element.style.background = "";
+  })
+})
+
