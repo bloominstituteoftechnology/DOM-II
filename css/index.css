@@ -298,6 +298,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 10;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -372,6 +373,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.home .content-section .drop-zone {
+  z-index: 1;
 }
 .home .content-section .text-content {
   width: 48%;
