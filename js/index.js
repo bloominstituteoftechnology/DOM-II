@@ -8,17 +8,17 @@ const headline = document.querySelector(".intro h2");
 const headerImage = document.querySelector(".intro img");
 const footer = document.querySelector(".footer");
 
-const headerText = document.querySelector(".intro p").textContent;
+const headerText = document.querySelector(".intro textarea");
 
 // ============= Functions
 (function() {
   navLinks.forEach(link => {
     link.addEventListener("click", event => {
+      event.stopPropagation();
       event.preventDefault();
       link.style.border = "1px dotted #C0C0C0";
-      alert("It's the Fun Bus, dude!");
     });
-    link.addEventListener("focus", event => {
+    link.addEventListener("focus", function(event) {
       link.style.background = "red";
     });
   });
@@ -46,6 +46,11 @@ nav.addEventListener("dblclick", _ => {
   intro.style.paddingTop = "320px";
 });
 
+nav.addEventListener("click", function(event) {
+  event.stopPropagation();
+  nav.style.background = "blue";
+});
+
 html.addEventListener("keydown", _ => {
   headline.textContent = "The Fun Bus Don't Stop!!!";
 });
@@ -54,6 +59,10 @@ headerImage.addEventListener("drag", _ => {
   headerImage.style.border = "5px solid black";
 });
 
-// headerText.addEventListener("select", function() {
-//   headerText.style.lineHeight = 3;
-// });
+headerText.addEventListener("select", function() {
+  headerText.style.lineHeight = 3;
+});
+
+window.addEventListener("resize", function() {
+  body.style.opacity = 0;
+});
