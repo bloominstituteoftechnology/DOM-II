@@ -4,7 +4,6 @@
 const myButton1 = document.getElementsByClassName('btn')[0];
 //console.log(myButton1);
 myButton1.addEventListener('mouseover', function (e) {
-    e.stopPropagation();
     myButton1.style.color = 'black';
     myButton1.style.backgroundColor = 'yellow';
 });
@@ -56,7 +55,8 @@ window.addEventListener('copy', function (e) {
 
 // Context Menu //
 window.addEventListener('contextmenu', function (e) {
-    alert('Starting hacking device.');
+    e.preventDefault();
+    alert('I took your right click.');
 });
 
 // Resize //
