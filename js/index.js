@@ -11,23 +11,21 @@ logoHeading.addEventListener('mouseover', (e) => {
 });
 
 // ---------- Key Down
-const navLink = document.querySelector('html');
+const page = document.querySelector('html');
 
-navLink.addEventListener('keydown', (e) => {
+page.addEventListener('keydown', (e) => {
 	e.target.style.color = 'blue';
 });
 
 // ---------- wheel
-const title = document.querySelector('h2');
+const title = document.querySelectorAll('h2');
 
-title.addEventListener(
-	'wheel',
-	(e) => {
+title.forEach(function(elem) {
+	elem.addEventListener('wheel', (e) => {
 		e.target.style.fontSize = '7rem';
 		e.target.style.color = 'red';
-	},
-	500
-);
+	});
+});
 
 // ---------- Drag
 const busPic = document.getElementById('bus-pic');
@@ -43,7 +41,7 @@ mapPic.addEventListener('click', (e) => {
 	alert("If you're sure, Let's Go!!");
 });
 
-// ---------- sselect
+// ---------- Double Click
 const destPic = document.querySelectorAll('.btn');
 
 destPic.forEach(function(elem) {
@@ -52,4 +50,23 @@ destPic.forEach(function(elem) {
 	});
 });
 
-console.log(destPic);
+// ---------- Key Press
+const img = document.querySelectorAll('img');
+
+img.forEach(function(elem) {
+	elem.addEventListener('load', (elem) => {
+		elem.target.style.transitionDuration = '3000';
+		elem.target.style.transform = 'rotate(360deg)';
+	});
+});
+
+// ---------- Load
+// window.addEventListener(
+// 	'load',
+// 	(e) => {
+// 		alert('Page Loaded!');
+// 	},
+// 	2000
+// );
+
+console.log(img);
