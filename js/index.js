@@ -36,22 +36,34 @@ document.addEventListener("mousemove", function(event) {
 const mainNav = document.querySelector(".main-navigation");
 mainNav.style.backgroundColor = "#FFEBCD";
 
+// created event for
+mainNav.addEventListener("click", function() {
+  mainNav.style.backgroundColor = "white";
+});
+
 //changed a tag color using 'dblclick'
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(item => {
   //changed a tag color using 'dblclick'
   item.addEventListener("dblclick", function() {
-    item.style.fontWeight = "bold";
     item.style.color = "red";
   });
   // updated anchor tags using 'focus' for keyboard navigation
   item.addEventListener("focus", function() {
     item.style.color = "blue";
+    console.log("focus");
   });
 
   // using 'blur' previously focused element resets to normal style.
   item.addEventListener("blur", function() {
     item.style.color = "black";
+    console.log("blur");
+  });
+
+  // added stop propagation and prevent default
+  item.addEventListener("click", event => {
+    event.stopPropagation();
+    event.preventDefault();
   });
 });
 
