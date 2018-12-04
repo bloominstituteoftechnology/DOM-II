@@ -13,6 +13,12 @@ navLinks.forEach((navLink)=>{
         navLink.style.color="black";
     }
 )});
+// Preventing default of NavLinks
+navLinks.forEach((navLink)=>{
+    navLink.addEventListener('click', function(event){
+        event.preventDefault();
+    })
+});
 
 // #2 Wheel - bus Tilts
 const bus = document.querySelector('.fun-bus');
