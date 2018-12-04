@@ -13,3 +13,7 @@ navLinks.forEach((navLink)=>{
         navLink.style.color="black";
     }
 )});
+
+// #2 Wheel Opacity turns up
+const bus = document.querySelector('.fun-bus');
+bus.addEventListener('wheel', ()=>{bus.style.transform = "rotate(7deg)"});
