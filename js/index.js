@@ -1,10 +1,10 @@
 // Your code goes here
 
-// Clearing up elements for loading screen
-// ---------------------------------------
+// CLEARING UP ELEMENTS FOR LOADING SCREEN
+// =======================================
 
-let containers = Array.from(document.querySelectorAll("body > *")).slice(1);
-containers.forEach(element => element.style.display ="none");
+let mainContainer = document.querySelector("#main-container")
+mainContainer.style.display ="none";
 
 document.body.style.backgroundColor = "#201E1E";
 
@@ -40,24 +40,26 @@ window.addEventListener("load", e => {
   let loadScreen = document.querySelector("#loading-container");
   document.body.removeChild(loadScreen);
   document.body.removeAttribute("style");
-  containers.forEach(element => element.removeAttribute("style"));
+  mainContainer.removeAttribute("style");
 
   const minutesStr = String(minutesCount).padStart(2, '0');
   const secondsStr = String(secondsCount).padStart(2, '0');
-  const millisecondsStr = (millisecondsCount === 1 ? "<=" : "") + String(millisecondsCount * 10);
+  const millisecondsStr = (millisecondsCount === 1 ? "<=" : ">=") + String(millisecondsCount * 10);
 
   alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
 });
 
-// After page has been loaded
-// --------------------------
+// AFTER PAGE HAS BEEN LOADED
+// ==========================
 
+
+// Query selectors
 const aTagElements = document.querySelectorAll("a");
 
 // Event to disable default <a> element behavior and display alert
 aTagElements.forEach(element => {
   element.addEventListener("click", e => {
     e.preventDefault();
-    alert("Sorry user, you are confined to this page (for now).");
+    alert("Sorry, user. You are confined to this page (for now).");
   });
 });
