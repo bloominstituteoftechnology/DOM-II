@@ -14,7 +14,10 @@ const textContentDiv = document.querySelectorAll(".text-content");
 window.addEventListener("load", function(e) {
     setTimeout(() => {
         container.forEach((selection) => {
-            selection.style.opacity = "1";
+            // selection.style.opacity = "1";
+            TweenMax.to(selection, 1, {
+                opacity: 1
+            })
         })
     }, 500)
     
@@ -27,12 +30,17 @@ window.addEventListener("scroll", function(e){
     console.log("The scroll works");
     logoHeading.style.transform= "rotate(180deg)";
 })
+
+
 // Header Img: Appear when nav heading is moused over with a delay
 
 logoHeading.addEventListener("mouseover", function() {
     setTimeout(() => {
-        introImg.style.display = "initial";
-    }, 500);
+        // introImg.style.display = "initial";
+        TweenMax.to("header img", 1, {
+            opacity: 1
+        })
+    }, 200);
     
 });
 
@@ -97,7 +105,6 @@ textContentDiv.forEach((div) => {
 
 allPs.forEach((p) => {
     p.addEventListener("mousedown", function(e) {
-        e.stopPropagation();
         e.target.style.backgroundColor = "lightsteelblue";
         e.target.style.color = "gold";
     })
