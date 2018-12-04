@@ -20,16 +20,13 @@ bus.addEventListener('wheel', ()=>{bus.style.transform = "rotate(7deg)"});
 
 
 
-// // #Doublick - colorful words.
-const paras = document.querySelectorAll('section p');
-paras.forEach((p)=>{
-    p.addEventListener('dblclick', ()=>{
-        
-        p.style.color=`${getRandomColor()}`;
-    })
-});
-
-
+// // #3 Doublick - colorful words.
+window.addEventListener('keydown', ()=>{
+    const paras = document.querySelectorAll('section p');
+    paras.forEach((p)=>{
+      p.style.color=getRandomColor();
+    });
+  });
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -39,3 +36,10 @@ function getRandomColor() {
     return color
   }
   
+// #4 Highligh selected Text
+paras.forEach((p)=>{
+    p.addEventListener('select', ()=>{
+        
+        p.style.background="yellow";
+    })
+});
