@@ -174,6 +174,9 @@ img {
     margin: 0 5%;
   }
 }
+.click-style {
+  font-size: 3rem;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
