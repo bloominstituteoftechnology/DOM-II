@@ -177,6 +177,9 @@ img {
 .nav-toggle {
   color: red;
 }
+.container-background {
+  background-color: green;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -218,8 +221,9 @@ img {
   color: #212529;
   text-decoration: none;
 }
-.nav-toggle {
-  color: red;
+.nav-color {
+  background-color: red;
+  color: green;
 }
 .footer {
   width: 100%;
