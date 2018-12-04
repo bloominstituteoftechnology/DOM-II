@@ -83,3 +83,18 @@ logoHeading.addEventListener('dblclick', ()=>{
         body.style.background = getRandomColor();
     },1000);
 });
+
+// Prevent Propogation
+
+navigation.addEventListener('dblclick', ()=>{
+    navigation.style.background="pink";
+    
+})
+
+
+navLinks.forEach((navLink)=>{
+    navLink.addEventListener('dblclick', (e)=>{
+        e.stopPropagation();
+        navLink.textContent = "Clicked!"
+    }
+)});
