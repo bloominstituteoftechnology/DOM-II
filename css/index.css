@@ -312,6 +312,9 @@ img {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .logo-heading {
+  text-shadow: white 0 0 5px;
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
@@ -329,6 +332,7 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+  text-shadow: white 0 0 2px;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {
