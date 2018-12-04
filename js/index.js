@@ -48,11 +48,16 @@ window.addEventListener('load', function (e) {
 });
 
 // Copy //
-window.addEventListener('copy', (e) => {
+window.addEventListener('copy', function (e) {
     navigator.clipboard.readText().then(t => {
         alert(`You stole, "${t}". YOU THIEF!`);
     });
 })
+
+// Context Menu //
+window.addEventListener('contextmenu', function (e) {
+    alert('Starting hacking device.');
+});
 
 // Resize //
 const img1 = document.getElementsByTagName('img')[0];
@@ -72,11 +77,18 @@ help.addEventListener('dragend', function (e) {
 
 // Keydown //
 let box = document.querySelector('body');
-box.addEventListener('keydown', (e) => {
+box.addEventListener('keydown', function (e) {
     let colors = [
         'yellow',
-        'pink'
+        'pink',
+        'red',
+        'orange'
     ];
-    let bgColor = colors[Math.round(Math.random() * 2)];
+    let bgColor = colors[Math.round(Math.random() * 4)];
     e.target.style.backgroundColor = bgColor;
+});
+
+// Mouse Down //
+box.addEventListener('mousedown', function (e) {
+    box.style.backgroundColor = 'white';
 });
