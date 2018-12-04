@@ -7,3 +7,11 @@ logoHeading.addEventListener("mouseenter", function (){
 logoHeading.addEventListener("mouseleave", function (){
   logoHeading.classList.toggle("animate-wobble");
 });
+
+const html = document.querySelector("html");
+html.addEventListener("keydown", function (){
+  html.classList.add("vibrate");
+});
+html.addEventListener("keyup", function (){
+  html.classList.remove("vibrate");
+});
