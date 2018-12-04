@@ -1,5 +1,12 @@
 // Your code goes here
 
+// Window 
+
+window.addEventListener("keydown", function(element){
+    let keyName = element.key;
+    alert ("Watch the keyboard, you hit " + keyName);
+} );
+
 // Nav Bar
 
 const navBtn = document.querySelectorAll('a');
@@ -29,63 +36,44 @@ mainParas[0].addEventListener("wheel", function(event){
 
 buttonAnim = Array.from(document.querySelectorAll(".btn"));
 
-buttonAnim[0].addEventListener("mouseover", function(event){
+buttonAnim.forEach(function(element){
+    element.addEventListener("mouseover", function(){
     event.target.textContent = "Click For Fun!";
-    event.target.style.textAlign = "center";  
-  });
+    event.target.style.textAlign = "center"; 
+    });
+});
 
-buttonAnim[0].addEventListener("mouseout", function(event){
+buttonAnim.forEach(function(element){
+    element.addEventListener("mouseout", function(){
     event.target.textContent = "Sign Me Up!";
-  })
-
-buttonAnim[1].addEventListener("mouseover", function(event){
-    event.target.textContent = "Click For Fun!";
-    event.target.style.textAlign = "center";  
-  });
-
-buttonAnim[1].addEventListener("mouseout", function(event){
-    event.target.textContent = "Sign Me Up!";
-  })
-
-buttonAnim[2].addEventListener("mouseover", function(event){
-    event.target.textContent = "Click For Fun!";
-    event.target.style.textAlign = "center";  
-  });
-
-buttonAnim[2].addEventListener("mouseout", function(event){
-    event.target.textContent = "Sign Me Up!";
-  })
+    });
+});
 
   // H2 Color Change
 
-const headerTwos = Array.from(document.querySelectorAll("h2"));
-headerTwos[0].addEventListener("click", function(event){
-    event.target.style.color = "red";
-});
-headerTwos[1].addEventListener("click", function(event){
-    event.target.style.color = "red";
-});
-headerTwos[2].addEventListener("click", function(event){
-    event.target.style.color = "red";
-});
-headerTwos[3].addEventListener("click", function(event){
-    event.target.style.color = "red";
+const headerTwos = document.querySelectorAll("h2");
+
+headerTwos.forEach(function(element){
+    element.addEventListener("click", function(){
+        event.target.style.color = "red";
+    });
 });
 
-headerTwos[0].addEventListener("dblclick", function(event){
-    event.target.style.color = "black";
+headerTwos.forEach(function(element){
+    element.addEventListener("dblclick", function() {
+        event.target.style.color = "black";
+    });
 });
-headerTwos[1].addEventListener("dblclick", function(event){
-    event.target.style.color = "black";
-});
-headerTwos[2].addEventListener("dblclick", function(event){
-    event.target.style.color = "black";
-});
-headerTwos[3].addEventListener("dblclick", function(event){
-    event.target.style.color = "black";
-});
+
 
 // Footer Input Form
+
+const paraList = document.querySelectorAll("p");
+paraList.forEach(function(element){
+    element.addEventListener("copy", function(){
+        alert("Please give credit when copying material from our page!");
+    });
+});
 
 const inputForm = document.createElement('form');
 inputForm.textContent = "Enter Your Email For Travel Updates!";
