@@ -220,6 +220,10 @@ img {
   background-color: red;
   border: 1px solid black;
 }
+.funBusNew {
+  display: none;
+  background-color: red;
+}
 /* New Styles End */
 .footer {
   width: 100%;

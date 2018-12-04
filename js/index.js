@@ -14,10 +14,15 @@ for (let i = 0; i < navBox.length; i++){
 }
 
 
-// const funBus = document.querySelectorAll('.logo-heading')
+const funBus = document.querySelector ('.logo-heading')
+funBus.addEventListener('dblclick', function(){
+    funBus.classList.add('funBusNew')
+})
 
-//     funBus.addEventListener('dblclick', funciton(){
 
-//     funBus.classList.add('funBusNew')
-// })
+const funBusBack = document.querySelector('.container')
+funBusBack.addEventListener('click', function(){
+    funBus.classList.remove('funBusNew')
+})
 
+const 
