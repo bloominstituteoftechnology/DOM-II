@@ -36,10 +36,10 @@ function getRandomColor() {
     return color
   }
   
-// #4 Highligh selected Text
-paras.forEach((p)=>{
-    p.addEventListener('select', ()=>{
-        
-        p.style.background="yellow";
+// #4 Enlage Headers on scroll
+document.addEventListener('scroll', ()=>{
+    const htags = document.querySelectorAll('.container h2')
+    htags.forEach((h)=>{
+        h.style.fontSize = "5rem";
     })
 });
