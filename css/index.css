@@ -212,7 +212,10 @@ img {
 }
 .main-navigation .nav-container .nav a {
   font-size: 1.6rem;
-  color: #212529;
+  background-color: #17A2B8;
+  color: white;
+  padding: 1rem;
+  border-radius: 5%;
   text-decoration: none;
 }
 .main-navigation .nav-container .nav .makeRed {
