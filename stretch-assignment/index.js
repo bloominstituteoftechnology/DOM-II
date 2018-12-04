@@ -49,7 +49,7 @@ blocks.forEach(b => {
         e.target.dataset.flying = 'false';
         clearInterval(interval);
         //Return to original position on mouse up.
-        TweenMax.to(e.target, 1, {marginLeft: `10px`});
+        TweenMax.to(e.target, 1, {marginLeft: `0px`});
     });
     b.addEventListener('mouseleave', (e) => {
         e.target.dataset.flying = 'false';
