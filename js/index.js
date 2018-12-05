@@ -54,10 +54,10 @@ for (let i = 0; i < navigation.length; i++) {
 
 for (let i = 0; i < navigation.length; i++) {
   navigation[i].addEventListener('mousedown', (e) => {
-    navigation[i].style.fontSize = '18px';
+    navigation[i].style.textTransform = 'uppercase';
   });
   navigation[i].addEventListener('mouseup', (e) => {
-    navigation[i].style.fontSize = '16px';
+    navigation[i].style.textTransform = 'capitalize';
   });
 };
 
