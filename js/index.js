@@ -22,7 +22,7 @@ function getColor() {
 const topImg = document.querySelector('.intro img');
 
 topImg.addEventListener('mouseover', function(e) {
-    TweenMax.to('.intro img', 3, {rotationY:360});T
+    TweenMax.to('.intro img', 3, {rotationY:360});
     TweenMax.set(topImg, {clearProps:'all'});
 });
 
