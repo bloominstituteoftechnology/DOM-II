@@ -82,6 +82,24 @@ inputs.forEach(element => {
   });
 });
 
+// --- change background color of html on resize
+let bgColor = 255;
+let lighter = false;
+window.addEventListener("resize", function (){
+  console.log("here");
+  if (bgColor > 254){
+    lighter = false;
+  } else if (bgColor < 100) {
+    lighter = true;
+  }
+  if (lighter) {
+    bgColor += 1;
+  } else {
+    bgColor -= 1;
+  }
+  html.style.backgroundColor = `rgb(${bgColor}, ${bgColor}, ${bgColor}`;
+});
+
 // --- toggle background of destinations red on click
 const destinationDivs = document.querySelectorAll(".destination");
 destinationDivs.forEach(element => {
