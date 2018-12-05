@@ -5,7 +5,7 @@ const logo = document.querySelector('.logo-heading');
 const navigation = document.querySelectorAll('nav .nav-link');
 const mainImage = document.querySelector('.intro img');
 const container = document.querySelector('.container');
-const introH2 = document.querySelector('.intro h2');
+const h2 = document.querySelector('h2');
 const buttons = document.querySelectorAll('.btn');
 const images = document.querySelectorAll('.img-content img')
 const destinationImage = document.querySelector('.content-destination img')
@@ -105,7 +105,12 @@ for (let i = 0; i < buttons.length; i++) {
 // keydown event listener
 document.addEventListener('keydown', (e) => {
   const keyName = e.key;
-  introH2.style.color = 'blue';
+  h2.style.color = 'blue';
+});
+
+document.addEventListener('keyup', (e) => {
+  const keyName = e.key;
+  h2.style.color = 'black';
 });
 
 
