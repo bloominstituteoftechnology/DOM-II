@@ -34,3 +34,15 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.move-box {
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+  0%   {left:0px; top:0px;}
+  50%  {left: 1000px; top:0px}
+  100% {left:0px; top:0px;}
+}
