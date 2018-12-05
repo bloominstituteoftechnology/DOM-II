@@ -53,9 +53,14 @@ window.addEventListener("load", e => {
 // ==========================
 
 
-// Query selectors
+// Normal page element query selectors
 const headerLogo = document.querySelector(".logo-heading");
 const aTagElements = document.querySelectorAll("a");
+const imgElements = document.querySelectorAll("img");
+
+// Overlay element query selectors
+const overlayElements = document.querySelectorAll(".overlay-container *");
+const overlayImage = document.querySelector(".overlay-image");
 
 // Click event to disable default <a> element behavior and display alert
 aTagElements.forEach(element => {
@@ -71,3 +76,11 @@ headerLogo.addEventListener("click", e => {
   e.preventDefault();
   alert("Sorry, user. You are confined to this page (for now).");
 });
+
+// Event to display image overlay view of double-clicked image
+imgElements.forEach(imgElement => {
+  imgElement.addEventListener("dblclick", e => {
+    overlayElements.forEach(overlayElement => overlayElement.style.display = "block");
+    overlayImage.src = imgElement.src;
+  })
+})

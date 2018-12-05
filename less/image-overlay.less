@@ -1,0 +1,32 @@
+.overlay-container {
+    * {
+        display: none;
+    }
+
+    .overlay-background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: @overlay-color;
+        opacity: 0.75;
+        z-index: 2;
+        margin: auto;
+    }
+
+    .overlay-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 75%;
+        height: auto;
+        opacity: 1.0;
+        z-index: 3;
+        margin: auto;
+    }
+}
