@@ -1,4 +1,5 @@
-// Your code goes here
+// buttons - hinge animation
+
 const destBtn = document.querySelectorAll('.destination .btn');
 
 for (let i = 0; i < destBtn.length; i++) {
@@ -7,22 +8,28 @@ for (let i = 0; i < destBtn.length; i++) {
     });
 }
 
+// Navigation Links - Hover Color - No refresh
 
 const navLinks = document.querySelectorAll('a');
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('mouseover', (event) => {
         event.target.style.color = 'green';
+        event.target.preventDefault();
     });
 }
+
+// Page images on load flip in
 
 const imgapp = document.querySelectorAll('img');
 
 for (let i = 0; i < imgapp.length; i++) {
-    imgapp[i].addEventListener('mouseup', (event) => {
+    imgapp[i].addEventListener('load', (event) => {
         event.target.style.animation = 'flipInX 1s linear 0s 1 alternate';
     });
 }
+
+// h2 font size manipulation
 
 // const h2fun = document.querySelectorAll('p');
 
@@ -38,6 +45,8 @@ for (let i = 0; i < imgapp.length; i++) {
 // }
 
 
+// Changes LogoText to Courier and say it's "serious"
+
 const funText = document.querySelector('.logo-heading');
 
 funText.addEventListener('dblclick', (event) => {
@@ -45,15 +54,15 @@ funText.addEventListener('dblclick', (event) => {
     event.target.style.fontFamily = 'Courier';
 });
 
-
-let scrollcount = 0;
+// Scrolling
 
 document.addEventListener("scroll", function () {
 
     console.log("Now we are scrolling!");
-    scrollcount = scrollcount + 1;
 
 });
+
+//Top image replace with LEAVES
 
 const headimg = document.querySelector('.intro img');
 
@@ -64,11 +73,15 @@ headimg.addEventListener("dblclick", (event) => {
 
 })
 
+// Footer text replace
+
 const mainp = document.querySelector('footer');
 
 mainp.addEventListener("click", (event) => {
     event.target.innerHTML = "Blah blah blah blah blah"
 })
+
+// Destination div coloring (experimentation)
 
 const destdiv = document.querySelectorAll('.destination');
 
@@ -77,6 +90,8 @@ for (let i = 0; i < destdiv.length; i++) {
         event.target.style.animation = 'destcolor .3s linear 0s 1 forwards';
     });
 }
+
+// Easter Egg
 
 const h2go = document.getElementById("h2go");
 
