@@ -3,12 +3,6 @@ body {
   /*justify-content: center;*/
 }
 
-img {
-  transform: rotate(50deg);
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
 .blocks {
   margin-top: 5%;
   display: flex;
