@@ -65,7 +65,7 @@ imgs.forEach(element => {
   element.addEventListener("load", function(){
     // console.log(`loaded ${element.src}`);
     element.classList.add("fade-in");
-  })
+  });
 });
 
 // --- change input field color on focus/blur event
@@ -76,6 +76,26 @@ inputs.forEach(element => {
   });
   element.addEventListener("blur", function(){
     element.style.background = "";
-  })
-})
+  });
+  element.addEventListener("click", function(e){
+    e.stopPropagation(); // prevent destination div from toggling red
+  });
+});
 
+// --- toggle background of destinations red on click
+const destinationDivs = document.querySelectorAll(".destination");
+destinationDivs.forEach(element => {
+  element.addEventListener("click", function(){
+    element.classList.toggle("red-background");
+  });
+});
+
+// --- toggle background of sign up buttons red on click
+const signUpButtons = document.querySelectorAll(".btn");
+signUpButtons.forEach(element => {
+  element.addEventListener("click", function(e){
+    e.stopPropagation();  // prevent destination div from toggling red
+    element.classList.toggle("btn");
+    element.classList.toggle("red-background");
+  });
+});
