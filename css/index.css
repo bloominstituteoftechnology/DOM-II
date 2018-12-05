@@ -251,21 +251,6 @@ img {
   opacity: 0.75;
   margin: auto;
 }
-.overlay-main-container .overlay-close-button {
-  position: fixed;
-  width: 50px;
-  top: 0;
-  right: 0;
-  z-index: 3;
-  cursor: pointer;
-  margin: 15px;
-}
-@media (max-width: 500px) {
-  .overlay-main-container .overlay-close-button {
-    width: 37.5px;
-    margin: 10px;
-  }
-}
 .overlay-main-container .overlay-image {
   position: fixed;
   top: 0;

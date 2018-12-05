@@ -81,8 +81,8 @@ const buttons = document.querySelectorAll("button");
 
 // Overlay element query selectors
 const overlayElements = document.querySelectorAll(".overlay-main-container *");
+const overlayArea = document.querySelector(".overlay-main-container");
 const overlayBackground = document.querySelector(".overlay-background");
-const overlayCloseBtn = document.querySelector(".overlay-close-button");
 const overlayImage = document.querySelector(".overlay-image");
 
 // Click event to disable default <a> element behavior and display alert
@@ -110,12 +110,17 @@ imgElements.forEach(imgElement => {
   });
 })
 
-// Event to remove image overlay upon clicking on a close button
-overlayCloseBtn.addEventListener("click", e => {
+// Events to remove image overlay upon clicking outside of the image
+overlayArea.addEventListener("click", e => {
   overlayElements.forEach(overlayElement => {
     overlayElement.removeAttribute("style");
   })
 });
+// Stops event propagation to prevent closing the overlay when clicking on the image area
+overlayImage.addEventListener("click", e => {
+  e.stopImmediatePropagation();
+});
+
 
 // Event to change page colors upon selecting a theme
 themeSelect.addEventListener("change", e => {
