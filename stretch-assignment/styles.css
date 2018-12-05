@@ -34,3 +34,16 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.slide-right {
+	animation: slide-right infinite both;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1000);
+  }
+}

@@ -81,7 +81,7 @@ logoHeading.addEventListener('dblclick', ()=>{
     ()=>{
         bus.classList.add("scale-up-center");
         body.style.background = getRandomColor();
-    },1000);
+    },100);
 });
 
 // Prevent Propogation
