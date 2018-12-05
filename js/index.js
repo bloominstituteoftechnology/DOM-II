@@ -137,6 +137,7 @@ window.addEventListener("scroll", function(){
 // -- traveling bus vibrates when nav bar is double clicked
 const navBar = document.querySelector(".main-navigation");
 navBar.addEventListener("dblclick", function (){
+  aBus.classList.remove("fade-in");
   aBus.classList.toggle("vibrate");
 });
 
