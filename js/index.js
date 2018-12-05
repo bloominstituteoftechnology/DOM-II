@@ -6,6 +6,7 @@ const home = document.querySelector('.home');
 const h2s = document.querySelectorAll('h2');
 const funBus = document.querySelector('.intro img');
 const pTags = document.querySelectorAll('p');
+const button = document.querySelectorAll('.btn');
 
 //========================================events
 
@@ -35,10 +36,14 @@ window.onload = function(event) {
   }
 };
 
-//===a tags change random colors mouse over
+//===a tags change random colors when hovered over
+//===doesn't change pages when clicked.
 aTag.forEach(function(element) {
   element.addEventListener("mouseover", function(event) {
     event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
+  });
+  element.addEventListener("click", function(event){
+    event.preventDefault()
   });
 });
 
@@ -49,7 +54,7 @@ home.addEventListener('click', function(event) {
 
 //===double click h2s to make them bold
 h2s.forEach(function(element) {
-  element.addEventListener('dblclick', function(event) {
+  element.addEventListener('dlbclick', function(event) {
     event.target.style.fontWeight = 'bold';
   });
 });
@@ -63,14 +68,14 @@ document.addEventListener('keypress', (event) => {
 
 //===changes the opacity of the fun bus image when dragged.
 //===don't be a drag on the fun bus.
-funBus.addEventListener("dragstart", function(event) {
+funBus.addEventListener('dragstart', function(event) {
   event.target.style.opacity = .5;
 }, false);
 
 //===focus on p tags and turns their background green
 pTags.forEach(function(element) {
   element.tabIndex = 1;
-  element.addEventListener('foucs', function(event) {
+  element.addEventListener('focus', function(event) {
     event.target.style.backgroundColor = 'green';
   });
   element.addEventListener('blur', function(event) {
@@ -78,3 +83,11 @@ pTags.forEach(function(element) {
   });
 });
 
+//===changes the button colors on click without changing the page's background color.
+button.forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    event.stopPropagation();
+    event.target.style.backgroundColor = 'rgb(230,230,250)';
+    event.target.style.color = 'rgb(30,144,255)';
+  });
+});
