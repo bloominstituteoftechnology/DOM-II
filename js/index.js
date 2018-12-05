@@ -166,3 +166,13 @@ navLinks.forEach(element => {
     e.preventDefault();
   });
 });
+
+// --- try some greensock tweening
+const banner = document.querySelector("#banner");
+banner.addEventListener("mousedown", function (){
+  banner.classList.remove("fade-in");
+  TweenMax.to(banner, 1, {opacity: 0});
+});
+banner.addEventListener("mouseup", function (){
+  TweenMax.to(banner, 1, {opacity: 1});
+})
