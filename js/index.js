@@ -73,11 +73,11 @@ itemDrag.addEventListener('drag', function(e){
     e.target.style.display= 'none';
 });
 
-const itemDrop = document.querySelector('.intro img');
-itemDrop.addEventListener('drop', function(e){
-    console.log('returned image')
-    e.target.style.display = 'visible';
-});
+// const itemDrop = document.querySelector('.intro img');
+// itemDrop.addEventListener('drop', function(e){
+//     console.log('returned image')
+//     e.target.style.display = 'visible';
+// });
 
 
 
