@@ -56,9 +56,10 @@ const img = document.querySelectorAll('img');
 
 img.forEach(function(elem) {
 	elem.addEventListener('click', (e) => {
-		e.target.style.transform = 'rotate(180deg)';
-		e.target.style.transitionDuration = '10s';
-		console.log(e.target);
+		e.target.style.transform = 'rotate(360deg)';
+		e.target.style.boxShadow = '10px 10px #17a2b8';
+		e.target.style.transitionDuration = '5s';
+		e.stopPropagation();
 	});
 });
 
