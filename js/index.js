@@ -22,7 +22,7 @@ window.addEventListener("load", function(e) { //====> when the page loads
 
 
 //Navbar
-//I want to add a click event on .main-navigation that will make the navbar not "sticky"
+//I want to add a click event listener on .main-navigation that will make the navbar not "sticky"
 // let navSystem = document.querySelector(".main-navigation");
 // navSystem.addEventListener("click", function() {
 //     navSystem.style.position = "static";
@@ -78,7 +78,9 @@ for(let j = 0; j < buttons.length; j++) { //iterate over the NodeList
     buttons[j].addEventListener('mouseover', function(){ //when user mouses over
         buttons[j].style.animation = "heartbeat 1s ease-in-out 2 both"; //add animation
     });
-    buttons[j].addEventList
+    buttons[j].addEventListener("animationend", function() {
+        buttons[j].style.animation = "none";
+    });
 
     buttons[j].addEventListener('click', function() {
         alert("Email us at reservations@funbus.com!");
