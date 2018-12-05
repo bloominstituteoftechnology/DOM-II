@@ -1,15 +1,19 @@
 // Your code goes here
-const navTag = document.querySelector('.nav');
+const navTag = document.querySelectorAll('a');
 
-navTag.addEventListener('mouseover', color => {
-    color.preventDefault()
-    color.target.style.color = '#ffc300';
-    color.target.style.fontWeight = 'Bold';
-});
+(function () {
+    navTag.forEach(key => {
+        key.addEventListener('click', color => {
+            color.preventDefault()
+            key.style.color = '#ffc300';
+            key.style.fontWeight = 'Bold';
+        })
+        key.addEventListener("focus", key => {
+            key.style.backgroundColor = "green"
+        });
+    });
 
-navTag.addEventListener("focus", key => {
-    key.style.backgroundColor = "green"
-})
+})();
 
 
 // Heading 
@@ -53,4 +57,17 @@ const body = document.querySelector('.home');
 
 window.addEventListener('resize', () => {
     body.style.backgroundColor = 'grey';
+});
+
+const midImage = document.querySelector('.rounded');
+
+midImage.addEventListener('mouseover', () => {
+    midImage.style.boxShadow = '2px 2px 5px black'
+});
+
+// Last image
+const lastPic = document.querySelector('.content-destination img');
+
+lastPic.addEventListener('mouseover', () => {
+    lastPic.style.boxShadow = '2px 2px 5px black'
 });
