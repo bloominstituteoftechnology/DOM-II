@@ -4,11 +4,53 @@ const block = document.querySelectorAll(".block");
 const redBlock = document.querySelector(".block--red");
 const blueBlock = document.querySelector(".block--blue");
 const greenBlock = document.querySelector(".block--green");
-const pinkBlock = document.querySelector(".block--green");
-const grayBlock = document.querySelector(".block--grey");
+const pinkBlock = document.querySelector(".block--pink");
+const grayBlock = document.querySelector(".block--gray");
+const body = document.querySelector("body");
+const img = document.querySelectorAll("img");
 
 let negCounter = 0;
 let intervalId;
+
+// create h1 element
+const h1Element = document.createElement("h1");
+h1Element.textContent = "Launching only from the TOP position!";
+h1Element.style.position = "fixed";
+body.prepend(h1Element);
+
+// create img tag for rocket.png
+const redRocket = document.createElement("img");
+redRocket.src = "./rocket.png";
+redRocket.alt = "just a rocket"
+redRocket.style.height = "50px";
+
+const blueRocket = document.createElement("img");
+blueRocket.src = "./rocket.png";
+blueRocket.alt = "just a rocket"
+blueRocket.style.height = "50px";
+
+const greenRocket = document.createElement("img");
+greenRocket.src = "./rocket.png";
+greenRocket.alt = "just a rocket"
+greenRocket.style.height = "50px";
+
+const pinkRocket = document.createElement("img");
+pinkRocket.src = "./rocket.png";
+pinkRocket.alt = "just a rocket"
+pinkRocket.style.height = "50px";
+
+const grayRocket = document.createElement("img");
+grayRocket.src = "./rocket.png";
+grayRocket.alt = "just a rocket"
+grayRocket.style.height = "50px";
+
+redBlock.appendChild(redRocket);
+blueBlock.appendChild(blueRocket);
+greenBlock.appendChild(greenRocket);
+pinkBlock.appendChild(pinkRocket);
+grayBlock.appendChild(grayRocket);
+
+
 
 block.forEach((item, i) => {
   // when clicked, place lowest number to the top position
@@ -24,6 +66,7 @@ block.forEach((item, i) => {
     // when mouse is clicked and held down, move block from left to right infinitely
   item.addEventListener("mousedown", e => {
     intervalId = setInterval(()=> {
+      img[i]
       console.log('hello')
     }, 1000)
   })
