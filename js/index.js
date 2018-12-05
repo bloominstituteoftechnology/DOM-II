@@ -13,27 +13,25 @@ navChange.addEventListener('mouseover', function(e) {
 
 
 
+////////////// KEYUP  + KEYDOWN
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
-
-////////////// KEYDOWN
-
-
-document.addEventListener('keydown', function(e){
-    const keyDown = e.key;
-    console.log('These are the paragraphs')
-    return('keydown e\z\z' + 'key: ' + keyDown );
+const body = document.querySelector('body');
+body.addEventListener('keydown', function(e){
+    body.style.backgroundColor = getRandomColor();
 });
 
 
-
-
-
-////////////// WHEEL
-
-
-
-
-
+body.addEventListener('keyup', function(e){
+    body.style.backgroundColor = 'white';
+});
 
 
 ////////////// DRAG / DROP
@@ -50,25 +48,32 @@ document.addEventListener('drag', function( event){
 
 ////////////// LOAD 
 window.addEventListener('load', function(e){
-    console.log('Loading all necessary items')
+    alert('Loading all necessary items')
 });
 
 
 
 
 
-////////////// FOCUS 
+////////////// click
 
+const fontSizes = document.querySelector('.content-section h2')
+
+fontSizes.addEventListener('click', function(e){
+    e.target.style.fontSize = '100px';
+
+});
 
 
 
 
 ////////////// RESIZE
-// const headingstwo = document.querySelectorAll('h2');
 
-// window.addEventListener('resize', function(e){
 
-// })
+ window.addEventListener('resize', function(e){
+    console.log("I feel cramped")
+
+ });
 
 
 
