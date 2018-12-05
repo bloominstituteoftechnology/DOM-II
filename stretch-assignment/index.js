@@ -10,10 +10,12 @@ const grayBlock = document.querySelector(".block--gray");
 const body = document.querySelector("body");
 let negCounter = 0;
 let intervalId;
+let clearIntervalId;
 
 // create h1 element
 const h1Element = document.createElement("h1");
-h1Element.textContent = "Launching only from the TOP position!";
+h1Element.textContent =
+  "Launching only from the TOP position!.. not yet at least.";
 h1Element.style.position = "fixed";
 body.prepend(h1Element);
 
@@ -55,39 +57,30 @@ block.forEach((item, i) => {
   item.addEventListener("click", e => {
     negCounter -= 1;
     e.target.style.order = `${negCounter}`;
+    TweenMax.from(e.target, 1, { ease: Circ.easeOut, y: "50px" });
+    TweenMax.to(e.target.firstChild, 1, { ease: Circ.easeOut, y: "20px" });
   });
 
-  // Launching ONLY IN THE FIRST POSITION
+  // Launching ONLY FROM THE FIRST POSITION
 
   if (item.style.order <= negCounter) {
     // when mouse is clicked and held down, move block from left to right infinitely
 
-    item.addEventListener("click", e => {
-      intervalId = setInterval(() => {
-        // set current rocket. First child due to img being prepended to e
-        TweenMax.to(e.target.firstChild, 1, { y: `20px`});
-      }, 1000);
-    });
     item.addEventListener("mousedown", e => {
-      intervalId = setInterval(() => {
+      intervalId = window.setInterval(() => {
         // current'blocks first child is its img tag... wowza. I'm learning a lot. I want it's img tag to fly!
-
-        TweenMax.to(e.target.firstChild, 1, { x: `2000px` });
+        window.clearInterval(clearIntervalId);
+        TweenMax.to(e.target.firstChild, 3, { x: `1750px` });
         console.log("hello");
       }, 1000);
     });
 
     // when mouse is released, block moves from right back to original position
     item.addEventListener("mouseup", e => {
-      clearInterval(intervalId);
+      window.clearInterval(intervalId);
+      clearIntervalId = window.setInterval(() => {
+        TweenMax.to(e.target.firstChild, 5, { x: "1px" });
+      }, 1000);
     });
   }
 });
-
-let travelerLaunch = () => {
-  // do something
-  // while the traveler is held down, launches to the right,
-  // when click is released, move back to original position.
-};
-
-// console.log(block)
