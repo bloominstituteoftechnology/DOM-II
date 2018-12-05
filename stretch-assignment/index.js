@@ -12,12 +12,12 @@ let negCounter = 0;
 let intervalId;
 let clearIntervalId;
 
-// // create h1 element
-// const h1Element = document.createElement("h1");
-// h1Element.textContent =
-//   "Launching only from the TOP position!.. not yet at least.";
-// h1Element.style.position = "fixed";
-// body.prepend(h1Element);
+// create h1 element
+const h1Element = document.createElement("h1");
+h1Element.textContent =
+  "Launching only from the TOP position!.. not yet at least.";
+h1Element.style.position = "fixed";
+body.prepend(h1Element);
 
 // create img tag for rocket.png
 const redRocket = document.createElement("img");
@@ -51,17 +51,9 @@ greenBlock.appendChild(greenRocket);
 pinkBlock.appendChild(pinkRocket);
 grayBlock.appendChild(grayRocket);
 
-// event listener on click mousedown and mouseup
+// event listener for mouseover
 
 block.forEach((item, i) => {
-
-  // style rockets
-
-  item.firstChild.style.transform = "rotate(50deg)";
-  item.firstChild.style.marginTop = "20px";
-  item.firstChild.style.marginLeft = "20px";
-  item.firstChild.style.height = "50px";
-
   // when clicked, place lowest number to the top position
 
   item.addEventListener("click", e => {
