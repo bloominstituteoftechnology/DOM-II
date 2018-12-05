@@ -41,14 +41,51 @@ const imgs = document.querySelectorAll('img');
 imgs[0].addEventListener('drag',function(){
     imgs[0].style.marginTop = "10%";
 });
- 
 
- 
+const header = document.querySelector('h1');
+header.addEventListener('mouseover', function(){
+    header.textContent = "Sorry, Out of service"
+});
 
 
-// function myFunction(x) {
-//     x.classList.toggle("fa-thumbs-down");
-// })
+
+const button2 = document.querySelectorAll(".btn");
+button2.forEach(function(button2){
+    button2.addEventListener("mouseover", function(){
+        button2.textContent = "Not A good Idea!"
+    })
+});
+
+const nav2 = document.querySelectorAll(".nav");
+nav2.forEach((nav) => {
+    nav.addEventListener("mouseover", function(e){
+        nav.addEventListener("mouseenter", function(e){
+            e.target.style.transform = "scale(2, 2)";
+           
+        })
+        nav.addEventListener("mouseout", function(e) {
+            e.target.style.transform = "scale(1,1)";
+            
+        })
+    })
+});
+const home = document.querySelector('body');
+home.addEventListener('keypress', function(e) {
+    e.target.style.backgroundColor = 'yellow';
+});
+
+const par1 = document.querySelector("p");
+home.addEventListener("keyup", function(e){
+    e.target.style.color ="red";
+});
+
+
+
+
+
+function myFunction(x) {
+    x.classList.toggle("fa-thumbs-down");
+}
 
 
 
