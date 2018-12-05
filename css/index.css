@@ -467,3 +467,28 @@ img {
 .vibrate-1 {
   animation: vibrate-1 0.3s linear 3 both;
 }
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+.color-change-2x {
+  animation: color-change-2x 2s linear infinite alternate both;
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.blink-1 {
+  animation: blink-1 0.6s both;
+}

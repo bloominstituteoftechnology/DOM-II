@@ -70,3 +70,25 @@ buttons.forEach((btn) => {
 
 
 
+const footer = document.querySelector('.footer');
+
+window.addEventListener('resize', () => {
+    footer.style.backgroundColor = 'red';
+})
+
+
+const htmlBg = document.querySelector('body');
+window.addEventListener('mousedown', () => {
+    htmlBg.classList.toggle('color-change-2x');
+});
+
+const pTags = document.querySelectorAll('p');
+
+pTags.forEach((item) => {
+    item.addEventListener('mousemove', (e) => {
+        e.target.classList.toggle('blink-1');
+    })
+})
+
+
+
