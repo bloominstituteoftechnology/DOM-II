@@ -6,6 +6,33 @@ home.addEventListener('wheel', function(e) {
     console.log("Wheeeee! We're scrolling, now.");
 })
 
+// const welcome = document.querySelector('.intro h2');
+// // welcome.addEventListener('load', function(e) {
+// //     TweenMax.from('welcome', 5, {
+// //         x: 650,
+// //         scale: 0.5,
+// //         opacity:0.1,
+// //         ease: Bounce.easeOut,
+// //         delay: 0.5,
+// //     });
+// // })
+// TweenMax.from('welcome', 5, {
+//     x: 650,
+//     scale: 0.5,
+//     opacity:0.1,
+//     ease: Bounce.easeOut,
+//     delay: 0.5,
+// });
+
+window.addEventListener('load', function(e) {
+    TweenMax.from('.logo-heading', 5, {
+        x: 650,
+        scale: 0.5,
+        opacity:0.1,
+        ease: Bounce.easeOut,
+        delay: 0.5,
+    });
+})
 
 //========== Header event listeners
 const pageHeader = document.querySelector('.main-navigation');
@@ -31,23 +58,7 @@ busPic.addEventListener('dragend', function(e) {
     busPic.src = 'img/photo-1464851707681-f9d5fdaccea8.jpeg'
 })
 
-// const welcome = document.querySelector('.intro h2');
-// // welcome.addEventListener('click', function(e) {
-// //     TweenMax.from('welcome', 5, {
-// //         x: 650,
-// //         scale: 0.5,
-// //         opacity:0.1,
-// //         ease: Bounce.easeOut,
-// //         delay: 0.5,
-// //     });
-// // })
-// TweenMax.from('welcome', 5, {
-//     x: 650,
-//     scale: 0.5,
-//     opacity:0.1,
-//     ease: Bounce.easeOut,
-//     delay: 0.5,
-// });
+
 
 const adventurePic = document.querySelector('.content-section .img-content');
 adventurePic.addEventListener('click', function(e) {
