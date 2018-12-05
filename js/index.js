@@ -6,23 +6,6 @@ home.addEventListener('wheel', function(e) {
     console.log("Wheeeee! We're scrolling, now.");
 })
 
-// const welcome = document.querySelector('.intro h2');
-// // welcome.addEventListener('load', function(e) {
-// //     TweenMax.from('welcome', 5, {
-// //         x: 650,
-// //         scale: 0.5,
-// //         opacity:0.1,
-// //         ease: Bounce.easeOut,
-// //         delay: 0.5,
-// //     });
-// // })
-// TweenMax.from('welcome', 5, {
-//     x: 650,
-//     scale: 0.5,
-//     opacity:0.1,
-//     ease: Bounce.easeOut,
-//     delay: 0.5,
-// });
 
 window.addEventListener('load', function(e) {
     TweenMax.from('.logo-heading', 5, {
