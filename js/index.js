@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll(".nav-link");
 const textContentDiv = document.querySelectorAll(".text-content");
 
 
-// window: "delayed" load of content
+// window: "delayed" load of content + fade-in
 
 window.addEventListener("load", function(e) {
     setTimeout(() => {
@@ -83,12 +83,17 @@ allImgs.forEach((img) => {
     })
 });
 
+
+// Images: When dragged, images "disappear"
+
 allImgs.forEach((img) => {
     img.addEventListener("drag", function(e) {
         e.target.style.opacity = "0";
     })
 })
 
+
+// .text-content divs: change colors on mousedown, return to normal on mouseup
 
 textContentDiv.forEach((div) => {
     div.addEventListener("mousedown", function(e) {
@@ -101,10 +106,12 @@ textContentDiv.forEach((div) => {
     })
 })
 
-// Ps: change colors on mousedown, return to normal on mouseup
+
+// Ps: change colors on mousedown, return to normal on mouseup (and stopPropagation to retain different events)
 
 allPs.forEach((p) => {
     p.addEventListener("mousedown", function(e) {
+        e.stopPropagation();
         e.target.style.backgroundColor = "lightsteelblue";
         e.target.style.color = "gold";
     })
