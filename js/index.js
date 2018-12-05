@@ -122,14 +122,18 @@ themeSelect.addEventListener("change", e => {
     mainContainer.style.backgroundColor = themeSelect.style.backgroundColor = navArea.style.backgroundColor = homeArea.style.backgroundColor = "#212529";
     footerArea.style.backgroundColor = "#001432";
   } else { // Original and other undefined themes
-    themeSelect.style.color = "#212529";
-    textElements.forEach(element => element.style.color = "#212529");    
+    themeSelect.removeAttribute("style");
+    textElements.forEach(element => element.removeAttribute("style"));    
     
     themeOptions.forEach(option => {
-      option.style.backgroundColor = "white";
+      option.removeAttribute("style");
     })
-    mainContainer.style.backgroundColor = themeSelect.style.backgroundColor = navArea.style.backgroundColor = homeArea.style.backgroundColor = "white";
-    footerArea.style.backgroundColor = "#FFEBCD";
+
+    mainContainer.removeAttribute("style");
+    themeSelect.removeAttribute("style");
+    navArea.removeAttribute("style");
+    homeArea.removeAttribute("style");
+    footerArea.removeAttribute("style");
   }
 });
 
