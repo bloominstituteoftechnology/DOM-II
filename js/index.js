@@ -52,6 +52,15 @@ for (let i = 0; i < navigation.length; i++) {
   });
 };
 
+for (let i = 0; i < navigation.length; i++) {
+  navigation[i].addEventListener('mousedown', (e) => {
+    navigation[i].style.fontSize = '18px';
+  });
+  navigation[i].addEventListener('mouseup', (e) => {
+    navigation[i].style.fontSize = '16px';
+  });
+};
+
 // blocks default link behavior
 for (let i = 0; i < navigation.length; i++) {
   navigation[i].addEventListener('click', (e) => {
@@ -60,17 +69,9 @@ for (let i = 0; i < navigation.length; i++) {
   });
 };
 
-
-// main image
-mainImage.addEventListener('mouseenter', (e) => {
-  TweenMax.to(mainImage, 1, {
-    opacity: 0
-  });
-});
-
 mainImage.addEventListener('mouseleave', (e) => {
   TweenMax.to(mainImage, 1, {
-    opacity: 1
+    opacity: 0
   });
 });
 
