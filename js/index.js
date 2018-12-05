@@ -47,6 +47,7 @@ const destPic = document.querySelectorAll('.btn');
 destPic.forEach(function(elem) {
 	elem.addEventListener('dblclick', (element) => {
 		element.target.style.backgroundColor = 'green';
+		// element.style.transform = 'scaleY(1.5)';
 	});
 });
 
@@ -54,9 +55,10 @@ destPic.forEach(function(elem) {
 const img = document.querySelectorAll('img');
 
 img.forEach(function(elem) {
-	elem.addEventListener('load', (elem) => {
-		elem.target.style.transitionDuration = '3000';
-		elem.target.style.transform = 'rotate(360deg)';
+	elem.addEventListener('click', (e) => {
+		e.target.style.transform = 'rotate(180deg)';
+		e.target.style.transitionDuration = '10s';
+		console.log(e.target);
 	});
 });
 
@@ -69,4 +71,7 @@ img.forEach(function(elem) {
 // 	2000
 // );
 
-console.log(img);
+// TweenMax.from('nav a', 1, { x: -600, y: -50, scale: 0, rotation: 360, ease: SlowMo.ease.config(0.5, 0.8, false) });
+// TweenMax.to('nav a', { x: 0, y: 0 });
+
+// console.log(img);
