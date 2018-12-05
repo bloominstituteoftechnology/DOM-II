@@ -8,8 +8,10 @@ const blogNav = document.querySelectorAll(".nav-link")[2];
 const contactNav = document.querySelectorAll(".nav-link")[3];
 const mainNavigation = document.querySelector(".main-navigation")
 const img = document.querySelectorAll("img");
-const nav = document.querySelectorAll(".nav")
+const nav = document.querySelectorAll(".nav");
 const logoHeading = document.querySelector(".logo-heading");
+const destination = document.querySelectorAll(".destination");
+const footer = document.querySelector("footer");
 
 // // =====- new elements
 // const burgerArrow = document.createElement("span");
@@ -17,10 +19,72 @@ const logoHeading = document.querySelector(".logo-heading");
 // mainNavigation.appendChild(burgerArrow);
 
 //=====- event listeners
+/* 
+1) resize
+2) wheel
+3) scroll
+4) dblclick
+5) click
+6) mouseenter
+7) mouseleave
+8) mouseover
+9) mouseout
+10) load
+*/
+
+window.addEventListener("resize", ()=>{
+  footer.style.backgroundColor = "black";
+  footer.style.color = "white";
+});
+
+// scroll will change flex order and color
+let destCounter = 0;
+destination[0].addEventListener("wheel", ()=>{
+  destCounter++;
+  console.log("mousewheel activated")
+  if (destCounter % 3 === 0 ){
+    destination[0].style.order = "0"
+  } else if (destCounter % 5 === 0){
+    destination[0].style.order = "1"
+    destination[0].style.backgroundColor = "red";
+    destination[0].style.color = "white";
+  } else {
+    destination[0].style.order = "2"
+  }
+  
+})
+destination[1].addEventListener("wheel", ()=>{
+  destCounter++;
+  console.log("mousewheel activated")
+  if (destCounter % 3 === 0 ){
+    destination[1].style.order = "1"
+  } else if (destCounter % 5 === 0){
+    destination[1].style.order = "2"
+  } else {
+    destination[1].style.backgroundColor = "red";
+    destination[1].style.color = "white";
+    destination[1].style.order = "0"
+  }
+  
+})
+destination[2].addEventListener("wheel", ()=>{
+  destCounter++;
+  console.log("mousewheel activated")
+  if (destCounter % 3 === 0 ){
+    destination[2].style.backgroundColor = "red";
+    destination[2].style.color = "white";
+    destination[2].style.order = "2"
+  } else if (destCounter % 5 === 0){
+    destination[2].style.order = "1"
+  } else {
+    destination[2].style.order = "0"
+  }
+  
+})
 
 // contact eventlistner
 
-homeNav.addEventListener("click", (e)=>{
+homeNav.addEventListener("scroll", (e)=>{
   e.preventDefault()
   e.stopPropagation();
 
@@ -30,7 +94,7 @@ homeNav.addEventListener("click", (e)=>{
   homeNav.style.padding = "1px";
 })
 
-aboutUsNav.addEventListener("click", (e)=>{
+aboutUsNav.addEventListener("dblclick", (e)=>{
   e.preventDefault()
   e.stopPropagation();
   console.log("This is the child element.")
@@ -60,7 +124,7 @@ contactNav.addEventListener("click", (e)=>{
 //logoHeader click color using fizz-buzz algorithm
 
 counter = 0
-
+console.log(counter);
 mainNavigation.addEventListener("click", ()=>{
   counter++;
   console.log('This is the parent you are clicking on')
@@ -81,7 +145,14 @@ mainNavigation.addEventListener("click", ()=>{
 
 
 //img opacity event listner on  mouse hover
-
+img[0].addEventListener("mouseenter", ()=>{
+  img[0].style.opacity = ".5"
+  img[0].style.backgroundColor ="blue";
+})
+img[0].addEventListener("mouseleave", ()=>{
+  img[0].style.opacity = "1"
+  img[0].style.backgroundColor ="none";
+})
 img[1].addEventListener("mouseover", ()=>{
   img[1].style.opacity = ".5"
 })
