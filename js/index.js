@@ -20,7 +20,30 @@ const navigation = document.querySelector(".nav");
          e.target.style.opacity = .2;
     });
 
-   
+const par = document.querySelectorAll("p");
+par.forEach(function(p){
+    p.addEventListener("wheel", function(){
+        p.style.color ="green";
+    })
+});
+
+const aNav = document.querySelectorAll("a");
+aNav.forEach(function(aNav){
+    aNav.addEventListener("click", function(){
+        aNav.style.backgroundColor = "red";
+    })
+    aNav.addEventListener('click',function(e){
+        e.preventDefault();
+    })
+});
+
+const imgs = document.querySelectorAll('img');
+imgs[0].addEventListener('drag',function(){
+    imgs[0].style.marginTop = "10%";
+});
+ 
+
+ 
 
 
 // function myFunction(x) {
