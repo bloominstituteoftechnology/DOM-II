@@ -4,13 +4,13 @@
   align-items: center;
 }
 
-#prefixed {
-  .border-radius(@radius) {
-    -webkit-border-radius: @radius;
-    -moz-border-radius: @radius;
-    -o-border-radius: @radius;
-    border-radius: @radius;
-  }
+.fix-to-center(@z-index) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: @z-index;
 }
 
 .button-creator(@width, @height, @bg-color, @font-color, @font-size) {
@@ -31,5 +31,14 @@
   &:hover {
     background: @white;
     color: @button-bg;
+  }
+}
+
+#prefixed {
+  .border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
   }
 }

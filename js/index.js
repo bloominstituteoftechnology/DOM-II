@@ -59,7 +59,8 @@ const aTagElements = document.querySelectorAll("a");
 const imgElements = document.querySelectorAll("img");
 
 // Overlay element query selectors
-const overlayElements = document.querySelectorAll(".overlay-container *");
+const overlayElements = document.querySelectorAll(".overlay-main-container *");
+const overlayCloseBtn = document.querySelector(".overlay-close-button");
 const overlayImage = document.querySelector(".overlay-image");
 
 // Click event to disable default <a> element behavior and display alert
@@ -83,4 +84,9 @@ imgElements.forEach(imgElement => {
     overlayElements.forEach(overlayElement => overlayElement.style.display = "block");
     overlayImage.src = imgElement.src;
   })
+})
+
+// Event to remove image overlay upon clicking on a close button
+overlayCloseBtn.addEventListener("click", e => {
+  overlayElements.forEach(overlayElement => overlayElement.style.display = "none");
 })
