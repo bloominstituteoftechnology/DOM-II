@@ -51,6 +51,8 @@ greenBlock.appendChild(greenRocket);
 pinkBlock.appendChild(pinkRocket);
 grayBlock.appendChild(grayRocket);
 
+// event listener for mouseover
+
 block.forEach((item, i) => {
   // when clicked, place lowest number to the top position
 
@@ -69,17 +71,17 @@ block.forEach((item, i) => {
       intervalId = window.setInterval(() => {
         // current'blocks first child is its img tag... wowza. I'm learning a lot. I want it's img tag to fly!
         window.clearInterval(clearIntervalId);
-        TweenMax.to(e.target.firstChild, 3, { x: `1750px` });
+        TweenMax.to(e.target.firstChild, 3, { x: `2000px` });
         console.log("hello");
-      }, 10);
+      }, 500);
     });
 
     // when mouse is released, block moves from right back to original position
     item.addEventListener("mouseup", e => {
       window.clearInterval(intervalId);
-      e.target.firstChild.classList.add(".rotate");
       clearIntervalId = window.setInterval(() => {
-        TweenMax.to(e.target.firstChild, 5, { x: "1px" });
+        TweenMax.to(e.target.firstChild, .5, {ease: Bounce.easeOut, x: "1px" });
+        
       }, 10);
     });
   }

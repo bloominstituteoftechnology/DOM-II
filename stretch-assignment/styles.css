@@ -5,10 +5,8 @@ body {
 
 img {
   transform: rotate(50deg);
-}
-
-.rotate {
-  transform: rotate(50deg);
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .blocks {
