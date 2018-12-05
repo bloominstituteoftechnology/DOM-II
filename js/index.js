@@ -1,5 +1,15 @@
 // Your code goes here
 
+// List of events
+const eventListStr = {
+  loadEventStr: "\"load\": Loading screen with page load time counter\n\n",
+  clickEventStr: "\"click\": Default link behavior is disabled; a message is displayed instead upon clicking\n\n",
+  mouseoverEventStr: "\"mouseover\": Mimic the hover pseudoclass on the Fun Bus logo (making it behave like a link, with click event also added)\n\n",
+  dblclickEventStr: "\"dblclick\": Image overlay (with working close button) upon double-clicking on a photo\n\n",
+  changeEventStr: "\"change\": Page color theme selector\n\n",
+  keydownEventStr: "\"keydown\": Display this alert upon pressing the F1 key\n\n"
+};
+
 // CLEARING UP ELEMENTS FOR LOADING SCREEN
 // =======================================
 
@@ -46,7 +56,7 @@ window.addEventListener("load", e => {
   const secondsStr = String(secondsCount).padStart(2, '0');
   const millisecondsStr = (millisecondsCount === 1 ? "<=" : "") + String(millisecondsCount * 10);
 
-  alert(`Your page is ready!\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
+  alert(`Your page is ready! Press F1 while on the page to display the event implementations list.\n\nPage load time: ${minutesStr}min : ${secondsStr}sec : approx. ${millisecondsStr}ms.`);
 });
 
 // AFTER PAGE HAS BEEN LOADED
@@ -120,5 +130,13 @@ themeSelect.addEventListener("change", e => {
     })
     mainContainer.style.backgroundColor = themeSelect.style.backgroundColor = navArea.style.backgroundColor = homeArea.style.backgroundColor = "white";
     footerArea.style.backgroundColor = "#FFEBCD";
+  }
+});
+
+// Event to have a list of page events pop up upon pressing the F1 key
+window.addEventListener("keydown", e => {
+  if (e.key === "F1") {
+    alert("List of event on this page and their implementations:\n\n"
+      + Object.values(eventListStr).reduce((acc, str) => acc + str).trim());
   }
 });
