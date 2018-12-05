@@ -58,7 +58,6 @@ block.forEach((item, i) => {
     negCounter -= 1;
     e.target.style.order = `${negCounter}`;
     TweenMax.from(e.target, 1, { ease: Circ.easeOut, y: "50px" });
-    TweenMax.to(e.target.firstChild, 1, { ease: Circ.easeOut, y: "20px" });
   });
 
   // Launching ONLY FROM THE FIRST POSITION
@@ -72,15 +71,16 @@ block.forEach((item, i) => {
         window.clearInterval(clearIntervalId);
         TweenMax.to(e.target.firstChild, 3, { x: `1750px` });
         console.log("hello");
-      }, 1000);
+      }, 10);
     });
 
     // when mouse is released, block moves from right back to original position
     item.addEventListener("mouseup", e => {
       window.clearInterval(intervalId);
+      e.target.firstChild.classList.add(".rotate");
       clearIntervalId = window.setInterval(() => {
         TweenMax.to(e.target.firstChild, 5, { x: "1px" });
-      }, 1000);
+      }, 10);
     });
   }
 });

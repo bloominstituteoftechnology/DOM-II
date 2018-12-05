@@ -7,6 +7,10 @@ img {
   transform: rotate(50deg);
 }
 
+.rotate {
+  transform: rotate(50deg);
+}
+
 .blocks {
   margin-top: 5%;
   display: flex;
