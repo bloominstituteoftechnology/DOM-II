@@ -24,6 +24,9 @@ img.forEach(function(element){
         setTimeout(function(){
             element.classList.toggle('dim');
         },3000)
+        TweenMax.to(element, 3, {
+            rotationY:'+=360'
+          });
     },)
 })
 
@@ -110,3 +113,4 @@ subject.addEventListener('select', function() {
    intro.addEventListener('mouseenter', function(){
     intro.style.border = '2px solid green'
 })
+
