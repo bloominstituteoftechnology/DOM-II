@@ -20,7 +20,7 @@ const imgapp = document.querySelectorAll('img');
 
 for (let i = 0; i < imgapp.length; i++) {
     imgapp[i].addEventListener('mouseup', (event) => {
-        event.target.style.animation = 'flipInX 1s linear 0s 1 forwards';
+        event.target.style.animation = 'flipInX 1s linear 0s 1 alternate';
     });
 }
 

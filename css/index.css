@@ -350,3 +350,9 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+@keyframes destcolor {
+  to {
+    color: #000000;
+    background-color: rgba(52, 202, 190, 0.884);
+  }
+}
