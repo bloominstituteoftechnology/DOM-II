@@ -77,11 +77,11 @@ window.addEventListener('load', function(e){
 
 ////////////// SCROLL
 
+let para = document.querySelector('h2');
 
-// window.addEventListener('scroll', function(e){
-
-// });
-
+window.addEventListener('scroll', function(e){
+    para.style.color = 'blue';
+});
 
 
 
@@ -98,8 +98,8 @@ logo.addEventListener('select', function() {
 
 ////////////// DBLCLICK
 
-const clickButton = document.querySelectorAll('h4');
-clickButton.forEach(function(h4){
+const clickText= document.querySelectorAll('h4');
+clickText.forEach(function(h4){
     h4.addEventListener('dblclick', function(e){
         e.target.style.color = 'orange';
     });
