@@ -31,13 +31,12 @@ for(let i = 0; i <= block.length; i++){
         block[i].style.order = `${lastOrder}`;
     })
     block[i].addEventListener('mousedown', function(){
-        let interval = window.setInterval(function(){
+        window.setInterval(function(){
             xIndex[block[i].classList[1]]++;
+            TweenMax.to(`.${block[i].classList[1]}`, 0.5, {
+                x:xIndex[block[i].classList[1]],
+            })
         },10)
-        interval;
-        TweenMax.to(`.${block[i].classList[1]}`, 0.5, {
-            x:xIndex[block[i].classList[1]],
-        })
         console.log("holding it down");
     })
     block[i].addEventListener('mouseup', function(){
