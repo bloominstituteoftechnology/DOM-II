@@ -15,7 +15,7 @@ const navLinks = document.querySelectorAll('a');
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('mouseover', (event) => {
         event.target.style.color = 'green';
-        event.target.preventDefault();
+        event.target.preventDefault;
     });
 }
 
@@ -59,6 +59,16 @@ funText.addEventListener('dblclick', (event) => {
 document.addEventListener("scroll", function () {
 
     console.log("Now we are scrolling!");
+
+});
+
+// Drag
+
+const dragFun = document.querySelector("#slide");
+
+dragFun.addEventListener("drag", function () {
+
+    console.log("What a drag");
 
 });
 
