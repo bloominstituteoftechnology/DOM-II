@@ -58,13 +58,30 @@ docClick.forEach(function(f){
 
 
 
-const doc = document.querySelectorAll('h1');
+const doc = document.querySelectorAll('.container');
 doc.forEach(function(f){
     window.addEventListener('resize',function(e){
-        console.log('resized')
-        f.style.backgroundColor = "yellow";
-    })
-})
+        console.log('night mode')
+        //f.style.backgroundColor = "yellow";
+        f.classList.toggle('blackout');
+    });
+});
+
+const itemDrag = document.querySelector('.intro img');
+itemDrag.addEventListener('drag', function(e){
+    console.log('erased image')
+    e.target.style.display= 'none';
+});
+
+const itemDrop = document.querySelector('.intro img');
+itemDrop.addEventListener('drop', function(e){
+    console.log('returned image')
+    e.target.style.display = 'visible';
+});
+
+
+
+
 
 // document.addEventListener('fullscreenchange',function(e){
 //     console.log(e);
