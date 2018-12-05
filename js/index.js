@@ -16,6 +16,7 @@ let nav = document.querySelector('.main-navigation');
 let navAnchors = document.querySelectorAll('.nav-link');
 let logo = document.querySelector('.logo-heading');
 
+nav.style.zIndex = '100';
 
 window.addEventListener('scroll', function(e) {
     nav.style.backgroundColor = '#fcc100';
@@ -92,6 +93,15 @@ intro.addEventListener('mouseout', function(e){
     e.target.style.fontWeight = '';
 })
 
+// === Images ===
+
+let images = document.querySelectorAll('.img-content');
+
+images.forEach(function(index, i){
+    images[i].addEventListener('click', function(e) {
+        TweenMax.to(images[i], 2, {rotationY:180});
+    });          
+});
 
 // === Destination Section ===
 
