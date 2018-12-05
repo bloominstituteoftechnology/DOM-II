@@ -99,3 +99,11 @@ signUpButtons.forEach(element => {
     element.classList.toggle("red-background");
   });
 });
+
+// --- prevent nav items from refreshing the page:
+const navLinks = document.querySelectorAll("nav a");
+navLinks.forEach(element => {
+  element.addEventListener("click", function(e){
+    e.preventDefault();
+  });
+});
