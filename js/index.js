@@ -1,12 +1,17 @@
 // Your code goes here
 
 const title = document.querySelector("header h1");
-const busImg = document.querySelector(".home img")
+const busImg = document.querySelector(".home img");
 const mapImg = document.querySelector(".img-content")
-const inverseMapImg = document.querySelector(".inverse-content .img-content")
-const text = document.querySelector(".content-section p")
-const welcomeP = document.querySelector("header p")
+const inverseMapImg = document.querySelector(".inverse-content .img-content");
+const text = document.querySelector(".content-section p");
+const welcomeP = document.querySelector("header p");
+const anchor = document.querySelector("a");
 
+anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("it worked")
+});
 
 title.addEventListener("click", function(e) {
     e.target.style.fontSize = "100px";
