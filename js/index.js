@@ -21,7 +21,7 @@ navLinks.addEventListener('mouseover', (e) => {
 document.addEventListener('keydown', (e) => {
     const keyDown = e.key;
     console.log('Hey! I am working.')
-    return('keydown e\o\o' + 'key: ' + keyDown);
+    alert ('Uhm, that tickled!!!');
 });
 
 
@@ -48,13 +48,13 @@ window.addEventListener("load", (e) => {
 
 // ================ FOCUS ============== //
 
-const introPic = document.querySelector(".intro img");
-introPic.addEventListener('focus', (e) =>  {
-      e.target.style.background = "black";    
-    }, true);
-    introPic.addEventListener("blur", (e) => {
-          e.target.style.background = "";    
-        }, true);
+// const introPic = document.querySelector(".intro img");
+// introPic.addEventListener('focus', (e) =>  {
+//       e.target.style.background = "black";    
+//     }, true);
+//     introPic.addEventListener("blur", (e) => {
+//           e.target.style.background = "";    
+//         }, true);
         
 
 
@@ -62,7 +62,9 @@ introPic.addEventListener('focus', (e) =>  {
 // ================ RESIZE ============== //
 
 
-
+window.addEventListener('resize', (e) => {
+    console.log('Woah! I am shrinking or maybe growing larger!');
+});
 
 
 
@@ -72,12 +74,32 @@ introPic.addEventListener('focus', (e) =>  {
 
 // ================ SCROLL ============== //
 
+const headings = document.querySelector('h4');
+//  const furtherheadings = document.querySelectorAll('h4');
+window.addEventListener('scroll', (e) => {
+    headings.style.color = '#acefde';
+    console.log('Look at me move!');
+});
+
+
 
 
 
 // ================ SELECT ============== //
 
+const words = document.querySelector('.intro p');
+words.addEventListener('select', (e) => {
+    console.log('So many words!!!');
+});
+
 
 
 
 // ================ DBLCLICK ============== //
+
+const headers = document.querySelector('h2');
+headers.forEach(function(h2){
+    h2.addEventListener('dblclick',function(e) {
+        e.target.style = '#82bc43';
+    });
+});
