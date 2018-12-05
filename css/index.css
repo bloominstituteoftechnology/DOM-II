@@ -163,6 +163,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+#theme-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-weight: bold;
+}
 .container {
   max-width: 800px;
   width: 100%;

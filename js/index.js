@@ -53,10 +53,19 @@ window.addEventListener("load", e => {
 // ==========================
 
 
-// Normal page element query selectors
+// Normal individual page element query selectors
+const navArea = document.querySelector(".main-navigation");
+const homeArea = document.querySelector(".home");
+const footerArea = document.querySelector("footer");
+const themeSelect = document.querySelector("#theme-selection");
 const headerLogo = document.querySelector(".logo-heading");
+
+// Normal grouped page element query selectors
+const themeOptions = document.querySelectorAll("#theme-selection > option");
 const aTagElements = document.querySelectorAll("a");
 const imgElements = document.querySelectorAll("img");
+const textElements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a");
+const buttons = document.querySelectorAll("button");
 
 // Overlay element query selectors
 const overlayElements = document.querySelectorAll(".overlay-main-container *");
@@ -68,8 +77,8 @@ aTagElements.forEach(element => {
   element.addEventListener("click", e => {
     e.preventDefault();
     alert("Sorry, user. You are confined to this page (for now).");
-  })
-});
+  });
+})
 
 // Mouseover and click events to make the header logo behave like a link
 headerLogo.addEventListener("mouseover", e => headerLogo.style.cursor = "pointer");
@@ -83,10 +92,33 @@ imgElements.forEach(imgElement => {
   imgElement.addEventListener("dblclick", e => {
     overlayElements.forEach(overlayElement => overlayElement.style.display = "block");
     overlayImage.src = imgElement.src;
-  })
+  });
 })
 
 // Event to remove image overlay upon clicking on a close button
 overlayCloseBtn.addEventListener("click", e => {
   overlayElements.forEach(overlayElement => overlayElement.style.display = "none");
-})
+});
+
+// Event to change page colors upon selecting a theme
+themeSelect.addEventListener("change", e => {
+  if (event.currentTarget.value === "dark") {
+    themeSelect.style.color = "white";
+    textElements.forEach(element => element.style.color = "white");
+
+    themeOptions.forEach(option => {
+      option.style.backgroundColor = "#212529";
+    })
+    mainContainer.style.backgroundColor = themeSelect.style.backgroundColor = navArea.style.backgroundColor = homeArea.style.backgroundColor = "#212529";
+    footerArea.style.backgroundColor = "#001432";
+  } else { // Original and other undefined themes
+    themeSelect.style.color = "#212529";
+    textElements.forEach(element => element.style.color = "#212529");    
+    
+    themeOptions.forEach(option => {
+      option.style.backgroundColor = "white";
+    })
+    mainContainer.style.backgroundColor = themeSelect.style.backgroundColor = navArea.style.backgroundColor = homeArea.style.backgroundColor = "white";
+    footerArea.style.backgroundColor = "#FFEBCD";
+  }
+});
