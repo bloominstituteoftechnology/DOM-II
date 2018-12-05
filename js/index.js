@@ -22,7 +22,7 @@ function getColor() {
 const topImg = document.querySelector('.intro img');
 
 topImg.addEventListener('mouseover', function(e) {
-    TweenMax.to('.intro img', 3, {rotationY:360});
+    TweenMax.to('.intro img', 3, {rotationY:360});T
     TweenMax.set(topImg, {clearProps:'all'});
 });
 
@@ -54,7 +54,7 @@ focus.addEventListener('focus', function(e) {
 
 // ====================== 7. RESIZE the window to change the background of body to a different color
 window.addEventListener('resize', function(e) {
-    body.style.background = getColor();
+    mapParagraph.style.color = getColor();
 })
 
 // ====================== 8. SCROLL on the page to see some effects

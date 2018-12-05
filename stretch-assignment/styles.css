@@ -39,3 +39,7 @@ body {
   background-color: gray;
   order: 0;
 }
+
+.mousedown {
+  display: none;
+}
