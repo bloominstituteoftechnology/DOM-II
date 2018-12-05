@@ -7,7 +7,8 @@ const aTag = document.querySelectorAll('a');
 const advImg = document.querySelector('.adv-img');
 const funImg = document.querySelector('.fun-img');
 const boatImg = document.querySelector('.boat-img');
-const footer= document.querySelector('.footer');
+const footer = document.querySelector('.footer');
+const pick = document.querySelector('.pick');
 
 logo.addEventListener('mouseover', function(e) {
     TweenMax.to(".logo-heading", 2, 
@@ -59,6 +60,7 @@ boatImg.addEventListener('mouseover', function(e) {
 
 });
 });
+
 boatImg.addEventListener('mouseover', function(e) {
     TweenMax.from(".boat-img", 5, 
     {
@@ -68,8 +70,6 @@ boatImg.addEventListener('mouseover', function(e) {
 
 });
 });
-
-
 
 
 aTag[0].addEventListener('click', function(e) { 
@@ -94,7 +94,6 @@ home.addEventListener('scroll', function(e) {
 
 myButton.addEventListener('click', function(e) {
   e.stopPropagation();
-  console.log("Button Fired!");
   TweenMax.to(".destination", 5, {
     x:300,
     opacity:0.7,
@@ -102,6 +101,10 @@ myButton.addEventListener('click', function(e) {
 });
 
 footer.addEventListener('mouseover', function(e){
-    e.target.style.backgroundColor = "lightBlue"
+    e.target.style.backgroundColor = "lightBlue";
+})
+
+pick.addEventListener('select', function(e){
+    e.target.style.backgroundColor = "lightBlue";
 })
   
