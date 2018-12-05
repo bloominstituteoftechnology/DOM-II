@@ -43,5 +43,5 @@ const allBtns = document.querySelectorAll('.btn');
     });
 
     window.addEventListener('resize', function(e) {
-        alert('Window resizing may cause visual defects')
+        alert('Window resizing may cause aliens')
       });
