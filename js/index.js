@@ -83,21 +83,52 @@ inputs.forEach(element => {
 });
 
 // --- change background color of html on resize
+window.addEventListener("resize", resizeThrottler, false);
+let resizeTimeout;
+function resizeThrottler(){
+  // from https://developer.mozilla.org/en-US/docs/Web/Events/resize 
+  // ignore resize events as long as an actualResizeHandler execution is in the queue
+  if ( !resizeTimeout ) {
+    resizeTimeout = setTimeout(function() {
+      resizeTimeout = null;
+      actualResizeHandler();
+   
+     // The actualResizeHandler will execute at a rate of 15fps
+     }, 66);
+  }
+}
 let bgColor = 255;
 let lighter = false;
-window.addEventListener("resize", function (){
-  console.log("here");
+function actualResizeHandler(){
+  // console.log("here");
   if (bgColor > 254){
     lighter = false;
   } else if (bgColor < 100) {
     lighter = true;
   }
   if (lighter) {
-    bgColor += 1;
+    bgColor += 10;
   } else {
-    bgColor -= 1;
+    bgColor -= 10;
   }
   html.style.backgroundColor = `rgb(${bgColor}, ${bgColor}, ${bgColor}`;
+};
+
+// --- toggle background of h2 elements based on scroll direction
+let prevScrollPosn = 0;
+let h2BgColor = 'white';
+const h2Elements = document.querySelectorAll("h2");
+window.addEventListener("scroll", function(){
+  console.log(window.scrollY);
+  if (prevScrollPosn > window.scrollY) {
+    h2BgColor = 'grey';
+  } else {
+    h2BgColor = 'white';
+  }
+  prevScrollPosn = window.scrollY;
+  h2Elements.forEach(element => {
+    element.style.backgroundColor = h2BgColor;
+  });
 });
 
 // --- toggle background of destinations red on click
