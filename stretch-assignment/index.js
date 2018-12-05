@@ -80,8 +80,10 @@ block.forEach((item, i) => {
     item.addEventListener("mouseup", e => {
       window.clearInterval(intervalId);
       clearIntervalId = window.setInterval(() => {
-        TweenMax.to(e.target.firstChild, .5, {ease: Bounce.easeOut, x: "1px" });
-        
+        TweenMax.to(e.target.firstChild, 0.5, {
+          ease: Bounce.easeOut,
+          x: "1px"
+        });
       }, 10);
     });
   }
