@@ -7,7 +7,9 @@ const eventListStr = {
   mouseoverEventStr: "\"mouseover\": Mimic the hover pseudoclass on the Fun Bus logo (making it behave like a link, with click event also added)\n\n",
   dblclickEventStr: "\"dblclick\": Image overlay (with working close button) upon double-clicking on a photo\n\n",
   changeEventStr: "\"change\": Page color theme selector\n\n",
-  keydownEventStr: "\"keydown\": Display this alert upon pressing the F1 key\n\n"
+  keydownEventStr: "\"keydown\": Display this alert upon pressing the F1 key\n\n",
+  focusEventStr: "\"focus\": Display dark overlay upon having the theme select menu on focus\n\n",
+  blurEventStr: "\"blur\": Remove dark overlay upon clearing focus from the theme select menu (this effect will also happen when a new theme is selected)\n\n"
 };
 
 // CLEARING UP ELEMENTS FOR LOADING SCREEN
@@ -79,6 +81,7 @@ const buttons = document.querySelectorAll("button");
 
 // Overlay element query selectors
 const overlayElements = document.querySelectorAll(".overlay-main-container *");
+const overlayBackground = document.querySelector(".overlay-background");
 const overlayCloseBtn = document.querySelector(".overlay-close-button");
 const overlayImage = document.querySelector(".overlay-image");
 
@@ -100,18 +103,23 @@ headerLogo.addEventListener("click", e => {
 // Event to display image overlay view of double-clicked image
 imgElements.forEach(imgElement => {
   imgElement.addEventListener("dblclick", e => {
-    overlayElements.forEach(overlayElement => overlayElement.style.display = "block");
+    overlayElements.forEach(overlayElement => {
+      overlayElement.style.display = "block";
+    })
     overlayImage.src = imgElement.src;
   });
 })
 
 // Event to remove image overlay upon clicking on a close button
 overlayCloseBtn.addEventListener("click", e => {
-  overlayElements.forEach(overlayElement => overlayElement.style.display = "none");
+  overlayElements.forEach(overlayElement => {
+    overlayElement.removeAttribute("style");
+  })
 });
 
 // Event to change page colors upon selecting a theme
 themeSelect.addEventListener("change", e => {
+  document.activeElement.blur();
   if (event.currentTarget.value === "dark") {
     themeSelect.style.color = "white";
     textElements.forEach(element => element.style.color = "white");
@@ -140,7 +148,14 @@ themeSelect.addEventListener("change", e => {
 // Event to have a list of page events pop up upon pressing the F1 key
 window.addEventListener("keydown", e => {
   if (e.key === "F1") {
-    alert("List of event on this page and their implementations:\n\n"
+    alert("List of events on this page and their implementations:\n\n"
       + Object.values(eventListStr).reduce((acc, str) => acc + str).trim());
   }
 });
+
+themeSelect.addEventListener("focus", e => {
+  overlayBackground.style.display = "block";
+  overlayBackground.style.zIndex = "1";
+})
+
+themeSelect.addEventListener("blur", e => overlayBackground.removeAttribute("style"));
