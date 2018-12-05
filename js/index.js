@@ -3,10 +3,19 @@
 const navMouseOver = document.querySelectorAll('.nav a');
 
 navMouseOver[0].addEventListener("mouseover", function(event) {
-    
-    event.target.style.color = "green";
     event.preventDefault()
+    event.target.style.color = "green";
+    
 })
+const aTag = document.querySelector('.nav a');
+
+aTag.addEventListener('click', function(e) {
+    event.preventDefault()
+    console.log('Atag was clicked')
+})
+
+
+
 
 navMouseOver[1].addEventListener("mouseover", function(event) {
     event.target.style.color = "red";
