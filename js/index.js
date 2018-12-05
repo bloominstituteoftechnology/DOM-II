@@ -19,3 +19,8 @@ const container = document.querySelector(".home");
 container.addEventListener("click", event => {
   event.target.style.border = "red solid 1px";
 });
+
+// prevent links from refreshing
+document.querySelector("nav").addEventListener("click", event => {
+  event.preventDefault();
+});
