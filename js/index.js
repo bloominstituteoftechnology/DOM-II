@@ -17,6 +17,7 @@ nav.forEach((currentvalue) => {
 nav.forEach((currentvalue) => {
     currentvalue.addEventListener("click", (e) => {
         e.preventDefault();
+        TweenMax.to(e.target, 1, {x: 100, y: -30, rotation:180, yoyo: true, repeat: 1});
     });
 });
 // Keydown event listener 
