@@ -47,3 +47,7 @@ body {
     transform: translateX(1000);
   }
 }
+
+.move{
+  transform: 100px;
+}
