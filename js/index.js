@@ -80,6 +80,9 @@ inputs.forEach(element => {
   element.addEventListener("click", function(e){
     e.stopPropagation(); // prevent destination div from toggling red
   });
+  element.addEventListener("select", function(){
+    alert("Input Selected!"); // alert when text within an input is selected
+  });
 });
 
 // --- change background color of html on resize
@@ -119,7 +122,7 @@ let prevScrollPosn = 0;
 let h2BgColor = 'white';
 const h2Elements = document.querySelectorAll("h2");
 window.addEventListener("scroll", function(){
-  console.log(window.scrollY);
+  // console.log(window.scrollY);
   if (prevScrollPosn > window.scrollY) {
     h2BgColor = 'grey';
   } else {
