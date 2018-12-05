@@ -15,7 +15,7 @@ const button = document.querySelectorAll('.btn');
 //===checks for mouse/keyboard movement
 //===alerts inactivity
 window.onload = function(event) {
-  TweenMax.from(".logo-heading", 3, {
+  TweenMax.from('.logo-heading', 3, {
     x:250
   });
   let idleTime = 0;
@@ -39,11 +39,11 @@ window.onload = function(event) {
 //===a tags change random colors when hovered over
 //===doesn't change pages when clicked.
 aTag.forEach(function(element) {
-  element.addEventListener("mouseover", function(event) {
+  element.addEventListener('mouseover', function(event) {
     event.target.style.color = `rgb(${(Math.random() * 255)}, ${(Math.random() * 255)}, ${(Math.random() * 255)})`;
   });
-  element.addEventListener("click", function(event){
-    event.preventDefault()
+  element.addEventListener('click', function(event){
+    event.preventDefault();
   });
 });
 
@@ -53,8 +53,9 @@ home.addEventListener('click', function(event) {
 });
 
 //===double click h2s to make them bold
+
 h2s.forEach(function(element) {
-  element.addEventListener('dlbclick', function(event) {
+  element.addEventListener('dblclick', function(event) {
     event.target.style.fontWeight = 'bold';
   });
 });
