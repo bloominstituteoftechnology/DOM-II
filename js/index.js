@@ -27,7 +27,6 @@ window.addEventListener("load", function(e) {
 // Header Img: Flip 180deg when user scrolls
 
 window.addEventListener("scroll", function(e){
-    console.log("The scroll works");
     logoHeading.style.transform= "rotate(180deg)";
 })
 
