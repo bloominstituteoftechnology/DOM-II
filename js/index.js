@@ -64,7 +64,11 @@ window.addEventListener('load', function(e){
 
 
 ////////////// RESIZE
+// const headingstwo = document.querySelectorAll('h2');
 
+// window.addEventListener('resize', function(e){
+
+// })
 
 
 
@@ -72,16 +76,22 @@ window.addEventListener('load', function(e){
 
 
 ////////////// SCROLL
-window.addEventListener('scroll', function(e){
 
-});
+
+// window.addEventListener('scroll', function(e){
+
+// });
 
 
 
 
 ////////////// SELECT
 
-
+const logo = document.getElementById('fun-bus');
+logo.addEventListener('select', function() {
+    console.log('click on the fun bus');
+  alert('Selection changed!');
+}, false);
 
 
 
