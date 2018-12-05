@@ -43,7 +43,7 @@ window.addEventListener('scroll', function (e) {
 
 // Load //
 window.addEventListener('load', function (e) {
-    //alert('Hello! Welcome to my website.'); Comment back for StandUp
+    alert('Hello! Welcome to my website.');
 });
 
 // Copy //
