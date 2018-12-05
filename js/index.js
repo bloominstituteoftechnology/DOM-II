@@ -17,11 +17,14 @@ home.addEventListener('keydown', function(event) {
 
 
 
+
 const midImg = document.querySelector(".content-destination img");
 
 midImg.addEventListener('contextmenu', function(event) {
     midImg.classList.toggle("displayNone");
 });
+
+
 
 
 const title = document.querySelector(".logo-heading");
@@ -33,11 +36,13 @@ title.addEventListener('wheel', function(event) {
 
 
 
+
 const nav = document.querySelector(".main-navigation");
 
 nav.addEventListener('dblclick', function(event) {
     nav.classList.toggle("goBluer");
 });
+
 
 
 
@@ -49,13 +54,12 @@ all.addEventListener('click', function(event) {
 
 
 
-
+  
 const footer = document.querySelector("footer");
 
 window.addEventListener('resize', function(event) {
     footer.classList.toggle("goRed");
 });
-
 
 
 
@@ -67,6 +71,8 @@ welcome.addEventListener("mouseover", function(event) {
 });
 
 
+
+
 const content = document.querySelector(".text-content");
 
 content.addEventListener("mouseenter", function(Event) {
@@ -74,9 +80,8 @@ content.addEventListener("mouseenter", function(Event) {
   });
 
 
-
-
   
+
 const destination = document.querySelector(".content-destination");
   
 destination.addEventListener("mouseout", function(Event) {
