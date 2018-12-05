@@ -1,16 +1,3 @@
-Listner //rockets can be moved up or down by clicking on them
-//travelers -> can blast of as long as you hold the mouse down on their rocket
-//
-// MVP
-//
-// flex order to the top
-// when a block is clicked, should go to order 0
-// while mouse is clicked down, move box to the right. if it is let go, back to original
-
-//event"click"
-
-// selectors declaration
-
 // block nodelist
 const block = document.querySelectorAll(".block");
 // individial elements
@@ -21,6 +8,7 @@ const pinkBlock = document.querySelector(".block--green");
 const grayBlock = document.querySelector(".block--grey");
 
 let negCounter = 0;
+let intervalId;
 
 block.forEach((item, i) => {
   // when clicked, place lowest number to the top position
@@ -30,13 +18,24 @@ block.forEach((item, i) => {
     e.target.style.order = `${negCounter}`;
   });
 
+  // Launching ONLY IN THE FIRST POSITION
+
+  if (item.style.order <= negCounter){
+    // when mouse is clicked and held down, move block from left to right infinitely
   item.addEventListener("mousedown", e => {
-    let rocket = setInterval()
+    intervalId = setInterval(()=> {
+      console.log('hello')
+    }, 1000)
   })
 
-});
+  // when mouse is released, block moves from right back to original position
+  item.addEventListener("mouseup", e=> {
+    clearInterval(intervalId);
+  })
 
-console.log(block[0]);
+  }
+  
+});
 
 let travelerLaunch = () => {
   // do something
