@@ -49,11 +49,17 @@ logoHeading.addEventListener("mouseover", function() {
 
 buttons.forEach((btn) => {
     btn.addEventListener("mouseenter", function(e) {
-        e.target.style.transform = "scale(1.2,1.2)";
+        // e.target.style.transform = "scale(1.2,1.2)";
+        TweenMax.to(btn, .2, {
+            transform: "scale(1.2,1.2)"
+        })
         e.target.textContent = "Click for adventure";
     })
     btn.addEventListener("mouseout", function(e) {
-        e.target.style.transform = "scale(1,1)";
+        // e.target.style.transform = "scale(1,1)";
+        TweenMax.to(btn, .2, {
+            transform: "scale(1,1)"
+        })
         e.target.textContent = "Sign Me Up!";
     })
 });
