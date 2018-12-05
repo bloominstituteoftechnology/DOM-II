@@ -65,3 +65,20 @@ const welcome = document.querySelector(".intro h2");
 welcome.addEventListener("mouseover", function(event) {
     welcome.classList.toggle("goGreen");
 });
+
+
+const content = document.querySelector(".text-content");
+
+content.addEventListener("mouseenter", function(Event) {
+    content.classList.toggle("goPink");
+  });
+
+
+
+
+  
+const destination = document.querySelector(".content-destination");
+  
+destination.addEventListener("mouseout", function(Event) {
+    destination.classList.toggle("goGreen");
+});
