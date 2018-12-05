@@ -64,6 +64,11 @@
   -webkit-animation: vibrate-1 0.3s linear infinite both;
   animation: vibrate-1 0.3s linear infinite both;
 }
+.vibrate-flipped {
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+  transform: scaleX(-1);
+}
 @-webkit-keyframes vibrate-1 {
   0% {
     -webkit-transform: translate(0);

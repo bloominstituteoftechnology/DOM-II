@@ -134,6 +134,12 @@ window.addEventListener("scroll", function(){
   });
 });
 
+// -- traveling bus vibrates when nav bar is double clicked
+const navBar = document.querySelector(".main-navigation");
+navBar.addEventListener("dblclick", function (){
+  aBus.classList.toggle("vibrate");
+});
+
 // --- toggle background of destinations red on click
 const destinationDivs = document.querySelectorAll(".destination");
 destinationDivs.forEach(element => {
