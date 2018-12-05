@@ -107,7 +107,19 @@ img[3].addEventListener("mouseout", ()=>{
 
 window.addEventListener("load", ()=>{
   TweenLite.from(img[0], 1, {
-     ease: Bounce.easeOut, y: -500 
+     ease: Bounce.easeOut, y: -25
+    });
+
+    TweenLite.from(img[1], 1, { 
+      ease: Circ.easeOut, y: -25
+    });
+
+    TweenLite.from(img[2], 1, {
+      ease: Circ.easeOut, y: -25
+    });
+
+    TweenLite.from(img[3], 1, { 
+      ease: Circ.easeOut, y: -25
     });
 })
 
