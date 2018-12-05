@@ -65,4 +65,13 @@ for (i=0; i < buttons.length; i++) {
     });
 }
 
-// 
+// ===============
+
+body.addEventListener('keydown', function(e) {
+    e.target.style.color = 'red';
+})
+
+body.addEventListener('keyup', function(e) {
+    e.target.style.color = 'black';
+})
+
