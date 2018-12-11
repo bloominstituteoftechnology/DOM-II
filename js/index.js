@@ -15,6 +15,18 @@ funBusTitle.addEventListener(
 
 //keydown
 
+const backgroundRed = document.querySelector('html');
+backgroundRed.addEventListener(
+    "keydown",
+        event => {
+            event.target.style.background = "red";
+        setTimeout(function() {
+            event.target.style.background = "";
+        }, 500);
+    },
+    false
+    );
+    
 //wheel
 
 //drag/drop
