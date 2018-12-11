@@ -26,6 +26,16 @@ buttons[2].addEventListener("mouseover", function(event) {
 
 });
 
+buttons.forEach(function(event) {
+    event.addEventListener("mouseleave", function() {
+        event.textContent = "Bye!";
+    })
+})
+
+// ============================================= HEADER IMAGE
+
+
+
 
 //============================================== HEADER H1
 
@@ -46,8 +56,11 @@ nav.addEventListener('click', function(event) {
 
 window.addEventListener("scroll", function(event) {
     console.log(event)
-})
+});
+
+window.addEventListener("resize", function(event) {
+    this.console.log("You are resizing this window!")
+});
+
 
 //============================================== P
-
-
