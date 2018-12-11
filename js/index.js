@@ -36,10 +36,9 @@ buttons[2].addEventListener("mouseover", function(event) {
 
 //============================================== WINDOW
 
-
-
-
-
+window.addEventListener("scroll", function(event) {
+    console.log(event)
+})
 
 //============================================== P
 
