@@ -1,14 +1,46 @@
 // Your code goes here
 
 
-
-
 // ==================================== BUTTONS
 
-const buttons = document.querySelector(".btn");
+const buttons = document.querySelectorAll(".btn");
 
-buttons.addEventListener("mouseover", function(event) {
+buttons[0].addEventListener("mouseover", function(event) {
     event.target.style.backgroundColor = "red";
+    event.target.style.color = "black";
     event.target.textContent = "Hi!";
 
 })
+
+buttons[1].addEventListener("mouseover", function(event) {
+    event.target.style.backgroundColor = "green";
+    event.target.style.color = "red";
+    event.target.textContent = "Hello!";
+
+})
+
+buttons[2].addEventListener("mouseover", function(event) {
+    event.target.style.backgroundColor = "black";
+    event.target.style.color = "green";
+    event.target.textContent = "Hey!";
+
+});
+
+
+//============================================== NAV
+
+
+
+
+
+
+//============================================== WINDOW
+
+
+
+
+
+
+//============================================== P
+
+
