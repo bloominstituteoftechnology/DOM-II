@@ -350,3 +350,8 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+/* ===================== Code I Added ============================ */
+.tenTimes {
+  font-size: 10em;
+}
