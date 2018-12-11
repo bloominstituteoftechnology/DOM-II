@@ -257,6 +257,9 @@ img {
   width: 48%;
   padding-left: 1%;
 }
+.home .content-section .img-content .display-none {
+  display: none;
+}
 @media (max-width: 500px) {
   .home .content-section .img-content {
     width: 100%;
