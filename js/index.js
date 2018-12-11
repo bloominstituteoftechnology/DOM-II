@@ -37,6 +37,7 @@ buttons[2].addEventListener("mouseover", function(event) {
 const nav = document.querySelector(".nav");
 
 nav.addEventListener('click', function(event) {
+    event.target.style.color = "red";
     console.log("Link was clicked!");
 })
 
