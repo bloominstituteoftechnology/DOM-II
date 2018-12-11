@@ -27,11 +27,18 @@ buttons[2].addEventListener("mouseover", function(event) {
 });
 
 
+//============================================== HEADER H1
+
+
+
+
 //============================================== NAV
 
+const nav = document.querySelector(".nav");
 
-
-
+nav.addEventListener('click', function(event) {
+    console.log("Link was clicked!");
+})
 
 
 //============================================== WINDOW
