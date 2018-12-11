@@ -26,9 +26,26 @@ backgroundRed.addEventListener(
     },
     false
     );
-    
+
 //wheel
 
+const backgroundGreen = document.querySelector('html');
+backgroundGreen.addEventListener(
+    "wheel",
+        event => {
+            event.target.style.background = "green";
+        setTimeout(function() {
+            event.target.style.background = "";
+        }, 500);
+    },
+    false
+    );
+
+const dragDrop = document.querySelectorAll('.nav a');
+    dragDrop.addEventListener("dragstart", (event) => {
+        event.console.log("You dragged");
+    });
+    
 //drag/drop
 
 //load
