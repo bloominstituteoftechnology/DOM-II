@@ -1,9 +1,17 @@
 // Your code goes here
 const menuHome = document.querySelector("a");
-menuHome.style.color = "red";
-
+menuHome.addEventListener("mouseover", function(event1) {
+   event1.target.style.backgroundColor = "red"
+})
+menuHome.addEventListener("mouseout", function(event1) {
+    event1.target.style.backgroundColor = "white"
+ })
+//************************************************************ */
 const funBus = document.querySelector(".main-navigation .logo-heading");
 funBus.style.color = "green";
+funBus.addEventListeners("click", function(){
+    alert("Greeting To All !");
+});
 
 const welcome = document.querySelector(".intro h2");
 welcome.style.color = "deeppink";
