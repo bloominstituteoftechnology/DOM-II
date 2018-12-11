@@ -40,13 +40,13 @@ backgroundGreen.addEventListener(
     },
     false
     );
+    
+//drag/drop
 
 const dragDrop = document.querySelectorAll('.nav a');
     dragDrop.addEventListener("dragstart", (event) => {
         event.console.log("You dragged");
     });
-    
-//drag/drop
 
 //load
 
