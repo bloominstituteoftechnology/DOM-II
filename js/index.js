@@ -21,6 +21,7 @@ mapImg.addEventListener('drag', function(){
 
 const welcome = document.querySelector('.intro h2');
 welcome.addEventListener('click', function(){
+    event.stopPropagation();
     welcome.textContent = "You are not fun. No Fun Bus for you!"
 });
 
@@ -32,6 +33,7 @@ welcomeDbl.addEventListener('dblclick', function(){
 const copy = document.querySelector('body');
 // console.log(copy);
 copy.addEventListener('copy', function(){
+    event.stopPropagation();
     copy.style.background = "green";
     // console.log(event);
 });
@@ -57,4 +59,23 @@ wheel.addEventListener('wheel', function(){
 const keyPress = document.querySelector('body');
 keyPress.addEventListener('keydown', function(){
     keyPress.style.background = '#fff';
+});
+
+const chaTeCo = document.querySelector('.text-content h2');
+chaTeCo.addEventListener('click', function(){
+    event.stopPropagation();
+    chaTeCo.style.color = 'dodgerblue';
+});
+
+const stop = document.querySelector('.content-section');
+stop.addEventListener('click', function(){
+    stop.style.background = '#000';
+});
+
+document.addEventListener('keydown', function(){
+    console.log("Hey, you are squishing me. Take your fat finger off me!")
+});
+
+document.addEventListener('keyup', function(){
+    console.log("Whew, thanks.  You nearly got me stuck.")
 });

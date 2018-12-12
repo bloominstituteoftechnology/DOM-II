@@ -215,6 +215,10 @@ img {
   color: #212529;
   text-decoration: none;
 }
+/* ===================== Code I Added ============================ */
+.tenTimes {
+  font-size: 10em;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -349,9 +353,4 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
-}
-
-/* ===================== Code I Added ============================ */
-.tenTimes {
-  font-size: 10em;
 }
