@@ -33,3 +33,7 @@ console.log(imgGone);
 navMouse[0].addEventListener('click', function(e){
     imgGone.classList.toggle('display-none');
 });
+
+// navMouse[3].addEventListener('dblclick', function(e){
+//     imgGone.classList.toggle('destination');
+// });
