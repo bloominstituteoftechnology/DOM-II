@@ -11,10 +11,15 @@ for (let i = 0; i < nav.length; i++) {
 let h1 = document.querySelector("h1");
 h1.addEventListener("mouseover", () => {
     h1.textContent = " HEADER 1";
+    
 })
 
 
+let h2 = document.querySelector("h2");
+h2.addEventListener("mouseover", () => {
+    h2.textContent = " HEADER 2";
 
+})
 
 
 
@@ -70,7 +75,9 @@ btnClick.addEventListener("click", () => {
 
 
 
-
+document.getElementById("nav ").addEventListener("click", function (event) {
+    event.preventDefault()
+});
 
 
 
