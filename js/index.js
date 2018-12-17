@@ -1,17 +1,26 @@
 // Your code goes here
 //  MOUSEOVER
 let nav = document.querySelectorAll("nav a");
-for (let i = 0; i < nav.length ; i++) {
+for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener("mouseover", () => {
         nav[i].style.color = "red";
     });
 
 }
 
+let h1 = document.querySelector("h1");
+h1.addEventListener("mouseover", () => {
+    h1.textContent = " HEADER 1";
+})
+
+
+
+
+
 
 //  KEYDOWN
-let pageDown = document.getElementsByTagName("html");
-document.addEventListener("keydown", function(event) {
+let pageDown = document.querySelector("html");
+pageDown.addEventListener("keydown", function (event) {
     pageDown = event.target;
     alert("keydown");
 
@@ -19,34 +28,51 @@ document.addEventListener("keydown", function(event) {
 
 
 // WHEEL 
-let mouseScroll = document.getElementsByTagName("html");
-document.addEventListener("wheel", function(event) {
+let mouseScroll = document.querySelector("html");
+mouseScroll.addEventListener("wheel", function (event) {
     mouseScroll = event.target;
-   alert("scrolling");
+    alert("scrolling");
 })
 
-// Drag and Drop 
-let moveItem = document.getElementsByTagName("img");
-document.addEventListener("drag / drop", function(event) {
-    moveItem = event.target;
-    alert('cannot drag item!');
-})
+
 
 
 //  RIGHTCLICK
-let tracker = document.getElementById("img");
-document.addEventListener("mouseover", function(event) {
-    tracker = event.target;
-    alert ("RIGHT CLICKED HERE ")
+let myButton = document.querySelector("html");
+myButton.addEventListener("contextmenu", () => {
+    alert("RIGHT CLICKED HERE ")
 })
- 
 
-// MOUSEDOWN
 
 
 
 //  DBLCLICK
-let doubleClick = document.querySelector("btn");
-document.addEventListener("dblclick", () => {
-    alert ("double clicked item!");
+let doubleClick = document.querySelector("html");
+doubleClick.addEventListener("dblclick", () => {
+    alert("double clicked item!");
 });
+
+
+// CLICK
+let imageClick = document.querySelector("img");
+imageClick.addEventListener("click", () => {
+    alert("DID YOU CLICK ME??");
+});
+
+
+
+let btnClick = document.querySelector(".btn");
+btnClick.addEventListener("click", () => {
+    alert("DID YOU CLICK THIS BUTTON??");
+});
+
+
+
+
+
+
+
+
+
+
+
