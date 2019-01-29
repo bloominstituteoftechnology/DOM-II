@@ -1,0 +1,21 @@
+{
+  "name": "DOM-II",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "less": "less-watch-compiler less css index.less",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattshardman/DOM-II.git"
+  },
+  "keywords": [],
+  "author": "Matt Hardman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattshardman/DOM-II/issues"
+  },
+  "homepage": "https://github.com/mattshardman/DOM-II#readme"
+}
