@@ -29,6 +29,16 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Adding Keypress Event Listener
+
+const body = document.getElementsByTagName('body')
+
+body[0].addEventListener('keydown', e => {
+    event.target.style.color = 'blue';
+})
+
+
+
 
 
 
