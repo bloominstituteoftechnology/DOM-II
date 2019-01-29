@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/mattshardman/DOM-II/issues"
   },
-  "homepage": "https://github.com/mattshardman/DOM-II#readme"
+  "homepage": "https://github.com/mattshardman/DOM-II#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
 }
