@@ -10,19 +10,19 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   
 
-* [ ] Fork the project into your GitHub user account
+* [ - ] Fork the project into your GitHub user account
 
-* [ ] Clone the forked project into a directory on your machine
+* [ - ] Clone the forked project into a directory on your machine
 
-* [ ] You are now ready to build this project with your preferred IDE
+* [ - ] You are now ready to build this project with your preferred IDE
 
   
 
 ## Task 2: Set Up LESS Preprocessor
 
-* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
+* [ - ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
 
-* [ ] Open your terminal and navigate to your preprocessing project by using the `cd` command
+* [ - ] Open your terminal and navigate to your preprocessing project by using the `cd` command
 
 * [ ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
 
