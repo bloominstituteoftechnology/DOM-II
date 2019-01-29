@@ -46,3 +46,22 @@ const keyPopupText = document.querySelector('.keystroke h1');
 
   document.addEventListener('wheel', wheelCallback);
 })();
+
+(function dragDropEvent() {
+  const siteImages = document.querySelectorAll('img');
+
+  function dragCallback(eventObject) {
+    const { target } = eventObject;
+    target.style.boxShadow = '0 0 50px dodgerblue';
+  }
+  function dropCallback(eventObject) {
+    const { target } = eventObject;
+
+    target.removeAttribute('style');
+  }
+
+  for (let i = 0; i < siteImages.length; i++) {
+    siteImages[i].addEventListener('drag', dragCallback);
+    siteImages[i].addEventListener('dragend', dropCallback);
+  }
+})();
