@@ -26,7 +26,7 @@ signUpButton2.addEventListener('dblclick', e =>{
 });
 const signUpButton3 = document.querySelector(".btn3");
 signUpButton3.addEventListener('dblclick', e =>{
-    window.alert("Free Air! Click Here!");
+    window.alert("Free Air for only $17.99! Click Here!");
     e.preventDefault();
 });
 
@@ -44,7 +44,11 @@ signUpPressure3.addEventListener('mouseover', e =>{
     window.alert("You should sign up for this trip! Double click the sign up button!");
 });
 
-// const ssnInfo = document.querySelector(".social-security");
+//Begging User to stay on the site
+const comeBackHere = document.querySelector(".container");
+comeBackHere.addEventListener('mouseout', e =>{
+    window.alert("Baby come back! You can blame it all on me!");
+});
 
 
 // const ssnInfo = document.querySelector(".social-security");
