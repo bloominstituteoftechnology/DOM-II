@@ -3,7 +3,8 @@
   height: 90px;
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
-  position: fixed;
+  position: absolute;
+  transition: all 200ms;
 
   .nav-container {
     height: 100%;
@@ -42,3 +43,9 @@
     }
   }
 } // .main-navigation
+
+.nav2 {
+  position: fixed;
+  transform: translateY(-100%);
+  background: rgb(11, 129, 226);
+}

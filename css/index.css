@@ -179,7 +179,8 @@ img {
   height: 90px;
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
-  position: fixed;
+  position: absolute;
+  transition: all 200ms;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -214,6 +215,11 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.nav2 {
+  position: fixed;
+  transform: translateY(-100%);
+  background: #0b81e2;
 }
 .footer {
   width: 100%;
