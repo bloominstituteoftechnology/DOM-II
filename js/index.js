@@ -65,3 +65,20 @@ const keyPopupText = document.querySelector('.keystroke h1');
     siteImages[i].addEventListener('dragend', dropCallback);
   }
 })();
+
+(function resizeEvent() {
+  function resizeCallback(eventObject) {
+    const { target } = eventObject;
+    keyPopup.classList.remove('hidden');
+    keyPopupText.textContent = `${target.innerWidth} x ${target.innerHeight}`;
+    keyPopupText.style.fontSize = '70px';
+
+    setTimeout(function () {
+      keyPopup.classList.add('hidden');
+      keyPopupText.textContent = '';
+      keyPopupText.removeAttribute('style');
+    }, 1000);
+  }
+
+  window.addEventListener('resize', resizeCallback);
+})();
