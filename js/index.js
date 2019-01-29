@@ -56,6 +56,18 @@ mouseTrack.addEventListener('mousemove', e =>{
     console.log(`The mouse is a movin'`);
 });
 
+//Changes Fun Bus title to maroon
+const titleChange = document.querySelector("h1");
+titleChange.addEventListener('mouseup', e =>{
+    e.target.style.color = "maroon";
+});
+
+//Changes Header color once mouse enters it
+const headerChange = document.querySelector(".main-navigation");
+headerChange.addEventListener('mouseenter', e =>{
+    e.target.style.backgroundColor = "orange";
+});
+
 
 // const ssnInfo = document.querySelector(".social-security");
 
