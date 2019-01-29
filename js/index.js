@@ -45,9 +45,15 @@ signUpPressure3.addEventListener('mouseover', e =>{
 });
 
 //Begging User to stay on the site
-const comeBackHere = document.querySelector(".container");
+const comeBackHere = document.querySelector(".destination");
 comeBackHere.addEventListener('mouseout', e =>{
     window.alert("Baby come back! You can blame it all on me!");
+});
+
+//Tells console if mouse is moving
+const mouseTrack = document.querySelector(".home");
+mouseTrack.addEventListener('mousemove', e =>{
+    console.log(`The mouse is a movin'`);
 });
 
 
