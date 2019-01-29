@@ -30,8 +30,19 @@ signUpButton3.addEventListener('dblclick', e =>{
     e.preventDefault();
 });
 
-// const ssnInfo = document.querySelector(".social-security");
-
+//Pressuring user to sign up
+const signUpPressure1 = document.querySelector(".d1 h4");
+signUpPressure1.addEventListener('mouseover', e =>{
+    window.alert("You should sign up for this trip! Double click the sign up button!");
+});
+const signUpPressure2 = document.querySelector(".d2 h4");
+signUpPressure2.addEventListener('mouseover', e =>{
+    window.alert("You should sign up for this trip! Double click the sign up button!");
+});
+const signUpPressure3 = document.querySelector(".d3 h4");
+signUpPressure3.addEventListener('mouseover', e =>{
+    window.alert("You should sign up for this trip! Double click the sign up button!");
+});
 
 // const ssnInfo = document.querySelector(".social-security");
 
