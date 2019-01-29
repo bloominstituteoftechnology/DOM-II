@@ -10,7 +10,7 @@ submitButton.addEventListener('click', e =>{
     window.alert("Stop silly!");
     e.preventDefault();
 });
-
+ 
 // const ssnInfo = document.querySelector(".social-security");
 
 
