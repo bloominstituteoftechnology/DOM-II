@@ -15,35 +15,30 @@ root.addEventListener('keydown', event => {
         }, 500);
         });
 
-// wheel
-window.addEventListener('wheel', (e) => {
-    console.log('Wheelin');
-  });
-
 
 // drag / drop
 window.addEventListener('drag', (e) => {
-    console.log('drag');
+    alert("No stealing our assets!");
   });
 
 // load
 window.addEventListener('load', (e) => {
-    console.log('load');
+    document.querySelector('.main-navigation h1').style.color = 'blue';
   });
 
 // focus
 window.addEventListener('focus', (e) => {
-    console.log('focus');
+    document.querySelector('img').style.display = 'none';
   });
 
 // resize
 window.addEventListener('resize', (e) => {
-    console.log('resize');
+
   });
 
 // scroll
 window.addEventListener('scroll', (e) => {
-    console.log('scroll');
+    document.querySelector('.main-navigation h1').style.color = 'red';
   });
 
 // select
