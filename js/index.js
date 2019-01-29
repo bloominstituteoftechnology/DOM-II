@@ -68,7 +68,17 @@ headerChange.addEventListener('mouseenter', e =>{
     e.target.style.backgroundColor = "orange";
 });
 
+//Changes Header color to teal once mouse exits the header
+const headerChangeAgain = document.querySelector(".main-navigation");
+headerChangeAgain.addEventListener('mouseleave', e =>{
+    e.target.style.backgroundColor = "teal";
+});
 
+//Changes text color to purple once clicked anywhere with non-primary mouse button
+const textChange = document.querySelector(".home");
+textChange.addEventListener('auxclick', e =>{
+    e.target.style.color = "purple";
+});
 // const ssnInfo = document.querySelector(".social-security");
 
 
