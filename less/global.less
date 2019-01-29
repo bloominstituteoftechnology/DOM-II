@@ -49,3 +49,25 @@ img {
     margin: 0 5%;
   }
 }
+
+.keystroke {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 5px;
+
+  h1 {
+    font-size: 180px;
+    font-weight: bold;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  &.hidden {
+    visibility: hidden;
+  }
+}
