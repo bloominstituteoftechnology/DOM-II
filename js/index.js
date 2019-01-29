@@ -1,4 +1,6 @@
 // Your code goes here
+const keyPopup = document.querySelector('.keystroke');
+const keyPopupText = document.querySelector('.keystroke h1');
 
 (function mouseoverEvent() {
   const navLinks = document.querySelectorAll('a.nav-link');
@@ -14,13 +16,10 @@
 })();
 
 (function keydownEvent() {
-  const keyPopup = document.querySelector('.keystroke');
-  const keyPopupText = document.querySelector('.keystroke h1');
-
   function keyDownCallback(eventObject) {
     const { key } = eventObject;
     keyPopup.classList.remove('hidden');
-    keyPopupText.textContent = key || "_";
+    keyPopupText.textContent += key || "_";
 
     setTimeout(function () {
       keyPopup.classList.add('hidden');
@@ -29,4 +28,21 @@
   }
 
   document.addEventListener('keydown', keyDownCallback);
+})();
+
+(function wheelEvent() {
+  function wheelCallback(eventObject) {
+    const { deltaY } = eventObject;
+    keyPopup.classList.remove('hidden');
+    keyPopupText.textContent = deltaY < 0 ? '⬆️': '⬇️';
+    keyPopupText.style.fontSize = '100px';
+
+    setTimeout(function () {
+      keyPopup.classList.add('hidden');
+      keyPopupText.textContent = '';
+      keyPopupText.removeAttribute('style');
+    }, 500);
+  }
+
+  document.addEventListener('wheel', wheelCallback);
 })();
