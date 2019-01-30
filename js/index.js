@@ -34,8 +34,13 @@ window.addEventListener('scroll', () => {
 const body = document.getElementsByTagName('body')
 
 body[0].addEventListener('keydown', e => {
-    event.target.style.color = 'blue';
+    event.target.style.backgroundColor = 'green';
 })
+
+body[0].addEventListener('keyup', e => {
+    event.target.style.backgroundColor = 'red';
+})
+
 
 
 
