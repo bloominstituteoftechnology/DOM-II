@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const scrollable = 1310;
     if(scrolled === scrollable){
-        alert(`DUN DUN DUN YOU'VE REACHED THE BOTTOM!`);    
+        alert(`Don't click the buttons..`);    
     }
 });
 
@@ -40,6 +40,25 @@ body[0].addEventListener('keydown', e => {
 body[0].addEventListener('keyup', e => {
     event.target.style.backgroundColor = 'red';
 })
+
+// Adding Click Event Listener 
+
+const buttons = document.getElementsByClassName('btn');
+buttons[0].addEventListener('click', e => {
+    alert('Ouch! That Hurt!')
+})
+
+buttons[1].addEventListener('click', e => {
+    alert('Okay, really stop.')
+})
+
+
+buttons[2].addEventListener('click', e => {
+    alert(`This isn't funny anymore!`)
+})
+
+
+
 
 
 
