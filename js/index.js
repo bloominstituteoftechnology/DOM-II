@@ -57,6 +57,26 @@ buttons[2].addEventListener('click', e => {
     alert(`This isn't funny anymore!`)
 })
 
+// setTimeout();
+
+function hello() {
+    alert('WELCOME TO THE FUN BUS!');
+}
+
+setTimeout(hello, 500)
+
+// preventDefault
+
+const youtubeLink = document.getElementById('youtube-link');
+
+youtubeLink.addEventListener('click', e => {
+    e.preventDefault();
+})
+
+
+
+
+
 
 
 
