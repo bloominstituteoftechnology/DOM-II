@@ -66,11 +66,18 @@ function hello() {
 setTimeout(hello, 500)
 
 // preventDefault
+const navigationContainer = document.getElementsByClassName('nav-container');
+
+navigationContainer[0].addEventListener('click', e => {
+    console.log('clicked on container');
+})
 
 const youtubeLink = document.getElementById('youtube-link');
 
 youtubeLink.addEventListener('click', e => {
     e.preventDefault();
+    e.stopPropagation();
+    console.log('clicked on youtube link');
 })
 
 
