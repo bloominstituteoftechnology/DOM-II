@@ -3,6 +3,7 @@
 
 // Variables //
 let body = document.querySelector('body')
+let footer = document.querySelector('footer')
 let banana = document.querySelector('img')
 let anchors = document.querySelector('.nav, a')
 let btn = document.querySelectorAll('.btn') 
@@ -42,10 +43,15 @@ body.addEventListener('keydown', (object) =>{
 images.forEach(image => {
     image.addEventListener('mouseleave', (object)=>{
         image.style.display = 'none'
+        alert('What did you do?')
     })
 })
 
 // 6. Click for white text// 
 body.addEventListener('click', (object)=>{
 	body.style.color = 'white'
+})
+// 7 . Double to bring text back// 
+body.addEventListener('dblclick', (object)=>{
+	body.style.color = 'black'
 })
