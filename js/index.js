@@ -32,3 +32,9 @@ logo.addEventListener('click', (event) => {
         event.target.style.fontSize = '4rem';
     }
 })
+
+let body = document.querySelector('body');
+let colors = ['red', 'blue', 'green', 'yellow', 'white'];
+document.addEventListener('scroll', (event) => {
+    body.style.backgroundColor = colors[Math.floor(Math.random() * 5)];
+})
