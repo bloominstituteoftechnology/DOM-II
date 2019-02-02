@@ -39,7 +39,7 @@ body.addEventListener('keydown', (object) =>{
     alert("Click for White text")
 })
 
-// 5. Images leave with 'mouseleave'// 
+// 5.  All Images leave with 'mouseleave'// 
 images.forEach(image => {
     image.addEventListener('mouseleave', (object)=>{
         image.style.display = 'none'
@@ -55,3 +55,9 @@ body.addEventListener('click', (object)=>{
 body.addEventListener('dblclick', (object)=>{
 	body.style.color = 'black'
 })
+
+//8. Log to console when resizing window 'resize'//
+window.addEventListener('resize', (object) =>{
+	console.log('I hope this is Responsive....')	
+})
+
