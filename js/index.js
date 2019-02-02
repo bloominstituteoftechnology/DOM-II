@@ -34,6 +34,18 @@ btn[2].addEventListener('dblclick', (object) => {
 
 // 4. Changes background color with a 'keydown'//
 body.addEventListener('keydown', (object) =>{
-	body.style.backgroundColor = 'black'
+    body.style.backgroundColor = 'black'
+    alert("Click for White text")
 })
 
+// 5. Images leave with 'mouseleave'// 
+images.forEach(image => {
+    image.addEventListener('mouseleave', (object)=>{
+        image.style.display = 'none'
+    })
+})
+
+// 6. Click for white text// 
+body.addEventListener('click', (object)=>{
+	body.style.color = 'white'
+})
