@@ -23,4 +23,12 @@ btn[0].addEventListener('dblclick', (object) => {
 	alert("I'm going... I'm going")
 	event.stopPropagation();
 })
+btn[1].addEventListener('dblclick', (object) => {
+	alert("I'm going... I'm going")
+	event.stopPropagation();
+})
+btn[2].addEventListener('dblclick', (object) => {
+	alert("I'm going... I'm going")
+	event.stopPropagation();
+})
 
