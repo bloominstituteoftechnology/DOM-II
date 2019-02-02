@@ -6,7 +6,7 @@ let body = document.querySelector('body')
 let banana = document.querySelector('img')
 let anchors = document.querySelector('.nav, a')
 let btn = document.querySelectorAll('.btn') 
-
+let images = document.querySelectorAll('img')
 
 // 1. Turns banner into a banana for Chance with a 'mouseover'//
 banana.addEventListener('mouseover', (object) =>{
@@ -30,5 +30,10 @@ btn[1].addEventListener('dblclick', (object) => {
 btn[2].addEventListener('dblclick', (object) => {
 	alert("I'm going... I'm going")
 	event.stopPropagation();
+})
+
+// 4. Changes background color with a 'keydown'//
+body.addEventListener('keydown', (object) =>{
+	body.style.backgroundColor = 'black'
 })
 
