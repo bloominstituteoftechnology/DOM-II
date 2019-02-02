@@ -61,3 +61,12 @@ window.addEventListener('resize', (object) =>{
 	console.log('I hope this is Responsive....')	
 })
 
+// 9. Alert to prepare user for experience using 'load'//
+window.addEventListener('load', (object) => { 
+    alert('This will be the best site you have ever seen')
+})
+
+// 10. Change color of footer with 'mouseover'// 
+footer.addEventListener('mouseover', (object)=>{ 
+    footer.style.backgroundColor = '#15a7a7'
+})
