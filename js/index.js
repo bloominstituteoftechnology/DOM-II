@@ -18,5 +18,9 @@ anchors.addEventListener('click', (object) => {
     alert("Ouch!! why did you poke me?")
 })
 
-// 3. 
+// 3. Buttons alert with 'doubleClick'//
+btn[0].addEventListener('dblclick', (object) => {
+	alert("I'm going... I'm going")
+	event.stopPropagation();
+})
 
