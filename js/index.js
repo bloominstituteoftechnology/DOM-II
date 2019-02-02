@@ -22,3 +22,13 @@ document.addEventListener('keydown', (event) => {
         introP.textContent = introPOriginal;
     }
 })
+
+let logo = document.querySelector('h1');
+
+logo.addEventListener('click', (event) => {
+    if (event.target.style.fontSize === '4rem') {
+        event.target.style.fontSize = '5rem';
+    } else {
+        event.target.style.fontSize = '4rem';
+    }
+})
