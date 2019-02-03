@@ -5,14 +5,23 @@ const body = document.querySelector('body');
 let p = document.querySelectorAll('p');
 const img = document.querySelectorAll('img');
 const nav = document.querySelector('.main-navigation');
+const anchors = document.querySelectorAll('a');
+const div = document.querySelectorAll('div');
 
+// Prevent Default /////////////////
 
+anchors.forEach((index, i) => {addEventListener('click', event =>
+event.preventDefault())}); 
 
 // 1 ///////////////////////////// 'click'
 
-h2.forEach((index, i) => h2[i].addEventListener('click', (event =>
-    alert (`You clicked an h2`)))
+h2.forEach((index, i) => h2[i].addEventListener('click', (event => {
+    event.stopPropagation();
+    alert (`You clicked an h2`)}))
 )
+
+div.forEach((index, i) => div[i].addEventListener('click', event =>
+alert ('You clicked a div.')))
 
 // 2 & 3 ///////////////////////////// 'mouseover' & 'mouseleave'
 
@@ -40,11 +49,13 @@ document.addEventListener('dblclick', (event => body.style.backgroundColor = 'wh
 document.addEventListener('dblclick', (event => nav.style.backgroundColor = 'white'));
 p.forEach((index, i) => 
 document.addEventListener('dblclick', (event => p[i].style.backgroundColor = 'white')));
+p.forEach((index, i) => 
+document.addEventListener('dblclick', (event => h2[i].style.backgroundColor = 'white')));
+
 // 6 ///////////////////////////// 'drag'
 
 document.addEventListener('dragstart',(event => {
     alert ('Put that back!')
-    event.stopImmediatePropagation();
 }))
 
 // 7 ///////////////////////////// 'scroll'
@@ -56,7 +67,17 @@ p.forEach((index, i) =>
     window.addEventListener('scroll', (event => {
     p[i].style.backgroundColor = getRandomColor()})))
 
-// 8 /////////////////////////////
+h2.forEach((index, i) => 
+    window.addEventListener('scroll', (event => {
+    h2[i].style.backgroundColor = getRandomColor()})))
 
-// window.addEventListener('resize', (event =>
-//     ))
+// 8 ///////////////////////////// 'Resize'
+
+window.addEventListener('resize', (event => 
+    alert ('The window has been resized')
+    ))
+
+// 8 ///////////////////////////// 'Copy'
+document.addEventListener('copy', (event =>
+    alert ('Please do not plagiarize our page.')))
+
