@@ -104,3 +104,13 @@ button[1].addEventListener('click', (e) => {
 button[2].addEventListener('click', (e) => {
     alert('You Signed Up!!!');
 })
+
+
+
+//prevent default
+
+let navPrevent = document.querySelector('a')
+
+navPrevent.addEventListener('click', (e) => {
+    preventDefault();
+})
