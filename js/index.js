@@ -44,7 +44,7 @@
             imgClick.style.display = 'none'
         })
 
-// -5- // d
+// -5- //
     // -- // wheel
         // Select Dom Element
             let bodyElement = document.querySelector('body')
@@ -52,7 +52,7 @@
         // Create Event Listener
             bodyElement.addEventListener('wheel', event)     
         
-        // Color array index Counter
+        // Color array
             let counter = -1
             let colorArray = ['yellow', 'red', 'orange', 'black', 'aqua']
 
@@ -89,20 +89,50 @@
             }
 
 // // ?? // -6- // 
-//     // -- // MouseOver
-//         // Select Dom Element
-//             let textContent = document.querySelectorAll('.text-content')
-//             console.log(textContent)
-//         // Create Event Listener
-//             textContent.addEventListener('mouseover', event)
-//         // Event Listener Call Back
-//             textContent.addEventListener('mouseover', event => {
-//                 textContent.forEach( paragraph => {
-//                     paragraph.style.fontSize = 'xx-large';
-//                 })
-//             })
+    // -- // MouseOver
+        // Select Dom Element
+            let textContentClass = document.querySelectorAll('.text-content p')
+            console.log(textContentClass)
 
-// // -7- //
+        // Create Event Listener
+            textContentClass.addEventListener('mouseover', event)
+        // Event Listener Callback    
+            textContentClass.addEventListener('mouseover', event => {
+                // -v1- 
+                    textContentClass.forEach( paragraph => {
+                        paragraph.style.fontFamily = 'cursive'
+                    })
+                
+                // -v2-
+                    // textContentClass[0].style.fontFamily = 'cursive'
+                    // textContentClass[1].style.fontFamily = 'cursive'
+                })
+
+            // -v3-
+                // textContentClass.forEach( paragraph => {
+                //     paragraph.addEventListener('mouseover', event => {
+                //         textContentClass.style.fontFamily = 'cursive'
+                //     })
+                // })
+
+// // ?? // -7- //      
+    // -- // MouseOver
+        // Select Dom Element
+            // ABOVE
+
+    // // Create Event Listener
+    //     textContentClass.addEventListener('mouseout', event)
+    // // Event Listener Callback    
+    //     textContentClass.addEventListener('mouseout', event => {
+    //         textContentClass.forEach( paragraph => {
+    //             paragraph.style.fontFamily = 'monospace'
+    //         })
+    //     })
+    
+            
+
+
+// // -8- //
 //     // Select Dom Element
 //         let destinationClass = document.querySelectorAll('.destination')
 //         console.log( destinationClass)
@@ -115,7 +145,7 @@
 //             })
 //         })
 
-// // -8- //
+// // -9- //
 //     // Select Dom Element
 //         let btmButton = document.querySelectorAll('.btn')
 //             console.log(btmButton)
@@ -131,6 +161,7 @@
 //         // Select Dom Element
 //             let navItems = document.querySelectorAll('nav a')
 //             console.log(navItems)
+
 //         // Create Event Listener
 //         navItems.addEventListener('click', event)
 //         // Event Listener Call Back
@@ -139,4 +170,4 @@
 //             navItems.forEach( param => {
 //                 param.preventDefault()
 //             })
-//         })   
+//         }) 
