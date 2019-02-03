@@ -37,18 +37,26 @@ document.addEventListener('keydown', (event =>  body.style.backgroundColor = get
 // 5 ///////////////////////////// 'dblclick'
 
 document.addEventListener('dblclick', (event => body.style.backgroundColor = 'white')); 
+document.addEventListener('dblclick', (event => nav.style.backgroundColor = 'white'));
+p.forEach((index, i) => 
+document.addEventListener('dblclick', (event => p[i].style.backgroundColor = 'white')));
+// 6 ///////////////////////////// 'drag'
 
-// 6 ///////////////////////////// 'select'
-
-window.addEventListener('select', (event => {
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    selection.style.color = getRandomColor();
+document.addEventListener('dragstart',(event => {
+    alert ('Put that back!')
+    event.stopImmediatePropagation();
 }))
 
 // 7 ///////////////////////////// 'scroll'
 
-window.addEventListener('scroll', (event =>
-    nav.style.backgroundColor = getRandomColor()));
+window.addEventListener('scroll', (event => {
+    nav.style.backgroundColor = getRandomColor()}));
+
+p.forEach((index, i) => 
+    window.addEventListener('scroll', (event => {
+    p[i].style.backgroundColor = getRandomColor()})))
 
 // 8 /////////////////////////////
 
+// window.addEventListener('resize', (event =>
+//     ))
