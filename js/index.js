@@ -10,15 +10,16 @@ const letsGo = document.querySelector('.text-content');
 const footer = document.querySelector('.footer');
 const destination1 = document.querySelector('.content-destination');
 const destination2 = document.querySelector('.destination');
-
+const window1 = document.querySelector('window');
   
 
 
 
 
 // Adding Event Listeners
-navLogo.addEventListener('mouseover', (event) => {
+navLogo.addEventListener('click', (event) => {
     event.target.style.color = "red";
+    console.log(`this is working`)
 
     setTimeout(function() {
       event.target.style.color = "";
@@ -43,8 +44,9 @@ headerIntro.addEventListener('mouseover', (event) => {
   
 });
 
-
-
+window.addEventListener('resize', (event) => {
+    console.log(`this is working`)
+})
 button[0].addEventListener('click', (event) => {
     event.target.style.display = 'none';
 });
