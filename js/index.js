@@ -88,86 +88,70 @@
                 }
             }
 
-// // ?? // -6- // 
+// -6- // 
     // -- // MouseOver
         // Select Dom Element
             let textContentClass = document.querySelectorAll('.text-content p')
             console.log(textContentClass)
 
-        // Create Event Listener
-            textContentClass.addEventListener('mouseover', event)
         // Event Listener Callback    
-            textContentClass.addEventListener('mouseover', event => {
-                // -v1- 
-                    textContentClass.forEach( paragraph => {
-                        paragraph.style.fontFamily = 'cursive'
-                    })
-                
-                // -v2-
-                    // textContentClass[0].style.fontFamily = 'cursive'
-                    // textContentClass[1].style.fontFamily = 'cursive'
+            textContentClass.forEach( paragraph => {
+                paragraph.addEventListener('mouseover', () => {
+                    paragraph.style.fontFamily = 'cursive'
                 })
+            })
 
-            // -v3-
-                // textContentClass.forEach( paragraph => {
-                //     paragraph.addEventListener('mouseover', event => {
-                //         textContentClass.style.fontFamily = 'cursive'
-                //     })
-                // })
-
-// // ?? // -7- //      
-    // -- // MouseOver
-        // Select Dom Element
-            // ABOVE
-
-    // // Create Event Listener
-    //     textContentClass.addEventListener('mouseout', event)
-    // // Event Listener Callback    
-    //     textContentClass.addEventListener('mouseout', event => {
-    //         textContentClass.forEach( paragraph => {
-    //             paragraph.style.fontFamily = 'monospace'
-    //         })
-    //     })
+// -7- //      
+    // -- // MouseOut
     
-            
+    textContentClass.forEach ( paragraph => {
+        paragraph.addEventListener('mouseout', () => {
+            paragraph.style.fontFamily = 'monospace'
+        })
+    })
 
 
-// // -8- //
-//     // Select Dom Element
-//         let destinationClass = document.querySelectorAll('.destination')
-//         console.log( destinationClass)
-//     // Create Event Listener
-//         destinationClass.addEventListener('mouseenter', event)
-//     // Event Listener Callback
-//         destinationClass.addEventListener('mouseenter', event => {
-//             destinationClass.forEach( selectedClass => {
-//                 selectedClass.style.backgroundColor = 'yellow'
-//             })
-//         })
+// -8- //
+    // Select Dom Element
+        let destinationClass = document.querySelectorAll('.destination')
+        console.log( destinationClass)
+
+    // Event Listener Callback
+    destinationClass.forEach( card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.backgroundColor = 'yellow'
+        })
+    })
 
 // // -9- //
-//     // Select Dom Element
-//         let btmButton = document.querySelectorAll('.btn')
-//             console.log(btmButton)
-//     // Create Event Listener
-//         btmButton.addEventListener('click', event)
-//     // Event Listener Callback
-//     btmButton.addEventListener('click', event => {
-//         target.style.backgroundColor = 'purple'
-//     })
 
-// // -preventDefault()- //
-//     // -- // header TEXT COLOR
-//         // Select Dom Element
-//             let navItems = document.querySelectorAll('nav a')
-//             console.log(navItems)
+    let btmButton = document.querySelectorAll('.btn')
+    btmButton.forEach( card => {
+        card.addEventListener('mouseover', event => {
+            card.style.backgroundColor = 'purple'
+        })
+    })
 
-//         // Create Event Listener
-//         navItems.addEventListener('click', event)
-//         // Event Listener Call Back
-//         navItems.addEventListener('click', event => {
-//             console.log(navItems)
-//             navItems.forEach( param => {
-//                 param.preventDefault()
-//             })
-//         }) 
+// -10- //
+    // -- // dblClick
+    let imgRemove = document.querySelector('.img-content img')
+    console.log(imgClick)
+    
+    imgRemove.addEventListener('dblclick', event)
+
+    imgRemove.addEventListener('dblclick', event => {
+        imgRemove.style.display = 'none'
+    })
+
+// -preventDefault()- //
+    // -- // header TEXT COLOR
+        // Select Dom Element
+            let navItems = document.querySelectorAll('nav a')
+            console.log(navItems)
+
+        navItems.forEach( aTag => {
+            aTag.addEventListener('click', event => {
+                event.preventDefault()
+            })
+        })
+
