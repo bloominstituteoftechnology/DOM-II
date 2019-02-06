@@ -20,13 +20,14 @@ para.addEventListener('mouseover', function(event) {
 const newNav = document.querySelector('nav');
 
 newNav.addEventListener('mouseover', function(event) {
-    event.target.style.color = 'green';
+    event.target.style.color = 'yellow';
 })
 
 const newImg = document.querySelector('img');
 
 newImg.addEventListener('mouseover', function(event) {
-    event.target.style.display = 'none';
+    alert('Click now and enter to win!');
+    event.preventDefault();
 })
 
 const foot = document.querySelector('footer');
@@ -41,10 +42,10 @@ button.addEventListener('mouseover', function(event) {
     event.target.style.backgroundColor = 'red';
 })
 
-const contain = document.querySelector('.container nav-container');
+const bttn = document.getElementById('butn');
 
-contain.addEventListener('mouseover', function(event) {
-    console.log(`Event: ${event}`)
+bttn.addEventListener('mouseover', function(event) {
+    event.target.style.backgroundColor = 'black';
 })
 
 const headFour = document.querySelector('h4');
@@ -53,8 +54,8 @@ headFour.addEventListener('mouseover', function(event) {
     console.log(`The event type: ${event.type}`);
 })
 
-const ctn = document.querySelector('.container home');
+const headerNew = document.querySelector('.main-navigation');
 
-ctn.addEventListener('click', function(event) {
+headerNew.addEventListener('mouseleave', event => {
     event.target.style.backgroundColor = 'teal';
 })
