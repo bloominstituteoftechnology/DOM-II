@@ -23,7 +23,7 @@ navLogo.addEventListener('click', (event) => {
 
     setTimeout(function() {
       event.target.style.color = "";
-    }, 500);
+    }, 1000);
   }, false);
 
   
@@ -46,6 +46,9 @@ headerIntro.addEventListener('mouseover', (event) => {
 
 window.addEventListener('resize', (event) => {
     console.log(`this is working`)
+})
+window.addEventListener('load', (event) => {
+    console.log(`this isnt working`)
 })
 button[0].addEventListener('click', (event) => {
     event.target.style.display = 'none';
