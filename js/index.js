@@ -17,9 +17,6 @@
   const nav = document.querySelector(".nav");
     nav.addEventListener("dblclick", (e) => {e.target.style.backgroundColor = 'red';});
 
-// Nav links do not reload the page.
-  nav.addEventListener('click', (e) => {e.preventDefault(); console.log("You clicked a navlink");});
-
 // Press any keyboard key to make the header disappear. 
   const header = document.querySelector('header');
   const body = document.querySelector('body');
@@ -31,7 +28,13 @@
 
 // Hover over a expedition title to change its color to MediumSeaGreen.
   const allExpeditionsTitle = document.querySelectorAll('.destination h4')
-    allExpeditionsTitle.forEach(node => {node.addEventListener('mousemove', (e) => e.target.style.color = 'MediumSeaGreen');});
+    allExpeditionsTitle.addEventListener('mousemove', (e) => {e.stopPropagation()})
+    allExpeditionsTitle.forEach(node => {node.addEventListener('mousemove', (e) => {e.target.style.color = 'MediumSeaGreen'})});
+
+// Hover over a Adventure Awaits title to change its color to Maroon.
+  const adventureAwaits = document.querySelectorAll('.text-content h2')
+    adventureAwaits.addEventListener('mousemove', (e) => {e.stopPropagation()})
+    adventureAwaits.forEach(node => {node.addEventListener('mousemove', (e) => {e.target.style.color = 'Maroon'})});
 
 // Double click a sign up button to prompt an input box and then an alert. 
   const button = document.querySelectorAll('.btn');
@@ -40,3 +43,6 @@
 // Right click the footer to change its background color to MediumTurquoise.
   footer = document.querySelector('.footer');
     footer.addEventListener('contextmenu', (e) => {e.target.style.backgroundColor = 'MediumTurquoise';})
+
+// Nav links do not reload page.
+  nav.addEventListener('click', (e) => {e.preventDefault(); console.log("clicked on navlink");});
