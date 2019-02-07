@@ -18,17 +18,25 @@ textContent.addEventListener('dblclick', e => {
 });
 
 
-    const destination = document.querySelectorAll('.destination');
-    destination.addEventListener('click', e => {
-    // const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
-    e.target.style.fontSize = '30px';
-    })
+    // const destination = document.querySelectorAll('.destination');
+    // destination.addEventListener('click' ,() => {
+    // // const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
+    // // e.target.style.fontSize = '30px';
+    // console.log(`Hello`)
+    // })
 
-const div = document.querySelectorAll('.btn');
+// const div = document.querySelector('.btn');
 
-div[2].addEventListener('click', e => {
-div.innerHTML = `click count: ${e.detail}`;
+// div.addEventListener('click', (e) => {
+// div.innerHTML = `click count: ${e.detail}`;
+// });
+
+const destination = document.querySelectorAll(`.destination`);
+
+destination[0].addEventListener('click', function(e) {
+ console.log('Hello');
 });
+
 
 const mainNavigation = document.querySelector('.main-navigation')
 mainNavigation.addEventListener('click', e => {
