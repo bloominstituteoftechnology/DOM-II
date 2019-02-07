@@ -17,16 +17,17 @@ textContent.addEventListener('dblclick', e => {
   e.target.style.textDecoration = "underline";
 });
 
-// function logSelection(e) {
-//     const destination = document.querySelector('.destination, p');
-//     const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
-//     destination.textContent = alert(`You selected: ${selection}`);
-//   }
 
-const div = document.querySelector('btn');
+    const destination = document.querySelectorAll('.destination');
+    destination.addEventListener('click', e => {
+    // const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
+    e.target.style.fontSize = '30px';
+    })
 
-div.addEventListener('Sign Me Up!', e => {
-div.innerHTML = `Sign Me Up count: ${e.detail}`;
+const div = document.querySelectorAll('.btn');
+
+div[2].addEventListener('click', e => {
+div.innerHTML = `click count: ${e.detail}`;
 });
 
 const mainNavigation = document.querySelector('.main-navigation')
