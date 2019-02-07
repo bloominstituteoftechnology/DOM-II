@@ -16,7 +16,7 @@ const textContent = document.querySelector('.text-content');
 textContent.addEventListener('dblclick', e => {
   e.target.style.textDecoration = "underline";
 });
-
+//-----------------------------------------
 
     // const destination = document.querySelectorAll('.destination');
     // destination.addEventListener('click' ,() => {
@@ -25,11 +25,11 @@ textContent.addEventListener('dblclick', e => {
     // console.log(`Hello`)
     // })
 
-// const div = document.querySelector('.btn');
+const div = document.querySelector('.btn');
 
-// div.addEventListener('click', (e) => {
-// div.innerHTML = `click count: ${e.detail}`;
-// });
+div.addEventListener('click', (e) => {
+div.innerHTML = `click count: ${e.detail}`;
+});
 
 const destination = document.querySelectorAll(`.destination`);
 
@@ -37,6 +37,8 @@ destination[0].addEventListener('click', function(e) {
  console.log('Hello');
 });
 
+
+//----------------------------------------
 
 const mainNavigation = document.querySelector('.main-navigation')
 mainNavigation.addEventListener('click', e => {
