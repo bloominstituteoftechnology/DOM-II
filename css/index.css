@@ -181,7 +181,6 @@ img {
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
 }
-
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
@@ -238,13 +237,6 @@ img {
 .home .intro h2 {
   margin-top: 20px;
 }
-.type {
- font-family: 'teko-font-family';
-  display: inline-flex;
-  transform: scale(2) !important;
-  transition: transform .2s ease-in-out;
-}
-
 .home .content-section {
   margin: 30px 0;
   display: flex;

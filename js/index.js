@@ -36,6 +36,10 @@ test.addEventListener('dblclick', () => {
     console.log ('you hit h2');
     test.classList.toggle('type');
 });
+const mainNav = document.querySelector(".nav-container")
+mainNav.addEventListener("dblclick", function(e) {
+    mainNav.style.backgroundColor = "yellow";
+})
 
 
 
