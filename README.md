@@ -1,24 +1,33 @@
 # DOM II - Event Exploration
 
-  
-
 Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).
 
-  
+## Set Up The Project With Git
 
-## Task 1: Set Up The Project With Git
+**Follow these steps to set up and work on your project:**
 
-  
-
+<<<<<<< HEAD
 * [x] Fork the project into your GitHub user account
 
 * [x] Clone the forked project into a directory on your machine
 
 * [x] You are now ready to build this project with your preferred IDE
+=======
+* [ ] Create a forked copy of this project.
+* [ ] Add your project manager as collaborator on Github.
+* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
+* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [ ] Push commits: git push origin `<firstName-lastName>`.
 
-  
+**Follow these steps for completing your project.**
 
-## Task 2: Set Up LESS Preprocessor
+* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+* [ ] Add your project manager as a reviewer on the pull-request
+* [ ] Your project manager will count the project as complete by merging the branch back into master.
+>>>>>>> b081dd6a705df2587365276808d8ae241e512abf
+
+## Task 1: Set Up LESS Preprocessor
 
 * [x] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
 
@@ -30,7 +39,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 * [x] Once you see the red screen, you can delete that style and you're ready to start on the next task
 
-## Task 3: Create Unique Event Listeners
+## Task 2: Create Unique Event Listeners
 
 * [x] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
 	* [ ] `mouseover`
@@ -52,8 +61,6 @@ Using the 10 unique events, find ways to update the DOM in creative ways. For ex
 ## Stretch Task:
 
 * [x] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
-
-  
 
 ## Stretch assignment
 
