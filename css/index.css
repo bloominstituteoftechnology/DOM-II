@@ -174,6 +174,10 @@ img {
     margin: 0 5%;
   }
 }
+.paused {
+  background: #ddd;
+  color: #555;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
