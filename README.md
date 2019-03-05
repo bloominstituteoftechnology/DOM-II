@@ -19,7 +19,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 * [ ] Add your project manager as a reviewer on the pull-request
 * [ ] Your project manager will count the project as complete by merging the branch back into master.
 
-## Task 1: Set Up LESS Preprocessor
+## Task 1: Set Up LdESS Preprocessor
 
 * [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
 
@@ -56,4 +56,4 @@ Using the 10 unique events, find ways to update the DOM in creative ways. For ex
 
 ## Stretch assignment
 
-* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
+* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.d
