@@ -180,6 +180,10 @@ img {
 .bg-grey {
   background: lightgrey;
 }
+.paused {
+  background: #ddd;
+  color: #555;
+}
 .main-navigation {
   width: 100%;
   height: 90px;

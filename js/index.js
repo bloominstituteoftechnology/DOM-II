@@ -1,20 +1,5 @@
 // Your code goes here
 
-document.querySelector('.container.home .intro img').addEventListener('click', (event) =>{
-    event.preventDefault();
-    let introH2 = document.querySelector('.container.home .intro h2');
-    let introP = document.querySelector('.container.home .intro p');
-    if (introH2.className.includes('hidden') && introP.className.includes('hidden')){
-        introH2.className = '';
-        introP.className = '';
-    } else {
-        introH2.className += 'hidden';
-        introP.className += 'hidden';
-    }
-    console.log(introH2);
-    console.log(introP);
-});
-
 window.addEventListener('load', (event) =>{
     event.preventDefault();
     console.log("All resources finished loading!");
@@ -33,11 +18,11 @@ allSec.forEach((element) => {
     if (counter != 4){
         element.addEventListener('mouseenter', (event) => {
             element.classList.add('bg-grey');
-            event.preventDefault();
+            event.stopPropagation();
         });
         element.addEventListener('mouseleave', (event) => {
             element.classList.remove('bg-grey');
-            event.preventDefault();
+            event.stopPropagation();
         });
         counter++;
     }
@@ -87,3 +72,30 @@ document.addEventListener('scroll', (e) => {
         scrollCounter++
     }
 });
+
+let navList = document.querySelectorAll('.main-navigation .container.nav-container .nav .nav-link');
+
+navList.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+});
+
+function pause(e) {
+    document.body.classList.add('paused');
+    e.stopPropagation();
+  }
+  
+  function play(e) {
+    document.body.classList.remove('paused');
+    e.stopPropagation();
+  }
+  window.addEventListener('blur', pause);
+  window.addEventListener('focus', play);
+
+  let btnList = document.querySelectorAll('.container.home .content-pick .destination .btn');
+  btnList.forEach((element) => {
+      element.addEventListener('dblclick', (e) =>{
+        e.target.innerText = "Double Clicked";
+    });
+  });
