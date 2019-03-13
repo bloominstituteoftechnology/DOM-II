@@ -8,7 +8,7 @@ window.addEventListener("load", function(event) {
     alert("Now loaded!");
     });
 
-//mouseover//
+//mouseover & mouse leave hover//
 const nav = document.querySelectorAll('a');
 const navHover = function(e){
     e.target.style.color = 'orange';
@@ -21,11 +21,12 @@ nav.forEach (item => {item.addEventListener('mouseover', navHover)});
 nav.forEach (item => {item.addEventListener('mouseleave', navHoverNot)});
 
 
-// logo heading
+// logo heading- zoom & added color
 
 const head = document.querySelector('.logo-heading');
 const headingZoom = function(e){
-    e.target.style.fontSize = '10rem';
+    e.target.style.color = 'pink';
+    e.target.style.fontSize = '11rem';
 }
 head.addEventListener('click', headingZoom);
 
@@ -44,7 +45,7 @@ const buttonClicked = function(e) {
 button.forEach(item => {item.addEventListener('click', buttonClicked)});
 
 
-//background color keyup //
+//background color& keyup //
 const body = document.querySelector('body')
 body.addEventListener('keyup', function() {
     body.style.background = 'grey';
