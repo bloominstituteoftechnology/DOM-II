@@ -1,5 +1,12 @@
 // Your code goes here
 
+
+
+//load
+
+window.addEventListener("load", function(event) {
+    alert("Now loaded!");
+    });
 //mouseover//
 const nav = document.querySelectorAll('a');
 const navHover = function(e){
@@ -12,6 +19,23 @@ const navHoverNot = function(e){
 nav.forEach (item => {item.addEventListener('mouseover', navHover)});
 nav.forEach (item => {item.addEventListener('mouseleave', navHoverNot)});
 
+
+
+
+
+// logo heading
+
+const head = document.querySelector('.logo-heading');
+const headingZoom = function(e){
+    e.target.style.fontSize = '10rem';
+}
+head.addEventListener('click', headingZoom);
+
+//wheel
+const adventureAwaits = document.querySelector('.inverse-content .text-content');
+adventureAwaits.addEventListener('wheel', function () {
+    adventureAwaits.style.display = 'flex';
+});
 
 //bottom button//
 const button = document.querySelectorAll('.btn');
@@ -28,9 +52,18 @@ body.addEventListener('keyup', function() {
     body.style.background = 'grey';
 })
 
+
+
+
+
+
+
+
+
+
 //footer//
 const footerText = document.querySelector('.footer p');
 footerText.addEventListener('mouseover', function() {
-    footerText.style.color = 'green';
+    footerText.style.color = 'red';
 })
 
