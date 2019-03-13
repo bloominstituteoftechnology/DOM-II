@@ -7,6 +7,7 @@
 window.addEventListener("load", function(event) {
     alert("Now loaded!");
     });
+
 //mouseover//
 const nav = document.querySelectorAll('a');
 const navHover = function(e){
@@ -18,9 +19,6 @@ const navHoverNot = function(e){
 }
 nav.forEach (item => {item.addEventListener('mouseover', navHover)});
 nav.forEach (item => {item.addEventListener('mouseleave', navHoverNot)});
-
-
-
 
 
 // logo heading
@@ -46,18 +44,11 @@ const buttonClicked = function(e) {
 button.forEach(item => {item.addEventListener('click', buttonClicked)});
 
 
-//background color scroll //
+//background color keyup //
 const body = document.querySelector('body')
 body.addEventListener('keyup', function() {
     body.style.background = 'grey';
 })
-
-
-
-
-
-
-
 
 
 
