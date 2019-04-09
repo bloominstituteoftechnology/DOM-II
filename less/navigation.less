@@ -23,6 +23,15 @@
       }
     }
 
+    .blink {
+      animation: blinker 1s ease-out infinite;
+    }
+    @keyframes blinker {
+      0% {opacity: 1.0;}
+      50% {opacity: 0.2;}
+      100% {opacity: 1.0;}
+    }
+
     .nav {
       width: 350px;
       display: flex;

@@ -199,6 +199,20 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .blink {
+  animation: blinker 1s ease-out infinite;
+}
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -319,6 +333,9 @@ img {
 .home .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
+}
+.home .content-pick .destination .btn-scaling {
+  transform: scale(1.4);
 }
 @media (max-width: 500px) {
   .home .content-pick .destination {
