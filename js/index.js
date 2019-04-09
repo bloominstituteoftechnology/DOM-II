@@ -137,17 +137,13 @@ audio.addEventListener('play', () => {
     TweenMax.fromTo(the_fun_bus, 9, {
         display: 'block',
         transformPerspective:600, 
-        rotationX: 10,
-        rotationZ: 10,
-        rotationY: 30,
+
         x: '-50px',
         y: '-250',
     },{
         transformPerspective:600, 
         display: 'block',
-        rotationX: -10,
-        rotationZ: -10,
-        rotationY: -30,
+
         ease: Elastic.easeOut.config(1, 0.3),
         x: '50px',
         y: '-1800px',
