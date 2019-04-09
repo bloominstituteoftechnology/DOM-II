@@ -51,3 +51,8 @@ allPara[1].addEventListener('dblclick', e => {
 //Makes sign up button functional upon double click
 const button = document.querySelectorAll('.btn');
     button.forEach(node => {node.addEventListener('dblclick', function(){let name = prompt('Enter your name'); let email = prompt('Enter your email'); alert(`Thank you for signing up, ${name}! We will be contacting you shortly.`);})});
+
+
+//No refresh on Nav buttons
+
+nav.addEventListener('click', (e) => {e.preventDefault(); console.log("You clicked a navlink");});
