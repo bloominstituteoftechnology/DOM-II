@@ -11,3 +11,15 @@ window.addEventListener('wheel', e => {
   }
 });
 
+//Nav items random colors
+
+const navItems = document.querySelectorAll('a');
+navItems.forEach(item => {
+  item.addEventListener('mousemove', _ => {
+    item.style.color = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+  });
+
+  item.addEventListener('click', e => {
+    e.preventDefault();
+  });
+});
