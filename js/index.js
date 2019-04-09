@@ -68,3 +68,18 @@ const button = document.querySelectorAll('.btn');
   btn[2].addEventListener('mouseout', _ => {
     btn[2].textContent = 'all on me';
   });
+
+  
+//Changes text of H2 when copied
+
+const copyTitle = document.querySelector('h2');
+copyTitle.addEventListener('copy', _ => {
+  copyTitle.textContent = 'Y U DO DIS'
+});
+
+
+// Welcome pop up on page load
+
+window.addEventListener('load', e => {
+    alert(`Welcome!`)
+  });
