@@ -103,3 +103,12 @@ function changeColor() {
     this.style.backgroundColor = "teal";
     return false;
 }
+
+//Home button click pop up
+
+const nava = document.querySelector("a");
+
+nava.addEventListener('click', e => {
+    alert(`You shall not pass!`)
+  });
+ 
