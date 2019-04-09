@@ -89,6 +89,7 @@ window.addEventListener('load', e => {
 
 
 //Nav and H2 Animations
+
 TweenMax.from('nav a', 2, { x: -600, y: -50, scale: 0, rotation: 2880, ease: SlowMo.ease.config(0.6, 0.2, false) });
 TweenMax.to('nav a', { x: 0, y: 0 });
 
@@ -112,3 +113,7 @@ nava.addEventListener('click', e => {
     alert(`You shall not pass!`)
   });
  
+
+
+
+
