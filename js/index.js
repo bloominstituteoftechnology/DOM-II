@@ -1,6 +1,7 @@
 // Your code goes here
 
 //Fun Bus text transformed when scrolling up and down
+
 const titleH1 = document.querySelector('h1');
 
 window.addEventListener('wheel', e => {
@@ -26,6 +27,7 @@ navItems.forEach(item => {
 
 
 //Sign Me Up Buttons Random Colors
+
 const btn = document.querySelectorAll('.btn');
 btn[0].addEventListener('mouseover', _ => {
   btn[0].style.backgroundColor = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
@@ -49,6 +51,7 @@ allPara[1].addEventListener('dblclick', e => {
 });
 
 //Makes sign up button functional upon double click
+
 const button = document.querySelectorAll('.btn');
     button.forEach(node => {node.addEventListener('dblclick', function(){let name = prompt('Enter your name'); let email = prompt('Enter your email'); alert(`Thank you for signing up, ${name}! We will be contacting you shortly.`);})});
 
@@ -78,8 +81,16 @@ copyTitle.addEventListener('copy', _ => {
 });
 
 
-// Welcome pop up on page load
+// Welcome pop up window upon page load
 
 window.addEventListener('load', e => {
     alert(`Welcome!`)
   });
+
+
+//Nav and H2 Animations
+TweenMax.from('nav a', 2, { x: -600, y: -50, scale: 0, rotation: 2880, ease: SlowMo.ease.config(0.6, 0.2, false) });
+TweenMax.to('nav a', { x: 0, y: 0 });
+
+TweenMax.from('h2', 2, { x: -600, y: -50, scale: 0, rotation: 90, ease: SlowMo.ease.config(0.6, 0.2, false) });
+TweenMax.to('h2', { x: 0, y: 0 });
