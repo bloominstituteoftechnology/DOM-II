@@ -53,6 +53,18 @@ const button = document.querySelectorAll('.btn');
     button.forEach(node => {node.addEventListener('dblclick', function(){let name = prompt('Enter your name'); let email = prompt('Enter your email'); alert(`Thank you for signing up, ${name}! We will be contacting you shortly.`);})});
 
 
-//No refresh on Nav buttons
+// Bottom buttons change text after mouse out
 
-nav.addEventListener('click', (e) => {e.preventDefault(); console.log("You clicked a navlink");});
+  btn[0].addEventListener('mouseout', _ => {
+    btn[0].textContent = 'Baby come back';
+  });
+
+
+  btn[1].addEventListener('mouseout', _ => {
+    btn[1].textContent = 'you can blame it';
+  });
+
+
+  btn[2].addEventListener('mouseout', _ => {
+    btn[2].textContent = 'all on me';
+  });
