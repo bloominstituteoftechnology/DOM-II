@@ -47,3 +47,7 @@ const allPara = document.querySelectorAll('p');
 allPara[1].addEventListener('dblclick', e => {
   allPara[1].textContent += ' OUCH! STOP POKING ME '
 });
+
+//Makes sign up button functional upon double click
+const button = document.querySelectorAll('.btn');
+    button.forEach(node => {node.addEventListener('dblclick', function(){let name = prompt('Enter your name'); let email = prompt('Enter your email'); alert(`Thank you for signing up, ${name}! We will be contacting you shortly.`);})});
