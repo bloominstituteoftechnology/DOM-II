@@ -23,3 +23,18 @@ navItems.forEach(item => {
     e.preventDefault();
   });
 });
+
+
+//Sign Me Up Buttons Random Colors
+const btn = document.querySelectorAll('.btn');
+btn[0].addEventListener('mouseover', _ => {
+  btn[0].style.backgroundColor = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+});
+
+btn[1].addEventListener('mouseover', _ => {
+  btn[1].style.backgroundColor = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+});
+
+btn[2].addEventListener('mouseover', _ => {
+  btn[2].style.backgroundColor = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+});
