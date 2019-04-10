@@ -105,24 +105,55 @@ window.addEventListener("load",function(){
 
 //does this only work for input types?
 
-document.querySelector('.btn').addEventListener("focus",function(event){
-    event.target.style.background = "pink";
+document.querySelector('.text-content h2').addEventListener("focus",function(event){
+    event.target.style.backgroundColor = "pink";
 });
 
 //============================================
-// * [6] ""
+// * [6] "Select" : The select event fires when some text has been selected.
+document.querySelector('.intro p').addEventListener("select",function(event){
+    event.target.style.color = "pink";
+});
 
 //============================================
-// * [7] ""
+// * [7] "dblclick" : The dblclick event fires when a pointing device button 
+// (e.g., a mouse's primary button) is double-clicked; that is, when it's clicked 
+// twice on a single element.
+
+document.querySelector('.destination .btn').addEventListener("dblclick",function(event){
+        event.target.style.backgroundColor = "pink";
+});
+
+//querySelectorAll returns a node so it won't work for styling all of the buttons
 
 //============================================
-// * [8] ""
+// * [8] "Click" :  
+// The click event fires when a pointing device button (e.g., a mouse's primary button) 
+// is pressed and released on a single element.
+
+document.querySelector('.intro img').addEventListener("click", function(event){
+    event.target.style.width = "85%";
+});
 
 //============================================
-// * [9] ""
+// * [9] "pointerover"
+
+document.querySelector('.text-content h2').addEventListener("pointerover", function(event){
+    event.target.style.fontSize = "6rem";
+
+});
 
 //============================================
-// * [10] ""
+// * [10] "pointerout"
+
+let otherButton = document.querySelectorAll(".btn");
+otherButton[1].addEventListener("pointerout",function(event){
+    event.target.style.backgroundColor = "purple";
+});
+
+otherButton[2].addEventListener("pointerout",function(event){
+    event.target.style.backgroundColor = "green";
+});
 
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
 // * [ ] Stop the navigation from items from refreshing the page by using `preventDefault()
