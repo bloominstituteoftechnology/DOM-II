@@ -136,14 +136,13 @@ const the_fun_bus = document.querySelector('.the-fun-bus');
 audio.addEventListener('play', () => {
     TweenMax.fromTo(the_fun_bus, 9, {
         display: 'block',
-        transformPerspective:600, 
-
+        rotation: 0,
         x: '-50px',
         y: '-250',
     },{
-        transformPerspective:600, 
+        transformOrigin: 'center center',
         display: 'block',
-
+        rotation: 360,
         ease: Elastic.easeOut.config(1, 0.3),
         x: '50px',
         y: '-1800px',
@@ -153,3 +152,36 @@ audio.addEventListener('play', () => {
 audio.addEventListener('ended', () => {
     the_fun_bus.style.display = 'none';
 })
+
+// ***** scoll into view
+
+
+const animateHTML = function() {
+    let elems;
+    let windowHeight;
+    function init() {
+      elems = document.querySelectorAll('.hidden');
+      windowHeight = window.innerHeight;
+      addEventHandlers();
+      checkPosition();
+    }
+    function addEventHandlers() {
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', init);
+    }
+    function checkPosition() {
+      for (let i = 0; i < elems.length; i++) {
+        let positionFromTop = elems[i].getBoundingClientRect().top;
+        if (positionFromTop - windowHeight <= 0) {
+          elems[i].className = elems[i].className.replace(
+            'hidden',
+            'fade-in-element'
+          );
+        }
+      }
+    }
+    return {
+      init: init
+    };
+  };
+  animateHTML().init();
