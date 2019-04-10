@@ -155,5 +155,27 @@ otherButton[2].addEventListener("pointerout",function(event){
     event.target.style.backgroundColor = "green";
 });
 
+
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-// * [ ] Stop the navigation from items from refreshing the page by using `preventDefault()
+
+let allImg = document.querySelectorAll("img");
+
+for (let i=0;i < allImg.length;i++){
+    if (allImg[i].className === "funBusImg") {
+        allImg[i].addEventListener("click",function(event){
+            event.preventDefault();
+        });
+    }
+    else {
+        allImg[i].addEventListener("click",function(event){
+            event.target.style.width = "50%";
+        });
+    }
+}
+
+// * [ ] Stop the navigation from items from refreshing the page by using `preventDefault()`
+
+//tested with lambdaschool.com
+document.querySelector('.nav a').addEventListener("click", function(event){
+    event.preventDefault();
+});
