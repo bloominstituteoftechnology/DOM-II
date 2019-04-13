@@ -9,6 +9,10 @@ const getRandomColor = () => {
     'orange',
     'rebeccapurple',
     'lavendar',
+    'white',
+    'whitesmoke',
+    'magenta',
+    'cyan',
   ]
   return COLORS[Math.floor(Math.random() * COLORS.length)]
 }
