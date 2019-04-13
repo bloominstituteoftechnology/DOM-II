@@ -11,7 +11,7 @@ bigLetter.addEventListener('keydown', function(e){
 
 const para = document.querySelector('p')
 para.addEventListener('wheel', function(e){
-    e.target.lineHeight = '3'
+    e.target.style.color = 'red'
 })
 
 const content = document.querySelector('.content-section')
