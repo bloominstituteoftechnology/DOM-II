@@ -27,9 +27,11 @@ images.forEach(img => {
   })
 })
 
-// Unique Event Listener #2: `DOMContentLoaded` - show alert
-document.addEventListener('DOMContentLoaded', function() {
-  // alert('Welcome to the Fun Bus!')
+// Unique Event Listener #2: `scroll` - show alert once page end has been hit
+window.addEventListener('scroll', () => {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    alert(`You've reached the end of the page!`)
+  }
 })
 
 // Unique Event Listener #3: `click` - change background color each button click
@@ -62,4 +64,12 @@ document.addEventListener('copy', (e) => {
   const selection = document.getSelection()
   const selectedElement = selection.focusNode.parentElement
   selectedElement.style.background = getRandomColor()
+})
+
+// Unique Event Listener #6: `DOMContentLoaded` - logo loop da loops
+const logo = document.querySelector('.logo-heading')
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    logo.classList.add('rotate')
+  }, 1000)
 })

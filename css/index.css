@@ -194,6 +194,35 @@ img {
     padding-top: 10px;
   }
 }
+.main-navigation .nav-container .logo-heading.rotate {
+  -webkit-animation: rotation 4s infinite linear;
+  -moz-animation: rotation 4s infinite linear;
+  animation: rotation 4s infinite linear;
+}
+@-moz-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
 @media (max-width: 500px) {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;

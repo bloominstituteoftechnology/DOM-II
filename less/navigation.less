@@ -18,6 +18,14 @@
     }
 
     .logo-heading {
+      &.rotate {
+        .animation(rotation 4s infinite linear);
+        .keyframes(rotation; {
+          0% { transform: rotate(0deg); }
+          100% {transform: rotate(359deg); }
+        });
+      }
+
       @media @mobile {
         font-size: 3rem;
       }
