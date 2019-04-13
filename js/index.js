@@ -20,9 +20,10 @@ content.addEventListener('drag', function(e){
 })
 
 const add = document.querySelectorAll('a')
-add.addEventListener('focus', function(e){
-    e.target.style.color = 'pink'
-})
+add.forEach(
+    e =>  e.addEventListener('mouseover', function(e){
+        (e.target.style.color = 'pink')
+}))
 
 const main = document.querySelector('.main-navigation')
 main.addEventListener('resize', function(e){
@@ -35,9 +36,10 @@ workBtn.addEventListener('select', function(e){
 })
 
 const allP = document.querySelectorAll('p')
-allP.addEventListener('click', function(e){
+allP.forEach (
+    e => (e.addEventListener('click', function(e){
     console.log(`This is how we do it!`)
-})
+})))
 
 const wholePage = document.querySelector('html')
 wholePage.addEventListener('dblclick', function(e){
