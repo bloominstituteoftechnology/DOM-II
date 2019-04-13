@@ -11,8 +11,22 @@ bigLetter.addEventListener('keydown', function(e){
 
 const para = document.querySelector('p')
 para.addEventListener('wheel', function(e){
-    para.lineHeight = '3'
+    e.target.lineHeight = '3'
 })
 
 const content = document.querySelector('.content-section')
-content.addEventListener()
+content.addEventListener('drag', function(e){
+    e.target.justifyContent = 'space-around'
+})
+
+const add = document.querySelector('a')
+add.addEventListener('focus', function(e){
+    e.target.color = 'pink'
+})
+
+const main = document.querySelector('.main-navigation')
+main.addEventListener('resize', function(e){
+    e.target.fontFamily = 'Times New Roman'
+})
+
+const 
