@@ -6,7 +6,7 @@ foot.addEventListener('mouseover', function(e){
 
 const bigLetter = document.querySelector('h1')
 bigLetter.addEventListener('keydown', function(e){
-    e.target.fontSize = '8rem'
+    e.target.style.fontSize = '8rem'
 })
 
 const para = document.querySelector('p')
@@ -19,9 +19,9 @@ content.addEventListener('drag', function(e){
     e.target.justifyContent = 'space-around'
 })
 
-const add = document.querySelector('a')
+const add = document.querySelectorAll('a')
 add.addEventListener('focus', function(e){
-    e.target.color = 'pink'
+    e.target.style.color = 'pink'
 })
 
 const main = document.querySelector('.main-navigation')
