@@ -1,55 +1,62 @@
 // Your code goes here
-const newText = document.querySelector(".text-content p");
 
-newText.addEventListener('click', function(event){
-    newText.textContent = "new words"
+
+const letsGoParagraph = document.querySelector(".text-content p");
+letsGoParagraph.addEventListener('click', function(event){
+    letsGoParagraph.textContent = "new words"
 })
 
-const newColor = document.querySelector(".text-content p");
-newColor.addEventListener('mouseover', function(event){
-    newColor.style.color = "red"
+//MOUSEOVER
+letsGoParagraph.addEventListener('mouseover', function(event){
+    letsGoParagraph.style.color = "red"
 })
 
-const changeToBlue = document.querySelector(".intro h2");
-changeToBlue.addEventListener('wheel', function(event){
-    changeToBlue.style.color = "blue"
+//WHEEL
+const firstH2 = document.querySelector(".intro h2");
+firstH2.addEventListener('wheel', function(event){
+    firstH2.style.color = "blue"
 })
 
+//KEYDOWN
 window.addEventListener("keydown", function(event){
     alert(`The Keycode for that key is ${event.keyCode}`)
 })
 
-const dragParagraph = document.querySelector(".intro p");
-dragParagraph.addEventListener('drag', function(event){
-    dragParagraph.style.display = "none"
+//DRAG *You have to highlight the entire paragraph to drag*
+const firstParagraph = document.querySelector(".intro p");
+firstParagraph.addEventListener('drag', function(event){
+    firstParagraph.style.display = "none"
 })
 
-// window.addEventListener('drop', function(event){
-//     alert("Woops You Dropped the paragraph, now its gone!")
-// })
-
-
-// const removeLogo = document.querySelector(".logo-heading")
-// removeLogo.addEventListener('load', function (event){
-//     console.log("testing")
-// })
-
-const removeLogo = document.querySelector(".logo-heading")
+//LOAD
+const theLogo = document.querySelector(".logo-heading")
 window.addEventListener("load", function(event) {
-    removeLogo.style.display = "none"
+    theLogo.style.display = "none"
     alert("The logo is shy. When you reload it disappears");
     if(confirm("Press Ok To Return Logo")){
-        removeLogo.style.display = ""
+        theLogo.style.display = ""
     }
 });
 
-
-const tryFocus = document.querySelector(".intro h2")
-tryFocus.addEventListener('load', function (event){
-    console.log("testing")
+//RESIZE
+window.addEventListener('resize', function (event){
+    theLogo.style.color = "red"
 })
 
-const tryResize = document.querySelector(".intro h2")
-tryResize.addEventListener('resize', function (event){
-    console.log("testing")  
+//SCROLL
+window.addEventListener('scroll', function(event){
+    firstH2.textContent = "Your scroll wheel broke this"
+})
+
+//SELECT
+const firstBottomButton = document.querySelector(".btn")
+firstBottomButton.addEventListener('select', changeText(event))
+
+function changeText(event){
+    alert ("TEST")
+}
+
+//DBLCLICK
+firstBottomButton.addEventListener('dblclick', function(e){
+    firstBottomButton.style.backgroundColor = "red"
 })
