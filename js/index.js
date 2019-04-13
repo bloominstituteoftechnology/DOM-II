@@ -38,3 +38,8 @@ const allP = document.querySelectorAll('p')
 allP.addEventListener('click', function(e){
     console.log(`This is how we do it!`)
 })
+
+const wholePage = document.querySelector('html')
+wholePage.addEventListener('dblclick', function(e){
+    e.target.style.fontSize = ''
+})
