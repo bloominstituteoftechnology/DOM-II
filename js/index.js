@@ -29,4 +29,12 @@ main.addEventListener('resize', function(e){
     e.target.fontFamily = 'Times New Roman'
 })
 
-const 
+const workBtn = document.querySelector('.btn')
+workBtn.addEventListener('select', function(e){
+    e.target.classList.remove('.btn')
+})
+
+const allP = document.querySelectorAll('p')
+allP.addEventListener('click', function(e){
+    console.log(`This is how we do it!`)
+})
