@@ -28,6 +28,13 @@ firstParagraph.addEventListener('drag', function(event){
     firstParagraph.style.display = "none"
 })
 
+//DROP *Cant get this to work
+window.addEventListener('drop', function(event){
+    if(event.target.className == "btn"){
+        console.log("test")
+    }
+})
+
 //LOAD
 const theLogo = document.querySelector(".logo-heading")
 window.addEventListener("load", function(event) {
@@ -48,7 +55,11 @@ window.addEventListener('scroll', function(event){
     firstH2.textContent = "Your scroll wheel broke this"
 })
 
-//SELECT
+//SELECT *MDN says this only works on input tags....."The event 
+// is not available for all elements in all languages. For example, 
+// in HTML, select events can be dispatched only on form <input type="text">
+//  and <textarea> elements.
+// "
 const firstBottomButton = document.querySelector(".btn")
 firstBottomButton.addEventListener('select', changeText(event))
 
