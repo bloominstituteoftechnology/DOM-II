@@ -23,7 +23,7 @@ header.addEventListener("mouseover", function(event) {
   event.preventDefault();
 });
 
-//Add event : mouseenter + mouse leave , prevent click
+//Add event : mouseenter + mouse leave , prevent click Had to make some minor changes
 navItems.forEach(function(item) {
   addHover(item);
   item.addEventListener("click", function(event) {
