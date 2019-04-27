@@ -1,17 +1,17 @@
 // Your code goes here
 const foot = document.querySelector('.footer')
-foot.addEventListener('mouseover', function(e){
-    e.target.style.display = 'none'
+    foot.addEventListener('mouseover', function(e){
+        e.target.style.display = 'none'
 })
 
 const contentDirection = document.querySelector('.content-destination')
-contentDirection.addEventListener('mouseleave', () => {
-    contentDirection.style.color = 'pink'
+    contentDirection.addEventListener('mouseleave', () => {
+        contentDirection.style.color = 'pink'
 })
 
 const para = document.querySelector('p')
-para.addEventListener('click', function(e){
-    e.target.style.color = 'red'
+    para.addEventListener('click', function(e){
+        e.target.style.color = 'red'
 })
 
 const content = document.querySelector('.content-section')
@@ -26,22 +26,22 @@ add.forEach(
 }))
 
 const main = document.querySelector('.img-content')
-main.addEventListener('mouseover', function(e){
-    e.target.style.display = 'none'
+    main.addEventListener('mouseover', function(e){
+        e.target.style.display = 'none'
 })
 
 const workBtn = document.querySelector('.btn')
-workBtn.addEventListener('select', function(e){
-    e.target.classList.remove('.btn')
+    workBtn.addEventListener('dblclick', function(e){
+        e.target.style.backgroundColor = 'grey'
 })
 
 const allP = document.querySelectorAll('p')
 allP.forEach (
     e => (e.addEventListener('click', function(e){
-    console.log(`This is how we do it!`)
+        console.log(`This is how we do it!`)
 })))
 
-const wholePage = document.querySelector('html')
-wholePage.addEventListener('dblclick', function(e){
-    e.target.style.fontSize = ''
+const destinationTo = document.querySelector('.destination')
+    destinationTo.addEventListener('dblclick', function(e){
+        e.target.style.fontSize = '2rem'
 })
