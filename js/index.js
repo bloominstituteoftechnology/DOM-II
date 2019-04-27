@@ -4,9 +4,9 @@ foot.addEventListener('mouseover', function(e){
     e.target.style.display = 'none'
 })
 
-const bigLetter = document.querySelector('h1')
-bigLetter.addEventListener('keydown', function(e){
-    e.target.style.fontSize = '8rem'
+const contentDirection = document.querySelector('.content-destination')
+contentDirection.addEventListener('mouseleave', () => {
+    contentDirection.style.color = 'pink'
 })
 
 const para = document.querySelector('p')
@@ -15,14 +15,14 @@ para.addEventListener('wheel', function(e){
 })
 
 const content = document.querySelector('.content-section')
-content.addEventListener('drag', function(e){
-    e.target.justifyContent = 'space-around'
+content.addEventListener('click', () => {
+    console.log(`This is how you click things`)
 })
 
 const add = document.querySelectorAll('a')
 add.forEach(
     e =>  e.addEventListener('mouseover', function(e){
-        (e.target.style.color = 'pink')
+        (e.target.style.color = 'green')
 }))
 
 const main = document.querySelector('.main-navigation')
