@@ -9,8 +9,8 @@ contentDirection.addEventListener('mouseleave', () => {
     contentDirection.style.color = 'pink'
 })
 
-const para = document.querySelector('p')
-para.addEventListener('wheel', function(e){
+const para = document.querySelectorAll('p')
+para.addEventListener('click', function(e){
     e.target.style.color = 'red'
 })
 
