@@ -26,7 +26,7 @@ add.forEach(
 }))
 
 const main = document.querySelector('.img-content')
-main.addEventListener('resize', function(e){
+main.addEventListener('mouseover', function(e){
     e.target.style.display = 'none'
 })
 
