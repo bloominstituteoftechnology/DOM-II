@@ -41,7 +41,8 @@ allP.forEach (
         console.log(`This is how we do it!`)
 })))
 
-const destinationTo = document.querySelector('.destination')
-    destinationTo.addEventListener('dblclick', function(e){
+const destinationTo = document.querySelectorAll('.destination')
+destinationTo.forEach(
+    e => (e.addEventListener('dblclick', function(e){
         e.target.style.fontSize = '2rem'
-})
+})))
