@@ -10,8 +10,8 @@ contentDirection.addEventListener('mouseleave', () => {
 })
 
 const para = document.querySelectorAll('p')
-para.addEventListener('click', function(e){
-    e.target.style.color = 'red'
+para.addEventListener('click', () => {
+    para.style.color = 'red'
 })
 
 const content = document.querySelector('.content-section')
