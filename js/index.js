@@ -25,9 +25,9 @@ add.forEach(
         (e.target.style.color = 'green')
 }))
 
-const main = document.querySelector('.main-navigation')
+const main = document.querySelector('.img-content')
 main.addEventListener('resize', function(e){
-    e.target.fontFamily = 'Times New Roman'
+    e.target.style.display = 'none'
 })
 
 const workBtn = document.querySelector('.btn')
