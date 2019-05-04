@@ -3,16 +3,21 @@
 //Mouse Over / changes anchor colors
 const navAnchors = document.querySelector('.nav');
 
-navAnchors.addEventListener('mouseover', (event) =>{
+navAnchors.addEventListener('mouseover', () =>{
     navAnchors.style.backgroundColor = 'gold';
     console.log('gold nav bar')
+});
+
+navAnchors.addEventListener('mouseleave', () =>{
+    navAnchors.style.backgroundColor = 'white';
+    console.log('default nav bar')
 });
 
 //Key Down / Press any key for a secret message for any plagerizers
 const pageBody = document.querySelector('body');
 const noPlagerismFont = document.querySelector('.footer p');
 
-pageBody.addEventListener('keydown', (event) => {
+pageBody.addEventListener('keydown', () => {
     noPlagerismFont.textContent = 'Copyright Fun Bus 2018. https://www.copyright.gov/help/faq/definitions.html';
     console.log('alerted plagerizers')
 });
@@ -22,12 +27,10 @@ const title = document.querySelector('h1');
 
 pageBody.addEventListener('wheel', (event) =>{
     title.style.fontSize = '22px';
-    
-    console.log('font size changed')
 
     loadFontColor.style.color = 'black';
 
-    console.log('font color changed')
+    console.log('font size and color changed')
 
     event.stopPropagation();
 });
@@ -35,7 +38,7 @@ pageBody.addEventListener('wheel', (event) =>{
 //Drag & Drop / drags the second image
 const dragImage = document.querySelector('.content-section img')
 
-dragImage.addEventListener('drag', (event) => {
+dragImage.addEventListener('drag', () => {
     console.log('draggaing')
 }, false);
 
@@ -55,7 +58,7 @@ dragImage.addEventListener("dragstart", (event) => {
 //Load / 
 const loadFontColor = document.querySelector('p')
 
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
     loadFontColor.style.color = 'white';
 
     console.log('text is loaded as white')
@@ -70,18 +73,26 @@ name.addEventListener('focus', (event) => {
     console.log('input changed to corrected colors')
 });
 
+name.addEventListener('blur', (event) => {
+    event.target.style.background = 'lightgrey';
+    event.target.style.color = 'green';
+    
+    console.log('input changed to corrected colors')
+});
+
 //Resize / 
-const lastImage = document.querySelector('.content-destination img')
-
-window.addEventListener('resize', (event) => {
+window.addEventListener('resize', () => {
     console.log('screen has been resized')
-
 });
 
 //Scroll / 
-const scroll = document
+let bodyBG = document.querySelector('body')
 
+window.addEventListener('scroll', () =>{
+    bodyBG.style.backgroundColor = 'lightgrey';
 
+    console.log('screen has scrolled')
+});
 
 //Select / 
 
