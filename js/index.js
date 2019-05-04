@@ -56,10 +56,9 @@ dragImage.addEventListener("dragstart", (event) => {
 const loadFontColor = document.querySelector('p')
 
 window.addEventListener('load', (event) => {
-    console.log('text is loaded as white')
     loadFontColor.style.color = 'white';
-    
-    event.stopPropagation();
+
+    console.log('text is loaded as white')
 });
 
 //Focus / changes input background to grey and text to green
