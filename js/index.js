@@ -68,3 +68,8 @@ buttons.forEach((btn) => {
         event.stopPropagation;
     });
 });
+
+// preventDefault() on navItems
+mainNav.addEventListener('click', (event) => {
+    event.preventDefault();
+});
