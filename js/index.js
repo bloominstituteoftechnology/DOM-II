@@ -5,6 +5,7 @@ let navItems = document.querySelectorAll('.nav-link');
 let introImg = document.querySelector('.intro img');
 let logoHeading = document.querySelector('.logo-heading');
 let introP = document.querySelector('.intro p');
+let textContentP = document.querySelector('.text-content p');
 
 //doubleclick: changes color of nav items
 navItems.forEach(event => {
@@ -40,5 +41,8 @@ introP.addEventListener('click', (event) => {
     event.target.style.opacity = '1';
 });
 
-
-
+// scrolling mouse wheel over 2nd paragraph changes background color
+textContentP.addEventListener('wheel', (event) => {
+    event.target.style.backgroundColor = 'paleturquoise';
+    event.stopPropagation;
+});
