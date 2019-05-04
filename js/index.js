@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
 });
 
 //Focus / changes input background to grey and text to green
-const name = document.querySelector('input')
+const name = document.querySelector('.header-input')
 name.addEventListener('focus', (event) => {
     event.target.style.background = 'lightgrey';
     event.target.style.color = 'green';
@@ -80,7 +80,7 @@ name.addEventListener('blur', (event) => {
     console.log('input changed to default colors')
 });
 
-//Resize / 
+//Resize / shows that window has been resized
 window.addEventListener('resize', () => {
     console.log('screen has been resized')
 });
@@ -94,8 +94,12 @@ window.addEventListener('scroll', () =>{
     console.log('screen has scrolled')
 });
 
-//Select / 
+//Select / type some text in the bottom left box and select a part of it, it will return a console log
+const footerInput = document.querySelector(".footer-input")
 
+footerInput.addEventListener('select', () => {
+    console.log(`something was selected`)
+})
 
 //Double Click / 
 
