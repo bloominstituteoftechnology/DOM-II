@@ -4,7 +4,7 @@
 let navItems = document.querySelectorAll('.nav-link');
 let introImg = document.querySelector('.intro img');
 let logoHeading = document.querySelector('.logo-heading');
-
+let introP = document.querySelector('.intro p');
 
 //doubleclick: changes color of nav items
 navItems.forEach(event => {
@@ -28,3 +28,17 @@ logoHeading.addEventListener('mouseleave', (event) => {
     event.target.style.fontSize = '4rem';
     event.stopPropagation;
 });
+
+//mouseover sets intro paragraph to invisible
+introP.addEventListener('mouseover', (event) => {
+    event.target.style.opacity = '0';
+    event.stopPropagation;
+});
+
+// click on intro paragraph restores opacity
+introP.addEventListener('click', (event) => {
+    event.target.style.opacity = '1';
+});
+
+
+
