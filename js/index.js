@@ -74,10 +74,10 @@ name.addEventListener('focus', (event) => {
 });
 
 name.addEventListener('blur', (event) => {
-    event.target.style.background = 'lightgrey';
-    event.target.style.color = 'green';
+    event.target.style.background = 'white';
+    event.target.style.color = 'black';
     
-    console.log('input changed to corrected colors')
+    console.log('input changed to default colors')
 });
 
 //Resize / 
