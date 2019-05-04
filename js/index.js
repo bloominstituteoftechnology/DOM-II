@@ -1,16 +1,16 @@
 // initial commit
 
 // Selectors
-let navItems = document.querySelectorAll('.nav-link');
-let introImg = document.querySelector('.intro img');
-let logoHeading = document.querySelector('.logo-heading');
-let introP = document.querySelector('.intro p');
-let textContentP = document.querySelector('.text-content p');
-let allImgs = document.querySelectorAll('img');
+const navItems = document.querySelectorAll('.nav-link');
+const introImg = document.querySelector('.intro img');
+const logoHeading = document.querySelector('.logo-heading');
+const introP = document.querySelector('.intro p');
+const textContentP = document.querySelector('.text-content p');
+const allImgs = document.querySelectorAll('img');
 const buttons = Array.prototype.slice.apply(
     document.querySelectorAll(".btn")
 );
-let mainNav = document.querySelector('.nav');
+const mainNav = document.querySelector('.nav');
 
 
 //doubleclick: changes color of nav items
@@ -29,7 +29,6 @@ introImg.addEventListener('mouseenter', (event) => {
 // mouseover/mouseleave: text expands and then shrinks
 logoHeading.addEventListener('mouseover', (event) => {
     event.target.style.fontSize = '6rem';
-    event.stopPropagation
 });
 logoHeading.addEventListener('mouseleave', (event) => {
     event.target.style.fontSize = '4rem';
@@ -39,7 +38,6 @@ logoHeading.addEventListener('mouseleave', (event) => {
 //mouseover sets intro paragraph to invisible
 introP.addEventListener('mouseover', (event) => {
     event.target.style.opacity = '0';
-    event.stopPropagation;
 });
 
 // click on intro paragraph restores opacity
@@ -50,7 +48,6 @@ introP.addEventListener('click', (event) => {
 // scrolling mouse wheel over 2nd paragraph changes background color
 textContentP.addEventListener('wheel', (event) => {
     event.target.style.backgroundColor = 'paleturquoise';
-    event.stopPropagation;
 });
 
 // right-click on any image makes it disappear
@@ -65,7 +62,6 @@ buttons.forEach((btn) => {
     btn.addEventListener('click', (event) => {
         event.target.style.color = 'navy';
         event.target.style.backgroundColor = 'white';
-        event.stopPropagation;
     });
 });
 
@@ -73,7 +69,6 @@ buttons.forEach((btn) => {
 buttons.forEach((btn) => {
     btn.addEventListener('mouseenter', (event) => {
         event.target.style.fontSize = '3rem';
-        event.stopPropagation;
     });
 });
 
