@@ -74,9 +74,8 @@ name.addEventListener('focus', (event) => {
 const lastImage = document.querySelector('.content-destination img')
 
 window.addEventListener('resize', (event) => {
-    console.log(heightOutput, widthOutput)
+    console.log('screen has been resized')
 
-    event.stopPropagation();
 });
 
 //Scroll / 
