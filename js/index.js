@@ -101,8 +101,17 @@ footerInput.addEventListener('select', () => {
     console.log(`something was selected`)
 })
 
-//Double Click / 
+//Double Click / makes font size of title unreasonably big
+title.addEventListener('dblclick', (event) => {
+    if(title.style.fontSize < '125px'){
+        title.style.fontSize = '125px';
+    }
+    else{
+        title.style.fontSize = '32px';
+    }
 
+    event.stopPropagation();
+})
 
 
 
