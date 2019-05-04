@@ -6,7 +6,6 @@ const navAnchors = document.querySelector('.nav');
 navAnchors.addEventListener('mouseover', (event) =>{
     navAnchors.style.backgroundColor = 'gold';
     console.log('gold nav bar')
-    event.stopPropagation();
 });
 
 //Key Down / Press any key for a secret message for any plagerizers
@@ -16,7 +15,6 @@ const noPlagerismFont = document.querySelector('.footer p');
 pageBody.addEventListener('keydown', (event) => {
     noPlagerismFont.textContent = 'Copyright Fun Bus 2018. https://www.copyright.gov/help/faq/definitions.html';
     console.log('alerted plagerizers')
-    event.stopPropagation();
 });
 
 //Wheel / make font size smaller for h1 and changes first 'p' color to black
@@ -24,9 +22,12 @@ const title = document.querySelector('h1');
 
 pageBody.addEventListener('wheel', (event) =>{
     title.style.fontSize = '22px';
+    
     console.log('font size changed')
 
     loadFontColor.style.color = 'black';
+
+    console.log('font color changed')
 
     event.stopPropagation();
 });
@@ -36,8 +37,6 @@ const dragImage = document.querySelector('.content-section img')
 
 dragImage.addEventListener('drag', (event) => {
     console.log('draggaing')
-
-    event.stopPropagation();
 }, false);
 
 dragImage.addEventListener("dragstart", (event) => {
@@ -45,8 +44,6 @@ dragImage.addEventListener("dragstart", (event) => {
     event.target.style.opacity = .5;
 
     console.log('drag start')
-
-    event.stopPropagation();
   }, false);
 
   dragImage.addEventListener("dragend", (event) => {
@@ -80,8 +77,6 @@ name.addEventListener('focus', (event) => {
 
 //Resize / 
 const lastImage = document.querySelector('.content-destination img')
-const heightOutput = document.querySelector('#height');
-const widthOutput = document.querySelector('#width');
 
 window.addEventListener('resize', (event) => {
     console.log(heightOutput, widthOutput)
