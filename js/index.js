@@ -6,6 +6,7 @@ let introImg = document.querySelector('.intro img');
 let logoHeading = document.querySelector('.logo-heading');
 let introP = document.querySelector('.intro p');
 let textContentP = document.querySelector('.text-content p');
+let allImgs = document.querySelectorAll('img');
 
 //doubleclick: changes color of nav items
 navItems.forEach(event => {
@@ -45,4 +46,11 @@ introP.addEventListener('click', (event) => {
 textContentP.addEventListener('wheel', (event) => {
     event.target.style.backgroundColor = 'paleturquoise';
     event.stopPropagation;
+});
+
+// right-click on any image makes it disappear
+allImgs.forEach((img) => {
+    img.addEventListener('contextmenu', (event) => {
+        event.target.style.display = 'none';
+    });
 });
