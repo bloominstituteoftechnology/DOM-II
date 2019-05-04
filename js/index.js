@@ -1,5 +1,3 @@
-// initial commit
-
 // Selectors
 const navItems = document.querySelectorAll('.nav-link');
 const introImg = document.querySelector('.intro img');
