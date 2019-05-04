@@ -13,6 +13,10 @@ navAnchors.addEventListener('mouseleave', () =>{
     console.log('default nav bar')
 });
 
+navAnchors.addEventListener('click', (event) => {
+    event.preventDefault();
+});
+
 //Key Down / Press any key for a secret message for any plagerizers
 const pageBody = document.querySelector('body');
 const noPlagerismFont = document.querySelector('.footer p');
@@ -38,8 +42,10 @@ pageBody.addEventListener('wheel', (event) =>{
 //Drag & Drop / drags the second image
 const dragImage = document.querySelector('.content-section img')
 
-dragImage.addEventListener('drag', () => {
+dragImage.addEventListener('drag', (event) => {
     console.log('draggaing')
+
+    event.stopPropagation();
 }, false);
 
 dragImage.addEventListener("dragstart", (event) => {
@@ -47,13 +53,17 @@ dragImage.addEventListener("dragstart", (event) => {
     event.target.style.opacity = .5;
 
     console.log('drag start')
+
   }, false);
 
   dragImage.addEventListener("dragend", (event) => {
     event.target.style.opacity = '3%';
 
     console.log('drag end')
+
   }, false);
+
+  
 
 //Load / 
 const loadFontColor = document.querySelector('p')
@@ -114,6 +124,7 @@ title.addEventListener('dblclick', (event) => {
 })
 
 
+const anchors = document.querySelectorAll('a');
 
 
 
