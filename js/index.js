@@ -50,8 +50,6 @@ dragImage.addEventListener("dragstart", (event) => {
     event.target.style.opacity = '3%';
 
     console.log('drag end')
-
-    event.stopPropagation();
   }, false);
 
 //Load / 
