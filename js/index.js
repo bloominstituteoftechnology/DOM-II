@@ -69,6 +69,22 @@ buttons.forEach((btn) => {
     });
 });
 
+// mouseenter: button text expands
+buttons.forEach((btn) => {
+    btn.addEventListener('mouseenter', (event) => {
+        event.target.style.fontSize = '3rem';
+        event.stopPropagation;
+    });
+});
+
+//mouseleave: button text shrinks
+buttons.forEach((btn) => {
+    btn.addEventListener('mouseleave', (event) => {
+        event.target.style.fontSize = '2rem';
+        event.stopPropagation;
+    });
+});
+
 // preventDefault() on navItems
 mainNav.addEventListener('click', (event) => {
     event.preventDefault();
