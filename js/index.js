@@ -7,6 +7,11 @@ let logoHeading = document.querySelector('.logo-heading');
 let introP = document.querySelector('.intro p');
 let textContentP = document.querySelector('.text-content p');
 let allImgs = document.querySelectorAll('img');
+const buttons = Array.prototype.slice.apply(
+    document.querySelectorAll(".btn")
+);
+let mainNav = document.querySelector('.nav');
+
 
 //doubleclick: changes color of nav items
 navItems.forEach(event => {
@@ -52,5 +57,14 @@ textContentP.addEventListener('wheel', (event) => {
 allImgs.forEach((img) => {
     img.addEventListener('contextmenu', (event) => {
         event.target.style.display = 'none';
+    });
+});
+
+// click on any button, color changes to navy text/white background
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        event.target.style.color = 'navy';
+        event.target.style.backgroundColor = 'white';
+        event.stopPropagation;
     });
 });
