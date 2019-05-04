@@ -68,8 +68,6 @@ name.addEventListener('focus', (event) => {
     event.target.style.color = 'green';
     
     console.log('input changed to corrected colors')
-
-    event.stopPropagation();
 });
 
 //Resize / 
