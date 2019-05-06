@@ -7,12 +7,14 @@ let intro =document.querySelector(".intro");
 
 let headerImg = document.querySelector(".intro img");
 
-let headerTxt = document.querySelector(".intro p");
+let contentSectionTxt = document.querySelector(".content-section .text-content");
+
+let body = document.querySelector("body");
 
 //
 
-headerTxt.addEventListener("select", function(){
-headerTxt.style.color = "orange"});
+contentSectionTxt.addEventListener("select", function(){
+contentSectionTxt.style.backgroundColor = "orange";});
 
 //
 header.addEventListener("dblclick", function(){
@@ -38,6 +40,16 @@ intro.addEventListener("mouseover", function(){
 headerImg.addEventListener("drag",function(){
     headerImg.style.border = "22px solid orange";
 })
+
+window.addEventListener('load', function(event){
+    alert('The page is loaded');
+});
+
+window.addEventListener("resize", function(){
+    body.style.backgroundColor = "Grey";
+})
+
+
 
 
 
