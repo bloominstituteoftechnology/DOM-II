@@ -49,6 +49,24 @@ window.addEventListener("resize", function(){
     body.style.backgroundColor = "Grey";
 })
 
+// Event propagation
+
+
+
+let contentPick = document.querySelector('.content-pick');
+
+contentPick.addEventListener("click", function(){
+    alert('Alert 1');
+});
+
+let btnAlert = document.querySelector('.destination .btn');
+
+btnAlert.addEventListener("click", function(event){
+    alert('Alert 2');
+    event.stopPropagation();
+    console.log('the bubble is not propagated when you click the first button')
+});
+
 
 
 
