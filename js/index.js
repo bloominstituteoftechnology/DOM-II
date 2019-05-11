@@ -15,3 +15,13 @@ busImg.addEventListener("mouseover", function(e) {
   console.log("Mouse went over the Bus Image!");
   busImg.style.width = "80%";
 });
+
+// KEYDOWN
+const accidentalKey = document.querySelector("body");
+console.log(accidentalKey);
+accidentalKey.addEventListener("keydown", function(e) {
+  console.log(`Reader accidentally pressed ${e}`);
+  accidentalKey.style.backgroundColor = "#019875";
+  accidentalKey.style.color = "white";
+});
+
