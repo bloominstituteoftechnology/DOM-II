@@ -25,3 +25,33 @@ accidentalKey.addEventListener("keydown", function(e) {
   accidentalKey.style.color = "white";
 });
 
+// ONWHEEL
+
+function zoom(e) {
+  e.preventDefault();
+
+  if (e.deltaY < 0) {
+    // Zoom in
+    scale *= e.deltaY * -2;
+  }
+  else {
+    // Zoom out
+    scale /= e.deltaY * 2;
+  }
+
+  // Restrict scale
+  scale = Math.min(Math.max(.125, scale), 4);
+
+  // Apply scale transform
+  el.style.transform = `scale(${scale})`;
+}
+
+let scale = 1;
+const el = document.querySelector('.travel-map');
+document.onwheel = zoom;
+
+
+// RESIZE
+
+
+// SCROLL
