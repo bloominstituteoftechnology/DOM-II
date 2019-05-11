@@ -1,14 +1,14 @@
 // Your code goes here
 
 
-// DBLCLICK
+// #1 DBLCLICK
 const logo = document.querySelector('.logo-heading');
 console.log(logo);
 logo.addEventListener('dblclick', function(e) {
   console.log("The Logo was double clicked!");
 });
 
-// MOUSEOVER
+// #2 MOUSEOVER
 const busImg = document.querySelector(".busImg");
 console.log(busImg);
 busImg.addEventListener("mouseover", function(e) {
@@ -16,31 +16,29 @@ busImg.addEventListener("mouseover", function(e) {
   busImg.style.width = "80%";
 });
 
-// KEYDOWN
+// #3 KEYDOWN
 const accidentalKey = document.querySelector("body");
 console.log(accidentalKey);
 accidentalKey.addEventListener("keydown", function(e) {
-  console.log(`Reader accidentally pressed ${e}`);
+  console.log(`Reader accidentally pressed ${e.key}`);
   accidentalKey.style.backgroundColor = "#019875";
   accidentalKey.style.color = "white";
 });
 
-// ONWHEEL
+// #4 ONWHEEL --- Found on Map Image
 
 function zoom(e) {
-  e.preventDefault();
-
   if (e.deltaY < 0) {
     // Zoom in
     scale *= e.deltaY * -2;
   }
   else {
     // Zoom out
-    scale /= e.deltaY * 2;
+    scale /= e.deltaY * 0.5;
   }
 
   // Restrict scale
-  scale = Math.min(Math.max(.125, scale), 4);
+  scale = Math.min(Math.max(.125, scale), 1.15);
 
   // Apply scale transform
   el.style.transform = `scale(${scale})`;
@@ -51,7 +49,7 @@ const el = document.querySelector('.travel-map');
 document.onwheel = zoom;
 
 
-// RESIZE
+// #5 RESIZE
 
 
 // SCROLL
