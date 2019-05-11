@@ -49,7 +49,15 @@ const el = document.querySelector('.travel-map');
 document.onwheel = zoom;
 
 
-// #5 RESIZE
+// #5 FOCUS -- Does not bubble
+const email = document.querySelector('input[type="email"]');
+
+email.addEventListener('focus', (event) => {
+  event.target.style.background = "goldenrod";
+  event.target.style.color = "white"
+});
+
+// RESIZE
 
 
 // SCROLL
