@@ -57,7 +57,11 @@ email.addEventListener('focus', (event) => {
   event.target.style.color = "white"
 });
 
-// RESIZE
-
-
-// SCROLL
+// #6 DRAG
+const headers = document.querySelectorAll('h2');
+console.log(headers);
+headers.forEach(header => {
+    header.addEventListener('drag', function() {
+        header.classList.add('changeColor');
+    });
+});
