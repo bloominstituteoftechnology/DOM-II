@@ -25,7 +25,7 @@ accidentalKey.addEventListener("keydown", function(e) {
   accidentalKey.style.color = "white";
 });
 
-// #4 ONWHEEL --- Found on Map Image
+// #4 ONWHEEL --- Found on the Map Image
 
 function zoom(e) {
   if (e.deltaY < 0) {
@@ -63,6 +63,7 @@ console.log(headers);
 headers.forEach(header => {
     header.addEventListener('drag', function() {
         header.classList.add('changeColor');
+        header.style.backgroundColor = "white";
     });
 });
 
@@ -74,8 +75,33 @@ paragraphs.forEach(p => {
     p.addEventListener('copy', function(e) {
         e.stopPropagation();
         p.classList.add('changeColor');
+        p.style.backgroundColor = "white";
     });
 });
 
+// #8 CLICK
 
-// #8 SCROLL
+const navLinks = document.querySelectorAll('a');
+
+navLinks.forEach(a => {
+  a.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log(a);
+    });
+});
+
+// #9 MOUSEOUT
+// busImg variable already declared in #2
+busImg.addEventListener('mouseout', () => {
+  console.log('Mouse went outside of image!');
+  busImg.style.width = "100%";
+});
+
+// 8 RESIZE
+
+const body = document.querySelector('body');
+
+window.addEventListener('resize', () => {
+  console.log('resized')
+  body.style.color = 'mediumspringgreen';
+});
