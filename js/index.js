@@ -65,3 +65,17 @@ headers.forEach(header => {
         header.classList.add('changeColor');
     });
 });
+
+// #7 COPY
+
+const paragraphs = document.querySelectorAll('p');
+
+paragraphs.forEach(p => {
+    p.addEventListener('copy', function(e) {
+        e.stopPropagation();
+        p.classList.add('changeColor');
+    });
+});
+
+
+// #8 SCROLL
