@@ -91,17 +91,18 @@ navLinks.forEach(a => {
 });
 
 // #9 MOUSEOUT
-// busImg variable already declared in #2
+
+// *** busImg variable already declared in #2 ***
 busImg.addEventListener('mouseout', () => {
-  console.log('Mouse went outside of image!');
+  console.log('Mouse left the image!');
   busImg.style.width = "100%";
 });
 
-// 8 RESIZE
+// #10 RESIZE
 
 const body = document.querySelector('body');
 
 window.addEventListener('resize', () => {
-  console.log('resized')
+  console.log('This window was resized');
   body.style.color = 'mediumspringgreen';
 });
