@@ -350,3 +350,18 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .grayscale {
+  filter: grayscale(100%);
+  transition: 1.5s;
+}
+.home .hidden {
+  display: none;
+}
+.home .selected {
+  width: 100% !important;
+}
+.home .thanos {
+  opacity: 0;
+  transition: 5s;
+  border: 2px solid red;
+}
