@@ -27,6 +27,7 @@ logo.addEventListener('mouseover', (event) => {event.target.style.color = swappe
 
 // Click logo to change cursor
 logo.addEventListener('click', (event) => {event.target.style.cursor = 'help';});
+logo.addEventListener('dblclick', () => {TweenMax.to('p', 1, {x:1000,repeat:1, yoyo:true});});
 
 let intro = document.getElementsByTagName('header')[0];
 // Intro image flips horizontally on click
