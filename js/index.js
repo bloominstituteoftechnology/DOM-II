@@ -71,8 +71,8 @@ paragraph.addEventListener('click', (event) => {
 //8
 let header2 = document.querySelector('.text-content h2');
  header2.addEventListener('mouseover', (event) => {
-        event.target.style.color = 'green';
-      
+event.target.style.color = 'green';
+event.stopPropagation();
  });
  
  //9
