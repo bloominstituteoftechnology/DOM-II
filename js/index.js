@@ -6,7 +6,7 @@
       e.preventDefault();
   })
  
-   //MOUSEOVER
+   //MOUSEOVERs
   const logo = document.querySelector('.logo-heading');
   logo.addEventListener('mouseover', e => {
       logo.textContent = 'Party Bus ';
