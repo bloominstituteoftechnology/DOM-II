@@ -7,9 +7,14 @@ const btns = document
   .querySelectorAll(".btn")
   .forEach(elem => elem.addEventListener("click", playJingle, true));
 
-const happyAudio = new Audio("audio/happy.mp3");
+let happyAudio;
 
 const myInput = document.createElement("textArea");
+
+const anchors = document.querySelectorAll("a"),
+  pageColors = ["gainsboro", "seashell", "lightyellow", "lightcyan"];
+
+const nav = document.querySelector(".main-navigation");
 
 myInput.setAttribute(
   "style",
@@ -34,12 +39,18 @@ let dragged, draggedOver;
 //Functions
 function moveHero(e) {
   e.target.style.right = 0;
-  console.log("heroMoved");
+  console.log("All on board the Fun Bus!");
   e.target.removeEventListener("mouseover", moveHero, true);
 }
 
-function playJingle(e) {
+function playJingle() {
+  happyAudio = new Audio("audio/happy.mp3");
+  happyAudio.onplay = logJingleMessage;
   happyAudio.play();
+}
+
+function logJingleMessage() {
+  console.log("We're all happy campers here!");
 }
 
 function displayMessage(e) {
@@ -118,6 +129,7 @@ function dropped(e) {
 }
 
 //Event Listeners
+
 heroImg.addEventListener("mouseover", moveHero, true);
 document.addEventListener("keydown", displayMessage, true);
 myInput.onselect = logSelection;
@@ -128,6 +140,19 @@ document.addEventListener("dragstart", dragStart, false);
 document.addEventListener("dragover", dragOver, false);
 document.addEventListener("dragleave", dragLeave, false);
 document.addEventListener("drop", dropped, false);
+
+anchors.forEach((elem, i) => {
+  elem.addEventListener("click", e => {
+    e.preventDefault();
+    e.stopPropagation();
+    document.body.style.backgroundColor = nav.style.backgroundColor =
+      pageColors[i];
+  });
+});
+
+document.body.addEventListener("dblclick", e => {
+  document.body.style.backgroundColor = nav.style.backgroundColor = "#FFF";
+});
 // ***Unique Listeners***
 // click
 // mouseover
@@ -137,3 +162,5 @@ document.addEventListener("drop", dropped, false);
 // resize
 // load/onload
 // drag / drop
+// onplay - defined in playJingle fn
+// dblclick
