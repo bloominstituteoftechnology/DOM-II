@@ -229,10 +229,14 @@ img {
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
+  overflow: hidden;
 }
 .home .intro img {
-  max-width: 100%;
+  max-width: 150%;
   height: auto;
+  position: relative;
+  right: 50%;
+  transition-duration: 2s;
 }
 .home .intro h2 {
   margin-top: 20px;
