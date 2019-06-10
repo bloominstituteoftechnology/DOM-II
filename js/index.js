@@ -41,9 +41,14 @@ document.addEventListener('keydown', (ev) => console.log(ev.key))
 document.addEventListener('dragstart', () => alert('LEAVE THAT WHERE YOU FOUND IT!'))
 
 //ninth event listener 
+const header = document.querySelectorAll('header');
+console.log(header)
+header[1].addEventListener('click', (ev) => ev.target.style.backgroundColor = 'dodgerblue')
 
-//tenth event listener
-
+//tenth event listener AND PROPAGATION STOP
+const h2 = document.querySelectorAll('h2');
+h2[0].addEventListener('click', (ev) => ev.target.style.color = 'crimson');
+h2[0].addEventListener('click', (ev) => ev.stopPropagation());
 
 //Prevent nav default
 nav.forEach((ele) => ele.addEventListener('click', (ev) => {ev.preventDefault()}));
