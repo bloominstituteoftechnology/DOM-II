@@ -1,8 +1,3 @@
-let rndcolor = function(ev) {
-    let colorchoice = "rgb(" + Math.round(Math.random() * 256) + "," + Math.round(Math.random() * 256) + "," + Math.round(Math.random() * 256) + ")";
-    ev.target.style.backgroundColor = colorchoice;
-}
-
 //First listener(nav size increase)
 const nav = document.querySelectorAll('.nav-link');
 nav.forEach((ele) => ele.addEventListener('mouseover', (event) => event.target.style.fontSize = '1.9rem'));
