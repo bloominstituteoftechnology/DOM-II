@@ -180,6 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 1;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -229,10 +230,16 @@ img {
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
+  overflow: hidden;
 }
 .home .intro img {
-  max-width: 100%;
+  max-width: 150%;
   height: auto;
+  position: relative;
+  right: 50%;
+  transition-duration: 2s;
+  z-index: 0;
+  cursor: pointer;
 }
 .home .intro h2 {
   margin-top: 20px;
