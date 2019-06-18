@@ -1,0 +1,8 @@
+#fade {
+    -webkit-transition: opacity 2s;
+    opacity: 1;
+}
+
+#fade.faded {
+    opacity: 0;
+}
