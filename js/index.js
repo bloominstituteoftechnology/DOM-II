@@ -13,5 +13,13 @@
 
 // selectors
 
+const logoHeading = document.querySelector("h1");
+const navLinks = document.querySelectorAll("nav a");
 const busImg = document.querySelector(".intro img");
-const header = document.querySelector("header");
+const logo = document.querySelector(".logo.heading");
+const titles = document.querySelectorAll("h2");
+const mapImg = document.querySelector(".img-content img");
+const buttons = document.querySelectorAll(".btn");
+const secondTitles = document.querySelectorAll("h4");
+const footer = document.querySelector(".footer p");
+const allText = document.querySelectorAll("p");
