@@ -73,7 +73,6 @@ navBar = document.querySelector('.nav');
 navItems = document.querySelectorAll('.nav-link');
 headerH2 = document.querySelector('.intro h2');
 allParagraphs = document.querySelectorAll('p');
-allExpeditionsTitle = document.querySelectorAll('.destination h4')
 allButtons = document.querySelectorAll('.btn');
 footer = document.querySelector('.footer');
 
