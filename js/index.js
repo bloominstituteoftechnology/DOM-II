@@ -75,8 +75,11 @@ window.addEventListener('load', () => {
 
 
 const firstImg = document.querySelector('img');
-window.addEventListener('click', () => {
+window.addEventListener('dblclick', () => {
     firstImg.style.opacity = '.09';
 });
 
+
+
+//other events
 
