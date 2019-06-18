@@ -26,13 +26,13 @@ mainContent.addEventListener('dblclick', function(event){
 const firstName = document.querySelector('.first-name');
 
 A)
-firstname.addEventListner('keydown', function(e){
+firstname.addEventListener('keydown', function(e){
       //keyboard event is the object so you can add .code property to see the key codes
     console.log(`A key was pressed and this is the event: ${e.code}`)
 });
 
 B)
-firstname.addEventListner('keydown', function(e){
+firstname.addEventListener('keydown', function(e){
       //keyboard event is the object so you can add .key property
     console.log(`A key was pressed and this is the event: ${e.key}`)
 });
@@ -69,12 +69,18 @@ container.addEventListener('click', function(e){
 //GREEN SOCK EXAMPLE
 -Banner Add CDNs is faster than CDN option or NPM
 
+A) CLICK EVENT EXAMPLE
 const workBtn = document.querySelector('work-btn');
 workBtn.addEventListener('click', function(e){
-    console.log('workBtn fired');
-      //code below says if you click button the list will move over 100px
-    TweenMax.to('.work-list', 1, {x:100});
+      //code below says if you click button the list will bounce over 100px and in 2sec
+    TweenMax.to('.work-list', 2, {x:100, ease: Bounce.easeOut});
 });
 
-
+B) MOUSEOVER EVENT EXAMPLE
+const workBtn = document.querySelector('work-btn');
+workBtn.addEventListener('mouseover', function(e){
+      //code below says if you click button the button will bounce to a larger size in 1sec
+    TweenMax.to('#work-btn', 1, {scale: 1.5, ease: Bounce.easeOut});
+    //this will give you a thicker border in 1sec: TweenMax.to('#work-btn', 1, {borderWidth: "thick", ease: Bounce.easeOut});
+});
 */
