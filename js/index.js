@@ -33,14 +33,17 @@ nav[3].addEventListener('click', function (e) {
 });
 
 //container
-// const container = document.querySelector('.container home');
-// container.addEventListener('keydown', function (e) {
-//     e.style.backgroundColor = 'red';
-//     console.log('keydown', e);
-// });
-// container.addEventListener('keyup', function (e) {
-//     e.currentTarget.style.color = 'pink';
-// });
+const container = document.querySelector('body');
+console.log(container);
+container.addEventListener('keydown', function (e) {
+    container.style.backgroundColor = 'red';
+    console.log('keydown', e);
+});
+
+container.addEventListener('keyup', function (e) {
+    e.currentTarget.style.color = 'pink';
+});
+
 
 //fun bus
 let scale = 1;
@@ -57,65 +60,39 @@ function zoom(event) {
 };
 
 //content-section
-// const contentHeader = document.getElementsByClassName('text-content h2');
+// const contentHeader = document.querySelectorAll('.text-content h2');
+// console.log(contentHeader);
 // contentHeader[0].addEventListener('focus', function (e) {
-//     e.style.backgroundColor = "red";
+//     e.target.style.backgroundColor = "red";
+//     console.log('something');
 //     e.stopPropagation();
 // });
 
-// const contentHeader = document.getElementsByClassName('text-content h2');
 // contentHeader[1].addEventListener('focus', function (e) {
-//     e.style.backgroundColor = "red";
+//     e.target.style.backgroundColor = "red";
 //     e.stopPropagation();
 // });
 
-//welcome
-// const dragWelcome = document.addEventListener("drag", function (e) {
+//intro
+const dragWelcome = document.querySelector('.intro h2');
+dragWelcome.addEventListener('drag', function () {
+    dragWelcome.setAttribute('style', 'filter: opacity(50%)');
+}, false);
 
-// }, false);
+const introImg = document.querySelector('.intro img');
+introImg.addEventListener('dragstart', function (e) {
+    // store a ref. on the dragged elem
+    e.target.setAttribute('style', 'filter: grayscale(50%)');
+}, false);
 
-// const dragstartWelcome = document.addEventListener("dragstart", function (e) {
-//     // store a ref. on the dragged elem
-//     e.target;
-//     // make it half transparent
-//     e.target.style.opacity = .5;
-// }, false);
+//change will occur at the end of mouse click
+const destinationImg = document.querySelector('.content-destination img');
+addEventListener('dragend', function (e) {
+    // reset the transparency
+    e.target.setAttribute('style', 'filter: grayscale(100%');
+}, false);
 
-// const dragendWelcome = document.addEventListener("dragend", function (e) {
-//     // reset the transparency
-//     e.target.style.opacity = "";
-// }, false);
 
-// /* events fired on the drop targets */
-// const dragoverWelcome = document.addEventListener("dragover", function (e) {
-//     // prevent default to allow drop
-//     e.preventDefault();
-// }, false);
-
-// const dragenterWelcome = document.addEventListener("dragenter", function (e) {
-//     // highlight potential drop target when the draggable element enters it
-//     if (e.target.className == "intro") {
-//         e.target.style.background = "pink";
-//     }
-// }, false);
-
-// const dragleaveWelcome = document.addEventListener("dragleave", function (e) {
-//     // reset background of potential drop target when the draggable element leaves it
-//     if (e.target.className == "intro") {
-//         e.target.style.background = "";
-//     }
-// }, false);
-
-// const dropWelcome = document.addEventListener("drop", function (e) {
-//     // prevent default action (open as link for some elements)
-//     e.preventDefault();
-//     // move dragged elem to the selected drop target
-//     if (e.target.className == "intro h2") {
-//         e.target.style.background = "";
-//         dragged.parentNode.removeChild(dragged);
-//         e.target.appendChild(dragged);
-//     }
-// }, false);
 
 //buttons
 const btns = document.querySelectorAll('.btn');
