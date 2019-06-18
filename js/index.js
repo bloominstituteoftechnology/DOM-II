@@ -28,3 +28,18 @@ window.addEventListener('load', () => {
 });
 
 
+//Five
+
+const firstBorder = document.querySelector('.content-section');
+window.addEventListener('load', () => {
+    firstBorder.style.border = '2rem dashed purple';
+});
+
+
+//Six
+
+const secondBorder = document.querySelector('.inverse-content');
+window.addEventListener('load', () => {
+    secondBorder.style.border = '1rem solid grey';
+});
+
