@@ -20,14 +20,6 @@ logo.addEventListener("mouseout", event => {
 // #3 Logo changes from nav
 let navItems = document.querySelectorAll('header nav a');
 
-/*
-navItems.forEach((item) => {
-    item.addEventListener("click", event => {
-        logo.textContent = navItems[i].textContent;
-        console.log(logo.textContent);
-    });
-})
-*/
 navItems[0].addEventListener("click", event => {
     event.preventDefault();
     logo.textContent = navItems[0].textContent;
@@ -48,6 +40,22 @@ navItems[3].addEventListener("click", event => {
     logo.textContent = navItems[3].textContent;
     console.log(logo.textContent);
 });
+
+// Header Nav Styling
+navItems.forEach((item) => {
+    item.addEventListener("mouseover", event => {
+        item.style.transform = "scale(1.5)";
+        event.stopPropagation();
+    });
+    navItems.forEach((item) => {
+        item.addEventListener("mouseout", event => {
+            item.style.transform = "scale(1)";
+        });
+    });
+});
+
+console.log(navItems);
+
 
 // Buttons
 let btns = document.querySelectorAll('.destination .btn')
@@ -83,9 +91,6 @@ btns[2].addEventListener("mouseleave", event => {
 
 // #7 Paragraphs
 let pgs = document.querySelectorAll('p')
-console.log(pgs);
-console.log(pgs[0]);
-
 
 pgs.forEach((paragraph) => {
     paragraph.addEventListener("copy", event => {
