@@ -21,12 +21,19 @@ letsGo.addEventListener("click", event => {
     letsGo.textContent = "Hi, my name is jeff"
 }) 
 
+
+// ----- Mouseenter -----
+const disappear = document.querySelector(".logo-heading")
+disappear.addEventListener("mouseenter", function(){
+    this.style.visibility = "hidden"
+}); 
+
 // ----- dblclick -----
 const clickContent = document.querySelector(".text-content"); 
 
 clickContent.addEventListener('dblclick', function(event){
     clickContent.classList.toggle("large") 
-})
+}) 
 
 
 
