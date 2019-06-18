@@ -61,3 +61,22 @@ window.addEventListener('load', () => {
     h1El.style.color = 'pink';
 });
 
+
+//Nine
+
+
+const h2El = document.querySelector('h2');
+window.addEventListener('load', () => {
+    h2El.style.color = 'green';
+});
+
+
+//Ten
+
+
+const firstImg = document.querySelector('img');
+window.addEventListener('click', () => {
+    firstImg.style.opacity = '.09';
+});
+
+
