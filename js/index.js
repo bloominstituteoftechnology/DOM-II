@@ -28,37 +28,55 @@ const buttons = document.querySelectorAll(".btn");
 console.log(buttons);
 const secondTitles = document.querySelectorAll("h4");
 console.log(secondTitles);
-const footer = document.querySelector(".footer p");
+const footer = document.querySelector(".footer");
 console.log(footer);
 const allText = document.querySelectorAll("p");
 console.log(allText);
 
-// even listeners
+// event listeners
 
 buttons.forEach(function(currentValue, index) {
-  currentValue.style.color = "green";
-  buttons[0].addEventListener(
-    "mouseover",
-    function(event) {
-      console.log(`buttons fired!`);
-      event.target.style.color = "purple";
-      setTimeout(function() {
-        event.target.style.color = "";
-      }, 500);
-    },
-    false
-  );
-  buttons[1].addEventListener();
+  currentValue.addEventListener("mouseover", function(event) {
+    currentValue.style.color = "green";
+    console.log(`buttons fired!`);
+    event.target.style.color = "purple";
+    setTimeout(function() {
+      event.target.style.color = "orange";
+    }, 500);
+  });
+  //   buttons[1].addEventListener('click', function(event) {
+  //       console.log(`button2 icu`);
 });
 
-busImg.addEventListener("click", function() {
-  busImg.style.display = "none";
+// busImg.addEventListener("click", function() {
+//   busImg.style.display = "none";
+// });
+
+mapImg.addEventListener("resize", function() {
+  console.log("clicking is easier");
+  mapImg.style.display = "none";
 });
 
-mapImg.addEventListener("mouseover", function() {
-  mapImg.style.display = "";
+logoHeading.addEventListener("dblclick", function() {
+  console.log("i love doublemint");
+  logoHeading.style.color = "crimson";
 });
 
-logoHeading.addEventListener("blur", event => {
-  event.target.style.background = "";
-});
+footer.onmouseout = function() {
+  console.log("annoying popup");
+  alert("please don't leave this page");
+};
+
+// allText.forEach(function(currentValue, index) {
+//   currentValue.addEventListener("wheel", function(event) {
+//     console.log("wow wheelsg");
+//   });
+// });
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("click", function(event) {
+    navLinks[i].style.color = "yellow";
+    console.log("im working u can't refresh");
+    event.preventDefault();
+  });
+}
