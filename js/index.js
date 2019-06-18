@@ -18,3 +18,13 @@ para.forEach((eleP) => eleP.addEventListener('click', (event) => event.target.st
 
 const btns = document.querySelectorAll('.btn');
 btns.forEach((eleBtn) => eleBtn.addEventListener('mouseover', (event) => event.target.style.color = 'orange'));
+
+
+//Four
+
+const navbar = document.querySelector('.main-navigation');
+window.addEventListener('load', () => {
+	navbar.style.background = 'linear-gradient(green, white)';
+});
+
+
