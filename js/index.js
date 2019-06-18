@@ -29,18 +29,22 @@ navItems.forEach((item) => {
 })
 */
 navItems[0].addEventListener("click", event => {
+    event.preventDefault();
     logo.textContent = navItems[0].textContent;
     console.log(logo.textContent);
 });
 navItems[1].addEventListener("click", event => {
+    event.preventDefault();
     logo.textContent = navItems[1].textContent;
     console.log(logo.textContent);
 });
 navItems[2].addEventListener("click", event => {
+    event.preventDefault();
     logo.textContent = navItems[2].textContent;
     console.log(logo.textContent);
 });
 navItems[3].addEventListener("click", event => {
+    event.preventDefault();
     logo.textContent = navItems[3].textContent;
     console.log(logo.textContent);
 });
@@ -50,6 +54,7 @@ let btns = document.querySelectorAll('.destination .btn')
 console.log(btns);
 
 // #4 Fun in The Sun
+
 btns[0].addEventListener("dblclick", event => {
     alert("Thank you for signing up for Fun In The Sun!");
     btns[0].style.opacity = ("0.6")
@@ -87,3 +92,48 @@ pgs.forEach((paragraph) => {
         alert("Do not copy our content!");
     });
 });
+
+
+// #8 Keydown Alert
+document.addEventListener("keydown", event => {
+    alert("This site doesn't have a single place for you to enter text. Stop it.")
+    alert("Seriously. Not cool.")
+})
+
+// #9 Images
+
+let imgs = document.querySelectorAll('img');
+console.log(imgs);
+
+imgs[0].addEventListener("mouseover", event => {
+    event.target.style.transform = "scale(1.5)";
+    event.target.style.borderRadius = "20%";
+    // event.target.style.zIndex = "-99";
+})
+// Not sure why zIndex isn't working as intended
+imgs[0].addEventListener("mouseout", event => {
+    event.target.style.transform = "scale(1)";
+    event.target.style.borderRadius = "0%";
+    // event.target.style.zIndex = "-99";
+})
+
+
+imgs[1].addEventListener("click", event => {
+    event.target.style.borderRadius = "50%";
+    event.target.style.transform = "rotate(3600deg)";
+    event.target.style.transition = "3s";
+})
+
+
+imgs[2].addEventListener("mouseover", event => {
+    event.target.style.borderRadius = "25%";
+})
+imgs[2].addEventListener("mouseout", event => {
+    event.target.style.borderRadius = "5%";
+})
+
+imgs[3].addEventListener("click", event => {
+    event.target.style.borderRadius = "50%";
+    event.target.style.transform = "rotate(3600deg)";
+    event.target.style.transition = "3s";
+})
