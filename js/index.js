@@ -43,3 +43,21 @@ window.addEventListener('load', () => {
     secondBorder.style.border = '1rem solid grey';
 });
 
+
+//Seven
+
+const thirdBorder = document.querySelector('.content-destination');
+window.addEventListener('click', () => {
+    thirdBorder.style.border = '1rem dotted blue';
+});
+
+
+
+//Eight
+
+
+const h1El = document.querySelector('h1');
+window.addEventListener('load', () => {
+    h1El.style.color = 'pink';
+});
+
