@@ -83,3 +83,6 @@ window.addEventListener('dblclick', () => {
 
 //other events
 
+
+//researched and tried to understand scroll & resize the last few minutes before air table
+
