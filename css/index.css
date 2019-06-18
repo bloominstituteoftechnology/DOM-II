@@ -350,3 +350,16 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home #draggable {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: white;
+}
+.home .dropzone {
+  width: 200px;
+  height: 20px;
+  background: #17A2B8;
+  margin-bottom: 10px;
+  padding: 10px;
+}
