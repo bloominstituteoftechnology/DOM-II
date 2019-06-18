@@ -6,6 +6,7 @@ logoHeading.addEventListener('mouseover', function (e) {
 TweenMax.to('#logo-heading', 2, { scale: 1.5, ease: Bounce.easeOut });
 });
 */
+
 //nav a
 const nav = document.querySelectorAll('nav a');
 //adds event listener to 0th index of nav with 'click' object
@@ -30,3 +31,27 @@ nav[3].addEventListener('click', function (e) {
     e.target.style.color = 'teal';
     e.stopPropagation();
 });
+
+//container
+// const container = document.querySelector('.container home');
+// container.addEventListener('keydown', function (e) {
+//     e.style.backgroundColor = 'red';
+//     console.log('keydown', e);
+// });
+// container.addEventListener('keyup', function (e) {
+//     e.currentTarget.style.color = 'pink';
+// });
+
+//welcome
+let scale = 1;
+const logoHeading = document.querySelector('.logo-heading');
+logoHeading.onwheel = zoom;
+
+function zoom(event) {
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+    // Apply scale transform
+    logoHeading.style.transform = `scale(${scale})`;
+}; 
