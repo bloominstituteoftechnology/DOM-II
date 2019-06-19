@@ -9,15 +9,27 @@ logoHeading.addEventListener("mouseout", (e) => e.target.style.transform = "scal
 //keydown
 
 //wheel
-const wheelDestination = document.querySelector('.destination p')
-wheelDestination.addEventListener("wheel", (e) => {e.style.fontSize = "35px";
-})
+// const wheelDestination = document.querySelector('.destination p')
+// wheelDestination.addEventListener("wheel", (e) => {e.target.style.fontSize = "35px";
+// })
 
 
 //
-const letsGo = document.querySelector('.text-content h2');
-console.log(letsGo)
-letsGo.addEventListener.innerHTML = "YAYYYY!";
+const letsGo = document.querySelectorAll('.text-content h2');
+for (let i = 0; i < letsGo.length; i++) {
+letsGo[i].addEventListener('click', (e) => {
+    e.target.innerHTML = "YAYYYY!";
+})
+}
+
+
+document.addEventListener('click', (e) => { 
+    console.log(e.target.nodeName)
+
+})
+
+
+
 
 //load
 window.addEventListener('load', (event) => {
@@ -74,4 +86,35 @@ document.addEventListener("drop", function(event) {
   }
 }, false);
 
-//
+//keydown
+
+document.addEventListener('keydown', changeBackground);
+function changeBackground(e) {
+document.body.style.backgroundColor = 'pink';
+}
+
+
+//resize
+window.addEventListener('resize', (e) => {
+// console.log(window)
+randomBg()
+})
+
+//scroll
+window.addEventListener('scroll', (e) => {
+randomBg()   
+})
+
+function randomBg() {
+    document.body.style.backgroundColor = 'light blue';
+}
+
+
+const selectElement = document.querySelector('.fav-destination');
+
+selectElement.addEventListener('change', (event) => {
+  const result = document.querySelector('.result');
+  result.textContent = `You like ${event.target.value}`;
+});
+
+

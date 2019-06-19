@@ -80,15 +80,37 @@
         <div class="btn">Sign Me Up!</div>
       </div>
     </section>
-    <input type="password" placeholder="Add something">
-    <div class="dropzone"> 
-      <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> 
-        This div is draggable 
+
+    <section class="content-pick">
+
+      <div class="destination">
+        <h4>Get Promotion</h4>
+        <input type="password" placeholder="Email">
+      </div>
+
+    <div class="destination">
+      <div class="dropzone"> 
+        <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> 
+          This div is draggable 
+        </div> 
       </div> 
-    </div> 
-    <div class="dropzone"></div>
-    <div class="dropzone"></div> 
-    <div class="dropzone"></div>
+      <div class="dropzone"></div>
+      <div class="dropzone"></div> 
+      <div class="dropzone"></div>
+    </div>
+
+    <div class="destination">
+      <label><h4>Choose your favorite destination:</h4>
+        <select class="fav-destination" name="fav-destination">
+          <option value="">Select One …</option>
+          <option value="Japan">Japan</option>
+          <option value="Itali">Itali</option>
+          <option value="Costa Rica">Costa Rica</option>
+        </select>
+      </label>
+    <div class="result"></div>
+  </div>
+  </section>
   </div><!-- container -->
 
   <footer class="footer">
