@@ -66,8 +66,16 @@ container.addEventListener('click', function(e){
 });
 
 
-//GREEN SOCK EXAMPLE
+*******GREEN SOCK ANIMATION*******
 -Banner Add CDNs is faster than CDN option or NPM
+-How it works: makes small incremental changes to numeric values over time
+  1) TweenMax recognizes that the target is a DOM element (e.g. ".logo")
+  2) TweenMax recognizes that the properties we're tweening are CSS properties (e.g. {left: 200})
+  3) TweenMax passes our CSS values to our CSS plugin, which defaults to pixels unless otherwise specified
+  4) CSS plugin changes the values and applies them to our inline style 
+    //(e.g. you will see: styles="left: 200px;" change as target moves left when you inspect the target in Elements)
+
+//TweenMax EXAMPLES
 
 A) CLICK EVENT EXAMPLE
 const workBtn = document.querySelector('work-btn');
@@ -83,4 +91,30 @@ workBtn.addEventListener('mouseover', function(e){
     TweenMax.to('#work-btn', 1, {scale: 1.5, ease: Bounce.easeOut});
     //this will give you a thicker border in 1sec: TweenMax.to('#work-btn', 1, {borderWidth: "thick", ease: Bounce.easeOut});
 });
+
+C) background color change(can use color name or hex system) + object moves left 600px
+TweenMax.to(".logo", 6, {left:600, backgroundColor:"#f00"});
+
+D) //multiple properties
+TweenMax.to(".logo", 6, {
+  left:600, 
+  backgroundColor:"#f00",
+  padding:20,
+  borderColor:"white",
+  borderRadius:26
+});
+
+//SYNTAX
+TweenMax.to(document.getElementById('header'), 1, {left:200});
+
+//create a variable and a reference to your target if you'll be using that target more than once
+var header = document.getElementById('header');
+TweenMax.to('header', 1, {left:200});
+TweenMax.to('header', 1, {opacity:0, delay:1});
+
+//can pass in a jquery selector
+TweenMax.to($('h2.feature'), 1, {left:200});
+
+//can pass an array of objects
+TweenMax.to([header, thumb], 1, {opacity:0});
 */

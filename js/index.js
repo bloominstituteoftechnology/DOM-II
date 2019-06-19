@@ -1,11 +1,4 @@
 // Your code goes here
-/*
-const logoHeading = document.querySelector('logo-heading');
-logoHeading.addEventListener('mouseover', function (e) {
-    //code below says if you click button the button will bounce to a larger size in 2sec
-TweenMax.to('#logo-heading', 2, { scale: 1.5, ease: Bounce.easeOut });
-});
-*/
 
 //nav a: click
 const nav = document.querySelectorAll('nav a');
@@ -32,11 +25,12 @@ nav[3].addEventListener('click', function (e) {
     e.stopPropagation();
 });
 
+
 //container: keyup + keydown
 const container = document.querySelector('body');
+
 container.addEventListener('keydown', function (e) {
     container.style.backgroundColor = 'red';
-    console.log('keydown', e);
 });
 
 container.addEventListener('keyup', function (e) {
@@ -57,7 +51,6 @@ function zoom(event) {
     // Apply scale transform
     logoHeading.style.transform = `scale(${scale})`;
 };
-
 
 //drag, dragstart, + dragend
 const dragWelcome = document.querySelector('.intro h2');
@@ -142,3 +135,19 @@ btns[2].addEventListener('dblclick', function (e) {
 //         e.style.backgroundColor = 'pink';
 //     });
 // });
+
+
+//Green sock code 
+//the bus img bounces to a larger size in 3sec
+TweenMax.to('.intro img', 3, {
+    scale: 1.075, ease: Bounce.easeOut
+});
+
+//Fun Bus heading moves left 400px and changes to blue with a border in 3sec
+TweenMax.to('.logo-heading', 3, {
+    left: 400,
+    backgroundColor: "#0000FF",
+    padding: 10,
+    borderColor: "black",
+    borderRadius: 10
+});
