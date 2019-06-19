@@ -112,5 +112,5 @@ headerNew.addEventListener('mouseleave', event => {
     event.target.style.backgroundColor = 'gray';
 })
 
-//---------------------------- PREVENT -------------------------------// 
+//----------------------------- PREVENT -------------------------------// 
 
