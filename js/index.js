@@ -35,6 +35,10 @@ console.log(allText);
 
 // event listeners
 
+window.addEventListener("resize", function(event) {
+  alert("Old dog new Tricks!");
+});
+
 buttons.forEach(function(currentValue, index) {
   currentValue.addEventListener("mouseover", function(event) {
     currentValue.style.color = "green";
@@ -44,15 +48,19 @@ buttons.forEach(function(currentValue, index) {
       event.target.style.color = "orange";
     }, 500);
   });
-  //   buttons[1].addEventListener('click', function(event) {
-  //       console.log(`button2 icu`);
 });
 
-// busImg.addEventListener("click", function() {
-//   busImg.style.display = "none";
-// });
+let newTexty = document.querySelector(".intro h2");
+window.addEventListener("load", event => {
+  newTexty.textContent = "The Venga Bus is coming!!";
+  console.log("page is fully loaded");
+});
 
-mapImg.addEventListener("resize", function() {
+window.addEventListener("scroll", () => {
+  document.querySelector("body").style.background = "dodgerblue";
+});
+
+mapImg.addEventListener("", function() {
   console.log("clicking is easier");
   mapImg.style.display = "none";
 });
@@ -64,19 +72,13 @@ logoHeading.addEventListener("dblclick", function() {
 
 footer.onmouseout = function() {
   console.log("annoying popup");
-  alert("please don't leave this page");
+  footer.style.display = "crimson";
 };
-
-// allText.forEach(function(currentValue, index) {
-//   currentValue.addEventListener("wheel", function(event) {
-//     console.log("wow wheelsg");
-//   });
-// });
 
 for (let i = 0; i < navLinks.length; i++) {
   navLinks[i].addEventListener("click", function(event) {
     navLinks[i].style.color = "yellow";
-    console.log("im working u can't refresh");
+    console.log("im working on refresh");
     event.preventDefault();
   });
 }
