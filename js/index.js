@@ -7,7 +7,7 @@ TweenMax.to('#logo-heading', 2, { scale: 1.5, ease: Bounce.easeOut });
 });
 */
 
-//nav a
+//nav a: click
 const nav = document.querySelectorAll('nav a');
 //adds event listener to 0th index of nav with 'click' object
 nav[0].addEventListener('click', function (e) {
@@ -32,7 +32,7 @@ nav[3].addEventListener('click', function (e) {
     e.stopPropagation();
 });
 
-//container
+//container: keyup + keydown
 const container = document.querySelector('body');
 console.log(container);
 container.addEventListener('keydown', function (e) {
@@ -45,7 +45,7 @@ container.addEventListener('keyup', function (e) {
 });
 
 
-//fun bus
+//fun bus: wheel zoom
 let scale = 1;
 const logoHeading = document.querySelector('.logo-heading');
 logoHeading.onwheel = zoom;
@@ -59,21 +59,7 @@ function zoom(event) {
     logoHeading.style.transform = `scale(${scale})`;
 };
 
-//content-section
-// const contentHeader = document.querySelectorAll('.text-content h2');
-// console.log(contentHeader);
-// contentHeader[0].addEventListener('focus', function (e) {
-//     e.target.style.backgroundColor = "red";
-//     console.log('something');
-//     e.stopPropagation();
-// });
-
-// contentHeader[1].addEventListener('focus', function (e) {
-//     e.target.style.backgroundColor = "red";
-//     e.stopPropagation();
-// });
-
-//intro
+//drag events
 const dragWelcome = document.querySelector('.intro h2');
 dragWelcome.addEventListener('drag', function () {
     dragWelcome.setAttribute('style', 'filter: opacity(50%)');
@@ -81,20 +67,16 @@ dragWelcome.addEventListener('drag', function () {
 
 const introImg = document.querySelector('.intro img');
 introImg.addEventListener('dragstart', function (e) {
-    // store a ref. on the dragged elem
     e.target.setAttribute('style', 'filter: grayscale(50%)');
 }, false);
 
-//change will occur at the end of mouse click
 const destinationImg = document.querySelector('.content-destination img');
-addEventListener('dragend', function (e) {
-    // reset the transparency
+//change will occur at the end of mouse click   
+destinationImg.addEventListener('dragend', function (e) {
     e.target.setAttribute('style', 'filter: grayscale(100%');
 }, false);
 
-
-
-//buttons
+//buttons: dbl click
 const btns = document.querySelectorAll('.btn');
 btns[0].addEventListener('dblclick', function (e) {
     e.target.style.backgroundColor = 'pink';
