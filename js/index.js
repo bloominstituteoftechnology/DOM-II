@@ -34,7 +34,6 @@ nav[3].addEventListener('click', function (e) {
 
 //container: keyup + keydown
 const container = document.querySelector('body');
-console.log(container);
 container.addEventListener('keydown', function (e) {
     container.style.backgroundColor = 'red';
     console.log('keydown', e);
@@ -59,7 +58,8 @@ function zoom(event) {
     logoHeading.style.transform = `scale(${scale})`;
 };
 
-//drag events
+
+//drag, dragstart, + dragend
 const dragWelcome = document.querySelector('.intro h2');
 dragWelcome.addEventListener('drag', function () {
     dragWelcome.setAttribute('style', 'filter: opacity(50%)');
@@ -67,7 +67,7 @@ dragWelcome.addEventListener('drag', function () {
 
 const introImg = document.querySelector('.intro img');
 introImg.addEventListener('dragstart', function (e) {
-    e.target.setAttribute('style', 'filter: grayscale(50%)');
+    e.target.setAttribute('style', 'filter: grayscale(70%)');
 }, false);
 
 const destinationImg = document.querySelector('.content-destination img');
@@ -75,6 +75,49 @@ const destinationImg = document.querySelector('.content-destination img');
 destinationImg.addEventListener('dragend', function (e) {
     e.target.setAttribute('style', 'filter: grayscale(100%');
 }, false);
+
+
+//mouseover: h2 
+const h2Color = document.querySelectorAll('h2');
+
+h2Color[0].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'beige';
+    e.stopPropagation();
+});
+
+h2Color[1].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'beige';
+    e.stopPropagation();
+});
+
+h2Color[2].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'beige';
+    e.stopPropagation();
+});
+
+h2Color[3].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'beige';
+    e.stopPropagation();
+});
+
+//mouseover: h4
+const h4Color = document.getElementsByTagName('h4');
+
+h4Color[0].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'coral';
+    e.stopPropagation();
+});
+
+h4Color[1].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'coral';
+    e.stopPropagation();
+});
+
+h4Color[2].addEventListener('mouseover', function (e) {
+    e.target.style.backgroundColor = 'coral';
+    e.stopPropagation();
+});
+
 
 //buttons: dbl click
 const btns = document.querySelectorAll('.btn');
@@ -98,5 +141,4 @@ btns[2].addEventListener('dblclick', function (e) {
 //     element.addEventListener('dblclick', function (e) {
 //         e.style.backgroundColor = 'pink';
 //     });
-
 // });
