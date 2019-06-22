@@ -28,3 +28,7 @@ introImg.addEventListener('contextmenu', function(){
     introImg.style.display = 'none';
 });
 
+const introImg = document.querySelector('.intro img');
+introImg.addEventListener('contextmenu', function(){
+    introImg.style.display = 'none';
+});
