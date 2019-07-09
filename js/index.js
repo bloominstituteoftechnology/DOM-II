@@ -42,7 +42,7 @@ busImage.addEventListener('mouseenter', event => {
 //First Header
 let firstHeader = document.querySelector(".intro h2")
 
-firstHeader.addEventListener('scroll', event => {
+firstHeader.addEventListener('dblclick', event => {
   event.target.style.background = "teal"
 })
 
@@ -55,6 +55,10 @@ input.addEventListener('keydown', event => {
 
 input.addEventListener('keyup', event => {
   event.target.style.color = "teal"
+})
+
+input.addEventListener('focus', event => {
+  event.target.style.background = "lightblue"
 })
 
 firstHeader.appendChild(input)
