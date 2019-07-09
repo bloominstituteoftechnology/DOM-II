@@ -5,8 +5,13 @@ const logoHeading = document.querySelector('.logo-heading');
 logoHeading.addEventListener("mouseover", (e) => e.target.style.transform = "scale(1.5)");
 logoHeading.addEventListener("mouseout", (e) => e.target.style.transform = "scale(1)")
 
+const navLink = document.querySelectorAll('.nav-link')
+navLink.forEach(element => {
+  element.addEventListener("mouseover", (e) => e.target.style.transform = "scale(1.5)")
+  element.addEventListener("mouseout", (e) => e.target.style.transform = "scale(1)")
+});
 
-//keydown
+
 
 //wheel
 // const wheelDestination = document.querySelector('.destination p')
@@ -17,13 +22,13 @@ logoHeading.addEventListener("mouseout", (e) => e.target.style.transform = "scal
 //
 const letsGo = document.querySelectorAll('.text-content h2');
 for (let i = 0; i < letsGo.length; i++) {
-letsGo[i].addEventListener('click', (e) => {
+letsGo[i].addEventListener('click', (event) => {
     e.target.innerHTML = "YAYYYY!";
 })
 }
 
 
-document.addEventListener('click', (e) => { 
+document.addEventListener('click', (event) => { 
     console.log(e.target.nodeName)
 
 })
