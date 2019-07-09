@@ -1,17 +1,55 @@
 // Your code goes here
 
 
-// One
+// 1-3 -mouseover + mouseout + click
 
 const nav = document.querySelectorAll('.nav-link');
-nav.forEach((ele) => ele.addEventListener('mouseover', (event) => event.target.style.color = 'red'));
-// nav.forEach((ele) => ele.addEventListener('mouseover', (event) => event.target.style.fontsize = '5rem'));
+nav.forEach((e) => e.addEventListener('mouseover', (event) => event.target.style.fontFamily = 'lobster'));
+nav.forEach((e) => e.addEventListener('mouseout', (event) => event.target.style.fontFamily = ''));
+nav.forEach((e) => e.addEventListener('click', (event) => event.target.style.textDecoration = 'line-through'));
 
 
-// Two
+//4 -load
+
+const navbar = document.querySelector('.main-navigation');
+window.addEventListener('load', () => {
+	navbar.style.background = 'linear-gradient(white, antiquewhite)';
+});
+
+
+// 5 -dblclick
+
+
+const firstImg = document.querySelector('img');
+window.addEventListener('dblclick', () => {
+    firstImg.style.opacity = '.09';
+
+});
+
+
+
+// 6 -wheel (Ask Josh about adding this to all <p>)
+document.querySelector("p").addEventListener("wheel", myFunction);
+
+function myFunction() {
+  this.style.fontSize = "35px";
+}
+
+
+// 7 -keydown
+
+window.addEventListener('keydown', function(e){
+    console.log(e);
+});
+
+
+
+// 4
 
 const para = document.querySelectorAll('p');
-para.forEach((eleP) => eleP.addEventListener('click', (event) => event.target.style.color = 'blue'));
+para.forEach((e) => e.addEventListener('load', (event) => event.target.style.fontFamily = 'Satisfy'));
+
+
 
 
 //Three
@@ -20,12 +58,7 @@ const btns = document.querySelectorAll('.btn');
 btns.forEach((eleBtn) => eleBtn.addEventListener('mouseover', (event) => event.target.style.color = 'orange'));
 
 
-//Four
 
-const navbar = document.querySelector('.main-navigation');
-window.addEventListener('load', () => {
-	navbar.style.background = 'linear-gradient(green, white)';
-});
 
 
 //Five
@@ -49,6 +82,7 @@ window.addEventListener('load', () => {
 const thirdBorder = document.querySelector('.content-destination');
 window.addEventListener('click', () => {
     thirdBorder.style.border = '1rem dotted blue';
+    
 });
 
 
@@ -71,13 +105,8 @@ window.addEventListener('load', () => {
 });
 
 
-//Ten
 
 
-const firstImg = document.querySelector('img');
-window.addEventListener('dblclick', () => {
-    firstImg.style.opacity = '.09';
-});
 
 
 
