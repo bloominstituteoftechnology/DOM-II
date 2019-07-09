@@ -39,9 +39,22 @@ busImage.addEventListener('mouseenter', event => {
   event.target.style.border = "solid"
 })
 
-let firstParagraph = document.querySelector(".intro h2")
-console.log(firstParagraph)
+//First Header
+let firstHeader = document.querySelector(".intro h2")
 
-firstParagraph.addEventListener('scroll', event => {
+firstHeader.addEventListener('scroll', event => {
   event.target.style.background = "teal"
 })
+
+//Input
+let input = document.createElement("input")
+
+input.addEventListener('keydown', event => {
+  event.target.style.color = "red"
+})
+
+input.addEventListener('keyup', event => {
+  event.target.style.color = "teal"
+})
+
+firstHeader.appendChild(input)
