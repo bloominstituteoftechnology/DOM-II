@@ -1,36 +1,41 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  /* justify-content: center; */
 }
-
 .blocks {
   margin-top: 5%;
   display: flex;
   flex-direction: column;
 }
-
 .block {
   width: 100px;
   height: 100px;
   margin: 10px;
+  position: relative;
 }
-
 .block--red {
   background-color: red;
+  
 }
-
 .block--blue {
   background-color: blue;
 }
-
 .block--green {
   background-color: green;
 }
-
 .block--pink {
   background-color: pink;
 }
-
 .block--gray {
   background-color: gray;
 }
+
+.defaultPosition {
+  order: 2;
+}
+
+.topPosition {
+  order: 1;
+ 
+}
+
