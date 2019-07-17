@@ -32,4 +32,6 @@ wheelZoom.addEventListener("wheel", (event) => {
 });
 
 const dragEm = document.querySelector(".content-destination.img");
-console.log(dragEm);
+dragEm.addEventListener("drag", (event)=>{
+    
+})
