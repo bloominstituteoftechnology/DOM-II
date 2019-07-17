@@ -1,117 +1,114 @@
-const siteContent = {
-  "nav": {
-    "nav-item-1": "Services",
-    "nav-item-2": "Product",
-    "nav-item-3": "Vision",
-    "nav-item-4": "Features",
-    "nav-item-5": "About",
-    "nav-item-6": "Contact",
-    "img-src": "img/logo.png"
-  },
-  "cta": {
-    "h1": "DOM Is Awesome",
-    "button": "Get Started",
-    "img-src": "img/header-img.png"
-  },
-  "main-content": {
-    "features-h4": "Features",
-    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4": "About",
-    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4": "Services",
-    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4": "Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4": "Vision",
-    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-  },
-  "contact": {
-    "contact-h4": "Contact",
-    "address": "123 Way 456 Street Somewhere, USA",
-    "phone": "1 (888) 888-8888",
-    "email": "sales@greatidea.io",
-  },
-  "footer": {
-    "copyright": "Copyright Great Idea! 2018"
-  },
-};
+// Your code goes here
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// nav h1 changes to a one of a rotating array of colors each time you hover
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
-//Task 1: Create selectors to point your data into elements 
+let h1Color = 0
 
-//nav 
-let aTags = document.querySelectorAll('a');
+const navH1 = document.querySelector('.nav-container h1')
 
-aTags[0].setAttribute('class', '.nav-item-1');
-aTags[0].innerText = 'Services';
-aTags[1].setAttribute('class', 'nav-item-2');
-aTags[1].innerText = 'Product';
-aTags[2].setAttribute('class', 'nav-item-3');
-aTags[2].innerText = 'Vision';
-aTags[3].setAttribute('class', 'nav-item-4');
-aTags[3].innerText = 'Features';
-aTags[4].setAttribute = ('class', '.nav-item-5');
-aTags[4].innerText = 'About';
-aTags[5].setAttribute = ('class', '.nav-item-6');
-aTags[5].innerText = 'Contact';
+navH1.addEventListener('mouseenter', () => {
+  navH1.style.color = colors[h1Color]
+})
 
-aTags.forEach(link => link.style.color = "green");
+navH1.addEventListener('mouseleave', () => {
+  navH1.style.color = 'black'
+  h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
+})
 
-//two new nav items 
-const newATag1 = document.createElement('a')
-const mainNav = document.querySelector('nav')
-newATag1.innerText = 'Products'
-newATag1.href = "#"
-mainNav.prepend(newATag1)
-newATag1.style.color = "green"
+// loops through all words in intro paragraph and turns them bold one by one
+let wordIndex = 0
 
-const newATag2 = document.createElement('a')
-newATag2.innerText = 'Referals'
-newATag2.href = "#"
-mainNav.append(newATag2)
-newATag2.style.color = "green"
+const introParagraph = document.querySelector('.home p')
+const introParagraphContent = introParagraph.innerHTML
+introParagraph.addEventListener('mousemove', () => {
+  introParagraph.innerHTML = introParagraphContent
+    .split(' ')
+    .map(
+      (element, i) =>
+        i === wordIndex ? `<span class='red-word'>${element}</span>` : element
+    )
+    .join(' ')
+  document.querySelector('.home p .red-word').style.fontWeight = 'bold'
+  document.querySelector('.home p .red-word').style.fontSize = '2.4rem'
+  wordIndex =
+    wordIndex === introParagraphContent.split(' ').length - 1
+      ? 0
+      : wordIndex + 1
+})
 
-//main header 
-let mainHeader = document.querySelector('h1')
-mainHeader.textContent = siteContent['cta']['h1']
+// toggle inverted on all images on doubleclick anywhere
+let inverted = false
 
-let mainButton = document.querySelector('button')
-mainButton.textContent = siteContent['cta']['button']
+const images = document.querySelectorAll('img')
+document.querySelector('body').addEventListener('dblclick', () => {
+  images.forEach(
+    image => (image.style.filter = !inverted ? 'invert(1)' : 'invert(0)')
+  )
+  inverted = inverted ? false : true
+})
 
-let logo2 = document.getElementById('cta-img')
-logo2.setAttribute('src', siteContent['cta']['img-src'])
+// added rotations for nav links
+const headerSelector = document.querySelector('header')
+headerSelector.addEventListener('click', () => {
+  alert('header clicked')
+})
 
-//main content 
-let mainContent = document.querySelectorAll('.text-content')
+const navItems = document.querySelectorAll('nav a')
+const rotations = [...Array(navItems.length)].map(() => 30)
+navItems.forEach((item, i) =>
+  item.addEventListener('click', event => {
+    event.stopPropagation()
+    event.preventDefault()
+    item.style.transform = `rotateZ(${rotations[i]}deg)`
+    rotations[i] += 30
+  })
+)
 
-mainContent[0].querySelector('h4').textContent = siteContent['main-content']['features-h4']
-mainContent[0].querySelector('p').textContent = siteContent['main-content']['features-content']
-mainContent[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
-mainContent[1].querySelector('p').textContent = siteContent['main-content']['about-content']
-mainContent[2].querySelector('h4').textContent = siteContent['main-content']['services-h4']
-mainContent[2].querySelector('p').textContent = siteContent['main-content']['services-content']
-mainContent[3].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
-mainContent[3].querySelector('p').textContent = siteContent['main-content']['vision-content']
-mainContent[4].querySelector('h4').textContent = siteContent['main-content']['contact-h4']
-mainContent[4].querySelector('p').textContent = siteContent['main-content']['contact-content']
+// increasing border thickness on image as it gets dragged
+let borderThickness = 0
 
-//middle image 
-let logo3 = document.getElementById('middle-img')
-logo3.setAttribute('src', siteContent['main-content']['middle-img-src'])
+const firstSectionImage = document.querySelector('section img')
+firstSectionImage.addEventListener('drag', event => {
+  console.log(event)
+  firstSectionImage.style.border = `${borderThickness}px solid red`
+  borderThickness++
+})
 
-//contact 
+firstSectionImage.addEventListener('dragend', event => {
+  console.log(event)
+  firstSectionImage.style.border = ''
+  borderThickness = 0
+})
 
-let contactInfo = document.querySelector('.contact')
+// added bounching border to first image on load
+let firstImageBorder = 0
+let assending = true
 
-contactInfo.getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4']
-contactInfo.getElementsByTagName('p')[0].textContent = siteContent['contact']['address']
-contactInfo.getElementsByTagName('p')[1].textContent = siteContent['contact']['phone']
-contactInfo.getElementsByTagName('p')[2].textContent = siteContent['contact']['email']
+const firstImage = document.querySelector('.home img')
+firstImage.addEventListener('load', () => {
+  setInterval(() => {
+    firstImage.style.border = `${firstImageBorder}px solid black`
+    if (assending) {
+      if (firstImageBorder === 10) {
+        assending = false
+      }
+      firstImageBorder++
+    } else {
+      if (firstImageBorder === 0) {
+        assending = true
+      }
+      firstImageBorder--
+    }
+  }, 10)
+})
 
-let dafooter = document.querySelector('footer')
 
-dafooter.getElementsByTagName('p')[0].textContent = siteContent['footer']['copyright']
+// rotate background color on scroll
+const bodySelector = document.querySelector('body')
+let backgroundGrey = false
+document.querySelector('body').addEventListener('wheel', () => {
+  bodySelector.style.background = !backgroundGrey ? 'yellow' : 'white'
+  backgroundGrey = !backgroundGrey ? true : false
+})
+
