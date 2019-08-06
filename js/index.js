@@ -120,9 +120,50 @@ window.addEventListener('load', (event) => {
     event.target.style.background = '';    
   });
 //////////
+let nav3 = document.querySelectorAll('nav a')[3];
+function sayWhatSize() {
+    nav3.textContent = `${window.innerHeight} = Height , ${window.innerWidth} = Width` ;
+  }
+window.addEventListener('resize', sayWhatSize );
+
+//////////
 
 
-//element.addEventListener('resize', (event) => {//Handle event});
-//element.addEventListener('scroll', (event) => {//Handle event});
-//element.addEventListener('select', (event) => {//Handle event});
-//element.addEventListener('dblclick', (event) => {//Handle event});
+window.addEventListener('scroll', function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          logo.style.backgroundColor = "yellow"
+        } else if (document.body.scrollTop < 50 || document.documentElement.scrollTop < 50) {
+            logo.style.backgroundColor = "white"; }
+});
+
+/////////
+let body = document.querySelector('body');
+body.addEventListener('dblclick', function(event){
+    event.target.style.backgroundColor = "black";
+});
+
+/////////////
+let pDest = document.querySelector('.destination p');
+console.log(pDest);
+pDest.addEventListener('mouseover', (event) => {
+    event.target.style.backgroundColor ='orange';
+    event.stopPropagation();
+});
+
+ pDest.addEventListener('click', (event) => {
+    event.target.style.backgroundColor ='white';
+    
+});
+
+let 
+
+
+
+///////////////////////
+let header = document.querySelector
+let navigation = document.querySelectorAll("nav a");
+navigation.forEach((element)=> {
+    element.addEventListener('click', function(event){
+        event.preventDefault();
+    })
+})
