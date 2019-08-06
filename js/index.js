@@ -43,19 +43,35 @@ blurFocus.addEventListener('mouseout', (event) => {
     blurFocus.style.filter = 'blur(6px)';
 });
 
-// 4.
+// 4. A tag stuff
+let nav = document.querySelector('nav');
+let navA = document.querySelectorAll('a');
+navA.forEach(function(item, index) {
+    // item.innerText = siteContent['nav'][`nav-item-${index+1}`];
+    item.style.color = 'green';
+});
 
 
 
-// 5.
+// 5. Button to Top
+let topAnchor = document.createElement('a');
+topAnchor.textContent = 'Back to Top';
+topAnchor.style.fontSize = '1rem';
+topAnchor.style.position = 'relative';
+topAnchor.style.left = '80px';
+nav.appendChild(topAnchor);
+let backToTop = document.querySelector('body');
+
+
+// 6. Double Click
 
 
 
-// 6.
 
-
-
-// 7.
+// 7.  On Load
+theBackground.addEventListener('load', (event) => {
+   alert("Don't forget to look for all of the easter eggs!");
+});
 
 
 
@@ -69,8 +85,5 @@ blurFocus.addEventListener('mouseout', (event) => {
 
 // 10.
 
-
-
-// 10.
 
 
