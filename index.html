@@ -31,10 +31,20 @@
   </header>
      
   <div class="container home">
+      
     <header class="intro">
       <img src="img/fun-bus.jpg" alt="bus in the sand">
-      <h2>Welcome To Fun Bus!</h2>
+      <h2 draggable="true" id="dragtarget" >Welcome To Fun Bus!</h2> 
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
+      
+         
+      <div class="droptarget"></div>
+        
+     
+        
+        
+        
+        <p id="demo"></p>
     </header>
     <section class="content-section">
       <div class="text-content">
@@ -82,9 +92,28 @@
     </section>
   </div><!-- container -->
 
-  <footer class="footer">
+  <footer class="footer"></footer>
+  <div class = "holder">
+    <div class="box" draggable="true">
     <p>Copyright Fun Bus 2018</p>
+  </div>
+  </div>
+  
+  <div class="holder">
+
+  </div>
   </footer>
+  
+<style>
+    .droptarget {
+      float: left; 
+      width: 450px; 
+      height: 5px;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #aaaaaa;
+    }
+    </style>
 
 </body>
 </html>
