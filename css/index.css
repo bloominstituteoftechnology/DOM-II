@@ -350,3 +350,22 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.contactForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 0 auto;
+  align-content: center;
+  flex-flow: column;
+}
+.contactForm h2 {
+  display: flex;
+}
+.contactForm #formy {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 0 auto;
+}
