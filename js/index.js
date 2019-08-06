@@ -75,7 +75,7 @@ window.addEventListener('scroll', (event) => {
 
 
 // 6. Double Click
-let baseText = document.querySelectorAll('p');
+let baseText = document.querySelector('p');
 baseText.addEventListener("dblclick", (event) => {
     if (confirm("WARNING: YOU WILL REGRET CONTINUING!")) {
         baseText.style.fontSize = '4rem';
@@ -85,7 +85,6 @@ baseText.addEventListener("dblclick", (event) => {
 });
 
 // 7.  On Load
-let person;
 window.addEventListener('load', (event) => {
     let person = prompt("Please enter your name:", "Harry Potter");
     if (person == null || person === "" || person === "Harry Potter") {prompt("It's fairly upsetting that you didn't listen...", "Lord Voldemort")}
@@ -95,10 +94,11 @@ window.addEventListener('load', (event) => {
           alert(`Thank you, ${person}. I hope you find all of the easter eggs!`);
 }});
 
-
-
 // 8.
-
+let midText = document.querySelector("section img");
+midText.addEventListener('wheel', (event) => {
+    midText.style.display = 'none';
+});
 
 
 // 9.
