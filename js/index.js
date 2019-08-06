@@ -9,6 +9,7 @@ let black = logo.addEventListener('mouseover', (event) => {
 
 let removeBlack = logo.addEventListener('mouseout', (event) => {
     event.target.style.backgroundColor ='white';
+    TweenLite.from(logo, 2, {x: '-=200px', autoAlpha: 0});
 });
 /////////////////////
 
@@ -181,4 +182,3 @@ navigation.forEach((element)=> {
 
 /////
 
-TweenLite.from(logo, 2, {x: '-=200px', autoAlpha: 0});
