@@ -36,7 +36,10 @@ pyDest.addEventListener('wheel', function(event){
     event.target.fontSize = '28px'
 })
 //#6	`focus`
-
+const letsGo = document.querySelector('a')
+letsGo.addEventListener('focus', (event)=> {
+    event.target.style.backgroundColor= 'pink';
+})
 //#7	`resize`
 
 //#8	`scroll`
