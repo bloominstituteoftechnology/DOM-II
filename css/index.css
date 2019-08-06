@@ -162,7 +162,12 @@ p {
 img {
   max-width: 100%;
   height: auto;
+  }
+
+.large {
+  transform: scale(3.0);
 }
+
 .container {
   max-width: 800px;
   width: 100%;
