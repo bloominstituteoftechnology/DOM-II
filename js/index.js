@@ -1,25 +1,27 @@
 // Your code goes here
-const adventure = document.getElementById("adventure");
-const destination = document.getElementById("destination");
-const funbus = document.getElementById("funbus");
-const fun = document.getElementById("fun");
-
-
-adventure.onmouseover = function (){
-    alert("Have fun!");
+let navItem = document.querySelectorAll('.nav-link');
+console.log(navItem);
+for(let i=0; i<navItem.length; i++){
+    navItem[i].addEventListener('click', event =>{
+        if(event.target.style.color != 'orange'){
+            event.target.style.color = 'orange';
+        }
+        else{
+            event.target.style.color = 'blue';
+        }
+    })
 }
 
-window.onload = function (){
-    alert("Choose a destination!");    
-}
-// funbus.onwheel = function (){
-    
-// }
-// fun.ondrag / drop = function (){
-    
-// }
-// focus
-// resize
-// scroll
-// select
-// dblclick
+window.addEventListener('scroll', event =>{
+    p.forEach((paragraph)=>{
+        paragraph.style.color = 'purple';
+    })
+})
+
+let p = document.querySelectorAll('p');
+p.forEach((paragraph)=>{
+    paragraph.addEventListener('copy', event =>{
+        alert('Do not copy this text!');
+    }) 
+})
+
