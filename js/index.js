@@ -1,21 +1,30 @@
 // Your code goes here
-const headerImg = document.querySelectorAll("img")[0];
-const nextImg = document.querySelectorAll("img")[1];
+const allImg = document.querySelectorAll("img");
+const allP = document.querySelectorAll("p");
 
 const makeOutline = function() {
-    this.style.border = "3px solid red"
+    this.style.border = "5px solid black"
 };
+
 const makeSmall = function() {
     this.style.width = "300px"
 };
 
-headerImg.addEventListener("click", makeSmall);
-headerImg.addEventListener("mouseover", makeOutline);
-headerImg.adddEventListener("onkeydown")
+ const makeDissapear = function() {
+     this.style.visibility = "hidden"
+};
 
-nextImg.addEventListener("click", makeSmall);
-nextImg.addEventListener("mouseover", makeOutline);
+allImg.forEach( (element) => {
+    element.addEventListener("click", makeSmall);
+    element.addEventListener("mouseover", makeOutline);
+    element.addEventListener("dblclick", makeDissapear);
+
+});
 
 
-// ----------------------------------------------------------------------
+allP.forEach( (element) => {
+    element.addEventListener("dblclick", makeDissapear);
+});
+
+// --------------------------------------------------------------------
 
