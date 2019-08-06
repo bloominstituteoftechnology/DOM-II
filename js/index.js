@@ -8,8 +8,6 @@ topBackground.style.backgroundImage = 'linear-gradient(dodgerblue, lightblue)';
 topBackground.style.borderBottomLeftRadius = '10px';
 topBackground.style.borderBottomRightRadius = '10px';
 
-// let pText = document.getElementsByClassName('p');
-// pText.addEventListener();
 
 // 1. Mouse Over
 let theHeader = document.querySelector('header');
@@ -24,6 +22,7 @@ theHeader.addEventListener('mouseleave',(event)=>{
     topBackground.style.backgroundImage = 'linear-gradient(dodgerblue, lightblue)';
 });
 
+
 // 2. On Click
 let funClick = document.querySelector('header div h1');
 let step = true;
@@ -33,9 +32,16 @@ funClick.addEventListener('click', (event) => {
     else {theBackground.style.backgroundColor = '#fafad2';}
 });
 
-// 3.
 
-
+// 3.  Blur / Focus
+let blurFocus = document.querySelector('div header img');
+blurFocus.style.filter = 'blur(6px)';
+blurFocus.addEventListener('mouseover', (event) => {
+    blurFocus.style.filter = 'initial';
+});
+blurFocus.addEventListener('mouseout', (event) => {
+    blurFocus.style.filter = 'blur(6px)';
+});
 
 // 4.
 
@@ -58,6 +64,10 @@ funClick.addEventListener('click', (event) => {
 
 
 // 9.
+
+
+
+// 10.
 
 
 
