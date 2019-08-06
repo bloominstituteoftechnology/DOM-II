@@ -1,6 +1,12 @@
 // Your code goes here
 //----------------------------------------------------------------------------------------------------------------|
-// (1) Logo Anim ===
+// On key press log which key was pressed
+document.addEventListener('keydown', logKey);
+function logKey(e) {
+    console.log(` ${e.code}`);
+}
+//----------------------------------------------------------------------------------------------------------------|
+// (1) Logo animation using MOUSEOVER ===
 const logo = document.querySelector('.logo-heading');
 logo.addEventListener('mouseover', (e) => {
     TweenMax.to(e.target, 1, { rotation: 360 });
@@ -10,7 +16,7 @@ logo.addEventListener('mouseleave', (e) => {
 });
 
 //----------------------------------------------------------------------------------------------------------------|
-// (2) Body color change on keydown ===
+// (2) Body color change on KEYDOWN ===
 const body = document.querySelector('body');
 
 body.addEventListener('keydown', (e) => {
@@ -20,7 +26,7 @@ body.addEventListener('keydown', (e) => {
     }
 });
 //----------------------------------------------------------------------------------------------------------------|
-// (3) Hover nav link behavior ===
+// Hover nav link behavior ===
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(a => {
     a.addEventListener('mouseover', (e) => { //Mouse on
@@ -33,8 +39,7 @@ navLinks.forEach(a => {
     });
 });
 //----------------------------------------------------------------------------------------------------------------|
-
-// (4) Preventing nested elements from bubbling using stopPropagation ===
+// (3) Preventing nested elements from bubbling using stopPropagation utilizing CLICK===
 const intro = document.querySelector('.intro');
 const introImg = document.querySelector(".intro img");
 
@@ -47,14 +52,7 @@ introImg.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 //----------------------------------------------------------------------------------------------------------------|
-
-// (5) On key press log which key was pressed
-document.addEventListener('keydown', logKey);
-function logKey(e) {
-    console.log(` ${e.code}`);
-}
-//----------------------------------------------------------------------------------------------------------------|
-// (6) Rotate images in different directions depending on direction of mouse scroll===
+// (4) Rotate images in different directions depending on direction of mouse scroll using WHEEL===
 const imgContentImgs = document.querySelectorAll('.img-content img');
 imgContentImgs.forEach(img =>{
     img.addEventListener('wheel', (e)=>{
