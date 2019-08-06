@@ -2,8 +2,11 @@
 let logo = document.querySelector('.logo-heading');
 
 let black = logo.addEventListener('mouseover', (event) => {
-    event.target.style.backgroundColor ='black';
+    event.target.style.backgroundColor ='gray';
+    
 });
+
+
 let removeBlack = logo.addEventListener('mouseout', (event) => {
     event.target.style.backgroundColor ='white';
 });
@@ -54,7 +57,7 @@ document.addEventListener("dragstart", function(event) {
   
   // Output some text when finished dragging the p element and reset the opacity
   document.addEventListener("dragend", function(event) {
-    document.getElementById("demo").innerHTML = "Finished dragging the p element.";
+    document.getElementById("demo").innerHTML = "Finished dragging the h element.";
     event.target.style.opacity = "1";
   });
   
@@ -155,8 +158,15 @@ pDest.addEventListener('mouseover', (event) => {
     
 });
 
-let 
-
+let divDes = document.querySelector ('.destination'); 
+    divDes.addEventListener('mouseover', (event) => {
+        event.target.style.backgroundColor ='yellow';
+        event.stopPropagation();
+    });
+    divDes.addEventListener('click', (event) => {
+        event.target.style.backgroundColor ='white';
+        event.stopPropagation();
+    });
 
 
 ///////////////////////
@@ -167,3 +177,8 @@ navigation.forEach((element)=> {
         event.preventDefault();
     })
 })
+
+
+/////
+
+TweenLite.from(logo, 2, {x: '-=200px', autoAlpha: 0});
