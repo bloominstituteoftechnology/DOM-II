@@ -46,7 +46,8 @@ blurFocus.addEventListener('mouseout', (event) => {
 // 4. A tag stuff
 let nav = document.querySelector('nav');
 let navA = document.querySelectorAll('a');
-navA.forEach(function(item, index) {
+navA.forEach(function(item, index, event) {
+    // event.preventDefault();
     // item.innerText = siteContent['nav'][`nav-item-${index+1}`];
     item.style.color = 'green';
 });
@@ -59,19 +60,40 @@ topAnchor.textContent = 'Back to Top';
 topAnchor.style.fontSize = '1rem';
 topAnchor.style.position = 'relative';
 topAnchor.style.left = '80px';
+topAnchor.href = '#top';
 nav.appendChild(topAnchor);
-let backToTop = document.querySelector('body');
+topAnchor.style.visibility = 'hidden';
+//  Above creates the button to spec
+
+window.addEventListener('scroll', (event) => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topAnchor.style.visibility = 'visible';
+    } else {
+        topAnchor.style.visibility = 'hidden';
+    }
+    });
 
 
 // 6. Double Click
-
-
-
+let baseText = document.querySelectorAll('p');
+baseText.addEventListener("dblclick", (event) => {
+    if (confirm("WARNING: YOU WILL REGRET CONTINUING!")) {
+        baseText.style.fontSize = '4rem';
+    } else {
+        baseText.style.fontSize = '0.5rem';
+    }
+});
 
 // 7.  On Load
-theBackground.addEventListener('load', (event) => {
-   alert("Don't forget to look for all of the easter eggs!");
-});
+let person;
+window.addEventListener('load', (event) => {
+    let person = prompt("Please enter your name:", "Harry Potter");
+    if (person == null || person === "" || person === "Harry Potter") {prompt("It's fairly upsetting that you didn't listen...", "Lord Voldemort")}
+    else if (person == null || person === "" || person === "Lord Voldemort" || person === "Harry Potter") {
+        alert("You're the worst.....")}
+    else {
+          alert(`Thank you, ${person}. I hope you find all of the easter eggs!`);
+}});
 
 
 
