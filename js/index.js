@@ -67,3 +67,8 @@ head2.addEventListener('dblclick', function(event){
     event.target.style.color = "red";
 })
 
+//prevent default  Prevents the link from going to Google
+const prevDef = document.querySelector('a');
+prevDef.addEventListener('click', function(event){
+event.preventDefault();
+})
