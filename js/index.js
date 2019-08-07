@@ -4,6 +4,7 @@ const allP = document.querySelectorAll("p");
 const allH2 = document.querySelectorAll("h2");
 const theH1 = document.querySelector("h1");
 const dest = document.querySelectorAll(".destination");
+const button = document.querySelector(".btn")
 
 const makeOutline = function() {
     this.style.border = "5px solid black"
@@ -48,7 +49,6 @@ window.addEventListener('scroll', e => {
     e.preventDefault()
 });
 window.addEventListener('contextmenu', e => {
-    event.stopPropagation();
     alert('that is a right click')
 });
 
