@@ -26,19 +26,39 @@ for(i = 0; i < pictures.length; i ++){
     });
 };
 
-// drag / drop
+//  Form Popup on Sign Me Up Button
 
-for(i = 0; i < pictures.length; i ++){
-    pictures[i].addEventListener('drag', (e) => {
-        e.target.setAttribute('src', "https://i.ibb.co/k58Sx7D/images.jpg")
+const btns = document.querySelectorAll('.btn');
+btns.forEach((btn)=>{
+    btn.addEventListener('click', () => {
+        prompt("Enter Your Email");
     })
-}
+});
 
-//load
+
+
+// drag
+const busimg = document.querySelector("img");
+busimg.addEventListener("drag", e => {
+    document.body.style.backgroundColor = "pink";
+});
+
+// load
+
+busimg.addEventListener("load", e => {
+    document.body.style.backgroundColor = "black";
+})
 
 //focus
 
 //resize
+
+const images = document.querySelectorAll('img');
+window.addEventListener('resize', ()=>{
+    images.forEach((img)=>{
+        img.classList.add("rotate-center")
+    })
+});
 
 // scroll
 
@@ -47,6 +67,11 @@ window.addEventListener('scroll', () => {
     home.style.background = '#E62739'
 });
 
-// select
+// mousemove
+
+let ptag = document.querySelector("p");
+ptag.addEventListener("mousemove", e => {
+    document.body.style.backgroundColor = "green";
+})
 
 
