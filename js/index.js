@@ -1,5 +1,7 @@
 // Your code goes here
 
+//mouse over and ckick some invisible items first before scrolling down document for optimal results!
+
 //footer consoles command
 const foot = document.querySelector(".footer p");
 
