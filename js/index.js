@@ -153,7 +153,7 @@ window.addEventListener("click", x => {
   alert ("see you later")
 });
 
-TweenMax.staggerTo(".intro", 2, {
+TweenMax.staggerTo(".funBus", 2, {
   scale:0.1,
   y:40,
   stagger:{
