@@ -123,14 +123,15 @@ navLinks[3].addEventListener("mouseleave", navLinksNoHover);
 
 
 function navLinksHover(event) {
-event.target.style.color = "steelblue";
-event.target.style.fontSize = "2.5rem";
+event.target.style.color = "darkGrey";
+event.target.style.backgroundColor = "yellow";
+event.target.style.fontSize = "2.0rem";
 event.target.style.fontWeight = "black";
 }
 
 function navLinksNoHover(event) {
 event.target.style.color = "black";
-event.target.style.fontSize = "1.6rem";
+event.target.style.fontSize = "1.5rem";
 event.target.style.fontWeight = "normal";
 }
 
@@ -146,17 +147,20 @@ window.addEventListener("load", x => {
   TweenMax.to(spin, 1.5, { rotation: 360 });
 });
 
-
-TweenMax.staggerTo(".funBus", 2, {
-  scale:0.5,
-  y:40,
-  stagger:{
-      amount: 1, 
-      from: "center", 
-      grid:"auto", 
-      ease: Power1.easeIn
-  }
+window.addEventListener("click", x => {
+  TweenMax.staggerTo(".funBus", 2, {
+    scale:0.5,
+    y:40,
+    stagger:{
+        amount: 1, 
+        from: "center", 
+        grid:"auto", 
+        ease: Power1.easeIn
+    }
+  })
 });
+
+
 
 const btnAnimate = document.querySelectorAll('.btn');
 btnAnimate.forEach(element => {
