@@ -45,11 +45,20 @@ busimg.addEventListener("drag", e => {
 
 // load
 
-busimg.addEventListener("load", e => {
-    document.body.style.backgroundColor = "black";
+window.addEventListener('load',() =>{
+    alert('Page has loaded.');
 })
 
+
 //focus
+
+const a = document.querySelectorAll('nav a');
+a.forEach(item => {
+    item.addEventListener('focus', e=>{
+        e.target.style.color = 'pink';
+        e.preventDefault();
+    })
+})
 
 //resize
 
@@ -71,7 +80,7 @@ window.addEventListener('scroll', () => {
 
 let ptag = document.querySelector("p");
 ptag.addEventListener("mousemove", e => {
-    document.body.style.backgroundColor = "green";
+    document.body.style.backgroundColor = "blue";
 })
 
 
