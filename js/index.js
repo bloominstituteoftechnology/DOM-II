@@ -50,7 +50,7 @@ buttons[0].addEventListener("mouseleave", (event) => {
 let letsGo = document.querySelector(".img-content img");
 letsGo.addEventListener("dblclick", (event) => {
   event.preventDefault();
-  alert("Are you ready!!!!");
+  alert("goodbye!");
 });
 
 
@@ -106,3 +106,53 @@ let header2 = document.querySelector('.text-content h2');
         event.preventDefault()
     })
 })
+
+//more nav selectors
+const navLinks = document.querySelectorAll("nav a");
+
+
+navLinks[0].addEventListener("mouseenter", navLinksHover);
+navLinks[0].addEventListener("mouseleave", navLinksNoHover);
+navLinks[1].addEventListener("mouseenter", navLinksHover);
+navLinks[1].addEventListener("mouseleave", navLinksNoHover);
+navLinks[2].addEventListener("mouseenter", navLinksHover);
+navLinks[2].addEventListener("mouseleave", navLinksNoHover);
+navLinks[3].addEventListener("mouseenter", navLinksHover);
+navLinks[3].addEventListener("mouseleave", navLinksNoHover);
+
+
+
+function navLinksHover(event) {
+event.target.style.color = "steelblue";
+event.target.style.fontSize = "2.5rem";
+event.target.style.fontWeight = "black";
+}
+
+function navLinksNoHover(event) {
+event.target.style.color = "black";
+event.target.style.fontSize = "1.6rem";
+event.target.style.fontWeight = "normal";
+}
+
+// stretch
+let introHeading = document.querySelector('.intro-heading');
+let headerShake = document.querySelector('.intro');
+
+
+
+const spin = document.querySelector(".intro-heading");
+
+window.addEventListener("load", x => {
+  TweenMax.to(spin, 1.5, { rotation: 360 });
+});
+
+const btnClick = document.querySelector(".btn");
+
+window.addEventListener("click", x => {
+  TweenLite.to(btnClick, 2.5, { ease: Expo.easeOut, y: -15 });
+  alert ("see you later")
+});
+
+
+
+
