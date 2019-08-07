@@ -1,7 +1,7 @@
 // Your code goes here
 
-
-let intro = document.querySelector(".intro h2");
+// copy
+let intro = document.querySelector(".intro p");
 intro.addEventListener("copy", (event) => {
   alert("Intro is copied");
 });
@@ -146,22 +146,23 @@ window.addEventListener("load", x => {
   TweenMax.to(spin, 1.5, { rotation: 360 });
 });
 
-const btnClick = document.querySelector(".btn");
-
-window.addEventListener("click", x => {
-  TweenLite.to(btnClick, 2.5, { ease: Expo.easeOut, y: -15 });
-  alert ("see you later")
-});
 
 TweenMax.staggerTo(".funBus", 2, {
-  scale:0.1,
+  scale:0.5,
   y:40,
   stagger:{
-      amount: 2, //total seconds to divide up among staggers
-      from: "center", //or an index value. Determines where staggers originate
-      grid:"auto", //or [columns, rows] 
-      ease: Power1.easeIn //determines spacing
+      amount: 1, 
+      from: "center", 
+      grid:"auto", 
+      ease: Power1.easeIn
   }
+});
+
+const btnAnimate = document.querySelectorAll('.btn');
+btnAnimate.forEach(element => {
+  window.addEventListener("click", x => {
+    TweenLite.to(btnAnimate, 2.5, { ease: Expo.easeOut, y: -15 });
+  });
 });
 
 
