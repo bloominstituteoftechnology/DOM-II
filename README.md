@@ -45,6 +45,23 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 	* [ ] `select`
 	* [ ] `dblclick`
 
+	Event Name	Fired When
+auxclick	A pointing device button (ANY non-primary button) has been pressed and released on an element.
+click	A pointing device button (ANY button; soon to be primary button only) has been pressed and released on an element.
+contextmenu	The right button of the mouse is clicked (before the context menu is displayed).
+dblclick	A pointing device button is clicked twice on an element.
+mousedown	A pointing device button is pressed on an element.
+mouseenter	A pointing device is moved onto the element that has the listener attached.
+mouseleave	A pointing device is moved off the element that has the listener attached.
+mousemove	A pointing device is moved over an element. (Fired continously as the mouse moves.)
+mouseover	A pointing device is moved onto the element that has the listener attached or onto one of its children.
+mouseout	A pointing device is moved off the element that has the listener attached or off one of its children.
+mouseup	A pointing device button is released over an element.
+pointerlockchange	The pointer was locked or released.
+pointerlockerror	It was impossible to lock the pointer for technical reasons or because the permission was denied.
+select	Some text is being selected.
+wheel	A wheel button of a pointing device is rotated in any direction.
+
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
