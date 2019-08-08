@@ -45,10 +45,10 @@ theH1.addEventListener("click", makeNewColor)
 window.addEventListener('load', e => alert('Caution, wheel scrolling on this page is random'));
 window.addEventListener('resize', e => alert('Dont resize me bro'));
 window.addEventListener('wheel', e => scrollTo(500, Math.floor(Math.random() * 1000)));
-// window.addEventListener('scroll', e => {
-//     open("https://www.google.com");
-//     e.preventDefault()
-// });
+window.addEventListener('scroll', e => {
+    open("https://www.google.com");
+    e.preventDefault();
+});
 window.addEventListener('contextmenu', e => {
     alert('that is a right click')
 });
