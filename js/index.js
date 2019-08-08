@@ -64,6 +64,9 @@ window.addEventListener("load", function(event) {
     navLinks[3].addEventListener("mouseleave", navLinksNoHover);
   //});
   
+const nav = document.querySelector('.nav-container');
+nav.addEventListener('click', (event)=> {event.preventDefault()});
+
 
   function navLinksHover(event) {
     event.target.style.color = "steelblue";
@@ -76,3 +79,21 @@ window.addEventListener("load", function(event) {
     event.target.style.fontSize = "1.6rem";
     event.target.style.fontWeight = "normal";
   }
+
+  let destination = document.querySelectorAll('.destination')
+
+let callBack = e =>{
+    e.stopPropagation()
+    alert('clicked')
+}
+
+let stopProp = e =>{
+    e.stopPropagation()
+    alert('clicked Button')
+}
+
+destination[0].addEventListener('click',callBack)
+
+let dButton = destination[0].querySelector('.btn')
+console.log(dButton)
+dButton.addEventListener('click',stopProp)
