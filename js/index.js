@@ -15,13 +15,70 @@ alert("Stop pressing keys")
 }) // end of 'Keydown'
 
 // This is the 'wheeldown' event
-const wheelImg = document.querySelectorAll('img')
-let scale = 1;
-wheelImg.addEventListener('wheel', () => {
-event.preventDefault();
-scale += event.deltaY *-0.01;
+const wheelImg = document.querySelector('h2')
+wheelImg.addEventListener('wheel', (event) => {
+    event.stopPropagation();
+    event.currentTarget.style.backgroundColor = 'rgb(255, 235, 205)';
+}) //end
 
-scale = Math.min(Math.max(.125, scale), 4);
+// start drap drop
+const titleDrag = document.querySelector('h1')
+const body = document.querySelector('body')
 
-wheelImg.style.transform = `scale(${scale})`;
-})
+var active = false;
+var currentX;
+var currentY;
+var initialX;
+var initialY;
+var xOffset = 0;
+var yOffset = 0;
+
+body.addEventListener("touchstart", dragStart, false);
+body.addEventListener("touchend", dragEnd, false);
+body.addEventListener("touchmove", drag, false);
+
+body.addEventListener("mousedown", dragStart, false);
+body.addEventListener("mouseup", dragEnd, false);
+body.addEventListener("mousemove", drag, false);
+
+function dragStart(event) {
+    if (event.type === "touchstart") {
+        initialX = event.touches[0].clientX - xOffset;
+        initialY = event.touches[0].clientY -yOffset;
+    } else {
+        initialX = event.clientX - xOffset;
+        initialY = event.clientY - yOffset;
+    }
+    if (event.target === titleDrag) {
+        active = true;
+    }
+}
+
+function dragEnd(event) {
+    initialX = currentX;
+    initialY = currentY;
+
+    active = false;
+}
+
+function drag(event) {
+    if (active) {
+        event.preventDefault();
+        if (event.type === "touchmove") {
+            currentX = event.touches[0].clientX - initialX;
+            currentY = event.touches[0].clientY - initialY;
+        } else {
+            currentX = event.clientX - initialX;
+            currentY = event.clientY - initialY;
+        }
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, titleDrag);
+    }
+}
+
+function setTranslate(xPos, yPos, el) {
+    el.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0";
+} // completed the drag and drop 
+
