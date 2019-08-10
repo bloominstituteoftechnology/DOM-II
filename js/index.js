@@ -93,3 +93,11 @@ hoverLinks.addEventListener('focus', (event) => {
     event.target.style.color = 'rgb(255, 235, 205)';
 })// end
 
+// resize
+const size = document.querySelector('body')
+window.addEventListener('resize', (event) => {
+    event.stopPropagation();
+    body.style.backgroundColor = 'gold';
+})// end
+
+
