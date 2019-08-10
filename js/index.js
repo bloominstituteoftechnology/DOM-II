@@ -18,7 +18,7 @@ alert("Stop pressing keys")
 const wheelImg = document.querySelector('h2')
 wheelImg.addEventListener('wheel', (event) => {
     event.stopPropagation();
-    event.currentTarget.style.backgroundColor = 'rgb(255, 235, 205)';
+    event.currentTarget.style.backgroundColor = 'rgb(255, 235, 205)'// ask about added the sandy-beach from variable... is that possible?;
 }) //end
 
 // start drap drop
@@ -81,4 +81,15 @@ function drag(event) {
 function setTranslate(xPos, yPos, el) {
     el.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0";
 } // completed the drag and drop 
+
+// load
+window.addEventListener('load', (event) => {
+    alert('website fully loaded')
+})// end
+
+// focus
+const hoverLinks = document.querySelector('nav a')
+hoverLinks.addEventListener('focus', (event) => {
+    event.target.style.color = 'rgb(255, 235, 205)';
+})// end
 
