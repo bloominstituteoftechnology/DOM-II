@@ -100,4 +100,8 @@ window.addEventListener('resize', (event) => {
     body.style.backgroundColor = 'gold';
 })// end
 
-
+const returns = document.querySelector('body')
+window.addEventListener('scroll', (event) => {
+    event.stopPropagation();
+    body.style.backgroundColor = 'white';
+})
