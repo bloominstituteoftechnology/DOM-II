@@ -100,8 +100,32 @@ window.addEventListener('resize', (event) => {
     body.style.backgroundColor = 'gold';
 })// end
 
+// scroll
 const returns = document.querySelector('body')
 window.addEventListener('scroll', (event) => {
     event.stopPropagation();
     body.style.backgroundColor = 'white';
-})
+})// end
+
+// select
+// const input = document.querySelector('h2');
+// input.addEventListener('select', (event) => {
+//     event.stopPropagation();
+//     event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     input.style.color = 'red';    
+// });
+
+// dblclick
+const popOut = document.getElementsByTagName('p')
+function clickOn(event) {
+    event.target.style.cssText = "color: purple; font-size: 25px; font-weight: bold; border: 1px dashed black; "
+}
+popOut[0].addEventListener('dblclick', clickOn)
+popOut[1].addEventListener('dblclick', clickOn)
+popOut[2].addEventListener('dblclick', clickOn)
+popOut[3].addEventListener('dblclick', clickOn)
+popOut[4].addEventListener('dblclick', clickOn)
+popOut[5].addEventListener('dblclick', clickOn)
+popOut[6].addEventListener('dblclick', clickOn)
+popOut[7].addEventListener('dblclick', clickOn)
+popOut[8].addEventListener('dblclick', clickOn)
