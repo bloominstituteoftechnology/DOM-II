@@ -76,7 +76,7 @@ document.addEventListener('keydown', event => {
 
 const h4 = document.querySelector('.destination h4');
 document.addEventListener('keydown', () => {
-    h4.style.backgroundColor = 'red';
+    h4.style.backgroundColor = 'lightRed';
 });
 
 const button = document.querySelector('.btn');
