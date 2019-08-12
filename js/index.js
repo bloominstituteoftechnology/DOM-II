@@ -10,7 +10,9 @@ document.body.style.backgroundColor = "lightblue";
 //     document.event1.style.backgroundColor = 'red';
 // })
   
-  /* #1 On Click Event */
+
+
+  //1. On Click Event 
   const nav = document.querySelector('.nav');
   const navLink = document.querySelectorAll('.nav-link');
   
@@ -29,7 +31,7 @@ document.body.style.backgroundColor = "lightblue";
     });
   });
   
-  /* #2 On Load Event */
+  // 2. On Load Event 
   const Img = document
     .querySelector('.intro img')
     .addEventListener('load', onLoad);
@@ -38,16 +40,16 @@ document.body.style.backgroundColor = "lightblue";
     alert('The page has loaded');
   }
   
-  /* #3 Mouse Up event */
+  // 3. Mouse Up event 
   const logo = document
     .querySelector('.logo-heading')
     .addEventListener('mouseup', onMouseUp);
   
   function onMouseUp(e) {
-    e.target.style.color = 'red';
+    e.body.style.backgroundColor = 'blue';
   }
   
-  /* #4 Mouse Over event */
+  //4. Mouse Over event
   const images = document.querySelectorAll('img');
   
   images.forEach(image => {
@@ -56,10 +58,10 @@ document.body.style.backgroundColor = "lightblue";
   
   function onMouseOver(e) {
     e.target.style.border = 'solid 2px red';
-    e.target.style.opacity = 0.9;
+    e.target.style.opacity = 0.8;
   }
   
-  /* #5 Mouse Move event */
+  //5. Mouse Move event 
   const offset = document.createElement('a');
   
   offset.textContent = 'Offset';
@@ -74,7 +76,7 @@ document.body.style.backgroundColor = "lightblue";
     offset.textContent = `X: ${e.offsetX} Y: ${e.offsetY}`;
   });
   
-  /* #6 On Focus Event */
+  //6. On Focus Event 
   
   navLink.forEach(link => {
     link.addEventListener('focus', onFocus);
@@ -84,7 +86,7 @@ document.body.style.backgroundColor = "lightblue";
     console.log(`${e.target.innerText} link is in focus`);
   }
   
-  /* #7 On Scroll Event */
+  // 7. On Scroll Event 
   const doc = document.documentElement;
   window.addEventListener('scroll', onScroll);
   
@@ -92,7 +94,7 @@ document.body.style.backgroundColor = "lightblue";
     console.log('You are scrolling!')
   }
   
-  /* #8 Keydown Event */
+  // 8. Keydown Event 
   const destination = document.querySelectorAll('.destination');
   
   destination.forEach(dest => {
@@ -100,10 +102,10 @@ document.body.style.backgroundColor = "lightblue";
   });
   
   function keyDown(e) {
-    e.target.style.border = `solid 2px white`;
+    e.target.style.border = 'solid 2px white';
   }
   
-  /* #9 Double Click Event */
+  //9. Double Click Event
   document.body.addEventListener('dblclick', dblClick);
   
   function dblClick(e) {
@@ -112,7 +114,7 @@ document.body.style.backgroundColor = "lightblue";
     e.preventDefault();
   }
   
-  /* #10 Select Event */
+  //10. Select Event 
   const selectElement = document.querySelector('.options');
 
   selectElement.addEventListener('change', (event) => {
