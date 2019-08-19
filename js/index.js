@@ -79,10 +79,24 @@ document.addEventListener('keydown', () => {
     h4.style.backgroundColor = 'lightRed';
 });
 
-const button = document.querySelector('.btn');
-document.addEventListener('click', (event) => {
-   button.style.backgroundColor = 'yellow';
+const button = document.querySelectorAll('.btn');
+button.forEach(function(item) {
+    item.addEventListener('click', function (event) {
+       button.style.backgroundColor = 'yellow';
+       event.stopPropagation();
+
+    });
+
 });
+
+// let btns = document.querySelectorAll('.btn');
+// btns.forEach(function (item) {
+//     item.addEventListener('click', function (event) {
+//         alert("Thank you! We will be contacting you shortly!");
+//         item.style.backgroundColor = 'lightgray';
+//         event.stopPropagation();
+//     });
+// });
 
 
 // let dragged ;
