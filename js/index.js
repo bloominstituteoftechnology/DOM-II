@@ -13,15 +13,47 @@ const newBod = document.querySelector("body");
 
 newBod.addEventListener('keydown', function(event){
     // console.log("KEYDOWN") // TEST
+    event.key = 'j';
     event.target.style.background = "gold"
 });
 
-// -- "load" -- 
-const newNav = document.querySelectorAll("a");
+// -- 'mouseenter' -- 
+const mouseNone = document.querySelector('.footer');
 
-newNav.addEventListener("load", function(event){
-    event.target.style.color = "navy"
+mouseNone.addEventListener('mouseenter', function(event){
+    // console.log(mouseNone)
+    event.target.style.cssText = "display:none";
 });
+
+// -- 'wheel' --
+
+// -- 'drag / drop' // 
+
+// -- "load" -- 
+// const newNav = document.querySelectorAll("a");
+
+// newNav.addEventListener("load", function(event){
+//     event.target.style.color = "navy"
+// })
+
+// -- 'focus' // 
+
+// -- 'resize' // 
+
+// -- 'scroll' // 
+
+
+
+// -- 'select' // 
+
+
+// -- 'double-click' -- 
+const logoDbl = document.querySelector('.home .intro h2');
+
+logoDbl.addEventListener("dblclick", function(event){
+    event.target.style.cssText = "font-size:5rem;color:dodgerblue"
+})
+
 
 
 
