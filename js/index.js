@@ -17,7 +17,7 @@ window.addEventListener('wheel', event => {
 });
 
 
-
+//resize
 window.addEventListener('resize', event => {
     let navItems = document.querySelector('a');
     navItems.style.color = `blue`;
