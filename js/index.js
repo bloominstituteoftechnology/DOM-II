@@ -32,6 +32,10 @@ allNodes.forEach(index => {
                 // Change to new color
                 return console.log('THE FUN BUS IS COMING!'); 
                 break;
+            case 'dblclick':
+                // Change to new color
+                return element.style.background = 'orange'; 
+                break;
             default:
                 break;
         }
@@ -49,11 +53,14 @@ allNodes.forEach(index => {
                 index.style.color = color[random];
             })
         } else if (e.type === 'dragend') {
-            // Print alert upon copy over a timeframe
+            // Print alert upon copy over a time frame
             return e.target.hidden = true;
         } else if (e.type === 'copy') {
             // Change text amongst copying text
             element.innerText = "COPIED!";
+        } else if (e.type === 'dragstart') {
+            // start of drag console log
+            console.log("dragstart!");
         }
     }
 
@@ -65,4 +72,6 @@ allNodes.forEach(index => {
     index.addEventListener('load', action);
     index.addEventListener('dragend', action);
     index.addEventListener('copy', action);
+    index.addEventListener('dblclick', action);
+    index.addEventListener('dragstart', action);
 })
