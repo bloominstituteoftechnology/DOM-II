@@ -89,9 +89,29 @@ selectText.forEach(item =>{
 
 const hide = document.querySelectorAll('.text-content h2');
 hide.forEach(item =>{
-    item.addEventListener('dblclick', event=>{
+    item.addEventListener('click', event=>{
         event.target.style.visibility = 'hidden';
     })
 })
 //works perfectly!
 
+// const shadow = document.querySelectorAll('.menu');
+// shadow.forEach(item =>{
+//     item.addEventListener("mouseenter", event=>{
+//         event.target.style.boxShadow + "5px 5px 1px pink, 10px 10px 1px pink";
+//     })
+// })
+
+const shadow = document.querySelectorAll('.intro');
+shadow.forEach(item =>{
+    item.addEventListener("mouseenter", event=>{
+        event.target.style.boxShadow = "5px 5px 1px pink";
+    })
+})
+
+const noShadow = document.querySelectorAll('.intro');
+noShadow.forEach(item =>{
+    item.addEventListener("mouseleave", event=>{
+        event.target.style.boxShadow = "5px 5px 1px #fff";
+    })
+})
