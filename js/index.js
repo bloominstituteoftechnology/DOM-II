@@ -38,6 +38,7 @@ allNodes.forEach(index => {
 
         // If else statements for expressions
         if (e.type === 'load') {
+            // Change specific element's text color
             document.querySelectorAll('div').forEach(index => {
                 index.style.color = color[random];
             })
@@ -47,13 +48,16 @@ allNodes.forEach(index => {
             document.querySelectorAll('p').forEach(index => {
                 index.style.color = color[random];
             })
+        } else if (e.type === 'dragend') {
+            return e.target.hidden = true;
         }
     }
 
     // Event listeners
-    index.addEventListener('mouseover', action)
-    index.addEventListener('mouseout', action)
-    index.addEventListener('click', action)
-    index.addEventListener('keydown', action)
-    index.addEventListener('load', action)
+    index.addEventListener('mouseover', action);
+    index.addEventListener('mouseout', action);
+    index.addEventListener('click', action);
+    index.addEventListener('keydown', action);
+    index.addEventListener('load', action);
+    index.addEventListener('dragend', action);
 })
