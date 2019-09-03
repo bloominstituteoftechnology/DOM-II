@@ -4,6 +4,11 @@
 
 document.addEventListener('click', function(event){
     //console.log('click')
+    let link = event.target.closest('a')
+    if (link) {
+        // stop links
+        event.preventDefault()
+    }
     let button = event.target.closest('.btn')
     if (button) {
         button.innerText = "You're Signed Up!"
@@ -67,6 +72,12 @@ document.addEventListener('dragend', function(event){
         if (!row.style.flexDirection) row.style.flexDirection = 'row-reverse'
         else row.removeAttribute('style')
     }
+})
+
+//stop propogation
+document.querySelector('.btn').addEventListener('click', function(event){
+    event.currentTarget.innerText = "You clicked the 1st button!"
+    event.stopPropagation()
 })
 
 //})
