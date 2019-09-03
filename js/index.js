@@ -60,8 +60,21 @@ dblClickUp.addEventListener('dblclick', item =>{
     dblClickUp.style.transform = 'scale(3)';
 })
 
-// const dblClickDown = document.querySelector('.content-destination h2')
-// dblClickDown.addEventListener('dblclick', item =>{
-//     dblClickDown.style.transform = 'scale(1)';
-// })
+const dblClickDown = document.querySelector('.content-destination h2')
+dblClickDown.addEventListener('click', item =>{
+    dblClickDown.style.transform = 'scale(1)';
+})
 //can double click reverse like mouse enter and mouse leave? maybe not
+//click works to resize back to normal
+
+// const selectText = document.querySelector('.intro p');
+// selectText.addEventListener('select', event =>{
+//     event.style.backgroundColor = 'purple';
+// })
+
+const selectText = document.querySelectorAll('p');
+selectText.forEach(item =>{
+    item.addEventListener('click', event =>{
+        event.target.style.color = 'purple';
+    })
+})
