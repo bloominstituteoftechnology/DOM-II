@@ -141,3 +141,30 @@ picNoShadow.forEach(item =>{
         event.target.style.boxShadow = "5px 5px 1px #fff";
     })
 })
+
+//Propagation
+// const button = document.querySelector('.btn');
+// button.addEventListener('click', e=>{
+//     console.log("the button has been clicked");
+//     e.preventDefault();
+// })
+
+const button = document.querySelectorAll('.btn');
+button.forEach(item =>{
+    item.addEventListener('click', e=>{
+        console.log("the button has been clicked");
+        e.preventDefault();
+    })
+})
+// //DONT FORGET THE querySelectorAll WHEN USING MULTIPLE ITEMS!!
+
+window.addEventListener('resize', event =>{
+    const change = document.querySelectorAll('.destination h4');
+    change.forEach(item =>{
+        item.textContent='Travel to Costa Rica!';
+    })
+    event.preventDefault();
+})
+
+
+// https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js
