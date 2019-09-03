@@ -78,3 +78,20 @@ selectText.forEach(item =>{
         event.target.style.color = 'purple';
     })
 })
+
+// const hide = document.querySelectorAll('h2');
+// hide.forEach(item =>{
+//     item.addEventListener('click', event=>{
+//         event.target.style.visibility = 'hidden';
+//     })
+// })
+//works for all of them, but overrides the h2 above where it changes text size. I want to specifically select.
+
+const hide = document.querySelectorAll('.text-content h2');
+hide.forEach(item =>{
+    item.addEventListener('dblclick', event=>{
+        event.target.style.visibility = 'hidden';
+    })
+})
+//works perfectly!
+
