@@ -92,6 +92,23 @@ window.addEventListener('resize', event => {
     changeTitle[0].textContent = 'Ride a Steel Horse!'
   });
 
+// -- STOP PROPOGATION -- // DO NOT UNDERSTAND THIS 
+const divButton = document.querySelector('.destination')
+
+divButton.addEventListener('click', function(event) {
+console.log ("I'm in the div!")
+event.target.style.cssText = "background:purple";
+})
+
+const buttonInDiv = document.querySelector('.destination .btn')
+buttonInDiv.addEventListener('click', (event) => {
+console.log("I'm in the button!")
+event.target.style.cssText = 'background:pink'
+event.stopPropagation();
+}); 
+
+// -- Prevent Default -- // DO NOT UNDERSTAND THIS 
+
 
 // -- (10) "load" -- // specific to WINDOW 
 // const onLoad = document.querySelectorAll("body");
