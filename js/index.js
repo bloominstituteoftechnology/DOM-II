@@ -32,7 +32,7 @@ linkScaleUp.forEach(item => {
 //DARK MODE
 const darkMode = document.querySelector('body');
 darkMode.addEventListener("keydown", e => {
-    darkMode.style.backgroundColor = "#696969";
+    darkMode.style.backgroundColor = "#121212";
     darkMode.style.color = "white";
 });
 
@@ -43,6 +43,18 @@ noImgSave.forEach(item => {
     e.preventDefault();
     })
 });
+
+
+//zoom element on scroll
+const busImg = document.querySelector('.bus'); 
+busImg.addEventListener('wheel', e => {
+    e.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    busImg.style.transform = `scale(${scale})`;
+})
+let scale = 1;
+el.onwheel = e
 
 
 
