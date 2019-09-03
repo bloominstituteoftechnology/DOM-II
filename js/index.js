@@ -1,5 +1,19 @@
 // Your code goes here
 
+//Event 1
+let navMouseOver = document.querySelectorAll('.nav-link');
+navMouseOver.forEach(item => {
+    item.addEventListener("mouseenter", event => {
+    event.target.style.color = 'purple';
+    })
+})
+navMouseOver.forEach(item => {
+    item.addEventListener("mouseleave", event =>{
+    event.target.style.color = 'orange';
+    })
+});
+
+//Event 2
 let menuBtn = document.querySelector('.menu-btn');
 let menu = document.querySelector(".menu");
 let menuStatus = false;
@@ -19,18 +33,7 @@ function menuToggle(){
 
 menuBtn.onclick = menuToggle;
 
-let navMouseOver = document.querySelectorAll('.nav-link');
-navMouseOver.forEach(item => {
-    item.addEventListener("mouseenter", event => {
-    event.target.style.color = 'purple';
-    })
-})
-navMouseOver.forEach(item => {
-    item.addEventListener("mouseleave", event =>{
-    event.target.style.color = 'orange';
-    })
-});
-
+//Event 3 
 const headerPic = document.querySelector("header img");
 headerPic.addEventListener('mouseenter', item => {
     headerPic.style.transform = 'scale(2)';
@@ -43,11 +46,13 @@ headerPicDown.addEventListener('mouseleave', item =>{
     headerPicDown.style.transform = 'scale(1)';
 })
 
+//Event 4
 window.addEventListener('load', (event) => {
     console.log('page is fully loaded');
  });
 
 
+//Event 5 
 const focusHeader = document.querySelectorAll('h4');
 focusHeader.forEach(item =>{
     item.addEventListener('click', event =>{
@@ -55,6 +60,7 @@ focusHeader.forEach(item =>{
     })
 })
 
+//Events 6
 const dblClickUp = document.querySelector('.content-destination h2')
 dblClickUp.addEventListener('dblclick', item =>{
     dblClickUp.style.transform = 'scale(3)';
@@ -72,6 +78,7 @@ dblClickDown.addEventListener('click', item =>{
 //     event.style.backgroundColor = 'purple';
 // })
 
+//Event 7 
 const selectText = document.querySelectorAll('p');
 selectText.forEach(item =>{
     item.addEventListener('click', event =>{
@@ -87,6 +94,7 @@ selectText.forEach(item =>{
 // })
 //works for all of them, but overrides the h2 above where it changes text size. I want to specifically select.
 
+//Event 8
 const hide = document.querySelectorAll('.text-content h2');
 hide.forEach(item =>{
     item.addEventListener('click', event=>{
@@ -102,6 +110,8 @@ hide.forEach(item =>{
 //     })
 // })
 
+
+//Events 9
 const shadow = document.querySelectorAll('.intro');
 shadow.forEach(item =>{
     item.addEventListener("mouseenter", event=>{
@@ -112,6 +122,22 @@ shadow.forEach(item =>{
 const noShadow = document.querySelectorAll('.intro');
 noShadow.forEach(item =>{
     item.addEventListener("mouseleave", event=>{
+        event.target.style.boxShadow = "5px 5px 1px #fff";
+    })
+})
+
+
+//Events 10
+const picShadow = document.querySelectorAll(".img-content img");
+picShadow.forEach(item =>{
+    item.addEventListener("mouseenter", event =>{
+        event.target.style.boxShadow = "5px 5px 1px pink";
+    })
+})
+
+const picNoShadow = document.querySelectorAll(".img-content img");
+picNoShadow.forEach(item =>{
+    item.addEventListener("mouseleave", event =>{
         event.target.style.boxShadow = "5px 5px 1px #fff";
     })
 })
