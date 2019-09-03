@@ -350,3 +350,16 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+aside {
+  border-radius: 1em;
+  display: inline-block;
+  padding: 1em;
+  transform: scale(.9);
+  transform-origin: 0 0;
+  transition: transform .6s;
+}
+
+.large {
+  transform: scale(1.3);
+}

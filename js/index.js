@@ -35,16 +35,28 @@ newBus.forEach(item => {
 window.addEventListener('resize', e => {
     const changeTitle = document.querySelector('.footer');
     changeTitle.textContent="*A sham of a company"
-})
+});
 
 // Change color when clicking on first <p>
 window.onclick = changeColor;
 function changeColor() {
     document.getElementsByTagName("p")[0].style.backgroundColor = "purple";
-}
+};
 
 // Change color to green when clicken on Pick Your Destination
 const destinationColor = document.querySelector('.content-destination');
 destinationColor.addEventListener('click', (e) => {
     destinationColor.style.background = "green";
-})
+});
+
+// Double click on Island Getaway to large
+const cardLarge = document.querySelector('aside');
+cardLarge.addEventListener('dblclick', e => {
+    cardLarge.classList.toggle('large');
+});
+
+// Changes Adventure Awaits when window change
+window.addEventListener('resize', e => {
+    const changeContent = document.querySelector('.adventure');
+    changeContent.textContent="You Too Could Drown Here"
+});
