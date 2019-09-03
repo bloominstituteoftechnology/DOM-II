@@ -82,3 +82,9 @@ window.addEventListener("resize", function(e) {
     funBusImg.style.borderRadius = "48%";
 })
 
+//change text when copying text 
+const introHeading = document.querySelector(".intro h2")
+introHeading.addEventListener("copy", function(e) {
+    introHeading.innerText = "Don't copy me!"
+})
+
