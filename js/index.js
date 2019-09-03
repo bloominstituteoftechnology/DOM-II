@@ -36,6 +36,15 @@ darkMode.addEventListener("keydown", e => {
     darkMode.style.color = "white";
 });
 
+//Prevents images from being saved by blocking the context menu from pulling up
+const noImgSave = document.querySelectorAll('img');
+noImgSave.forEach(item => {
+    item.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    })
+});
+
+
 
 
 
