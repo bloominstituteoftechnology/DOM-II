@@ -1,4 +1,6 @@
 // Your code goes here
+
+
 let buttonBig = document.querySelectorAll('.btn');
 buttonBig.forEach(item =>{
     item.addEventListener('mouseenter', e =>{
@@ -14,6 +16,9 @@ buttonSmall.forEach(item => {
         item.style.transition = '0.5s';
     })
 });
+
+TweenMax.to(".btn", 3, {rotation:360});
+TweenMax.to(".nav", 3, {rotation:360});
 
 let body = document.querySelector('body');
 body.addEventListener('click', e => {
@@ -72,4 +77,5 @@ headText.forEach(item => {
 let navcolor = document.querySelectorAll('.nav')[0];
 navcolor.addEventListener('mouseover', e => {
     navcolor.style.backgroundColor = 'blue';
+    navcolor.style.color = "white";
 })
