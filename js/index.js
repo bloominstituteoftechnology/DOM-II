@@ -63,6 +63,18 @@ doubleClick.addEventListener('dblclick', e => {
         doubleClick.style.color = 'dodgerblue';
 });
 
+//Replaces header section with a click counter
+const headerClick = document.querySelector('.intro');
+headerClick.addEventListener('click', e => {
+    headerClick.innerHTML = `Click count: ${event.detail}`;
+});
+
+//changes color on resize
+window.addEventListener('resize', event => {
+  const changeTitle = document.querySelector('h2');
+  changeTitle.style.color = "tomato";
+  });
+
 
 
 
