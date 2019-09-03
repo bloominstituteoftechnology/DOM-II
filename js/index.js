@@ -46,3 +46,11 @@ headerPicDown.addEventListener('mouseleave', item =>{
 window.addEventListener('load', (event) => {
     console.log('page is fully loaded');
  });
+
+
+const focusHeader = document.querySelectorAll('h4');
+focusHeader.forEach(item =>{
+    item.addEventListener('click', event =>{
+        event.target.style.fontSize = '3rem';
+    })
+})
