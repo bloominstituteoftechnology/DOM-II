@@ -54,3 +54,14 @@ focusHeader.forEach(item =>{
         event.target.style.fontSize = '3rem';
     })
 })
+
+const dblClickUp = document.querySelector('.content-destination h2')
+dblClickUp.addEventListener('dblclick', item =>{
+    dblClickUp.style.transform = 'scale(3)';
+})
+
+// const dblClickDown = document.querySelector('.content-destination h2')
+// dblClickDown.addEventListener('dblclick', item =>{
+//     dblClickDown.style.transform = 'scale(1)';
+// })
+//can double click reverse like mouse enter and mouse leave? maybe not
