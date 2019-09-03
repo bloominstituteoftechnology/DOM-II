@@ -2,6 +2,10 @@
 
 //document.addEventListener('DOMContentLoaded', function(){
 
+window.addEventListener('load', function() {
+    TweenMax.to(document.querySelector('img'), 1, {left:0, ease: Back.easeOut.config(1.7)})
+})
+
 document.addEventListener('click', function(event){
     //console.log('click')
     let link = event.target.closest('a')
@@ -38,7 +42,8 @@ document.addEventListener('mouseout', function(event){
     //console.log('mouseout')
     let img = event.target.closest('img')
     if (img) {
-        img.removeAttribute('style')
+        //img.removeAttribute('style')
+        img.style.transform = 'unset'
     }
 })
 
