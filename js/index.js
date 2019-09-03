@@ -36,6 +36,14 @@ darkMode.addEventListener("keydown", e => {
     darkMode.style.color = "white";
 });
 
+//light MODE
+const lightMode = document.querySelector('body');
+lightMode.addEventListener("keyup", e => {
+    lightMode.style.backgroundColor = "white";
+    lightMode.style.color = "black";
+});
+
+
 //Prevents images from being saved by blocking the context menu from pulling up
 const noImgSave = document.querySelectorAll('img');
 noImgSave.forEach(item => {
