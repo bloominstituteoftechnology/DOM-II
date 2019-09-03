@@ -7,7 +7,6 @@ pageImages.forEach(image => {
 });
 
 //on keydown
-
 document.body.addEventListener('keydown', e => {
     let keyThatGotPressed = e.key;
     let sound = new Audio('sounds/snare.mp3');
@@ -39,3 +38,16 @@ document.body.addEventListener('keydown', e => {
         sound1.play();
     }
 });
+
+//load
+
+function setVisibility(el) {
+    el.style.visibility = "visible";
+}
+
+window.addEventListener('load', (e) => {
+    setInterval(()=>{
+        document.querySelector('.signup').style.visibility = "visible";
+    }, 3000);
+    
+})

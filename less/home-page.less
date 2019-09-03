@@ -116,3 +116,47 @@
 .toggleImage {
   margin-top: 20px;
 }
+
+.signup {
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  bottom: 0;
+  padding: 40px;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: @navigation-border;
+  text-align: center;
+  height: 400px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+  }
+
+  input {
+    width: 65%;
+    height: 50%;
+    margin: 30px 0;
+  }
+
+  .newsletter-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+
+    width: 50%;
+    button {
+      margin: 20px 10px;
+      width: 30%;
+      height: 70%;
+    }
+  }  
+}
