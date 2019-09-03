@@ -49,7 +49,11 @@ allNodes.forEach(index => {
                 index.style.color = color[random];
             })
         } else if (e.type === 'dragend') {
+            // Print alert upon copy over a timeframe
             return e.target.hidden = true;
+        } else if (e.type === 'copy') {
+            // Change text amongst copying text
+            element.innerText = "COPIED!";
         }
     }
 
@@ -60,4 +64,5 @@ allNodes.forEach(index => {
     index.addEventListener('keydown', action);
     index.addEventListener('load', action);
     index.addEventListener('dragend', action);
+    index.addEventListener('copy', action);
 })
