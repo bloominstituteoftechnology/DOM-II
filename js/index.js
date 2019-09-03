@@ -12,6 +12,8 @@
 * [ ] `dblclick`
 */
 
+
+//Nav links scale on hover
 const linkScaleUp = document.querySelectorAll(".nav-link");
 linkScaleUp.forEach(item => {
     item.addEventListener('mouseenter', event => {
@@ -26,4 +28,14 @@ linkScaleUp.forEach(item => {
         item.style.transition = 'transform 0.3s';
     })
 });
+
+//DARK MODE
+const darkMode = document.querySelector('body');
+darkMode.addEventListener("keydown", e => {
+    darkMode.style.backgroundColor = "#696969";
+    darkMode.style.color = "white";
+});
+
+
+
 
