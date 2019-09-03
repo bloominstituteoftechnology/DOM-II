@@ -36,6 +36,10 @@ allNodes.forEach(index => {
                 // Change to new color
                 return element.style.background = 'orange'; 
                 break;
+            case 'mouseup':
+                // Change to new color
+                return console.log('MOUSE HAS BEEN LIFTED'); 
+                break;
             default:
                 break;
         }
@@ -74,4 +78,5 @@ allNodes.forEach(index => {
     index.addEventListener('copy', action);
     index.addEventListener('dblclick', action);
     index.addEventListener('dragstart', action);
+    index.addEventListener('mouseup', action);
 })
