@@ -56,6 +56,13 @@ busImg.addEventListener('wheel', e => {
 let scale = 1;
 el.onwheel = e
 
+//DoubleClick
+const doubleClick = document.querySelector('.logo-heading');
+doubleClick.addEventListener('dblclick', e => {
+        doubleClick.style.fontSize = '6rem';
+        doubleClick.style.color = 'dodgerblue';
+});
+
 
 
 
