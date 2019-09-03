@@ -108,6 +108,14 @@ event.stopPropagation();
 }); 
 
 // -- Prevent Default -- // DO NOT UNDERSTAND THIS 
+const navDefault = document.querySelectorAll('.nav-link')
+navDefault.forEach((currentvalue) => {
+    currentvalue.addEventListener('click', (event) => {
+        console.log("link is clicked")
+        event.preventDefault();
+    }); 
+});
+
 
 
 // -- (10) "load" -- // specific to WINDOW 
