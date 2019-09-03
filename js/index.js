@@ -42,3 +42,7 @@ const headerPicDown = document.querySelector('header img');
 headerPicDown.addEventListener('mouseleave', item =>{
     headerPicDown.style.transform = 'scale(1)';
 })
+
+window.addEventListener('load', (event) => {
+    console.log('page is fully loaded');
+ });
