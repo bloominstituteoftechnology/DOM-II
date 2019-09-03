@@ -7,19 +7,30 @@ allNodes.forEach(index => {
         const element = e.target;
         let oldColor = "";
 
-        if (e.type === 'mouseover') {
-            // Store old color
-            oldColor = element.style.background
+        // Conditionals for event types
+        switch (e.type) {
+            case 'mouseover':
+                // Store old color
+                oldColor = element.style.background
 
-            // Change to new color
-            return element.style.background = 'grey';
-            
-        } else if (e.type === 'mouseout') {
-            return element.style.background = oldColor;
+                // Change to new color
+                return element.style.background = 'grey';
+                break;
+            case 'mouseout':
+                // Change to new color
+                return element.style.background = oldColor;
+                break;
+            case 'click':
+                // Change to new color
+                return element.style.background = 'blue';
+                break;
+            default:
+                break;
         }
     }
 
     // Event listeners
     index.addEventListener('mouseover', action)
     index.addEventListener('mouseout', action)
+    index.addEventListener('click', action)
 })
