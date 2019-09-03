@@ -53,10 +53,18 @@ destinationColor.addEventListener('click', (e) => {
 const cardLarge = document.querySelector('aside');
 cardLarge.addEventListener('dblclick', e => {
     cardLarge.classList.toggle('large');
+    e.preventDefault();
 });
 
 // Changes Adventure Awaits when window change
 window.addEventListener('resize', e => {
     const changeContent = document.querySelector('.adventure');
     changeContent.textContent="You Too Could Drown Here"
+});
+
+// Changes color to pink when clicking on Fun In The Sun
+const lowerColor = document.querySelector('.destination')
+lowerColor.addEventListener('click', (e) => {
+    lowerColor.style.color = "pink";
+    e.stopPropagation();
 });
