@@ -88,3 +88,10 @@ introHeading.addEventListener("copy", function(e) {
     introHeading.innerText = "Don't copy me!"
 })
 
+//add spin animation to bottom image
+const destinationImg = document.querySelector(".content-destination img")
+window.addEventListener("scroll", function(e) {
+    TweenMax.to(destinationImg, 3, {
+        rotationY: 360
+    });
+});
