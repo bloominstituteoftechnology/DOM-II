@@ -219,6 +219,17 @@ img {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer input {
+  height: 3rem;
+  width: 40rem;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.6rem;
 }
 .footer p {
   text-align: center;
