@@ -1,7 +1,7 @@
 // Your code goes here
 
 
-// Mouseover & Mouseout
+// Mouseover & Mouseout - makes nav bar background pink when hovering off and white when hovering over
 const navBar = document.querySelector('.nav');
 navBar.addEventListener('mouseover', (e) => {
     navBar.style.backgroundColor = 'white';
@@ -12,7 +12,7 @@ navBar.addEventListener('mouseout', (e) => {
   });
 
 
-// Wheel
+// Wheel - makes top img bigger and smaller with scroll bar on mouse
 function zoom(event) {
       event.preventDefault();
     
@@ -30,21 +30,33 @@ function zoom(event) {
     el.onwheel = zoom;
 
 
-// Dblclick
+// Dblclick - makes the first button at bottom of page bigger when clicked twice
 const btn = document.querySelector('.btn');
 
 console.log(btn);
 
-btn.addEventListener('dblclick', function (e) {
+btn.addEventListener('dblclick', (e) => {
     btn.style.width = '250px';
     btn.style.height = '50px';
 });
 
 
-// Click Count
+// Click Count - makes the first button at bottom of page have a counter
 const click = document.querySelector('.btn');
 
 click.addEventListener('click', (e) => {
   click.innerHTML = `Click count: ${event.detail}`;
 });
+
+
+// Copy and Cut notifier - will notify you with a pop up if you try to copy or cut any of the paragraphs 
+const copyAndCut = document.querySelector('p');
+
+copyAndCut.addEventListener('copy', (e) => {
+    window.alert("Hey! Don't copy me, that's stealing ya know!");
+  })
+
+  copyAndCut.addEventListener('cut', (e) => {
+    window.alert("Hey! Don't copy me, that's stealing ya know!");
+  })
 
