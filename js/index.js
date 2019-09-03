@@ -45,16 +45,6 @@ noImgSave.forEach(item => {
 });
 
 
-//zoom element on scroll
-const busImg = document.querySelector('.bus'); 
-busImg.addEventListener('wheel', e => {
-    e.preventDefault();
-    scale += event.deltaY * -0.01;
-    scale = Math.min(Math.max(.125, scale), 4);
-    busImg.style.transform = `scale(${scale})`;
-})
-let scale = 1;
-el.onwheel = e
 
 //DoubleClick
 const doubleClick = document.querySelector('.logo-heading');
@@ -74,6 +64,24 @@ window.addEventListener('resize', event => {
   const changeTitle = document.querySelector('h2');
   changeTitle.style.color = "tomato";
   });
+
+  //zoom element on scroll
+const busImg = document.querySelector('.bus'); 
+busImg.addEventListener('wheel', e => {
+    e.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    busImg.style.transform = `scale(${scale})`;
+})
+let scale = 1;
+el.onwheel = e
+
+//makes footer text permanently large on hover
+const mouseFooter = document.querySelector('.footer p');
+mouseFooter.addEventListener('mouseover', e => {
+    mouseFooter.style.fontSize = '5rem';
+    mouseFooter.style.color = 'darkolivegreen';
+});
 
 
 
