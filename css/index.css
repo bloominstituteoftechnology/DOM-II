@@ -229,6 +229,7 @@ img {
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
+  z-index: 2;
 }
 .home .intro img {
   max-width: 100%;
@@ -236,6 +237,9 @@ img {
 }
 .home .intro h2 {
   margin-top: 20px;
+}
+.home .big {
+  font-size: 5rem;
 }
 .home .content-section {
   margin: 30px 0;
@@ -256,6 +260,10 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+  /* #lets-go-img {
+        position: relative;
+        z-index: -1;
+      } */
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {

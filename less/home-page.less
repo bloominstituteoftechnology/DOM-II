@@ -1,9 +1,8 @@
 .home {
-
   .intro {
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
-
+    z-index: 2;
     img {
       max-width: 100%;
       height: auto;
@@ -14,14 +13,16 @@
     }
   }
 
+  .big {
+    font-size: 5rem;
+  }
+
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
@@ -36,6 +37,10 @@
       width: 48%;
       padding-left: 1%;
 
+      /* #lets-go-img {
+        position: relative;
+        z-index: -1;
+      } */
       @media @mobile {
         width: 100%;
         padding: 0;
@@ -105,10 +110,10 @@
         width: 80%;
         margin: 0 auto 30px;
       }
-      
+
       .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);
       }
     }
   }
-}// home
+} // home
