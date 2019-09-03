@@ -24,7 +24,9 @@ allNodes.forEach(index => {
                 // Change to new color
                 return element.style.background = 'blue';
                 break;
-            default:
+            case 'keypress':
+                // Change to new color
+                return alert('THE FUN BUS IS COMING!'); 
                 break;
         }
     }
@@ -33,4 +35,5 @@ allNodes.forEach(index => {
     index.addEventListener('mouseover', action)
     index.addEventListener('mouseout', action)
     index.addEventListener('click', action)
+    index.addEventListener('keypress', action)
 })
