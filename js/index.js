@@ -16,6 +16,12 @@ funBush2.addEventListener('mouseover', e => {
     funBush2.style.color = "blue";
 })
 
+//mouseover Home
+const homeMouse = document.querySelector('.main-navigation .container .nav a');
+homeMouse.addEventListener('mouseover', e => {
+    homeMouse.style.color = "green";
+})
+
 //mouseover Lets Go! change color
 const letsGo = document.querySelector(".container .content-section .text-content h2");
 
