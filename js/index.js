@@ -57,7 +57,6 @@ picsArr.forEach(item => {
     item.style.transition = "all 0.5s";
     item.style.cursor = "pointer";
     item.style.overflow = "hidden";
-    event.stopPropagation();
   });
   item.addEventListener("mouseleave", event => {
     item.style.transform = "scale(1)";
@@ -89,11 +88,17 @@ paraGraphs.forEach(item => {
 
 // stopping event propagation gave the sections click background turns light blue
 const section = document.querySelectorAll(".content-section");
-section.forEach(item =>
+section.forEach(item => {
   item.addEventListener("click", event => {
     item.style.background = "lightblue";
-  })
-);
+  });
+  item.addEventListener("dblclick", event => {
+    item.style.background = "none";
+  });
+});
+
+//TweenMax.to(".content-section", 8, { background: "blue" });
+
 // stop the click event from propagating up to the section, preventing the color changing to light blue.
 paraGraphs.forEach(item => {
   item.addEventListener("click", event => {
@@ -110,3 +115,13 @@ allATags.forEach(item => {
     event.preventDefault();
   });
 });
+
+//
+Draggable.create("img");
+
+/* Draggable.create("#pick-destination-img", {
+  type: "x,y",
+  edgeResistance: 0.65,
+  bounds: "#container",
+  throwProps: true
+}); */
