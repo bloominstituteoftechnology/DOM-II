@@ -11,6 +11,11 @@ navBar.addEventListener('mouseout', (e) => {
     navBar.style.backgroundColor = 'hotpink';
   });
 
+navBar.addEventListener('click', (e) => {
+    console.log(`${e} has been clicked!`);
+    e.preventDefault();
+    e.stopPropagation();
+})
 
 // Wheel - makes top img bigger and smaller with scroll bar on mouse
 function zoom(event) {
@@ -75,7 +80,6 @@ backgroundChange.addEventListener('keydown', (e) => {
 backgroundChange.addEventListener('keyup', (e) => {
     backgroundChange.style.color = 'black';
 });
-
 
 
 
