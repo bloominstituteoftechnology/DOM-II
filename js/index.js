@@ -16,11 +16,6 @@ funBush2.addEventListener('mouseover', e => {
     funBush2.style.color = "blue";
 })
 
-//mouseover Home
-const homeMouse = document.querySelector('.main-navigation .container .nav a');
-homeMouse.addEventListener('mouseover', e => {
-    homeMouse.style.color = "green";
-})
 
 //mouseover Lets Go! change color
 const letsGo = document.querySelector(".container .content-section .text-content h2");
@@ -67,6 +62,21 @@ const funBush3 = document.querySelector(".container .intro h2");
 funBush3.addEventListener('mouseover', e => {
     funBush3.style.color = "red";
 })}); 
+
+//added a for each
+const destinationFor = document.querySelectorAll('.destination p');
+destinationFor.forEach( element => {
+    element.style.color = "green";
+})
+
+//mouseover Home
+const navItem = document.querySelectorAll('.main-navigation .container .nav a');
+    navItem.forEach( element => {
+    element.addEventListener('mouseover', e => {
+        element.style.color = "red"
+    })
+    })
+
 
 //Diana code
 /*
