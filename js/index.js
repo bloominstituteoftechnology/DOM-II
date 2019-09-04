@@ -49,14 +49,43 @@ click.addEventListener('click', (e) => {
 });
 
 
-// Copy and Cut notifier - will notify you with a pop up if you try to copy or cut any of the paragraphs 
-const copyAndCut = document.querySelector('p');
+// Copy Notifier - will notify you with a pop up if you try to copy any of the paragraphs 
+const copy = document.querySelector('p');
 
-copyAndCut.addEventListener('copy', (e) => {
+copy.addEventListener('copy', (e) => {
     window.alert("Hey! Don't copy me, that's stealing ya know!");
-  })
+  });
 
-  copyAndCut.addEventListener('cut', (e) => {
-    window.alert("Hey! Don't copy me, that's stealing ya know!");
-  })
+
+// Click - changes fun bus logo to hot pink when clicked
+const logoChange = document.querySelector('.logo-heading');
+
+logoChange.addEventListener('click', (e) => {
+    logoChange.style.color = 'hotpink';
+});
+
+
+// Keydown & Keyup - changes body to hotpink when key is pressed down, and back to black when keyup
+const backgroundChange = document.querySelector('body');
+
+backgroundChange.addEventListener('keydown', (e) => {
+    backgroundChange.style.color = 'hotpink';
+});
+
+backgroundChange.addEventListener('keyup', (e) => {
+    backgroundChange.style.color = 'black';
+});
+
+
+
+
+
+    
+  
+  
+
+
+
+  
+
 
