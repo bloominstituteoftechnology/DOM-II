@@ -41,16 +41,42 @@ h2.addEventListener('click', function(e) {
     e.target.style.color = "blue";
 });
 
-//rotate
-const photos = document.querySelectorAll('img');
+//wheel //NO IDEA, quit this one
+const photos = document.querySelector('.intro img');
+console.log(photos);
+photos.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    let scale = 1;
+    scale = e.deltaY * -.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    photos.style.transform = (`${scale}`);
+    photos.onwheel = e;
+
+})
 
 
-//context menu (RIGHT CLICK)
-// const midText = document.querySelectorAll('.content-section p');
-// midText.forEach(text => {
-//     text.addEventListener('contextmenu', event => {
-//         event.preventDefault();
-//     })
-// })
+
+//Context Menu(Right Click)
+const midText = document.querySelectorAll('.content-section p');
+midText.forEach(text => {
+    text.addEventListener('contextmenu', event => {
+        event.preventDefault();
+    })
+})
+
+//mouseenter
+let enterCount = 0;
+const object = document.querySelector('.content-destination img');
+object.addEventListener('mouseenter', e => {
+    enterCount++;
+    console.log(`The mouse has entered ${enterCount} times`);
+})
+
+//hover and blur
+const hoverImage = document.querySelector('footer');
+hoverImage.addEventListener('blur', e => {
+    e.target.style.background = ' ';
+}, true)
+
 
 
