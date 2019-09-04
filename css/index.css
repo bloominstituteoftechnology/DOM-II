@@ -230,7 +230,11 @@ img {
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
-  z-index: 2;
+}
+.home .intro #para {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  padding-bottom: 10px;
 }
 .home .intro img {
   max-width: 100%;

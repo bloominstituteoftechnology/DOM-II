@@ -117,11 +117,14 @@ allATags.forEach(item => {
 });
 
 //
-Draggable.create("img");
+Draggable.create("img", {
+  bounds: "body"
+});
 
-/* Draggable.create("#pick-destination-img", {
-  type: "x,y",
-  edgeResistance: 0.65,
-  bounds: "#container",
-  throwProps: true
-}); */
+var mySplitText = new SplitText("#para", { type: "words,chars" });
+TweenMax.staggerFrom(
+  mySplitText.chars,
+  0.5,
+  { opacity: 0, rotation: -180, y: -100, ease: Back.easeOut },
+  0.2
+);
