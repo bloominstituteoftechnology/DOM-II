@@ -2,7 +2,7 @@
 
 Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).
 
-## Set Up The Project With Git
+## Set Up The Project With Git 
 
 **Follow these steps to set up and work on your project:**
 
