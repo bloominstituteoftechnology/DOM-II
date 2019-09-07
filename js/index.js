@@ -1,43 +1,25 @@
 // Your code goes here
 
 // nav h1 changes to a one of a rotating array of colors each time you hover
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+const colors = ['red', 'orange', 'teal', 'green', 'blue', 'indigo', 'violet']
 
 let h1Color = 0
 
-const navH1 = document.querySelector('.nav-container h1')
+const navH1 = document.querySelector('header')
 
+//mouse enter event listener 
 navH1.addEventListener('mouseenter', () => {
   navH1.style.color = colors[h1Color]
 })
 
+//nav h1 changes color on mouseleave 
 navH1.addEventListener('mouseleave', () => {
   navH1.style.color = 'black'
   h1Color = h1Color === colors.length - 1 ? 0 : h1Color + 1
 })
 
-// loops through all words in intro paragraph and turns them bold one by one
-let wordIndex = 0
 
-const introParagraph = document.querySelector('.home p')
-const introParagraphContent = introParagraph.innerHTML
-introParagraph.addEventListener('mousemove', () => {
-  introParagraph.innerHTML = introParagraphContent
-    .split(' ')
-    .map(
-      (element, i) =>
-        i === wordIndex ? `<span class='red-word'>${element}</span>` : element
-    )
-    .join(' ')
-  document.querySelector('.home p .red-word').style.fontWeight = 'bold'
-  document.querySelector('.home p .red-word').style.fontSize = '2.4rem'
-  wordIndex =
-    wordIndex === introParagraphContent.split(' ').length - 1
-      ? 0
-      : wordIndex + 1
-})
-
-// toggle inverted on all images on doubleclick anywhere
+// dblclick event listener inverting color 
 let inverted = false
 
 const images = document.querySelectorAll('img')
@@ -48,24 +30,29 @@ document.querySelector('body').addEventListener('dblclick', () => {
   inverted = inverted ? false : true
 })
 
-// added rotations for nav links
+// add color to header when clicked 
 const headerSelector = document.querySelector('header')
+let backgroundYellow = false 
+
 headerSelector.addEventListener('click', () => {
-  alert('header clicked')
+  headerSelector.style.background = !backgroundYellow ? 'yellow' : 'white'
+  backgroundYellow = !backgroundYellow ? true : false
 })
 
+
+//rotate nav links by 30 degrees on click 
 const navItems = document.querySelectorAll('nav a')
-const rotations = [...Array(navItems.length)].map(() => 30)
+const rotations = [...Array(navItems.length)].map(() => 90)
 navItems.forEach((item, i) =>
   item.addEventListener('click', event => {
     event.stopPropagation()
     event.preventDefault()
     item.style.transform = `rotateZ(${rotations[i]}deg)`
-    rotations[i] += 30
+    rotations[i] += 90
   })
 )
 
-// increasing border thickness on image as it gets dragged
+// increasing border thickness on image as it gets dragged 
 let borderThickness = 0
 
 const firstSectionImage = document.querySelector('section img')
@@ -75,40 +62,44 @@ firstSectionImage.addEventListener('drag', event => {
   borderThickness++
 })
 
+//return border thickness on image as it gets released 
 firstSectionImage.addEventListener('dragend', event => {
   console.log(event)
   firstSectionImage.style.border = ''
   borderThickness = 0
 })
 
-// added bounching border to first image on load
+// added bouncing border to first image on load 
 let firstImageBorder = 0
-let assending = true
+let ascending = true
 
 const firstImage = document.querySelector('.home img')
 firstImage.addEventListener('load', () => {
   setInterval(() => {
     firstImage.style.border = `${firstImageBorder}px solid black`
-    if (assending) {
+    if (ascending) {
       if (firstImageBorder === 10) {
-        assending = false
+        ascending = false
       }
       firstImageBorder++
     } else {
       if (firstImageBorder === 0) {
-        assending = true
+        ascending = true
       }
       firstImageBorder--
     }
-  }, 10)
+  }, 1)
 })
 
 
-// rotate background color on scroll
+// wheel background color on scroll 
 const bodySelector = document.querySelector('body')
 let backgroundGrey = false
-document.querySelector('body').addEventListener('wheel', () => {
-  bodySelector.style.background = !backgroundGrey ? 'yellow' : 'white'
+
+bodySelector.addEventListener('wheel', () => {
+  bodySelector.style.background = !backgroundGrey ? 'yellow' : 'white' 
   backgroundGrey = !backgroundGrey ? true : false
 })
+
+
 
