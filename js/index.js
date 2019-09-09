@@ -29,3 +29,22 @@ input.forEach(function(element){
         })
     })
 });
+
+//Used focus to add a blue background to the nav links when clicked and used blur to set back to default when another item is clicked
+const nav = document.querySelectorAll('.nav-link');
+nav.forEach(function(element){
+    element.addEventListener('focus', function(e){
+        //  console.log('focus works!')
+        e.target.style.background = 'blue';
+
+
+
+    })
+
+    nav.forEach(function(element){
+        element.addEventListener('blur', function(e){
+            //  console.log('blur works!')
+            e.target.style.background = '';
+        })
+    })
+})
