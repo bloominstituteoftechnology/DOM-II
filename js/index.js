@@ -48,3 +48,12 @@ nav.forEach(function(element){
         })
     })
 })
+
+//Used click to make images clicked turn into the background
+const imgBackground = document.querySelectorAll('img')
+imgBackground.forEach(function(element){
+    element.addEventListener('click', function(e){
+        const imgSource = event.target.src;
+        document.body.style.background = `url(${imgSource})`;
+    })
+})
