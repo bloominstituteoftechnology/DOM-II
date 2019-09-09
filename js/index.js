@@ -7,6 +7,8 @@ navColor.addEventListener("click", event => {
     console.log(event);
     navColor.style.background = "yellow";
     navColor.style.transition = "background 0.5s";
+    // 1st Event Propagation
+    // event.stopPropagation();
 
     navColor.addEventListener("click", event => {
         navColor.style.background = "none";
@@ -59,6 +61,8 @@ focus.addEventListener('focus', (event) => {
 });
 focus.addEventListener('blur', (event) => {
     event.target.style.background = '';
+    // 2nd Event Propagation
+    // event.stopPropagation();
 });
 
 // **Cut Event**
