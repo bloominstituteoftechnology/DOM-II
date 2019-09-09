@@ -74,3 +74,9 @@ cut.addEventListener('cut', (event) => {
     event.preventDefault()
 });
 
+// **Prevent Default Action**
+const preventDefault = document.querySelector('.main-navigation')
+preventDefault.addEventListener('click', (event) => {
+    console.log('Link was clicked');
+    event.preventDefault();
+})
