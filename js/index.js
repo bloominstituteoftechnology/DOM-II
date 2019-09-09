@@ -2,9 +2,13 @@
 const bus = document.querySelector(".bus");
 
 bus.addEventListener("click", (e) => {
-    let distance = e.target.style.left - 100;
-    e.style.left = distance + 'px';
-    e.style.transition = 'left 0.5s';
+    e.target.style.marginLeft = '435px';
+    e.target.style.transition = 'margin-left 5s';
+});
+
+bus.addEventListener("dblclick", (e) => {
+    e.target.style.marginLeft = '0px';
+    e.target.style.transition = 'margin-left 5s';
 });
 
 const textPic = document.querySelectorAll('.img-content');
@@ -18,3 +22,12 @@ textPic.forEach((image) => {
         e.target.style.transition = 'opacity .5s';
     });
 });
+
+const back = document.querySelector('body');
+
+back.addEventListener('wheel', (image) => {
+    let rand1 = Math.floor(Math.random() * 101);
+    let rand2 = Math.floor(Math.random() * 101);
+    let rand3 = Math.floor(Math.random() * 101);
+    image.target.style.backgroundColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
+})
