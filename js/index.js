@@ -31,3 +31,55 @@ back.addEventListener('wheel', (image) => {
     let rand3 = Math.floor(Math.random() * 101);
     image.target.style.backgroundColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
 })
+
+window.addEventListener('load', () => {
+    alert('Welcome to the Page.');
+});
+
+window.addEventListener('scroll', () => {
+    
+    console.log('The wheels on the bus go round and round');
+});
+
+const mainText = document.querySelectorAll('p');
+mainText.forEach((event) => {
+    event.addEventListener('select', (e) => {
+        console.log(event);
+    });
+    event.addEventListener('copy', (e) => {
+        alert('Text has been copied');
+    });
+});
+
+window.addEventListener('resize', () => {
+    let footer = document.querySelector('footer');
+    let rand1 = Math.floor(Math.random() * 101);
+    let rand2 = Math.floor(Math.random() * 101);
+    let rand3 = Math.floor(Math.random() * 101);
+    footer.style.borderColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
+})
+
+// var item;
+// const dest = document.querySelector(".nav-link");
+// document.addEventListener('drag', (e) => {
+
+// }, false);
+
+// document.addEventListener('dragstart', (e) => {
+//     item = e.target;
+// }, false);
+
+// document.addEventListener('dragenter', (e) =>{
+//     if(e.target.classNAme == 'nav') {
+//         e.target.style.background = 'green';
+//     }
+// }, false);
+
+// document.addEventListener("drop", (e) => {
+//     e.preventDefault();
+//     if(e.target.className == 'nav') {
+//         e.target.style.background = "";
+//         item.parentNode.removeChild(item);
+//         document.querySelector('nav').append(item);
+//     }
+//     }, false);
