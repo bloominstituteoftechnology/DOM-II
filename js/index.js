@@ -59,6 +59,14 @@ window.addEventListener('resize', () => {
     footer.style.borderColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
 })
 
+const navLink = document.querySelectorAll('.nav-link');
+navLink.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        alert('Link is broken.');
+        event.preventDefault();
+    });
+});
+
 // var item;
 // const dest = document.querySelector(".nav-link");
 // document.addEventListener('drag', (e) => {
