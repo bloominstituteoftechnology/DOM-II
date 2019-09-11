@@ -25,12 +25,13 @@ textPic.forEach((image) => {
 
 const back = document.querySelector('body');
 
-back.addEventListener('wheel', (image) => {
+back.addEventListener('wheel', () => {
     let rand1 = Math.floor(Math.random() * 101);
     let rand2 = Math.floor(Math.random() * 101);
     let rand3 = Math.floor(Math.random() * 101);
-    image.target.style.backgroundColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
+    back.style.backgroundColor = 'rgb(' + rand1 + ', ' + rand2 + ', ' + rand3 + ')';
 })
+
 
 window.addEventListener('load', () => {
     alert('Welcome to the Page.');
@@ -67,27 +68,15 @@ navLink.forEach((item) => {
     });
 });
 
-// var item;
-// const dest = document.querySelector(".nav-link");
-// document.addEventListener('drag', (e) => {
+const child = document.querySelector('.dest-img');
+child.addEventListener('click', (e) => {
+    alert('This is the picture.');
+    e.stopPropagation();
+});
 
-// }, false);
+const adult = document.querySelector('.content-destination');
+adult.addEventListener('click', (e) => {
+    alert('This is the container.');
+    
+});
 
-// document.addEventListener('dragstart', (e) => {
-//     item = e.target;
-// }, false);
-
-// document.addEventListener('dragenter', (e) =>{
-//     if(e.target.classNAme == 'nav') {
-//         e.target.style.background = 'green';
-//     }
-// }, false);
-
-// document.addEventListener("drop", (e) => {
-//     e.preventDefault();
-//     if(e.target.className == 'nav') {
-//         e.target.style.background = "";
-//         item.parentNode.removeChild(item);
-//         document.querySelector('nav').append(item);
-//     }
-//     }, false);
