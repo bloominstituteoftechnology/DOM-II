@@ -43,7 +43,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   - [x] `drag / drop`
 
-  - [ ] `load`
+  - [x] `mousedown`
 
   - [ ] `focus`
 

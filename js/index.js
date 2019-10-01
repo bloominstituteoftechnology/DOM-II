@@ -75,7 +75,12 @@ navLinks.forEach(link => {
   });
 });
 
-// Drag
+// Drag -- When elements are drag, increases font-size
 window.addEventListener("dragstart", () => {
   allElements.style.fontSize = "1.1rem";
+});
+
+// Mousedown -- When mouse is pressed down within container, changes the container to aqua
+container.addEventListener("mousedown", () => {
+  container.style.backgroundColor = "aqua";
 });
