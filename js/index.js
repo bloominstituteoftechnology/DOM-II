@@ -57,3 +57,11 @@ window.addEventListener("resize", () => {
     img.style.visibility = "hidden";
   });
 });
+
+// Click -- creates a pop alert notification
+navLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    alert("These links are broken!");
+    event.preventDefault();
+  });
+});
