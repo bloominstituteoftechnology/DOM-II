@@ -8,6 +8,7 @@ const destinations = document.querySelector(".content-pick");
 const allImages = document.querySelectorAll("img");
 const container = document.querySelector(".home");
 const footer = document.querySelector("footer");
+const allElements = document.querySelector("html");
 
 // Mouse Over -- makes images larger
 contentImg.forEach(img => {
@@ -72,4 +73,9 @@ navLinks.forEach(link => {
     event.preventDefault();
     event.stopPropagation();
   });
+});
+
+// Drag
+window.addEventListener("dragstart", () => {
+  allElements.style.fontSize = "1.1rem";
 });
