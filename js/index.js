@@ -5,8 +5,9 @@ const navigation = document.querySelector(".main-navigation");
 const navLinks = document.querySelectorAll(".nav-link");
 const buttons = document.querySelectorAll(".btn");
 const destinations = document.querySelector(".content-pick");
+const allImages = document.querySelectorAll("img");
 
-// Mouse Over
+// Mouse Over -- makes images larger
 contentImg.forEach(img => {
   img.addEventListener("mouseover", () => {
     img.style.transform = "scale(1.1)";
@@ -14,7 +15,7 @@ contentImg.forEach(img => {
   });
 });
 
-// Mouse Leave
+// Mouse Leave -- places images back to normal size
 contentImg.forEach(img => {
   img.addEventListener("mouseleave", () => {
     img.style.transform = "scale(1)";
@@ -22,7 +23,7 @@ contentImg.forEach(img => {
   });
 });
 
-// Scroll
+// Scroll -- changes background and font color
 window.addEventListener("scroll", () => {
   bodyTag.style.backgroundColor = "#3c4857";
   bodyTag.style.color = "#b35700";
@@ -34,18 +35,25 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// dblClick
+// dblClick -- changes color to destinations
 buttons.forEach(button => {
   button.addEventListener("dblclick", () => {
     destinations.style.color = "#dadbdd";
   });
 });
 
-// Select
+// Keydown -- changes font color
 bodyTag.addEventListener("keydown", () => {
   bodyTag.style.color = "#7f3800";
 
   navLinks.forEach(link => {
     link.style.color = "#7f3800";
+  });
+});
+
+// Resize -- hides images on resize
+window.addEventListener("resize", () => {
+  allImages.forEach(img => {
+    img.style.visibility = "hidden";
   });
 });
