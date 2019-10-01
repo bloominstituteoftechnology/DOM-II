@@ -52,9 +52,15 @@ window.addEventListener("wheel", function() {
 });
 
 // 8) DBL-CLICK EVENT
+const destination_sec = document.querySelector(".content-pick");
+destination_sec.addEventListener("dblclick", function() {
+  return (this.style.background = "dodgerblue");
+});
+
 const cards = document.querySelectorAll(".content-pick .destination");
 cards.forEach(card => {
-  card.addEventListener("dblclick", function() {
+  card.addEventListener("dblclick", function(e) {
+    e.stopPropagation();
     if (this.style.background !== "orange") {
       return (this.style.background = "orange");
     }
@@ -74,4 +80,10 @@ window.addEventListener("keypress", function() {
 // 10) MOUSEMOVE EVENT
 window.document.body.addEventListener("mousemove", e => {
   document.body.style.backgroundColor = "rgb(" + e.offsetX + ", " + e.offsetY + ", 40)";
+});
+
+nav_links.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+  });
 });
