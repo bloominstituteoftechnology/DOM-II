@@ -2,16 +2,16 @@
 
 
 // Mouseover & Mouseout - makes nav bar background pink when hovering off and white when hovering over
-const navBar = document.querySelector('.nav');
+const navBar = document.querySelector('.nav'); 
 navBar.addEventListener('mouseover', (e) => {
     navBar.style.backgroundColor = 'white';
 });
 
-navBar.addEventListener('mouseout', (e) => {
+navBar.addEventListener('mouseout', (e) => { 
     navBar.style.backgroundColor = 'hotpink';
-  });
+});
 
-navBar.addEventListener('click', (e) => {
+navBar.addEventListener('click', (e) => { 
     e.preventDefault();
     console.log('navBar has been clicked!');
 })

@@ -47,21 +47,21 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 
 	<!--*** MY ORDER ***-->
-	* [ ] `mouseover`
-	* [ ] `mouseout`
-	* [ ] `click w/preventDefault() and stopPropagation()`
-	* [ ] `wheel`
-	* [ ] `dblclick`
-	* [ ] `click`
-	* [ ] `copy`
-	* [ ] `(another) click`
-	* [ ] `keydown`
-	* [ ] `keyup`
+	* [X] `mouseover`
+	* [X] `mouseout`
+	* [X] `click w/preventDefault() and stopPropagation()`
+	* [X] `wheel`
+	* [X] `dblclick`
+	* [X] `click`
+	* [X] `copy`
+	* [X] `(another) click`
+	* [X] `keydown`
+	* [X] `keyup`
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+* [X] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [X] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 
