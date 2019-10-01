@@ -1,0 +1,24 @@
+{
+  "name": "DOM-II",
+  "version": "1.0.0",
+  "description": "Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).",
+  "main": "index.js",
+  "scripts": {
+  	"start": "./index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chelsabeth/DOM-II.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chelsabeth/DOM-II/issues"
+  },
+  "homepage": "https://github.com/chelsabeth/DOM-II#readme",
+  "dependencies": {
+    "gsap": "^2.1.3"
+  }
+}

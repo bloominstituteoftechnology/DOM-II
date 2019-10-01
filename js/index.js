@@ -1,5 +1,5 @@
 // Your code goes here
-
+// import TweenMax from "gsap/TweenMax";
 
 // Mouseover & Mouseout - makes nav bar background pink when hovering off and white when hovering over
 const navBar = document.querySelector('.nav'); 
@@ -57,8 +57,11 @@ btn.addEventListener('dblclick', (e) => {
 // Click Count - makes the first button at bottom of page have a counter
 const click = document.querySelector('.btn');
 
+// let teen = TweenMax(click, 5, ease);
+
 click.addEventListener('click', (e) => {
   click.innerHTML = `Click count: ${event.detail}`;
+//   teen.start();
 });
 
 
