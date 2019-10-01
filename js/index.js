@@ -6,6 +6,8 @@ const navLinks = document.querySelectorAll(".nav-link");
 const buttons = document.querySelectorAll(".btn");
 const destinations = document.querySelector(".content-pick");
 const allImages = document.querySelectorAll("img");
+const container = document.querySelector(".home");
+const footer = document.querySelector("footer");
 
 // Mouse Over -- makes images larger
 contentImg.forEach(img => {
@@ -39,6 +41,7 @@ window.addEventListener("scroll", () => {
 buttons.forEach(button => {
   button.addEventListener("dblclick", () => {
     destinations.style.color = "#dadbdd";
+    destinations.style.backgroundColor = "#b35700";
   });
 });
 
@@ -58,10 +61,15 @@ window.addEventListener("resize", () => {
   });
 });
 
-// Click -- creates a pop alert notification
+// Click -- creates a pop alert notification, stops the page from refreshing, and does not allow the container to recolor
+bodyTag.addEventListener("click", () => {
+  container.style.backgroundColor = "slategrey";
+});
+
 navLinks.forEach(link => {
   link.addEventListener("click", event => {
     alert("These links are broken!");
     event.preventDefault();
+    event.stopPropagation();
   });
 });
