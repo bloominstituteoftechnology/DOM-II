@@ -84,3 +84,8 @@ window.addEventListener("dragstart", () => {
 container.addEventListener("mousedown", () => {
   container.style.backgroundColor = "aqua";
 });
+
+// Pointermove -- displays coordinates of pointer
+window.addEventListener("pointermove", event => {
+  console.log(`${event.clientX}, ${event.clientY}`);
+});
