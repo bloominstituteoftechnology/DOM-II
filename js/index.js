@@ -3,6 +3,8 @@ const contentImg = document.querySelectorAll(".content-section img");
 const bodyTag = document.querySelector("body");
 const navigation = document.querySelector(".main-navigation");
 const navLinks = document.querySelectorAll(".nav-link");
+const buttons = document.querySelectorAll(".btn");
+const destinations = document.querySelector(".content-pick");
 
 // Mouse Over
 contentImg.forEach(img => {
@@ -29,5 +31,21 @@ window.addEventListener("scroll", () => {
 
   navLinks.forEach(link => {
     link.style.color = "#b35700";
+  });
+});
+
+// dblClick
+buttons.forEach(button => {
+  button.addEventListener("dblclick", () => {
+    destinations.style.color = "#dadbdd";
+  });
+});
+
+// Select
+bodyTag.addEventListener("keydown", () => {
+  bodyTag.style.color = "#7f3800";
+
+  navLinks.forEach(link => {
+    link.style.color = "#7f3800";
   });
 });
