@@ -12,9 +12,17 @@ navBar.addEventListener('mouseout', (e) => {
   });
 
 navBar.addEventListener('click', (e) => {
-    console.log(`${e} has been clicked!`);
     e.preventDefault();
-    e.stopPropagation();
+    console.log('navBar has been clicked!');
+})
+
+const aLinks = document.querySelectorAll('.nav a');
+aLinks.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(`${e.target.innerText} was clicked!`)
+    }) 
 })
 
 // Wheel - makes top img bigger and smaller with scroll bar on mouse
@@ -55,12 +63,19 @@ click.addEventListener('click', (e) => {
 
 
 // Copy Notifier - will notify you with a pop up if you try to copy any of the paragraphs 
-const copy = document.querySelector('p');
+const copy = document.querySelectorAll('p');
 
-copy.addEventListener('copy', (e) => {
+copy.forEach(item => {
+    item.addEventListener('copy', (e) => {
     window.alert("Hey! Don't copy me, that's stealing ya know!");
   });
+});
 
+copy.forEach(item => {
+    item.addEventListener('cut', (e) => {
+    window.alert("Hey! Don't cut me fool!");
+  });
+});
 
 // Click - changes fun bus logo to hot pink when clicked
 const logoChange = document.querySelector('.logo-heading');
