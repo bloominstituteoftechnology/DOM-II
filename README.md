@@ -47,7 +47,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
   - [ ] `focus`
 
-  - [ ] `resize`
+  - [x] `resize`
 
   - [x] `scroll`
 
