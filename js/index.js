@@ -1,6 +1,48 @@
 // Your code goes here
 
 
+// ***** For some reason on picture animations the zIndex of the pictures goes
+// higher than the nav bar and so I need to push the nav bar higher on the 
+// z index
+const topHeader = document.querySelector('.main-navigation');
+topHeader.style.zIndex="100";
+
+// ***** Events done here:
+// 1 focus
+// 2 blur
+// 3 resize
+// 4 transitioned
+// 5 scroll
+// 6 auxclick
+// 7 dblclick
+// 8 click
+// 9 mouseenter
+// 10 mouseleave
+// 11 keydown
+
+
+
+
+// ************* focus & blur  event ***************************
+let newElemParent = document.createElement('form');
+let newElemChild = document.createElement('input');
+newElemChild.placeholder="This is a form";
+newElemChild.style.fontSize="20px";
+newElemChild.style.textAlign="center";
+newElemParent.appendChild(newElemChild);
+const divHeader = document.querySelector('.nav-container');
+divHeader.prepend(newElemParent);
+
+newElemChild.addEventListener('focus', () => {
+    newElemChild.style.background = 'lightblue';   
+});
+  
+newElemChild.addEventListener('blur', () => {
+    newElemChild.style.background = 'white';  
+});
+
+
+
 // ************* Resize & Transitionend  events ***************************
 // This makes the words "Welcome To Fun Bus!" move right to left
 
@@ -132,6 +174,8 @@ FSSection.addEventListener('transitionend', () => {
 // ************* mouseenter & mouseleave event ***************************
 const mapPic = document.querySelector('.img-content img');
 // mapPic.style.width="50px";
+
+
 mapPic.addEventListener('mouseenter', () => {
     mapPic.style.transform="rotate(180deg)";
     mapPic.style.transitionDuration = "2s"; 
@@ -143,6 +187,30 @@ mapPic.addEventListener('mouseleave', () => {
     mapPic.style.transitionDuration = "2s"; 
 
 });
+
+
+// ************* keydown event ***************************
+const allPara = document.querySelectorAll('p');
+// console.log(allPara);
+let fontSmall = false;
+let fontSize;
+
+document.addEventListener('keydown', (event) => {
+    fontSize = fontSmall ? "1.6rem" : "5px";
+    allPara.forEach(elem => {
+        elem.style.fontSize=fontSize;
+        // console.log("the individual elem is:", elem);
+    });
+    // console.log(`The key pressed is ${event.code}`);
+
+    fontSmall = !fontSmall;
+});
+
+
+
+
+
+
 
 
 
