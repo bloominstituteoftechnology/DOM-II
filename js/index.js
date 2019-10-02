@@ -1,4 +1,5 @@
 // Your code goes here
+
 // Event 1: mouseover
 const logoImg = document.querySelector("img");
 
@@ -94,7 +95,7 @@ divButton.addEventListener("click", function(event) {
   event.target.style.cssText = "background:purple";
 });
 
-// stopPropagation
+// stopPropagation()
 
 const buttonInDiv = document.querySelector(".destination .btn");
 buttonInDiv.addEventListener("click", event => {
