@@ -19,6 +19,7 @@ console.log(imgNode);
 imgNode.forEach(ele => {
   ele.addEventListener("click", () => {
     ele.src = "img/adventure.jpg";
+    //Want to try some Math.random() functions to grab a random index from imgNode
   });
   ele.addEventListener("auxclick", () => {
     ele.src = "img/destination.jpg";
@@ -36,10 +37,11 @@ imgNode.forEach(ele => {
 // }
 
 const headings = document.querySelectorAll("h2");
-function stopEvent(ev) {
-  ev.stopPropagation();
-  alert("event propagation halted!");
-}
+// function stopEvent(ev) {
+//   ev.stopPropagation();
+//   alert("event propagation halted!");
+// }
+// stopEvent("mousedown");
 headings.forEach(ele => {
   ele.addEventListener("mousedown", () => {
     ele.style.color = "orange";
@@ -54,18 +56,24 @@ console.log(logoHeading);
 logoHeading.addEventListener("dblclick", () => {
   logoHeading.textContent = "Bus With Us!";
 });
+logoHeading.addEventListener("mouseout", () => {
+  logoHeading.textContent = "Fun Bus";
+});
 
 const toggle = document.querySelector("body");
 toggle.addEventListener("keydown", () => {
   toggle.style.backgroundColor = "papayawhip";
 });
-toggle.addEventListener("keyup", () => {
-  toggle.style.backgroundColor = "darkcyan";
+toggle.addEventListener("keyup", e => {
+  toggle.style.backgroundColor = "cyan";
+  e.stopPropagation();
 });
 
-const navLink = document.querySelector(".nav-link");
-navLink.addEventListener("click", event => {
-  console.log("PREVENTED DEAFAULT ACTION");
-  event.preventDefault();
-  console.log(event);
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(ele => {
+  ele.addEventListener("click", event => {
+    console.log("PREVENTED DEAFAULT ACTION");
+    event.preventDefault();
+    console.log(event);
+  });
 });
