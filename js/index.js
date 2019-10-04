@@ -14,4 +14,16 @@ logoHeading.addEventListener('mouseover', (e)=>{
     e.target.innerHTML = `<img width="32px" src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif"> Fun Bus <img width="32px" src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif">`
 })
 
- 
+ let nav = document.querySelector('.main-navigation')
+nav.addEventListener('click', ()=>{
+    nav.getElementsByClassName.background = "#363636"
+    alert(`Yo! Don't poke me ther B!`)
+})
+
+let navLink = document.querySelectorAll('.nav .nav-link')
+navLink.forEach(link=>{
+    link.addEventListener('click', (e)=>{
+        e.stopPropagation()
+        e.target.innerHTML = `<img width="32px" src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif">`
+    })
+})
