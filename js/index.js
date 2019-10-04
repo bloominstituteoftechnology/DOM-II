@@ -27,3 +27,11 @@ navLink.forEach(link=>{
         e.target.innerHTML = `<img width="32px" src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif">`
     })
 })
+
+let welcome = document.querySelector('.intro h2')
+document.addEventListener('keydown', (e)=>{
+    e.preventDefault()
+    welcome.innerHTML = `You pressed: '${e.key}' and the key code is: '${e.keyCode}'`
+   
+    
+})
