@@ -57,6 +57,17 @@ footer.addEventListener('mouseleave', (e) => {
     e.target.style.backgroundColor = 'white';
 });
 
+// Record the keycodes on the page
+const body = document.querySelector('body');
+
+body.addEventListener('keypress', (e) => {
+  console.log(e.code);
+});
+
+footer.addEventListener('wheel', (e) => {
+    e.target.style.backgroundColor = 'blue';
+});
+
 
 // document.querySelector('header').addEventListener('scroll', myFunction);
 
