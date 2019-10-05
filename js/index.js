@@ -43,26 +43,26 @@ resizer.addEventListener("mouseenter", (e)=> {
     e.target.style.backgroundColor = "black";
 });
 
-const resizer = document.querySelector(".nav");
+const keyupImage = document.querySelector(".intro img");
 
-resizer.addEventListener("resize", (e)=> {
+keyupImage.addEventListener("keyup", (e)=> {
+    e.target.style.backgroundColor = "green";
+});
+
+const keyPress = document.querySelector(".nav");
+
+keyPress.addEventListener("keypress", (e)=> {
     e.target.style.backgroundColor = "black";
 });
 
-const resizer = document.querySelector(".nav");
+const jKey = document.querySelector(".nav");
 
-resizer.addEventListener("resize", (e)=> {
+jKey.addEventListener("keydown", (e)=> {
     e.target.style.backgroundColor = "black";
 });
 
-const resizer = document.querySelector(".nav");
+const qKey = document.querySelector("text-content");
 
-resizer.addEventListener("resize", (e)=> {
-    e.target.style.backgroundColor = "black";
-});
-
-const resizer = document.querySelector(".nav");
-
-resizer.addEventListener("resize", (e)=> {
-    e.target.style.backgroundColor = "black";
+qKey.addEventListener("keydown", (e)=> {
+    e.target.style.backgroundColor = "yellow";
 });
