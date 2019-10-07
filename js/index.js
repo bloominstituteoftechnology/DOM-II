@@ -37,10 +37,9 @@ logo.addEventListener('mouseleave', (e) => {
 });
 
 // Hides the cards when you click on them
-const button = document.querySelectorAll('.destination');
-console.log(button);
+const destination = document.querySelectorAll('.destination');
 
-button.forEach(element => {
+destination.forEach(element => {
     element.addEventListener('click', (e) => {
         e.target.style.display = 'none';
     })
@@ -66,6 +65,16 @@ body.addEventListener('keypress', (e) => {
 
 footer.addEventListener('wheel', (e) => {
     e.target.style.backgroundColor = 'blue';
+});
+
+// Stop propogation
+const button = document.querySelectorAll('.btn');
+
+button.forEach(element => {
+    element.addEventListener('click', (e) => {
+        e.target.style.backgroundColor = 'red';
+        e.stopPropagation();
+    })
 });
 
 
