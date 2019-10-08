@@ -8,17 +8,24 @@
 // });
 
 //  #1  Mouseover
-const btn = document.querySelector('.btn');
+const btn = document.querySelectorAll('.btn');
 // console.log(button);
-btn.addEventListener('mouseover', (e) => {
+btn.forEach(function(btn){
+  btn.addEventListener('mouseover', (e) => {
+    e.stopPropagation();
     e.target.style.color = 'black';
-});
+})
+})
+
 
 // #2 Mouseleave
-
-btn.addEventListener('mouseleave', (e) => {
+btn.forEach(function(btn){
+  btn.addEventListener('mouseleave', (e) => {
+    e.stopPropagation();
     e.target.style.color = 'green';
-});
+})
+})
+
 
 
 
@@ -26,10 +33,11 @@ btn.addEventListener('mouseleave', (e) => {
 
 //  #3 Keydown
 
-const log = document.getElementsByTagName('p');
+const log = document.getElementsByTagName('h1');
 document.addEventListener('keydown', logKey);
 
 function logKey(e) {
+  e.stopPropagation();
   alert('Lets Go!');
 }
 
@@ -55,46 +63,56 @@ function zoom(event) {
 
 // const button = document.querySelector('.btn');
 
-// button.addEventListener('click', (e)=> {
-//    alert(`Click count: ${e.detail}`);
+// button.addEventListener('click', event => {
+//   button.innerHTML = `Click count: ${event.detail}`;
 // });
 
-
-const button = document.querySelector('.btn');
-
-button.addEventListener('click', event => {
-  button.innerHTML = `Click count: ${event.detail}`;
-});
+const button = document.querySelectorAll('.btn');
+button.forEach(function(button) {
+    button.addEventListener('click', e => {
+        e.stopPropagation();
+        e.target.innerHTML = `Click count: ${event.detail}`;
+    })
+})
 
 
 // #6 doubleclick
-const card = document.querySelector('h4');
-
-card.addEventListener('dblclick', function (e) {
-  card.classList.toggle(card.style.color = "blue");
-});
-
-
-//  #7 Focus  ***
-
-const htext = document.querySelector('h2');
-// console.log(htext);
-htext.addEventListener('focus', (event) => {
-  event.target.style.background = 'pink';    
-}, true);
+const card = document.querySelectorAll('h4');
+card.forEach(function(card){
+  card.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    card.classList.toggle(card.style.color = "blue");
+  });
+})
 
 
 
-// #8 Select   ***
 
-function logSelection(event) {
-    
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    alert(`You selected: ${selection}`);
-  }
-  
-  const input = document.querySelector('h2');
-  input.onselect = logSelection;
+// #7 Pointer Moved
+const para = document.querySelector('p');
 
+para.onpointermove = (event) => {
+  console.log('Pointer moved');
+};
 
-//    #9
+// #8 keyUp
+
+const loggo = document.getElementsByTagName('p');
+
+document.addEventListener('keyup', logKey);
+
+function logKey(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log(` ${e.code}`); 
+}
+//  #9 'drag', #10 'dragend' 'dblclick'
+const funBusImg = document.querySelector('.intro img');
+funBusImg.addEventListener('drag', e => {
+    e.target.style.display = 'none';});
+
+funBusImg.addEventListener('dragend', e => {
+    e.target.style.display = 'flex';});
+
+funBusImg.addEventListener('dblclick', e => {
+    e.target.style.opacity = '0.8'});
