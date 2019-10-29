@@ -19,6 +19,10 @@ img1.addEventListener('mouseenter', function(event){
   event.target.style.border = '2px dashed green';
 });
 
+img1.addEventListener('mouseleave', function(event){
+    event.target.style.border = 'none';
+  })
+
 const img4 = document.querySelector('#img4');
 img4.addEventListener('mousedown', function(event){
   event.target.style.opacity = '0';
