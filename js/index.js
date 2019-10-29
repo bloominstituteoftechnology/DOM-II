@@ -50,7 +50,7 @@ headings.forEach( (element, i) => {
 });
 
 //Change background and text colors on scroll
-const body = document.querySelectorAll('.main-navigation, .nav-container a, body');
+const body = document.querySelectorAll('.main-navigation, .nav-container a, body, footer p');
 body.forEach( element => {
   window.addEventListener( 'scroll', () => {
     element.style.color = 'orange';
@@ -65,3 +65,19 @@ paragraphs.forEach( element => {
     element.textContent = evilLaugh;
   });
 });
+
+//Change link fonts on focus
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach( element => {
+  const originalFont = element.style.fontFamily;
+  element.addEventListener( 'focus', () => {
+    element.style.fontFamily = 'Creepster';
+  });
+
+  element.addEventListener( 'blur', () => {
+    element.style.fontFamily = originalFont;
+  })
+});
+
+
+
