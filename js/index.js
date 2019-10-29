@@ -93,8 +93,17 @@ navLinks.forEach( element => {
 const paragraphs2 = document.querySelectorAll('p');
 paragraphs2.forEach( element => {
   element.addEventListener( 'copy', () => {
-    alert('AS THOU COPIEST ME, SO I MULTIPLIETH! MUAHAHAHA!');
+    alert('AS THOU COPIEST ME, SO MINE EVIL MULTIPLIETH! MUAHAHAHA!');
   });
 });
+
+//Change div.destination background and text color on click
+const destinations = document.querySelectorAll('.destination');
+destinations.forEach( element => {
+  element.addEventListener( 'click', () => {
+    element.style.backgroundColor = 'red';
+    element.style.color = 'black';
+  })
+})
 
 
