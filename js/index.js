@@ -123,8 +123,3 @@ stopNavLinks.forEach( element => {
     event.preventDefault();
   })
 })
-
-// const pars = document.querySelectorAll('p');
-// pars.forEach( element => {
-//   TweenMax.to(element, 1, {opacity: 0.1});  
-// });
