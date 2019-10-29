@@ -76,8 +76,15 @@ navLinks.forEach( element => {
 
   element.addEventListener( 'blur', () => {
     element.style.fontFamily = originalFont;
-  })
+  });
 });
 
+//Give alert on copying text in any <p>
+const paragraphs2 = document.querySelectorAll('p');
+paragraphs2.forEach( element => {
+  element.addEventListener( 'copy', () => {
+    alert('AS THOU COPIEST ME, SO I MULTIPLIETH! MUAHAHAHA!');
+  });
+});
 
 
