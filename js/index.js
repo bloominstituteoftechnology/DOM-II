@@ -52,3 +52,7 @@ img2.addEventListener('contextmenu', function(event){
 img2.addEventListener('mouseout', function(event){
   event.target.style.border = 'none';
 });
+
+navlinks.addEventListener('click', (event) => {
+    event.preventDefault();
+}); 
