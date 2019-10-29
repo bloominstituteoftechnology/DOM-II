@@ -100,13 +100,15 @@ const breadFriend = document.querySelector(".nav a");
 breadFriend.addEventListener("click", event => {
   breadFriend.style.backgroundColor = "dodgerblue";
   // console.log("start")
-  console.log(event);
+  // console.log(event);
   event.stopPropagation();
 });
+
+//prevent Default
 
 const stopLink = document.querySelector(".nav");
 
 stopLink.addEventListener("click", event => {
-  console.log("stopped the link");
+  console.log("you get on out of here");
   event.preventDefault();
 });
