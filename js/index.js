@@ -71,9 +71,42 @@ document.querySelectorAll("a").forEach(element => {
   });
 });
 
+//mouseclick mousedown
+
 document.querySelectorAll("p").forEach(element => {
   element.addEventListener("mousedown", () => {
     element.style.color = "orange";
     element.style.backgroundColor = "black";
   });
+});
+
+//Stop Propagation
+
+const body = document.querySelector("body");
+
+body.addEventListener("click", event => {
+  body.style.backgroundColor = "silver";
+  console.log("end");
+  event.stopPropagation();
+});
+
+const bread = document.querySelector(".nav");
+bread.addEventListener("click", event => {
+  bread.style.backgroundColor = "rebeccapurple";
+  event.stopPropagation();
+});
+
+const breadFriend = document.querySelector(".nav a");
+breadFriend.addEventListener("click", event => {
+  breadFriend.style.backgroundColor = "dodgerblue";
+  // console.log("start")
+  console.log(event);
+  event.stopPropagation();
+});
+
+const stopLink = document.querySelector(".nav");
+
+stopLink.addEventListener("click", event => {
+  console.log("stopped the link");
+  event.preventDefault();
 });
