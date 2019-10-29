@@ -7,6 +7,12 @@ button1.addEventListener('click', function(event){
 const button2 = document.querySelector('#btn2');
 button2.addEventListener('mouseover', function(event){
   event.target.style.background = 'black';
+event.stopPropagation();
+});
+
+const divClick = document.querySelector('#divBorder');
+divClick.addEventListener('click', function(event){
+  event.currentTarget.style.border = '1px solid red';
 });
 
 const button3 = document.querySelector('#btn3');
@@ -30,4 +36,10 @@ img4.addEventListener('mousedown', function(event){
 
 img4.addEventListener('mouseup', function(event){
   event.target.style.opacity = '1';
+});
+
+const p = document.querySelector('p');
+
+p.addEventListener('copy', function(event){
+  alert('Why are you copying my paragraph!?')
 });
