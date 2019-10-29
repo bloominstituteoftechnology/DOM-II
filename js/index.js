@@ -113,6 +113,13 @@ buttons.forEach( element => {
     event.stopPropagation();
     element.style.backgroundColor = 'black';
     element.style.color = 'orange';
+  });
+});
+
+// Prevent nav links from refreshing page
+const stopNavLinks = document.querySelectorAll('nav a');
+stopNavLinks.forEach( element => {
+  element.addEventListener('click', (event) => {
+    event.preventDefault();
   })
 })
-
