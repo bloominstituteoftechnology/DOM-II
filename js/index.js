@@ -12,6 +12,8 @@ const halloweenHeadings = ['UNWELCOME TO ZOMBIE BUS', 'LET\'S DIE!', 'TORTURE AW
 
 const evilLaugh = 'BUAHAHAHAHAHAHAHAHAHAHAHA! AHAHAHAHAHAHAHAHA! *cough* *cough* AHAHAHAHAHAHAHA!';
 
+const zombieIpsum = 'Reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.'
+
 //Change images on click
 const imgs = document.querySelectorAll('img');
 imgs.forEach( (element, i) => {
@@ -37,8 +39,6 @@ navCont.forEach( (element, i) => {
   })
 });
 
-//Change nav link content on focus
-
 
 //Change section headings on re-size
 const headings = document.querySelectorAll('h2, h3, h4');
@@ -58,11 +58,15 @@ body.forEach( element => {
   });
 })
 
-//Change all <p>'s to evilLaugh on keydown
+//Change all <p>'s to evilLaugh on keydown, zombieIpsum on keyup
 const paragraphs = document.querySelectorAll('p');
 paragraphs.forEach( element => {
   window.addEventListener( 'keydown', () => {
     element.textContent = evilLaugh;
+  });
+
+  window.addEventListener( 'keyup', () => { 
+    element.textContent = zombieIpsum;
   });
 });
 
