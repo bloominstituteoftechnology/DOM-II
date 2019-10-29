@@ -97,13 +97,22 @@ paragraphs2.forEach( element => {
   });
 });
 
-//Change div.destination background and text color on click
+// Change div.destination background and text color on click
 const destinations = document.querySelectorAll('.destination');
 destinations.forEach( element => {
   element.addEventListener( 'click', () => {
     element.style.backgroundColor = 'red';
     element.style.color = 'black';
+  });
+});
+
+// Change .btn background and text color on click, without propagating
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach( element => {
+  element.addEventListener( 'click', (event) => {
+    event.stopPropagation();
+    element.style.backgroundColor = 'black';
+    element.style.color = 'orange';
   })
 })
-
 
