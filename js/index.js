@@ -151,8 +151,9 @@ getForm.addEventListener('submit', (event) => {
 })
 
 const getResetButton = document.querySelector('.resetBtn')
-getFormP.addEventListener('click', () => {
+getFormP.addEventListener('click', (event) => {
    getFormP.style.backgroundColor = 'red';
+   event.stopPropagation()
    setTimeout(() => {
       getFormP.style.backgroundColor = 'white'
    }, 2000);
