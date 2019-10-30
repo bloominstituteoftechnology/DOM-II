@@ -58,4 +58,3 @@ Using the 10 unique events, find ways to update the DOM in creative ways. For ex
 
 * [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
 
-initial commit change
