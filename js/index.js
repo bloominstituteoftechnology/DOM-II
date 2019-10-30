@@ -1,96 +1,94 @@
-//variables
-const busImg = document.querySelector('.intro img')
-const welcome = document.querySelector('.intro h2')
-const letsGo = document.querySelector('.content-section h2')
-const letsGoParagraph = document.querySelector('.lets-go')
-const adventureAwaits = document.querySelector('.adventure')
-const adventureImg = document.querySelector('.img-content .one')
-const destination = document.querySelector('.destination')
-const formName = document.querySelector('form .name')
-const form = document.querySelector('form')
-const body = document.querySelector('body')
-const formBtn = document.querySelector('form .btn')
-const contentSection = document.querySelector('.content-section')
-console.log(form)
+// Your code goes here
+
+// Variables/Sectors
+
+const containerSection = document.querySelectorAll('.container section');
+const header = document.querySelector('header');
+const h1 = document.querySelector('h1');
+const img = document.querySelector('img')
+const introText = document.querySelector('.intro p');
+const body = document.querySelector('body');
+const navLink = document.querySelectorAll('.nav-link');
+const testBtn = document.querySelector('.test-btn');
+const testDiv = document.querySelector('.test-div');
+
+// Events
+
+// Event 1: mouseover - background to grey when hover over each section
+containerSection.forEach(function(item) {
+    item.addEventListener('mouseover', event => {
+        event.currentTarget.style.backgroundColor = 'lightgray';
+    })
+})
+
+// Event 2: mouseleave - background back to white when mouse leaves section
+containerSection.forEach(function(item) {
+    item.addEventListener('mouseleave', event => {
+        event.currentTarget.style.backgroundColor = 'white';
+    })
+})
+
+// Event 3: scroll - top navigation bar changes to a sand color when the page scrolls
+document.addEventListener('scroll', event => {
+     header.style.backgroundColor = '#F9E0CB';
+})
 
 
-// 1. mouseover
-busImg.addEventListener('mouseover', () => {
-  console.log('mouse went over')
-  busImg.style.width = '95%';
-  TweenMax.to(busImg, .5, {
-    width: "740px",
-    height: "200px"
-  });
-});
-
-welcome.addEventListener('mouseover', () => {
-  console.log('mouse went over')
-  busImg.style.width = '95%';
-});
+// Event 4: resize - displays an alert when the browser window is resized
+window.addEventListener('resize', event => {
+    alert(`you resized the window`);
+})
 
 
-// 2. mouseout
-busImg.addEventListener('mouseout', () => {
-  console.log('mouse went out')
-  busImg.style.width = '100%';
-});
+// Event 5: load - the h1 color changes as soon as the page finishes loading.
+window.addEventListener('load', event => {
+    h1.style.color = 'lime';
+})
 
-// 3. click and stopPropagation()
-letsGo.addEventListener('click', (e) => {
-  console.log('header clicked')
-  letsGoParagraph.style.color = 'blue';
-  letsGoParagraph.classList.toggle('change');
-  e.stopPropagation()
-});
+// Event 6: offline - displays an alert if you disconnect from the internet.
+window.addEventListener('offline', event => {
+    alert(`no internet connection`);
+})
 
-contentSection.addEventListener('click', () => {
-  console.log('section clicked')
-  letsGoParagraph.style.color = 'blue';
-  letsGoParagraph.classList.toggle('change');
-});
+// Event 7: dblclick - hides the main image when double clicked.
 
-// 4. select
-adventureAwaits.addEventListener('click', () => {
-  console.log('selected')
-});
+img.addEventListener('dblclick', event => {
+    img.style.visibility = 'hidden';
+})
 
-//5. wheel
-adventureImg.addEventListener('wheel', () => {
-  console.log('wheel')
-});
+// Event 8: keydown - the fontsize of the text in the <p> in the intro section increases to 2rem when a key is pressed down.
+document.addEventListener('keydown', event => {
+    introText.style.fontSize = '2rem';
+})
 
-//6. scroll
-destination.addEventListener('scroll', () => {
-  console.log('scrolled')
-});
+// Event 9: drag - background changes to olive when you drag sommething
+document.addEventListener('drag', event => {
+    body.style.backgroundColor = 'olive';
+})
 
-//7. select plus stopPropagation()
-formName.addEventListener('select', (e) => {
-  console.log('name form selected')
-  formName.style.fontSize = '2rem'
-  e.stopPropagation()
-});
+// Event 10: mousedown - nav link font size increases
+navLink.forEach(function(item) {
+    item.addEventListener('mousedown', event => {
+        event.target.style.fontSize = '4rem';
+    })
+})
 
-form.addEventListener('select', () => {
-  console.log(' whole form selected')
-  form.style.fontSize = '2.5'
-});
+// Nest two similar events somewhere in the site and prevent the event propagation properly. 
+testBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    event.target.style.fontSize = '.5rem';
+})
 
+testDiv.addEventListener('click', event => {
+    // event.stopPropagation();
+    event.target.style.backgroundColor = 'purple';
+})
 
-// 8. resize
-window.addEventListener('resize', () => {
-  console.log('resized')
-  body.style.color = 'gray'
-});
-
-// 9.load 
-window.addEventListener("load", () => {
-  console.log("All resources finished loading!")
-});
-
-// 10. dblclick
-formBtn.addEventListener("dblclick", () => {
-  console.log("Form button double clicked!")
-  formBtn.style.backgroundColor = 'blue'
+//Stop the navigation from items from refreshing the page by using `preventDefault()`
+navLink.forEach(node => {
+    node.addEventListener('click', function(event){
+        //stop the nav items from refreshing the page
+        event.preventDefault();
+        event.target.style.color = 'gray';
+    });
 });
