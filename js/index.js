@@ -19,12 +19,12 @@ img.addEventListener("mouseenter", function(event) {
 
 const button = document.querySelector(".btn");
 button.addEventListener("dblclick", () => {
-  alert("clicked");
+  this.alert("clicked");
 });
 
 const p = document.querySelector("p");
 p.addEventListener("copy", function(event) {
-  alert("dont copy my copyright?");
+  this.alert("dont copy my copyright?");
 });
 
 const body = document.querySelector("body");
@@ -40,4 +40,19 @@ header.addEventListener("select", () => {
 const logo = document.querySelector(".logo-heading");
 logo.addEventListener("mouseout", () => {
   (logo.style.color = ""), (logo.textContent = "Fun Bus");
+});
+
+const container = document.querySelector(".container home");
+container.addEventListener("mouseover", () => {
+  event.target.style.backgroundColor = "blue";
+});
+
+const head = document.querySelector("h4");
+head.addEventListener("mouseleave", function(event) {
+  event.target.style.border = "2px dashed black";
+});
+
+const section = document.querySelector("section");
+section.addEventListener("wheel", function(event) {
+  event.style.color = "blue";
 });
