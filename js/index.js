@@ -11,6 +11,20 @@ letsGo.addEventListener('mouseover', (el)=>{
 letsGo.addEventListener('mouseout', (el)=>{
 el.target.style.color = "black"})
 
+//mousedown
+adventureContent = document.querySelector(".text-content p");
+adventureContent.addEventListener('click', (el)=>{
+    el.target.style.color = "red";
+    el.stopPropagation();
+})
+
+//mouserelease
+
+adventureContent = document.querySelector(".text-content p");
+adventureContent.addEventListener('mousedown', (el)=>{
+    el.target.style.color = "black"
+})
+
 //RESIZE :  fun bus goes all CAPS! when resizing the window
 
 let funBus = document.querySelector('.logo-heading');
@@ -54,18 +68,28 @@ document.addEventListener("wheel", function(event){
  });
 
 //drag&drop still not working
-let welcome = document.querySelector(".intro h2");
+let welcome = document.querySelector(".intro img");
 welcome.addEventListener("drag", ()=>{
-welcome.style.color = "blue"
+welcome.style.width = "50px"
 })
 
 
 
+//KEYDOWN  
 
-//keydown not working
-let key = document.querySelector(".main-navigation");
 
-key.addEventListener('keydown', (el) =>{
-    if (event.keyCode === 65) {
-        return el.target.style.backgroundColor = "red";
-    }})
+window.addEventListener("keydown", () =>{
+   
+         alert("keydown finally works!")
+    })
+
+
+
+    //click & stop propogation
+
+
+    let example = document.querySelector(".text-content");
+    example.addEventListener("click", (el)=>{
+   el.target.style.backgroundColor = "red" ;
+
+    })
