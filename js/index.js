@@ -1,8 +1,8 @@
 // Your code goes here
-//#db3c0b
+
+//EVENTS!!!!!!!!!
 
 
-//good
 //click to change each nav link to orange
 const navColor = document.querySelectorAll(".main-navigation .nav-container .nav a");
 
@@ -12,7 +12,6 @@ navColor.forEach(element => {
     });
 });
 
-
 //aux click to change Fun Bus
 const funBusColor = document.querySelector("h1");
 
@@ -20,13 +19,11 @@ funBusColor.addEventListener("auxclick", () => {
     funBusColor.style.color = "orange", funBusColor.textContent = "FRIGHT BUS";
 });
 
-
 //double click img swap
 const changeBus = document.querySelector('.home .intro img');
 changeBus.addEventListener('dblclick', () => {
     changeBus.src = "https://i.imgur.com/pilNkUs.jpg";
 })
-
 
 //mouse over font color and size change
 const welcomeColor = document.querySelector(".home .intro h2");
@@ -53,8 +50,21 @@ cardImg.addEventListener("mouseenter", () => {
 })
 
 //mouse leaves to spookify the image
-
 const cardImgB = document.querySelector('.home .content-section.inverse-content .img-fluid.rounded');
 cardImgB.addEventListener("mouseleave", () => {
     cardImgB.src = "https://i.imgur.com/O8HSIyQ.jpg";
 })
+
+//mouse down to change image
+const lowerBanner = document.querySelector('.home .content-destination img');
+lowerBanner.addEventListener("mousedown", () => {
+    lowerBanner.src = "https://i.imgur.com/htRVHq7.jpg";
+})
+
+//
+const bttmButtons = document.querySelectorAll('.home .content-pick .destination .btn');
+bttmButtons.forEach(element => {
+    element.addEventListener("mouseup", () => {
+        element.style.color = "black", element.style.backgroundColor = "orange", element.textContent = "Freak Me Out!";
+    });
+});
