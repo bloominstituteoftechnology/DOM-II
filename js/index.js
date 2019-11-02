@@ -61,7 +61,7 @@ lowerBanner.addEventListener("mousedown", () => {
     lowerBanner.src = "https://i.imgur.com/htRVHq7.jpg";
 })
 
-//
+//mouse up changes to bottom buttons
 const bttmButtons = document.querySelectorAll('.home .content-pick .destination .btn');
 bttmButtons.forEach(element => {
     element.addEventListener("mouseup", () => {
