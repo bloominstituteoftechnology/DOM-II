@@ -3,12 +3,20 @@
 //EVENTS!!!!!!!!!
 
 
-//click to change each nav link to orange
+//click to change each nav link to orange & STOP PROPAGATION
+const navBoxColor = document.querySelector(".main-navigation .nav-container");
+navBoxColor.addEventListener("click", () => {
+    navBoxColor.style.backgroundColor = "orange";
+    console.log("shouldnt appear");
+})
+
 const navColor = document.querySelectorAll(".main-navigation .nav-container .nav a");
 
 navColor.forEach(element => {
-    element.addEventListener("click", () => {
+    element.addEventListener("click", (event) => {
         element.style.color = "orange";
+        console.log("only");
+        event.stopPropagation();
     });
 });
 
@@ -58,7 +66,11 @@ cardImgB.addEventListener("mouseleave", () => {
 //mouse down to change image
 const lowerBanner = document.querySelector('.home .content-destination img');
 lowerBanner.addEventListener("mousedown", () => {
-    lowerBanner.src = "https://i.imgur.com/htRVHq7.jpg";
+    lowerBanner.src = "https://i.imgur.com/htRVHq7.jpg", lowerBanner.style.transform = "scale(1.75)";
+})
+
+lowerBanner.addEventListener("mouseup", () => {
+    lowerBanner.src = "https://i.imgur.com/htRVHq7.jpg", lowerBanner.style.transform = "scale(1)";
 })
 
 //mouse up changes to bottom buttons
