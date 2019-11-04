@@ -1,4 +1,26 @@
 // Your code goes here
+const navs = document.querySelectorAll('.nav-link');
+
+navs.forEach(nav => {
+    nav.addEventListener('click', (event) => {
+     nav.style.backgroundColor = 'purple';
+     nav.style.color = "white";
+     
+    });
+    nav.addEventListener('dblclick', (event) => {
+    nav.style.transform = "scale(1.2)";
+    event.stopPropagation();
+ });
+});
+//prevent default refresh of page
+const navLink = document.querySelectorAll('.nav');
+
+navLink.forEach(nav => {
+    nav.addEventListener('click', (event) => {
+       event.preventDefault();
+    });
+});
+
 // title img
 const intro = document.querySelector('.intro');
 // 1 enlarges
@@ -79,6 +101,7 @@ buttons.forEach(btn => {
     btn.addEventListener('click', () => {
         btn.style.backgroundColor = "grey";
         btn.style.color = "pink";
+        
     });
 });
 
