@@ -128,7 +128,7 @@ firstTravelImage.addEventListener('click', (event) => {
     
     document.addEventListener('wheel', (event) => {
         event.target.style.color = "teal";
-        event.target.style.backgroundColor= "yellow";
+        event.target.style.backgroundColor= "white";
       }); 
     
       
@@ -137,3 +137,23 @@ firstTravelImage.addEventListener('click', (event) => {
      function cb(){
          alert("You can't copy this!!");
      } 
+    
+     const  drivePath = {
+         curviness: 1.5,
+         autoRotate: true,
+         values:[
+            {x:90, y:-20},
+            {x:200, y:10},
+            {x:300, y:-30},
+            {x:460, y:20},
+            {x:600, y:-10},
+            {x:900, y:-10},
+         ]
+     }
+     const tween = new TimelineLite();
+     tween.add(
+         TweenLite.to(".paper-car", 5, {
+             bezier:drivePath,
+             ease:Power1.easeInOut
+         })
+     );

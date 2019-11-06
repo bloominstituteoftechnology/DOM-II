@@ -351,3 +351,15 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.animation{
+height: 20vh;
+position: relative;
+overflow: hidden;
+
+}
+.paper-car{
+  height: 70px;
+  position: absolute;;
+  bottom:20%;
+  left: 0%;
+}
