@@ -4,7 +4,7 @@ const introImage = document.querySelector('.intro img')
 const header = document.querySelector('header');
 const navLinks = document.querySelectorAll('nav a')
 const headings = document.querySelectorAll('h4');
-const buttons = document.querySelector('.btn')
+const buttons = document.querySelectorAll('.btn')
 const imgs = document.querySelector('.content-destination img')
 
 
@@ -19,6 +19,7 @@ function toggle(value, cb) {
         onOff = 1;
     }
 };
+
 
 console.log(textContent.length);
 //1. Make window smaller for popup
@@ -61,6 +62,24 @@ const textContentMouseOverHandler= function(){
 
 textContent[2].addEventListener("mouseover", function(){
     toggle(onOff, textContentMouseOverHandler)});
+
+    const changeMe= function(){
+        if (onOff ===1){
+            buttons[1].style.backgroundColor="yellow";
+        }
+        else{
+            buttons[1].style.backgroundColor="purple";
+        
+        }
+    };
+
+    buttons[1].addEventListener('click', function()
+    {
+        toggle(onOff, changeMe)
+    } );
+
+  
+
 //5. random opacity 
 document.addEventListener('keydown', (event)=>{
 
@@ -116,7 +135,7 @@ const backgroundEventHandler = function() {
 header.addEventListener('mousemove', function() {
     toggle(onOff, backgroundEventHandler);
 });
-9.
+//9.
 const textContentMouseOverHandler2 = function() {
     if (onOff === 1) {
         textContent[3].style.backgroundColor = 'pink';
@@ -139,7 +158,7 @@ const textContentMouseOverHandler3 = function() {
 textContent[4].addEventListener('mouseover', function() {
     toggle(onOff, textContentMouseOverHandler3);
 });
-//10.
+
 for(let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('dblclick',(event) => {
         navLinks[i].style.color = "red";
@@ -147,3 +166,13 @@ for(let i = 0; i < navLinks.length; i++) {
         event.preventDefault();
     })
   };
+//10. trying out new stuff
+const sayHi= function(){
+    if (onOff ===1){
+       alert("Hi , Ira");
+    }
+    
+};
+buttons[0].addEventListener('mouseover', function(){
+    toggle(onOff, sayHi);
+} );
