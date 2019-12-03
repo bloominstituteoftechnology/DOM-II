@@ -65,8 +65,8 @@ document.querySelector('body').addEventListener('dblclick', function (e) {
         console.log(e);
         console.log(e.clientX);
         console.log(e.clientY);
-        newBusIcon.style.top = `${e.clientY}px`;
-        newBusIcon.style.left = `${e.clientX}px`;
+        newBusIcon.style.top = `${e.clientX}px`;
+        newBusIcon.style.left = `${e.clientY}px`;
         body.appendChild(newBusIcon);
     
         //makes bus drive across screen
@@ -156,3 +156,91 @@ function moveFooterBus(e) {
     footerBusCounter += 10;
 
 }
+
+
+// LOAD EVENT LISTENER
+
+window.addEventListener('load', (event) => {
+    alert('page is fully loaded');
+  });
+
+
+  // MOUSE LEAVE 
+
+  document.querySelector('body').addEventListener('mouseleave', e => {
+    console.log('dont leave!!!!                          This popup is very annoying I know.');
+    return;
+  });
+
+
+  //RESIZE SCREEN
+
+  function changeBodyColor(){
+    body.style.backgroundColor = 'red';
+  }
+
+  window.onresize = changeBodyColor;
+
+
+
+  //keypress color change
+
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  console.log(e.code);
+    if (e.code === 'KeyB') {
+        body.style.color = 'blue';
+    } else if (e.code === 'KeyG') {
+        body.style.color = 'green';
+    } else if (e.code === 'KeyR') {
+        body.style.color = 'red';
+    } else if (e.code === 'KeyP') {
+        body.style.color = 'purple';
+    }
+}
+
+
+// adds selection to bottom of screen
+
+
+function logSelection(event) {
+    const bottomText = document.getElementById('bottom-text');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    // bottomText.textContent = `You selected: ${selection}`;
+    let newPara = document.createElement('p');
+    newPara.textContent = selection;
+    body.appendChild(newPara);
+
+  }
+  
+  const input = document.querySelector('input');
+  input.addEventListener('select', logSelection);
+
+
+  // stopping the navigation links from refreshing the page
+
+  let links = document.querySelectorAll('a');
+  links.forEach(link => {
+      link.addEventListener('click', function(event){
+          event.preventDefault();
+      })
+  });
+
+
+
+
+  //prevent event propogation
+
+  paragraph = document.querySelector('p');
+  intro = document.querySelector('.intro');
+  containerHome = document.querySelector('.home');
+
+  paragraph.addEventListener('click', function(evenet) {
+      paragraph.style.backgroundColor = 'green';
+      event.stopPropagation();
+  });
+
+  intro.addEventListener('click', function() {
+    intro.style.backgroundColor = 'red';
+});
