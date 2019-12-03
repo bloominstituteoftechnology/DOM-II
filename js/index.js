@@ -100,4 +100,8 @@ window.addEventListener('resize', () => {
  viewPort.style.backgroundColor = 'lightblue'
 });//9
 
+window.addEventListener('wheel', () => {
+    viewPort.style.backgroundColor = `pink`;
+
+})//10
 
