@@ -12,4 +12,7 @@ document.querySelector('.logo-heading').addEventListener('mouseover', () => {
     moveLogo.play()
 })
 
-//
+// Alerts on keydown
+document.querySelector('body').addEventListener('keydown', (e)=>{
+    alert(`You pressed ${e.key}`)
+})
