@@ -23,3 +23,10 @@ window.addEventListener('resize', (e) => {
     console.log(`You resized the window to ${window.innerWidth} by ${window.innerHeight}`)
 })
 
+// Console log scrollY position on scroll
+window.addEventListener('scroll', () => {
+    console.log(`Your scroll position is: ${window.scrollY}`)
+});
+
+
+
