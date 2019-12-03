@@ -37,3 +37,9 @@ const introImg = document.querySelector('.intro > img')
 introImg.addEventListener('mouseenter', ()=>{
     changeColor.play()
 })
+
+// Change bgcolor back on mouseleave on intro image
+introImg.addEventListener('mouseleave', () => {
+    changeColor.reverse()
+})
+
