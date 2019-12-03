@@ -48,3 +48,21 @@ window.addEventListener('load', ()=>{
     alert('Welcome to the funbus')
 })
 
+// Double click stop propogation body and adv image
+body.addEventListener('dblclick', () => {
+    alert('body double clicked')
+})
+
+document.querySelector('.adv-img').addEventListener('dblclick', (e)=>{
+    e.stopPropagation()
+    alert('adv-image double click')
+})
+
+// Prevent default on anchor tags
+document.querySelector('a').addEventListener('click', (e)=>{
+    console.log(e)
+    e.preventDefault()
+})
+
+
+
