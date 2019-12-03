@@ -2,10 +2,8 @@
 
 // Mouseover on logo makes it move
 const moveLogo = gsap.timeline()
-
 moveLogo.to(".logo-heading", { duration: 1, x: 800 })
     .to(".logo-heading", { duration: 1, x: 0 })
-
 moveLogo.pause()
 
 document.querySelector('.logo-heading').addEventListener('mouseover', () => {
@@ -28,5 +26,14 @@ window.addEventListener('scroll', () => {
     console.log(`Your scroll position is: ${window.scrollY}`)
 });
 
-
-
+// Change bgcolor on mouseenter image
+const changeColor = gsap.to('body', 1, {
+    backgroundColor: "black",
+    opacity: 0.5,
+    ease: Power3.easeOut,
+    paused: true
+})
+const introImg = document.querySelector('.intro > img')
+introImg.addEventListener('mouseenter', ()=>{
+    changeColor.play()
+})
