@@ -17,7 +17,7 @@ document.querySelectorAll("h2").forEach(el => {
   })
 
 // change color of p tags to purple.
-  document.querySelectorAll("p").forEach(el => {
+  document.querySelectorAll("body").forEach(el => {
     el.addEventListener("dblclick", () => {
       el.style.color= "purple";
     })
@@ -33,4 +33,15 @@ document.querySelectorAll("h2").forEach(el => {
       el.style.color= "black";
     })
 
-    
+//change color to hotpink on click
+    document.querySelectorAll("h4").forEach(el => {
+        el.addEventListener("click", () => {
+          el.style.color= "hotpink";
+        })
+      })
+// cahnge color to orange on double click
+      document.querySelectorAll("h4").forEach(el => {
+        el.addEventListener("dblclick", () => {
+          el.style.color= "orange";
+        })
+      })
