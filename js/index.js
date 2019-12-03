@@ -33,6 +33,15 @@ document.querySelectorAll("h2").forEach(el => {
       el.style.color= "black";
     })
 
+    const boat = document.querySelector(".content-destination img")
+    boat.addEventListener("mouseenter", (event) => {
+    event.target.style.transform = "scale(1.5)";
+    event.target.style.transistion = "transform 5s"
+  })
+    boat.addEventListener("mouseleave", () => {
+    boat.style.transform = "scale(1)"
+  })
+
 //change color to hotpink on click
     document.querySelectorAll("h4").forEach(el => {
         el.addEventListener("click", () => {
