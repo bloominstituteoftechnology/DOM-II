@@ -143,3 +143,16 @@ body.addEventListener('copy', (event) => {
     alert("You Just Copied =>      " + selection);
     event.preventDefault();
 });
+
+
+// KEYDOWN EVENT LISTENER
+let footerBusCounter = 1;
+
+document.addEventListener('keydown', moveFooterBus);
+
+function moveFooterBus(e) {
+    let footerFunBus = document.querySelector('.footer-bus-icon');
+    footerFunBus.style.left = `${footerBusCounter}px`;
+    footerBusCounter += 10;
+
+}

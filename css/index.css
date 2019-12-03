@@ -226,6 +226,11 @@ img {
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
 }
+.footer .footer-bus-icon {
+  position: relative;
+  width: 50px;
+  bottom: 0px;
+}
 .footer p {
   text-align: center;
   color: #212529;
