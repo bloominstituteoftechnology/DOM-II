@@ -50,7 +50,19 @@ changeImg.addEventListener('dblclick', () => {
     changeImg.src='img/james-bold--PcZLgzmoIY-unsplash.jpg';
 })
 
-
+// #7 
+const hoverButtons = document.querySelectorAll('.btn').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.background = 'red';
+        item.style.color = 'blue';
+    })
+// #8
+    item.addEventListener('mouseleave', () => {
+        item.style.background = 'green';
+        item.style.color = 'white';
+        item.style.transform = 'scale(1.4)';
+    })
+})
 
 //const textDragged = document.getElementsByClassName('.text-content');
 
