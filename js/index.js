@@ -13,6 +13,13 @@ document.querySelector('.logo-heading').addEventListener('mouseover', () => {
 })
 
 // Alerts on keydown
-document.querySelector('body').addEventListener('keydown', (e)=>{
+const body = document.querySelector('body')
+body.addEventListener('keydown', (e) => {
     alert(`You pressed ${e.key}`)
 })
+
+// Console log new window size on resize
+window.addEventListener('resize', (e) => {
+    console.log(`You resized the window to ${window.innerWidth} by ${window.innerHeight}`)
+})
+
