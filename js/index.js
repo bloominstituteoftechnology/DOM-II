@@ -52,3 +52,12 @@ document.querySelector(".text-content h2").addEventListener("dblclick", () => {
   }
 });
 
+
+document.querySelector(".content-destination").addEventListener("click", () => {
+  document.querySelector(".content-destination").style.border = "5px solid red";
+})
+
+document.querySelector(".content-destination p").addEventListener("click", () => {
+  document.querySelector(".content-destination p").style.color = "blue";
+  event.stopPropagation()
+})
