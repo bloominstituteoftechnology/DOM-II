@@ -20,7 +20,7 @@ funbus.addEventListener("mouseleave", () => {
     funbus.style.color = `purple`
   })
 
-  const navlinks = document.querySelectorAll(`.nav-link`)
+  const navlinks = document.querySelectorAll(`.nav-link`).forEach()
 
   navlinks.addEventListener(`mouseover`,() => {
     navlinks.style.transform = "scale(1.2)";
