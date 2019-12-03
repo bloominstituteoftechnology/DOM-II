@@ -182,6 +182,11 @@ img {
   position: fixed;
   z-index: 10;
 }
+.main-navigation .fun-bus-icon {
+  position: absolute;
+  width: 50px;
+  bottom: 0px;
+}
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
