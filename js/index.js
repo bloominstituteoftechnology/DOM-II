@@ -47,3 +47,99 @@ window.addEventListener('scroll', function(e) {
 //     ticking = true;
 //   }
 });
+
+//DOUBLE CLICK EVENT LISTENER
+let body = document.querySelector('body');
+let newBusIcon = document.createElement('img');
+newBusIcon.src = "img/funBusIcon.png";
+newBusIcon.style.position = 'absolute';
+newBusIcon.style.width = '50px';
+
+let counter = 1;
+let alreadyBus = false;
+
+document.querySelector('body').addEventListener('dblclick', function (e) {
+
+    if (!alreadyBus){
+        console.log('dbl click');
+        console.log(e);
+        console.log(e.clientX);
+        console.log(e.clientY);
+        newBusIcon.style.top = `${e.clientY}px`;
+        newBusIcon.style.left = `${e.clientX}px`;
+        body.appendChild(newBusIcon);
+    
+        //makes bus drive across screen
+        let busInterval = window.setInterval(busDrive, 10);
+        function busDrive() {
+            // Your code here
+            // Parameters are purely optional.
+        
+                newBusIcon.style.left = `${counter}px`; 
+                counter += 10;
+        
+                if (counter > window.outerWidth) {
+                    clearInterval(busInterval);
+                    newBusIcon.remove();
+                }
+        
+            // if(msTensValue == 9) {
+            // msTens.textContent = msTensValue++;
+            // msTensValue = 0;
+            // } else {
+            // msTens.textContent = msTensValue++;
+            // }
+            // console.log('msTens'); 
+            alreadyBus = true;
+            }
+
+    } else {
+        newBusIcon.remove();
+        counter = 0;
+        console.log('dbl click');
+        console.log(e);
+        console.log(e.clientX);
+        console.log(e.clientY);
+        newBusIcon.style.top = `${e.clientY}px`;
+        newBusIcon.style.left = `${e.clientX}px`;
+        body.appendChild(newBusIcon);
+    
+        //makes bus drive across screen
+        let busInterval = window.setInterval(busDrive, 10);
+        function busDrive() {
+            // Your code here
+            // Parameters are purely optional.
+        
+                newBusIcon.style.left = `${counter}px`; 
+                counter += 10;
+        
+                if (counter > window.outerWidth) {
+                    clearInterval(busInterval);
+                    newBusIcon.remove();
+                }
+        
+            // if(msTensValue == 9) {
+            // msTens.textContent = msTensValue++;
+            // msTensValue = 0;
+            // } else {
+            // msTens.textContent = msTensValue++;
+            // }
+            // console.log('msTens'); 
+            alreadyBus = true;
+            }
+    }
+
+});
+
+
+
+// COPY EVENT LISTENER
+
+const source = document.querySelector('div.source');
+
+body.addEventListener('copy', (event) => {
+    const selection = document.getSelection();
+    event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+    alert("You Just Copied =>      " + selection);
+    event.preventDefault();
+});
