@@ -43,3 +43,8 @@ introImg.addEventListener('mouseleave', () => {
     changeColor.reverse()
 })
 
+// On window load say hello
+window.addEventListener('load', ()=>{
+    alert('Welcome to the funbus')
+})
+
