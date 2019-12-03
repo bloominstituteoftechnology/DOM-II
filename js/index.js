@@ -2,7 +2,6 @@
 
 
 const logoExpand = document.querySelector('.logo-heading');
-//console.log(logoExpand);
 // #1
 logoExpand.addEventListener('mouseover', () => {
     logoExpand.style.transform = 'scale(1.7)';
@@ -15,7 +14,6 @@ logoExpand.addEventListener('click', () => {
 })
  
 const busZoom = document.querySelector('.intro img');
-//console.log(busZoom);
 // #3
 busZoom.addEventListener('wheel', () => {
     busZoom.style.transform = `scale(2)`;
@@ -28,16 +26,34 @@ busZoom.addEventListener('click', () => {
 
 // #4 
 const navFocus = document.querySelectorAll('.nav-link').forEach(item => {
-    item.addEventListener('focus', event => {
+    item.addEventListener('focus', () => {
         item.style.background = 'red';
+        item.style.borderRadius = '5px';
+        item.style.padding = '3px';
         item.style.color = 'white';
+        item.style.transform = 'scale(1.4)';
+        item.style.transition = 'transform 1.5s'
     })
+
 // #5
-    item.addEventListener('blur', event => {
+    item.addEventListener('blur', () => {
         item.style.background = '';
         item.style.color = 'black';
+        item.style.transform = 'scale(1)';
+        item.style.transition = 'transform 1.5s'
     } )
 });
-// console.log(titleSelect);
+
+// #6
+const changeImg = document.querySelector('.img-content img');
+changeImg.addEventListener('dblclick', () => {
+    changeImg.src='img/james-bold--PcZLgzmoIY-unsplash.jpg';
+})
+
+
+
+//const textDragged = document.getElementsByClassName('.text-content');
+
+
 
 
