@@ -66,3 +66,35 @@ input.style.width = '50px';
 const newHeader = document.querySelector('nav');
 
 newHeader.append(input);
+
+//key pressed
+
+const pressed = document.querySelector('input');
+const nav = document.querySelector('.nav-link');
+pressed.addEventListener('keypress', () => {
+  nav.textContent = 'STOP!';
+});
+
+//dblclick
+
+const rotate = document.querySelector('img');
+rotate.addEventListener('dblclick', () => {
+  rotate.style.transform = 'rotate(180deg)';
+});
+rotate.addEventListener('click', () => {
+  console.log('ddd');
+  rotate.style.transform = 'rotate(360deg)';
+});
+
+//focus
+
+const focus = document.querySelector('input');
+focus.addEventListener('focus', () => {
+  nav.textContent = 'are you sure you wanna type?';
+});
+
+//mouse move
+
+focus.addEventListener('focusout', () => {
+  nav.textContent = 'thank you';
+});
