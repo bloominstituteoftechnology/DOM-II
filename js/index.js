@@ -58,3 +58,14 @@ logo:addEventListener('dblclick', (e)=>{
     e.target.textContent = "LOL Bus!";
     e.stopPropagation();
 })
+
+// Resize -- Resizing window/browser counter chnages number 
+const times = document.getElementById('demo');
+let x = 0;
+window.addEventListener('resize', ()=> {
+    let txt = x +=1;
+    times.innerText = txt;
+})
+
+// Drag and Drop 
+d
