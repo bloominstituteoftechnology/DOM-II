@@ -31,13 +31,6 @@ header.addEventListener('wheel', e =>{
     e.target.style.background = 'blue';
 })
 
-// // Drag & Drop
-// const introH2 = document.querySelector('.intro h2');
-// introH2.addEventListener('dragover', e =>{
-//     e.preventDefault();
-//     e.target.style.alignSelf = 'center';
-// })
-
 // Load -- Loads alert message upon page load 
 window.addEventListener('load', () =>{
     alert('Welcome to Fun Bus! Come on and ride on the Magic School Bus!');
