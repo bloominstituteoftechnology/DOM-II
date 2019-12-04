@@ -8,6 +8,7 @@
         navlink.style.color = "hotpink";
         navlink.style.backgroundColor = "gray";
         navlink.style.padding= "3%";
+       
     })
     navlink.addEventListener("mouseleave", ()=>{
         navlink.style.color = "black";
@@ -64,6 +65,30 @@ const mainmsg = document.querySelector(".intro h2");
         mainmsg.style.backgroundColor = "hotpink";})
 
     document.addEventListener("keyup", () => {
-        mainmsg.style.backgroundColor = "white"; })
+        mainmsg.style.backgroundColor = "transparent"; })
 
 
+// preventDefault();
+
+const stopLink = document.querySelector(".nav");
+stopLink.addEventListener("click", (event) => {
+  event.preventDefault();
+})
+
+
+//stopPropagation(); 
+
+const midsection1 = document.querySelector(".content-section");
+    document.addEventListener('scroll', () => {
+        midsection1.style.backgroundColor= "coral";
+        event.stopPropagation();
+    })
+
+    const midsection2 = document.querySelector(".inverse-content");
+    document.addEventListener('scroll', () => {
+        midsection2.style.backgroundColor= "aqua";
+        event.stopPropagation();
+    })
+    
+
+  
