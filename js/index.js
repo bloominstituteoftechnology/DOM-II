@@ -20,19 +20,25 @@ found.addEventListener('mouseout', () => {
 const [red, green, blue] = [98, 87, 81];
 const page = document.querySelector('header');
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', e => {
   const y = 0.1 + (window.scrollY || window.pageYOffset) / 908;
   const [r, g, b] = [red / y, green / y, blue / y].map(Math.round);
   page.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   page.style.color = '#aaa';
+  e.stopPropagation();
 });
 
-//click
+//click  and stopPropagation()
+const dest = document.querySelector('.destination');
+dest.addEventListener('click', () => {
+  alert('no');
+});
 
 const signUp = document.querySelectorAll('.btn');
 signUp.forEach(button => {
   button.addEventListener('click', e => {
     alert('Signed Up!');
+    e.stopPropagation();
   });
 });
 
@@ -52,6 +58,7 @@ zoom.forEach(img => {
     e => {
       img.style.transform = 'scale(1.1)';
       img.style.transition = 'all 0.5s';
+      e.stopPropagation();
     },
     { passive: true }
   );
@@ -65,13 +72,13 @@ input.style.width = '50px';
 
 const newHeader = document.querySelector('nav');
 
-newHeader.append(input);
+newHeader.prepend(input);
 
 //key pressed
 
 const pressed = document.querySelector('input');
 const nav = document.querySelector('.nav-link');
-pressed.addEventListener('keypress', () => {
+pressed.addEventListener('keypress', e => {
   nav.textContent = 'STOP!';
 });
 
@@ -89,12 +96,24 @@ rotate.addEventListener('click', () => {
 //focus
 
 const focus = document.querySelector('input');
-focus.addEventListener('focus', () => {
-  nav.textContent = 'are you sure you wanna type?';
+focus.addEventListener('focus', e => {
+  nav.textContent = 'Dont type!';
 });
 
 //mouse move
 
 focus.addEventListener('focusout', () => {
   nav.textContent = 'thank you';
+});
+
+const para = document.querySelector('footer p');
+para.addEventListener('click', e => {
+  para.style.marginLeft = '50px';
+});
+
+//prevent Default
+
+const def = document.getElementsByClassName('nav-link');
+def.addEventListener('click', e => {
+  e.preventDefault();
 });
