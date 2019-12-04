@@ -34,7 +34,7 @@ const changeColor = gsap.to('body', 1, {
     paused: true
 })
 const introImg = document.querySelector('.intro > img')
-introImg.addEventListener('mouseenter', ()=>{
+introImg.addEventListener('mouseenter', () => {
     changeColor.play()
 })
 
@@ -44,7 +44,7 @@ introImg.addEventListener('mouseleave', () => {
 })
 
 // On window load say hello
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     alert('Welcome to the funbus')
 })
 
@@ -53,16 +53,29 @@ body.addEventListener('dblclick', () => {
     alert('body double clicked')
 })
 
-document.querySelector('.adv-img').addEventListener('dblclick', (e)=>{
+document.querySelector('.adv-img').addEventListener('dblclick', (e) => {
     e.stopPropagation()
     alert('adv-image double click')
 })
 
 // Prevent default on anchor tags
-document.querySelector('a').addEventListener('click', (e)=>{
+document.querySelector('a').addEventListener('click', (e) => {
     console.log(e)
     e.preventDefault()
 })
 
+// On wheel
+window.addEventListener('wheel', () => {
+    alert('wheel was used')
+})
 
-
+// mouseup, mousedown
+const p = document.querySelectorAll('p')
+p.forEach(p => {
+    p.onmousedown = function (e) {
+        e.target.style.color = "pink"
+    };
+    p.onmouseup = function (e) {
+        e.target.style.color = "black"
+    };
+})
