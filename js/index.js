@@ -52,3 +52,9 @@ a.forEach(item=>{
     })
 })
 
+// Double Click -- Change logo font in nav on double click 
+const logo = document.querySelector('h1');
+logo:addEventListener('dblclick', (e)=>{
+    e.target.textContent = "LOL Bus!";
+    e.stopPropagation();
+})
