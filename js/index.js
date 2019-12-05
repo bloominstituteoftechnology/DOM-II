@@ -68,4 +68,50 @@ window.addEventListener('resize', ()=> {
 })
 
 // Drag and Drop 
-d
+const dragStart = (e) =>{
+    initialX=e.clientX -xOffset
+    initialY=e.clientY -yOffset
+if (e.target) {active=true}
+
+}   
+    const drop = () => {
+    initialX=currentX
+    initialY=currentY
+    active=false
+}
+
+const drag = (e) =>{
+    if (active) {e.preventDefault()
+    currentX=e.clientX -initialX
+    currentY=e.clientY -initialY
+    xOffset=currentX
+    yOffset=currentY
+    setTranslate(currentX, currentY, e.target)
+    }
+}
+const setTranslate = (xPos, yPos, e)=>{
+e.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`
+}
+document.querySelector('.adventure-time').forEach(Element=>{
+    Element.draggable=true
+    Element.ondragstart=dragStart
+})
+const dragZone = document.querySelector('.home')
+let active = false
+let currentX
+let currentY
+let initialX
+let initialY
+let xOffset = 0
+let yOffset = 0
+dropZone.ondragover=drag
+dropZone.ondrop=drop
+
+
+
+// change
+const contentP1 = document.querySelector('.text-content p');
+contentP1.addEventListener('cut', (e) =>{
+    alert('Do not cut my text!');
+    e.stopPropagation();
+})
