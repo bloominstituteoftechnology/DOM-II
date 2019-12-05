@@ -22,6 +22,12 @@ document.querySelector('.container > .content-destination > img').addEventListen
 
 document.querySelector('.container > .content-destination > img').addEventListener('mouseleave', mouseleaveEl2);
 
+document.querySelector('.container > .content-section-second > img').addEventListener
+('mouseover', mouseoverEL3);
+
+document.querySelector('.container > .content-section-second > img').addEventListener
+('mouseleave', mouseleaveEL3)
+
 
 // pointerOut, PointerOver, 
 // MouseDown - mouse button is clicked down , 
@@ -35,16 +41,26 @@ function mouseoverEL() {
 
 function mouseoverEL2() {
     document.querySelector('.container > .content-destination > img' ).style.boxShadow = "2px 10px 8px grey";
-    console.log('boxShawdow2 working');
+    console.log('boxShadow2 working');
+}
+
+function mouseoverEL3() {
+    document.querySelector('.container > .content-section-second > img').style.boxShadow = '2px 10px 8px grey';
+    console.log('boxShadow3 working')
 }
 
 function mouseleaveEL() {
     document.querySelector('.container > .intro > img').style.boxShadow = "none";
-    console.log('boxShadow disappeared');
+    console.log('boxShadow disappeared')
 }
 
 function mouseleaveEl2() {
     document.querySelector('.container > .content-destination > img').style.boxShadow = "none";
+    console.log('boxShadow disappeared');
+}
+
+function mouseleaveEL3(){
+    document.querySelector('.container > .content-section-second > img').style.boxShadow = 'none';
     console.log('boxShadow disappeared');
 }
 
