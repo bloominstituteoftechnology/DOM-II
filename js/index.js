@@ -28,7 +28,7 @@ windowEvent.addEventListener('keydown', () =>{
 // Wheel
 const header = document.querySelector('header');
 header.addEventListener('wheel', e =>{
-    e.target.style.background = 'blue';
+    e.target.style.background = 'orange';
 })
 
 // Load -- Loads alert message upon page load 
