@@ -13,7 +13,6 @@ window.addEventListener('load',() => {
     this.alert("Great News ! You've been Matched with an Excellent Traveling Advisor , You'll be on your Way ! ")
 })
 
-
 document.querySelector('.container > .intro > img').addEventListener('mouseover', mouseoverEL);
 
 document.querySelector('.container > .intro > img').addEventListener('mouseleave', mouseleaveEL); 
@@ -21,6 +20,8 @@ document.querySelector('.container > .intro > img').addEventListener('mouseleave
 document.querySelector('.container > .intro > h2').addEventListener("dblclick", doubleClickEl);
 
 document.querySelector('.container > .intro > h2').addEventListener('click', clickEL);
+
+document.querySelector('.container > .content-section > .text-content').addEventListener('mouseenter', mouseEnterEL);
 
 // pointerOut, PointerOver, 
 // MouseDown - mouse button is clicked down , MouseUp - when you realse the mouse clicker , mouseEnter, mouseLeave
@@ -45,3 +46,7 @@ function clickEL() {
     console.warn("normal text")
 }
 
+function mouseEnterEL() {
+    document.querySelector('.container > .content-section > h2').style.boxShadow = '2px 10px 8px grey';
+    console.log('text shadow working');
+}
