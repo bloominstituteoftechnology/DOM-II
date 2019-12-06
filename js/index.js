@@ -14,7 +14,6 @@
 //  Nest two similar events somewhere in the site and prevent the event propagation properly
 //  Stop the navigation items from refreshing the page by using preventDefault()
 
-
 const busImg = document.getElementsByTagName("img")[0]
 busImg.setAttribute("id", "header-img");
 busImg.addEventListener("mouseenter", (event) => {
