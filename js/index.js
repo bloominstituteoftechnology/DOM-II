@@ -7,8 +7,10 @@ const img = document.querySelectorAll("img");
 const introH1 = document.querySelectorAll(".logo-heading");
 const btn = document.querySelectorAll(".btn");
 const mainNav = document.querySelector(".main-navigation");
+const allH2 = document.querySelectorAll("h2");
+const textContent = document.querySelector(".text-content p");
 
-console.log(mainNav);
+console.log(img);
 
 // console.log(introH1);
 
@@ -18,7 +20,7 @@ introH2.addEventListener("mouseenter", event => {
   introH2.style.color = "#17A2B8";
 });
 
-//keydown -- make an alert
+//keydown
 html.addEventListener("keydown", event =>
   alert("You pressed the down key, use the wheel/fingers")
 );
@@ -28,15 +30,21 @@ html.addEventListener("wheel", event => {
   html.style.cursor = "all-scroll";
 });
 
-// drag / drop
+// drag / drop ** not working
+img.forEach(dragFunction);
 
-// load
-// can't get it to work
+function dragFunction(item) {
+  item.addEventListener("drag", event => {
+    item.style.borderStyle = "solid";
+  });
+}
+
+// load ** not working
 introH1[0].addEventListener("load", event => {
   introH1[0].innerHTML = "Fun Bus says 'Hello!'";
 });
 
-//focus
+//focus ** not working
 
 // resize
 window.addEventListener("resize", sizeFunction);
@@ -49,19 +57,20 @@ function sizeFunction() {
 mainNav.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
-  if (
-    document.body.scrollTop() > 10 ||
-    document.documentElement.scrollTop() > 10
-  ) {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
     mainNav.style.backgroundColor = "yellow";
   }
 }
-// select
+// select ** not working
+textContent.addEventListener("select", event => {
+  textContent.style.fontSize = "3rem";
+});
+
 // dbclick
 btn.forEach(myFunction);
 
 function myFunction(item) {
-  item.addEventListener("dbclick", event => {
+  item.addEventListener("dblclick", mouseevent => {
     item.style.backgroundColor = "yellow";
     item.style.color = "#17A2B8";
     item.style.fontWeight = "bold";
