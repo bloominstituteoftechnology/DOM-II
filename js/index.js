@@ -32,28 +32,35 @@ logo.addEventListener("mouseleave", (event) => {
 
 //Main Bus Img change
 const busImg = document.getElementsByTagName("img")[0];
+
 busImg.setAttribute("id", "header-img");
+
 busImg.addEventListener("mouseenter", (event) => {
     busImg.setAttribute("src", "img/beach-sunset.jpg");
 });
+
 busImg.addEventListener("mouseleave", (event) => {
     busImg.setAttribute("src", "img/fun-bus.jpg");
 });
 
 
 //Text Copy Event
-const paragraph = document.querySelector('p');
+const paragraph = document.querySelectorAll('p');
 
-paragraph.addEventListener("copy", (event) => {
-    paragraph.style.backgroundColor = "#e7c9f2";
-    paragraph.style.transition = "all 0.5s";
+paragraph.forEach( para => {
+    para.addEventListener("copy", (event) => {
+        para.style.backgroundColor = "#e7c9f2";
+        para.style.transition = "all 0.5s";
+    });
 });
 
 
 //Text Cut Event
-paragraph.addEventListener("cut", (event) => {
-    paragraph.style.border = "dashed 1px gray";
-    paragraph.style.transition = "all 0.5s";
+paragraph.forEach(para => {
+    para.addEventListener("cut", (event) => {
+        para.style.border = "dashed 1px gray";
+        para.style.transition = "all 0.5s";
+    });
 });
 
 
@@ -72,13 +79,13 @@ wholePage.addEventListener("keyup", (event) => {
 
 
 //Wheel Event Image of Map
-const mapImg = document.querySelector(".img-content img");
+const imgInBody = document.querySelector(".img-content img");
 
-mapImg.addEventListener("wheel", (event) => {
+imgInBody.addEventListener("wheel", (event) => {
     event.preventDefault();
     scale += event.deltaY * -0.01;
     scale = Math.min(Math.max(.125, scale), 4);
-    mapImg.style.transform = "scale(${scale})";
+    imgInBody.style.transform = "scale(${scale})";
     let scale = 1; 
 });
 
@@ -107,3 +114,7 @@ window.addEventListener('offline', (event) => {
 window.addEventListener('online', (event) => {
     console.log("Oh wait. Nevermind the Wifi is good. :)");
 });
+
+//Focus Event
+
+
