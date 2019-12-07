@@ -8,52 +8,57 @@ const introH1 = document.querySelectorAll(".logo-heading");
 const btn = document.querySelectorAll(".btn");
 const mainNav = document.querySelector(".main-navigation");
 const allH2 = document.querySelectorAll("h2");
-const textContent = document.querySelector(".text-content p");
+const homeLink = document.querySelectorAll(".nav .nav-link");
+const textContent = document.querySelector(".text-content");
+const textContentP = document.querySelector(".text-content p");
+const contentDestin = document.querySelector(".content-destination");
+const contentDestinP = document.querySelector(".content-destination img");
 
-console.log(img);
+console.log(contentDestinP);
 
-// console.log(introH1);
+// 1. pageshow ** not working
+// homeLink.forEach(pageFunction);
 
-// mouseenter
-introH2.addEventListener("mouseenter", event => {
-  introH2.style.fontWeight = "bold";
-  introH2.style.color = "#17A2B8";
+// function pageFunction(item) {
+//   item.addEventListener("pageshow", event => {
+//     alert("Hello World!");
+//   });
+// }
+
+homeLink[2].addEventListener("pageshow", event => {
+  alert("Hello World!");
 });
 
-//keydown
-html.addEventListener("keydown", event =>
-  alert("You pressed the down key, use the wheel/fingers")
-);
-
-// wheel
+// 2. wheel
 html.addEventListener("wheel", event => {
   html.style.cursor = "all-scroll";
 });
 
-// drag / drop ** not working
-img.forEach(dragFunction);
+// 3. 4. mouseenter && leave
+allH2.forEach(hoverFunction);
 
-function dragFunction(item) {
-  item.addEventListener("drag", event => {
-    item.style.borderStyle = "solid";
-  });
+function hoverFunction(item) {
+  item.addEventListener("mouseenter", mouseEnter);
+  item.addEventListener("mouseleave", mouseLeave);
+
+  function mouseEnter() {
+    item.style.color = "#17A2B8";
+    item.style.fontWeight = "bold";
+  }
+
+  function mouseLeave() {
+    item.style.color = "black";
+  }
 }
 
-// load ** not working
-introH1[0].addEventListener("load", event => {
-  introH1[0].innerHTML = "Fun Bus says 'Hello!'";
-});
-
-//focus ** not working
-
-// resize
+// 5. resize
 window.addEventListener("resize", sizeFunction);
 
 function sizeFunction() {
   introH1[0].innerHTML = "Fun Bus is Resizing";
 }
 
-// scroll
+// 6. scroll
 mainNav.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
@@ -61,18 +66,50 @@ function scrollFunction() {
     mainNav.style.backgroundColor = "yellow";
   }
 }
-// select ** not working
-textContent.addEventListener("select", event => {
-  textContent.style.fontSize = "3rem";
-});
 
-// dbclick
+// 7. click
 btn.forEach(myFunction);
 
 function myFunction(item) {
-  item.addEventListener("dblclick", mouseevent => {
+  item.addEventListener("click", mouseevent => {
     item.style.backgroundColor = "yellow";
     item.style.color = "#17A2B8";
     item.style.fontWeight = "bold";
   });
 }
+
+// 8. beforeprint
+window.addEventListener("beforeprint", event => {
+  alert("Setting up printer now");
+});
+
+// preventDefault;
+homeLink[1].addEventListener("click", event => {
+  event.preventDefault();
+});
+
+// stopPropagation 1
+// DIV 1
+textContent.addEventListener("click", event => {
+  alert("Let's Go");
+});
+// P
+textContentP.addEventListener("click", event => {
+  alert("This is P");
+  event.stopPropagation();
+});
+
+// stop Propagation 2
+
+contentDestin.addEventListener("mouseenter", event => {
+  contentDestin.style.border = "5px solid black";
+});
+contentDestinP.addEventListener("mouseenter", event => {
+  contentDestin.style.border = "5px dashed pink";
+  event.stopPropagation();
+});
+
+// load ** not working
+introH1[0].addEventListener("load", event => {
+  introH1[0].innerHTML = "Fun Bus says 'Hello!'";
+});
