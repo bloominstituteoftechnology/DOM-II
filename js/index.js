@@ -68,7 +68,7 @@ paragraph.forEach(para => {
 const wholePage = document.querySelector("html");
 
 wholePage.addEventListener("keypress", (event) => {
-    wholePage.style.backgroundColor = "red";
+    wholePage.style.backgroundColor = "blue";
 })
 
 
@@ -115,10 +115,21 @@ window.addEventListener('online', (event) => {
     console.log("Oh wait. Nevermind the Wifi is good. :)");
 });
 
-//Focus Event
+//Focus Event ?????
 
 imgInBody.forEach( img => {
     img.addEventListener('focus', (event) => {
-        event.imgInBody.style.background = "blue";
+        event.img.style.background = "blue";
     });
+});
+
+
+//Resize Event
+
+const welcome = document.querySelector("header h2");
+
+window.addEventListener("resize", (event) => {
+    welcome.textContent = "What was wrong with the size you started with?";
+    welcome.style.fontSize = "10rem";
+    welcome.style.backgroundColor = "red";
 });
