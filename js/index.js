@@ -58,24 +58,21 @@ paragraph.addEventListener("cut", (event) => {
 
 
 //Key Press Event
-
 const wholePage = document.querySelector("html");
 
 wholePage.addEventListener("keypress", (event) => {
     wholePage.style.backgroundColor = "red";
 })
 
-//Key Up Event
 
+//Key Up Event
 wholePage.addEventListener("keyup", (event) => {
     wholePage.style.backgroundColor = "white";
 })
 
+
 //Wheel Event Image of Map
-
 const mapImg = document.querySelector(".img-content img");
-
-
 
 mapImg.addEventListener("wheel", (event) => {
     event.preventDefault();
@@ -83,4 +80,30 @@ mapImg.addEventListener("wheel", (event) => {
     scale = Math.min(Math.max(.125, scale), 4);
     mapImg.style.transform = "scale(${scale})";
     let scale = 1; 
+});
+
+//Drag / Drag End Event
+
+wholePage.addEventListener("drag", (event) => {
+    wholePage.style.opacity = "0.2";
+})
+
+wholePage.addEventListener("dragend", (event) => {
+    wholePage.style.opacity = "1.0";
+})
+
+//Load Event
+
+window.addEventListener("load", (event) => {
+    console.log("Congrats! The Page Has Loaded!")
+})
+
+//Offline Event / Online Event
+
+window.addEventListener('offline', (event) => {
+    console.log("OH NO! THE WIFI IS DOWN!");
+});
+
+window.addEventListener('online', (event) => {
+    console.log("Oh wait. Nevermind the Wifi is good. :)");
 });
