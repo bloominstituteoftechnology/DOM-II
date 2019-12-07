@@ -15,11 +15,8 @@
 //  Stop the navigation items from refreshing the page by using preventDefault()
 
 
-//navLinks scale
-
+//Logo scale
 const logo = document.querySelector(".logo-heading");
-
-console.log(logo)
 
 logo.addEventListener("mouseenter", (event) => {
     logo.style.transform = "scale(1.5)";
@@ -34,7 +31,6 @@ logo.addEventListener("mouseleave", (event) => {
 
 
 //Main Bus Img change
-
 const busImg = document.getElementsByTagName("img")[0];
 busImg.setAttribute("id", "header-img");
 busImg.addEventListener("mouseenter", (event) => {
@@ -46,11 +42,32 @@ busImg.addEventListener("mouseleave", (event) => {
 
 
 //Text Copy Event
-const textContent = document.querySelector('p');
+const paragraph = document.querySelector('p');
 
-textContent.addEventListener("copy", (event) => {
-    textContent.style.backgroundColor = "#e7c9f2";
-    textContent.style.transition = "all 0.5s"
+paragraph.addEventListener("copy", (event) => {
+    paragraph.style.backgroundColor = "#e7c9f2";
+    paragraph.style.transition = "all 0.5s";
 });
 
+
+//Text Cut Event
+paragraph.addEventListener("cut", (event) => {
+    paragraph.style.border = "dashed 1px gray";
+    paragraph.style.transition = "all 0.5s";
+});
+
+
+//Key Press Event
+
+const wholePage = document.querySelector("html");
+
+wholePage.addEventListener("keypress", (event) => {
+    wholePage.style.backgroundColor = "red";
+})
+
+//Key Up Event
+
+wholePage.addEventListener("keyup", (event) => {
+    wholePage.style.backgroundColor = "white";
+})
 
