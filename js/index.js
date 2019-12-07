@@ -71,3 +71,16 @@ wholePage.addEventListener("keyup", (event) => {
     wholePage.style.backgroundColor = "white";
 })
 
+//Wheel Event Image of Map
+
+const mapImg = document.querySelector(".img-content img");
+
+
+
+mapImg.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    mapImg.style.transform = "scale(${scale})";
+    let scale = 1; 
+});
