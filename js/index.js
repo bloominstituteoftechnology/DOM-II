@@ -79,9 +79,9 @@ wholePage.addEventListener("keyup", (event) => {
 
 
 //Wheel Event Image of Map
-const imgInBody = document.querySelector(".img-content img");
+const imgInBody = document.querySelectorAll(".img-content img");
 
-imgInBody.addEventListener("wheel", (event) => {
+imgInBody[0].addEventListener("wheel", (event) => {
     event.preventDefault();
     scale += event.deltaY * -0.01;
     scale = Math.min(Math.max(.125, scale), 4);
@@ -117,4 +117,8 @@ window.addEventListener('online', (event) => {
 
 //Focus Event
 
-
+imgInBody.forEach( img => {
+    img.addEventListener('focus', (event) => {
+        event.imgInBody.style.background = "blue";
+    });
+});
