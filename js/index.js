@@ -26,7 +26,7 @@ focusNav.addEventListener('focus', (event) => {
 // })
 
 // dblclick
-const imagesClicked = document.querySelectorAll('content-destination');
+const imagesClicked = document.querySelector('.content-destination img');
 imagesClicked.addEventListener('dblclick', () => {
     console.log('image is double clicked.');
 });
