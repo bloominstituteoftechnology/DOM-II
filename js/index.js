@@ -133,3 +133,13 @@ window.addEventListener("resize", (event) => {
     welcome.style.fontSize = "10rem";
     welcome.style.backgroundColor = "red";
 });
+
+//Append and then Focus Event
+
+// const contentPick = document.querySelector('section.content-pick');
+
+// let textInput = document.createElement('input')
+
+// contentPick.prepend(textInput);
+
+// textInput.addEventListener
