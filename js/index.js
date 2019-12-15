@@ -20,34 +20,36 @@ e.target.style.border = '3px solid red';
 })
 
 const letsGo = document.querySelector('.text-content h2');
-letsGo.forEach(letsGo => {
 letsGo.addEventListener('keydown', e => {
 e.target.style.border = '3px solid red';
 })
-})
+
 
 const logoHeading = document.querySelector('.logo-heading');
 logoHeading.addEventListener("drag", e => {
     logoHeading.style.transform = "rotate(180deg)";
 }); //want heading to rotate when I drag not working
 
+
+const allPs = document.querySelectorAll('.go');
 allPs.forEach((p) => {
-    p.addEventListener("mousedown", e => {
-        e.stopPropagation();
-        e.target.style.backgroundColor = "lightblue";
-        e.target.style.color = "hotpink";
+    p.addEventListener("mousedown", () => {
+        //e.stopPropagation();
+        console.log('working')
+        p.target.style.backgroundColor = "lightblue";
+        p.target.style.color = "hotpink";
     })
-    p.addEventListener("mouseup", e => {
-        e.target.style.backgroundColor = "transparent";
-        e.target.style.color = "black";
+    p.addEventListener("mouseup", () => {
+       p.target.style.backgroundColor = "transparent";
+       p.target.style.color = "black";
     })
 })
 
-navLinks.forEach((link) => {
+//navLinks.forEach((link) => {
     link.addEventListener("click", e => {
         e.preventDefault();
     })
-})
+//})
 
 
 
