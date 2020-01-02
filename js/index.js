@@ -27,7 +27,7 @@ textContentColor.forEach((textBox) => {
     });
 
     window.addEventListener('keyup', (event) => {
-        event.target.style.backgroundColor = 'blue';
+        event.target.style.backgroundColor = '';
         console.log('keyup');
     });
 });
@@ -52,11 +52,11 @@ paragraphs.forEach((para) => {
 
 paragraphs.forEach((para) => {
     para.addEventListener('mousedown', function(event) {
-        event.target.style.color = 'green';
+        event.target.style.color = 'navy';
     });
 
     para.addEventListener('mouseup', function(event) {
-        event.target.style.color = 'dodgerblue';
+        event.target.style.color = 'red';
     });
 });
 
