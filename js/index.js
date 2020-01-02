@@ -22,12 +22,12 @@ const textContentColor = document.querySelectorAll('.text-content');
 
 textContentColor.forEach((textBox) => {
     window.addEventListener('keydown', (event) => {
-        event.target.style.backgroundColor = 'yellow';
+        event.target.style.backgroundColor = 'red';
         console.log('keydown');
     });
 
     window.addEventListener('keyup', (event) => {
-        event.target.style.backgroundColor = '';
+        event.target.style.backgroundColor = 'blue';
         console.log('keyup');
     });
 });
