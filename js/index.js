@@ -91,6 +91,15 @@ document.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData("text", event.target.id);
 });
 
+<button id="myBtn">Try it</button>
+
+
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+  alert ("Hello World!");
+}
+
 
 
 document.addEventListener('drop', (event) => {
@@ -105,3 +114,26 @@ document.addEventListener('drop', (event) => {
 document.addEventListener("dragover", function(event) {
     event.preventDefault();
   }, false);
+
+//   <html>
+//   <body>
+  
+//   <h2>JavaScript addEventListener()</h2>
+  
+//   <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+  
+//   <button id="myBtn">Try it</button>
+  
+//   <p id="demo"></p>
+  
+//   <script>
+//   document.getElementById("myBtn").addEventListener("click", displayDate);
+  
+//   function displayDate() {
+//     document.getElementById("demo").innerHTML = Date();
+//   }
+//   </script>
+  
+//   </body>
+//   </html> 
+  
