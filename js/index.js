@@ -96,6 +96,15 @@ window.addEventListener('scroll', () => {
 	console.log(scrollablepixels)
 
 	if (Math.ceil(scrolled) === scrollablepixels) {
+
+		//Math.ciel rounds up the scrolled value to the next decimal point 
 		alert('you have reached bottom');
 	}
+})
+
+const doubleclick = document.querySelector('h2');
+
+doubleclick.addEventListener('dblclick', (event) => {
+	event.target.style.backgroundColor = "hotpink";
+
 })
