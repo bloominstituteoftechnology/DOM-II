@@ -49,3 +49,24 @@ dragevent.addEventListener('drag', (event) => {
 
 
 })
+
+
+
+const dropevent = document.querySelector('.nav');
+
+//dropping an element triggers this event
+
+dropevent.addEventListener('drop', (event) => {
+	console.log("i was dropped");
+	event.target.style.border = "2px blue solid";
+
+
+});
+
+
+
+window.addEventListener('load', (event) => {
+	alert("loaded");
+	
+})
+
