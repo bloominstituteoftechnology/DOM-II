@@ -17,3 +17,8 @@ title.addEventListener('mouseover', (event) => {
 });
 
  
+const anykey = document.querySelector('body');
+
+anykey.addEventListener('keydown', (event) => {
+	alert('KeyDown!');
+})
