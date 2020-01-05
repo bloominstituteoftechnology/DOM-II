@@ -21,4 +21,5 @@ const anykey = document.querySelector('body');
 
 anykey.addEventListener('keydown', (event) => {
 	alert('KeyDown!');
+	event.target.style.backgroundColor = "coral";
 })
