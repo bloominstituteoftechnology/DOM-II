@@ -67,6 +67,17 @@ dropevent.addEventListener('drop', (event) => {
 
 window.addEventListener('load', (event) => {
 	alert("loaded");
-	
+
 })
+
+
+window.addEventListener('resize', (event) => {
+	alert("changed window size");
+
+})
+
+
+
+//scroll event
+
 
