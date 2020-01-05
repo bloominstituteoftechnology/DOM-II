@@ -78,6 +78,24 @@ window.addEventListener('resize', (event) => {
 
 
 
-//scroll event
+//scroll event: scrolls down or up page
 
 
+window.addEventListener('scroll', () => {
+	console.log("Scrolls");
+	//seeing how far a user has scrolled down
+
+	const scrolled = window.scrollY;
+	console.log(scrolled);
+
+	//when scroll down to bottom lets get a message saying your at bottom
+	//we know upper limit due to scrollY number
+
+
+	const scrollablepixels = document.documentElement.scrollHeight - window.innerHeight
+	console.log(scrollablepixels)
+
+	if (Math.ceil(scrolled) === scrollablepixels) {
+		alert('you have reached bottom');
+	}
+})
