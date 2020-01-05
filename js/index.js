@@ -2,11 +2,11 @@
 
 //mouseover
 
-const title = document.getElementsByTagName('title');
+const button = document.querySelector('img');
 
-title.addEventListenter('mouseover', event => {
-	console.log('Fun Bus');
-	console.log(event);
+
+button.addEventListener('click', (event) => {
+	event.target.style.transform = "scale(1.2)"
 
 });
 
