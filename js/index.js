@@ -36,6 +36,16 @@ wheelevent.addEventListener('wheel', (event) => {
 	event.target.style.fontSize = "25px";
 	event.target.style.backgroundColor = "lightgreen";
 
+})
+
+
+const dragevent = document.querySelector('img');
+
+//dragging an element triggers this event
+
+dragevent.addEventListener('drag', (event) => {
+	console.log("i was dragged");
+	event.target.style.border = "2px red solid";
 
 
 })
