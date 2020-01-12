@@ -18,15 +18,23 @@ title.addEventListener('mouseover', (event) => {
 });
 
 
-const anothermouse = document.querySelector('.nav-container');
+const anothermouse = document.querySelector('.main-navigation');
 
 anothermouse.addEventListener('mouseover', (event) => {
 	event.target.style.backgroundColor = "yellow";
+	event.stopPropagation();
 	
 });
 
 
+const preventNav = document.querySelector('.nav');
 
+preventNav.addEventListener('click', (event) => {
+	event.preventDefault();
+	alert("prevented default");
+	
+	
+});
 
 
  
