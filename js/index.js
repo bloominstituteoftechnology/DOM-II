@@ -14,7 +14,20 @@ const title = document.querySelector('.logo-heading');
 
 title.addEventListener('mouseover', (event) => {
 	event.target.style.color = "blue";
+	
 });
+
+
+const anothermouse = document.querySelector('.nav-container');
+
+anothermouse.addEventListener('mouseover', (event) => {
+	event.target.style.backgroundColor = "yellow";
+	
+});
+
+
+
+
 
  
 const anykey = document.querySelector('body');
