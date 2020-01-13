@@ -137,4 +137,17 @@ doubleclick.addEventListener('dblclick', (event) => {
 
 })
 
+
+
+const anotherdouble = document.querySelector('h2');
+
+anotherdouble.addEventListener('mouseover', (event) => {
+	
+	event.target.style = "transform: scale(2,2)";
+	
+
+	
+
+})
+
 // gsap.to("h1.logo-heading", {duration: 3, rotation: 360, scale: 0.5});
