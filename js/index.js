@@ -18,11 +18,14 @@ title.addEventListener('mouseover', (event) => {
 });
 
 
-const anothermouse = document.querySelector('.main-navigation');
+const anothermouse = document.querySelector('.text-content');
 
 anothermouse.addEventListener('mouseover', (event) => {
-	event.target.style.backgroundColor = "yellow";
+	alert("stopped")
+	event.target.style.border = "1px red solid";
 	event.stopPropagation();
+	
+	
 	
 });
 
@@ -127,5 +130,11 @@ const doubleclick = document.querySelector('h2');
 
 doubleclick.addEventListener('dblclick', (event) => {
 	event.target.style.backgroundColor = "hotpink";
+	event.target.style = "translateX(100px)";
+	
+
+	
 
 })
+
+// gsap.to("h1.logo-heading", {duration: 3, rotation: 360, scale: 0.5});
