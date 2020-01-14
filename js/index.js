@@ -46,3 +46,7 @@ pic[2].addEventListener("mouseup", () => {
 pic[3].addEventListener("mousemove", () => {
     pic[3].style.webkitTransform = "rotate(65deg)"
 });
+
+h2[2].addEventListener("mouseenter", () => {
+    h2[2].style.color = "blue"
+});
