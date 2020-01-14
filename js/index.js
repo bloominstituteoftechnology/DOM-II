@@ -30,11 +30,10 @@ const images = document.querySelector('.intro img');
      origImg.src = "img/fun-bus.jpg"
  })
 
- //6. changes text on scroll NOT WORKING
-//  const scrollText = document.querySelector('.text-content p');
-//  scrollText.addEventListener('scroll', () => {
-// scrollText.textContent = 'Wow, this is so cool!'
-//  })
+ //6. changes nav background on scroll
+ const redact = document.querySelector('nav');
+ window.addEventListener('scroll', () => {
+     redact.style.backgroundColor = 'grey';})
 
 
  //7. changes color of buttons
@@ -61,3 +60,10 @@ boat.addEventListener("mouseleave", function() {
   boat.style.transform = "scale(1)"
   boat.style.transition = "transform 0.3s"
 }) 
+
+//10. changes button color on mouseup
+const buttons = document.querySelectorAll(".btn").forEach(stuff => {
+    stuff.addEventListener("mouseup", () => {
+    stuff.style.backgroundColor = "orange"
+    })
+     })
