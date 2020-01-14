@@ -30,6 +30,7 @@ busAnimate.addEventListener('mouseleave', () => {
     busAnimate.style.transform = 'scale(.5)'
   }) 
 
+
   //dblclick
   document.querySelectorAll('h2').forEach(e => {
       e.addEventListener('dblclick', () => {
@@ -53,12 +54,17 @@ window.addEventListener('resize', () => {
 
 
 
-
-
-
-
+//keydown
 window.addEventListener('keydown', (e) => {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio) return;
     audio.play();
 });
+
+
+
+//scroll
+const scrolling = document.querySelector('body');
+window.addEventListener('scroll', () => {
+    scrolling.style.backgroundColor = 'grey'
+})
