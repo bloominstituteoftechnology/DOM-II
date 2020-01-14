@@ -1,26 +1,12 @@
 // Your code goes here
-//bg color
+//1 bg color
 const bgChange = document.querySelector('.main-navigation')
 bgChange.addEventListener('click', () => {
     bgChange.style.backgroundColor = 'cyan'
 })
 
 
-// resize photo
-// const drive = document.querySelector('.img-content');
-// drive.addEventListener('mouseenter', () => { 
-//   gsap.to('.img-content', {
-//   duration: 1,
-//   filter: "none",
-//   x: -20,
-//   y: -10,
-//   // rotate: 360,
-//   yoyo: true,
-//   repeat: 1
-// })
-  
-// })
-
+//2 resize photo
 const busAnimate = document.querySelector('img')
 busAnimate.addEventListener('mouseenter', () => {
     busAnimate.style.transform = 'scale(1.5)';
@@ -31,7 +17,7 @@ busAnimate.addEventListener('mouseleave', () => {
   }) 
 
 
-  //font color
+  //3 font color
   document.querySelectorAll('h2').forEach(e => {
       e.addEventListener('dblclick', () => {
           e.style.color = 'blue';
@@ -46,7 +32,7 @@ busAnimate.addEventListener('mouseleave', () => {
 //     })
 // })
 
-//rotate photo
+//4 rotate photo
 const sizing = document.querySelector('.img-fluid');
 window.addEventListener('resize', () => {
     sizing.style.transform = 'rotate(90deg)'
@@ -54,7 +40,7 @@ window.addEventListener('resize', () => {
 
 
 
-//audio
+//5 audio
 window.addEventListener('keydown', (e) => {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio) return;
@@ -63,13 +49,13 @@ window.addEventListener('keydown', (e) => {
 
 
 
-//scroll
+//6 scroll
 const scrolling = document.querySelector('body');
 window.addEventListener('scroll', () => {
     scrolling.style.backgroundColor = 'grey'
 })
 
-//skew
+//7 skew
 document.querySelectorAll('.btn').forEach(e => {
     e.addEventListener('mousedown', () => {
         e.style.transform = 'skew(40deg, -10deg)';
@@ -77,15 +63,25 @@ document.querySelectorAll('.btn').forEach(e => {
 })
 
 
-//translate
+//8 translate
 const translating = document.querySelector('.img-water');
 window.addEventListener('drag', () => {
     translating.style.transform = 'translateX(75px)';
     translating.style.transition = 'transform 2s'
 })
 
-//2 events during dragend
+//9 wheel
+const dogsRule = document.querySelector(".img-coffee");
 
+window.addEventListener("wheel", () => {
+  dogsRule.src = "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+});
+
+//10 select
+const selecting = document.querySelector('.intro')
+selecting.addEventListener('contextmenu', () => {
+    selecting.style.color = 'red'
+})
 
 
 
@@ -93,7 +89,7 @@ window.addEventListener('drag', () => {
 //stop refresh
 const stopLink = document.querySelector(".nav-link");
 
-stopLink.addEventListener("click", (event) => {
-  event.preventDefault();
+stopLink.addEventListener("click", (e) => {
+  e.preventDefault();
   
 })
