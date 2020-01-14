@@ -24,12 +24,29 @@ anchors.forEach(function(item) {
     item.style.transform = "scale(1.5)";
   });
 });
+
 anchors.forEach(function(item) {
   item.addEventListener("mousedown", e => {
     item.style.transform = "scale(1)";
   });
 });
 
+const fontContainer = document.querySelectorAll("body p");
+window.addEventListener("resize", () => {
+  fontContainer.style.color = "green";
+});
 
+// function focused() {
+// document.querySelector(".btn").focus();
+// }
 
+// const buttonContainer = document.querySelectorAll(".home .content-pick .destination .btn");
+// buttonContainer.addEventListener("focus", function() => {
+    
+// })
+
+const scrollProperty = document.querySelector(".footer p");
+window.addEventListener("scroll", () => {
+    scrollProperty.style.color = "red";
+})
 
