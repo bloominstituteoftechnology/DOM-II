@@ -68,3 +68,18 @@ const scrolling = document.querySelector('body');
 window.addEventListener('scroll', () => {
     scrolling.style.backgroundColor = 'grey'
 })
+
+//skew
+document.querySelectorAll('.btn').forEach(e => {
+    e.addEventListener('mousedown', () => {
+        e.style.transform = 'skew(40deg, -10deg)';
+    })
+})
+
+
+//translate
+const translating = document.querySelector('.img-water');
+window.addEventListener('drag', () => {
+    translating.style.transform = 'translateX(75px)';
+    translating.style.transition = 'transform 2s'
+})
