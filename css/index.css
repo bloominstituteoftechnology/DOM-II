@@ -210,7 +210,7 @@ img {
     justify-content: space-around;
   }
 }
-.main-navigation .nav-container .nav a {
+.main-navigation .nav-container a {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
