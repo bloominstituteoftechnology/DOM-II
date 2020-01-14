@@ -37,10 +37,16 @@ busAnimate.addEventListener('mouseleave', () => {
       })
   })
 
-//   
-const colorful = document.querySelector('.img-content');
+  
+const colorful = document.querySelector('.img-fluid');
 colorful.addEventListener('mouseenter', () => {
-    gsap.to('.img-content', {
+    gsap.to('.img-fluid', {
         filter: "none",
     })
+})
+
+//resize
+const sizing = document.querySelector('.img-fluid');
+window.addEventListener('resize', () => {
+    sizing.style.transform = 'rotate(90deg)'
 })
