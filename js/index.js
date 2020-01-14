@@ -25,13 +25,6 @@ busAnimate.addEventListener('mouseleave', () => {
   })
 
   
-// const colorful = document.querySelector('.img-fluid');
-// colorful.addEventListener('mouseenter', () => {
-//     gsap.to('.img-fluid', {
-//         filter: "none",
-//     })
-// })
-
 //4 rotate photo
 const sizing = document.querySelector('.img-fluid');
 window.addEventListener('resize', () => {
@@ -49,7 +42,7 @@ window.addEventListener('keydown', (e) => {
 
 
 
-//6 scroll
+// 6 scroll
 const scrolling = document.querySelector('body');
 window.addEventListener('scroll', () => {
     scrolling.style.backgroundColor = 'grey'
@@ -83,6 +76,21 @@ selecting.addEventListener('contextmenu', () => {
     selecting.style.color = 'red'
 })
 
+
+//nesting with stop propagate
+const cardGroup = document.querySelector(".content-section");
+
+cardGroup.addEventListener("click", () => {
+  cardGroup.style.backgroundColor = "black";
+})
+
+const card = document.querySelector(".text-content");
+
+card.addEventListener("click", (event) => {
+
+  card.style.color = "grey";
+   event.stopPropagation();
+})
 
 
 

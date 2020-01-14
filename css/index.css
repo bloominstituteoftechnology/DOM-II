@@ -256,7 +256,6 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
-  filter: grayscale(1);
 }
 @media (max-width: 500px) {
   .home .content-section .img-content {
