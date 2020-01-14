@@ -9,7 +9,7 @@ button2.addEventListener('mouseover', function(event){
   event.target.style.background = 'black';
 event.stopPropagation();
 });
-
+//click event listener
 const divClick = document.querySelector('#divBorder');
 
 divClick.addEventListener('click', function(event){
@@ -42,7 +42,7 @@ img4.addEventListener('mouseup', function(event){
 const p = document.querySelector('p');
 
 p.addEventListener('copy', function(event){
-  alert('Why are you copying my paragraph!?')
+  alert('Why are you copying my paragraph!?');
 });
 //contextmenu
 const img2 = document.querySelector('#img2');
@@ -65,3 +65,22 @@ window.addEventListener("load", function(event) {
     setTimeout(() => (alert("Are you ready? Because this webpage is.."), 0));
 })
 })
+//resize event listener
+window.addEventListener("resize", function(){
+  document.getElementById("demo").innerHTML = Math.random();
+});
+//keydown event listener
+const input = document.querySelector('input');
+const log = document.getElementById('log');
+
+input.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  log.textContent += ` ${e.code}`;
+}
+//focus event listeners
+const password = document.querySelector('input[type="password"]');
+
+password.addEventListener('focus', (event) => {
+  event.target.style.background = 'pink';    
+});
