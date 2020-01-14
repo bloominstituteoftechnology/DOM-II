@@ -40,15 +40,35 @@ let navColorBackground = document.querySelector('.main-navigation')
         navColorBackground.style.backgroundColor = '#32CD32';
     })
 
-let flipButton = document.querySelectorAll('btn')
-    .forEach(flipButton => {
-        flipButton.addEventListener('click', () => {
-            flipButton.style.transform = 'rotate(180deg)'
-        })
+let flipButtonFirst = document.querySelectorAll('.btn')
+    flipButtonFirst[0].addEventListener('click', (event) => {
+        flipButtonFirst[0].style.transform = 'rotate(180deg)'
+        event.stopPropagation();
+    } )
+
+let flipButtonSecond = document.querySelectorAll('.btn')
+    flipButtonSecond[1].addEventListener('click', (event) => {
+        flipButtonSecond[1].style.transform = 'rotate(180deg)'
+        event.stopPropagation();
+    } )
+
+let flipButtonThird = document.querySelectorAll('.btn')
+    flipButtonThird[2].addEventListener('click', (event) => {
+        flipButtonThird[2].style.transform = 'rotate(180deg)'
+        event.stopPropagation();
+    } )
+
+let enlargeText = document.querySelectorAll('p')
+    enlargeText[3].addEventListener('mouseenter' , () => {
+        enlargeText[3].style.fontSize = '4rem';
     })
 
-    console.log(flipButton);
-        
+let stopNav = document.querySelector(".nav-link");
+    stopNav.addEventListener("click", (event) => {
+        event.preventDefault();
+})
+
+      
 
     
     
