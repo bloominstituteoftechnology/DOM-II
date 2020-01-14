@@ -61,9 +61,14 @@ const bootuns = document.querySelectorAll(".btn").forEach(thing => {
 // 10.) WELCOME: Scroll
 const redact = document.querySelector('p');
 window.addEventListener('scroll', () => {
-    redact.style.backgroundColor = 'black';
+redact.style.backgroundColor = 'black';
+    
 });
 
+const no = document.querySelector('a')
+no.addEventListener('click', (dont) =>{
+dont.preventDefault()
+} )
 
 
 
