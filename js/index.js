@@ -1,12 +1,12 @@
 // Your code goes here
-//mouse click
+//bg color
 const bgChange = document.querySelector('.main-navigation')
 bgChange.addEventListener('click', () => {
     bgChange.style.backgroundColor = 'cyan'
 })
 
 
-// mouse enter
+// resize photo
 // const drive = document.querySelector('.img-content');
 // drive.addEventListener('mouseenter', () => { 
 //   gsap.to('.img-content', {
@@ -31,7 +31,7 @@ busAnimate.addEventListener('mouseleave', () => {
   }) 
 
 
-  //dblclick
+  //font color
   document.querySelectorAll('h2').forEach(e => {
       e.addEventListener('dblclick', () => {
           e.style.color = 'blue';
@@ -46,7 +46,7 @@ busAnimate.addEventListener('mouseleave', () => {
 //     })
 // })
 
-//resize
+//rotate photo
 const sizing = document.querySelector('.img-fluid');
 window.addEventListener('resize', () => {
     sizing.style.transform = 'rotate(90deg)'
@@ -54,7 +54,7 @@ window.addEventListener('resize', () => {
 
 
 
-//keydown
+//audio
 window.addEventListener('keydown', (e) => {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio) return;
@@ -82,4 +82,18 @@ const translating = document.querySelector('.img-water');
 window.addEventListener('drag', () => {
     translating.style.transform = 'translateX(75px)';
     translating.style.transition = 'transform 2s'
+})
+
+//2 events during dragend
+
+
+
+
+
+//stop refresh
+const stopLink = document.querySelector(".nav-link");
+
+stopLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  
 })
