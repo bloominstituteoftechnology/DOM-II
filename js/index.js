@@ -38,15 +38,27 @@ busAnimate.addEventListener('mouseleave', () => {
   })
 
   
-const colorful = document.querySelector('.img-fluid');
-colorful.addEventListener('mouseenter', () => {
-    gsap.to('.img-fluid', {
-        filter: "none",
-    })
-})
+// const colorful = document.querySelector('.img-fluid');
+// colorful.addEventListener('mouseenter', () => {
+//     gsap.to('.img-fluid', {
+//         filter: "none",
+//     })
+// })
 
 //resize
 const sizing = document.querySelector('.img-fluid');
 window.addEventListener('resize', () => {
     sizing.style.transform = 'rotate(90deg)'
 })
+
+
+
+
+
+
+
+window.addEventListener('keydown', (e) => {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if(!audio) return;
+    audio.play();
+});
