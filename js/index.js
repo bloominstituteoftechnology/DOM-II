@@ -10,8 +10,11 @@ function mouseUp() {
 
 const schoolBus = document.querySelector(".img-content");
 schoolBus.addEventListener("mouseenter", function() {
-  schoolBus.style.transform = "scale(1.2)";
-});
+  schoolBus.style.transform = "scale(1.5)";
+})
+schoolBus.addEventListener("mouseleave", function() {
+    schoolBusS.style.transform = "scale(1)"
+  });
 
 const titleH1 = document.querySelector("h1");
 titleH1.addEventListener("click", (event) => {
