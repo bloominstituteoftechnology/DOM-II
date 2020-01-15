@@ -2,9 +2,6 @@
 
 // * [ ] `mouseover`
 const navigation = document.querySelectorAll("nav a");
-navigation[0].addEventListener('click', (event)=>{
-    event.preventDefault();
-})
 navigation.forEach(el => {
     el.addEventListener('mouseover', () => {
         el.style.color = 'green';
@@ -13,8 +10,9 @@ navigation.forEach(el => {
 
 // * [ ] `mouseout`
 navigation.forEach(el => {
-    el.addEventListener('mouseout', () => {
+    el.addEventListener('mouseout', (event) => {
         el.style.color = 'black';
+        event.preventDefault();
     })
 })
 
@@ -26,10 +24,10 @@ document.addEventListener('keydown', () => {
 
 // * [ ] `keyup`
 const headerColor = document.querySelector('.main-navigation');
-document.addEventListener('keyup', (event) => {
-    headerColor.style.background ='#ffffff';
-    document.querySelector('body').style.background = '#ffffff';
-})
+// document.addEventListener('keyup', (event) => {
+//     headerColor.style.background ='#ffffff';
+//     document.querySelector('body').style.background = '#ffffff';
+// })
 
 // * [ ] `wheel`
 const image = document.querySelector('.img-content');
@@ -120,7 +118,7 @@ content2[2].addEventListener('mouseenter', (event) => {
     event.stopPropagation();
 })
 
-    // * [ ] `mouseout`
+// * [ ] `mouseout`
 
 content2[0].addEventListener('mouseout', (event) => {
     content2[0].style.transform = "scale(1)";
