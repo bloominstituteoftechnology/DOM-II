@@ -50,3 +50,9 @@ pic[3].addEventListener("mousemove", () => {
 h2[2].addEventListener("mouseenter", () => {
     h2[2].style.color = "blue"
 });
+
+const nav = document.querySelectorAll('a');
+
+nav.addEventListener("click", () => {
+    nav.preventDefault()
+});
