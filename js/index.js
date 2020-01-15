@@ -1,12 +1,20 @@
 // Your code goes here
 
+//click event listener
 let myTest = document.querySelector('.logo-heading');
 myTest.addEventListener('click', () => {
-myTest.style.color ='red';
+    myTest.textContent = 'Creepy Bus';
+    myTest.style.color ='red';
 });
 
+//mouse over event listener
+let headerImg = document.querySelector('.intro img');
+headerImg.addEventListener('mouseenter', () => {
+    // headerImg.style.borderRadius = '50%';
+    headerImg.src = './img/evil-tele.jpg';
+});
 
-let headerImg = document.querySelector('.intro header');
-headerImg.addEventListener('mouseover', () => {
-    headerImg.
-})
+headerImg.addEventListener('mouseleave', () => {
+    // headerImg.style.borderRadius = '50%';
+    headerImg.src = './img/fun-bus.jpg';
+});
