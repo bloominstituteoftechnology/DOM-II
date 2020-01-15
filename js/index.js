@@ -38,3 +38,9 @@ creepyImg2.addEventListener('mouseleave', () => {
 window.addEventListener("resize", () => {
     document.querySelector('html').style.backgroundColor = 'red';
   });
+
+  let cutEvent = document.querySelector('.intro p');
+  cutEvent.addEventListener('cut', () => {
+    cutEvent.style.fontSize ='24px';
+    cutEvent.textContent = 'Evil Laugh';
+  });
