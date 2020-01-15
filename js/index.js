@@ -57,6 +57,24 @@ card.forEach(function(card){
   });
 })
 
+// Mouse Out
+logoColor.addEventListener("mouseout", () => {
+    logoColor.style.color = "hotpink";
+  });
+
+//   Scale *Logo*
+const logo = document.querySelector(".logo-heading");
+
+logo.addEventListener("mouseenter", (event) => {
+    logo.style.transform = "scale(1.5)";
+    logo.style.transition = "all 0.3s";
+})
+
+logo.addEventListener("mouseleave", (event) => {
+    logo.style.transform = "scale(1.0)";
+    logo.style.transition = "all 0.3s";
+})
+
 
 // Prevent Event Propagation
 paragraph = document.querySelector('p');
