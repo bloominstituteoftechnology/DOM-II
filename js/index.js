@@ -99,7 +99,6 @@ function btnClick2() {
 console.log('btn 2 clicked')
 }
 
-
 let btnId3 = document.getElementById('btn3').addEventListener
 ('click', btnClick3)
 function btnClick3() {
@@ -119,7 +118,6 @@ let inputEmail = document.createElement('input')
 let inputPhone = document.createElement('input')
 let option1 = document.createElement('option')
 let option2 = document.createElement('option')
-let signBtn = document.createElement('button')
 let signUpH = document.createElement('h2')
 
 boxCta.setAttribute('class', 'boxClass')
@@ -168,19 +166,31 @@ option2.textContent = ('Email')
 option1.setAttribute('value', 'Phone')
 option2.setAttribute('value', 'Email')
 
-signBtn.textContent = ('Submit')
-signBtn.style.fontSize = ('17px')
-signBtn.style.width = ('150px')
-signBtn.style.height = ('42px')
-signBtn.style.marginLeft =('48px')
-signBtn.style.marginTop =('48px')
+let submitBtn = document.createElement('button')
+
+let formSubmitBtn = (e) => {
+
+}
+
+
+
+
+
+
+submitBtn.textContent = ('Submit')
+submitBtn.style.fontSize = ('17px')
+submitBtn.style.width = ('150px')
+submitBtn.style.height = ('42px')
+submitBtn.style.marginLeft =('48px')
+submitBtn.style.marginTop =('48px')
+
+submitBtn.addEventListener('submit', runEvent)
+submitBtn.addEventListener('mouseup',submit)
 
 //change input submit
 selectBox.addEventListener('change', runEvent)
 selectBox.addEventListener('input', runEvent)
 
-signBtn.addEventListener('submit', runEvent)
-signBtn.addEventListener('mouseup',submit)
 
 function runEvent(e) {
     console.log(e.target.value)
@@ -198,41 +208,38 @@ function submit() {
 
 let form = document.querySelector('form')
 
-/**REPLACES CODE ABOVE */
-let buttonEvent = (e) => {
+
+let fieldEvent = (e) => {
+    let inputClick = (e) => {
+        e.target.focus()
+        e.target.value = ('')
+    }
+    let inputOut = (e) => {
+        e.target.select()
+    }
+    setTimeout(() => {
+        miniBus.style.position = ('absolute')
+     }, 3000)
+    let inputLog = (e) => {
+        window.setTimeout(() => {
+            value = event.target.value;
+        }, 1)
+        console.log(e.target.event)
+    }
+    let enterKey = (e) => {
+        let keyEnter = e.keyCode === 13
+        e.preventDefault();
+        console.log(keyEnter)
+    }
     e.addEventListener('mousedown', inputClick)
     e.addEventListener('mouseout', inputOut)
     e.addEventListener('input', inputLog)
     e.addEventListener('keydown', enterKey)
 }
 
-buttonEvent(inputName)
-buttonEvent(inputEmail)
-buttonEvent(inputPhone)
-
-/** focus select blur input  */
-function inputClick(e) {
-    e.target.focus()
-    e.target.value = ('')
-}
-
-function inputOut(e) {
-    e.target.select()
-}
-
-function inputLog(e) {
-window.setTimeout(function() {
-    value = event.target.value;
-}, 1);
-    console.log(e.target.value)
-}
-
-function enterKey (e) {
-let enterKey = e.keyCode === 13
-e.preventDefault();
-console.log(enterKey)
-}
-
+fieldEvent(inputName)
+fieldEvent(inputEmail)
+fieldEvent(inputPhone)
 
 script.append(winLoadFunc())
 // body tag
