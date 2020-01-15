@@ -26,7 +26,7 @@ nav.addEventListener('mouseenter', () => {
 document.querySelectorAll('nav a').forEach(el => {
     el.addEventListener('mouseenter', () => {
         el.style.backgroundColor = "pink";
-        el.style.color = "blue";
+        el.style.color = "white";
     })
     el.addEventListener('mouseleave', () => {
         el.style.backgroundColor = "white";
