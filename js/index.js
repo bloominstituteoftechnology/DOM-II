@@ -89,3 +89,10 @@ stopPropChild.addEventListener('click', () => {
 stopPropChild.addEventListener('click', (event) => {
     event.stopPropagation();
 })
+
+// Prevent default
+
+let preventDefault = document.querySelector('.nav a');
+preventDefault.addEventListener('click', (event) => {
+    event.preventDefault()
+})
