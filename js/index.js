@@ -39,8 +39,28 @@ window.addEventListener("resize", () => {
     document.querySelector('html').style.backgroundColor = 'red';
   });
 
+  
+
+  //audio attempt
+//   let cutEventAudio = document.createElement('Audio');
+// cutEventAudio.createAttribute('controls');
+
+//   let EventAudioSource = document.createElement('Source');  
+//   EventAudioSource.src = './audio/Evil-laugh-sound.mp3';
+//   EventAudioSource.type ="audio/mpeg";
+
+//   console.log(cutEventAudio);
+//   console.log(EventAudioSource);
+
+//cut event
   let cutEvent = document.querySelector('.intro p');
+  let eventAudio = document.querySelector('audio');
+
   cutEvent.addEventListener('cut', () => {
     cutEvent.style.fontSize ='24px';
     cutEvent.textContent = 'Evil Laugh';
+    eventAudio.style.display = 'block';
+     
+
+    // document.querySelector('.intro').appendChild(cutEventAudio).appendChild(EventAudioSource);
   });
