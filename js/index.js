@@ -233,9 +233,6 @@ function submit(e) {
 
 }
 
-
-
-
 script.append(winLoadFunc())
 // body tag
 body.setAttribute('onload', 'winLoadFunc()')
