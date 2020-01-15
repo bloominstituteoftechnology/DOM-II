@@ -21,24 +21,32 @@ footer.addEventListener("wheel", function(e) {
   e.target.style.border = "2px solid green";
 });
 
-// Drag / Drop
+// Drag Start
+const draggedImg = document.querySelectorAll("img");
+
+draggedImg.forEach(img => {
+  img.addEventListener("dragstart", () => {
+    img.style.opacity = "50%";
+  });
+});
+
+// Drag End
+draggedImg.forEach(img => {
+    img.addEventListener("dragend", () => {
+      img.style.opacity = "100%";
+    });
+  });
 
 // Load
 window.addEventListener("load", () => {
     alert("Welcome to the FUN BUS!");
   });
 
-// Focus
-
-// Resize
-
 // Scroll
 const navBar = document.querySelector(".main-navigation");
 navBar.addEventListener("scroll", () => {
   navBar.style.position = "fixed";
 });
-
-// Select
 
 // Double Click
 const card = document.querySelectorAll('h4');
@@ -48,6 +56,7 @@ card.forEach(function(card){
     card.classList.toggle(card.style.color = "orange");
   });
 })
+
 
 // Prevent Event Propagation
 paragraph = document.querySelector('p');
