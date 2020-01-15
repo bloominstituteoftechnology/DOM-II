@@ -7,7 +7,7 @@ myTest.addEventListener('click', () => {
     myTest.style.color ='red';
 });
 
-//mouse enter event listener
+//mouse scroll
 let headerImg = document.querySelector('.intro img');
 window.addEventListener('scroll', () => {
     // headerImg.style.borderRadius = '50%';
@@ -22,6 +22,7 @@ creepyImg1.addEventListener('dblclick', () => {
     creepyImg1.src = './img/scary1.jpg';
 });
 
+//mouseenter
 let creepyImg2 = document.querySelector('.inverse-content div img');
 creepyImg2.addEventListener("mouseenter", () => {
     creepyImg2.src = './img/scary2.jpg';
@@ -53,8 +54,8 @@ window.addEventListener("resize", () => {
 //   console.log(EventAudioSource);
 
 //cut event
-  let cutEvent = document.querySelector('.intro p');
-  let eventAudio = document.querySelector('audio');
+let cutEvent = document.querySelector('.intro p');
+let eventAudio = document.querySelector('audio');
 
   cutEvent.addEventListener('cut', () => {
     cutEvent.style.fontSize ='24px';
@@ -66,15 +67,40 @@ window.addEventListener("resize", () => {
 
   //select event listener
 
-  let selectEvent = document.querySelector('p');
-  selectEvent.addEventListener('onselect', () => {
-      selectEvent.style.color = 'red';
-  });
+//   let selectEvent = document.querySelector('p');
+//   selectEvent.addEventListener('onselect', () => {
+//       selectEvent.style.color = 'red';
+//   });
 
 
   //copy event
 
-  let copyEvent = document.querySelector('.content-section h2');
-  copyEvent.addEventListener('copy', () => {
-      copyEvent.style.display = 'none';
+  let copyEvent = document.querySelectorAll('h2');
+
+  for (let i = 0; i <= copyEvent.length; i++) {
+  copyEvent[i].addEventListener('copy', () => {
+      copyEvent[i].style.display = 'none';      
   })
+ }
+
+  //mouseover
+  let mouseOver = document.querySelector('header');
+  mouseOver.addEventListener('mouseover', () => {
+      mouseOver.style.backgroundColor = 'gray';
+  });
+
+  //mousewheel
+  let mouseWheel = document.querySelector('.content-destination img');
+  mouseWheel.addEventListener('wheel', () => {
+    mouseWheel.style.borderRadius = '50%';
+  });
+
+
+//stops links from refreshing page
+let stopRefresh = document.querySelectorAll('.nav-link');
+
+for (let i = 0; i <= stopRefresh.length; i++) {
+  stopRefresh[i].addEventListener('click', (event) => {
+      event.preventDefault();
+  })
+}
