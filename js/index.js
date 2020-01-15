@@ -10,18 +10,15 @@ logoHeader.style.backgroundColor = ('white')
 logoHeader.style.paddingTop = ('15px')
 logoHeader.style.paddingBottom = ('15px')
 
-logoHeader.addEventListener('dblclick', dblClick)
 
 function busAlert(){
     alert('Bye Bus')
 }
 
-
 //LOAD FUNCTION
 function winLoadFunc(){
     alert('Thank you for visiting our site')
 }
-
 
 function dblClick (){
    miniBus.style.position = ('relative')   
@@ -30,8 +27,7 @@ function dblClick (){
        
     }, 3000)
 }
-
-
+logoHeader.addEventListener('dblclick', dblClick)
 
 let loader = body.addEventListener('load', winLoadFunc)
 
@@ -43,7 +39,7 @@ for(let i = 0; i < navLink.length; i++) {
     navIter.addEventListener('click', preventDefault )
     navIter.addEventListener('mouseover', navOver)
     navIter.addEventListener('mouseout', navOut)
-    navIter.addEventListener('mouseout', navOut)
+    // navIter.addEventListener('mouseout', navOut)
 
     function navOver() {
         navIter.style.color = ('blue')
@@ -54,23 +50,18 @@ for(let i = 0; i < navLink.length; i++) {
         navIter.style.fontWeight = ('')
     }
 }
-
 function preventDefault(e){
     e.preventDefault();
 }
-
-
 
 // script tag
 let script = document.createElement('script')
 let btnBttm= document.getElementsByClassName('btn')
 
-
 /**STOPS PROPAGATION OF BUTTONS */
 for(let i = 0; i < btnBttm.length; i++) {
     btnBttm[i].addEventListener('click', btnProp)
 }
-
 
 function btnProp(e) {
     e.stopPropagation();
@@ -93,8 +84,6 @@ let btnId2 = document.getElementById('btn2').addEventListener
 ('click', btnClick2)
 
 /*** BTN 2 CLICK EVENTS PARAMETER ****/
-
-
 function btnClick2() {
 console.log('btn 2 clicked')
 }
@@ -110,7 +99,6 @@ let cta = document.querySelectorAll('div')
 let div1 = cta[1];
 
 let boxCta = document.createElement('div')
-
 
 let boxClass = document.getElementsByClassName('boxClass')
 let boxNew = document.createElement('form')
@@ -139,6 +127,15 @@ signUpH.textContent = ('Sign Up')
 signUpH.style.marginLeft = ('65px')
 let inputValue = document.getElementsByTagName('input')
 
+/** INPUT FIELD STYLE*/
+// let inputField = (e, id, type, value) => {
+// e.setAttribute('id', id)
+// e.setAttribute('type',type)
+// e.setAttribute('value',value)
+// e.style.height = ('32px')
+// e.style.width = ('250px')
+// e.style.marginTop = ('15px')
+// }
 
 /**Field Event */
 let inputField = (e, id, type, value) => {
@@ -149,22 +146,22 @@ let inputField = (e, id, type, value) => {
     let inputOut = (e) => {
         e.target.select()
     }
-    setTimeout(() => {
-        miniBus.style.position = ('absolute')
-     }, 3000)
+
     let inputLog = (e) => {
         window.setTimeout(() => {
-            value = event.target.value;
+           
         }, 1)
-        console.log(e.target.event)
+        console.log(e.target.value)
+   
     }
+    let keyEnter = e.keyCode === 13
     let enterKey = (e) => {
-        let keyEnter = e.keyCode === 13
-        e.preventDefault();
-        console.log(keyEnter)
+       keyEnter
+        console.log('enter key pressed')
     }
+
     e.addEventListener('mousedown', inputClick)
-    e.addEventListener('mouseout', inputOut)
+    e.addEventListener('mouseenter' , inputOut)
     e.addEventListener('input', inputLog)
     e.addEventListener('keydown', enterKey)
 
@@ -175,7 +172,6 @@ let inputField = (e, id, type, value) => {
     e.style.width = ('250px')
     e.style.marginTop = ('15px')
 }
-
 
 inputField(inputName, 'name-id', 'text', 'Name')
 inputField(inputEmail, 'email-id', 'email', 'E-mail')
@@ -193,11 +189,6 @@ option1.setAttribute('value', 'Phone')
 option2.setAttribute('value', 'Email')
 
 let submitBtn = document.createElement('button')
-
-let formSubmitBtn = (e) => {
-
-}
-
 
 submitBtn.textContent = ('Submit')
 submitBtn.style.fontSize = ('17px')
@@ -225,7 +216,7 @@ function submit(e) {
     console.log(inputEmail.value)
     console.log(inputPhone.value)
     console.log(selectBox.value)
-
+    e.preventDefault();
 }
 
 script.append(winLoadFunc())
