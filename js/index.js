@@ -16,21 +16,22 @@ function busAlert(){
     alert('Bye Bus')
 }
 
-function dblClick (){
-   miniBus.style.position = ('relative')
-
-   
-    setTimeout(() => {
-
-       miniBus.style.position = ('absolute')
-       
-    }, 3000)
-}
 
 //LOAD FUNCTION
 function winLoadFunc(){
     alert('Thank you for visiting our site')
 }
+
+
+function dblClick (){
+   miniBus.style.position = ('relative')   
+    setTimeout(() => {
+       miniBus.style.position = ('absolute')
+       
+    }, 3000)
+}
+
+
 
 let loader = body.addEventListener('load', winLoadFunc)
 
@@ -70,6 +71,7 @@ for(let i = 0; i < btnBttm.length; i++) {
     btnBttm[i].addEventListener('click', btnProp)
 }
 
+
 function btnProp(e) {
     e.stopPropagation();
 }
@@ -103,16 +105,25 @@ let btnId3 = document.getElementById('btn3').addEventListener
 function btnClick3() {
     console.log('btn3 clicked' )
 }
+
 let cta = document.querySelectorAll('div')
 
 let div1 = cta[1];
 
 let boxCta = document.createElement('div')
-boxCta.setAttribute('class', 'boxClass')
+
 let boxClass = document.getElementsByClassName('boxClass')
-
-
 let boxNew = document.createElement('form')
+let inputName = document.createElement('input')
+let inputEmail = document.createElement('input')
+let inputPhone = document.createElement('input')
+let option1 = document.createElement('option')
+let option2 = document.createElement('option')
+let signBtn = document.createElement('button')
+let signUpH = document.createElement('h2')
+
+boxCta.setAttribute('class', 'boxClass')
+
 boxNew.setAttribute('id', 'newBox')
 boxNew.setAttribute('class', 'form')
 boxNew.style.width = ('500px')
@@ -124,55 +135,39 @@ boxNew.style.marginBottom = ('32px')
 boxNew.style.paddingLeft = ('120px')
 boxNew.style.paddingTop = ('32px')
 
-let signUpH = document.createElement('h2')
+
 signUpH.textContent = ('Sign Up')
 signUpH.style.marginLeft = ('65px')
 let inputValue = document.getElementsByTagName('input')
 
-/**NAME INPUT FIELD */
-let inputName = document.createElement('input')
-inputName.setAttribute('id', 'inputNameId')
-inputName.setAttribute('type','text')
-inputName.setAttribute('value','Name')
-inputName.style.height = ('32px')
-inputName.style.width = ('250px')
-inputName.style.marginRight = ('75px')
-inputName.style.marginTop = ('15px')
+
+/** INPUT FIELD
+ */
+let inputField = (e, id, type, value) => {
+e.setAttribute('id', id)
+e.setAttribute('type',type)
+e.setAttribute('value',value)
+e.style.height = ('32px')
+e.style.width = ('250px')
+e.style.marginTop = ('15px')
+}
 
 
-/**Email INPUT FIELD */
-let inputEmail = document.createElement('input')
-inputEmail.setAttribute('id', 'inputEmailId')
-inputEmail.setAttribute('type','email')
-inputEmail.setAttribute('value','Email')
-inputEmail.style.height = ('32px')
-inputEmail.style.width = ('250px')
-inputEmail.style.marginTop = ('15px')
-
-/**Phone INPUT FIELD */
-let inputPhone = document.createElement('input')
-inputPhone.setAttribute('id', 'inputPhoneId')
-inputPhone.setAttribute('type','phone')
-inputPhone.setAttribute('value','Phone')
-inputPhone.style.height = ('32px')
-inputPhone.style.width = ('250px')
-inputPhone.style.marginTop = ('15px')
-
+inputField(inputName, 'name-id', 'text', 'Name')
+inputField(inputEmail, 'email-id', 'email', 'E-mail')
+inputField(inputPhone, 'phone-id', 'phone', 'Phone')
 
 let selectBox = document.createElement('select')
 selectBox.style.width =('250px')
 selectBox.style.height =('32px')
 selectBox.style.marginTop = ('32px')
 
-let option1 = document.createElement('option')
-let option2 = document.createElement('option')
 option1.textContent = ('Phone')
 option2.textContent = ('Email')
 
 option1.setAttribute('value', 'Phone')
 option2.setAttribute('value', 'Email')
 
-let signBtn = document.createElement('button')
 signBtn.textContent = ('Submit')
 signBtn.style.fontSize = ('17px')
 signBtn.style.width = ('150px')
@@ -180,32 +175,46 @@ signBtn.style.height = ('42px')
 signBtn.style.marginLeft =('48px')
 signBtn.style.marginTop =('48px')
 
+//change input submit
+selectBox.addEventListener('change', runEvent)
+selectBox.addEventListener('input', runEvent)
+
+signBtn.addEventListener('submit', runEvent)
+signBtn.addEventListener('mouseup',submit)
+
+function runEvent(e) {
+    console.log(e.target.value)
+    console.log(e.target.submit)
+    e.preventDefault();
+}
+
+function submit() {
+    console.log(inputName.value)
+    console.log(inputEmail.value)
+    console.log(inputPhone.value)
+    console.log(selectBox.value)
+    e.preventDefault();
+}
 
 let form = document.querySelector('form')
 
-/** mouse down / mouse leave /input */
-inputName.addEventListener('mousedown', inputClick)
-inputName.addEventListener('mouseleave' , inputOut)
-inputName.addEventListener('input', inputLog)
-inputName.addEventListener('keydown', enterKey)
+/**REPLACES CODE ABOVE */
+let buttonEvent = (e) => {
+    e.addEventListener('mousedown', inputClick)
+    e.addEventListener('mouseout', inputOut)
+    e.addEventListener('input', inputLog)
+    e.addEventListener('keydown', enterKey)
+}
 
-inputEmail.addEventListener('mousedown', inputClick)
-inputEmail.addEventListener('mouseleave', inputOut)
-inputEmail.addEventListener('input', inputLog)
-inputEmail.addEventListener('keydown', enterKey)
-
-
-inputPhone.addEventListener('mousedown', inputClick)
-inputPhone.addEventListener('mouseout', inputOut)
-inputPhone.addEventListener('input', inputLog)
-inputPhone.addEventListener('keydown', enterKey)
+buttonEvent(inputName)
+buttonEvent(inputEmail)
+buttonEvent(inputPhone)
 
 /** focus select blur input  */
 function inputClick(e) {
     e.target.focus()
     e.target.value = ('')
 }
-
 
 function inputOut(e) {
     e.target.select()
@@ -224,29 +233,6 @@ e.preventDefault();
 console.log(enterKey)
 }
 
-
-//change input submit
-selectBox.addEventListener('change', runEvent)
-selectBox.addEventListener('input', runEvent)
-
-signBtn.addEventListener('submit', runEvent)
-signBtn.addEventListener('mouseup',submit)
-
-function runEvent(e) {
-
-
-    console.log(e.target.value)
-    console.log(e.target.submit)
-    e.preventDefault();
-}
-
-function submit() {
-    console.log(inputName.value)
-    console.log(inputEmail.value)
-    console.log(inputPhone.value)
-    console.log(selectBox.value)
-    e.preventDefault();
-}
 
 script.append(winLoadFunc())
 // body tag
