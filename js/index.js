@@ -139,17 +139,9 @@ signUpH.textContent = ('Sign Up')
 signUpH.style.marginLeft = ('65px')
 let inputValue = document.getElementsByTagName('input')
 
-/** INPUT FIELD STYLE*/
-let inputField = (e, id, type, value) => {
-e.setAttribute('id', id)
-e.setAttribute('type',type)
-e.setAttribute('value',value)
-e.style.height = ('32px')
-e.style.width = ('250px')
-e.style.marginTop = ('15px')
-}
+
 /**Field Event */
-let fieldEvent = (e) => {
+let inputField = (e, id, type, value) => {
     let inputClick = (e) => {
         e.target.focus()
         e.target.value = ('')
@@ -175,16 +167,19 @@ let fieldEvent = (e) => {
     e.addEventListener('mouseout', inputOut)
     e.addEventListener('input', inputLog)
     e.addEventListener('keydown', enterKey)
+
+    e.setAttribute('id', id)
+    e.setAttribute('type',type)
+    e.setAttribute('value',value)
+    e.style.height = ('32px')
+    e.style.width = ('250px')
+    e.style.marginTop = ('15px')
 }
 
 
 inputField(inputName, 'name-id', 'text', 'Name')
 inputField(inputEmail, 'email-id', 'email', 'E-mail')
 inputField(inputPhone, 'phone-id', 'phone', 'Phone')
-
-fieldEvent(inputName)
-fieldEvent(inputEmail)
-fieldEvent(inputPhone)
 
 let selectBox = document.createElement('select')
 selectBox.style.width =('250px')
