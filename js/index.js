@@ -54,9 +54,11 @@ let enlargeText = document.querySelectorAll('p')
         enlargeText[3].style.fontSize = '4rem';
     })
 
-let stopNav = document.querySelector(".nav-link");
-    stopNav.addEventListener("click", (event) => {
+let stopNav = document.querySelectorAll(".nav-link");
+    stopNav.forEach(i => {
+    i.addEventListener("click", (event) => {
         event.preventDefault();
+})
 })
 
       
