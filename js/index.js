@@ -10,10 +10,9 @@ nav.addEventListener("mouseover", e => {
 const body = document.querySelector("body");
 const h2List = document.querySelectorAll("h2");
 body.addEventListener("keydown", () => {
-  // h2.style.color = "#7eff77"
-  h2List.forEach(element => {
-    element.style.color = "purple";
-  });
+h2List.forEach(element => {
+element.style.color = "purple";
+});
 });
 
 // Wheel
@@ -23,3 +22,25 @@ footer.addEventListener("wheel", function(e) {
 });
 
 // Drag / Drop
+
+// Load
+window.addEventListener("load", () => {
+    alert("Welcome to the FUN BUS!");
+  });
+
+// Focus
+
+// Resize
+
+// Scroll
+
+// Select
+
+// Double Click
+const card = document.querySelectorAll('h4');
+card.forEach(function(card){
+  card.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    card.classList.toggle(card.style.color = "orange");
+  });
+})
