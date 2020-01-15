@@ -73,3 +73,19 @@ const dragDelete = document.querySelector('.intro img');
 dragDelete.addEventListener('dragstart', () => {
     dragDelete.style.display = 'none';
 })
+
+// Stop propagation
+
+let stopPropParent = document.querySelector('.text-content');
+stopPropParent.addEventListener('click', () => {
+    stopPropParent.style.border = "4px solid black";
+})
+
+let stopPropChild = document.querySelector('.text-content h2');
+stopPropChild.addEventListener('click', () => {
+    stopPropChild.style.background = "yellow";
+})
+
+stopPropChild.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
