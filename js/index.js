@@ -111,6 +111,7 @@ let div1 = cta[1];
 
 let boxCta = document.createElement('div')
 
+
 let boxClass = document.getElementsByClassName('boxClass')
 let boxNew = document.createElement('form')
 let inputName = document.createElement('input')
@@ -138,9 +139,7 @@ signUpH.textContent = ('Sign Up')
 signUpH.style.marginLeft = ('65px')
 let inputValue = document.getElementsByTagName('input')
 
-
-/** INPUT FIELD
- */
+/** INPUT FIELD STYLE*/
 let inputField = (e, id, type, value) => {
 e.setAttribute('id', id)
 e.setAttribute('type',type)
@@ -149,66 +148,7 @@ e.style.height = ('32px')
 e.style.width = ('250px')
 e.style.marginTop = ('15px')
 }
-
-
-inputField(inputName, 'name-id', 'text', 'Name')
-inputField(inputEmail, 'email-id', 'email', 'E-mail')
-inputField(inputPhone, 'phone-id', 'phone', 'Phone')
-
-let selectBox = document.createElement('select')
-selectBox.style.width =('250px')
-selectBox.style.height =('32px')
-selectBox.style.marginTop = ('32px')
-
-option1.textContent = ('Phone')
-option2.textContent = ('Email')
-
-option1.setAttribute('value', 'Phone')
-option2.setAttribute('value', 'Email')
-
-let submitBtn = document.createElement('button')
-
-let formSubmitBtn = (e) => {
-
-}
-
-
-
-
-
-
-submitBtn.textContent = ('Submit')
-submitBtn.style.fontSize = ('17px')
-submitBtn.style.width = ('150px')
-submitBtn.style.height = ('42px')
-submitBtn.style.marginLeft =('48px')
-submitBtn.style.marginTop =('48px')
-
-submitBtn.addEventListener('submit', runEvent)
-submitBtn.addEventListener('mouseup',submit)
-
-//change input submit
-selectBox.addEventListener('change', runEvent)
-selectBox.addEventListener('input', runEvent)
-
-
-function runEvent(e) {
-    console.log(e.target.value)
-    console.log(e.target.submit)
-    e.preventDefault();
-}
-
-function submit() {
-    console.log(inputName.value)
-    console.log(inputEmail.value)
-    console.log(inputPhone.value)
-    console.log(selectBox.value)
-    e.preventDefault();
-}
-
-let form = document.querySelector('form')
-
-
+/**Field Event */
 let fieldEvent = (e) => {
     let inputClick = (e) => {
         e.target.focus()
@@ -237,9 +177,64 @@ let fieldEvent = (e) => {
     e.addEventListener('keydown', enterKey)
 }
 
+
+inputField(inputName, 'name-id', 'text', 'Name')
+inputField(inputEmail, 'email-id', 'email', 'E-mail')
+inputField(inputPhone, 'phone-id', 'phone', 'Phone')
+
 fieldEvent(inputName)
 fieldEvent(inputEmail)
 fieldEvent(inputPhone)
+
+let selectBox = document.createElement('select')
+selectBox.style.width =('250px')
+selectBox.style.height =('32px')
+selectBox.style.marginTop = ('32px')
+
+option1.textContent = ('Phone')
+option2.textContent = ('Email')
+
+option1.setAttribute('value', 'Phone')
+option2.setAttribute('value', 'Email')
+
+let submitBtn = document.createElement('button')
+
+let formSubmitBtn = (e) => {
+
+}
+
+
+submitBtn.textContent = ('Submit')
+submitBtn.style.fontSize = ('17px')
+submitBtn.style.width = ('150px')
+submitBtn.style.height = ('42px')
+submitBtn.style.marginLeft =('48px')
+submitBtn.style.marginTop =('48px')
+
+submitBtn.addEventListener('submit', runEvent)
+submitBtn.addEventListener('mouseup',submit)
+
+//change input submit
+selectBox.addEventListener('change', runEvent)
+selectBox.addEventListener('input', runEvent)
+
+
+function runEvent(e) {
+    console.log(e.target.value)
+    console.log(e.target.submit)
+    e.preventDefault();
+}
+
+function submit(e) {
+    console.log(inputName.value)
+    console.log(inputEmail.value)
+    console.log(inputPhone.value)
+    console.log(selectBox.value)
+
+}
+
+
+
 
 script.append(winLoadFunc())
 // body tag
@@ -254,7 +249,7 @@ boxNew.append(inputName)
 boxNew.append(inputEmail)
 boxNew.append(inputPhone)
 boxNew.append(selectBox)
-boxNew.append(signBtn)
+boxNew.append(submitBtn)
 
 
 
