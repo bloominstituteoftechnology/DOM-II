@@ -92,7 +92,9 @@ stopPropChild.addEventListener('click', (event) => {
 
 // Prevent default
 
-let preventDefault = document.querySelector('.nav a');
-preventDefault.addEventListener('click', (event) => {
-    event.preventDefault()
+let preventDefault = document.querySelectorAll('.nav-link');
+preventDefault.forEach(element => {
+    element.addEventListener('click', (event) => {
+        event.preventDefault();
+    })
 })
