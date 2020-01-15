@@ -43,3 +43,19 @@ down.addEventListener('mousedown', () => {
 down.addEventListener('mouseup', () => {
     down.style.display = "none";
 })
+
+// wheel event *un-comment when needed.
+
+// let wheelEvent = document.querySelector('html');
+// wheelEvent.addEventListener('wheel', () => {
+//     alert('Sorry, I know this is annoying. Drag the actual scrollbar.');
+// })
+
+//
+
+// copy event 
+
+let copyEvent = document.querySelector('p');
+copyEvent.addEventListener('copy', () => {
+    alert('Make sure to give me credit!');
+})
