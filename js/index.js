@@ -29,3 +29,17 @@ window.addEventListener('resize', () => {
     newSize.style.display = 'none';
     
 })
+
+// mousedown event
+
+let down = document.querySelector('.img-content img');
+down.addEventListener('mousedown', () => {
+    down.style.border = "4px solid red";
+})
+
+// mouseup event 
+
+// let up = document.querySelector('.img-content img');
+down.addEventListener('mouseup', () => {
+    down.style.display = "none";
+})
