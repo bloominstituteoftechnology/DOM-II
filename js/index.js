@@ -15,3 +15,11 @@ body.addEventListener("keydown", () => {
     element.style.color = "purple";
   });
 });
+
+// Wheel
+const footer = document.querySelector("footer");
+footer.addEventListener("wheel", function(e) {
+  e.target.style.border = "2px solid green";
+});
+
+// Drag / Drop
