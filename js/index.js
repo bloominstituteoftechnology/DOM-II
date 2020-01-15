@@ -36,12 +36,17 @@ document.addEventListener("wheel", event => {
 
 //focus
 
+const focusSubject = document.querySelector('input[type="email"]');
+
+focusSubject.addEventListener("focus", event => {
+  event.target.style.background = "pink";
+});
+
 //resize - Not working
 
-// const forMobile = window.getElementsByClassName('destination');
+const forMobile = document.getElementsByClassName("destination");
 
 window.addEventListener("resize", event => {
-  console.log(event);
   console.log("forMobile works!");
   // div.destination.backgroundColor = "red";
 });
