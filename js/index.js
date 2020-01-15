@@ -102,3 +102,12 @@ const stopNav = document.querySelector('.nav-link');
 stopNav.addEventListener('click', (event) => {
     event.preventDefault();
 })
+
+
+document.querySelectorAll('div').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        TweenMax.to(el, 0.1, {x:"+=20", yoyo:true, repeat:10});
+        TweenMax.to(el, 0.1, {x:"-=20", yoyo:true, repeat:10});
+    })
+})
+
