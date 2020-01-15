@@ -36,17 +36,77 @@ window.addEventListener("resize", () => {
   fontContainer.style.color = "green";
 });
 
-// function focused() {
-// document.querySelector(".btn").focus();
-// }
-
-// const buttonContainer = document.querySelectorAll(".home .content-pick .destination .btn");
-// buttonContainer.addEventListener("focus", function() => {
-    
-// })
+// is this working?
 
 const scrollProperty = document.querySelector(".footer p");
 window.addEventListener("scroll", () => {
-    scrollProperty.style.color = "red";
-})
+  scrollProperty.style.color = "red";
+});
 
+document.querySelectorAll("img").forEach(function(item) {
+  item.addEventListener("dblclick", () => {
+    item.style.display = "none";
+  });
+});
+
+function playFocus() {
+  document.body.classList.add("addContent");
+  paragraphFocus.textContent = "HI!";
+}
+
+const paragraphContainer = document.getElementsByClassName(".paragraphFocus");
+
+window.addEventListener("focus", playFocus);
+
+// image bottom
+
+const destinationContainer = document.querySelector(".content-destination img");
+destinationContainer.addEventListener("mouseover", () => {
+  destinationContainer.style.transform = "scale(1.2)";
+});
+
+// buttons
+
+// const buttonSize = document.querySelectorAll(".content-pick .destination .btn")[0];
+// buttonSize.addEventListener("mouseover", (e) => {
+//     buttonSize.style.transform = ("scale(1.2)");
+//     e.stopPropagation();
+// })
+
+// const buttonSize = document.querySelectorAll(".content-pick .destination .btn")[1];
+// buttonSize.addEventListener("mouseover", (e) => {
+//     buttonSize.style.transform = ("scale(1.2)");
+//     e.stopPropagation();
+// })
+
+// const buttonSize = document.querySelectorAll(".content-pick .destination .btn")[2];
+// buttonSize.addEventListener("mouseover", (e) => {
+//     buttonSize.style.transform = ("scale(1.2)");
+//     e.stopPropagation();
+// })
+
+// const buttons = querySelectorAll(".destination .btn");
+// buttons.forEach(button => {
+//   button.addEventListener("click", e => {
+//     button.style.transform = ("scale(1.2)");
+//   });
+// });
+
+// animation???
+
+window.addEventListener("load", e => {
+  alert("this site accepts cookies, IS THIS OKAY?!?!??!?!");
+});
+
+document.querySelectorAll(".btn").forEach(item => {
+  item.addEventListener("click", event => {
+    item.style.fontSize = "3.5rem";
+    event.stopPropagation();
+  });
+});
+
+document.querySelectorAll("header nav a").forEach(function(item) {
+  item.addEventListener("click", event => {
+    event.preventDefault();
+  });
+});

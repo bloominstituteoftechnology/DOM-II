@@ -353,3 +353,6 @@ img {
 .home .content-pick .destination .btn:focus {
   color: blue;
 }
+.home .content-pick .destination .addContent {
+  background-color: yellow;
+}
