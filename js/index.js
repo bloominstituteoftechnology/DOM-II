@@ -33,6 +33,10 @@ window.addEventListener("load", () => {
 // Resize
 
 // Scroll
+const navBar = document.querySelector(".main-navigation");
+navBar.addEventListener("scroll", () => {
+  navBar.style.position = "fixed";
+});
 
 // Select
 
@@ -44,3 +48,17 @@ card.forEach(function(card){
     card.classList.toggle(card.style.color = "orange");
   });
 })
+
+// Prevent Event Propagation
+paragraph = document.querySelector('p');
+  intro = document.querySelector('.intro');
+  containerHome = document.querySelector('.home');
+
+  paragraph.addEventListener('click', function(evenet) {
+      paragraph.style.backgroundColor = 'green';
+      event.stopPropagation();
+  });
+
+  intro.addEventListener('click', function() {
+    intro.style.backgroundColor = 'red';
+});
