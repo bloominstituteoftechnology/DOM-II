@@ -28,7 +28,7 @@ let bodyColorBackground = document.querySelector('body')
 let enterTextColor = document.querySelector('body')
     enterTextColor.addEventListener('mouseenter', () => {
         enterTextColor.style.color = "red";
-    })
+    }) 
 
 let exitTextColor = document.querySelector('body')
     exitTextColor.addEventListener('mouseleave', () => {
@@ -40,23 +40,14 @@ let navColorBackground = document.querySelector('.main-navigation')
         navColorBackground.style.backgroundColor = '#32CD32';
     })
 
-let flipButtonFirst = document.querySelectorAll('.btn')
-    flipButtonFirst[0].addEventListener('click', (event) => {
-        flipButtonFirst[0].style.transform = 'rotate(180deg)'
-        event.stopPropagation();
-    } )
 
-let flipButtonSecond = document.querySelectorAll('.btn')
-    flipButtonSecond[1].addEventListener('click', (event) => {
-        flipButtonSecond[1].style.transform = 'rotate(180deg)'
+let flipButton = document.querySelectorAll('.btn')
+    flipButton.forEach(el => {
+       el.addEventListener('click', (event) => {
+        el.style.transform = 'rotate(180deg)'
         event.stopPropagation();
     } )
-
-let flipButtonThird = document.querySelectorAll('.btn')
-    flipButtonThird[2].addEventListener('click', (event) => {
-        flipButtonThird[2].style.transform = 'rotate(180deg)'
-        event.stopPropagation();
-    } )
+    })
 
 let enlargeText = document.querySelectorAll('p')
     enlargeText[3].addEventListener('mouseenter' , () => {
