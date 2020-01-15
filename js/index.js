@@ -13,3 +13,19 @@ missedTheBus.addEventListener('mouseenter', () => {
 missedTheBus.addEventListener('mouseleave', () => {
     alert("You're going to miss the fun!");
 })
+
+// dblclick event
+
+let changePic = document.querySelector('.intro img');
+changePic.addEventListener('dblclick', () => {
+    changePic.src = 'https://cdn.pixabay.com/photo/2013/07/13/11/36/volkswagen-158463__480.png';
+})
+
+// resize event
+
+let newSize = document.querySelector('.intro img');
+
+window.addEventListener('resize', () => {
+    newSize.style.display = 'none';
+    
+})
