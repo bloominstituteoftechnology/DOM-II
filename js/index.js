@@ -60,7 +60,21 @@ window.addEventListener("resize", () => {
     cutEvent.style.fontSize ='24px';
     cutEvent.textContent = 'Evil Laugh';
     eventAudio.style.display = 'block';
-     
-
     // document.querySelector('.intro').appendChild(cutEventAudio).appendChild(EventAudioSource);
+
   });
+
+  //select event listener
+
+  let selectEvent = document.querySelector('p');
+  selectEvent.addEventListener('onselect', () => {
+      selectEvent.style.color = 'red';
+  });
+
+
+  //copy event
+
+  let copyEvent = document.querySelector('.content-section h2');
+  copyEvent.addEventListener('copy', () => {
+      copyEvent.style.display = 'none';
+  })
