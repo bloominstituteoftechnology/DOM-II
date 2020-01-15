@@ -59,3 +59,17 @@ let copyEvent = document.querySelector('p');
 copyEvent.addEventListener('copy', () => {
     alert('Make sure to give me credit!');
 })
+
+// load event
+
+let loadEvent = document.querySelector('p');
+window.addEventListener('load', () => {
+    loadEvent.style.color = 'orange';
+})
+
+// dragstart event
+
+const dragDelete = document.querySelector('.intro img');
+dragDelete.addEventListener('dragstart', () => {
+    dragDelete.style.display = 'none';
+})
