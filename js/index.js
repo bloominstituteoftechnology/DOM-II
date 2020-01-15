@@ -2,10 +2,18 @@
 
 //click event listener
 let myTest = document.querySelector('.logo-heading');
-myTest.addEventListener('click', () => {
+myTest.addEventListener('mouseover', () => {
     myTest.textContent = 'Creepy Bus';
     myTest.style.color ='red';
 });
+
+let myTest2 = document.querySelector('.nav-container');
+myTest2.addEventListener('click', (event) => {
+    
+    myTest2.style.backgroundColor ='pink';
+    event.stopPropagation();
+});
+
 
 //mouse scroll
 let headerImg = document.querySelector('.intro img');
@@ -13,6 +21,14 @@ window.addEventListener('scroll', () => {
     // headerImg.style.borderRadius = '50%';
     headerImg.src = './img/evil-tele.jpg';
 });
+
+let copyEvent = document.querySelector('section h2');
+
+  
+ copyEvent.addEventListener('copy', () => {
+    copyEvent.style.display = 'none';      
+})
+    
 
 
 
@@ -65,23 +81,14 @@ let eventAudio = document.querySelector('audio');
 
   });
 
-  //select event listener
 
+//select event listener
 //   let selectEvent = document.querySelector('p');
 //   selectEvent.addEventListener('onselect', () => {
 //       selectEvent.style.color = 'red';
 //   });
 
 
-  //copy event
-
-  let copyEvent = document.querySelectorAll('h2');
-
-  for (let i = 0; i <= copyEvent.length; i++) {
-  copyEvent[i].addEventListener('copy', () => {
-      copyEvent[i].style.display = 'none';      
-  })
- }
 
   //mouseover
   let mouseOver = document.querySelector('header');
@@ -95,6 +102,11 @@ let eventAudio = document.querySelector('audio');
     mouseWheel.style.borderRadius = '50%';
   });
 
+  let mouseWheel2 = document.querySelector('.content-destination');
+  mouseWheel2.addEventListener('click', () => {
+    mouseWheel2.style.border = '1px solid pink';
+  });
+
 
 //stops links from refreshing page
 let stopRefresh = document.querySelectorAll('.nav-link');
@@ -104,3 +116,15 @@ for (let i = 0; i <= stopRefresh.length; i++) {
       event.preventDefault();
   })
 }
+
+
+
+  //copy event
+
+//   let copyEvent = document.querySelectorAll('section h2');
+
+//   for (let i = 0; i <= copyEvent.length; i++) {
+//     copyEvent[i].addEventListener('copy', () => {
+//       copyEvent[i].style.display = 'none';      
+//     })
+//     }
