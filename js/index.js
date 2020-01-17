@@ -13,8 +13,10 @@
 // FOCUS
 
 // RESIZE
-
-// RESIZE
+window.addEventListener("resize", () => {
+  const cityBus = document.querySelector(".intro img");
+  cityBus.src = "img/fun-bus-city.jpg";
+});
 
 // SCROLL
 
@@ -26,5 +28,4 @@ console.log(changeImage);
 
 changeImage.addEventListener("dblclick", () => {
   changeImage.src = "img/volkswagen.jpg";
-  // alt="white and teal volkswagen van die cast model"
 });
