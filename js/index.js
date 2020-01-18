@@ -110,7 +110,7 @@ let addTextToParagraph = () => {
 window.addEventListener("wheel", addTextToParagraph);
 
 let cheeseMode = () => {
-  alert("ACTIVATING: CHEESE MODE");
+  console.log("ACTIVATING: CHEESE MODE");
   busImage.src =
     "http://images.dailyhive.com/20181030113542/shutterstock_585494807.jpg";
   middleImg.src =
