@@ -73,8 +73,6 @@ pressBtn.forEach(element => {
 
 // SELECT
 
-// WHEEL
-
 // // // MOUSEENTER & MOUSELEAVE (NOT WORKING)
 // const newH4 = document.querySelectorAll(".destination h4");
 
@@ -85,4 +83,8 @@ pressBtn.forEach(element => {
 
 // propagation
 
-// stop default
+// stop refresh
+document.getElementsByClassName(".nav-link");
+addEventListener("mouseover", event => {
+  event.preventDefault();
+});
