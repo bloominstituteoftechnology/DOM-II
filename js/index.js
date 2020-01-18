@@ -98,3 +98,13 @@ let changeCanalImage = event => {
 };
 
 window.addEventListener("resize", changeCanalImage);
+
+window.addEventListener("load", event => {
+  alert("and there you have it, the page has loaded. Can you believe it?");
+});
+
+let addTextToParagraph = () => {
+  topParagraph.textContent = `${topParagraph.textContent} KEEP SCROLLING! YESSSSSSS`;
+};
+
+window.addEventListener("wheel", addTextToParagraph);
