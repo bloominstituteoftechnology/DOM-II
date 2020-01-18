@@ -13,19 +13,23 @@ document.querySelectorAll(".nav-link").forEach(link => {
   });
 });
 
-// KEYDOWN
+// KEYDOWN & KEYUP
+const newText = document.querySelector(".logo-heading");
+
 window.addEventListener("keydown", () => {
-  const newText = document.querySelector(".logo-heading");
-  newText.textContent = "Come Play In The Sun With Us!";
+  //   const newText = document.querySelector(".logo-heading");
+  newText.textContent = "Come Join Us!";
   newText.style.color = "#c7624c";
   newText.style.fontSize = "5rem";
 });
 
+window.addEventListener("keyup", () => {
+  newText.textContent = "Fun Bus";
+  newText.style.color = "#212529";
+  newText.style.fontSize = "4rem";
+});
+
 // WHEEL
-// const advImg = document.querySelector('img-content')
-// advImg.addEventListener ('wheel', () => {
-//     advImg.addEventListener.style.transform = "scale (1.2)";
-// }
 
 // MOUSEENTER & MOUSELEAVE
 // const headingTarget = document.getElementsByClassName("logo-heading");
