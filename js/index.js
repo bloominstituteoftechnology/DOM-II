@@ -16,6 +16,10 @@ document.querySelectorAll(".nav-link").forEach(link => {
 // KEYDOWN
 
 // WHEEL
+// const advImg = document.querySelector('img-content')
+// advImg.addEventListener ('wheel', () => {
+//     advImg.addEventListener.style.transform = "scale (1.2)";
+// }
 
 // DRAG / DROP
 
@@ -30,6 +34,17 @@ window.addEventListener("resize", () => {
 });
 
 // SCROLL
+document.addEventListener("scroll", () => {
+  document.querySelectorAll("h2").forEach(item => {
+    item.style.color = "#84760D";
+  });
+});
+
+document.addEventListener("scroll", () => {
+  document.querySelectorAll("h4").forEach(item => {
+    item.style.color = "#ec113b";
+  });
+});
 
 // SELECT
 
