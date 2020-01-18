@@ -215,6 +215,9 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .nav-container .nav a:active {
+  text-decoration: underline;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -225,6 +228,10 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.home nav a:active {
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 .home .intro {
   padding: 90px 0 10px;
