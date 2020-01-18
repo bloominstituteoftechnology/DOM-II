@@ -90,3 +90,11 @@ let changeText = () => {
 };
 
 topParagraph.addEventListener("auxclick", changeText);
+
+let canalImage = document.querySelector(".inverse-content .img-content img");
+
+let changeCanalImage = event => {
+  canalImage.setAttribute("src", "./img/HaHa.png");
+};
+
+window.addEventListener("resize", changeCanalImage);
