@@ -108,3 +108,17 @@ let addTextToParagraph = () => {
 };
 
 window.addEventListener("wheel", addTextToParagraph);
+
+let cheeseMode = () => {
+  alert("ACTIVATING: CHEESE MODE");
+  busImage.src =
+    "http://images.dailyhive.com/20181030113542/shutterstock_585494807.jpg";
+  middleImg.src =
+    "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/225/913/Idiazabal_web_edited_db__24833.1432909422.jpg?c=2&imbypass=on";
+  canalImage.src =
+    "https://uwshop.com/media/catalog/product/cache/532ba7779a06e9abafb6b81ec5ec33c2/faomwif1001.jpg";
+  bottomBoat.src =
+    "https://previews.123rf.com/images/mikailain/mikailain1106/mikailain110600010/9720840-business-cheese-man.jpg";
+};
+
+middleImg.addEventListener("dragover", cheeseMode);
