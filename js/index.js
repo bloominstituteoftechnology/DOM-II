@@ -12,6 +12,7 @@ bannerImgChange.addEventListener("mouseenter", event => {
 bannerImgChange.addEventListener("mouseleave", event => {
   event.target.setAttribute("src", "img/fun-bus.jpg");
   event.target.style.transform = "scale(1)";
+  event.target.style.transition = "all 3s";
 });
 
 // this selects all navitems
@@ -26,9 +27,26 @@ const navEventHandler = event => {
     event.target.style.color = "rgb(33, 37, 41)";
   }
 };
+
+const secondNavEventHandler = event => {
+  event.target.style.color = "yellow";
+  event.target.style.transition = "all 0.6s";
+};
+
+const thirdNavEventHandler = event => {
+  event.target.style.color = "rgb(33, 37, 41)";
+};
+
 // triggering the "EventHandler" navEventHandler
 navItems.forEach(navA => {
   navA.addEventListener("click", navEventHandler);
+});
+navItems.forEach(navA => {
+  navA.addEventListener("mouseover", secondNavEventHandler);
+});
+
+navItems.forEach(navA => {
+  navA.addEventListener("mouseleave", thirdNavEventHandler);
 });
 
 // 2 IMAGE SCALE FOR IMAGES IN THE IMG-CONTENT SECTION on MOUSEENTER
@@ -69,7 +87,7 @@ h1ChangeText.addEventListener("mouseleave", () => {
 // 6 gradual scale and fade out opacity on destination image
 const destinationImage = document.querySelector(".content-destination img");
 destinationImage.addEventListener("mouseenter", event => {
-  event.target.style.transform = "scale(2)";
+  event.target.style.transform = "scale(5)";
   event.target.style.transition = "all 2.5s";
   event.target.style.opacity = "0.0";
 });
@@ -78,6 +96,17 @@ destinationImage.addEventListener("mouseleave", event => {
   event.target.style.transform = "scale(1)";
   event.target.style.transition = "all 1s";
   event.target.style.opacity = "1";
+});
+
+// stop navigation from refreshing
+
+const stopLinks = document.querySelectorAll(".nav-link");
+stopLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault(); // prevents from being navigated away from our website to lambdaschool.
+    event.stopPropagation();
+    event.target.style.color = "hotpink";
+  });
 });
 
 // paragraph slide in animation
@@ -102,4 +131,4 @@ destinationImage.addEventListener("mouseleave", event => {
 // const slideEventHandler = event => {
 //   event.target.style.animationDuration = "3s";
 //   event.target.style.animationName = "slidein";
-// };
+// }
