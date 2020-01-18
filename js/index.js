@@ -1,8 +1,26 @@
 // Your code goes here
 
-let mouseOver = document.querySelectorAll('a');
+let mouseOver = document.querySelector('.nav');
 
-mouseOver.addEventListener('mouseover', () => {
+mouseOver.addEventListener('mouseover', (ele) => {
 
-    mouseOver.style.fontSize = '3rem';
+    ele.target.style.fontSize = '20px';
 })
+
+let key = document.querySelector('body')
+
+key.addEventListener('keydown', (ele) => {
+
+    alert('Busted');
+})
+
+
+
+let wheel = document.querySelector('body')
+
+wheel.addEventListener('wheel', (ele) => {
+
+    ele.target.style.backgroundColor = 'yellow';
+})
+
+
