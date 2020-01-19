@@ -34,3 +34,13 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.rocket {
+  background-color: black;
+  height: 50px;
+  width: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: none;
+  z-index: 2
+}

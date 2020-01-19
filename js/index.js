@@ -88,3 +88,16 @@ Array.from(document.getElementsByClassName("destination")).forEach((dest) => {
 window.addEventListener("resize", () => {
     console.log(window.innerHeight, window.innerWidth)
 })
+
+navbar[0].addEventListener("click", (e) => {
+    e.preventDefault()
+    document.querySelector(".content-section").children[0].children[1]
+})
+
+window.addEventListener("scroll", () => {
+    console.log(window.scrollY)
+})
+
+console.log(document.querySelector(".content-section").children[0].children[1])
+
+
