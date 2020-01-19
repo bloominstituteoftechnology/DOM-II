@@ -16,11 +16,44 @@ key.addEventListener('keydown', (ele) => {
 
 
 
-let wheel = document.querySelector('body')
+let wheel = document.querySelector('.main-navigation')
 
 wheel.addEventListener('wheel', (ele) => {
 
     ele.target.style.backgroundColor = 'yellow';
+    event.stopPropagation()
 })
 
 
+let drag = document.querySelectorAll('img');
+
+drag.forEach( (link) => { link.addEventListener('drag', (ele) => {
+
+    ele.target.style.border = '4px solid black';
+    console.log(ele)
+
+})})
+
+
+
+ 
+let loaded = document.querySelector('img')
+
+
+
+
+
+loaded.addEventListener('load', (ele) => {
+
+    console.log('image is  loaded')
+})
+
+
+
+let scroll = document.querySelector('body')
+
+wheel.addEventListener('scroll', (ele) => {
+
+    ele.target.style.backgroundColor = 'yellow';
+    event.stopPropagation()
+})
