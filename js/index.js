@@ -100,4 +100,20 @@ window.addEventListener("scroll", () => {
 
 console.log(document.querySelector(".content-section").children[0].children[1])
 
+document.getElementsByTagName("body")[0].addEventListener("dblclick", () => {
+    document.getElementsByTagName("body")[0].style.background = "lightgray"
+})
 
+document.getElementById("adventure-awaits").addEventListener("click", () => {
+    
+    document.getElementById("adventure-awaits").style.background = "green"
+})
+
+document.getElementById("adventure-awaits-h2").addEventListener("click", () => {
+    event.stopPropagation()
+    document.getElementById("adventure-awaits-h2").style.background = "red"
+})
+
+document.getElementsByTagName("button")[0].addEventListener("click", () => {
+    document.querySelector("#text-box").select();
+})

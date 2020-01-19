@@ -42,12 +42,12 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 	* [x] `focus`
 	* [x] `resize`
 	* [x] `scroll`
-	* [ ] `select`
+	* [x] `select`
 	* [ ] `dblclick`
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [x] Nest two similar events somewhere in the site and prevent the event propagation properly
 * [x] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
@@ -56,4 +56,4 @@ Using the 10 unique events, find ways to update the DOM in creative ways. For ex
 
 ## Stretch assignment
 
-* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
+* [x] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
