@@ -116,8 +116,10 @@ contentImg.forEach(element => {
 // });
 
 // // stop refresh
-document
-  .getElementsByClassName("nav-link")
-  .addEventListener("click", function(event) {
+
+const stop = document.querySelectorAll(".nav a");
+stop.forEach(event => {
+  event.addEventListener("click", event => {
     event.preventDefault();
   });
+});
