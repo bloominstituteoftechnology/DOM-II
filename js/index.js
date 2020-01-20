@@ -16,7 +16,7 @@ event.target.style.backgroundColor = 'green';
 
 });
 
-NavBar.addEventListener('click', (event) => {
+navBar.addEventListener('click', (event) => {
     alert('Almost There!')
 });
 
