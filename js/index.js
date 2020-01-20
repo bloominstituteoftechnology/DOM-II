@@ -50,10 +50,49 @@ loaded.addEventListener('load', (ele) => {
 
 
 
-let scroll = document.querySelector('body')
+/*let scroll = document.querySelector('body')
 
 wheel.addEventListener('scroll', (ele) => {
 
     ele.target.style.backgroundColor = 'yellow';
     event.stopPropagation()
+})*/
+
+
+
+
+
+
+
+window.addEventListener('resize', (event) => {
+
+    let newSize = document.querySelector('body');
+    newSize.style.backgroundColor = 'gray';
+    console.log('resize')
+    
 })
+
+
+
+let dClick = document.querySelectorAll('img');
+
+dClick.forEach( (link) => { link.addEventListener('dblclick', (ele) => {
+
+    ele.target.style.filter = 'grayscale(100%)';
+    console.log(ele)
+
+})})
+
+let slct = document.querySelector('h2');
+
+   slct.addEventListener('select', (ele) => {
+
+    ele.target.style.color = 'yellow';
+    console.log('selected')
+})
+
+
+
+
+
+
