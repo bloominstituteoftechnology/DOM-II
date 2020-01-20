@@ -27,11 +27,6 @@ document.querySelectorAll(".nav a").forEach(element => {
     element.style.color = "";
   });
 });
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("mouseout", () => {
-    link.style.color = "";
-  });
-});
 
 // event 5 = DBLCLICK
 const changeImage = document.querySelector(".intro img");
@@ -110,10 +105,20 @@ contentImg.forEach(element => {
 });
 
 // propagation
-// const pickDestintation = document.querySelectorAll(".destination");
-// pickDestination.addEventListener("click", event => {
-//   event.target.style.backgroundColor = "papayawhip";
-// });
+/*const destination = document.querySelector(".destination");
+const btn = document.querySelector("bnt");
+
+destination.forEach(element => {
+  element.addEventListener("click", () => {
+    element.style.backgroundColor = "red";
+    // event.stopPropagation();
+  });
+});
+
+btn.addEventListener("click", () => {
+  console.log("The paragraph was pressed!");
+});
+*/
 
 // // stop refresh
 
