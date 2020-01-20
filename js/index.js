@@ -99,26 +99,25 @@ contentImg.forEach(element => {
 
 contentImg.forEach(element => {
   element.addEventListener("mouseleave", () => {
-    element.style.transform = "scale(1)";
+    element.style.transform = "";
     element.style.transition = "all 0.3s";
   });
 });
 
 // propagation
-/*const destination = document.querySelector(".destination");
-const btn = document.querySelector("bnt");
 
-destination.forEach(element => {
-  element.addEventListener("click", () => {
-    element.style.backgroundColor = "red";
-    // event.stopPropagation();
+document.querySelectorAll(".destination").forEach(div => {
+  div.addEventListener("click", () => {
+    div.style.backgroundColor = "#f5d6c1";
   });
 });
 
-btn.addEventListener("click", () => {
-  console.log("The paragraph was pressed!");
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    console.log("I clicked on the button");
+    event.stopPropagation();
+  });
 });
-*/
 
 // // stop refresh
 
