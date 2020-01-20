@@ -60,26 +60,35 @@ window.addEventListener("resize", () => {
   resizeHeader.style.backgroundColor = "#fcf2a4";
 });
 
-// event 8 = CLICK (ROTATE ISN'T WORKING)
+// event 8 = CLICK
 const pressBtn = document.querySelectorAll(".btn");
 
 pressBtn.forEach(element => {
   element.addEventListener("click", () => {
     element.textContent = "Pack My Bags!";
-    // element.style.transform = "rotate (360deg)";
+    element.style.border = "4px dotted orange";
     element.style.transition = "all 2s";
   });
 });
 
+// event 9 & 10 MOUSEENTER & MOUSELEAVE
+const newPointer = document.querySelectorAll("h4");
+
+newPointer.forEach(element => {
+  element.addEventListener("mouseenter", () => {
+    element.style.cursor =
+      "url('https://img.icons8.com/metro/26/000000/sun-glasses.png'), auto";
+    element.style.backgroundColor = "#fce420";
+  });
+});
+
+newPointer.forEach(element => {
+  element.addEventListener("mouseleave", () => {
+    element.style.background = "";
+  });
+});
+
 // SELECT
-
-// // // MOUSEENTER & MOUSELEAVE (NOT WORKING)
-// const newH4 = document.querySelectorAll(".destination h4");
-
-// newH4.addEventListener("mouseenter", element => {
-//   element.style.transform = "rotate (360deg)";
-//   element.style.transition = "all 3s";
-// });
 
 // propagation
 
