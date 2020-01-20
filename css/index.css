@@ -152,7 +152,10 @@ h2 {
 }
 h4 {
   font-size: 2.5rem;
-  padding-bottom: 10px;
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
 }
 p {
   line-height: 1.5;
@@ -340,6 +343,7 @@ img {
   border: 1px solid #c0c0c0;
   cursor: pointer;
   font-size: 1.8rem;
+  border-radius: 10px;
 }
 @media (max-width: 500px) {
   .home .content-pick .destination .btn {
