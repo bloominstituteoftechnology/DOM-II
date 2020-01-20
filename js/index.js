@@ -22,6 +22,11 @@ document.querySelectorAll(".nav a").forEach(element => {
   });
 });
 
+document.querySelectorAll(".nav a").forEach(element => {
+  element.addEventListener("mouseout", () => {
+    element.style.color = "";
+  });
+});
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("mouseout", () => {
     link.style.color = "";
@@ -88,12 +93,31 @@ newPointer.forEach(element => {
   });
 });
 
-// SELECT
+const contentImg = document.querySelectorAll(".img-content");
+
+contentImg.forEach(element => {
+  element.addEventListener("mouseenter", () => {
+    element.style.transform = "scale(1.1)";
+    element.style.transition = "all 0.3s";
+  });
+});
+
+contentImg.forEach(element => {
+  element.addEventListener("mouseleave", () => {
+    element.style.transform = "scale(1)";
+    element.style.transition = "all 0.3s";
+  });
+});
 
 // propagation
+// const pickDestintation = document.querySelectorAll(".destination");
+// pickDestination.addEventListener("click", event => {
+//   event.target.style.backgroundColor = "papayawhip";
+// });
 
-// stop refresh
-document.getElementsByClassName(".nav-link");
-addEventListener("mouseover", event => {
-  event.preventDefault();
-});
+// // stop refresh
+document
+  .getElementsByClassName("nav-link")
+  .addEventListener("click", function(event) {
+    event.preventDefault();
+  });
