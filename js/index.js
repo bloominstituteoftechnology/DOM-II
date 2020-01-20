@@ -15,7 +15,7 @@ funBusHeading.addEventListener('mouseover', function () {
 funBusHeading.addEventListener('mouseleave', function () {
     this.classList.remove('funBusHeading');
 })
-
+ // Confused!
 //  Rotates the entire nav bar at keydown
 //  BUG: does not let this event to be called after
 //  the events on navItem are called
