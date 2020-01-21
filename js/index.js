@@ -55,6 +55,17 @@ window.onload = function () {
         }
     })
 
+    contentPicB.addEventListener('dblclick', () => {
+        if (contentPicA.src === 'http://127.0.0.1:5501/img/adventure.jpg') {
+            contentPicA.src = 'img/fun.jpg';
+            contentPicB.src = 'img/adventure.jpg';
+        } else {
+            contentPicB.src = 'img/fun.jpg';
+            contentPicA.src = 'img/adventure.jpg';
+        }
+    })
+
+
     const destSelect = document.querySelector('.content-pick');
     const destinations = document.querySelectorAll('.destination');
     const destTitles = document.querySelectorAll('.destination h4')
@@ -86,6 +97,12 @@ window.onload = function () {
             destCountA++
         }
     }))
+
+    contentPicA.addEventListener('mouseenter', () => {gsap.to(contentPicA, {duration: 4, rotation: 720})});
+    contentPicA.addEventListener('mouseleave', () => {gsap.to(contentPicA, {duration: 4, rotation: -720})});
+    contentPicB.addEventListener('mouseenter', () => {gsap.to(contentPicB, {duration: 4, rotation: -720})});
+    contentPicB.addEventListener('mouseleave', () => {gsap.to(contentPicB, {duration: 4, rotation: 720})});
+
 
 
 }
