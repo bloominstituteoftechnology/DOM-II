@@ -2,9 +2,6 @@
 
 // Mouseover & Mouseout - makes nav bar background limeGreen when hovering off and white when hovering over
 const navBar = document.querySelector(".nav");
-// navBar.addEventListener("mouseover", () => {
-//   navBar.style.backgroundColor = "white";
-// });
 
 navBar.addEventListener("mouseenter", () => {
   navBar.style.backgroundColor = "limeGreen";
