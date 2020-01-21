@@ -34,6 +34,7 @@ const changeImage = document.querySelector(".intro img");
 
 changeImage.addEventListener("dblclick", () => {
   changeImage.src = "img/volkswagen.jpg";
+  changeImage.alt = "A blue die-cast volkswagen";
 });
 
 // event 6 = SCROLL
@@ -56,6 +57,7 @@ window.addEventListener("resize", () => {
   const resizeHeader = document.querySelector("header");
 
   cityBus.src = "img/fun-bus-city.jpg";
+  cityBus.alt = "Fun bus in the city";
   resizeBody.style.backgroundColor = "#daf3f5";
   resizeHeader.style.backgroundColor = "#fcf2a4";
 });
