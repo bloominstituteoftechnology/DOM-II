@@ -45,6 +45,11 @@ navItem.forEach(event => {
     event.style.padding = '0px';
     event.style.borderRadius = '0px';
   });
+
+  //prevent Default for nav Items
+  event.addEventListener('click', e => {
+    e.preventDefault();
+  });
 });
 
 //Scroll Navbar color changes
@@ -80,4 +85,25 @@ kDown.addEventListener('keydown', () => {
 const kUp = document.querySelector('body');
 kUp.addEventListener('keyup', () => {
   kUp.style.backgroundColor = 'white';
+});
+
+//button
+const bTn = document.querySelectorAll('.btn');
+bTn.forEach(event => {
+  event.addEventListener('click', () => {
+    alert('Button Clicked');
+  });
+});
+
+//pick your Destination image
+
+const pickImg = document.querySelector('.content-destination img');
+pickImg.addEventListener('mouseover', () => {
+  pickImg.style.transform = 'translate(50px, 100px';
+});
+
+//select Texst
+const headOne = document.querySelector('.intro h2');
+headOne.addEventListener('select', () => {
+  alert('You Selected Text');
 });
