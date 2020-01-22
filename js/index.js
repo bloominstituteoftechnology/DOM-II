@@ -27,11 +27,16 @@ mapPic.addEventListener('mouseup', () => {
     mapPic.style.border = "0";
 })
 
-//Backround color on key down
-const main = document.querySelector('.container')
-main.addEventListener('keydown', () => {
-    main.style.backgroundColor = "dodger-blue";
+//Text change on key down
+const banner = document.querySelector('.text-content p')
+document.addEventListener('keydown', () => {
+    banner.textContent = ""
 })
-main.addEventListener('keyup', () => {
-    main.style.backgroundColor = "white";
+document.addEventListener('keyup', () => {
+    banner.textContent = "Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.";
+})
+
+const boatPic = document.querySelector('.content-destination img')
+boatPic.addEventListener('dblclick', () => {
+    boatPic.classList.toggle("hidden")
 })
