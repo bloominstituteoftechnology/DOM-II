@@ -20,15 +20,15 @@ enlargeText.addEventListener("mouseleave",() => {
     enlargeText.style.transform = "scale(1.0)";
 })
 
-// mouseenter
+// mouseover
 const introPic = document.querySelector(".intro img")
-introPic.addEventListener("mouseenter", () => {
+introPic.addEventListener("mouseover", () => {
   introPic.style.transform = "scale(1.25)";
   introPic.style.transition = "all 0.5";
 })
 
-// mouse leave 
-introPic.addEventListener("mouseleave", () => {
+// mouseout
+introPic.addEventListener("mouseout", () => {
   introPic.style.transform = "scale(1.0)";
 })
 
@@ -45,3 +45,20 @@ img1.addEventListener("click", () => {
   img1.style.transform = "scale(.5)";
 })
 
+// keydown 
+const body1 = document.querySelector("body")
+body1.addEventListener("keydown", () => {
+  body1.style.backgroundColor = "teal";
+})
+
+// keypress
+const contentSection = document.querySelector(".text-content p")
+contentSection.addEventListener("keypress", () => {
+  contentSection.style.color = "red";
+})
+
+// keyup
+const destination1 = document.querySelector(".destination h4")
+destination1.addEventListener("keyup", () => {
+  destination1.style.color = "yellow";
+})
