@@ -1,37 +1,59 @@
-const rocket = document.createElement("div")
+const rocket = document.createElement("img")
 
+rocket.setAttribute("src", "../img/rocket.png")
 rocket.setAttribute("class", "rocket")
 
 document.querySelector(".blocks").append(rocket)
 
-let rocketspeed
+let windowWidth = window.outerWidth
+let rocketWidth = 100
+let accelerate
+let lastX = {'0': 0, '1': 0, '2': 0, '3': 0, '4': 0}
 
-document.querySelectorAll(".block").forEach((block, index) => {
+document.querySelectorAll(".block").forEach((block, i) => {
     let x = block.getBoundingClientRect().width
-    let y = block.getBoundingClientRect().y
-    let height = block.getBoundingClientRect().height
-    let accelerate 
-    console.log(x, y)
-    // block.addEventListener("click", () => {
-    //    
-    //     rocket.style.transform = `translate(${x + 10}px, ${y - 666}px)`
-    // })
+    let y = block.getBoundingClientRect().y + window.scrollY   
 
-    block.addEventListener("mousedown", () => {
-        console.log(x, y)
+    block.addEventListener("click", () => {
+        
+        rocket.style.display =  "block"
+        // gsap.to(".rocket", {
+        //     duration: 1,
+        //     x: rocketWidth,
+        //     y: y,
+            
+        //     ease: "back",
+        // })
+    })
+
+    block.addEventListener("mousedown", () => { 
+        x = lastX[i.toString()] !== 0 ? lastX[i.toString()] : x
         let acc = 1
         accelerate = setInterval(() => {
-            
-            acc = acc * 1.003
-            console.log(acc)
+            let rocketX = rocket.getBoundingClientRect().x
+            acc = rocketX < windowWidth - rocketWidth ?  acc * 1.003 : 0
             x = x + acc
-            rocket.style.display = "block"
-            rocket.style.transform = `translate(${x}px, ${y - 666}px)`
+
+            moveRocket(y, x)
         },1)
         
-    })
+     })
 
     block.addEventListener("mouseup", () => {
+        lastX[i.toString()] = x
+        console.log(lastX)
+        x = rocketWidth
         clearInterval(accelerate)
+        moveRocket(y, x)
     })
 })
+
+
+function moveRocket(y, x) {
+    gsap.to(".rocket", {
+        duration: 1,
+        x: x,
+        y: y,
+        rotationX: 360,
+    })
+}
