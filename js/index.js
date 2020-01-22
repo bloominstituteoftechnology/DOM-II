@@ -3,9 +3,9 @@ const setup = (item) => {
   item.stopPropagation();
   item.preventDefault();
 };
-const styling =(iteration, css){
 
-}
+
+const styling = iteration.target.style.color
 
 
 const linkcolors = document.querySelectorAll('.nav-link');
