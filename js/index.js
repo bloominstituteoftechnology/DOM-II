@@ -1,4 +1,4 @@
-// Your code goes here
+/* // Your code goes here
 const funBusImg = document.querySelector('.intro img');
 funBusImg.addEventListener('mouseenter', () => {
     event.target.style.transform = 'scale(1.3)';
@@ -25,7 +25,7 @@ for(let i = 0; i < everything.length; i++) {
     })
     everything[i].addEventListener('click', () => {
         event.target.style.color = 'blue'
-        /* event.stopImmediatePropagation() */
+        
     })
     everything[i].addEventListener('contextmenu', () => {
         everything[7].style.backgroundColor = 'yellow'
@@ -43,4 +43,14 @@ for(let i = 0; i < everything.length; i++) {
 
 const body = document.querySelector('body').addEventListener('dblclick', () => {
     window.location.reload(true);
-})
+})  
+ */
+
+/*  const test1 = document.querySelector('.text-content p').addEventListener('click', () => {
+     event.target.style.color = 'green'
+     event.stopPropagation()
+ })
+
+ const test2 = document.querySelector('.text-content').addEventListener('click', () => {
+    event.target.style.backgroundColor = 'grey'
+}) */
