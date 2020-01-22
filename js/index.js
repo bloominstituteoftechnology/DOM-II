@@ -7,11 +7,13 @@ funBusImg.addEventListener('mouseleave', () => {
     event.target.style.transform = '';
 })
 
-const navN = document.querySelectorAll('a')
-
-/* navN[0].addEventListener('keydown', () => {
-    event.target.style.color = 'red';
-}) */
+const imgDrag = document.querySelectorAll('.img-content')
+imgDrag[0].addEventListener('drag', () => {
+    event.target.style.transform = 'scale(.5)'
+})
+imgDrag[1].addEventListener('drag', () => {
+    event.target.style.transform = 'scale(.5)'
+})
 const everything = document.querySelectorAll('*')
 
 for(let i = 0; i < everything.length; i++) {
@@ -23,6 +25,7 @@ for(let i = 0; i < everything.length; i++) {
     })
     everything[i].addEventListener('click', () => {
         event.target.style.color = 'blue'
+        /* event.stopImmediatePropagation() */
     })
     everything[i].addEventListener('contextmenu', () => {
         everything[7].style.backgroundColor = 'yellow'
@@ -35,3 +38,6 @@ for(let i = 0; i < everything.length; i++) {
     })
 }
 
+const body = document.querySelector('body').addEventListener('dblclick', () => {
+    window.location.reload(true);
+})
