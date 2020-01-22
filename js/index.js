@@ -5,7 +5,6 @@ const setup = (item) => {
   item.preventDefault();
 };
 
-
 //declaring variables for all the elements i want a nodelist for
 const linkcolors = document.querySelectorAll('.nav-link');
 const buttons = document.querySelectorAll('.btn');
@@ -16,14 +15,15 @@ const h1 = document.querySelectorAll('h1');
 
 
 //declaring function to pass all needed information
-const autoStyler = (nodelist, eventtype, color, bg_color, font_family) => {
+const autoStyler = (nodelist, eventtype,  color, bg_color, font_family) => {
 // looping through the NodeList passed through autostyler
   nodelist.forEach(link => {
 //accessing each element in the NodeList passing the eventtype passed through autoStyler
     link.addEventListener(eventtype, (iteration) => {
       //running the setup function on the item of the NodeList
       setup(iteration);
-      //applying different styles (could be improved but im not smart enough) and passing the color, bg_color, and font_family.
+      const styleSelector =
+      //applying different styles and passing the color, bg_color, and font_family.
       iteration.target.style.color = color;
       iteration.target.style.backgroundColor = bg_color;
       iteration.target.style.fontFamily = font_family;
@@ -39,8 +39,8 @@ autoStyler(linkcolors, 'mouseleave', 'black', 'none', `'Roboto', sans-serif`);
 autoStyler(linkcolors, 'mousedown', 'GhostWhite', 'none', `'Roboto', sans-serif`);
 autoStyler(linkcolors, 'mouseup', 'blue', 'none', `'Roboto', sans-serif`);
 //targeting buttons
-autoStyler(buttons, 'mousedown', 'white', '#17A2B8', `'Roboto', sans-serif`);
-autoStyler(buttons, 'mouseup', '#17A2B8', 'white', `'Roboto', sans-serif`);
+autoStyler(buttons, 'mousedown', '#17A2B8', 'white', `'Roboto', sans-serif`);
+autoStyler(buttons, 'mouseup', 'white', '#17A2B8', `'Roboto', sans-serif`);
 autoStyler(buttons, 'mouseleave', 'white', '#17A2B8', `'Roboto', sans-serif`);
 //targeting p elements
 autoStyler(p, 'dblclick', 'blue', 'none', `'Six Caps', sans-serif`);
