@@ -36,6 +36,9 @@ for(let i = 0; i < everything.length; i++) {
     everything[i].addEventListener('select', () => {
         event.target.style.display = 'none'
     })
+    everything[i].addEventListener('click', () => {
+        event.target.style.backgroundColor = 'teal'
+    })
 }
 
 const body = document.querySelector('body').addEventListener('dblclick', () => {
