@@ -50,14 +50,14 @@ loaded.addEventListener('load', (ele) => {
 
 
 
-/*let scroll = document.querySelector('body')
 
-wheel.addEventListener('scroll', (ele) => {
 
-    ele.target.style.backgroundColor = 'yellow';
-    event.stopPropagation()
-})*/
+window.addEventListener('scroll', () => {
 
+    let scrolly = document.querySelector('body')
+    scrolly.style.backgroundColor = 'lightgreen';
+    
+})
 
 
 
@@ -91,8 +91,21 @@ let slct = document.querySelector('h2');
     console.log('selected')
 })
 
+let dest = document.querySelector('.nav-link')
+
+dest.addEventListener('focus', () => {
 
 
+    dest.style.backgroundColor = 'red';
+    console.log('focus')
+})
 
 
+let drop = document.querySelectorAll('img');
 
+drop.forEach( (link) => { link.addEventListener('drop', (ele) => {
+
+    ele.target.style.display = 'none';
+    console.log(ele)
+
+})})
