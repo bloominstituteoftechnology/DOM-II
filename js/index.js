@@ -51,7 +51,12 @@ document.querySelectorAll(".nav-link").forEach(link => {
 // });
 
 // `scroll`
-
+document.addEventListener("scroll", () => {
+  document.querySelectorAll("h2").forEach(item => {
+    item.style.color = "#4c89bf";
+    item.style.color = "#4c89bf";
+  });
+});
 
 // `resize`
 
