@@ -1,5 +1,5 @@
 // * [x] `keydown`
-// * [ ] `keyup`
+// * [x] `keyup`
 // * [ ] `mouseover`
 // * [ ] `mouseout`
 // * [ ] `dblclick`
@@ -17,11 +17,16 @@ const newText = document.querySelector(".logo-heading");
 window.addEventListener("keydown", () => {
     const newText = document.querySelector(".logo-heading");
     newText.textContent = "Come Travel Us!";
-    newText.style.color = "#c7624c";
+    newText.style.color = "#4c89bf";
     newText.style.fontSize = "5rem";
   });
 
 //  `keyup`
+window.addEventListener("keyup", () => {
+  newText.textContent = "Fun Bus";
+  newText.style.color = "#212529";
+  newText.style.fontSize = "4rem";
+});
 
 //  `mouseover`
 
@@ -30,12 +35,12 @@ window.addEventListener("keydown", () => {
 
 
 // `dblclick`
-const changeImage = document.querySelector(".intro img");
-Console.log(changeImage);
+// const changeImage = document.querySelector(".intro img");
+// Console.log(changeImage);
 
-changeImage.addEventListener("dblclick", () => {
-    changeImage.src = "img/gray-volkswagen.jpg";
-});
+// changeImage.addEventListener("dblclick", () => {
+//     changeImage.src = "img/gray-volkswagen.jpg";
+// });
 
 // `scroll`
 
