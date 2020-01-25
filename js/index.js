@@ -1,6 +1,6 @@
 // * [x] `keydown`
 // * [x] `keyup`
-// * [ ] `mouseover`
+// * [x] `mouseover`
 // * [ ] `mouseout`
 // * [ ] `dblclick`
 // * [ ] `scroll`
@@ -11,7 +11,7 @@
 
 // YOUR CODE GOES HERE\\
 
-//  `keydown`
+//  `keydown`on Fun Bus logo
 const newText = document.querySelector(".logo-heading");
 
 window.addEventListener("keydown", () => {
@@ -21,15 +21,19 @@ window.addEventListener("keydown", () => {
     newText.style.fontSize = "5rem";
   });
 
-//  `keyup`
+//  `keyup`on Fun Bus logo
 window.addEventListener("keyup", () => {
-  newText.textContent = "Fun Bus";
+  newText.textContent = "Fu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Bus";
   newText.style.color = "#212529";
   newText.style.fontSize = "4rem";
 });
 
-//  `mouseover`
-
+//  `mouseover` on Navagation
+document.querySelectorAll(".nav a").forEach(element => {
+  element.addEventListener("mouseover", () => {
+    element.style.color = "#4c89bf";
+  });
+})
 
 //  `mouseout`
 
