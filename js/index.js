@@ -1,4 +1,4 @@
-// * [ ] `keydown`
+// * [x] `keydown`
 // * [ ] `keyup`
 // * [ ] `mouseover`
 // * [ ] `mouseout`
@@ -12,10 +12,16 @@
 // YOUR CODE GOES HERE\\
 
 //  `keydown`
+const newText = document.querySelector(".logo-heading");
 
+window.addEventListener("keydown", () => {
+    const newText = document.querySelector(".logo-heading");
+    newText.textContent = "Come Travel Us!";
+    newText.style.color = "#c7624c";
+    newText.style.fontSize = "5rem";
+  });
 
 //  `keyup`
-
 
 //  `mouseover`
 
