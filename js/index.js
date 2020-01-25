@@ -36,7 +36,11 @@ document.querySelectorAll(".nav a").forEach(element => {
 })
 
 //  `mouseout`
-
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("mouseout", () => {
+    link.style.color = "";
+  });
+});
 
 // `dblclick`
 // const changeImage = document.querySelector(".intro img");
