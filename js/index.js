@@ -1,19 +1,46 @@
-// * [ ] `mouseover`
 // * [ ] `keydown`
-// * [ ] `wheel`
-// * [ ] `drag / drop`
-// * [ ] `load`
-// * [ ] `focus`
-// * [ ] `resize`
+// * [ ] `keyup`
+// * [ ] `mouseover`
+// * [ ] `mouseout`
+// * [ ] `dblclick`
 // * [ ] `scroll`
-// * [ ] `select`
-// * [x] `dblclick`
+// * [ ] `resize`
+// * [ ] `click`
+// * [ ] `mouseenter`
+// * [ ] `mouseleave`
 
-// Your code goes here
+// YOUR CODE GOES HERE\\
 
+//  `keydown`
+
+
+//  `keyup`
+
+
+//  `mouseover`
+
+
+//  `mouseout`
+
+
+// `dblclick`
 const changeImage = document.querySelector(".intro img");
 Console.log(changeImage);
 
 changeImage.addEventListener("dblclick", () => {
-    changeImage.src = "img/gray-olkswagen.jpg"
+    changeImage.src = "img/gray-volkswagen.jpg";
 });
+
+// `scroll`
+
+
+// `resize`
+
+
+// `click`
+
+
+//  `mouseenter`
+
+
+// `mouseleave`
