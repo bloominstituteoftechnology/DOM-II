@@ -1,12 +1,12 @@
 // * [x] `keydown`
 // * [x] `keyup`
 // * [x] `mouseover`
-// * [ ] `mouseout`
+// * [x] `mouseout`
 // * [ ] `dblclick`
-// * [ ] `scroll`
+// * [x] `scroll`
 // * [ ] `resize`
 // * [ ] `click`
-// * [ ] `mouseenter`
+// * [x] `mouseenter`
 // * [ ] `mouseleave`
 
 // YOUR CODE GOES HERE\\
@@ -23,7 +23,7 @@ window.addEventListener("keydown", () => {
 
 //  `keyup`on Fun Bus logo
 window.addEventListener("keyup", () => {
-  newText.textContent = "Fu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Bus";
+  newText.textContent = "Fun Bus";
   newText.style.color = "#212529";
   newText.style.fontSize = "4rem";
 });
@@ -47,7 +47,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
 // Console.log(changeImage);
 
 // changeImage.addEventListener("dblclick", () => {
-//     changeImage.src = "img/gray-volkswagen.jpg";
+//     changeImage.src = "img/volkswagen.jpg";
 // });
 
 // `scroll`
@@ -65,6 +65,15 @@ document.addEventListener("scroll", () => {
 
 
 //  `mouseenter`
+const newPointer = document.querySelectorAll("h4");
 
+newPointer.forEach(element => {
+  element.addEventListener("mouseenter", () => {
+    element.style.cursor =
+      "url('https://image.flaticon.com/icons/svg/1142/1142693.png'), auto";
+    element.style.backgroundColor = "#4c89bf";
+  });
+});
 
 // `mouseleave`
+
