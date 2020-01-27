@@ -1,13 +1,13 @@
 // * [x] `keydown`
 // * [x] `keyup`
 // * [x] `mouseover`
-// * [x] `mouseout`
+// * [ ] `mouseout`
 // * [ ] `dblclick`
 // * [x] `scroll`
 // * [ ] `resize`
 // * [ ] `click`
 // * [x] `mouseenter`
-// * [ ] `mouseleave`
+// * [x] `mouseleave`
 
 // YOUR CODE GOES HERE\\
 
@@ -65,15 +65,19 @@ document.addEventListener("scroll", () => {
 
 
 //  `mouseenter`
-const newPointer = document.querySelectorAll("h4"); //hover image not showing
+const newPointer = document.querySelectorAll("h4");   //hover image not showing
 
 newPointer.forEach(element => {
   element.addEventListener("mouseenter", () => {
     element.style.cursor =
-      "url('https://image.flaticon.com/icons/svg/1142/1142693.png'), auto";
     element.style.backgroundColor = "#4c89bf";
   });
 });
 
 // `mouseleave`
 
+newPointer.forEach(element => {
+  element.addEventListener("mouseleave", () => {
+    element.style.background = "";
+  });
+});
