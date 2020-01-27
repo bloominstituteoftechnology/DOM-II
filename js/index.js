@@ -65,7 +65,7 @@ document.addEventListener("scroll", () => {
 
 
 //  `mouseenter`
-const newPointer = document.querySelectorAll("h4");
+const newPointer = document.querySelectorAll("h4"); //hover image not showing
 
 newPointer.forEach(element => {
   element.addEventListener("mouseenter", () => {
