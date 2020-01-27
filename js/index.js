@@ -42,12 +42,12 @@ document.querySelectorAll(".nav-link").forEach(link => {
   });
 });
 
-// `dblclick`
+`dblclick`
 // const changeImage = document.querySelector(".intro img");
 // Console.log(changeImage);
 
 // changeImage.addEventListener("dblclick", () => {
-//     changeImage.src = "img/volkswagen.jpg";
+//     changeImage.src = "img/orange-volkswagen.jpg";
 // });
 
 // `scroll`
@@ -59,7 +59,10 @@ document.addEventListener("scroll", () => {
 });
 
 // `resize`
-
+window.addEventListener("resize", () => {
+  const cityBus = document.querySelector(".intro img");
+  cityBus.src = "img/volkswagen.jpg";
+});
 
 // `click`
 
