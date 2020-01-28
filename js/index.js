@@ -1,11 +1,11 @@
 // * [x] `keydown`
 // * [x] `keyup`
 // * [x] `mouseover`
-// * [ ] `mouseout`
-// * [ ] `dblclick`
+// * [x] `mouseout`
+// * [x] `dblclick`
 // * [x] `scroll`
-// * [ ] `resize`
-// * [ ] `click`
+// * [x] `resize`
+// * [x] `click`
 // * [x] `mouseenter`
 // * [x] `mouseleave`
 
@@ -42,13 +42,14 @@ document.querySelectorAll(".nav-link").forEach(link => {
   });
 });
 
-`dblclick`
-// const changeImage = document.querySelector(".intro img");
-// Console.log(changeImage);
+//`dblclick`
+const changeImage = document.querySelector(".intro img");
+// console.log(changeImage);
 
-// changeImage.addEventListener("dblclick", () => {
-//     changeImage.src = "img/orange-volkswagen.jpg";
-// });
+changeImage.addEventListener("dblclick", () => {
+  changeImage.src = "img/orange-volkswagen.jpg";
+  changeImage.alt = "A blue die-cast volkswagen";
+});
 
 // `scroll`
 document.addEventListener("scroll", () => {
@@ -65,7 +66,15 @@ window.addEventListener("resize", () => {
 });
 
 // `click`
+const pressBtn = document.querySelectorAll(".btn");
 
+pressBtn.forEach(element => {
+  element.addEventListener("click", () => {
+    element.textContent = "Book my Ticket!";
+    // element.style.transform = "rotate (360deg)";
+    element.style.transition = "all 2s";
+  });
+});
 
 //  `mouseenter`
 const newPointer = document.querySelectorAll("h4");   //hover image not showing
