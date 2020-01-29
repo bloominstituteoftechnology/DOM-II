@@ -35,14 +35,14 @@ document.querySelectorAll(".nav a").forEach(element => {
   });
 })
 
-//  `mouseout`
+//  `mouseout` on Navagation
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("mouseout", () => {
     link.style.color = "";
   });
 });
 
-//`dblclick`
+//`dblclick` on main Image
 const changeImage = document.querySelector(".intro img");
 // console.log(changeImage);
 
@@ -51,7 +51,7 @@ changeImage.addEventListener("dblclick", () => {
   changeImage.alt = "A blue die-cast volkswagen";
 });
 
-// `scroll`
+// `scroll` on h2 tags
 document.addEventListener("scroll", () => {
   document.querySelectorAll("h2").forEach(item => {
     item.style.color = "#4c89bf";
@@ -59,13 +59,13 @@ document.addEventListener("scroll", () => {
   });
 });
 
-// `resize`
+// `resize` on main Image
 window.addEventListener("resize", () => {
   const cityBus = document.querySelector(".intro img");
   cityBus.src = "img/volkswagen.jpg";
 });
 
-// `click`
+// `click` on bottom buttons
 const pressBtn = document.querySelectorAll(".btn");
 
 pressBtn.forEach(element => {
@@ -93,3 +93,27 @@ newPointer.forEach(element => {
     element.style.background = "";
   });
 });
+
+// Propagation Property 
+
+document.querySelectorAll (".destination").forEach (div => {
+  div.addEventListener ("click", () => {
+    div.style.backgroundColor = "steelblue";
+  });
+});
+
+document.querySelectorAll (".btn").forEach (btn => {
+  btn.addEventListener ("click", () => {
+    console.log("You have click a magical button");
+    event.stopPropagation ();
+  });
+});
+
+//Stop Navagation
+
+const goNoFurther = document.querySelectorAll(".nav a"); 
+  goNoFurther.forEach(noDuckGo => {
+    noDuckGo.addEventListener("click", noDuckGo => {
+      noDuckGo.preventDefault();
+    });
+  });
