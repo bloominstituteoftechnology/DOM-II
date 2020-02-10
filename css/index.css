@@ -180,6 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 999;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -198,6 +199,32 @@ img {
   .main-navigation .nav-container .logo-heading {
     font-size: 3rem;
   }
+}
+@keyframes logoColor {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  56% {
+    color: blue;
+  }
+  70% {
+    color: darkviolet;
+  }
+  100% {
+    color: violet;
+  }
+}
+.main-navigation .nav-container .funLogo {
+  animation: logoColor 300ms infinite;
 }
 .main-navigation .nav-container .nav {
   width: 350px;
@@ -233,6 +260,18 @@ img {
 .home .intro img {
   max-width: 100%;
   height: auto;
+}
+@keyframes bounceImg {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.home .intro .funImg {
+  animation: bounceImg 100ms infinite;
+  z-index: -999;
 }
 .home .intro h2 {
   margin-top: 20px;

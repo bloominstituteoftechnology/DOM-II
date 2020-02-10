@@ -4,6 +4,7 @@
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
+  z-index: 999;
 
   .nav-container {
     height: 100%;
@@ -23,6 +24,40 @@
       }
     }
 
+    @keyframes logoColor {
+      0% {
+        color: red;
+      }
+
+      14% {
+        color: orange;
+      }
+
+      28% {
+        color: yellow;
+      }
+
+      42% {
+        color: green;
+      }
+
+      56% {
+        color: blue;
+      }
+
+      70% {
+        color: darkviolet;
+      }
+
+      100% {
+        color: violet;
+      }
+    }
+
+    .funLogo {
+      animation: logoColor 300ms infinite;
+    }
+
     .nav {
       width: 350px;
       display: flex;
@@ -32,8 +67,8 @@
         width: 100%;
         justify-content: space-around;
       }
-      
-      
+
+
       a {
         font-size: 1.6rem;
         color: @font-color;
@@ -41,4 +76,6 @@
       }
     }
   }
-} // .main-navigation
+}
+
+// .main-navigation
