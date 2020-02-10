@@ -21,11 +21,23 @@ let btns = document.querySelectorAll("button");
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", e => {
     if (e.target === btns[0]) {
-      btns[0].textContent = "WE DON'T WANT YOU";
+      if (btns[0].textContent == "Sign Me Up!") {
+        btns[0].textContent = "WE DON'T WANT YOU";
+      } else {
+        btns[0].textContent = "Sign Me Up!";
+      }
     } else if (e.target === btns[1]) {
-      btns[1].textContent = "WHAT DO YOU WANT?";
+      if (btns[1].textContent == "Sign Me Up!") {
+        btns[1].textContent = "WHAT DO YOU WANT?";
+      } else {
+        btns[1].textContent = "Sign Me Up!";
+      }
     } else {
-      btns[2].textContent = "I'm just kidding, come back.";
+      if (btns[2].textContent == "Sign Me Up!") {
+        btns[2].textContent = "I'm just kidding, come back.";
+      } else {
+        btns[2].textContent = "Sign Me Up!";
+      }
     }
   });
 }
