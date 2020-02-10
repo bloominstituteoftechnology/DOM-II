@@ -1,5 +1,38 @@
 @import 'variables.less';
 @import 'mixins.less';
+@keyframes logoColor {
+	0% {
+		color: red;
+	}
+
+	14% {
+		color: orange;
+	}
+
+	28% {
+		color: yellow;
+	}
+
+	42% {
+		color: green;
+	}
+
+	56% {
+		color: blue;
+	}
+
+	70% {
+		color: darkviolet;
+	}
+
+	100% {
+		color: violet;
+	}
+}
+
+.funLogo {
+	animation: logoColor 300ms infinite;
+}
 
 .main-navigation {
 	width: 100%;
@@ -25,40 +58,6 @@
 			@media @mobile {
 				font-size: 3rem;
 			}
-		}
-
-		@keyframes logoColor {
-			0% {
-				color: red;
-			}
-
-			14% {
-				color: orange;
-			}
-
-			28% {
-				color: yellow;
-			}
-
-			42% {
-				color: green;
-			}
-
-			56% {
-				color: blue;
-			}
-
-			70% {
-				color: darkviolet;
-			}
-
-			100% {
-				color: violet;
-			}
-		}
-
-		.funLogo {
-			animation: logoColor 300ms infinite;
 		}
 
 		.nav {
