@@ -63,7 +63,62 @@ bar.style.width = `${(pageYOffset / max) * 100}%`;
 //end scroll//
 
 //double click//
-const changeImg = document.querySelector('.logo-heading');
-changeImg.addEventListener("dblclick", () => {
-  changeImg.src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/780593/cat-lambda.png";
+const changelogo = document.querySelector('.intro img');
+
+changelogo.addEventListener("dblclick", () => {
+  changelogo.src="img/poo.png";
 })
+
+//end double click//
+
+
+//click event stop prop//
+const body = document.querySelector('body');
+
+body.addEventListener('click', () => {
+  body.style.backgroundColor="gray";
+  console.log("Me last!")
+})
+
+const cardGroup = document.querySelector(".home");
+cardGroup.addEventListener('click', (event) => {
+  cardGroup.style.backgroundColor = "silver";
+  event.stopPropagation();
+  console.log("me second!");
+  
+})
+
+const card = document.querySelector(".destination");
+card.addEventListener('click', (event) => {
+  card.style.backgroundColor="slategray";
+  event.stopPropagation();
+})
+//end prop//
+
+//wheel//
+// el.addEventListener('wheel', zoom);
+
+// let wheel = document.querySelector(".content-destination img");
+
+// wheel.addEventListener(('wheel', zoom) => {
+// let max = document.body.scrollHeight - innerHeight;
+// bar.style.width = `${(pageYOffset / max) * 100}%`;
+// });
+
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+}
+  
+let scale = 1;
+const el = document.querySelector('.content-destination img');
+el.onwheel = zoom;
+
+//end wheel
