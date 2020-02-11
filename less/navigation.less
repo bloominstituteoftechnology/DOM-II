@@ -4,6 +4,7 @@
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
+  z-index: 10;
 
   .nav-container {
     height: 100%;
@@ -23,7 +24,7 @@
       }
     }
 
-    .nav {
+    #myLinks {
       width: 350px;
       display: flex;
       justify-content: space-evenly;
@@ -31,6 +32,8 @@
       @media @mobile {
         width: 100%;
         justify-content: space-around;
+        display: none;
+      
       }
       
       
@@ -39,6 +42,19 @@
         color: @font-color;
         text-decoration: none;
       }
+    }
+
+    a i {
+      display: none;
+      
+
+      @media @mobile {
+        color: black;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 2rem;
+        display: block;
+      } 
     }
   }
 } // .main-navigation
