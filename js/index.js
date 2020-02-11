@@ -45,3 +45,17 @@ window.addEventListener("resize", () => {
   window.addEventListener("scroll", () => {
     bottomContent.style.color = "red";
   })
+
+const body = document.querySelector("body");
+
+window.addEventListener("keydown", (event) => {
+    if (event.isComposing || event.keyCode === 65) {
+        body.style.color = "yellow";
+    }
+  })
+
+  window.addEventListener("keyup", (event) => {
+    if (event.keyCode === 65) {
+        alert("enjoy yellow");
+    }
+  })
