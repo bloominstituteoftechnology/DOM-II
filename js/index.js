@@ -1,3 +1,7 @@
+//import gsap//
+// import {gsap} from 'gsap';
+
+
 // nav resize mobile //
 function myFunction() {
     var x = document.getElementById("myLinks");
@@ -77,14 +81,12 @@ const body = document.querySelector('body');
 
 body.addEventListener('click', () => {
   body.style.backgroundColor="gray";
-  console.log("Me last!")
 })
 
 const cardGroup = document.querySelector(".home");
 cardGroup.addEventListener('click', (event) => {
   cardGroup.style.backgroundColor = "silver";
   event.stopPropagation();
-  console.log("me second!");
   
 })
 
@@ -144,14 +146,14 @@ const stopLink = document.querySelector("#myLinks");
 
 stopLink.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("stopped the link");
+//   console.log("stopped the link");
 })
 //end prevent default//
 
 //keydown and keyup//
 window.addEventListener("keydown", event => {
 if (event.key == "v") {
-    document.body.style.background = "violet";
+    document.body.style.background = "black";
 }
 });
 window.addEventListener("keyup", event => {
@@ -160,3 +162,32 @@ if (event.key == "v") {
 }
 });
 //end keydown and keyup//
+
+//green sock stuffs//
+
+//flip top img//
+const box = document.querySelector('body').addEventListener("click", () => {
+    gsap.to('.intro img', {
+        duration: 1,
+        rotateY: 180,
+        ease: "elastic(1, 0.75)",
+        yoyo: true,
+        repeat: 1
+    });
+})
+//end flip//
+
+
+const cool = document.querySelector('body').addEventListener("click", () => {
+    gsap.to(".content-destination h2", {
+        y: 100,
+        stagger: { // wrap advanced options in an object
+        each: 0.1,
+        from: "center",
+        grid: "auto",
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: 1
+        }
+    });
+});
