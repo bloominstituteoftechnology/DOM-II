@@ -111,4 +111,38 @@
       }
     }
   }
+  .cart {
+    display: flex;
+    justify-content: space-evenly;
+    .fill {
+      background-image: url('https://images.unsplash.com/photo-1545579133-99bb5ab189bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      position: relative;
+      height: 150px;
+      width: 150px;
+      top: 2px;
+      left: 2px;
+      cursor: pointer;
+    }
+    
+    .hold {
+      border: solid 5px #ccc;
+    }
+    
+    .empty {
+      display: inline-block;
+      height: 160px;
+      width: 160px;
+      margin: 10px;
+      border: solid 3px black;
+      background: white;
+    }
+    .message {
+      align-self: center;
+    }
+    .hovered {
+      background: #f4f4f4;
+      border-style: dashed;
+    }
+  }
 }// home

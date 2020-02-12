@@ -1,3 +1,6 @@
+.active {
+  color: aqua;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -174,6 +177,16 @@ img {
     margin: 0 5%;
   }
 }
+.scroll-active {
+  background-color: aqua;
+  padding: 10px 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: block !important;
+  font-size: 1.6rem;
+  position: fixed;
+  float: right;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -203,6 +216,9 @@ img {
   width: 350px;
   display: flex;
   justify-content: space-evenly;
+}
+.main-navigation .nav-container .nav .active {
+  color: aqua;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container .nav {
@@ -349,4 +365,36 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .cart {
+  display: flex;
+  justify-content: space-evenly;
+}
+.home .cart .fill {
+  background-image: url('https://images.unsplash.com/photo-1545579133-99bb5ab189bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 2px;
+  left: 2px;
+  cursor: pointer;
+}
+.home .cart .hold {
+  border: solid 5px #ccc;
+}
+.home .cart .empty {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: solid 3px black;
+  background: white;
+}
+.home .cart .message {
+  align-self: center;
+}
+.home .cart .hovered {
+  background: #f4f4f4;
+  border-style: dashed;
 }
