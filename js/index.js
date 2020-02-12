@@ -18,22 +18,51 @@ destImg.addEventListener('dblclick', () => {
     destImg.style.transform = 'translate(50px, 50px';
 })
 
-const funImg = document.querySelector('.content-section img');
+// const funImg = document.querySelector('.content-section img');
 
-    funImg.addEventListener('keydown', function(event) {
-        event.target.style.transform = 'rotate(360)';
-        event.target.style.transition = 'transform 2s';
-    })
+//     funImg.addEventListener('keydown', function(event) {
+//         event.target.style.transform = 'rotate(360)';
+//         event.target.style.transition = 'transform 2s';
+//     })
 
 const funSun = document.querySelector('.destination h4');
-console.log(funSun);
-funSun.addEventListener('select', (event) => {
+
+funSun.addEventListener('copy', (event) => {
     event.target.style.color = 'red';
 })
 
-const nav = document.querySelector('.nav');
-nav.addEventListener('mouseenter', () => {
-    nav.style.stransform = 'scale(3)';
-    nav.style.transition = 'transform 1s';
+const navStyle = document.querySelector('.nav');
+
+navStyle.addEventListener('mouseover', () => {
+    navStyle.style.transform = 'scale(3)';
+    navStyle.style.transition = 'transform 1s';
 });
+
+const foot = document.querySelector('.footer');
+foot.addEventListener('mouseenter', () => {
+    foot.style.backgroundColor = 'pink';
+    }
+    foot.addEventListener('mouseleave', () => {
+        foot.style.backgroundColor = 'blue'
+    })
+    )
+
+const stopProp = document.querySelector('.destination');
+stopProp.addEventListener('wheel', (event) => {
+    stopProp.style.transform = 'rotate(360deg)'
+    stopProp.style.transition = '.8s'
+    event.stopPropagation()
+
+} )
+
+const fancyBtn = document.querySelector('.destination .btn');
+fancyBtn.addEventListener('mousedown', () => {
+    fancyBtn.style.backgroundColor = 'silver';
+})
+
+const advPic = document.querySelector('.img-fluid')
+advPic.addEventListener('')
+console.log(advPic)
+
+
 
