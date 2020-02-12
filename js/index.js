@@ -12,8 +12,11 @@ console.log(navBar)
 navBar.forEach(nav => {
     nav.addEventListener('click', e => {
         nav.style.backgroundColor = 'yellow'
+        event.preventDefault()
     })
 })
+
+
 
 
 window.addEventListener('load', (event) => {
@@ -40,4 +43,14 @@ Array.from(images).forEach(i => {
         i.style.transform = "scale(1)"
 
     })
+})
+
+const title = document.querySelector('.logo-heading')
+console.log(title)
+title.addEventListener('mouseover', e => {
+    e.target.style.color = 'orange'
+
+    setTimeout(()=> {
+        e.target.style.color = ''
+    }, 400)
 })
