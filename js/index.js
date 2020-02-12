@@ -96,18 +96,38 @@ card.addEventListener('click', (event) => {
 //end prop//
 
 //wheel//
-// el.addEventListener('wheel', zoom);
-
 // let wheel = document.querySelector(".content-destination img");
 
-// wheel.addEventListener(('wheel', zoom) => {
-// let max = document.body.scrollHeight - innerHeight;
-// bar.style.width = `${(pageYOffset / max) * 100}%`;
-// });
+// wheel.addEventListener('wheel', zoom);
+    
 
-function zoom(event) {
-    event.preventDefault();
+// function zoom(event) {
+//     event.preventDefault();
+//     let scale = 1;
+//     const el = document.querySelector('.content-destination img');
+//     el.onwheel = zoom;
   
+//     scale += event.deltaY * -0.01;
+  
+//     // Restrict scale
+//     scale = Math.min(Math.max(.125, scale), 4);
+  
+//     // Apply scale transform
+//     el.style.transform = `scale(${scale})`;
+
+//     console.log(el);
+// }
+
+let wheel = document.querySelector('.content-destination img');
+
+wheel.addEventListener('wheel', function zoom(){
+
+    let scale = 1;
+    const el = document.querySelector('.content-destination img');
+    el.onwheel = zoom; 
+
+    event.preventDefault();
+
     scale += event.deltaY * -0.01;
   
     // Restrict scale
@@ -115,10 +135,28 @@ function zoom(event) {
   
     // Apply scale transform
     el.style.transform = `scale(${scale})`;
-}
-  
-let scale = 1;
-const el = document.querySelector('.content-destination img');
-el.onwheel = zoom;
 
-//end wheel
+})
+//end wheel//
+
+//prevent default//
+const stopLink = document.querySelector("#myLinks");
+
+stopLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log("stopped the link");
+})
+//end prevent default//
+
+//keydown and keyup//
+window.addEventListener("keydown", event => {
+if (event.key == "v") {
+    document.body.style.background = "violet";
+}
+});
+window.addEventListener("keyup", event => {
+if (event.key == "v") {
+    document.body.style.background = "blue";
+}
+});
+//end keydown and keyup//
