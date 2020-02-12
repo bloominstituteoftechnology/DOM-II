@@ -41,7 +41,7 @@ navStyle.addEventListener('mouseover', () => {
 const foot = document.querySelector('.footer');
 foot.addEventListener('mouseenter', () => {
     foot.style.backgroundColor = 'pink';
-    }
+    },
     foot.addEventListener('mouseleave', () => {
         foot.style.backgroundColor = 'blue'
     })
@@ -60,9 +60,13 @@ fancyBtn.addEventListener('mousedown', () => {
     fancyBtn.style.backgroundColor = 'silver';
 })
 
-const advPic = document.querySelector('.img-fluid')
-advPic.addEventListener('')
-console.log(advPic)
+const adventure = document.querySelector('.text-content')
+console.log(adventure)
+ adventure.addEventListener('mousemove', colorVariant);
+function colorVariant(event){
+    adventure.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 79)`
+}
+
 
 
 
