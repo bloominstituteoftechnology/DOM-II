@@ -7,7 +7,17 @@ window.addEventListener('load', () => {
     setTimeout(function() {
         document.querySelector('#loading').style.display = 'none';
         document.querySelector('.home').style.display = 'inherit';
-    }, 3000);
+    }, 1000);
+
+    // GSAP Animations
+    gsap.from('#nav a', {
+        opacity: 0,
+        duration: 1,
+        rotationX: 360,
+        x: -100, 
+        delay: 1,
+        stagger: 0.1
+    });
 })
 
 document.addEventListener('scroll', () => {
