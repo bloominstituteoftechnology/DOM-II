@@ -1,7 +1,7 @@
-// Your code goes here
-// window.addEventListener('resize', () => {
-//     alert('STOPPPPPP!!!');
-// });
+//Your code goes here
+window.addEventListener('resize', () => {
+    alert('STOPPPPPP!!!');
+});
 
 window.addEventListener('load', () => {
     setTimeout(function() {
