@@ -13,7 +13,7 @@ window.addEventListener('keydown', (event) => {
     let parent = selection.anchorNode.parentElement;
     let keyValue = String.fromCharCode(event.keyCode);
     if (selection) {
-        if (parent.nodeName === 'P') {
+        if (parent.nodeName === 'H2') {
             parent.innerText = parent.innerText.replace(selection, keyValue);
         }
     }
