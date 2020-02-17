@@ -6,10 +6,18 @@ const style = document.querySelector('head style');
 style.setAttribute('type', 'text/css');
 
 const thisBody = document.querySelector('body');
+
 // Event #1
-thisBody.addEventListener('contextmenu', () => {
-    window.alert("That is not allowed");
-});
+window.addEventListener('keydown', (event) => {
+    let selection = window.getSelection();
+    let parent = selection.anchorNode.parentElement;
+    let keyValue = String.fromCharCode(event.keyCode);
+    if (selection) {
+        if (parent.nodeName === 'P') {
+            parent.innerText = parent.innerText.replace(selection, keyValue);
+        }
+    }
+})
 
 // Header Event for propagation example
 const header = document.querySelector('header');
@@ -78,8 +86,12 @@ window.addEventListener('scroll', () => {
 });
 
 // Event #10
-window.addEventListener('copy', () => {
-    window.alert("Hey, don't take my stuff!");
+window.addEventListener('cut', () => {
+    let cut = window.getSelection();
+    let parent = cut.anchorNode.parentElement;
+    if (parent.nodeName === "P") {
+        parent.innerText = parent.innerText.replace(cut, '');
+    }
 })
 
 
