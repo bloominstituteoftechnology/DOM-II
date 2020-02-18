@@ -1,12 +1,12 @@
 // Your code goes here
 
+// Created internal style tag in header for keyframe use
 const head = document.querySelector('head');
 head.appendChild(document.createElement('style'));
 const style = document.querySelector('head style');
 style.setAttribute('type', 'text/css');
 
-const thisBody = document.querySelector('body');
-
+// Copy Paste Cut variables
 let clipboard;
 let lastParent;
 
@@ -76,6 +76,8 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// CUT COPY PASTE BEHAVIOR
+
 // Event #9
 window.addEventListener('cut', () => {
     let cut = window.getSelection();
@@ -94,9 +96,11 @@ window.addEventListener('copy', () => {
 // Event #11
 window.addEventListener('paste', () => {
     let selection = window.getSelection();
-    let parent = selection.anchorNode.parentElement;
-    if (parent.nodeName === "P") {
-        parent.innerText = parent.innerText.replace(selection, clipboard);
+    if (selection) {
+        let parent = selection.anchorNode.parentElement;
+        if (parent.nodeName === "P") {
+            parent.innerText = parent.innerText.replace(selection, clipboard);
+        }
     }
 })
 
