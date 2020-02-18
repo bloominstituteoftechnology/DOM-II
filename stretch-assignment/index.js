@@ -3,31 +3,30 @@
 // });
 
 const container = document.querySelector('.blocks');
-let blocks = document.querySelectorAll('.block');
 let count = 0; 
 let disable = false;
 
-document.querySelectorAll('.blocks').forEach((block) => {
+document.querySelectorAll('.block').forEach((block) => {
+
+    console.log(block);
+    let interval = null;
+
     block.addEventListener('mousedown', (e) => {
-        count = 10;
+        console.log(block);
+        count =  10;
         disable = true;
-        setInterval(() => {
-            if(disable) {
+        if(disable) {
+        interval = setInterval(() => {
                 count += 5;
-                e.target.style.marginLeft = count + 'px';
-            }
-        }, 200);
-        
+                e.target.style.left = count + 'px';
+            }, 200);
+        }
     });
     
     block.addEventListener('mouseup', (e) => {
+        clearInterval(interval);
         disable = false;
-        setInterval(() => {
-            if(!disable) {
-                e.target.style.marginLeft = null;
-                clearInterval();
-            }
-        }, 400);
+        e.target.style.left = '0px';
     });
 
     block.addEventListener('click', (e) => {
