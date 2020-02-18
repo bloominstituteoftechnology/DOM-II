@@ -7,17 +7,8 @@ style.setAttribute('type', 'text/css');
 
 const thisBody = document.querySelector('body');
 
-// Event #1
-window.addEventListener('keydown', (event) => {
-    let selection = window.getSelection();
-    let parent = selection.anchorNode.parentElement;
-    let keyValue = String.fromCharCode(event.keyCode);
-    if (selection) {
-        if (parent.nodeName === 'H2') {
-            parent.innerText = parent.innerText.replace(selection, keyValue);
-        }
-    }
-})
+let clipboard;
+let lastParent;
 
 // Header Event for propagation example
 const header = document.querySelector('header');
@@ -28,7 +19,7 @@ header.addEventListener('click', () => {
 
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
-    // Event #2
+    // Event #1
     link.addEventListener('click', (event) => {
         link.style.color = "green";
         // Prevent Default Behavior prevents page from refreshing
@@ -36,7 +27,7 @@ navLinks.forEach(link => {
         // Prevent Propagation prevents header event from firing
         event.stopPropagation();
     })
-    // Event #3
+    // Event #2
     link.addEventListener('dblclick', () => {
         link.style.color = "purple";
     })
@@ -45,17 +36,17 @@ navLinks.forEach(link => {
 
 const images = document.querySelectorAll('img');
 images.forEach(img => {
-    // Event #4
+    // Event #3
     img.addEventListener('mouseenter', () => {
         img.style.boxShadow = "5px 10px 10px black";
     })
-    // Event #5
+    // Event #4
     img.addEventListener('mouseleave', () => {
         img.style.boxShadow = "0 0 0 black";
     })
 
     let scale = 1;
-    // Event #6
+    // Event #5
     img.addEventListener('wheel', (event) => {
         event.preventDefault();
         scale += event.deltaY * -0.01;
@@ -63,17 +54,17 @@ images.forEach(img => {
 
         img.style.transform = `scale(${scale})`;
     })
-    // Event #7
+    // Event #6
     img.addEventListener('mousedown', () => {
         img.style.border = 'solid 2px black';
     })
-    // Event #8
+    // Event #7
     img.addEventListener('mouseup', () => {
         img.style.border = "0px";
     })
 });
 
-// Event #9
+// Event #8
 window.addEventListener('scroll', () => {
     const winHeight = document.documentElement.scrollHeight - window.innerHeight;
     const yHeight = window.scrollY;
@@ -85,15 +76,28 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Event #10
+// Event #9
 window.addEventListener('cut', () => {
     let cut = window.getSelection();
+    clipboard = cut.toString();
     let parent = cut.anchorNode.parentElement;
     if (parent.nodeName === "P") {
         parent.innerText = parent.innerText.replace(cut, '');
     }
 })
 
+// Event #10
+window.addEventListener('copy', () => {
+    clipboard = window.getSelection().toString();
+})
 
+// Event #11
+window.addEventListener('paste', () => {
+    let selection = window.getSelection();
+    let parent = selection.anchorNode.parentElement;
+    if (parent.nodeName === "P") {
+        parent.innerText = parent.innerText.replace(selection, clipboard);
+    }
+})
 
 
