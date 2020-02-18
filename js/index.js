@@ -19,7 +19,7 @@ busImage.addEventListener('mouseleave', (e) => {
 // 3
 const paragraph = document.querySelectorAll('p');
 paragraph.forEach(para => {
-    para.addEventListener('dblclick', (e) => {
+    para.addEventListener('copy', (e) => {
         para.style.backgroundColor = "yellow";
     });
 });
@@ -40,6 +40,34 @@ funImg.addEventListener('drag', (e) => {
 
 // 6
 
+const homepage = document.querySelector('html');
+homepage.addEventListener('wheel', (e) => {
+    homepage.style.backgroundColor = 'lightblue';
+})
 
+// 7 
 
+const navBar = document.querySelector('.main-navigation');
+navBar.addEventListener('dblclick', (e) => {
+    homepage.style.backgroundColor = 'red';
+    event.stopPropagation();
+})
 
+// 8
+document.getElementsByClassName('.nav-link');
+addEventListener('click', (e) => {
+    event.preventDefault();
+})
+
+// 9
+const boatImg = document.querySelector('.content-destination img');
+boatImg.addEventListener('mouseover', (e) => {
+    boatImg.style.transform = 'rotateY(180deg)'
+    boatImg.style.transitionDuration = '2s';
+})
+
+// 10
+const footer = document.querySelector('.footer');
+footer.addEventListener('mouseleave', (e) => {
+    footer.style.visibility = "hidden";
+})
