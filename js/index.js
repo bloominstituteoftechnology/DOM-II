@@ -63,6 +63,11 @@
 // busImg.addEventListener("mouseenter", () => {
 //     busImg.style.opacity = 1;
 // });
+
+document
+    .querySelectorAll("a")
+    .addEventListener("click", e => e.preventDefault());
+
 document.querySelectorAll("img").forEach(value => {
     value.style.opacity = 0.4;
     value.addEventListener("mouseleave", () => (value.style.opacity = 0.2));
@@ -74,7 +79,7 @@ document.querySelectorAll("img").forEach(value => {
 const navigationBar = document.querySelector(".container");
 const container = document.querySelector(".home");
 document.body.addEventListener("mouseenter", () => {
-    container.style.maxWidth = "60%";
+    container.style.maxWidth = "70%";
     document.querySelectorAll("img").forEach(value => {
         value.style.margin = "0 auto";
         value.style.width = "100%";
@@ -86,7 +91,7 @@ document.body.addEventListener("mouseenter", () => {
     document.querySelectorAll("h2").forEach(value => {
         value.style.fontSize = "4rem";
     });
-    navigationBar.style.maxWidth = "60%";
+    navigationBar.style.maxWidth = "70%";
 });
 window.addEventListener("scroll", () => {
     console.log("scrolling");
@@ -140,7 +145,9 @@ window.addEventListener("load", () => {
         .forEach(value => value.classList.add("newTextAnimation"));
 });
 
-const logo = document.querySelector(".logo-heading");
-logo.addEventListener("mouseenter", () => {
-    logo.style.scale = "500%";
-});
+window.addEventListener("click", event => console.log(event));
+
+// const logo = document.querySelector(".logo-heading");
+// logo.addEventListener("mouseenter", () => {
+//     logo.style.scale = "500%";
+// });
