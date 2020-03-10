@@ -92,10 +92,12 @@ window.addEventListener("scroll", () => {
     console.log("scrolling");
     const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
-    console.log(scrollable);
+    // console.log(scrollable);
     const scrolled = window.scrollY;
-    console.log(scrolled);
-
+    // console.log(scrolled);
+    // console.log(window.innerHeight);
+    // console.log(window.screenY);
+    // console.log(scrolled + window.innerHeight);
     if (scrolled === scrollable) {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
@@ -105,5 +107,40 @@ window.addEventListener("scroll", () => {
         document
             .querySelectorAll("a")
             .forEach(value => (value.style.color = "white"));
+    } else if (scrolled === 0) {
+        {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            navigationBar.style.backgroundColor = "white";
+            document.querySelector(".main-navigation").style.backgroundColor =
+                "white";
+            document
+                .querySelectorAll("a")
+                .forEach(value => (value.style.color = "black"));
+        }
     }
+    document.querySelectorAll("p").forEach((value, index) => {
+        console.log(value);
+        console.log("Index:" + index);
+        const topValueY = value.getBoundingClientRect().y;
+        console.log(topValueY);
+        if (topValueY <= window.innerHeight / 0.3) {
+            value.classList.add("appear");
+        }
+        const scrolled = window.scrollY;
+        console.log(scrolled);
+        console.log(window.innerHeight);
+        console.log(scrolled + window.innerHeight);
+    });
+});
+
+window.addEventListener("load", () => {
+    document
+        .querySelectorAll("p")
+        .forEach(value => value.classList.add("newTextAnimation"));
+});
+
+const logo = document.querySelector(".logo-heading");
+logo.addEventListener("mouseenter", () => {
+    logo.style.scale = "500%";
 });
