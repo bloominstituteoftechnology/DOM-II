@@ -77,6 +77,8 @@ window.addEventListener('scroll', () => {
 document.querySelector('.nav-link:nth-of-type(3)').addEventListener('focus', (e)=> {
     e.target.style.backgroundColor = 'black'
     e.target.style.color = 'white'
+    e.target.style.fontFamily = 'comic sans ms'
+    e.target.style.fontSize = '40px'
     
 })
 
