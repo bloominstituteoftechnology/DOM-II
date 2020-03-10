@@ -71,19 +71,39 @@ document.querySelectorAll("img").forEach(value => {
     });
 });
 
+const navigationBar = document.querySelector(".container");
 const container = document.querySelector(".home");
 document.body.addEventListener("mouseenter", () => {
-    container.style.maxWidth = "70%";
+    container.style.maxWidth = "60%";
     document.querySelectorAll("img").forEach(value => {
         value.style.margin = "0 auto";
         value.style.width = "100%";
     });
     document.querySelectorAll("p").forEach(value => {
-        value.style.fontSize = "2.2rem";
+        value.style.fontSize = "1.8rem";
         value.style.lineHeight = "200%";
     });
     document.querySelectorAll("h2").forEach(value => {
-        value.style.fontSize = "5rem";
+        value.style.fontSize = "4rem";
     });
-    document.querySelector(".container").style.maxWidth = "70%";
+    navigationBar.style.maxWidth = "60%";
+});
+window.addEventListener("scroll", () => {
+    console.log("scrolling");
+    const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+    console.log(scrollable);
+    const scrolled = window.scrollY;
+    console.log(scrolled);
+
+    if (scrolled === scrollable) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        navigationBar.style.backgroundColor = "black";
+        document.querySelector(".main-navigation").style.backgroundColor =
+            "black";
+        document
+            .querySelectorAll("a")
+            .forEach(value => (value.style.color = "white"));
+    }
 });
