@@ -31,6 +31,11 @@ function clickEventHandler(event) {
   document.addEventListener('click', clickEventHandler)
   window.addEventListener('click', clickEventHandler)
 
+  const header = document.querySelector('header');
+
+  header.addEventListener('click', () => {
+    header.style.backgroundColor= "#2C96F9";
+  })
 
   const logoGrow = document.querySelector("h1")
   
@@ -78,13 +83,23 @@ document.querySelectorAll("h2").forEach(el => {
 
 let btnChange = document.querySelector(".btn");
 btnChange.addEventListener("dblclick", () => {
-document.btnChange.style.backgroundColor = "#F99E27";
+btnChange.style.backgroundColor = "#F99E27";
 })
 
 // const btnChange = document.querySelectorAll('.btn');
 // btnChange.addEventListener("dblclick", () => {
 //   btnChange.style.backgroundColor = "yellow";
 // })
+
+const FooterGrow = document.querySelector(".footer")
+  
+FooterGrow.addEventListener("mouseenter", () => {
+  FooterGrow.style.transform = "scale(1.75)";
+  FooterGrow.style.transition = "transform 1s";
+})
+FooterGrow.addEventListener("mouseleave", () => {
+  FooterGrow.style.transform = "scale(1)";
+})
 
 
 
