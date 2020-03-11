@@ -79,10 +79,51 @@ document.querySelector('.nav-link:nth-of-type(3)').addEventListener('focus', (e)
     e.target.style.color = 'white'
     e.target.style.fontFamily = 'comic sans ms'
     e.target.style.fontSize = '40px'
+
+//!!!STRETCH GOAL!!!
+    gsap.to('.nav-link:nth-of-type(3)', {keyframes: [
+        {x: 100, duration: 1},
+        {y: 200, duration: 1, delay: 0.5}, //create a 0.5 second gap
+        {rotation: 360, duration: 2, delay: -0.25} //overlap by 0.25 seconds
+      ], ease: "power3.inOut"});
     
 })
 
 //(10)SAW quote on load
 window.addEventListener('load', () => {
     return alert('Jigsaw: Would you like to play a game?')
+})
+
+//preventDefault() on 'a'
+let aTags = Array.from(document.querySelectorAll('a'));
+aTags.forEach(tag => {
+    tag.addEventListener('click', (event) => {
+        event.preventDefault();
+    })
+})
+
+//stopPropagation
+
+const parent = document.querySelectorAll('.destination');
+
+function colorful(e) {
+    var colorIt = 'rgb(' + Math.random()*255 + ',' + Math.random()*255 + ',' + Math.random()*255 + ')'; 
+    e.target.style.backgroundColor = colorIt;
+}
+parent.forEach(element => {
+    element.addEventListener('click', colorful);
+    element.addEventListener('click', (e) =>{
+       e.target.style.transform = 'rotate(180deg)';
+    })
+    element.addEventListener('dblclick', (e) =>{
+        e.target.style.transform = 'rotate(360deg)';
+     })
+     element.querySelector('.btn').style.width = '100%';
+});
+
+let childElement = Array.from(document.querySelectorAll('.destination .btn'));
+childElement.forEach( e => {
+    e.addEventListener('click', event => {
+        event.stopPropagation();
+    })
 })
