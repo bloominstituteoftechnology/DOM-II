@@ -17,17 +17,11 @@ document.querySelector("header").addEventListener("mouseover", event => {
   event.target.style.backgroundColor = "blue";
 });
 
-document.querySelector("nav").addEventListener("click", event => {
-  event.target.style.color = "red";
-});
+
 
 document.querySelector("header").addEventListener("mouseleave", event => {
   event.target.style.backgroundColor = "white";
 });
-
-// document.body.querySelector('p').addEventListener("mouseover", (event) => {
-//  event.target.style.backgroundColor = 'red';
-// });
 
 document.body.addEventListener("wheel", event => {
   event.target.style.backgroundColor = "yellow";
@@ -61,7 +55,20 @@ document.body.addEventListener("contextmenu", event => {
 
 document.querySelector("nav").addEventListener("click", event => {
   event.target.style.color = "red";
+  // alert('Not sure if stopProp is working')
+
+  document.querySelector("nav").addEventListener("click", event => {
+    event.target.style.color = "pink";
+    alert('Not sure if stopProp is working')
+    
+  });
+  event.stopPropagation(alert());
+  // alert('Not sure if stopProp is working')
 });
+
+// document.querySelector("nav").addEventListener("click", event => {
+//   event.target.style.color = "blue";
+// });
 
 document.querySelector("nav").addEventListener("click", event => {
   event.preventDefault();
