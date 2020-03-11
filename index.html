@@ -18,7 +18,7 @@
 
 <body>
 
-  <header class="main-navigation">
+  <header id="demo" class="main-navigation">
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
       <nav class="nav">
@@ -32,7 +32,7 @@
 
   <div class="container home">
     <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
+      <img src="img/fun-bus.jpg" id="sand-bus" alt="bus in the sand">
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
@@ -60,31 +60,32 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-      <img src="img/destination.jpg" alt="Second slide">
+      <img src="img/destination.jpg" id="boat" alt="Second slide">
     </section>
     <section class="content-pick">
 
       <div class="destination">
-        <h4>Fun In The Sun</h4>
+        <h4 id="fun-in-sun" contenteditable="true" class="source">Fun In The Sun</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
         <div class="btn">Sign Me Up!</div>
       </div>
-      <div class="destination">
-        <h4>Mountain Excursion</h4>
+      <div class="destination" id="mountain-card">
+        <h4 contenteditable="true" class="source">Mountain Excursion</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-        <div class="btn">Sign Me Up!</div>
+        <div class="btn" id="mountain">Sign Me Up!</div>
       </div>
       <div class="destination">
-        <h4>Island Getaway</h4>
+        <h4 contenteditable="true" class="source">Island Getaway</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-        <div class="btn">Sign Me Up!</div>
+        <div id="midBtn" keydown="myFunction()"class="btn">Sign Me Up!</div>
       </div>
     </section>
   </div><!-- container -->
 
-  <footer class="footer">
+  <footer contenteditable="true" class="footer target" id="footer">
     <p>Copyright Fun Bus 2018</p>
   </footer>
 
+<script src="index.js"></script>
 </body>
 </html>
