@@ -94,16 +94,16 @@ document.body.addEventListener("mouseenter", () => {
     navigationBar.style.maxWidth = "70%";
 });
 window.addEventListener("scroll", () => {
-    // console.log("scrolling");
     const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
-    // console.log(scrollable);
     const scrolled = window.scrollY;
-    // console.log(scrolled);
-    // console.log(window.innerHeight);
-    // console.log(window.screenY);
-    // console.log(scrolled + window.innerHeight);
     if (scrolled === scrollable) {
+        document.querySelectorAll("p").forEach(value => {
+            value.textContent =
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae illum atque repellat eum praesentium fuga eligendi expedita sit quod placeat itaque corporis dolores, maiores ducimus sint esse commodi doloremque nam dicta vitae aspernatur. Perspiciatis doloremque et modi repellat laborum quam autem possimus ipsa expedita at in iste dicta fugiat aut, amet voluptatem";
+        });
+        document.querySelector(".footer p").textContent =
+            "Copyright Fun Bus 2018";
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
         navigationBar.style.backgroundColor = "black";
@@ -126,16 +126,10 @@ window.addEventListener("scroll", () => {
         }
     }
     document.querySelectorAll("p").forEach(value => {
-        // console.log(value);
-        // console.log("Index:" + index);
         const topValueY = value.getBoundingClientRect().y;
-        // console.log(topValueY);
         if (topValueY <= scrolled / 1.3) {
             value.classList.add("appear");
         }
-        // console.log(scrolled);
-        // console.log(window.innerHeight);
-        // console.log(scrolled + window.innerHeight);
     });
     document.querySelectorAll("img").forEach(value => {
         const topValueY = value.getBoundingClientRect().y;
@@ -164,15 +158,16 @@ window.addEventListener("load", () => {
 
 window.addEventListener("click", event => console.log(event));
 
-// const logo = document.querySelector(".logo-heading");
-// logo.addEventListener("mouseenter", () => {
-//     logo.style.scale = "500%";
-// });
 const footer = document.querySelector(".footer");
 footer.addEventListener("dblclick", e => {
     footer.style.backgroundColor =
         "rgb(50," + e.offsetX * 10 + "," + e.offsetY * 3 + ")";
 });
+
+// const logo = document.querySelector(".logo-heading");
+// logo.addEventListener("mouseenter", () => {
+//     logo.style.scale = "500%";
+// });
 
 // const secondHeading = document.querySelectorAll("h2");
 // secondHeading.forEach((v, i, a) => {
