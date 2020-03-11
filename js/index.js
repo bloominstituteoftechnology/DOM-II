@@ -1,15 +1,8 @@
 // Your code goes here
 
 
-gsap.registerEffect({
-    name: "fade",
-    defaults: {duration: 2}, //defaults get applied to the "config" object passed to the effect below
-    effect: (targets, config) => {
-        return gsap.to(targets, {duration: config.duration, opacity: 0});
-    }
-});
-
 //1
+
 homeLink.addEventListener(
     'mouseover', //string with name of event
     () => {
@@ -19,7 +12,7 @@ homeLink.addEventListener(
     }
 )
 
-//2
+//2 - also prevents event from bubbling to header event (See #4)
 homeLink.addEventListener(
     'click', () => {
         homeLink.style.color = 'red';
@@ -27,12 +20,12 @@ homeLink.addEventListener(
     }
 )
 
-const wholePage = document.querySelector('html');
+const background = document.querySelector('html');
 
 //3
 document.addEventListener(
     'scroll', () => {
-         wholePage.style.background = 'pink';
+         background.style.background = 'pink';
          console.log("this is working")
     }
 )
@@ -65,14 +58,51 @@ introText.addEventListener(
 )
 
 
-const images = document.querySelectorAll("img")
+//7 prevents default behavior - i think. 
+navBar = document.querySelector('nav')
+
+navBar.addEventListener("click", function(event){
+    event.preventDefault()
+     });
 
 
-forEach(function(item) {
-    item.addEventListener("mouseenter", function() {
-      gsap.effects.fade(this);
-    });
+//8 
+
+destinationText = document.querySelectorAll('.destination')
+
+destinationText.forEach(element => {
+    element.addEventListener('click', () => {
+        element.style.color = 'white';
+   });
   });
+
+  letsGo = document.querySelector('.destination');
+
+
+//9
+
+  mainText = document.querySelectorAll('.text-content')
+
+  mainText.forEach(element => {
+      element.addEventListener('dblclick', () => {
+          element.style.color = 'teal';
+     });
+    });
+
+
+//10 
+
+document.addEventListener('keypress', () => {
+    background.style.background = 'white';
+})
+
+  
+
+
+
+
+
+
 
 
 
