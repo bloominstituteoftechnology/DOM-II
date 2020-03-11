@@ -87,3 +87,27 @@ destinationText.forEach(function(text){
 window.addEventListener("load", function(event) {
     alert("ITS HERE");
   });
+
+// prevent default
+let NavAnchors = document.querySelectorAll('a');
+NavAnchors[1].addEventListener('click', e=> {
+    console.log('nav button prevented from refreshing page');
+    e.preventDefault();
+});
+
+ 
+
+//stop propagation
+let h2 = document.querySelectorAll('h2');
+
+let textContentDivs = document.querySelector('.text-content');
+textContentDivs.addEventListener('dblclick', e => {
+        textContentDivs.style.backgroundColor='lightgrey';
+        
+})
+h2[1].addEventListener('mousedown', e=> {
+    h2[1].style.backgroundColor='grey';
+    e.stopPropagation();
+    });
+
+
