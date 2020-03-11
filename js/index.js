@@ -115,3 +115,15 @@ document.getElementById("myFrame").addEventListener("load", wade);
 function wade() {
   document.getElementById("lola").innerHTML = "Iframe is loaded.";
 }
+
+//propogationg
+const parent = document.querySelector(".destination");
+let child = document.querySelector(".destination .btn");
+
+parent.addEventListener("click", event => {
+  event.target.style.backgroundColor = "red";
+});
+
+child.addEventListener("click", event => {
+  event.stopPropagation();
+});
