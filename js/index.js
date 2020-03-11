@@ -66,11 +66,10 @@
 
 document
     .querySelectorAll("a")
-    .addEventListener("click", e => e.preventDefault());
+    .forEach(value => value.addEventListener("click", e => e.preventDefault()));
 
 document.querySelectorAll("img").forEach(value => {
-    value.style.opacity = 0.4;
-    value.addEventListener("mouseleave", () => (value.style.opacity = 0.2));
+    value.addEventListener("mouseleave", () => (value.style.opacity = 0.7));
     value.addEventListener("mouseenter", () => {
         value.style.opacity = 1;
     });
@@ -79,6 +78,7 @@ document.querySelectorAll("img").forEach(value => {
 const navigationBar = document.querySelector(".container");
 const container = document.querySelector(".home");
 document.body.addEventListener("mouseenter", () => {
+    container.style.transition = "1s ease-out";
     container.style.maxWidth = "70%";
     document.querySelectorAll("img").forEach(value => {
         value.style.margin = "0 auto";
@@ -86,7 +86,7 @@ document.body.addEventListener("mouseenter", () => {
     });
     document.querySelectorAll("p").forEach(value => {
         value.style.fontSize = "1.8rem";
-        value.style.lineHeight = "200%";
+        value.style.lineHeight = "230%";
     });
     document.querySelectorAll("h2").forEach(value => {
         value.style.fontSize = "4rem";
@@ -94,7 +94,7 @@ document.body.addEventListener("mouseenter", () => {
     navigationBar.style.maxWidth = "70%";
 });
 window.addEventListener("scroll", () => {
-    console.log("scrolling");
+    // console.log("scrolling");
     const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
     // console.log(scrollable);
@@ -109,6 +109,7 @@ window.addEventListener("scroll", () => {
         navigationBar.style.backgroundColor = "black";
         document.querySelector(".main-navigation").style.backgroundColor =
             "black";
+        document.querySelector("main-navigation").style.zIndex = 500;
         document
             .querySelectorAll("a")
             .forEach(value => (value.style.color = "white"));
@@ -124,25 +125,41 @@ window.addEventListener("scroll", () => {
                 .forEach(value => (value.style.color = "black"));
         }
     }
-    document.querySelectorAll("p").forEach((value, index) => {
-        console.log(value);
-        console.log("Index:" + index);
+    document.querySelectorAll("p").forEach(value => {
+        // console.log(value);
+        // console.log("Index:" + index);
         const topValueY = value.getBoundingClientRect().y;
-        console.log(topValueY);
-        if (topValueY <= window.innerHeight / 0.3) {
+        // console.log(topValueY);
+        if (topValueY <= scrolled / 1.3) {
             value.classList.add("appear");
         }
-        const scrolled = window.scrollY;
-        console.log(scrolled);
-        console.log(window.innerHeight);
-        console.log(scrolled + window.innerHeight);
+        // console.log(scrolled);
+        // console.log(window.innerHeight);
+        // console.log(scrolled + window.innerHeight);
+    });
+    document.querySelectorAll("img").forEach(value => {
+        const topValueY = value.getBoundingClientRect().y;
+        if (topValueY <= scrolled) {
+            value.classList.add("appear");
+        }
+    });
+});
+window.addEventListener("load", () => {
+    document.querySelectorAll("img").forEach((value, i, array) => {
+        {
+            value.classList.add("newTextAnimation");
+            array[0].classList.remove("newTextAnimation");
+        }
     });
 });
 
 window.addEventListener("load", () => {
-    document
-        .querySelectorAll("p")
-        .forEach(value => value.classList.add("newTextAnimation"));
+    document.querySelectorAll("p").forEach((value, i, array) => {
+        {
+            value.classList.add("newTextAnimation");
+            array[0].classList.remove("newTextAnimation");
+        }
+    });
 });
 
 window.addEventListener("click", event => console.log(event));
@@ -150,4 +167,16 @@ window.addEventListener("click", event => console.log(event));
 // const logo = document.querySelector(".logo-heading");
 // logo.addEventListener("mouseenter", () => {
 //     logo.style.scale = "500%";
+// });
+const footer = document.querySelector(".footer");
+footer.addEventListener("dblclick", e => {
+    footer.style.backgroundColor =
+        "rgb(50," + e.offsetX * 10 + "," + e.offsetY * 3 + ")";
+});
+
+// const secondHeading = document.querySelectorAll("h2");
+// secondHeading.forEach((v, i, a) => {
+//     a[i].addEventListener("dblclick", () => {
+//         a[i].style.scale = 2;
+//     });
 // });

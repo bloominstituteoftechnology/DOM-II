@@ -353,10 +353,10 @@ img {
 
 .newTextAnimation {
     opacity: 0;
-    transform: translateY(15%);
+    transform: translateY(55%);
 }
 .appear {
     opacity: 1;
     transform: translateY(0);
-    transition: 1s all ease-out;
+    transition: 1.5s all ease-out;
 }
