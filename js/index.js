@@ -22,21 +22,19 @@
 // Console.log(logoHeading);
 
 //------> 1- Click
+
 const sectionNav = document.querySelector(".nav-link");
 console.log(sectionNav);
-
 document.querySelectorAll(".nav-link").forEach(el => {
   el.addEventListener("click", () => {
     el.style.transition = "color 0.5s";
     el.style.color = "#2925E9";
   });
 });
-
 // -----> 2- scale
 
 const letGo = document.querySelector(".img-content");
 console.log(letGo);
-
 letGo.addEventListener("mouseenter", () => {
   letGo.style.transform = "scale(1.2)";
   letGo.style.transition = "transform 1s";
@@ -44,7 +42,8 @@ letGo.addEventListener("mouseenter", () => {
 letGo.addEventListener("mouseleave", () => {
   letGo.style.transform = "scale(1)";
 });
-// -----> 3- flip
+// -----> 3- dblclick
+
 const logoHeading = document.querySelector(".logo-heading");
 console.log(logoHeading);
 logoHeading.addEventListener("dblclick", () => {
@@ -54,6 +53,7 @@ logoHeading.addEventListener("dblclick", () => {
     logoHeading.textContent = "Fun Bus";
   }
 });
+
 // -----> 4- click
 const body = document.querySelector("body");
 body.addEventListener("click", () => {
@@ -81,13 +81,31 @@ document.querySelectorAll("p").forEach(el => {
   });
 });
 
-const catImage = document.querySelector(".img-fluid rounded");
-console.log(catImage);
-// mouse events
-catImage.addEventListener("mouseenter", () => {
-  catImage.style.transform = "scale(1.2)";
-  catImage.style.transition = "all 0.3s";
+// ------> 7- click event on multiple elements
+const anotherText = document.querySelector("h4");
+console.log(anotherText);
+document.querySelectorAll("h4").forEach(el => {
+  el.addEventListener("click", () => {
+    el.style.transition = "color 0.5s";
+    el.style.color = "#651A71";
+  });
 });
-catImage.addEventListener("mouseleave", () => {
-  catImage.style.transform = "scale(1)";
+
+// ------> 8- scale
+const signMe = document.querySelector(".btn");
+console.log(signMe);
+
+signMe.addEventListener("mouseenter", () => {
+  signMe.style.transform = "scale(1.2)";
+  signMe.style.transition = "transform 1s";
+});
+signMe.addEventListener("mouseleave", () => {
+  signMe.style.transform = "scale(1)";
+});
+
+// -----> 9- dblclick
+document.querySelector(".footer").addEventListener("dblclick", () => {
+  event.target.style.transform = "scale(4)";
+  event.target.style.transition = "all 0.2s";
+  event.target.textContent = "We can do it!";
 });
