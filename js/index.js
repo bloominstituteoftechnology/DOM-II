@@ -19,16 +19,49 @@ headerPic.addEventListener("dblclick", ()=>{
     headerPic.src = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.coastalliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_inbody_900x506%2Fpublic%2Fimage%2F2016%2F11%2Fmain%2Fhotlist_0213_15.jpg%3Fitok%3DZI9gPSn4&w=1200&c=sc&poi=face&q=85";
 })
 
-//4. keydown
-
+//4. keydown keypressing
+const para = document.getElementsByClassName("btn")[1]
+para.addEventListener("keydown", ()=>{
+    para.style.fontSize = "50px";
+})
 //5. wheel
+const desImage = document.querySelector(".content-destination img");
+desImage.addEventListener("wheel", () => {
+    desImage.style.transform = "scale(1.5)";
+    desImage.style.transition = "all .05s";
+})
 
 //6. load
+window.addEventListener("load", ()=>{
+    alert("Keep Calm! Your vacation has loaded!");
+})
 
-//7. focus
+// //7. focus
+// const destText = document.querySelector("content-destination h2");
+// destText.addEventListener("focus", ()=>{
+//     destText.style.color = "purple";
+// }, true)
 
 //8. resize
+const middlePics = document.querySelectorAll(".content-section img")
+// console.log(middlePics);
+
+window.addEventListener("resize", ()=>{
+    // middlePics.style.border = "20px purple solid";
+    // middlePics.src = "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ";
+    middlePics.forEach(picture => picture.src = "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
+})
+
+
 
 //9. select
+// cont funSun = document.querySelector(".destination h4")
+// funSun.addEventListener("change", ()=>{
+//     funSun.style.color = "red";
+// }, true)
 
 //10. drag/drop
+const dragged = document.querySelector(".footer p")
+dragged.addEventListener("drag", ()=> {
+    dragged.style.color = "purple";
+})
