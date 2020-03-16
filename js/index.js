@@ -31,10 +31,12 @@ document.querySelectorAll(".nav-link").forEach(el => {
     el.style.color = "#2925E9";
   });
 });
+
 // -----> 2- scale
 
 const letGo = document.querySelector(".img-content");
 console.log(letGo);
+
 letGo.addEventListener("mouseenter", () => {
   letGo.style.transform = "scale(1.2)";
   letGo.style.transition = "transform 1s";
@@ -108,4 +110,12 @@ document.querySelector(".footer").addEventListener("dblclick", () => {
   event.target.style.transform = "scale(4)";
   event.target.style.transition = "all 0.2s";
   event.target.textContent = "We can do it!";
+});
+
+const backChange = document.querySelector("html");
+const header = document.querySelector(".nav-container");
+
+backChange.addEventListener("keydown", () => {
+  header.style.backgroundColor = "pink";
+  console.log(backChange);
 });
