@@ -1,8 +1,14 @@
 // Your code goes here
+const topContent = document.getElementsByClassName("main-navigation");
+topContent[0].addEventListener('mouseover', (event) =>{
+  event.target.style.backgroundColor = 'orange'
+})
+
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
   link.addEventListener('mouseover', (event) => {
     event.target.style.backgroundColor = 'blue'
+    event.stopPropagation()
   })
 })
 
@@ -57,8 +63,7 @@ const links = document.querySelectorAll('.nav-link');
 
 links.forEach(link => {
   link.addEventListener('click', (event) => {
-       link.style.color = 'blue'
+      link.style.color = 'blue'
         event.preventDefault();
-
   })
 })
