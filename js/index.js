@@ -20,10 +20,11 @@ headerPic.addEventListener("dblclick", ()=>{
 })
 
 //4. keydown keypressing
-const para = document.getElementsByClassName("btn")[1]
+const para = document.querySelector("body")
 para.addEventListener("keydown", ()=>{
-    para.style.fontSize = "50px";
+    para.style.backgroundColor = "purple";
 })
+
 //5. wheel
 const desImage = document.querySelector(".content-destination img");
 desImage.addEventListener("wheel", () => {
@@ -64,4 +65,39 @@ window.addEventListener("resize", ()=>{
 const dragged = document.querySelector(".footer p")
 dragged.addEventListener("drag", ()=> {
     dragged.style.color = "purple";
+})
+
+//propagation set-up
+const body = document.querySelector("body");
+
+body.addEventListener("click", ()=> {
+    body.style.backgroundColor="pink";
+    console.log("end")
+})
+
+const middle = document.querySelector(".content-section");
+middle.addEventListener("click",(event) =>{
+    middle.style.backgroundColor = "papayawhip";
+    console.log("end")
+});
+
+const middlePara = document.querySelector(".text-content");
+middlePara.addEventListener("click",(event)=>{
+    middlePara.style.backgroundColor = "purple";
+    console.log("middle")
+});
+
+const line = document.querySelector(".text-content p");
+line.addEventListener("click",(event) => {
+    line.style.backgroundColor = "hotpink";
+    event.stopPropagation();
+    console.log("start")
+})
+
+//preventing the nav items from regreshing the page by using prevenDefault()
+
+const stopLink = document.querySelector(".nav-link");
+stopLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("stopped!");
 })
