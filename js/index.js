@@ -19,9 +19,10 @@ event.target.style.backgroundColor = "yellow"
 
 const boatImg = document.querySelector('.content-destination img')
 window.addEventListener('resize', () =>{
-  boatImg[0].target.style.transform= "transitionX(-100%)"
+  boatImg.style.marginLeft = "-1200px"
 })
 
 window.addEventListener('load', (event) => {
   console.log("It's a fun BUS!");
 });
+
