@@ -2,6 +2,7 @@
 
 //can make these shorter
 const anchorSelector = document.querySelectorAll('a')
+
 anchorSelector.forEach(element => element.addEventListener('mouseover', () => element.style.textDecoration = 'underline'));
 anchorSelector.forEach(element => element.addEventListener('mouseout', () => element.style.textDecoration = 'none'));
 anchorSelector.forEach(element => element.addEventListener('click', function(event) {
@@ -67,13 +68,17 @@ window.scroll({
 });
 
 window.addEventListener('resize', (event) => {
+    event.stopPropagation();
     anchorSelector.forEach(element => element.style.border = "2px solid red")
     anchorSelector.forEach(element => element.style.borderRadius = "4px")
     anchorSelector.forEach(element => element.style.padding = "2px")
+    anchorSelector.forEach(element => element.addEventListener('click', (event) => {
+        element.style.backgroundColor = "red";
+    }))
 })
 
 window.onload = function() {
-    document.getElementsByClassName('intro').focus();
+    document.querySelector('.intro').focus();
 }
 
 
