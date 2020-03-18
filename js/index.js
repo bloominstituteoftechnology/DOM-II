@@ -33,12 +33,12 @@ alert('loaded!!!'));
 window.addEventListener('scroll',()=>
 console.log('scrolled!!!!'));
 
-const imgcontent = document.querySelectorAll(".img-content");
-imgcontent.addEventListener('click',()=>{
-    gsap.to(".img-content",{
-        duration:1,
-        x:200,
-        scale:2,
-        rotate:180
-    })
+const adventure = document.querySelector('.adventure');
+adventure.addEventListener('drag',()=>{
+    console.log('you drag me!')
+});
+
+const bottomheader = document.querySelector('h4');
+bottomheader.addEventListener('select',()=>{
+    alert('you picked me!')
 })
