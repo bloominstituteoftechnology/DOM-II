@@ -9,6 +9,8 @@ const getMiddleLeftImg = document.querySelector('.img-fluid, .rounded');
 const getMiddleBottomRightParagraph1 = document.querySelector('.inverse-content .text-content p');
 const getBottomHeading = document.querySelector('.content-destination h2');
 const getBottomImg = document.querySelector('.content-destination img');
+const getBottomSection = document.querySelector('.destination p');
+
 
 const setHeadingTitle = getHeadingTitle.addEventListener('click', (event) =>{
    event.target.textContent = 'Adventure Land';
@@ -52,3 +54,12 @@ const setBottomHeading = getBottomHeading.addEventListener('mousedown', (event) 
 const setBottomImg = getBottomImg.addEventListener('mouseleave', (event) => {
    event.target.src = './img/fun-bus.jpg'
 });
+
+function stopEventPropogation() {
+   const setBottomSection = getBottomSection.addEventListener('click', (event) => {
+      event.stopPropagation();
+      event.target.textContent = "this works";
+   });
+};
+
+stopEventPropogation();
