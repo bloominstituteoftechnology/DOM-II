@@ -10,7 +10,14 @@ const getMiddleBottomRightParagraph1 = document.querySelector('.inverse-content 
 const getBottomHeading = document.querySelector('.content-destination h2');
 const getBottomImg = document.querySelector('.content-destination img');
 const getBottomSection = document.querySelector('.destination p');
+const getNavItems = document.querySelectorAll('.nav, a');
 
+const navItemsToArray = Array.from(getNavItems);
+const preventDefaultNavLinks = navItemsToArray.map(items => {
+   items.addEventListener('click', (event, index) => {
+      event.preventDefault()
+   });
+});
 
 const setHeadingTitle = getHeadingTitle.addEventListener('click', (event) =>{
    event.target.textContent = 'Adventure Land';
