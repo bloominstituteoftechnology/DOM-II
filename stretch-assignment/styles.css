@@ -34,3 +34,11 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.hold {
+  border: solid #ccc 4px;
+}
+
+.invisible {
+  display: none;
+}

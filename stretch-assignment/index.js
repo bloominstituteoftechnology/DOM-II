@@ -1,4 +1,11 @@
+
+gsap.registerPlugin(Draggable);
+
+
 const getBlockContainer = document.querySelectorAll('.block');
+
+/****************************ROCKETS****************************/ 
+
 const newArrayOfBlocks = [];
 
 Array.from(getBlockContainer);
@@ -51,12 +58,21 @@ const addElementsToNewArray = (item) => {
     newArrayOfBlocks.unshift(item);
 };
 
+/****************************Travelers****************************/
+
+const moveTravelers = () => {
+        Draggable.create("#blocks", {
+            type:"x",
+            bounds: document.querySelector('body'),
+        });
+}
+
 
 const executionFunction = () => {
     removeElements();
     addElements();
     createNewElements();
-
+    moveTravelers();
 };
 
 executionFunction();
