@@ -1,40 +1,30 @@
-// Your code goes here
 /* 
-  copy
-  keypress
-  click
-  doubleclick
-  mouseenter
-  mouseleave
-  mouseover
-  * scroll   - onscroll   - Bubbles = Yes
-  wheel
-  resize   - onresize   - Bubbles = No - window object only
-  focus    - onfocus    - Bubbles = No
-  blur     - onblur     - Bubbles = No
-  focusin  - onfocusin  - Bubbles = Yes
-  focusout - onfocusout - Bubbles = Yes
+  SOME EVENT OPTIONS:
+    copy, keypress, click, doubleclick, mouseenter, mouseleave, mouseover
+    scroll, onscroll, wheel, resize, focus, blur, focusin, focusout
 */
 
-// 1- Create a function called 'get'
-// that takes a CSS selector as its argument
-// and executes document.querySelector with the argument.
-const select = (selector) => {
-  return document.querySelector(selector)
-}
-
-const selectAll = (selector) => {
-  return document.querySelectorAll(selector)
-}
+// Query selector utilities
+const select = (selector) => document.querySelector(selector)
+const selectAll = (selector) => document.querySelectorAll(selector)
 
 // Select the navbar
 const nav = select('.nav')
 
+// src attributes of the images
+const src =
+{
+  funBus: `[src='img/fun-bus.jpg']`,
+  adventure: `[src='img/adventure.jpg']`,
+  fun: `[src='img/fun.jpg']`,
+  destination: `[src='img/destination.jpg']`
+}
+
 // Select each image
-const imgFunBus = select(`[src='img/fun-bus.jpg']`)
-const imgAdventure = select(`[src='img/adventure.jpg']`)
-const imgFun = select(`[src='img/fun.jpg']`)
-const imgDestination = select(`[src='img/destination.jpg']`)
+const imgFunBus = select(src.funBus)
+const imgAdventure = select(src.adventure)
+const imgFun = select(src.fun)
+const imgDestination = select(src.destination)
 
 // Select all and each destination
 const destination = selectAll('.destination')
@@ -43,10 +33,9 @@ const funInTheSun = destination[0]
 const mountainExcursion = destination[1]
 const islandGetaway = destination[2]
 
+// Display the textContent of the target calling this function
 const attendance = (e) => alert(e.target.textContent)
 
-// Select all of the heading 2s
+// Select all of the h2s and add a click event listener
 const allH2s = selectAll('h2')
-allH2s.forEach(h2 => {
-  h2.addEventListener('click', attendance)
-})
+allH2s.forEach(h2 => h2.addEventListener('click', attendance))
