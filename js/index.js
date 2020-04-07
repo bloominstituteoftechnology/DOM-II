@@ -1,6 +1,3 @@
-//import gsap//
-// import {gsap} from 'gsap';
-
 
 // nav resize mobile //
 function myFunction() {
@@ -97,46 +94,23 @@ card.addEventListener('click', (event) => {
 })
 //end prop//
 
-//wheel//
-// let wheel = document.querySelector(".content-destination img");
-
-// wheel.addEventListener('wheel', zoom);
-    
-
-// function zoom(event) {
-//     event.preventDefault();
-//     let scale = 1;
-//     const el = document.querySelector('.content-destination img');
-//     el.onwheel = zoom;
-  
-//     scale += event.deltaY * -0.01;
-  
-//     // Restrict scale
-//     scale = Math.min(Math.max(.125, scale), 4);
-  
-//     // Apply scale transform
-//     el.style.transform = `scale(${scale})`;
-
-//     console.log(el);
-// }
-
 let wheel = document.querySelector('.content-destination img');
 
 wheel.addEventListener('wheel', function zoom(){
 
-    let scale = 1;
-    const el = document.querySelector('.content-destination img');
-    el.onwheel = zoom; 
+  let scale = 1;
+  const el = document.querySelector('.content-destination img');
+  el.onwheel = zoom; 
 
-    event.preventDefault();
+  event.preventDefault();
 
-    scale += event.deltaY * -0.01;
-  
-    // Restrict scale
-    scale = Math.min(Math.max(.125, scale), 4);
-  
-    // Apply scale transform
-    el.style.transform = `scale(${scale})`;
+  scale += event.deltaY * -0.01;
+
+  // Restrict scale
+  scale = Math.min(Math.max(.75, scale), 1.5);
+
+  // Apply scale transform
+  el.style.transform = `scale(${scale})`;
 
 })
 //end wheel//
@@ -168,7 +142,7 @@ if (event.key == "v") {
 //flip top img//
 const box = document.querySelector('body').addEventListener("click", () => {
     gsap.to('.intro img', {
-        duration: 1,
+        duration: .75,
         rotateY: 180,
         ease: "elastic(1, 0.75)",
         yoyo: true,
@@ -179,15 +153,15 @@ const box = document.querySelector('body').addEventListener("click", () => {
 
 
 const cool = document.querySelector('body').addEventListener("click", () => {
-    gsap.to(".content-destination h2", {
-        y: 100,
-        stagger: { // wrap advanced options in an object
-        each: 0.1,
-        from: "center",
-        grid: "auto",
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: 1
-        }
-    });
+  gsap.to(".content-destination h2", {
+    y: 100,
+    stagger: { // wrap advanced options in an object
+    each: 0.1,
+    from: "center",
+    grid: "auto",
+    ease: "power2.inOut",
+    yoyo: true,
+    repeat: 1
+    }
+  });
 });
