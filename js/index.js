@@ -1,7 +1,7 @@
 /* 
   SOME EVENT OPTIONS:
     *copy, keypress, *click, *dblclick, *mouseenter, *mouseleave, *mouseover
-    scroll, *wheel, resize, focus, blur, focusin, focusout
+    *auxclick, *wheel, resize, focus, blur, focusin, focusout, *contextmenu
 */
 
 // Query selector utilities
@@ -63,8 +63,15 @@ const shrinkIt = (e) => {
 // Select all of the h2s
 const allH2s = selectAll('h2')
 
+// Prevent the context menu from appearing
+const noContextMenu = (e) => {
+  e.preventDefault()
+  alert('Shortcut menu is not available in this context.')
+}
+
 // Event handlers
 allH2s.forEach(h2 => h2.addEventListener('click', attendance))
+
 imgFunBus.addEventListener('mouseover', giveRoundCorners)
 imgFunBus.addEventListener('dblclick', giveRoundCorners)
 
@@ -72,10 +79,9 @@ imgAdventure.addEventListener('mouseenter',giveRoundCorners)
 imgAdventure.addEventListener('mouseleave',giveRoundCorners)
 
 imgFun.addEventListener('wheel', shrinkIt)
-// imgFun.addEventListener('wheel', yellowBackground)
+imgFun.addEventListener('contextmenu', noContextMenu)
 
-// imgDestination.addEventListener('wheel', yellowBackground)
 // imgDestination.addEventListener('wheel', yellowBackground)
 
 funInTheSun.addEventListener('copy', preventCopy)
-// funInTheSun.addEventListener('wheel', yellowBackground)
+funInTheSun.addEventListener('auxclick', yellowBackground)
