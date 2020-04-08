@@ -174,9 +174,12 @@ img {
     margin: 0 5%;
   }
 }
-.roundGreenBorders {
+.round-green-borders {
   border-radius: 20px;
   border: 4px solid green;
+}
+.height-200px {
+  height: 200px;
 }
 .main-navigation {
   width: 100%;
