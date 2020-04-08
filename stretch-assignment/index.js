@@ -1,6 +1,4 @@
-
 gsap.registerPlugin(Draggable);
-
 
 const getBlockContainer = document.querySelectorAll('.block');
 
@@ -59,6 +57,7 @@ const addElementsToNewArray = (item) => {
 };
 
 /****************************Travelers****************************/
+const travelerBounds = document.createElement('div');
 
 const moveTravelers = () => {
         Draggable.create("#blocks", {
@@ -66,6 +65,26 @@ const moveTravelers = () => {
             bounds: document.querySelector('body'),
         });
 }
+
+const returnTravelers = () => {
+        getBlockContainer.forEach(block => {
+            block.addEventListener('click', () => {
+                Draggable.create("#blocks", {
+                    type:"x",
+                    bounds: document.querySelector('.blocks'),
+                });
+            });
+        }
+
+    // getBlockContainer.forEach(block => {
+    //     block.addEventListener('mousedown', () => {
+    //         Draggable.create("#blocks", {
+    //             type:"x",
+    //             bounds: document.querySelector('body'),
+    //         });
+    //     });
+    // });
+        )};
 
 
 const executionFunction = () => {
