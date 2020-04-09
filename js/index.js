@@ -33,11 +33,34 @@ const funInTheSun = destination[0]
 const mountainExcursion = destination[1]
 const islandGetaway = destination[2]
 
+// Select the logo in the heading
+const logoHeading = document.querySelector('.logo-heading')
+
+// Create a spare link for the nav bar
+const restoreLogo = document.createElement('a')
+restoreLogo.classList.add('nav-link')
+restoreLogo.setAttribute('href', '#')
+restoreLogo.textContent = 'Restore Logo'
+restoreLogo.style.color = 'red'
+restoreLogo.style.display = 'none'
+nav.prepend(restoreLogo)
+
 
 // **************  CALLBACK FUNCTIONS  ************** //
 
 // Display the textContent of the target calling this function
 const attendance = (e) => alert(e.target.textContent)
+
+// Remove the logo and add a red menu item to restore it
+const vanishingLogo = (e) => {
+  e.target.style.display = 'none'
+  restoreLogo.style.display = 'inline'
+}
+
+const displayLogo = () => {
+  restoreLogo.style.display = 'none'
+  logoHeading.style.display = 'inline'
+}
 
 // Give the target a yellow background
 const yellowBackground = (e) => e.target.style.backgroundColor = 'yellow'
@@ -81,7 +104,8 @@ imgAdventure.addEventListener('mouseleave',giveRoundCorners)
 imgFun.addEventListener('wheel', shrinkIt)
 imgFun.addEventListener('contextmenu', noContextMenu)
 
-// imgDestination.addEventListener('wheel', yellowBackground)
-
 funInTheSun.addEventListener('copy', preventCopy)
 funInTheSun.addEventListener('auxclick', yellowBackground)
+
+logoHeading.addEventListener('mouseup', vanishingLogo)
+restoreLogo.addEventListener('click', displayLogo)
