@@ -30,9 +30,30 @@ logoHeading.addEventListener('drag', e => {
 
 const allPs = document.querySelectorAll('.go')
 allPs.forEach((p) => {
-    p.addEventListener('mousedown', () => {
+    p.addEventListener('mouseenter', () => {
+        
+        console.log('working')
         p.target.style.backgroundColor = 'lightblue';
         p.target.style.color = 'hotpink';
     })
+})//not working
+
+p.addEventListener('mouseup', () => {
+    p.target.style.backgroundColor = 'transparent';
+    p.target.style.color = 'black';
+    //e.stopPropagation();
+})
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
     })
+    })
+
+const footer = document.querySelector('.footer p');
+e.stopPropagation();
+footer.addEventListener('wheel', e => {
+    footer.style.color = '#FFFFFF';
+})
+
 
