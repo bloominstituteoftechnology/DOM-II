@@ -28,19 +28,19 @@ logoHeading.addEventListener('drag', e => {
     logoHeading.style.transform = 'rotate(180deg)';
 });
 
-const allPs = document.querySelectorAll('.go')
-allPs.forEach((p) => {
-    p.addEventListener('mouseenter', () => {
+const destination = document.querySelectorAll('.h4')
+destination.forEach((h4) => {
+    h4.addEventListener('mouseenter', () => {
         
-        console.log('working')
-        p.target.style.backgroundColor = 'lightblue';
-        p.target.style.color = 'hotpink';
+        //console.log('working')
+        h4.target.style.backgroundColor = 'lightblue';
+        h4.target.style.color = 'hotpink';
     })
 })//not working
 
-p.addEventListener('mouseup', () => {
-    p.target.style.backgroundColor = 'transparent';
-    p.target.style.color = 'black';
+h4.addEventListener('mouseleave', () => {
+    h4.target.style.backgroundColor = 'transparent';
+    h4.target.style.color = 'black';
     //e.stopPropagation();
 })
 
