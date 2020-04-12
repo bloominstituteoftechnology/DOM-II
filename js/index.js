@@ -27,3 +27,12 @@ const logoHeading = document.querySelectorAll('.logo-heading')
 logoHeading.addEventListener('drag', e => {
     logoHeading.style.transform = 'rotate(180deg)';
 });
+
+const allPs = document.querySelector('.go')
+allPs.forEach((p) => {
+    p.addEventListener('mousedown', () => {
+        p.target.style.backgroundColor = 'lightblue';
+        p.target.style.color = 'hotpink';
+    })
+    })
+
