@@ -23,12 +23,12 @@ letsGo.addEventListener('resize', e => {
     e.target.style.transform = 'rotate(360deg)';
 }) // not working
 
-const logoHeading = document.querySelectorAll('.logo-heading')
+const logoHeading = document.querySelector('.logo-heading')
 logoHeading.addEventListener('drag', e => {
     logoHeading.style.transform = 'rotate(180deg)';
 });
 
-const allPs = document.querySelector('.go')
+const allPs = document.querySelectorAll('.go')
 allPs.forEach((p) => {
     p.addEventListener('mousedown', () => {
         p.target.style.backgroundColor = 'lightblue';
