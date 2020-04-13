@@ -1,13 +1,13 @@
 // Your code goes here
-const bus = document.querySelector('.img-content');
+const roadMap = document.querySelector('.img-content');
 
-bus.addEventListener("mouseenter" , function(){
+roadMap.addEventListener("mouseenter" , function(){
 
-bus.style.transform = "scale(1.6)";
-bus.style.transition = "transform 2s";
+roadMap.style.transform = "scale(1.6)";
+roadMap.style.transition = "transform 2s";
 
 })
 
-bus.addEventListener('mouseleave', function() {
-    bus.style.transform = "scale(1)";
+roadMap.addEventListener('mouseleave', function() {
+    roadMap.style.transform = "scale(1)";
 })
