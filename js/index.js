@@ -32,9 +32,17 @@ const destination = document.querySelector(".destination h4");
         destination.style.transition = "transform .5s";
         destination.style.color = "red"
         destination.style.border = "1px solid black";
-        destination.backgroundColor = "dodgerblue";
+        destination.style.backgroundColor = "lavender";
         
     })
 
+const dest = document.querySelector(".destination");
+    dest.addEventListener("mouseenter", function() {
+    dest.style.backgroundColor = "dodgerblue";
+        dest.addEventListener("mouseout", function () {
+           dest.style.backgroundColor = "none"; 
+        })
+    })
+// good place for preventDefault() is anchors.
 
  
