@@ -37,7 +37,7 @@ const destination = document.querySelector(".destination h4");
     })
 
 const dest = document.querySelector(".destination");
-    dest.addEventListener("mouseenter", function() {
+    dest.addEventListener("mouseenter", function() {    
     dest.style.backgroundColor = "dodgerblue";
         dest.addEventListener("mouseout", function () {
            dest.style.backgroundColor = "none"; 
@@ -45,4 +45,10 @@ const dest = document.querySelector(".destination");
     })
 // good place for preventDefault() is anchors.
 
- 
+ const boat = document.querySelector(".content-destination");
+    boat.addEventListener("mousedown", function() {
+        boat.style.visibility = "hidden";
+
+    })
+
+    
