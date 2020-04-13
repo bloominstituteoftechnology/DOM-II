@@ -2,6 +2,7 @@
 const busImg = document.querySelector("img");
 
 busImg.addEventListener("mouseenter", function() {
+<<<<<<< HEAD
     busImg.style.transform = "scale(2.2)";
     busImg.style.transition = "transform 2s";
 })
@@ -34,3 +35,7 @@ const destination = document.querySelector(".destination h4");
         destination.style.border = "1px solid black";
     })
  
+=======
+    busImg.style.transform = "scale(2.5)";
+})
+>>>>>>> f8ecb32c696ac4bf4abe166f281cb15166385e8f
