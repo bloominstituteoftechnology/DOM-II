@@ -27,13 +27,26 @@ const body = document.querySelector('body');
 
     body.style.transform = "scale(1.6)";
     body.style.transition = "2s";
-  //  body.style.transform = "scale(1)";
+
+
+    body.addEventListener('dblclick', function(){
+
+        body.style.transform = "scale(1)";
+
+    } )
+  //  
 
  })
 
- 
- 
+ body.addEventListener('keydown' , function(){
 
+    body.style.transform = 'rotate(180deg)';
+ } )
+ 
+body.addEventListener('keyup', function() {
+    body.style.transform = 'rotate(0deg)';
+
+})
 /*
 roadMap.addEventListener("mouseenter" , function(){
 
