@@ -2,7 +2,7 @@
 
 
 
-/** Navigation */
+/** MOUSEENTER / MOUSELEAVE event Navigation */
 let navLink = document.querySelectorAll('.nav-link');
 
 navLink.forEach((element) => {
@@ -15,14 +15,14 @@ navLink.forEach((element) => {
     })
 })
 
-/** nav preventing default from reloading */
+/** nav PREVENT DEFAULT from reloading */
 let nav = document.querySelector('.nav');
 nav.addEventListener('click', (e) => {e.preventDefault();
     return e;}
     );
 
 
-/** h2 text rotate */
+/** MOUSEOVER / MOUSEOUT h2 text rotate */
 
 let intro = document.querySelectorAll('h2');
 intro.forEach((element) => {
@@ -35,7 +35,7 @@ intro.forEach((element) => {
     })
 })
 
-/** paragraph color change on click */
+/** CLICK event | change color of p */
 
 let p = document.querySelectorAll('p');
 p.forEach((click) => {
@@ -59,7 +59,7 @@ p.forEach((click) => {
 //   });
 
 
-/** images scale up when dbl clicked */
+/** DOUBLECLICK event on all images */
 
 const img = document.querySelectorAll('img');
 img.forEach((dbl) => {
@@ -76,11 +76,11 @@ img.forEach((dbl) => {
 });
 
 
-/** fun bus header logo wheel event */
+/** WHEEL event */
 
 function zoom(event) {
 
-    //prevent default
+//PREVENT DEFAULT
     event.preventDefault();
     scale += event.deltaY * -0.01;
     scale = Math.min(Math.max(.125, scale), 4);
@@ -92,7 +92,7 @@ function zoom(event) {
   el.onwheel = zoom;
 
  
-/** no content menu */
+/** NO CONTENT menu */
 
 noContext = document.querySelectorAll('.img-content');
 
@@ -103,7 +103,7 @@ noTxt.addEventListener('contextmenu', e => {
 });
 
 
-/** blurring intro image */
+/** CLICK blur intro image */
 
 let introImg = document.querySelector('.intro img');
 introImg.addEventListener('click' , myfunction);
@@ -118,21 +118,36 @@ function myfunction(){
 }}
 
 
-/** blur event on form */
+/** BLUR event on form */
+
 const password = document.querySelector('input[type="password"]');
 password.addEventListener('blur',  (event) => {
     event.target.style.background = '';    
   });
 
 
-/** focus event on form */
+/** FOCUS event on form */
 
 password.addEventListener('focus', (event) => {
     event.target.style.background = 'PapayaWhip';    
   });
 
 
+  
+/** SUBMIT event alert */
+
+const form = document.getElementById('form');
+form.addEventListener('submit', subForm);
+
+function subForm(event) {
+    alert('Just kidding! The button doesn\'t work');
+    event.preventDefault();
+  }
+
+
+
+
 /**green sock */
 gsap.from("nav", {duration: 2.5, x: 400});
 
-gsap.from(".destination", {duration: 1.5, x: -400});
+// gsap.from(".destination", {duration: 1.5, x: -400});
