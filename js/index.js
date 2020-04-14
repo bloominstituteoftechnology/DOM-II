@@ -1,16 +1,19 @@
 // Your code goes here
+
+//MOUSEENTER AND MOUSE LEAVE SECTION
 const roadMap = document.querySelectorAll('.img-content');
 roadMap.forEach((element) => {
 element.addEventListener("mouseenter" , function(){
     element.style.transform = "scale(1.6)";
     element.style.transition = "transform 2s";
-
+    event.stopImmediatePropagation();
 })
 element.addEventListener('mouseleave', function() {
     element.style.transform = "scale(1)";
 })
 })
 
+//WHEEL AND DBLCLICK SECTION
 const body = document.querySelector('body');
  body.addEventListener('wheel', function(){
 
@@ -20,6 +23,8 @@ const body = document.querySelector('body');
     body.style.transform = "scale(1)";
     } )  
  })
+
+ //KEYDOWN AND KEYUP SECITON
     body.addEventListener('keydown' , function(){
     body.style.transform = 'rotate(180deg)';
  } )
@@ -27,7 +32,7 @@ const body = document.querySelector('body');
     body.style.transform = 'rotate(0deg)';
 
 })
-
+// BUILD A TEXT BOX SECTION
 const navCont = document.querySelector('.nav-container');
 
 
@@ -37,6 +42,8 @@ const navCont = document.querySelector('.nav-container');
     navCont.appendChild(box);
     
     const clickHere = document.querySelector('input[type="text"]');
+
+    //FOCUS, BLUR AND SCROLL SECTION
 
     clickHere.addEventListener('focus', (event) => {
         event.target.style.background ="pink";
@@ -53,5 +60,12 @@ const navCont = document.querySelector('.nav-container');
         if (scrolled === scrollable) {
             alert('IT IS TIME TO PLAN YOUR TRIP.  CALL US AT 1-800-555-5555');
         }
+
+    })
+
+    //COPY EVENT SECTION
+    const source = window.addEventListener('copy', (event) => {
+
+        alert("COPY IS NOT ALLOWED ON THIS WEBSITE");
 
     })
