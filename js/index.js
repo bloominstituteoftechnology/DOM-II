@@ -51,4 +51,9 @@ const dest = document.querySelector(".destination");
 
     })
 
-    
+const letsGo = document.querySelector(".content-section .text-content");
+    letsGo.addEventListener("drag", function() {
+        letsGo.style.backgroundColor = "red";
+        letsGo.style.color = "green";
+    })
+
