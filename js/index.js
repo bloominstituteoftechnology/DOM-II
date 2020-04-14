@@ -4,14 +4,21 @@
 const roadMap = document.querySelectorAll('.img-content');
 roadMap.forEach((element) => {
 element.addEventListener("mouseenter" , function(){
+
+    element.addEventListener('click', (event) => {
+        event.stopPropagation();
+    })
+    
     element.style.transform = "scale(1.6)";
     element.style.transition = "transform 2s";
-    event.stopImmediatePropagation();
+    
 })
+
 element.addEventListener('mouseleave', function() {
     element.style.transform = "scale(1)";
 })
 })
+
 
 //WHEEL AND DBLCLICK SECTION
 const body = document.querySelector('body');
@@ -68,4 +75,11 @@ const navCont = document.querySelector('.nav-container');
 
         alert("COPY IS NOT ALLOWED ON THIS WEBSITE");
 
+    })
+
+    //PREVENTDEFAULT() SECTION
+    homeLink = document.querySelector('.nav-link');
+     
+    homeLink.addEventListener('click', function(event){
+        event.preventDefault();
     })
