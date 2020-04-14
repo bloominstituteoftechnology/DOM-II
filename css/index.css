@@ -350,3 +350,23 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+
+/* my css for my form */
+
+#form-section h3 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 10px 0;
+  background-color: #FFEBCD;
+  padding: 10px;
+}
+
+#form{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.box {
+  padding: 10px 50px;
+}

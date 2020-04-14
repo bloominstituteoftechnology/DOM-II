@@ -15,6 +15,13 @@ navLink.forEach((element) => {
     })
 })
 
+/** nav preventing default from reloading */
+let nav = document.querySelector('.nav');
+nav.addEventListener('click', (e) => {e.preventDefault();
+    return e;}
+    );
+
+
 /** h2 text rotate */
 
 let intro = document.querySelectorAll('h2');
@@ -47,10 +54,9 @@ p.forEach((click) => {
 
 /** alert when any key is pressed */
 
-
-document.addEventListener('keydown', (event) => { alert("YOU PRESSED " + `${event.code}`);
-event.preventDefault();
-  });
+// document.addEventListener('keydown', (event) => { alert("YOU PRESSED " + `${event.code}`);
+// event.preventDefault();
+//   });
 
 
 /** images scale up when dbl clicked */
@@ -85,7 +91,7 @@ function zoom(event) {
   const el = document.querySelector('.logo-heading');
   el.onwheel = zoom;
 
-
+ 
 /** no content menu */
 
 noContext = document.querySelectorAll('.img-content');
@@ -110,6 +116,21 @@ function myfunction(){
     else {
     introImg.style.opacity = "0.3";
 }}
+
+
+/** blur event on form */
+const password = document.querySelector('input[type="password"]');
+password.addEventListener('blur',  (event) => {
+    event.target.style.background = '';    
+  });
+
+
+/** focus event on form */
+
+password.addEventListener('focus', (event) => {
+    event.target.style.background = 'PapayaWhip';    
+  });
+
 
 /**green sock */
 gsap.from("nav", {duration: 2.5, x: 400});
