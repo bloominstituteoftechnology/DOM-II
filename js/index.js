@@ -10,7 +10,7 @@ window.addEventListener("load", function(event) {
     this.style.transition = "transform 1s";
   })
   funBus.addEventListener("mouseleave", function(){
-    this.style.transform= "scale(1.)"
+    this.style.transform= "scale(1)"
   })
   
   const button1 = document.querySelector('#btn1');
