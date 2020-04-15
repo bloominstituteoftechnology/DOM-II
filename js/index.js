@@ -19,9 +19,9 @@ button.forEach(button =>{
 })
 
 const letsGo = document.querySelector('.text-content h2')
-letsGo.addEventListener('resize', e => {
-    e.target.style.transform = 'rotate(360deg)';
-}) // not working
+letsGo.addEventListener('keydown', e => {
+    e.target.style.border = '3px solid hotpink';
+}) 
 
 const logoHeading = document.querySelector('.logo-heading')
 logoHeading.addEventListener('drag', e => {
@@ -44,10 +44,9 @@ allPs.forEach((p) => {
     p.addEventListener('mouseup', () => {
         p.target.style.backgroundColor = 'transparent';
         p.target.style.color = 'black';
-        //e.stopPropagation();
+
     })
 })
-
 
 
 navLinks.forEach((link) => {
