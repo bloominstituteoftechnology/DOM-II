@@ -6,8 +6,11 @@ window.addEventListener("load", function(event) {
   
   const funBus = document.querySelector("#img1");
   funBus.addEventListener("mouseenter", function(){
-    funBus.style.transform = "scale(1.4)";
-    funBus.style.transition = "transform 1s";
+    this.style.transform = "scale(1.4)";
+    this.style.transition = "transform 1s";
+  })
+  funBus.addEventListener("mouseleave", function(){
+    this.style.transform= "scale(1.)"
   })
   
   const button1 = document.querySelector('#btn1');
