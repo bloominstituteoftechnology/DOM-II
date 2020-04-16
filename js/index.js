@@ -63,7 +63,6 @@ destination.forEach((click) => {
 })
 
 let contentPick = document.querySelector('.content-pick')
-
 contentPick.addEventListener('click' , (event) => {
     event.target.style.backgroundColor = 'lightblue';
 })
