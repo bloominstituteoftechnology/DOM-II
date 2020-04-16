@@ -40,6 +40,7 @@ intro.forEach((element) => {
 let p = document.querySelectorAll('p');
 p.forEach((click) => {
     click.addEventListener ('click', function(){
+            
         if (click.style.backgroundColor === 'gray'){
             click.style.backgroundColor = 'white';
             click.style.color = 'black';
@@ -48,9 +49,27 @@ p.forEach((click) => {
             click.style.backgroundColor = 'gray';
             click.style.color = 'white';
         }
-    
     })
 })
+
+
+//STOP PROPAGATION event
+let destination = document.querySelectorAll('.destination');
+destination.forEach((click) => {
+    click.addEventListener('click' , (event) => {
+        event.stopPropagation(); //here
+        event.target.style.backgroundColor = 'pink';
+    })
+})
+
+let contentPick = document.querySelector('.content-pick')
+
+contentPick.addEventListener('click' , (event) => {
+    event.target.style.backgroundColor = 'lightblue';
+})
+
+
+
 
 /** alert when any key is pressed */
 
@@ -143,8 +162,6 @@ function subForm(event) {
     alert('Just kidding! The button doesn\'t work');
     event.preventDefault();
   }
-
-
 
 
 /**green sock */
