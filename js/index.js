@@ -1,119 +1,42 @@
-// * [x] `keydown`
-// * [x] `keyup`
-// * [x] `mouseover`
-// * [x] `mouseout`
-// * [x] `dblclick`
-// * [x] `scroll`
-// * [x] `resize`
-// * [x] `click`
-// * [x] `mouseenter`
-// * [x] `mouseleave`
+const siteContent = {
+  "nav": {
+    "nav-item-1": "Services",
+    "nav-item-2": "Product",
+    "nav-item-3": "Vision",
+    "nav-item-4": "Features",
+    "nav-item-5": "About",
+    "nav-item-6": "Contact",
+    "img-src": "img/logo.png"
+  },
+  "cta": {
+    "h1": "DOM Is Awesome",
+    "button": "Get Started",
+    "img-src": "img/header-img.png"
+  },
+  "main-content": {
+    "features-h4":"Features",
+    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "about-h4":"About",
+    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "middle-img-src": "img/mid-page-accent.jpg",
+    "services-h4":"Services",
+    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "product-h4":"Product",
+    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "vision-h4":"Vision",
+    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+  },
+  "contact": {
+    "contact-h4" : "Contact",
+    "address" : "123 Way 456 Street Somewhere, USA",
+    "phone" : "1 (888) 888-8888",
+    "email" : "sales@greatidea.io",
+  },
+  "footer": {
+    "copyright" : "Copyright Great Idea! 2018"
+  },
+};
 
-// YOUR CODE GOES HERE\\
-
-//  `keydown`on Fun Bus logo
-const newText = document.querySelector(".logo-heading");
-
-window.addEventListener("keydown", () => {
-    const newText = document.querySelector(".logo-heading");
-    newText.textContent = "Come Travel Us!";
-    newText.style.color = "#4c89bf";
-    newText.style.fontSize = "5rem";
-  });
-
-//  `keyup`on Fun Bus logo
-window.addEventListener("keyup", () => {
-  newText.textContent = "Fun Bus";
-  newText.style.color = "#212529";
-  newText.style.fontSize = "4rem";
-});
-
-//  `mouseover` on Navagation
-document.querySelectorAll(".nav a").forEach(element => {
-  element.addEventListener("mouseover", () => {
-    element.style.color = "#4c89bf";
-  });
-})
-
-//  `mouseout` on Navagation
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("mouseout", () => {
-    link.style.color = "";
-  });
-});
-
-//`dblclick` on main Image
-const changeImage = document.querySelector(".intro img");
-// console.log(changeImage);
-
-changeImage.addEventListener("dblclick", () => {
-  changeImage.src = "img/orange-volkswagen.jpg";
-  changeImage.alt = "A blue die-cast volkswagen";
-});
-
-// `scroll` on h2 tags
-document.addEventListener("scroll", () => {
-  document.querySelectorAll("h2").forEach(item => {
-    item.style.color = "#4c89bf";
-    item.style.color = "#4c89bf";
-  });
-});
-
-// `resize` on main Image
-window.addEventListener("resize", () => {
-  const cityBus = document.querySelector(".intro img");
-  cityBus.src = "img/volkswagen.jpg";
-});
-
-// `click` on bottom buttons
-const pressBtn = document.querySelectorAll(".btn");
-
-pressBtn.forEach(element => {
-  element.addEventListener("click", () => {
-    element.textContent = "Book my Ticket!";
-    // element.style.transform = "rotate (360deg)";
-    element.style.transition = "all 2s";
-  });
-});
-
-//  `mouseenter`
-const newPointer = document.querySelectorAll("h4");   //hover image not showing
-
-newPointer.forEach(element => {
-  element.addEventListener("mouseenter", () => {
-    element.style.cursor =
-    element.style.backgroundColor = "#4c89bf";
-  });
-});
-
-// `mouseleave`
-
-newPointer.forEach(element => {
-  element.addEventListener("mouseleave", () => {
-    element.style.background = "";
-  });
-});
-
-// Propagation Property 
-
-document.querySelectorAll (".destination").forEach (div => {
-  div.addEventListener ("click", () => {
-    div.style.backgroundColor = "steelblue";
-  });
-});
-
-document.querySelectorAll (".btn").forEach (btn => {
-  btn.addEventListener ("click", () => {
-    console.log("You have click a magical button");
-    event.stopPropagation ();
-  });
-});
-
-//Stop Navagation
-
-const goNoFurther = document.querySelectorAll(".nav a"); 
-  goNoFurther.forEach(noDuckGo => {
-    noDuckGo.addEventListener("click", noDuckGo => {
-      noDuckGo.preventDefault();
-    });
-  });
+// Example: Update the img src for the logo
+let logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"])
