@@ -1,9 +1,9 @@
 // Your code goes here
 
-//#1 alerts scam ad...
-// window.addEventListener('load', (event) => {
-//     alert('YOU JUST WON A FREE TRIP!! PRESS OK TO ACCEPT!');
-// })
+// #1 alerts scam ad...
+window.addEventListener('load', (event) => {
+    alert('YOU JUST WON A FREE TRIP!! PRESS OK TO ACCEPT!');
+})
 
 // #2 turns logo yellow on mouseover
 const logo = document.querySelector('.logo-heading');
