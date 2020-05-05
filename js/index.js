@@ -10,19 +10,17 @@ pic.addEventListener('dblclick', () => {
 
 // resize
 
-// window.addEventListener('resize', reportWindowSize);
-//
-//
-// var f = function(){
-//   var eventHandler = function(event){
-//     var btn = document.getElementsByTagName('btn')[0];
-//     btn.innerHTML = 'W=' + window.innerWidth + 'H=' + window.innerHeight;
-//   };
-//
-// window.addEventListener('resize', eventHandler, false)
-//
-// };
-//
+
+  var eventHandler = function(event){
+    var btn = document.querySelector('.btn');
+    btn.innerHTML = 'W=' + window.innerWidth + 'H=' + window.innerHeight;
+
+  };
+
+
+window.addEventListener('resize', eventHandler, false)
+
+
 // document.addEventListener('DOMContentLoaded',f,false);
 
 // key down
@@ -30,7 +28,7 @@ pic.addEventListener('dblclick', () => {
 document.getElementById("demo").onkeydown = function() {redDown()};
 
 function redDown() {
-  document.getElementById("demo").style.backgroundColor = "red";
+  document.getElementById("demo").style.backgroundColor= "red";
 
 }
 // key up
@@ -73,64 +71,32 @@ const boat = document.getElementById('boat');
 boat.addEventListener('mouseenter', e => {
   boat.style.border = '5px dotted orange';
   rowRightCount++;
-  console.log('Row right ' + rowRightCount + '.');
+  console.log('Entered ' + rowRightCount + 'x.');
 });
 
 boat.addEventListener('mouseleave', e => {
   boat.style.border = '1px solid #333';
   rowLeftCount++;
-  console.log('Row left ' + rowLeftCount + '.');
+  console.log('Left ' + rowLeftCount + 'x.');
 });
 
-//Mountain
+//Mountain Hide
 
 let mountainBtn = document.querySelector('#mountain');
 
 mountainBtn.addEventListener('click', e => {
-  document.getElementById("boat").style.display = "none";
+  document.getElementById("boat").style.visibility = "hidden";
 });
 
+// Moutain Visible
+let islandBtn = document.querySelector('#midBtn');
 
+islandBtn.addEventListener('click', e => {
+  document.getElementById("boat").style.visibility = "visible";
+});
 
+// load
+window.addEventListener('load', (event) => {
+  console.log('Your page is fully loaded your highness');
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // LECTURE NOTES
-// let homeLink = document.getElementById('home-link')
-// // Your code goes here
-// console.log('something else still');
-// homeLink.addEventListener(
-//   'click', // string with the name of the event
-//   () => {
-//     // things we want happening when this
-//     // link gets clicked
-//     console.log('the link got clicked');
-//   }
-// )
-// document.querySelector('nav').addEventListener('click', () => {
-//   console.log('the nav got clicked');
-// })
-//
-//
-// // attach a 'click' event listener to the header element
-// // and console.log('')
-// document.querySelector('header').addEventListener('click', () => {
-//   console.log('the header got clicked');
-// });
-//
-// document.body.addEventListener('click', (stuff) => {
-//   console.log(stuff);
-//   console.log('the body of the page got clicked');
-// });
