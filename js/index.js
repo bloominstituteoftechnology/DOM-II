@@ -22,8 +22,8 @@ bus.addEventListener("mouseover", function(event){
 
 //keydown
 
-/*
-let heading = document.getElementsByClassName("logo-heading");
+
+let heading = document.getElementById("logo-heading");
 
 document.addEventListener('keydown', dont);
 
@@ -32,14 +32,14 @@ function dont(){
 
     setTimeout(function(){
     heading.innerHTML = "Fun Bus";
-    }, 800)
+    }, 1800)
 }
-*/
+
 
 
 //wheel
 
-let element = ;
+let element = 0;
 
 element.addEventListener();
 
