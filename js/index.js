@@ -22,15 +22,35 @@ bus.addEventListener("mouseover", function(event){
 
 //keydown
 
+/*
+let heading = document.getElementsByClassName("logo-heading");
+
+document.addEventListener('keydown', dont);
+
+function dont(){
+    heading.innerHTML = "Quit hitting buttons back there!!!";
+
+    setTimeout(function(){
+    heading.innerHTML = "Fun Bus";
+    }, 800)
+}
+*/
 
 
 //wheel
 
+let element = ;
+
+element.addEventListener();
 
 //drag / drop
 
 
+
+
 // load
+
+
 
 
 
@@ -38,13 +58,21 @@ bus.addEventListener("mouseover", function(event){
 
 
 
+
+
 // resize
+
+
 
 
 //scroll
 
 
+
+
 //select
+
+
 
 
 
