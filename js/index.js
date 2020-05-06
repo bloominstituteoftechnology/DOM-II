@@ -3,7 +3,6 @@
 (https://developer.mozilla.org/en-US/docs/Web/Events). 
 using your creativity to make the Fun Bus site more interactive.  
 Here are some unique events you could try to use: 
-
 */
 //mouseover
 let bus = document.getElementById('bus');
@@ -18,6 +17,22 @@ bus.addEventListener("mouseover", function(event){
     }, 1500);
 
 
+})
+
+let text = document.getElementsByTagName('p');
+// grabs a html collection of all text
+let textArr = Array.prototype.slice.call(text);
+// converts html collection into array
+textArr.forEach(element =>{
+element.addEventListener('mouseover', function (event){
+    event.target.style.color = '#760111';
+
+    setTimeout(function(){
+    event.target.style.color = 'black';
+
+    }, 1000);
+})
+//should iterate through, and add an event listener to each for
 })
 
 //keydown
@@ -37,12 +52,10 @@ function dont(){
 
 
 
+
+
+
 //wheel
-
-let element = 0;
-
-element.addEventListener();
-
 //drag / drop
 
 
