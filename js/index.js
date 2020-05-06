@@ -96,3 +96,4 @@ function addBorder(event){
 }
 
 clickables.forEach(item => {item.addEventListener('dblclick', addBorder)});
+//
