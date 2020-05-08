@@ -22,3 +22,7 @@ navH1.addEventListener('mouseenter', (event) => {
 navH1.addEventListener('mouseleave', () => {
     navH1.style.transform = "scale(1)";
 });
+let introImg = document.querySelector('.intro img');
+introImg.addEventListener('dblclick', (event) => {
+    introImg.style.border = '3px dotted red';
+});
