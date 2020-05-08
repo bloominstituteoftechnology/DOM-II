@@ -14,3 +14,11 @@ keyD.addEventListener('keydown', logKey);
 function logKey(e) {
     keyD.textContent += ` ${e.code}`;
 };
+let navH1 = document.querySelector('h1');
+navH1.addEventListener('mouseenter', (event) => {
+    navH1.style.transform = "scale(1.2)"
+    navH1.style.transition = "all 0.3s"
+});
+navH1.addEventListener('mouseleave', () => {
+    navH1.style.transform = "scale(1)";
+});
