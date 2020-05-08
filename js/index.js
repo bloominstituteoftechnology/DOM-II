@@ -26,3 +26,6 @@ let introImg = document.querySelector('.intro img');
 introImg.addEventListener('dblclick', (event) => {
     introImg.style.border = '3px dotted red';
 });
+window.addEventListener('resize', (event) => {
+    introImg.style.border = '3px dashed black';
+});
