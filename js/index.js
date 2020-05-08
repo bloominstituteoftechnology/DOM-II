@@ -9,3 +9,8 @@ links.forEach(text => {
         event.target.style.textDecoration = 'none'
     });
 });
+let keyD = document.querySelector('body');
+keyD.addEventListener('keydown', logKey);
+function logKey(e) {
+    keyD.textContent += ` ${e.code}`;
+};
