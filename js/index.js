@@ -29,3 +29,14 @@ introImg.addEventListener('dblclick', (event) => {
 window.addEventListener('resize', (event) => {
     introImg.style.border = '3px dashed black';
 });
+let bgColor = document.querySelector('body');
+let scrolling;
+window.addEventListener('scroll', () => {
+    bgColor.style.backgroundColor = 'yellow';
+    window.clearTimeout(scrolling);
+    scrolling = setTimeout(() => {
+        bgColor.style.backgroundColor = 'initial';
+    }, 90);
+});
+
+
