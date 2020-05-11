@@ -9,6 +9,12 @@ links.forEach(text => {
         event.target.style.textDecoration = 'none'
     });
 });
+links.forEach(refresh => {
+    refresh.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
+});
+
 let keyD = document.querySelector('body');
 keyD.addEventListener('keydown', logKey);
 function logKey(e) {
@@ -39,4 +45,21 @@ window.addEventListener('scroll', () => {
     }, 90);
 });
 
-
+let vacaBundle = document.querySelectorAll('.destination');
+vacaBundle.forEach(menu => {
+    menu.addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+});
+vacaBundle.forEach(highlight => {
+    highlight.addEventListener('click', event => {
+        event.stopPropagation();
+        event.target.style.backgroundColor = 'yellow';
+    });
+});
+let vacaChoice = document.querySelectorAll('.btn');
+vacaChoice.forEach(pick => {
+    pick.addEventListener('click', (event) => {
+        event.target.style.border = "2px solid black";
+    });
+});
