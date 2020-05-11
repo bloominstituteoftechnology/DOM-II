@@ -3,26 +3,24 @@
 //dblclick
 let funBus = document.querySelector('.logo-heading');
 funBus.addEventListener('dblclick', (event) => {event.target.style.backgroundColor = "red"});
-//mouseover 
+//mouseover & drag  
+let allP = document.querySelectorAll('p');
 let firstP = document.querySelector('p');
-firstP.addEventListener('mouseover',(event)=>{event.target.style.color = 'yellow'});
-firstP.addEventListener('mouseout',(event)=>{event.target.style.color = 'black'});
-//drag
+allP.forEach((ps) => {ps.addEventListener('mouseover',(event)=>{event.target.style.color = 'yellow'})});
+allP.forEach((ps) => {ps.addEventListener('mouseout',(event)=>{event.target.style.color = 'black'})});
+firstP.addEventListener('drag', (event)=>{firstP.style.backgroundColor = 'grey'});
+//preventDefault
 let navy = document.querySelector('.nav');
-navy.addEventListener('drag',(event)=>{event.target.style.backgroundColor = "black"});
+navy.addEventListener('click', (event) => {event.preventDefault()});
 //keydown
 window.addEventListener('keydown',(event)=>{alert('please dont press any keys!')});
-//select
-let firstA = document.querySelector('a');
-firstA.addEventListener('select',(event)=>{event.target.style.backgroundColor = "black"});
 //scroll
 let body = document.querySelector('body');
 window.addEventListener('scroll',()=>body.style.backgroundColor = 'pink');
 //focus
-let secondPic = document.querySelectorAll('a');
-secondPic[1].addEventListener('focus', ()=> {body.style.backgroundColor = "blue"});
+let allAs = document.querySelectorAll('a');
+allAs[1].addEventListener('focus', ()=> {body.style.backgroundColor = "blue"});
 //resize
-let button = document.querySelector('.btn');
 window.onresize = () => body.style.backgroundColor = "red";
 //wheel
 let funbus = document.querySelector('.intro img');
@@ -31,8 +29,28 @@ const zoomer = (event)=>{
     event.target.style.borderRadius = '20px'
 }
 funbus.addEventListener('wheel',zoomer);
-
+//stopProp
+const containerHome = document.querySelector('.content-pick');
+containerHome.addEventListener('mouseover', (event) => {event.target.style.backgroundColor = 'yellow'});
+const containerSec = document.querySelector('.destination');
+containerSec.addEventListener('mouseover',(event)=>{
+    event.target.style.backgroundColor='purple'
+    event.stopPropagation()
+});
 //load
-let lastPic = document.querySelector('.content-destination img');
-lastPic.addEventListener('load',()=>{body.style.backgroundColor = "green"});
+let button = document.querySelector('.btn');
+let XMLHReq = new XMLHttpRequest();
+button.addEventListener('click', () =>{
+XMLHReq.open('GET',"https://cors-anywhere.herokuapp.com/http://www.Google.com")
+XMLHReq.send()});
+XMLHReq.addEventListener('load',()=>{body.style.backgroundColor = "green"});
+//select
+const inputter = document.createElement('input');
+inputter.setAttribute('type','text');
+inputter.setAttribute ('value','Select Me!') ;
+document.body.appendChild(inputter);
 
+let footer = document.querySelector('input');
+footer.addEventListener('select',()=>{
+   alert(`you've selected the footer`);
+});
