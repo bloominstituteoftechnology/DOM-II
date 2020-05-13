@@ -9,9 +9,9 @@
 // * [x] `mouseenter`
 // * [x] `mouseleave`
 
-// YOUR CODE GOES HERE\\
+// YOUR CODE GOES HERE!\\
 
-//  `keydown`on Fun Bus logo
+//  `keydown`on Fun Bus logo here
 const newText = document.querySelector(".logo-heading");
 
 window.addEventListener("keydown", () => {
@@ -28,21 +28,21 @@ window.addEventListener("keyup", () => {
   newText.style.fontSize = "4rem";
 });
 
-//  `mouseover` on Navagation
+//  `mouseover` on Navagation here
 document.querySelectorAll(".nav a").forEach(element => {
   element.addEventListener("mouseover", () => {
     element.style.color = "#4c89bf";
   });
 })
 
-//  `mouseout` on Navagation
+//  `mouseout` on Navagation here
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("mouseout", () => {
     link.style.color = "";
   });
 });
 
-//`dblclick` on main Image
+//`dblclick` on main Image here
 const changeImage = document.querySelector(".intro img");
 // console.log(changeImage);
 
@@ -51,7 +51,7 @@ changeImage.addEventListener("dblclick", () => {
   changeImage.alt = "A blue die-cast volkswagen";
 });
 
-// `scroll` on h2 tags
+// `scroll` on h2 tags here
 document.addEventListener("scroll", () => {
   document.querySelectorAll("h2").forEach(item => {
     item.style.color = "#4c89bf";
@@ -59,13 +59,13 @@ document.addEventListener("scroll", () => {
   });
 });
 
-// `resize` on main Image
+// `resize` on main Image here
 window.addEventListener("resize", () => {
   const cityBus = document.querySelector(".intro img");
   cityBus.src = "img/volkswagen.jpg";
 });
 
-// `click` on bottom buttons
+// `click` on bottom buttons here
 const pressBtn = document.querySelectorAll(".btn");
 
 pressBtn.forEach(element => {
