@@ -215,6 +215,15 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.darkThemeNav {
+  background-color: #111;
+}
+.darkThemeHeading {
+  color: #FFFFFF;
+}
+.main-navigation .nav-container .nav a.darkThemeNavLinks {
+  color: #FFFFFF;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -225,6 +234,12 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.darkThemeFooter {
+  background-color: #111;
+}
+.footer p.darkThemeFooterp {
+  color: #FFFFFF;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -349,4 +364,40 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.themeSwitcherButton {
+  padding: 8px;
+  position: fixed;
+  top: 108px;
+  left: 12px;
+  z-index: 2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.darkThemeButton {
+  background-color: #333;
+  color: #FFFFFF;
+}
+.displayNone {
+  display: none;
+}
+.darkThemeBody {
+  background-color: #333;
+}
+.darkThemeh2 {
+  color: #FFFFFF;
+}
+.darkThemeh4 {
+  color: #FFFFFF;
+}
+.darkThemep {
+  color: #FFFFFF;
+}
+.home .content-pick .destination .darkThemePackage {
+  background-color: #333;
+  color: #FFFFFF;
+}
+.home .content-pick .destination .darkThemePackage:hover {
+  background-color: #111;
 }
