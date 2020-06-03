@@ -159,3 +159,80 @@
 .home .content-pick .destination .darkThemePackage:hover {
   background-color:@darkThemeNavBG;
 }
+
+.normalThemeKey {
+  position:fixed;
+  top:156px;
+  left:12px;
+  color:@white;
+  font-size:1.3rem;
+}
+
+.darkThemeKey {
+  position:fixed;
+  top:156px;
+  left:12px;
+  font-size:1.3rem;
+}
+
+.scrollButton {
+  padding:8px;
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  text-align:center;
+  width:96px;
+  height:36px;
+}
+
+.scrollButton a {
+  display:block;
+  height:36px;
+  text-align:center;
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+}
+
+#increaseSize {
+  position:fixed;
+  top:180px;
+  left:12px;
+  font-size:1.1rem;
+}
+
+#decreaseSize {
+  position:fixed;
+  top:204px;
+  left:12px;
+  font-size:1.1rem;
+}
+
+.blur > *:not(.modal) {
+  filter:blur(3px);
+}
+
+.modal {
+  width:480px;
+  height:auto;
+  position:fixed;
+  top:108px;
+  left:calc((100% - 480px) / 2);
+  background-color:@eastern-blue;
+  border-radius:15px;
+  padding:108px;
+}
+
+.modalText {
+  text-align:center;
+  font-size:1.5rem;
+  width:100%;
+}
+
+.modalButton {
+  width:216px;
+  padding:8px;
+  border-radius:8px;
+  border:none;
+  margin:24px calc((100% - 216px) / 2);
+}

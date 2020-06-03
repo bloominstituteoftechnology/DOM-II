@@ -18,9 +18,12 @@
 
 <body>
 
-  <button onClick="darkTheme()"></button>
-  <button onClick="normalTheme()"></button>
-
+  <button></button>
+  <div id="darkThemeKey">Click Button or Press <span style="font-style:italic; font-weight:bold">D</span> Key</div>
+  <button></button>
+  <div id="normalThemeKey">Click Button or Press <span style="font-style:italic; font-weight:bold">N</span> Key</div>
+  <div id="increaseSize">Increase Text Size with Shift + Scroll Up</div>
+  <div id="decreaseSize">Decrease Text Size with Shift + Scroll Down</div>
   <header class="main-navigation">
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
@@ -35,7 +38,7 @@
      
   <div class="container home">
     <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
+      <img onMouseOver="this.src='img/fun-bus2.png'" onMouseOut="this.src='img/fun-bus.jpg'" src="img/fun-bus.jpg" alt="bus in the sand">
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
@@ -46,12 +49,12 @@
         <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
       </div>
       <div class="img-content">
-        <img src="img/adventure.jpg" alt="Let's go on an adventure!">
+        <img onMouseOver="this.src='img/adventure2.jpg'" onMouseOut="this.src='img/adventure.jpg'" src="img/adventure.jpg" alt="Let's go on an adventure!">
       </div>
     </section>
     <section class="content-section inverse-content">
       <div class="img-content">
-          <img src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
+          <img onMouseOver="this.src='img/fun2.jpg'" onMouseOut="this.src='img/fun.jpg'" src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
       </div>
       <div class="text-content">
         <h2>Adventure Awaits</h2>
@@ -63,7 +66,7 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-      <img src="img/destination.jpg" alt="Second slide">
+      <img onMouseOver="this.src='img/destination2.jpg'" onMouseOut="this.src='img/destination.jpg'" src="img/destination.jpg" alt="Second slide">
     </section>
     <section class="content-pick">
 
