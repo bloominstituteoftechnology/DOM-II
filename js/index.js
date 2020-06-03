@@ -130,21 +130,14 @@ getToThePointer.addEventListener('pointerover', (event) => {
   alert('Pointer moved in');
 });
 //10
- const themeBtn2 = document.createElement('button')
+const hearderBackground = document.querySelector('.nav-container')
 
-  themeBtn2.innerText="DON'T PRESS THIS BUTTON!"
+hearderBackground.addEventListener('click', (e)=>{
+  hearderBackground.style.backgroundColor = "purple"
+})
 
-  document.body.appendChild(themeBtn2)
-  function refreshPage(event){
-    
-      
-      alert ('OH NO YOU PRESSED THE WRONG BUTTON!')
-    
-  }
-  themeBtn2.style.color="white";
-  themeBtn2.style.background="red"
-  themeBtn2.style.width = "30%"
-  themeBtn2.style.height= "30px"
- 
-  themeBtn2.addEventListener('click',refreshPage)
+headerTitle.addEventListener('click',(e) =>{
+  headerTitle.style.backgroundColor = "pink"
+  e.stopPropagation()
+} )
   

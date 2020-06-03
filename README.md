@@ -48,12 +48,12 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+* [ ] Stop the navigation items from refreshing the page by using `p
 
 ## Stretch Task:
 
 * [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
-
+reventDefault()`
 ## Stretch assignment
 
 * [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
