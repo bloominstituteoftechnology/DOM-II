@@ -11,6 +11,7 @@
 // ADDED INCREASE PARAGRAPH TEXT SIZE WITH SHIFT + SCROLL UP
 // ADDED DECREASE PARAGRAPH TEXT SIZE WITH SHIFT + SCROLL DOWN
 // ADDED MODAL ON PAGE LOAD TO WELCOME USERS TO THE SITE. BLURS BACKGROUND WHILE MODAL IS OPEN.
+// DISABLED CONTEXT MENU ON IMAGES TO PREVENT IMAGE THEFT
 
 // END ADDED FUNCTIONALITY
 
@@ -338,8 +339,20 @@ window.addEventListener("load", function() {
     });
 });
 
-// window.addEventListener("select", function() {
-//     for(i = 0; i <= 8; i++){
-//         setParagraphs[i].style.backgroundColor = "red";
-//     }
-// });
+const allImages = document.getElementsByTagName('img');
+
+allImages[0].addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+
+  allImages[1].addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+
+  allImages[2].addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+
+  allImages[3].addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
