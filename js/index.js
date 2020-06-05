@@ -9,4 +9,10 @@ body.addEventListener('mouseover', () => {
 })
 });
 
+const funBus = document.querySelector('.intro img');
+console.log(funBus);
+funBus.addEventListener('mouseenter', () => {
+    funBus.style.transform = 'scale(2.25)';
+})
+
 
