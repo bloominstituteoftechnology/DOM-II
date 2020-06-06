@@ -30,15 +30,16 @@ headerImg.forEach((element) => {
 });
 
 const welcome = document.querySelector('.intro h2')
-welcome.addEventListener('keydown', (e) => {
-    if (e === 'k') {
-    welcome.style.visibility = 'hidden';    
+document.addEventListener('keypress', (e) => {
+    if (e.key === 'd') {
+    welcome.style.visibility = 'hidden';  
+      
     }
 } );
 
 const letGo = document.querySelector('.content-section .text-content h2')
-letGo.addEventListener('onwheel', (e) => {
-    e.target.style.visibility = 'hiden';
+document.addEventListener('wheel', (e) => {
+    letGo.style.visibility = 'hidden';
 });
 
 const footerHeaders = document.querySelectorAll('.content-pick .destination p')
