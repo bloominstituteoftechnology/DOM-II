@@ -21,3 +21,17 @@ navLinks.addEventListener('mouseout', () => {
     console.log('mouse went out')
     navLinks.style.color = 'black';
 })  
+// 3.
+// busImg.addEventListener('keydown', (e) => {
+//     if (e.key === k ){
+//         console.log(busImg)
+//         busImg.style.visibility = 'hidden';
+//     }
+// })
+// 3. 
+document.addEventListener('keydown', logKey);
+
+function logKey(e) { 
+  body.textContent += ` ${e.code}`;
+  console.log('button pressed')
+}
