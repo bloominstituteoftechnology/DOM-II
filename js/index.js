@@ -11,6 +11,12 @@ body.addEventListener('mouseover', () => {
 })
 });
 
+const home = document.querySelector('a');
+home.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('I clicked on Home link');
+});
+
 
 
 const funBus = document.querySelector('.intro img');
