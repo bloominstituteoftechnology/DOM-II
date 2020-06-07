@@ -1,5 +1,9 @@
 // // Your code goes here
-
+document.addEventListener("wheel", () => {
+    let backBody = document.querySelector("body");
+    backBody.style.backgroundColor = "lightpink";
+    console.log('my body is pink!');
+});
 
 document.addEventListener('keydown',logKey);
 function logKey(a,b,c) {
@@ -20,10 +24,6 @@ document.querySelectorAll("a").forEach (link => {
     });
 });
 
-document.body.addEventListener("wheel", event => {
-    event.target.style.backgroundColor = "lightpink";
-    console.log('my body is pink!')
-});
   
 document.querySelector(".intro img").addEventListener("drag",() => {
     console.log('dont touch me.');
