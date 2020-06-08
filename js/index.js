@@ -41,3 +41,12 @@ const textContent = document.querySelector('.text-content');
 textContent.addEventListener('dblclick', e => {
     e.target.style.textDecoration = "underline";
 });
+
+const funBusBanner = document.querySelector(".intro > img");
+funBusBanner.addEventListener('drag', (e) => e.target.style.transform = 'scale(1.25)');
+
+const footer = document.querySelector('.footer');
+footer.addEventListener('contextmenu', (e) => { e.target.style.backgroundColor = 'Lightcoral'; })
+
+const adventureAwaits = document.querySelectorAll('.text-content h2')
+adventureAwaits.forEach(node => { node.addEventListener('mousemove', (e) => { e.target.style.color = 'Navy' }) });
