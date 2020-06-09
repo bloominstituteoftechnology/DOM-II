@@ -5,27 +5,29 @@ document.addEventListener("wheel", () => {
     console.log('my body is pink!');
 });
 
-document.addEventListener('keydown',logKey);
-function logKey(a,b,c) {
-    let funBus = document.querySelector('h1');
-    funBus.style.color = 'green';
-    console.log('I know my abcs!');
-  };
+document.addEventListener('keydown', logKey);
 
-document.querySelectorAll("a").forEach (link => {
-    link.addEventListener ("mouseover", () => {
-      link.style.color = "pink";
-      link.style.border = '2px solid black';
-      console.log('pink links!');
-      event.preventDefault(); 
+function logKey(a, b, c) {
+    let funBus = document.querySelector('h1');
+    funBus.style.color = 'hotpink';
+    console.log('I know my abcs!');
+};
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("mouseover", () => {
+        link.style.color = "hotpink";
+        link.style.borderBottom = '2px dotted black';
+        link.style.padding = '3px';
+        console.log('pink links!');
+        event.preventDefault();
     });
-    link.addEventListener ("mouseout", () => {
-      link.style.color= "red";
+    link.addEventListener("mouseout", () => {
+        link.style.opacity = "50%";
     });
 });
 
-  
-document.querySelector(".intro img").addEventListener("drag",() => {
+
+document.querySelector(".intro img").addEventListener("drag", () => {
     console.log('dont touch me.');
 });
 document.querySelector(".intro img").addEventListener("dblclick", () => {
@@ -39,22 +41,29 @@ window.addEventListener('load', () => {
 let imgSize = document.querySelector(".img-content img");
 
 function reportWindowSize() {
-    imgSize.style.border= "2px solid black";
+    imgSize.style.border = "2px solid black";
     console.log('Image was resized!!!!');
-  };
+};
 window.onresize = reportWindowSize;
 
 let headerSelect = document.querySelector('h4');
-headerSelect.addEventListener('copy',(event) => {
+headerSelect.addEventListener('copy', (event) => {
     const selection = document.getSelection();
     event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
     event.preventDefault();
 });
 
-document.querySelectorAll(".btn").forEach (btn => {
-    btn.addEventListener ("click", () => {
+document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", () => {
         console.log('I have been clicked');
-        btn.style.backgroundColor = 'orange';
+        btn.style.backgroundColor = 'black';
+        btn.style.color = 'white';
 
     });
 });
+
+function footerColor() {
+    let footColor = document.querySelector('.footer');
+    footColor.style.backgroundColor = 'lightpink';
+};
+footerColor();
