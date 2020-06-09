@@ -1,10 +1,17 @@
 // Your code goes here
+
 const backgroundHeader = document.querySelector('.main-navigation')
 backgroundHeader.addEventListener('click', (event) => {
+    event.stopPropagation();
     event.target.style.backgroundColor = 'blue';
 });
 backgroundHeader.addEventListener('dblclick', (event) => {
     event.target.style.backgroundColor = 'white';
+});
+const logoHeading = document.querySelector('.logo-heading')
+logoHeading.addEventListener('click', (event) => {
+    
+    logoHeading.style.backgroundColor = 'purple';
 });
 const navBar = document.querySelectorAll('.nav a')
 navBar.forEach((element) => {
@@ -55,6 +62,10 @@ footerHeaders.forEach((element) => {
     })
 });
 
-
+const homeLink = document.querySelector('.main-navigation .nav .nav-link')
+homeLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('clicked, but prevented');
+})
 
 
