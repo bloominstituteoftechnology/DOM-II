@@ -1,9 +1,9 @@
 // Your code goes here
 
 //alert when first load 
-// const loadTest = addEventListener("load",() =>{
-// alert("Welcome to my Experiment !");
-// });
+const loadTest = addEventListener("load",() =>{
+alert("Welcome to my Experiment !");
+});
 
 //mouse hover Fun bus change font
 const h1Edit = document.querySelector("h1");
@@ -70,13 +70,14 @@ h2Edit.addEventListener("contextmenu", (e) =>{
     e.preventDefault();
 });
 
-//another filler 
-const footerEdit = document.querySelector(".footer");
-footerEdit.addEventListener("scroll",(e) =>{
-footerEdit.style.backgroundColor = "pink";
-});
+// //another filler 
+// const footerEdit = document.getElementsByTagName("p");
+// footerEdit.addEventListener("scroll",(e) =>{
+// footerEdit.style.color = "pink";
+// });
 
-const headerEdit = document.querySelector(".header");
-headerEdit.addEventListener("keydown",(e) =>{
-headerEdit.style.backgroundColor = "black";
-});
+// //header bg test
+// const headerEdit = document.querySelector(".header");
+// headerEdit.addEventListener("keydown",(e) =>{
+// headerEdit.style.backgroundColor = "black";
+// });
