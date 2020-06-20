@@ -18,7 +18,7 @@ Topics:
 
 ## Beginning Project
 
-* Launch the page using the command `npm run stretch`
+* Launch the page using the command `npm run stretch` (but kill the `npm start` process first)
 * All your work will be done in `index.js`
 * Make sure to read both the `index.html` and `styles.css` files so that you know what you're working with
 
