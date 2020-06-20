@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LambdaSchool/DOM-II#readme",
   "devDependencies": {
+    "eslint": "^7.3.0",
     "less": "^3.11.3",
     "parcel-bundler": "^1.12.4"
   }
