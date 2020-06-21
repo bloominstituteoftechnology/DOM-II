@@ -3,9 +3,13 @@
   <head>
     <title>DOM II</title>
     <link rel="stylesheet" href="./styles.css">
+
+    <!-- If you forget the "defer" attribute, the script will load and execute
+    _before_ the rest of the html is parsed, which would be bad if our code
+    inside `index.js` depends on the DOM being fully constructed -->
+    <script defer src="./index.js"></script>
   </head>
   <body>
-    <script defer="defer" src="./index.js"></script>
 
     <div class="blocks">
       <div class="block block--red"></div>
