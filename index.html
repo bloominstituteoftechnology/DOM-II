@@ -9,10 +9,12 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="less/index.less" rel="stylesheet">
 
-  <!-- If you forget the "defer" attribute, the script will load and execute
-  _before_ the rest of the html is parsed, which would be bad because our code
-  inside `index.js` depends on the DOM being fully constructed -->
-  <script src="js/index.js" defer></script>
+  <!-- If you omit the "defer" attribute, the script will load and execute
+  _before_ the rest of the html is parsed by the browser, which would be bad because
+  the code inside `index.js` depends on the DOM being fully constructed -->
+  <script defer src="js/index.js"></script>
+  <!-- We'll often see script tags placed right before the closing body tag:
+  it's a way of getting around the problem above without the need for "defer" -->
 </head>
 
 <body>
@@ -82,7 +84,7 @@
   </div><!-- container -->
 
   <footer class="footer">
-    <p>Copyright Fun Bus 2018</p>
+    <p>Copyright Fun Bus 2020</p>
   </footer>
 
 </body>
