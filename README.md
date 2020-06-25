@@ -19,17 +19,12 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 * [ ] Add your project manager as a reviewer on the pull-request
 * [ ] Your project manager will count the project as complete by merging the branch back into `main` branch.
 
-## Task 1: Set Up LESS Preprocessor
+## Task 1: Launch the project with npm
 
-* [ ] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
-
-* [ ] Open your terminal and navigate to your preprocessing project by using the `cd` command
-
-* [ ] Once in your project's root folder, run the following command `less-watch-compiler less css index.less`
-
-* [ ] Verify your compiler is working correctly by changing the `background-color` on the `html` selector to `red` in your `index.less` file.
-
-* [ ] Once you see the red screen, you can delete that style and you're ready to start on the next task
+* [ ] Navigate to the root of the project with your command line.
+* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [ ] Run `npm start` to compile your project and launch a development server.
+* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ## Task 2: Create Unique Event Listeners
 
