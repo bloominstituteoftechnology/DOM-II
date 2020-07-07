@@ -8,7 +8,7 @@
  console.log(NavLink)
  NavLink.addEventListener("mouseover", function( event ) {   
     event.target.style.color = "turquoise";
-  
+    event.preventDefault()
     setTimeout(function() {
       event.target.style.color = "";
     }, 500);
@@ -18,6 +18,9 @@
 console.log(header)
 header.addEventListener('click', (event) => {
   event.target.style.color = 'purple';    
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 1000);
 });
 
  //`wheel`
@@ -29,9 +32,33 @@ function myFunction() {
   this.style.fontSize = "45px";
 }
  //`load`
- 
- //`focus`
- //`resize`
- //`scroll`
- //`select`
+ window.addEventListener('load', () => {
+    alert('Does this bus have a bathroom???');
+  });
+ //`online`
+ window.addEventListener('online', () => {
+    console.log("Good job on finding wifi!!");
+});
+
+ //`offline`
+ window.addEventListener('offline', () => {
+    alert("is this 1996 or what??");
+});
+ //`keydown`
+ document.addEventListener("keydown", event => {
+  header.style.fontSize = "9rem"
+  event.stopPropagation()
+  });
+
+ //`keyup`
+ document.addEventListener("keyup", event => {
+    header.style.fontSize = "3rem"
+    event.stopPropagation()
+    });
  //`dblclick`
+ header.addEventListener('click', (event) => {
+    event.target.style.color = 'white';    
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 1000);
+  });
