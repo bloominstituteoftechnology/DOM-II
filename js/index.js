@@ -73,3 +73,8 @@ sizeIncrease.addEventListener('mouseenter', event => {
 sizeIncrease.addEventListener('mouseleave', event => {
     event.target.style.fontSize = '18px';
 });
+
+const anchorTags = document.querySelector('.nav-link');
+anchorTags.addEventListener("click", event => {
+    event.preventDefault();
+});
