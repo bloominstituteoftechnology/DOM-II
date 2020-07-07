@@ -17,7 +17,7 @@
  const header = document.querySelector('h1');
 console.log(header)
 header.addEventListener('click', (event) => {
-  event.target.style.color = 'purple';    
+  event.target.style.color = 'purple';  
   setTimeout(function() {
     event.target.style.color = "";
   }, 1000);
@@ -56,8 +56,9 @@ function myFunction() {
     event.stopPropagation()
     });
  //`dblclick`
- header.addEventListener('click', (event) => {
-    event.target.style.color = 'white';    
+ NavLink.addEventListener('click', (event) => {
+    event.target.style.color = 'white'; 
+    event.stopPropagation   
     setTimeout(function() {
       event.target.style.color = "";
     }, 1000);
