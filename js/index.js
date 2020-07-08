@@ -63,3 +63,26 @@ function myFunction() {
       event.target.style.color = "";
     }, 1000);
   });
+
+  //nav links prevent default
+  NavLink.addEventListener("click", function( event ) {   
+
+    event.preventDefault()  
+  });
+  //Nest two similar events somewhere in the site and prevent the event propagation properly
+  const headerIntro = document.querySelector('.intro p')
+  headerIntro.addEventListener("mouseover", function( event ) {   
+    event.target.style.fontSize = "2rem";
+    event.preventDefault()
+    setTimeout(function() {
+      event.target.style.fontSize = "";
+    }, 500);
+  }, false);
+  const headerIntroH2 = document.querySelector('.intro h2')
+  headerIntroH2.addEventListener("mouseover", function( event ) {   
+    event.target.style.color = "white";
+    event.preventDefault()
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 500);
+  }, false);
