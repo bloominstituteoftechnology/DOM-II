@@ -84,7 +84,8 @@ anchorTags.addEventListener("click", event => {
 const bgColorP = document.querySelector('.intro p')
 bgColorP.addEventListener('click', (event) => {
     bgColorP.style.backgroundColor='#C2CFB2';
-   event.stopPropagation();
+    bgcolorP.style.backgroundColor='#7E8987';
+    event.stopPropagation();
 });
 
 const bgcolorIntro= document.querySelector('.intro')
