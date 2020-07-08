@@ -41,6 +41,7 @@ divs.forEach(div => {
 //load
 const p = document.querySelectorAll('p')
 window.addEventListener('load',() => {
+    gsap.from ('img', {opacity:0, duration:1, y:-50})
     setTimeout(function(){
         p.forEach(instance => {
             instance.textContent = 'Press escape while you still can!'
@@ -64,9 +65,7 @@ window.addEventListener('resize', () => {
 const imgs = document.querySelectorAll('img')
 
 window.addEventListener('scroll', () => {
-    imgs.forEach(img => {
-        img.style.display = 'none'
-    })
+    gsap.to ('header', {opacity:0, duration:1, y:50})
 })
 
 //dblclick
@@ -91,3 +90,4 @@ links.forEach(link => {
         alert('thy link hath been clicked')
     })
 })
+
