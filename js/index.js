@@ -108,3 +108,15 @@ navLinks.addEventListener('click', function(event) {
     allTheLinks[3].textContent = 'Your Last Phone Call'
 
 })
+
+Array.from(document.all).forEach(elem => {
+    elem.addEventListener('click', (evt) => {
+        console.log('event target', evt.target)
+        console.log('current target', evt.currentTarget)
+    })
+})
+
+document.querySelector('div.container.home').addEventListener('click', evt => {
+    console.log('STOPPED HERE')
+    evt.stopPropagation()
+})
