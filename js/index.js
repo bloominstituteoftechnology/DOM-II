@@ -6,12 +6,6 @@ footer.addEventListener('mouseover', function () {
     footer.style.backgroundColor = '#4B4A67';
 });
 
-//keydown
-const intro = document.querySelector('body');
-intro.addEventListener('keydown', function () {
-    intro.style.backgroundColor = '#8DB580';
-});
-
 //wheel
 const adventureAwaits = document.querySelector('.inverse-content .text-content');
 adventureAwaits.addEventListener('wheel', function () {
@@ -62,7 +56,7 @@ destination.forEach(item => {
 //keyup
 const fakePrize = document.querySelector('body');
 fakePrize.addEventListener('keyup', event => {
-alert(alertMessage = `You Just Won a FREE Trip with FunBus! Click the Sign Up Button Below to Choose Which Trip You'd Like to Take!`)
+alert( `You Just Won a FREE Trip with FunBus! Click the Sign Up Button Below to Choose Which Trip You'd Like to Take!`)
 });
 
 //increase size
@@ -80,16 +74,17 @@ anchorTags.addEventListener("click", event => {
     event.preventDefault();
 });
 
-//stop porpagation
-const bgColorP = document.querySelector('.intro p')
-bgColorP.addEventListener('click', (event) => {
-    bgColorP.style.backgroundColor='#C2CFB2';
-    bgcolorP.style.backgroundColor='#7E8987';
-    event.stopPropagation();
-});
-
-const bgcolorIntro= document.querySelector('.intro')
-bgcolorIntro.addEventListener('click', (event) => {
-    bgcolorIntro.style.backgroundColor='#7E8987';
-    event.stopPropagation();
+//stop propagation
+//keydown
+const intro = document.querySelector('body');
+intro.addEventListener('keydown', () =>  {
+if(intro.style.backgroundColor ==! '#585A6F')  
+    {
+        intro.style.backgroundColor = '#585A6F';
+}  else if(intro.style.backgroundColor === '#585A6F'){
+    intro.style.backgroundColor = '#8DB580';
+}   else(intro.style.backgroundColor === '#8DB580');{
+    intro.style.backgroundColor = '#585A6F'
+}
+event.stopPropagation()
 });
