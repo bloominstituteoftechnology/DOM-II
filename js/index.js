@@ -8,7 +8,7 @@ const introImage = document.querySelector('.intro img')
 const paragraphs = document.getElementsByTagName('p')
 const pageColor = document.querySelector('body')
 const closingImage = document.querySelector('.content-destination img')
-// const navLinks = document.querySelector('nav')
+const navLinks = document.querySelector('nav')
 const letsGo = document.querySelector('.text-content h2')
 const contentDestination = document.querySelector('.content-destination')
 const allImages = document.getElementsByTagName('img')
@@ -17,10 +17,11 @@ const topBox = document.querySelector('.intro')
 const horrorHeadlines = document.querySelectorAll('.destination h4')
 const bodyPage = document.querySelector('.content-pick')
 const footerBox = document.getElementsByTagName('footer')
+const allTheLinks = document.getElementsByTagName('a')
 
 
 
-console.log(footerBox)
+console.log(allTheLinks)
 
 headerBox[0].style.textAlign = 'center'
 headerBox[0].style.fontSize = '3.0rem'
@@ -93,6 +94,17 @@ bodyPage.addEventListener('click', () => {
 footerBox[0].addEventListener('mouseover', () => {
     footerBox[0].textContent = 'All Rights Reserved .... to Kill!'
     footerBox[0].addEventListener('mouseout', () => {
-        footerBox[0].style.fontSize = '15rem'
+        footerBox[0].style.fontSize = '8rem'
+        footerBox[0].textContent = 'Don\'t be Afraid!'
     })
+})
+
+//TEN 
+navLinks.addEventListener('click', function(event) {
+    event.preventDefault();
+    allTheLinks[0].textContent = 'Far From Home';
+    allTheLinks[1].style.display = 'none'
+    allTheLinks[2].style.display = 'none'
+    allTheLinks[3].textContent = 'Your Last Phone Call'
+
 })
