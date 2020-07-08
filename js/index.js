@@ -63,6 +63,18 @@ function myFunction() {
       event.target.style.color = "";
     }, 1000);
   });
+//img
+const allImg = document.querySelectorAll('img')
+//console.log(allImg)
+allImg.forEach(item => {
+    item.addEventListener('mouseover', event => {
+      event.target.style.border = "solid black"
+      setTimeout(function() {
+        event.target.style.border = "";
+      }, 1000);
+    })
+    
+  })
 
   //nav links prevent default
   NavLink.addEventListener("click", function( event ) {   
@@ -72,11 +84,11 @@ function myFunction() {
   //Nest two similar events somewhere in the site and prevent the event propagation properly
   const headerIntro = document.querySelector('.intro p')
   headerIntro.addEventListener("mouseover", function( event ) {   
-    event.target.style.fontSize = "2rem";
+    event.target.style.color = "turquoise";
     event.preventDefault()
     setTimeout(function() {
-      event.target.style.fontSize = "";
-    }, 500);
+      event.target.style.color = "";
+    }, 1000);
   }, false);
   const headerIntroH2 = document.querySelector('.intro h2')
   headerIntroH2.addEventListener("mouseover", function( event ) {   
