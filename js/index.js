@@ -11,7 +11,7 @@ funBus.addEventListener('mouseleave', (event) => {
 })
 
 const changeImage = document.querySelector('img');
-changeImage.addEventListener('mouseleave', () => {
+changeImage.addEventListener('mouseenter', () => {
     changeImage.src = "https://cdn.pixabay.com/photo/2013/07/13/11/36/volkswagen-158463_960_720.png";
 })
 
@@ -94,3 +94,33 @@ header4[2].addEventListener('mouseover', (event) => {
     header4[2].style.color = 'hotPink'
 })
 
+const buttons = document.getElementsByClassName('btn')
+console.log (buttons)
+
+buttons[0].addEventListener('dblclick',(event) => {
+    buttons[0].style.backgroundColor = "gray";
+})
+
+buttons[1].addEventListener('dblclick',(event) => {
+    buttons[1].style.backgroundColor = "gray";
+})
+
+buttons[2].addEventListener('dblclick',(event) => {
+    buttons[2].style.backgroundColor = "gray";
+})
+
+const text = document.querySelectorAll('p');
+console.log (text);
+
+document.addEventListener('scroll',(event) => {
+   text[0].style.color ="purple";
+   text[1].style.color ="purple";
+   text[2].style.color ="purple";
+   text[3].style.color ="purple";
+   text[4].style.color ="purple";
+   text[5].style.color ="purple";
+   text[6].style.color ="purple";
+   text[7].style.color ="purple";
+   text[8].style.color ="purple";
+   text[9].style.color ="purple";
+})
