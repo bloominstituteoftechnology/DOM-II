@@ -29,20 +29,19 @@ logo.addEventListener("mouseleave", () => {
 
 /*// using preventDefault
 
-const navStop = document.querySelectorAll("a");
+const navStop = document.querySelectorAll("nav");
 
-navStop.addEventListener("click", (event) => {
-  event.preventDefault();
+navStop.addEventListener("click", () => {
+  //navStop.preventDefault();
   console.log("stopped");
-});
-*/
+});*/
 
 // scroll effect
 
 const scrollColor = document.querySelector("body");
 
 window.addEventListener("scroll", () => {
-  scrollColor.style.color = "purple";
+  scrollColor.style.color = "coral";
   console.log(scroll);
 });
 // resize event
@@ -53,4 +52,33 @@ window.addEventListener("resize", (event) => {
   resizeColor.style.backgroundColor = "turquoise";
   resizeColor.style.transition = "all 1s";
   console.log("resize", event);
+});
+
+//key up and key down
+
+const body = document.querySelector("body");
+
+body.addEventListener("keydown", () => {
+  event.target.style.backgroundColor = "peachpuff";
+});
+
+body.addEventListener("keyup", () => {
+  event.target.style.backgroundColor = "aquamarine";
+});
+
+//aux click event on nav bar
+
+const nav = document.querySelectorAll("a");
+
+nav.forEach((element) => {
+  element.addEventListener("auxclick", () => {
+    element.style.transform = "scale(1.3)";
+    element.style.color = "teal";
+  });
+});
+
+h4.forEach((element) => {
+  element.addEventListener("wheel", () => {
+    element.style.transform = "";
+  });
 });
