@@ -1,4 +1,4 @@
-window.alert("Welcome To Fun Bus");
+
 
 const funBus = document.querySelector('h1');
 
@@ -8,6 +8,11 @@ funBus.addEventListener('mouseover', (event) => {
 
 funBus.addEventListener('mouseleave', (event) => {
     event.target.style.color ='purple'
+})
+
+const changeImage = document.querySelector('img');
+changeImage.addEventListener('mouseleave', () => {
+    changeImage.src = "https://cdn.pixabay.com/photo/2013/07/13/11/36/volkswagen-158463_960_720.png";
 })
 
 const links = document.querySelectorAll('a');
@@ -40,11 +45,6 @@ funBusImg.addEventListener('mouseenter', () => {
 funBusImg.addEventListener('mouseleave', () => {
     funBusImg.style.transform = "scale(1)"
 })
-
-const changeImg = document.querySelector('img');
-window.addEventListener('scroll', (event) => {
-    changeImg.src = ""
-});
 
 const header2 = document.getElementsByTagName('h2');
 console.log (header2)
@@ -93,3 +93,4 @@ header4[2].addEventListener('mouseover', (event) => {
     header4[2].style.fontSize = '4rem'
     header4[2].style.color = 'hotPink'
 })
+
