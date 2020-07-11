@@ -17,7 +17,7 @@ yellowBus.addEventListener('transitionend', () => {
 
 //event three
 const introHeader = document.querySelector('h2');
-console.log(introHeader);
+//console.log(introHeader);
 window.addEventListener("resize", () => {
     introHeader.style.fontSize = "3.5rem"
 })
@@ -30,12 +30,12 @@ welcomeP.addEventListener("contextmenu", () => {
 })
 
 const imgSelector = document.getElementsByClassName('img-content')
-console.log (imgSelector);
+//console.log (imgSelector);
 
 
 //event five
 const adventureImage = imgSelector[0]
-console.log(adventureImage)
+//console.log(adventureImage)
 window.addEventListener('scroll', () => {
     adventureImage.style.transform = "scale(1)";
 })
@@ -60,7 +60,7 @@ funImg.addEventListener('mouseleave', () => {
 
 //event nine
 const adventureP = document.querySelectorAll('p')[1];
-console.log (adventureP);
+//console.log (adventureP);
 adventureP.addEventListener('drag', () => {
     adventureP.style.color = "red"
     adventureP.style.fontSize = "2rem"
