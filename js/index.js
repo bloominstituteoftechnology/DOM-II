@@ -77,8 +77,19 @@ nav.forEach((element) => {
   });
 });
 
-h4.forEach((element) => {
-  element.addEventListener("wheel", () => {
-    element.style.transform = "";
-  });
+// mouseover mouseout on bottom pic
+
+const growPic = document.querySelector(".content-destination img");
+
+growPic.addEventListener("mouseover", () => {
+  growPic.style.transform = "scale(1.5)";
+  growPic.style.transition = "0.5s";
+  growPic.style.color = "orange";
+});
+
+const shrinkPic = document.querySelector(".content-destination img");
+shrinkPic.addEventListener("mouseout", () => {
+  shrinkPic.style.transform = "scale(1)";
+  shrinkPic.style.transitionl = "0.5s";
+  shrinkPic.style.color = "white";
 });
