@@ -26,13 +26,13 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 ### Task 2a: Create Unique Event Listeners
 
-* [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use:
+* [X] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use:
 * [x] `mouseover`
 * [x] `mouseleave`
-* [ ] `wheel`
+* [x] `mouseover`
 * [x] `keyup`
 * [x] `keydown`
-* [ ] `focus`
+* [x] `mouseout`
 * [x] `resize`
 * [x] `scroll`
 * [x] `auxclick`
@@ -41,7 +41,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+* [x] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ### Task 2b: Exit Ticket
 

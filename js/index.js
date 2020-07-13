@@ -1,6 +1,6 @@
 /** @format */
 
-//changing bus image to a new one with dblclick
+//changing bus image to a new one with dblclick (1)
 
 const magicBus = document.querySelector(".intro img");
 
@@ -11,7 +11,7 @@ magicBus.addEventListener("dblclick", () => {
   console.log("hi");
 });
 
-//changing logo text with mouseenter and mouseleave
+//changing logo text with mouseenter and mouseleave(2 and 3)
 
 const logo = document.querySelector(".logo-heading");
 
@@ -27,16 +27,7 @@ logo.addEventListener("mouseleave", () => {
   console.log(4);
 });
 
-/*// using preventDefault
-
-const navStop = document.querySelectorAll("nav");
-
-navStop.addEventListener("click", () => {
-  //navStop.preventDefault();
-  console.log("stopped");
-});*/
-
-// scroll effect
+// scroll effect(4)
 
 const scrollColor = document.querySelector("body");
 
@@ -44,7 +35,7 @@ window.addEventListener("scroll", () => {
   scrollColor.style.color = "coral";
   console.log(scroll);
 });
-// resize event
+// resize event(5)
 
 const resizeColor = document.querySelector("body");
 
@@ -54,7 +45,7 @@ window.addEventListener("resize", (event) => {
   console.log("resize", event);
 });
 
-//key up and key down
+//key up and key down(6 and 7)
 
 const body = document.querySelector("body");
 
@@ -66,7 +57,7 @@ body.addEventListener("keyup", () => {
   event.target.style.backgroundColor = "aquamarine";
 });
 
-//aux click event on nav bar
+//aux click event on nav bar(8)
 
 const nav = document.querySelectorAll("a");
 
@@ -77,7 +68,7 @@ nav.forEach((element) => {
   });
 });
 
-// mouseover mouseout on bottom pic
+// mouseover mouseout on bottom pic (9 and 10)
 
 const growPic = document.querySelector(".content-destination img");
 
@@ -93,3 +84,16 @@ shrinkPic.addEventListener("mouseout", () => {
   shrinkPic.style.transitionl = "0.5s";
   shrinkPic.style.color = "white";
 });
+
+// using preventDefault and stopPropagation on nav links
+
+const navStop = document.querySelectorAll(".nav-link");
+
+navStop.forEach((element) => {
+  element.addEventListener("click", () => {
+    element.preventDefault();
+    element.stopPropagation();
+    console.log("stopped");
+  });
+});
+const navLinks = document.querySelectorAll(".nav-link");
