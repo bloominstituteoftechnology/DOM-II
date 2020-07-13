@@ -77,11 +77,20 @@ const clickers = document.querySelectorAll('h4');
 container.addEventListener('click', () => {
     container.style.backgroundColor = 'rebeccapurple';
 });
-sections.addEventListener('click', () => {
-    sections.style.backgroundColor = 'navy';
+sections.forEach(element => {
+    element.addEventListener('click', (event) => {
+        console.log('navy?')
+        event.target.style.backgroundColor = 'navy';
+        event.stopPropagation();
+    });
 });
-clickers.addEventListener('click', () => {
-    clickers.style.backgroundColor = 'pink';
+
+clickers.forEach(element => {
+    element.addEventListener('click', (event) => {
+        console.log('pinky')
+        event.target.style.color = 'pink';
+        event.stopPropagation();
+    });
 });
 
 /// success list = click, dblclick, keydown, mouseenter, mouseleave, mousedown, mouseup, resize, scroll,
