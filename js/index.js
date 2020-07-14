@@ -61,7 +61,8 @@ funImg.addEventListener('mouseleave', () => {
 //event nine
 const adventureP = document.querySelectorAll('p')[1];
 //console.log (adventureP);
-adventureP.addEventListener('drag', () => {
+adventureP.addEventListener('drag', (event) => {
+    event.stopPropagation()
     adventureP.style.color = "red"
     adventureP.style.fontSize = "2rem"
 })
@@ -70,4 +71,41 @@ adventureP.addEventListener('dragend', () => {
     adventureP.style.color = "black"
 })
 
+const destination = document.getElementsByClassName("destination")
+console.log(destination);
+const islandGetaway = destination[2].querySelector('h4')
+console.log (islandGetaway)
 
+const stopNav = document.querySelector('.nav-link')
+//console.log(stopNav)
+stopNav.addEventListener('click', (event) => {
+    event.preventDefault();
+})
+// event.stopPropagation()
+
+
+const footer = document.querySelector('.footer')
+const footerText = footer.querySelector('p')
+const propagationOne = document.createElement('div');
+const testOne = document.createElement('h4')
+
+//HTML build up
+footer.appendChild(propagationOne)
+propagationOne.appendChild(testOne)
+console.log(footer);
+
+
+//adding text
+testOne.textContent = "hello"
+
+//addEventListener
+footer.addEventListener('click', () => {
+    footerText.style.color = "green"
+})
+propagationOne.addEventListener('click', (event)=> {
+    event.stopPropagation()
+    testOne.style.color = "red"
+})
+
+
+// const eventHandler = (event) => { event.stopPropagation() };
