@@ -21,6 +21,13 @@ function defaultClass() {
 window.addEventListener("load", event => {
 	window.alert("Daniel is the greatest coder of all time.");
 });
+
+window.addEventListener("resize", event => {
+	window.alert("Too big for you buddy?");
+});
+body.addEventListener("dragstart", event => {
+	window.alert("don't drag so hard");
+});
 headerImage.addEventListener("mouseenter", event => {
 	event.target.setAttribute("src","https://images.unsplash.com/photo-1562620669-98104534c6cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
 });
