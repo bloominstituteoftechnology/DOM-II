@@ -1,10 +1,14 @@
 // Your code goes here
 //grabbing elements
+const header = document.querySelector('.main-navigation');
+const nav = document.querySelector('nav');
+const page = document.querySelector('.container');
 const navLinks = document.querySelectorAll('.nav-link');
 const headerImage = document.querySelector('header img');
-const theText = document.querySelectorAll('.text-content')
+const theText = document.querySelectorAll('.text-content');
 const h1 = document.querySelector('h1');
 const body = document.querySelector('body');
+const div = document.querySelectorAll('div');
 //functions for styless
 function defaultClass() {
   event.target.style.removeProperty("color");
@@ -46,7 +50,25 @@ h1.addEventListener("mouseleave", event => {
 	event.target.style.color = "black";
 	event.target.style.removeProperty("background-color");
 });
-
+header.addEventListener("click",event => {
+	event.target.style.backgroundColor= "blue";
+});
+div.forEach(element => {
+	element.addEventListener("click", event => {
+		event.target.style.color = "pink";
+	});
+});
+theText.forEach(element => {
+element.addEventListener("click",event => {
+	event.target.style.color= "dodgerblue";
+	event.preventDefault();
+	event.stopPropagation();
+	});
+});
+nav.addEventListener("click", event => {
+	event.preventDefault();
+	event.stopPropagation();
+});
 navLinks[0].addEventListener("mouseover", event => {
 	event.target.style.color = "dodgerblue";
 	event.target.style.backgroundColor = "black";
