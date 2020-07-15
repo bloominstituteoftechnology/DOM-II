@@ -69,16 +69,16 @@ moveImg.forEach(element => {
 });
 
 //event 8 LOAD
-window.addEventListener("load", event => {
-        window.alert(
-          "FUN FUN FUN FUN FUN"
-        );
-      });
+// window.addEventListener("load", event => {
+//         window.alert(
+//           "FUN FUN FUN FUN FUN"
+//         );
+//       });
 
 //event 9 DRAG
 const logo = document.querySelector('.logo-heading')
 
-logo.addEventListener('drag', () => {
+logo.addEventListener('drag', (event) => {
     logo.style.color = '#fd7066';
     alert('logo draggy draggy')
     event.stopPropagation();
@@ -89,7 +89,16 @@ const links = document.querySelectorAll('a')
 links.forEach(links => {
     links.addEventListener('dragend', () => {
         alert('Ouchhhhhh be careful!')
+
+    })
     } )
-})
 
-
+//prevent defaults
+const linkHalt = document.querySelectorAll('a');
+linkHalt.forEach((element) => {
+  element.addEventListener("click", () => {
+    element.preventDefault();
+    element.stopPropagation();
+    console.log("stop it");
+  });
+});
