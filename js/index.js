@@ -1,4 +1,20 @@
-// 1.) Mouse events
+// [ ] `mouseover`
+// * [ ] `keydown`
+// * [ ] `wheel`
+// * [ ] `drag / drop`
+// * [ ] `load`
+// * [ ] `focus`
+// * [ ] `resize`
+// * [ ] `scroll`
+// * [ ] `select`
+// * [ ] `dblclick`
+
+
+
+
+
+
+// 1.) big and small transform
 
 
 const navStuff = document.querySelector('.nav');
@@ -15,6 +31,11 @@ navStuff.addEventListener('mouseleave',(event) => {
     navStuff.style.transition = 'transform 1s';
 });
 
-// 2.) 
+// 2.) Easy peasie alert
+
+const scrollBarShenanigans = document.querySelector('body');
+scrollBarShenanigans.addEventListener('wheel', (event) => {
+alert('STOP IT')
+});
 
 
