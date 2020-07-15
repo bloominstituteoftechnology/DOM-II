@@ -94,11 +94,8 @@ links.forEach(links => {
     } )
 
 //prevent defaults
-const linkHalt = document.querySelectorAll('a');
-linkHalt.forEach((element) => {
-  element.addEventListener("click", () => {
-    element.preventDefault();
-    element.stopPropagation();
-    console.log("stop it");
-  });
-});
+const ytlinkHalt = document.getElementById('ytlink');
+
+ytlinkHalt.addEventListener('click', (event) =>{
+    event.preventDefault();
+})
