@@ -1,6 +1,7 @@
 // Your code goes here
 
 const navLink = Array.from(document.querySelectorAll(".nav-link"));
+const navItem = Array.from(document.querySelectorAll(".nav-link a"));
 const navBar = document.querySelector(".main-navigation");
 const introH2 = document.querySelector(".intro h2");
 const contentOne = document.querySelector(".content-section");
@@ -30,6 +31,11 @@ navLink.forEach((el) => {
   });
 });
 
+navItem.forEach((el) => {
+  el.preventDefault();
+  event.stopPropagation();
+});
+
 navBar.addEventListener("click", (event) => {
   navBar.style.backgroundColor = "blue";
 });
@@ -53,4 +59,3 @@ contentThree.addEventListener("wheel", (event) => {
 destination[0].addEventListener("mousemove", (event) => {
   destination[0].innerHTML = "HELLO";
 });
-  
