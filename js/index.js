@@ -24,16 +24,17 @@ navLink.forEach((el) => {
   el.addEventListener("focus", (event) => {
     el.style.width = "45%";
     el.style.color = "white";
+    event.stopPropagation();
   });
   el.addEventListener("focusout", (event) => {
     el.style.width = "5%";
     el.style.color = "skyblue";
+    event.stopPropagation();
   });
 });
 
 navItem.forEach((el) => {
   el.preventDefault();
-  event.stopPropagation();
 });
 
 navBar.addEventListener("click", (event) => {
