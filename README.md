@@ -24,9 +24,9 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 * [ ] Run `npm start` to compile your project and launch a development server.
 * [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
-### Task 2a: Create Unique Event Listeners
+### Task 2a: Create listeners for 10 types of events
 
-* [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, remove objects, etc. Here are some unique event types you could try to use:
+* [ ] Using your [index.js file](js/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, remove objects, etc. Here are some event types you could try to use:
   * `mouseover`
   * `keydown`
   * `wheel`
