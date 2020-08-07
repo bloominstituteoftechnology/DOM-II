@@ -26,3 +26,8 @@ tinyBus.addEventListener('mouseenter', () => {
     tinyBus.style.transform = 'scale(1.2)';
     tinyBus.style.transition = 'transform 1s';
 });
+
+tinyBus.addEventListener('mouseleave', () => {
+    tinyBus.style.transform = 'scale(1)';
+    tinyBus.style.transition = 'transform 1s';
+});
