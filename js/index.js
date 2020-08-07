@@ -44,3 +44,7 @@ window.addEventListener('resize', () => {
 document.addEventListener('keydown', () => {
     alert('You Pressed a key');
 });
+
+document.addEventListener('wheel', () => {
+    alert('You scrolled with the wheel');
+});
