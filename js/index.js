@@ -73,3 +73,9 @@ destinationImg.addEventListener('mouseover', (e) => {
     e.stopPropagation();
     destinationImg.src = 'https://images.unsplash.com/photo-1484910292437-025e5d13ce87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1388&q=80';
 });
+
+const home = document.querySelector('a');
+
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+});
