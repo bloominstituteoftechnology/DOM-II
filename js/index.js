@@ -48,3 +48,7 @@ document.addEventListener('keydown', () => {
 document.addEventListener('wheel', () => {
     alert('You scrolled with the wheel');
 });
+
+document.addEventListener('contextmenu', () => {
+    alert('WHAT!');
+});
