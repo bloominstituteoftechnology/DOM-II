@@ -52,3 +52,11 @@ document.addEventListener('wheel', () => {
 document.addEventListener('contextmenu', () => {
     alert('WHAT!');
 });
+
+const focusFooter = document.querySelector('.footer');
+// console.log(focusFooter);
+
+focusFooter.addEventListener('focus', (event) => {
+    event.target.style.backgroundColor = 'red';
+});
+
