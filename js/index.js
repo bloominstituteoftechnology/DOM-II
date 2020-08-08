@@ -53,13 +53,6 @@ document.addEventListener('contextmenu', () => {
     alert('WHAT!');
 });
 
-const focusFooter = document.querySelector('.footer');
-// console.log(focusFooter);
-
-focusFooter.addEventListener('focus', (event) => {
-    event.target.style.backgroundColor = 'red';
-});
-
 
 const destination = document.querySelector('.content-destination');
 const destinationImg = document.querySelector('.content-destination img');
@@ -79,3 +72,48 @@ const home = document.querySelector('a');
 home.addEventListener('click', (e) => {
   e.preventDefault();
 });
+
+const drag = document.querySelector('.img-fluid');
+// console.log(drag);
+
+drag.addEventListener('drag', function(event) {
+
+}, false);
+
+drag.addEventListener('dragstart', function(event) {
+    dragged = event.target;
+    event.target.style.opacity = .5;
+}, false);
+
+drag.addEventListener('dragend', function(event) {
+    event.target.style.opacity = '';
+}, false);
+
+drag.addEventListener('dragover', function(event) {
+    event.preventDefault();
+}, false);
+
+drag.addEventListener('dragenter', function(event) {
+    if (event.target.className === 'text-content') {
+        event.target.style.backgroundColor = 'green';
+    }
+}, false);
+
+// const dragTarget = document.querySelector('.text-content');
+// console.log(dragTarget);
+
+
+drag.addEventListener ('dragleave', function(event) {
+    if (event.target.className === 'text-content') {
+        event.target.style.backgroundColor = '';
+    }
+}, false);
+
+drag.addEventListener('drop', function(event) {
+    event.preventDefault();
+    if (event.target.className === 'text-content') {
+        event.target.style.backgroundColor = '';
+        dragged.parentNode.removechild ( dragged );
+        event.target.appendChild( dragged );
+    }
+}, false);
