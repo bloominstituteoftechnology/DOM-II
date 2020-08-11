@@ -1,7 +1,7 @@
 //1 Click Sign-up Button
 
-let btn = document.querySelector('.btn');
-btn.addEventListener('click', (event) => {
+const nav = document.querySelector('.nav');
+nav.addEventListener('click', (event) => {
   alert('Still under construction!')
 })
 
@@ -90,13 +90,13 @@ function navFadeOnScroll() {
 
 document.addEventListener("scroll", navFadeOnScroll);
 
-// 8 Mouse Down  Color changes to pink when mouse pointer is pushed down click.
+// 8 Mouse Down  Fun Bus color changes to red when mouse pointer is pushed down click.
 const logo = document.querySelector('.logo-heading')
 logo.addEventListener('mousedown', function(event) {
     event.target.style.color = "red";
 });
 
-// 9 Mouse Leave  Color reverts back when mouse leaves nav Logo
+// 9 Mouse Leave  Color reverts back when mouse leaves 'Fun Bus'
 const logoRevert = document.querySelector('.logo-heading')
 logoRevert.addEventListener('mouseleave', function(event) {
     event.target.style.color = "black";
