@@ -17,16 +17,7 @@ navA.forEach((link) => {
     }, false)
 });
 
-// 3 Mouse Enter Island Getaway
-const h4 = document.getElementById("Island");
-h4.addEventListener("mouseenter", function( event ) {   
-  event.target.style.color = "Red";
-  setTimeout(function() {
-    event.target.style.color = "Black";
-  }, 500);
-}, true);
-
-// 4 Double Click Image 
+// 3 Double Click Image 
 const card = document.getElementById('img-content');
 
 card.addEventListener('dblclick', function (event) {
@@ -35,8 +26,16 @@ card.addEventListener('dblclick', function (event) {
       event.target.style.transform = 'scale(1.0)';
   }, 500);
 }, false)
+// Stop Propogation Solid black boarder on the double clicked image
+const advAwaits = document.getElementById('img-content');
 
-//5 Wheel Top Image
+advAwaits.addEventListener("click", (event)=>{
+    event.stopPropagation()
+    event.target.style.border = "2px solid black"
+});
+
+
+// 4 Wheel Top Image
 const Img = document.querySelector('img');
 Img.addEventListener('wheel', zoom);
 let scale = 1;
@@ -51,7 +50,7 @@ function zoom(event){
           Img.style.transform = `scale(${scale})`;
 };
 
-//6  Resize Titles with red bar
+// 5  Resize Titles with red bar
 const hTwo = document.querySelectorAll('h2');
 
 window.addEventListener('resize', function(){
@@ -63,7 +62,16 @@ hTwo.forEach((newStyle) => {
 });
 });
 
-// 7 Scroll
+// 6  Mouse Enter Island Getaway
+const h4 = document.getElementById("Island");
+h4.addEventListener("mouseenter", function( event ) {   
+  event.target.style.color = "Red";
+  setTimeout(function() {
+    event.target.style.color = "Black";
+  }, 500);
+}, true);
+
+// 7 Scroll Keeps nav bar on the screen while scrolling
 const mainHead = document.querySelector('.main-navigation');
 const bottomContent = document.querySelectorAll('.destination');
 
@@ -82,19 +90,19 @@ function navFadeOnScroll() {
 
 document.addEventListener("scroll", navFadeOnScroll);
 
-//8 Mouse Down  Color changes to pink when mouse pointer is pushed down click.
+// 8 Mouse Down  Color changes to pink when mouse pointer is pushed down click.
 const logo = document.querySelector('.logo-heading')
 logo.addEventListener('mousedown', function(event) {
     event.target.style.color = "red";
 });
 
-//9 Mouse Leave  Color reverts back when mouse leaves nav Logo
+// 9 Mouse Leave  Color reverts back when mouse leaves nav Logo
 const logoRevert = document.querySelector('.logo-heading')
 logoRevert.addEventListener('mouseleave', function(event) {
     event.target.style.color = "black";
 });
 
-//10 Changes the size of FUN IN THE SUN div class per mouse movement over div class destination
+// 10 Changes the size of FUN IN THE SUN div class per mouse movement over div class destination
 const logo2 = document.querySelector('.destination')
 logo2.addEventListener('mousemove', function(event) {
     event.target.style.transform = 'scale(1.2)';
@@ -102,14 +110,6 @@ logo2.addEventListener('mousemove', function(event) {
         event.target.style.transform = 'scale(1.0)';
     }, 500);
 }, false);
-
-// Stop Propogation
-const advAwaits = document.getElementById('img-content');
-
-advAwaits.addEventListener("click", (event)=>{
-    event.stopPropagation()
-    event.target.style.border = "2px solid black"
-});
 
 // Stop Nav Items from default action
 navA.forEach((navA) => {navA.addEventListener('click', function (event) {
