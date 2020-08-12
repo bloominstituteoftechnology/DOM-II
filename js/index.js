@@ -1,4 +1,4 @@
-//1 Click Sign-up Button
+//1 Click Nav bar
 
 const nav = document.querySelector('.nav');
 nav.addEventListener('click', (event) => {
@@ -76,7 +76,6 @@ const mainHead = document.querySelector('.main-navigation');
 const bottomContent = document.querySelectorAll('.destination');
 
 function navFadeOnScroll() {
-    document.body.style.backgroundImage = "url('./img/big-ben.jpg')";
     mainHead.style.opacity = ".5";
     bottomContent.forEach((bg) => {
         bg.style.backgroundColor = 'white';
