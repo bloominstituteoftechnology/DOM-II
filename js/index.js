@@ -1,6 +1,8 @@
 // Your code goes here
 
-test.addEventListener("mouseover", function( event ) {   
+// MOUSEOVER STYLE
+
+document.addEventListener("mouseover", function( event ) {   
     // highlight the mouseover target
     event.target.style.color = "orange";
   
@@ -9,3 +11,18 @@ test.addEventListener("mouseover", function( event ) {
       event.target.style.color = "";
     }, 500);
   }, false);
+
+
+// KEYDOWN 
+
+
+const funColor = document.querySelectorAll('h2');
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'f') {
+       
+        }
+    }
+
+
+
