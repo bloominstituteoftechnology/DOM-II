@@ -72,3 +72,22 @@ sectionText.forEach(function(item){
     event.target.style.backgroundColor = ''
   })
 })
+
+// prevents links from default action
+navLinks.forEach(function(item){
+  'click', function(event){
+    event.preventDefault()
+  }
+})
+
+// nested/stopPropagation
+const destination = document.querySelector('.destination')
+const destinationH4 = destination.querySelector('h4')
+
+destinationH4.addEventListener('click', function(event){
+  event.stopPropagation()
+  event.target.style.color = 'green'
+})
+destination.addEventListener('click', function(event){
+  event.target.style.color = 'yellow'
+})

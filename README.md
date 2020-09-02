@@ -19,14 +19,14 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 #### Launch the project with npm
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [X] Navigate to the root of the project with your command line.
+* [X] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [X] Run `npm start` to compile your project and launch a development server.
+* [X] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ### Task 2a: Create listeners for 10 types of events
 
-* [ ] Using your [index.js file](js/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, remove objects, etc. Here are some event types you could try to use:
+* [X] Using your [index.js file](js/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, remove objects, etc. Here are some event types you could try to use:
   * `mouseover`
   * `keydown`
   * `wheel`
@@ -41,7 +41,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+* [X] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ### Task 2b: Exit Ticket
 
