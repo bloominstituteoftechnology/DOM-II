@@ -1,5 +1,4 @@
 // Your code goes here
-// Your code goes here
 window.addEventListener("load", function(event) {
     alert("howdy howdy howdy");
     });
@@ -40,7 +39,7 @@ img3.addEventListener('mouseout', function(event){
 
 doc.addEventListener('keydown', (event) => {
     const keydown = event.key;
-    alert('Do not touch that key! ' + keydown + ' do not do');
+    alert('Do not touch that key! ' + keydown + ' yes, that key');
 });
 
 const password = document.querySelector('input[type="password"]');
@@ -68,7 +67,7 @@ buttons[1].addEventListener('click', (event) => {
 const funBus = document.querySelector('.intro')
 funBus.addEventListener('wheel', function zoom(event) {
     event.preventDefault;
-    console.log('Number of times you scrolled on this Heading');
+    console.log('Number of times you scrolled');
 })
 
 
