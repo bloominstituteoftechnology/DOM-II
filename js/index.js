@@ -69,3 +69,6 @@ const header = document.querySelector('header')
 header.addEventListener('mouseleave', function () {
     header.style.background = 'Bisque';
 });
+
+//const bottomFooter = document.querySelector('.footer', 'p')
+//bottomFooter.addEventListener('mouseleave')
