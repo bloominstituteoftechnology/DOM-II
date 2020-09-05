@@ -1,5 +1,4 @@
 // Your code goes here
-// Your code goes here
 let bus = document.getElementById('bus');
 let busF = true;
 bus.addEventListener("dblclick", (e) => {
