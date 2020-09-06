@@ -56,18 +56,36 @@ contentSection.addEventListener("wheel", () =>{
 
 // #9 Drag and drop
 
-const textSection = document.querySelector(".text-content")
+let textSection = document.querySelector(".content-section")
 const drag = document.createElement("div");
 drag.classList.add("drag-section");
 drag.setAttribute("draggable", "true");
-drag.textContent = "Drag Away!"
+drag.textContent = "Drag here!"
 
 textSection.appendChild(drag);
 
 
-const dropElement = document.querySelector(".content-destination")
+let dropElement = document.querySelector("footer")
     const dragAndDrop = document.createElement("div");
     dragAndDrop.classList.add("drop-section");
-    dragAndDrop.textContent = "Drop here!"
+    dragAndDrop.textContent = "Drop here!";
 
-dropElement.appendChild(dragAndDrop)
+dropElement.prepend(dragAndDrop);
+
+// #10 click & nested event
+
+const destinationColor = document.querySelector(".content-pick")
+destinationColor.addEventListener("click", () => {
+    destinationColor.style.backgroundColor = "#fbd9bb"
+})
+
+const destinationColor1 = document.querySelector(".destination")
+destinationColor1.addEventListener("click", (event) => {
+    event.stopPropagation();
+    destinationColor1.style.backgroundColor = "#1E90FF"
+})
+
+const destinationColor2 = document.querySelector(".btn")
+destinationColor2.addEventListener("click", () => {
+    destinationColor2.style.backgroundColor = "hotpink"
+})
