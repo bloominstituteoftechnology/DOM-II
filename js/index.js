@@ -38,3 +38,11 @@ const navbarBackground = document.querySelector('nav')
 navbarBackground.addEventListener("keypress", () => {
     navbarBackground.style.backgroundColor = "red"
 })
+
+// #7 Load
+let headerFour = document.querySelectorAll('h4')
+headerFour.forEach((element) => {
+window.addEventListener("load", () => {
+    element.style.fontSize = "5rem";
+});
+});
