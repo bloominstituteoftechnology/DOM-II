@@ -89,3 +89,10 @@ const destinationColor2 = document.querySelector(".btn")
 destinationColor2.addEventListener("click", () => {
     destinationColor2.style.backgroundColor = "hotpink"
 })
+
+const stopLinks = document.querySelectorAll(".nav-link")
+stopLinks.forEach((element) => {
+    element.addEventListener("click", (event) =>{
+        event.preventDefault();
+    })
+})
