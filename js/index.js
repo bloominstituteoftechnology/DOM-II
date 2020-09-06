@@ -54,5 +54,20 @@ contentSection.addEventListener("wheel", () =>{
     contentSection.style.backgroundColor = "green"
 });
 
-// 
+// #9 Drag and drop
 
+const textSection = document.querySelector(".text-content")
+const drag = document.createElement("div");
+drag.classList.add("drag-section");
+drag.setAttribute("draggable", "true");
+drag.textContent = "Drag Away!"
+
+textSection.appendChild(drag);
+
+
+const dropElement = document.querySelector(".content-destination")
+    const dragAndDrop = document.createElement("div");
+    dragAndDrop.classList.add("drop-section");
+    dragAndDrop.textContent = "Drop here!"
+
+dropElement.appendChild(dragAndDrop)
