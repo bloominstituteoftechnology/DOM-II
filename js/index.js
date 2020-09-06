@@ -46,3 +46,13 @@ window.addEventListener("load", () => {
     element.style.fontSize = "5rem";
 });
 });
+
+// #8 wheel
+
+const contentSection = document.querySelector('.content-section')
+contentSection.addEventListener("wheel", () =>{
+    contentSection.style.backgroundColor = "green"
+});
+
+// 
+
