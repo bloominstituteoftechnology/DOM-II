@@ -19,12 +19,16 @@ busImage.addEventListener("mouseleave", () =>{
     busImage.style.transform = "scale(1)"
 })
 
-//#4 scroll over
+//#4 scroll 
 
-const headerTwo = document.querySelector("h2")
-headerTwo.addEventListener("keydown", (event) =>{
-if(event.isComposing || event.keyCode === 229){
-    return;
-}
-headerTwo.style.color = "blue"
-});
+const scrollImg = document.querySelector("h2")
+window.addEventListener("scroll", () =>{
+    scrollImg.style.color = "blue"
+})
+
+// #5 resize
+const resizeText = document.querySelector(".intro p")
+window.addEventListener('resize', () =>{
+    resizeText.style.transform = "scale(1.5)"
+})
+
