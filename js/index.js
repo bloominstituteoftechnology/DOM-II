@@ -32,3 +32,9 @@ window.addEventListener('resize', () =>{
     resizeText.style.transform = "scale(1.5)"
 })
 
+
+// #6 Keypress
+const navbarBackground = document.querySelector('nav')
+navbarBackground.addEventListener("keypress", () => {
+    navbarBackground.style.backgroundColor = "red"
+})
