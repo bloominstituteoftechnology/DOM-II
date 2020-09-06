@@ -90,6 +90,9 @@ destinationColor2.addEventListener("click", () => {
     destinationColor2.style.backgroundColor = "hotpink"
 })
 
+
+//Prevent default
+
 const stopLinks = document.querySelectorAll(".nav-link")
 stopLinks.forEach((element) => {
     element.addEventListener("click", (event) =>{
