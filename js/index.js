@@ -82,13 +82,30 @@ textSelector2[9].addEventListener('contextmenu', () =>{
 })
 //----------------------------------------------------- All p elements end
 //8)fullscreen
-imgSelector.addEventListener('webkitfullscreenchange',() => {
-    imgSelector.style.transform = 'scaleX(-1)';
-});
+// imgSelector.addEventListener('webkitfullscreenchange',() => {
+//     console.log('it worked')
+// });
+let button = document.querySelectorAll('.btn');
+button[0].textContent = "Fullscreen!";
+button[0].addEventListener('click',()=>{
+    document.documentElement.requestFullscreen();
+})
+button[1].textContent = "Exit Fullscreen!";
+button[1].addEventListener('click',()=>{
+    document.exitFullscreen();
+})
+
+document.addEventListener('fullscreenchange',()=>{
+    imgSelector.style.transform = "scaleX(-1)";
+})
+
 //9)load
 let footer = document.querySelector('.footer');
 window.addEventListener('load',() => {
     footer.style.fontStyle = 'italic';
-    console.log('it worked')
 });
 //10)
+window.addEventListener("scroll",()=>{
+    textSelector.style.fontStyle = 'italic';
+    console.log('it worked');
+})
