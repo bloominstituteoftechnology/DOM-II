@@ -1,5 +1,4 @@
 // Your code goes here
-// Your code goes here
 let bus = document.getElementById('bus');
 let busF = true;
 bus.addEventListener("dblclick", (e) => {
@@ -18,44 +17,31 @@ bus.addEventListener("dblclick", (e) => {
     busF=true;
     }
 });
-// TODO:     Image creation dont work
-
-let h = document.querySelector('.content-destination > h2');
-let hh = document.querySelector('.content-destination > div');
-let himg = document.createElement('img');
-
-// ULs of places to go
-let d = document.createElement('div');
-
-let dplaces = document.querySelector('.content-section > div');
-
+let himg = new Image('200','200');
 let selectDst = true;
 let selectDestination = document.querySelector('.content-destination');
 selectDestination.addEventListener('click', (e) => {
+    let h = document.querySelector('.content-destination > div > h2');
+    let hh = document.querySelector('.content-destination > div');
+    // let himg = document.createElement('img');
+    // image properties
+    // himg.style.height = '100%';
+    // himg.style.width = '100%';
+    // himg.style.position = 'relative';
     
-
-    
+    himg.src = '../img/fun-bus.jpg';
+    // hh.appendChild(himg);
     if(selectDst){
-        // Create the bullets of where  you can go
-        d.innerHTML = '<p> SouthAmerica </p>';
-
-
-
-        himg.style.src = '../img/tenor.gif';
-        himg.style.height = '100%';
-        himg.style.width = '100%';
-        // himg.style.display = 'flex';
-        // himg.position = 'relative';
-        selectDestination.appendChild(dplaces);
         h.style.width='25%';
-        // h.style.margin='0 auto 30px';
-        selectDst = false;
-        hh.appendChild(himg);
-        }else{
+     h.style.margin='0 auto 30px';
+    selectDst = false;
+    hh.appendChild(himg);
+    
+    }else{
         h.style.width='75%';
-        // h.style.margin='0 auto 30px';
-         selectDst = true;
-     }
+    // h.style.margin='0 auto 30px';
+    selectDst = true;
+    }
     
     
-} );
+},false );
