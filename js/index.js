@@ -37,7 +37,7 @@ const resizeText = document.querySelector(".text-content p")
     })
 
 
- let headerFour = document.querySelectorAll('h4')
+ const headerFour = document.querySelectorAll('h4')
     headerFour.forEach((element) => {
         window.addEventListener("load", () => {
         element.style.fontSize = "5rem";
@@ -45,6 +45,22 @@ const resizeText = document.querySelector(".text-content p")
 });
 });
 
+const contentSection = document.querySelector('.content-section')
+    contentSection.addEventListener("wheel", () =>{
+    contentSection.style.backgroundColor = "purple"
+});
+
+// const textContent2 = document.querySelectorAll('.img-content')
+//     textContent2.addEventListener("mouseup", () => {
+//         textContent2.style.transform = "scale(2)"
+//     })
+
+const newScroll = document.querySelector(".content-destination p")
+    window.addEventListener("scroll", () =>{
+    newScroll.style.color = "blue"
+})
+
+    
 
 
 
