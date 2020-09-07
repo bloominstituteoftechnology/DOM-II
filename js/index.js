@@ -1,13 +1,13 @@
 // Your code goes here
 const newH1 = document.querySelector("h1")
     newH1.addEventListener('dblclick', (event) => {
-    event.target.style.color = 'red'
-})
+        event.target.style.color = 'red'
+    })
 
 const newNav = document.querySelectorAll(".nav")
     newNav.forEach(navigation => {
     navigation.addEventListener('click', (event) => {
-    event.target.style.color = "blue"
+        event.target.style.color = "blue"
         })
     })
 
@@ -31,3 +31,35 @@ const middleImg = document.querySelector(".img-content img")
         middleImg.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQfNikreL2sfwO_bXUSwV-CDu8X129UqWRnEw&usqp=CAU"
     })
 
+const resizeText = document.querySelector(".text-content p")
+    window.addEventListener('resize', () =>{
+        resizeText.style.transform = "scale(.5)"
+    })
+
+
+ let headerFour = document.querySelectorAll('h4')
+    headerFour.forEach((element) => {
+        window.addEventListener("load", () => {
+        element.style.fontSize = "5rem";
+        element.style.color = "purple"
+});
+});
+
+
+
+
+const body = document.querySelector("body")
+body.addEventListener("click", (event) => {
+  event.target.style.backgroundColor = "red"
+})
+
+const h1Background = document.querySelector(".main-navigation")
+h1Background.addEventListener('dblclick', (event) => {
+    event.stopPropagation();
+  event.target.style.backgroundColor = "purple"
+})
+
+const stopLink = document.querySelectorAll(".nav")
+stopLink.addEventListener('click', () => {
+  stopLink.preventDefault()
+})
