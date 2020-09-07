@@ -1,21 +1,3 @@
-// Your code goes here
-let newImg = new Image(200,200);
-let slctD = document.querySelector('.content-destination');
-window.addEventListener('load',() =>{
-    
-    
- 
-
-    console.log('hello'+newImg);
-    newImg.onload =slctD;
-    newImg.src = '../img/tenor.gif';
-
-    slctD.prepend(newImg);
-})
-
-function newLoad(){
-    
-}
 
 let bus = document.getElementById('bus');
 let busF = true;
@@ -35,11 +17,47 @@ bus.addEventListener("dblclick", (e) => {
         busF=true;
     }
 });
+
+
+
+
+
 // let himg = new Image('200','200');
-let himg = document.getElementById('world');
+let backward = false;
+bus.addEventListener("mouseover", (e) => {
+    if(!busF){
+        let start = Date.now();
+        e.target.style.margin = '0% 0% 0% 0%';
+        e.target.style.animateFillMode = 'backwards';
+
+        e.target.animate([
+            // keyframes
+            { transform: 'translateX(-80%)' }, 
+            {transition: 'all 3s linear'},
+            { transform: 'translateX(100%)' },
+            {transition: 'all 3s linear'},
+          ], { 
+            // timing options
+            duration: 1000,
+            
+            iterations: 1
+          })
+
+       
+
+        // if(backward){
+        //     // e.target.style.transition = 'all 1s easein'
+        //  e.target.style.transform = 'translateX(100%)';
+        //  e.target.style.transition = 'all 3s linear'
+        // }
+    }
+});
+
+
 let selectDst = true;
 let selectDestination = document.querySelector('.content-destination');
 selectDestination.addEventListener('click', (e) => {
+    let himg = document.getElementById('world');
     let h = document.querySelector('.content-destination > div > h2');
     let hh = document.querySelector('.content-destination > div');
     // let himg = document.createElement('img');
