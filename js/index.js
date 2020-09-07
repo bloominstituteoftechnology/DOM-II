@@ -50,18 +50,17 @@ const contentSection = document.querySelector('.content-section')
     contentSection.style.backgroundColor = "purple"
 });
 
-// const textContent2 = document.querySelectorAll('.img-content')
-//     textContent2.addEventListener("mouseup", () => {
-//         textContent2.style.transform = "scale(2)"
-//     })
 
 const newScroll = document.querySelector(".content-destination p")
     window.addEventListener("scroll", () =>{
     newScroll.style.color = "blue"
 })
 
-    
+const body2 = document.querySelector("body")
+    body2.addEventListener("keypress", () => {
+        body2.style.backgroundColor = "purple"
 
+})
 
 
 const body = document.querySelector("body")
