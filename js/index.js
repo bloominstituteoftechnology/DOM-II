@@ -1,4 +1,22 @@
 // Your code goes here
+let newImg = new Image(200,200);
+let slctD = document.querySelector('.content-destination');
+window.addEventListener('load',() =>{
+    
+    
+ 
+
+    console.log('hello'+newImg);
+    newImg.onload =slctD;
+    newImg.src = '../img/tenor.gif';
+
+    slctD.prepend(newImg);
+})
+
+function newLoad(){
+    
+}
+
 let bus = document.getElementById('bus');
 let busF = true;
 bus.addEventListener("dblclick", (e) => {
@@ -48,3 +66,9 @@ selectDestination.addEventListener('click', (e) => {
     
     
 },false );
+
+
+
+
+
+
