@@ -4,20 +4,21 @@ let busF = true;
 bus.addEventListener("dblclick", (e) => {
     if(busF){
         e.target.style.width = '50%';
-    e.target.style.height = '100%';
-    e.target.style.marginLeft = '25%';
-    e.target.style.marginRight = '25%';
+        e.target.style.height = '100%';
+        e.target.style.marginLeft = '25%';
+        e.target.style.marginRight = '25%';
     // TODO: Clip bus as a bus sprite and transition it down x cord
-    busF= false;
+        busF= false;
     }else{
         e.target.style.width = '100%';
-    e.target.style.height = '100%';
-    e.target.style.marginLeft = '0%';
-    e.target.style.marginRight = '0%';
-    busF=true;
+        e.target.style.height = '100%';
+        e.target.style.marginLeft = '0%';
+        e.target.style.marginRight = '0%';
+        busF=true;
     }
 });
-let himg = new Image('200','200');
+// let himg = new Image('200','200');
+let himg = document.getElementById('world');
 let selectDst = true;
 let selectDestination = document.querySelector('.content-destination');
 selectDestination.addEventListener('click', (e) => {
@@ -28,19 +29,21 @@ selectDestination.addEventListener('click', (e) => {
     // himg.style.height = '100%';
     // himg.style.width = '100%';
     // himg.style.position = 'relative';
-    
-    himg.src = '../img/fun-bus.jpg';
+    himg.style.width = '40%';
+    himg.style.height = '40%';
+    himg.style.display = 'flex'; 
     // hh.appendChild(himg);
     if(selectDst){
         h.style.width='25%';
-     h.style.margin='0 auto 30px';
-    selectDst = false;
-    hh.appendChild(himg);
-    
+        h.style.margin='0 auto 30px';
+        selectDst = false;
+        hh.prepend(himg);
+        console.log(himg)
     }else{
         h.style.width='75%';
+        himg.style.display = 'none';
     // h.style.margin='0 auto 30px';
-    selectDst = true;
+        selectDst = true;
     }
     
     
