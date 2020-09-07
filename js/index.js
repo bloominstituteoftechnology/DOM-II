@@ -58,19 +58,17 @@ contentSection.addEventListener("wheel", () =>{
 
 let textSection = document.querySelector(".content-section")
 const drag = document.createElement("div");
-drag.classList.add("drag-section");
 drag.setAttribute("draggable", "true");
 drag.textContent = "Drag here!"
 
 textSection.appendChild(drag);
 
 
-let dropElement = document.querySelector("footer")
+let dropElement = document.querySelector(".content-section")
     const dragAndDrop = document.createElement("div");
-    dragAndDrop.classList.add("drop-section");
     dragAndDrop.textContent = "Drop here!";
 
-dropElement.prepend(dragAndDrop);
+dropElement.appendChild(dragAndDrop);
 
 // #10 click & nested event
 
