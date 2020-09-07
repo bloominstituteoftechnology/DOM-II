@@ -21,9 +21,9 @@ busImage.addEventListener("mouseleave", () =>{
 
 //#4 scroll 
 
-const scrollImg = document.querySelector("h2")
+const scrollHeader = document.querySelector("h2")
 window.addEventListener("scroll", () =>{
-    scrollImg.style.color = "blue"
+    scrollHeader.style.color = "blue"
 })
 
 // #5 resize
@@ -96,4 +96,4 @@ stopLinks.forEach((element) => {
     element.addEventListener("click", (event) =>{
         event.preventDefault();
     })
-})
+})  
