@@ -70,5 +70,10 @@ header.addEventListener('mouseleave', function () {
     header.style.background = 'Bisque';
 });
 
-//const bottomFooter = document.querySelector('.footer', 'p')
-//bottomFooter.addEventListener('mouseleave')
+//img 
+const img = document.querySelectorAll('img')
+img.forEach(element => {
+    element.addEventListener('auxclick', () => {
+        element.style.transform = 'scale(1.2)';
+    })
+})
