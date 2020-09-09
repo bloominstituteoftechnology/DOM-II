@@ -16,12 +16,19 @@ img.addEventListener('load', function(e) {
       
 }, false);
 
-document.querySelector('header > div > nav ').addEventListener("click", (e) =>{
+let aa = document.querySelectorAll('header > div > nav > a ')
+aa.forEach(function(item,index){
+    item.addEventListener("click", (e) =>{
     e.preventDefault(); // wont let you click it though it wont prevent bubbling
+    if(index === 1){
+        item.stopPropagation;
+    }else
     e.target.innerHTML = 'nope';
+    
+});
 });
 
-
+console.log(aa);
 // Double click the fun bus to make it smaller
 
 bus.addEventListener("dblclick", (e) => {
