@@ -110,9 +110,12 @@ selectDestination.addEventListener('click', (e) => {
 
 // Mouse over the image and rotate it while the pointer is on the image
 //TODO Error Find Out why Now the image appears to be fixed while scrolling down
+// Tried zindex for this and it works but won't allow you to animate it again after 
+/// zindex is changed
 let degs = 5;
 let logoMove = document.getElementById('mouseme');
 logoMove.addEventListener('mousemove', e => {
+    // logoMove.style.zIndex = '0';
   logoMove.style.transform = 'rotate('+degs+'deg)';
   if(degs <= 360){
     degs = degs + 5;
@@ -121,7 +124,31 @@ logoMove.addEventListener('mousemove', e => {
   }
 });
 logoMove.addEventListener('mouseleave', e => {
+    // logoMove.style.zIndex = '-1';
     logoMove.style.transform = 'rotate(0deg)';
+});
+
+
+// The image below the mouseme ID with the rounded class and img fluid
+let logoTornado = document.querySelector('.rounded');
+logoTornado.addEventListener('mousedown', e => {
+
+  logoTornado.style.transform = 'rotate('+degs+'deg)';
+  if(degs <= 360){
+    degs = degs + 5;
+  }else{
+    degs = 5;
+  }
+});
+
+logoTornado.addEventListener('mouseup', e => {
+    // logoMove.style.zIndex = '-1';
+    logoTornado.style.transform = 'rotate('+degs+'deg)';
+    if(degs <= 360){
+        degs = degs + 35;
+      }else{
+        degs = 35;
+      }
 });
 
 
