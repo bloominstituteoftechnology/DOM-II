@@ -1,5 +1,39 @@
 // Your code goes here
 
+//mouseenter
+
+let textDecoration = document.querySelectorAll("h2")
+console.log(textDecoration);
+textDecoration.forEach(title => {
+    title.addEventListener("mouseenter", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        event.target.style.textDecoration = "underline";
+    });
+});
+
+//click
+
+let textSelector = document.querySelector("p")
+textSelector.addEventListener('click', () => {
+    textSelector.style.transform = 'scaleY(-1) scaleX(-1)';
+    textSelector.style.transition = "all 1s";
+});
+
+//doubleclick
+textSelector = document.querySelector("p")
+textSelector.addEventListener('dblclick', () => {
+    textSelector.style.transform = 'scaleY(1) scaleX(1)';
+    textSelector.style.transition = "all 1s";
+});
+
+//load
+
+let footer = document.querySelector('.footer');
+window.addEventListener('load', () =>{
+    footer.style.fontStyle = 'italic';
+});
+
 //mouseover
 const mynav = document.querySelectorAll('a')
 mynav.forEach(link => {
@@ -8,19 +42,6 @@ mynav.forEach(link => {
     })
 })
 
-const paragraph = document.querySelectorAll('p')
-paragraph.forEach(element => {
-    element.addEventListener('mouseover', () => {
-        element.style.color = 'IndianRed'
-    })
-})
-
-const h4 = document.querySelectorAll('h4')
-h4.forEach(element => {
-    element.addEventListener('mouseover', () => {
-        element.style.color = 'White'
-    })
-})
 
 //mouseout 
 mynav.forEach(link => {
@@ -29,12 +50,6 @@ mynav.forEach(link => {
     })
 })
 
-const h2 = document.querySelectorAll('h2')
-h2.forEach(element => {
-    element.addEventListener('mouseover', () => {
-        element.style.color = 'White'
-    })
-})
 //dbclick
 const bttn = document.querySelectorAll('.btn')
 bttn.forEach(element => {
@@ -58,11 +73,6 @@ body.addEventListener('click' , (event) => {
     body.style.backgroundColor = 'lightSteelBlue'
 })
 
-const footer = document.querySelector('footer')
-footer.addEventListener('click' , (event) => {
-    footer.style.backgroundColor = 'Bisque'
-})
-
 //mouseleave
 
 const header = document.querySelector('header')
@@ -70,10 +80,3 @@ header.addEventListener('mouseleave', function () {
     header.style.background = 'Bisque';
 });
 
-//img 
-const img = document.querySelectorAll('img')
-img.forEach(element => {
-    element.addEventListener('auxclick', () => {
-        element.style.transform = 'scale(1.2)';
-    })
-})
