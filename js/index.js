@@ -187,7 +187,18 @@ h2Sel[3].addEventListener('mouseout', (e) =>{
     e.target.style.color  = 'black';
 });
 
+// Change background color
+document.addEventListener('keydown', (e) =>{
+    if(e.code === 'KeyA'){
+        document.body.style.backgroundColor = 'tan';
+    }
+});
 
+document.addEventListener('keyup', (e) =>{
+    if(e.code === 'KeyA'){
+        document.body.style.backgroundColor = 'white';
+    }
+});
 
 
 
