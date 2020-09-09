@@ -16,6 +16,11 @@ img.addEventListener('load', function(e) {
       
 }, false);
 
+document.querySelector('header > div > nav ').addEventListener("click", (e) =>{
+    e.preventDefault(); // wont let you click it though it wont prevent bubbling
+    e.target.innerHTML = 'nope';
+});
+
 
 // Double click the fun bus to make it smaller
 
@@ -128,29 +133,40 @@ logoMove.addEventListener('mouseleave', e => {
     logoMove.style.transform = 'rotate(0deg)';
 });
 
-
+let stopLogoTornado = false;
 // The image below the mouseme ID with the rounded class and img fluid
 let logoTornado = document.querySelector('.rounded');
 logoTornado.addEventListener('mousedown', e => {
 
-  logoTornado.style.transform = 'rotate('+degs+'deg)';
-  if(degs <= 360){
-    degs = degs + 5;
+  if(stopLogoTornado === false){
+    logoTornado.style.transform = 'rotate('+degs+'deg)';
+    if(degs <= 360){
+      degs = degs + 15;
+    }else{
+      degs = 15;
+    }
   }else{
-    degs = 5;
+      e.stopPropagation;
   }
+
+
 });
 
 logoTornado.addEventListener('mouseup', e => {
     // logoMove.style.zIndex = '-1';
-    logoTornado.style.transform = 'rotate('+degs+'deg)';
-    if(degs <= 360){
-        degs = degs + 35;
-      }else{
-        degs = 35;
-      }
+    if(stopLogoTornado === false){
+        logoTornado.style.transform = 'rotate('+degs+'deg)';
+        if(degs <= 360){
+            degs = degs + 35;
+          }else{
+            degs = 35;
+          }
+    }
 });
-
+// Event stop propagation
+logoTornado.addEventListener('mouseout', (e) =>{
+    stopLogoTornado = true;
+});
 
 // Change all the h2s to red on mouse enter or black on mouse out
 let h2Sel = document.querySelectorAll('h2');
@@ -187,13 +203,13 @@ h2Sel[3].addEventListener('mouseout', (e) =>{
     e.target.style.color  = 'black';
 });
 
-// Change background color
+// Change background color to tan if key A is pressed down
 document.addEventListener('keydown', (e) =>{
     if(e.code === 'KeyA'){
         document.body.style.backgroundColor = 'tan';
     }
 });
-
+// Once key a is released make the background color go back to white
 document.addEventListener('keyup', (e) =>{
     if(e.code === 'KeyA'){
         document.body.style.backgroundColor = 'white';
