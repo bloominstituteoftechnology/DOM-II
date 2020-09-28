@@ -4,7 +4,7 @@
 const nav = document.querySelector("nav");
 Array.from(nav.children).forEach(child => {
     child.addEventListener("mouseover", function() {
-        child.style.color = "blue";
+        // child.style.textContent = child.style.textContent.toUpperCase();
         child.style.transform = "scale(1.2)"
     })
 })
@@ -42,11 +42,14 @@ const inputEl = document.createElement("input");
 inputEl.value = "Insert Text";
 const home = document.querySelector(".home");
 home.appendChild(inputEl);
+
 function foc(e) {
     e.target.style.background = "yellow";
 }
 const inputElAdded = document.querySelector(".home").children[document.querySelector(".home").children.length - 1].addEventListener("focus", foc);
 
+
+// resize
 const resizeLog = document.createElement("div");
 const heightLog = document.createElement("p");
 const widthLog = document.createElement("p");
@@ -58,3 +61,10 @@ window.onresize = function() {
     heightLog.textContent = window.innerHeight;
     widthLog.textContent = window.innerWidth;
 }
+
+// scroll
+document.addEventListener("scroll", (e) => {
+    document.querySelector(".logo-heading").style.fontSize = `${e.timeStamp / 1000}rem`
+});
+
+// select
