@@ -68,3 +68,13 @@ document.addEventListener("scroll", (e) => {
 });
 
 // select
+const newEl = document.createElement("textarea");
+newEl.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet ligula ut orci malesuada rhoncus. Vivamus lacinia, nibh id tempor interdum, est velit venenatis elit, vel scelerisque massa elit vitae purus. Proin lobortis consequat sem cursus vehicula. Praesent pretium, orci vitae venenatis vestibulum, purus nulla gravida leo, sit amet pellentesque magna elit non quam. Fusce sapien diam, consectetur nec dolor at, pharetra lobortis neque. Nunc mi enim, bibendum pretium arcu ut, tempor sodales neque. Proin sit amet risus interdum, venenatis mi sed, venenatis nulla. Nulla neque eros, ultricies ut blandit nec, congue sit amet dui. Nullam aliquet molestie massa vitae efficitur. Maecenas vitae posuere erat. Nam sit amet laoreet sem, id feugiat libero. Pellentesque pellentesque sit amet nibh ac laoreet. Proin nisi felis, imperdiet a felis et, consequat scelerisque sem. Integer eu lorem orci. "
+home.appendChild(newEl);
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("select", function(e) {
+    const sel = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd)
+    const selEl = document.createElement("h2");
+    selEl.textContent = `You selected: ${sel}`;
+    home.appendChild(selEl);
+})
