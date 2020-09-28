@@ -78,3 +78,8 @@ textarea.addEventListener("select", function(e) {
     selEl.textContent = `You selected: ${sel}`;
     home.appendChild(selEl);
 })
+
+// dblclick
+const tar = document.addEventListener("dblclick", function(e) {
+    e.target.style.fontSize = '2rem';
+})
