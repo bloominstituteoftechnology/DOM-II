@@ -50,23 +50,35 @@ signMeUp.addEventListener('dblclick', (e) => {
     signMeUp.style.fontSize = "30px"
 })
 
-// const keyDown = document.querySelector(".main-navigation")
 
-// keyDown.addEventListener('keypress', (event) =>{
-//     if(event.key === "KeyS")
-//     console.log("test")
-//     keyDown.style.color = "pink"
-// })
-
-// const keyUp = document.querySelector()
  const mouseEnter = document.querySelector(".content-section")
 
  mouseEnter.addEventListener('mouseenter', (event) => {
-     console.log("test")
      mouseEnter.style.background = "blue"
+     mouseEnter.style.color = "green"
  })
 const mouseLeave = document.querySelector(".content-section")
 
 mouseLeave.addEventListener('mouseleave', (event) => {
     mouseLeave.style.background = "white"
+    mouseEnter.style.color = "black"
 })
+
+const keyDown = document.querySelector("body")
+
+keyDown.addEventListener('keydown', (event) =>{
+    if(event.key === "KeyS")
+    console.log("test")
+    keyDown.style.background = "pink"
+})
+
+const keyUp = document.querySelector("body")
+
+keyUp.addEventListener('keyup', (event) =>{
+    keyUp.style.background = "white"
+})
+
+
+document.querySelectorAll("a").forEach(link => link.addEventListener('click', (event) => {
+    event.preventDefault()
+}))
