@@ -99,3 +99,24 @@ Array.from(dragDropSection.children).forEach(item => {
     item.style.display = "flex";
     item.style.justifyContent = "center";
 })
+
+
+// nested propogation
+document.querySelectorAll("*").forEach(el => {
+    el.addEventListener("click", e => {
+        console.log(`
+            ${e.target.nodeName}
+            ${e.currentTarget.nodeName}
+        `)
+        e.stopPropagation()
+    })
+})
+
+// nav items - stop refresh
+const navParent = document.querySelector("nav")
+Array.from(navParent.children).forEach(el => {
+    el.addEventListener("click", e => {
+        e.preventDefault()
+    })
+})
+console.log(navParent.children)
