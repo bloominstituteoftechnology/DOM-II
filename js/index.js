@@ -85,42 +85,17 @@ const home = document.querySelector(".home");
 // })
 
 // drag/drop
-const divDragDrop = document.createElement("div");
-const dd1 = document.createElement("p");
-const dd2 = document.createElement("p");
-const dd3 = document.createElement("p");
-dd1.textContent = "dd1";
-dd1.className = "dd"
-dd2.textContent = "dd2";
-dd2.className = "dd"
-dd3.textContent = "dd3";
-dd3.className = "dd"
-divDragDrop.appendChild(dd1);
-divDragDrop.appendChild(dd2);
-divDragDrop.appendChild(dd3);
-home.appendChild(divDragDrop);
-divDragDrop.style.display = "flex";
-divDragDrop.style.justifyContent = "space-evenly";
+const dragDropSection = document.querySelector(".drag-drop");
+dragDropSection.style.display = "flex";
+dragDropSection.style.justifyContent = "space-evenly";
 
-// const dragover_handler = (e) => {
-//     e.preventDefault();
-//     e.dataTransfer.dropEffect = "move";
-// }
+const dragDiv = dragDropSection.children[0];
+const dropDiv = dragDropSection.children[1];
+dragDiv.style.width = "30%";
+dropDiv.style.width = "30%";
 
-// const drop_handler = (e) => {
-//     e.preventDefault();
-//     const data = e.dataTransfer.getData("text/plain");
-//     e.target.appendChild(document.getElementById(data));
-// }
-
-const dragHandler = (e) => {
-    e.target.style.transform = "scale(2)";
-}
-
-document.querySelectorAll(".dd").forEach(item => {
-    item.id = 'target';
-    item.draggable = "true";
-    item.ondrag = "dragHandler(event)";
-    // item.ondrop = "drop_handler(event)";
-    // item.ondragover = "dragover_handler(event)";
+Array.from(dragDropSection.children).forEach(item => {
+    item.style.border = "1px solid black";
+    item.style.display = "flex";
+    item.style.justifyContent = "center";
 })
