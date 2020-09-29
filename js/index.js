@@ -42,3 +42,4 @@ busImg.addEventListener('dblclick', event => {
 mapImg.addEventListener('mousedown', event => {
 
 })
+.
