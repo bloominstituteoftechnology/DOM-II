@@ -77,3 +77,42 @@ function zoom(event) {
   document.querySelector('.nav a').addEventListener('click', event => {
     event.preventDefault()
   })
+
+  let contentPick = document.querySelector('.content-pick')
+
+  console.log(contentPick.children)
+
+  let des1 = contentPick.querySelector('div')
+
+  console.log(des1.children)
+
+  des1.children[2].addEventListener('click', e => {
+    body.style.backgroundColor = 'coral'
+    event.stopPropagation(e)
+  })
+
+  des1.addEventListener('click', e => {
+      des1.style.backgroundColor = 'blue'
+  })
+
+  let des2 = contentPick.children[1].querySelectorAll('h4, p, div')
+  console.log(des2)
+
+  function showAlert(event) {
+      alert('You clicked: '+ this.tagName);
+  }
+
+  for(let elem of des2) {
+      elem.addEventListener('click', showAlert)
+}
+
+let des3 = contentPick.children[2].querySelectorAll('h4, p, div')
+
+function showAlert3(event) {
+    alert('You clicked: '+ this.tagName);
+    event.stopPropagation();
+}
+
+for(let elem of des3) {
+    elem.addEventListener('click', showAlert3)
+}
