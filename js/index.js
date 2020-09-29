@@ -63,3 +63,20 @@ busPar.addEventListener('wheel', (e) => {
 document.querySelector('a').addEventListener('click', event => {
   event.preventDefault();
 })
+
+
+//Stop propogation
+
+const nav = document.querySelector('header');
+const heading = document.querySelector('.logo-heading');
+// console.log(menuItem);
+
+nav.addEventListener('click', (e) => {
+  nav.classList.toggle('red');
+})
+
+heading.addEventListener('click', (e) => {
+  e.stopPropagation();
+  console.log('this was pressed');
+
+})
