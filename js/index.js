@@ -31,6 +31,8 @@ function end(e) {
 document.querySelector('.text-content', ).style.backgroundColor = 'pink';
 document.querySelector('.content-destination').style.backgroundColor = 'steelblue';
 document.querySelector('.content-pick').style.backgroundColor = 'lavender';
+document.querySelector('body').style.backgroundColor = 'ivory';
+document.querySelector('header').style.backgroundColor = 'beige';
 
 //animation on the nav
 document.querySelector(".nav").animate([
