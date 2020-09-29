@@ -79,6 +79,8 @@ keyUp.addEventListener('keyup', (event) =>{
 })
 
 
+
+
 document.querySelectorAll("a").forEach(link => link.addEventListener('click', (event) => {
     event.preventDefault()
 }))
