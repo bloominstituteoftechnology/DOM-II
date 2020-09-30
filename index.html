@@ -21,11 +21,21 @@
 
   <header class="main-navigation">
     <div class="container nav-container">
-      <h1 class="logo-heading">Fun Bus</h1>
+      <h1 class="logo-heading">Fun Bus (mouse out/over)</h1>
       <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
+        <aside>
+        <a class="nav-link" href="#">Home(3)</aside>
+      </aside>
+      <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> 
+        <a 
+         class="nav-link" href="#">
+        </a>About Us
+        (drag/drop)</br>
+        (4)</a > 
+      </div> 
+        <!-- <a class="nav-link" href="#">About Us</a> -->
         <a class="nav-link" href="#">Blog</a>
+    <br>
         <a class="nav-link" href="#">Contact</a>
       </nav>
     </div>
@@ -34,6 +44,29 @@
   <div class="container home">
     <header class="intro">
       <img src="img/fun-bus.jpg" alt="bus in the sand">
+
+      <p>Key Click(5)</p>
+<p id="log"></p>
+      
+      <input placeholder="Click here, then press down a key." size="40">
+<p id="log">(6)</p>
+
+
+<p>Resize the browser window to fire the <code>resize</code> event.(7)</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+
+<p>(8)Check onclick in Terminal</p>
+
+<br>
+
+<P>(9):Focus </P>
+
+<h1 onclick="this.innerHTML='onclick!'">(10)</h1>
+
+<input class="red-input" value="RED FOCUSED."><br>
+<input class="blue-input" value="BLUE FOCUSED.">
+
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
@@ -58,6 +91,7 @@
       </div>
      
     </section>
+    
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
@@ -79,13 +113,14 @@
         <h4>Island Getaway</h4>
         <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
         <div class="btn">Sign Me Up!</div>
+      
       </div>
     </section>
   </div><!-- container -->
-
+  
   <footer class="footer">
     <p>Copyright Fun Bus 2020</p>
-  </footer>
-
+  
+  </footer> 
 </body>
 </html>
