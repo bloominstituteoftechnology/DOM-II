@@ -9,3 +9,6 @@ footer.addEventListener('dblclick', () => footer.style.fontSize = '30px');
 // mouseover 
 const busImage = document.querySelector('.intro img');
 busImage.addEventListener('mouseover', () => busImage.style.border = '3px solid black');
+
+// mouseleave
+busImage.addEventListener('mouseleave', () => busImage.style.border = 'none');
