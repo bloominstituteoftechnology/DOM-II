@@ -24,3 +24,7 @@ const colors = ['red', 'blue', 'brown', 'yellow', 'orange', 'purple'];
 const random = Math.round(Math.random() * 5);
 const body = document.querySelector('body');
 body.addEventListener('wheel', () => body.style.backgroundColor = colors[random]);
+
+// load
+const navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('load', () => navLinks.forEach(nav => nav.style.color = 'green')) ;
