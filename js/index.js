@@ -14,16 +14,28 @@ document.addEventListener("wheel", (e) => {
   console.log(`🎶 the wheels on the bus go up and down...`);
 });
 
-//3 - First Image - double click gives the 
+//3 - First Image - double click gives the
 document.querySelector(".home img").addEventListener("dblclick", (e) => {
   e.target.style.border = "solid 5px #3E443E";
 });
 
-//4 - Welcome to the Fun Bus! header
+//4 - keypress listener to give the user an alert -
+document.addEventListener("keypress", (e) => {
+  window.alert("We cannot accept input at this time. 🚍");
+});
 
-//5 - Let's Go! header
+//5 - mouseenter to map photo to start a transition to zooming in.
+const mapPhoto = document.querySelector("#mapPhoto");
 
-//6 - Map Photo
+mapPhoto.addEventListener("mouseenter", (e) => {
+  e.target.style =
+    "border: solid 3px #000000; transition: easein 1s; transform: scale(1.2);";
+});
+
+//6 - mouseleave to map photo to return photo back to normal.
+mapPhoto.addEventListener("mouseleave", (e) => {
+  e.target.style = "transform: scale(1); border: none;";
+});
 
 //7 - Venice photo
 
