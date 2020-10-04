@@ -27,4 +27,9 @@ body.addEventListener('wheel', () => body.style.backgroundColor = colors[random]
 
 // load
 const navLinks = document.querySelectorAll('.nav a');
-window.addEventListener('load', () => navLinks.forEach(nav => nav.style.color = 'green')) ;
+window.addEventListener('load', () => navLinks.forEach(nav => nav.style.color = 'green'));
+
+// focus
+const input = document.querySelector('.focus');
+const img = document.querySelectorAll('img');
+input.addEventListener('focus', () => img.forEach(el => el.style.border = '3px solid blue'));
