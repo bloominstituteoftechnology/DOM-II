@@ -33,3 +33,9 @@ window.addEventListener('load', () => navLinks.forEach(nav => nav.style.color = 
 const input = document.querySelector('.focus');
 const img = document.querySelectorAll('img');
 input.addEventListener('focus', () => img.forEach(el => el.style.border = '3px solid blue'));
+
+// select
+const select = document.querySelector('.select');
+const output = document.querySelector('.output');
+output.style.fontSize = "40px";
+select.addEventListener('select', (event) => output.textContent = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd))
