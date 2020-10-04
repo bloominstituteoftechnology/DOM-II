@@ -5,16 +5,19 @@
 
 //1 - Fun Bus Header
 //Turns green when the mouse hovers over the header and stays green until page refresehs.
-document
-  .querySelector(".logo-heading")
-  .addEventListener("mouseover", (event) => {
-    event.target.style.color = "#507450";
-  });
+document.querySelector(".logo-heading").addEventListener("mouseover", (e) => {
+  e.target.style.color = "#507450";
+});
 
-//2 - Navigation
-document.querySelectorAll("nav").addEventListener();
+//2 - Wheel event on whole HTML body. In the console.
+document.addEventListener("wheel", (e) => {
+  console.log(`🎶 the wheels on the bus go up and down...`);
+});
 
-//3 - First Image
+//3 - First Image - double click gives the 
+document.querySelector(".home img").addEventListener("dblclick", (e) => {
+  e.target.style.border = "solid 5px #3E443E";
+});
 
 //4 - Welcome to the Fun Bus! header
 
