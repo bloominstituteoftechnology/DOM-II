@@ -43,6 +43,7 @@
 
       img {
         border-radius: 10px;
+        transition: transform .5s, box-shadow .5s;
 
         @media @mobile {
           width: 100%;
@@ -84,22 +85,28 @@
 
     img {
       border-radius: 10px;
+      transition: transform .5s, box-shadow .5s;
     }
   }
 
   .content-pick {
-    padding-top: 30px;
+    padding-top: 15px;
+    margin-top: 15px;
     border-top: 2px dashed @navigation-border;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media @mobile {
       flex-wrap: wrap;
     }
 
     .destination {
-      width: 30%;
-      margin-bottom: 30px;
+      width: 28%;
+      margin-bottom: 15px;
+      padding: 5px 0px;
+      text-align: center;
+      transition: transform .5s, box-shadow .5s;
+      border-radius: 15px;
 
       @media @mobile {
         width: 80%;

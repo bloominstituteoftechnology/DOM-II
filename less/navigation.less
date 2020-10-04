@@ -4,6 +4,7 @@
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
   position: fixed;
+  z-index: 1; // ensures animations don't display above header
 
   .nav-container {
     height: 100%;
@@ -18,6 +19,7 @@
     }
 
     .logo-heading {
+      cursor: pointer;
       @media @mobile {
         font-size: 3rem;
       }
@@ -35,9 +37,12 @@
       
       
       a {
+        padding: 5px 10px;
+        border-radius: 10px;
         font-size: 1.6rem;
         color: @font-color;
         text-decoration: none;
+        transition: background-color .5s;
       }
     }
   }
