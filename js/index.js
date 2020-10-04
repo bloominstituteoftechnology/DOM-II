@@ -12,3 +12,7 @@ busImage.addEventListener('mouseover', () => busImage.style.border = '3px solid 
 
 // mouseleave
 busImage.addEventListener('mouseleave', () => busImage.style.border = 'none');
+
+// keydown
+document.addEventListener('keydown', () => document.body.style.backgroundColor = 'lightyellow');
+
