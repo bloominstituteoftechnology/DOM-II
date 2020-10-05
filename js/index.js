@@ -42,11 +42,19 @@ document.addEventListener("scroll", (e) => {
   console.log(`... round and round.. round and round... 🎵`);
 });
 
-//8 - Pick Your Destination
+//8 - mouse move over thai boat photo -
+document
+  .querySelector(".content-destination img")
+  .addEventListener("mouseover", (e) => {
+    e.target.style = "filter: contrast(1.5); box-shadow: 5px 5px 3px black";
+  });
 
-//9 - Thai Boat Photo
+//9 - Keydown event listener
+document.addEventListener("keydown", (e) => {
+  window.alert("Annoying Pop-up 💲");
+});
 
-//10 - Sign Me Up! links (all three)
+//10 - Sign Me Up! links (all three) new listener of 'click'
 const signUp = document.querySelectorAll(".btn");
 
 signUp[0].addEventListener("mouseover", (e) => {
@@ -59,7 +67,7 @@ signUp[0].addEventListener("click", (e) => {
     "Thank you for your interest, please enter your email.",
     "CaptainMarvel@email.com"
   );
-  if (email == "") {
+  if (email == "" || email === "CaptainMarvel@email.com") {
     console.log("email not provided");
   } else {
     window.alert("Thanks!");
@@ -76,7 +84,7 @@ signUp[1].addEventListener("click", (e) => {
     "Thank you for your interest, please enter your email.",
     "CaptainMarvel@email.com"
   );
-  if (email == "") {
+  if (email == "" || email === "CaptainMarvel@email.com") {
     console.log("email not provided");
   } else {
     window.alert("Thanks!");
@@ -93,7 +101,7 @@ signUp[2].addEventListener("click", (e) => {
     "Thank you for your interest, please enter your email.",
     "CaptainMarvel@email.com"
   );
-  if (email == "") {
+  if (email == "" || email === "CaptainMarvel@email.com") {
     console.log("email not provided");
   } else {
     window.alert("Thanks!");
