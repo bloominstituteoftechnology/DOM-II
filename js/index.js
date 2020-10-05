@@ -2,6 +2,11 @@
 //More on: https://www.w3schools.com/jsref/dom_obj_event.asp
 // Then, nest two similar events somewhere in the site and prevent the event propagation properly. ((not all events bubble!))
 // Stop navigation items from refreshing the page by using preventDefault().
+//
+//Make things look nicer:
+document.querySelector("body").style = "text-align: center; width: 100%;";
+document.querySelector(".intro img").style =
+  "width: 80%; border-radius: 25px; margin: 10px; padding: 25px; background-color: #FCB64C; ";
 
 //1 - Fun Bus Header
 //Turns green when the mouse hovers over the header and stays green until page refresehs.
@@ -51,6 +56,7 @@ document
 
 //9 - Keydown event listener
 document.addEventListener("keydown", (e) => {
+  e.stopPropagation(true);
   window.alert("Annoying Pop-up 💲");
 });
 
