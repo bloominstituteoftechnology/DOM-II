@@ -37,10 +37,66 @@ mapPhoto.addEventListener("mouseleave", (e) => {
   e.target.style = "transform: scale(1); border: none;";
 });
 
-//7 - Venice photo
+//7 - scolling event listener to add to the wheel event.
+document.addEventListener("scroll", (e) => {
+  console.log(`... round and round.. round and round... 🎵`);
+});
 
 //8 - Pick Your Destination
 
 //9 - Thai Boat Photo
 
-//10 - Sign Me Up! link
+//10 - Sign Me Up! links (all three)
+const signUp = document.querySelectorAll(".btn");
+
+signUp[0].addEventListener("mouseover", (e) => {
+  e.target.style =
+    "background-color: black; color: white; cursor: pointer; padding: 5px;";
+});
+signUp[0].addEventListener("click", (e) => {
+  e.target.style = "background-color: darkgray;";
+  const email = window.prompt(
+    "Thank you for your interest, please enter your email.",
+    "CaptainMarvel@email.com"
+  );
+  if (email == "") {
+    console.log("email not provided");
+  } else {
+    window.alert("Thanks!");
+    console.log(`User provided ${email}`);
+  }
+});
+signUp[1].addEventListener("mouseover", (e) => {
+  e.target.style =
+    "background-color: black; color: white; cursor: pointer; padding: 5px;";
+});
+signUp[1].addEventListener("click", (e) => {
+  e.target.style = "background-color: darkgray;";
+  const email = window.prompt(
+    "Thank you for your interest, please enter your email.",
+    "CaptainMarvel@email.com"
+  );
+  if (email == "") {
+    console.log("email not provided");
+  } else {
+    window.alert("Thanks!");
+    console.log(`User provided ${email}`);
+  }
+});
+signUp[2].addEventListener("mouseover", (e) => {
+  e.target.style =
+    "background-color: black; color: white; cursor: pointer; padding: 5px;";
+});
+signUp[2].addEventListener("click", (e) => {
+  e.target.style = "background-color: darkgray;";
+  const email = window.prompt(
+    "Thank you for your interest, please enter your email.",
+    "CaptainMarvel@email.com"
+  );
+  if (email == "") {
+    console.log("email not provided");
+  } else {
+    window.alert("Thanks!");
+    console.log(`User provided ${email}`);
+  }
+});
