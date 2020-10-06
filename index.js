@@ -28,4 +28,18 @@ logoHeader.addEventListener('mouseenter', function() {
     });
 });
 
-// 8 ERROR
+// 8-9 FOCUS/BLUR
+const navi = document.querySelectorAll('.nav-link');
+navi.forEach(function(link) {
+    link.addEventListener('focus', function() {
+        link.style.color = 'blue';
+        link.addEventListener('blur', function() {
+            link.style.color = "red";
+        })
+    })
+});
+
+//10 SCROLL
+window.addEventListener("close", function(event) {
+    event.preventDefault();
+}, false);
