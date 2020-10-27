@@ -29,14 +29,14 @@ window.addEventListener('keydown', (event) => {
     }
 
     if (event.key == 'y') {
-        document.body.style.background = 'goldenrod'
+        document.body.style.background = 'yellow'
         document.body.style.visibility = 'visible'
     }
 
     if (event.key == 'b') {
         document.body.style.background = 'black'
         document.body.style.visibility = 'visible'
-    }
+        }
 
         console.log(event.key)
 })
@@ -122,11 +122,7 @@ window.addEventListener('scroll', (event) => {
     console.log('You found the mouse wheel')
 })
 
-//Mouseover Event
-window.addEventListener('mouseover', (event) => {
-    document.h2.style.color = 'blue'
+const titleColor = document.querySelectorAll('.text-content h2')
+titleColor.forEach ('mouseover', (event) => {
+    h2.style.color = 'red'
 })
-
-
-//WHEEL
-
