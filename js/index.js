@@ -84,6 +84,5 @@ destinationImage.addEventListener('dblclick', (event) => {
     event.stopPropagation();
     destination.addEventListener('dblclick', () => {
         destination.style.transform = 'scale(1.5)';
-        event.stopPropagation();
     });
 });
