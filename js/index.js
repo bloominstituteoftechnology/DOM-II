@@ -20,4 +20,17 @@ const headerIMG = document.querySelector('.intro img')
     headerIMG.addEventListener('dblclick', () => {
         headerIMG.src = 'https://i.ibb.co/k4TKhc3/yellowvan.jpg'
         headerIMG.style.marginLeft = '33%'
+        headerIMG.style.borderRadius = '10%'
     })
+
+// Window Resize Background Color
+let background = document.querySelector('body')
+window.addEventListener('resize', () => {
+    background.style.backgroundColor = "#89cff0"
+})
+
+// Scroll Background Color Nav Bar
+let navBar = document.querySelector('.main-navigation')
+window.addEventListener('scroll', () => {
+    navBar.style.backgroundColor = '#89cff0'
+})
