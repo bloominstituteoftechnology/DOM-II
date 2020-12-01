@@ -1,9 +1,59 @@
 //Code
+//
 
+console.log('Hello World');
+//Fun Bus title
+const funBus = document.querySelector(".logo-heading")
+//console.log(funBus);
+funBus.addEventListener('mouseover', (event) => {
+  console.log('in the function')
+  funBus.style.fontSize='smaller'
+})
 
+// navLinks brown
+const navLinks = document.querySelectorAll('.nav-link');
+console.log(navLinks)
 
+// document.addEventListener('keydown', (event) => {
+//   if (event.key === "z") {
+//       funBus.style.color = 'blue'
+//     console.log('in the function')
+//   }
+// })
 
+navLinks.forEach(link => {
+  document.addEventListener('keydown', (event) => {
+    console.log(event)
+    if (event.key === 'y') {
+      link.style.color = 'brown';
+      console.log('brown links');
+    }
+  })
+})
 
+//text contenty
+const textContent = document.querySelectorAll('.text-content')
+console.log(textContent);
+textContent.forEach(text => {
+  document.addEventListener('dblclick', (event) => {
+    console.log(event)
+    text.style.color = 'green';
+  })
+})
+
+const destination = document.querySelectorAll('.destination')
+console.log(destination)
+
+//resize window event
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('width');
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.addEventListener('resize', reportWindowSize);
 // // Your code goes here
 // console.log("Hello world");
 
@@ -50,12 +100,13 @@
 //   logo.addEventListener("click", (event) => logo.innerText = "Bus Fun");
 
 
-//   const navLinks = mainNav.querySelectorAll("a");
-//   navLinks.forEach(element => {
-//     element.addEventListener("mouseover", (event) => {
-//       event.style.backgroundColor = "green";
-//     })
-//   });
+  // const navLinks = document.querySelectorAll("a");
+
+  // Array.from(navLinks).forEach(element => {
+  //   element.addEventListener("mouseover", (event) => {
+  //     event.style.backgroundColor = "green";
+  //   })
+  // });
 
 
 // funBusImg.addEventListener('dblclick', (event) => {
