@@ -81,6 +81,67 @@
         <div class="btn">Sign Me Up!</div>
       </div>
     </section>
+    <div class = "modal" style = "
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    ">
+    <div class="modal-content" style="
+      background-color: #fefefe;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    ">
+      <form action="/action_page.php">
+        <p style="display: block;">Enter your information below to be contacted by one of our specialists!</p>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name.." required>
+        </div>
+        <div>
+          <label for="trip-type">Type of trip</label>
+          <select id="trip-type" name="trip-type">
+            <option value="fun-in-sun">Fun in the Sun</option>
+            <option value="mountain-excursion">Mountain Excursion</option>
+            <option value="island-getaway">Island Getaway</option>
+          </select>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email address.."></input>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="Your phone number.."></input>
+        </div>
+        <div>
+          <input type="checkbox" id="preferPhone" name="preferPhone" value="preferPhone">
+          <label for="preferPhone">I prefer phone</label>
+          <input type="checkbox" id="preferEmail" name="preferEmail" value="preferEmail">
+          <label for="preferEmail"> I prefer email</label>
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+          <input type="button" value="Cancel" class="cancel">
+        </div>
+      </form>
+  
+    </div>
+    </div>
   </div><!-- container -->
 
   <footer class="footer">

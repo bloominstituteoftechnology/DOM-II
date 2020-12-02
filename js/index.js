@@ -110,11 +110,54 @@ images.forEach(img => {
 
 bodyImages.forEach(img => {
   img.addEventListener('mouseover', function() {
-    gsap.to(this, {duration: 2, scale: 1.3});
+    gsap.to(this, {duration: 1, scale: 1.2});
   });
 })
 bodyImages.forEach(img => {
   img.addEventListener('mouseleave', function() {
-    gsap.to(this, {duration: 2, scale: 1.0});
+    gsap.to(this, {duration: 1, scale: 1.0});
   });
 })
+
+
+//when the person clicks 'contact', open modal with a form.
+let modal = document.querySelector('.modal');
+
+let close = document.querySelector('.cancel');
+
+//when contact is clicked, modal display changes to block
+navLinks[3].addEventListener('click', () => modal.style.display = 'block');
+
+
+//when cancel is clicked, modal display changes to none;
+close.addEventListener('click', () => modal.style.display = 'none');
+
+//when window outside of modal is clicked, modal closes;
+window.addEventListener('click', event => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+//add padding to the form elements;
+let formElements = document.querySelectorAll('form div');
+formElements.forEach(element => {
+  element.style.padding = "2%";
+})
+//make form elements inline-block;
+formElements.forEach(element => {
+  element.style.display = "inline-block";
+});
+//when 'sign me up buttons' are clicked, modal pops up
+  //grab buttons
+let buttons = document.querySelectorAll('.btn');
+
+  //open modal
+buttons.forEach(button => {
+  button.addEventListener('click', () => modal.style.display = 'block');
+});
+//
+
+
+//the images that were modified with gsap are overriding the nav bar. using z-index to make nav bar always in the front.
+let mainNav = document.querySelector('.main-navigation');
+mainNav.style.zIndex = "1";
