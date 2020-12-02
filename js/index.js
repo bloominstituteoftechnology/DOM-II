@@ -37,12 +37,37 @@ window.addEventListener('load', () => {
 })
 
 
-
+//Create border to all images by double click
 const images = document.querySelectorAll("img")
 
+images.forEach(img => {
+    img.addEventListener('dblclick', item => {
+        console.log('Hola')
+        img.style.transition = "all 1s"
+        img.style.border = "thick solid #F00"
+    })
+})
 
-images.addEventListener('dblclick', event => {
-    event.forEach((img) => {
-        console.log(event)
+
+//Navigation
+
+const navLinks = document.querySelectorAll("nav a")
+
+navLinks.forEach(link => {
+    link.addEventListener('click', lnk => {
+        lnk.preventDefault()
+    })
+})
+
+
+
+//Copy event
+const textP = document.querySelectorAll("p, h1, h2, h3, h4")
+
+textP.forEach(text => {
+    // console.log(text)
+    text.addEventListener('copy', (jeje) => {
+        console.log(jeje.target.textContent.toUpperCase())
+
     })
 })
