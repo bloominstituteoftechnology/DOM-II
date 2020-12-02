@@ -13,6 +13,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  transition: transform 1s ease-in-out;
 }
 
 .block--red {
@@ -21,6 +22,7 @@ body {
 
 .block--blue {
   background-color: blue;
+  /* order: -1; */
 }
 
 .block--green {
@@ -33,4 +35,20 @@ body {
 
 .block--gray {
   background-color: gray;
+}
+
+.box {
+  order: -1;
+}
+
+.off {
+  display: none;
+}
+
+.moveRight {
+  transform: translate(120px, 10%);
+}
+
+.moveLeft{
+  transform: translate(120px, 15%);
 }
