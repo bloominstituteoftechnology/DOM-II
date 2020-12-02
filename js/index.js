@@ -3,7 +3,11 @@ const header = document.querySelectorAll(".nav a");
 const images = document.querySelectorAll("body img");
 const text = document.querySelectorAll("body p");
 
-
+header.forEach(function(item){
+  item.addEventListener("click", function(){
+    event.preventDefault();
+  });
+});
 
 header.forEach(function(item){
     item.addEventListener("mouseover", function(event){
