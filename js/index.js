@@ -1,6 +1,9 @@
 // Your code goes here
-
 const header = document.querySelectorAll(".nav a");
+const images = document.querySelectorAll("body img");
+const text = document.querySelectorAll("body p");
+
+
 
 header.forEach(function(item){
     item.addEventListener("mouseover", function(event){
@@ -15,6 +18,33 @@ header.forEach(function(item){
     event.target.style.color = "";
     });
 });
+  
+window.addEventListener("online", function(){
+  window.alert("You are connected to the weefee");
+  console.log("wifi good");
+});
+
+window.addEventListener("offline", function(){
+  window.alert("You are no longer connected to the weefee");
+  console.log("wifi bad");
+});
+
+function refreshPage(){
+  window.location.reload(true);
+}
+
+window.addEventListener("keyup", function(event){
+  switch (event.keyCode) {
+    case 27: //Esc
+    refreshPage();   
+      break;
+  }
+})
+
+
+function changeColor(color) {
+  document.querySelector('body').style.backgroundColor = color;  
+}
 
 window.addEventListener('keydown', function(event){
     switch (event.keyCode) {
@@ -51,11 +81,27 @@ window.addEventListener('keydown', function(event){
     }
   });
 
+images.forEach(function(item){
+  item.addEventListener("click", function negative(event){
+    event.target.style.filter = "invert(100%)";
+  });
+});
 
-  
-  function changeColor(color) {
-      document
-        .querySelector('body')
-        .style
-        .backgroundColor = color;
-  }
+images.forEach(function(item){
+  item.addEventListener("dblclick", function positive(event){
+    event.target.style.filter = "invert(0%)";
+  });
+});
+
+text.forEach(function(item){
+  item.addEventListener("wheel", function zoom(event){
+    let scale = 1;
+
+    scale += event.deltaY * -0.005;
+    scale = Math.min(Math.max(1, scale), 4);
+    
+    event.target.style.transform = `scale(${scale})`;
+    event.onwheel = zoom;
+    event.preventDefault();
+    });
+});
