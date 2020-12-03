@@ -34,7 +34,26 @@ Array.from(document.links).forEach(function (link) {
       });
     });
 
+window.onload = function(event){
+    console.log(`onload event ${event, type}`);
+}
 
+window.addEventListener("load", event => {
+    console.log( `${event.type}`)
+})
 
+const theButton = document.querySelector(".btn");
+
+theButton.onclick = function (event) {
+    console.log(`event that happened: ${event.type}`)
+}
+
+theButton.addEventListener("click", event => {
+    console.log(`Events taking place: ${event.type} on the ${event.target.nodeType}`)
+})
+
+theButton.addEventListener('click', event => {
+    console.log("event")
+})
 
 
