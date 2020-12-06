@@ -45,4 +45,62 @@ function changeWelcome(element){
     }
 };
 
+//eventlistener 3 - wheel : a wheel button of a pointing device is rotated in any direction
+document.addEventListener('wheel', (e) => {
+    const wholeWebPage = document.querySelector("body");
+    //console.log('received', );
+    wheelMovement(wholeWebPage);
+});
+
+function wheelMovement(element){
+    element.style.color = "blue";
+    
+    //console.log('the wheel is scrolling up or down');
+};
+
+//eventlistener 4 - load : progression successful
+window.addEventListener('load', (e) => {
+    console.log('page is fully loaded');
+  });
+
+//eventlistener 5 - focus: 
+
+const navLinks = document.querySelectorAll("nav a");
+navLinks.forEach(navLink => {
+    navLink.addEventListener('focus', (e) => {
+        navLink.style.background = 'pink'; 
+    });
+})
+
+//eventlistener 6 - resize: 
+//eventlistener 7 - scroll :
+//eventlistener 8 - select : 
+
+//eventlistner 9 - dblclick: mouse clicks twice on an element & also execute preventDefault() here
+
+const signMeUpButtons = document.querySelectorAll('.btn');
+const islandGetawayButton = signMeUpButtons[2];
+
+islandGetawayButton.addEventListener('dblclick', (e) => {
+    eventIsFullyBooked(islandGetawayButton);  
+});
+
+
+function eventIsFullyBooked(element){
+    window.alert("Sorry, this trip is at capacity.");
+    
+};
+
+
+
+//eventlistener 10 - drag/drop: 
+
+
+//e.preventDefault()
+const firstButton = signMeUpButtons[0];
+firstButton.addEventListener("click", (e) => {
+    alert("working");
+     e.preventDefault();
+ });
+
 
