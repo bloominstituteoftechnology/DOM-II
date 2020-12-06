@@ -14,8 +14,7 @@
     ✅`mouseout`
     ✅`click`*/
 
-//sign up buttons manipulation
-//const funButton = document.querySelectorAll('.destination .btn')
+
 
 
 
@@ -110,7 +109,7 @@ const zoomImg = document.querySelector('.content-section img')
 
 zoomImg.addEventListener('mouseout',()=> {
   zoomImg.style.transform = 'scale(1.0)'
-  alert('did you see a place you want to go?')
+  alert('have you packed your bags yet?')
   
 })
 
@@ -127,3 +126,13 @@ document.addEventListener('wheel', () => {
 
   })
 })
+
+
+//keypress event
+
+document.getElementById("search").addEventListener("keypress", myFunction);
+
+function myFunction() {
+  document.getElementById("search").style.backgroundColor = "purple"
+  document.getElementById("search").style.color = "white";
+}
