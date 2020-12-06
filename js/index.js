@@ -80,3 +80,26 @@ evtSource.addEventListener("open", (e) => {
   console.log("The page has been opened");
 });
 
+//drag
+// const titleDrag = document.querySelectorAll(".destination h4");
+// titleDrag.addEventListener(
+//   "drag",
+//   (e) => {
+//     console.log("dragged", dragged);
+//   },
+//   false
+// );
+
+//drop
+// const titleDrop = document.querySelectorAll(".destination h4");
+// titleDrop.addEventListener(
+//   "drop",
+//   (e) => {
+//     console.log("dropped", dropped);
+//     if (e.target.className == "destination")
+//       e.target.style.background = "LightGreen";
+//     dragged.parentNode.removeChild(dragged);
+//     event.target.appendChild(dragged);
+//   },
+//   false
+// );
