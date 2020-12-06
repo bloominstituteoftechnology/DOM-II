@@ -27,7 +27,8 @@ funLink[0].addEventListener('click', () => {
     funLink[1].style.background = 'red'
     funLink[2].style.background = 'lime';
     funLink[3].style.background = 'purple'
-  })
+
+})
 
 
 
@@ -60,8 +61,8 @@ funButton.forEach(x => {
     x.addEventListener('mouseover',()=> {
       x.style.color = 'purple'
       x.style.transform = 'scale(1.5)'
-    })
-  });
+  })
+});
 
 //mouseout event
 
@@ -83,7 +84,7 @@ document.addEventListener('scroll', () => {
     x.style.fontFamily = 'sans serif'
     x.style.fontWeight = 'bold'
     x.style.color = 'blue'
-})
+  })
 })
   
 
@@ -99,12 +100,19 @@ document.addEventListener('keydown', (e) => {
 
 })
 
-//resize event
-const zoomImg = document.querySelectorAll('.content-section img')
+//mouse enter event
+const zoomImg = document.querySelector('.content-section img')
 
 
   zoomImg.addEventListener("mouseenter", () => {
-    zoomImg.style.transform = "scale(1.5)"
+  zoomImg.style.transform = "scale(1.5)"
+  
+
+})
 
 
-  })
+zoomImg.addEventListener('mouseout',()=> {
+  zoomImg.style.transform = 'scale(1.0)'
+  alert('did you see a place you want to go?')
+  
+})
