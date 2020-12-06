@@ -3,7 +3,7 @@
 
 /** ✅`mouseover`
   * ✅`keydown` 
-  * `wheel`
+  * ✅`wheel`
   * `load`
   * `focus`
   * `resize`
@@ -29,10 +29,6 @@ funLink[0].addEventListener('click', () => {
     funLink[3].style.background = 'purple'
 
 })
-
-
-
-const funBus = document.querySelectorAll('a')
 
 
 //doulbe click event
@@ -84,6 +80,7 @@ document.addEventListener('scroll', () => {
     x.style.fontFamily = 'sans serif'
     x.style.fontWeight = 'bold'
     x.style.color = 'blue'
+    
   })
 })
   
@@ -95,7 +92,7 @@ const esc = document.querySelector('h1')
 
 document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){
-    esc.textContent = "you dont wanna miss this"
+    esc.textContent = "You dont wanna miss this 🚌 ride"
   }
 
 })
@@ -115,4 +112,18 @@ zoomImg.addEventListener('mouseout',()=> {
   zoomImg.style.transform = 'scale(1.0)'
   alert('did you see a place you want to go?')
   
+})
+
+
+//wheel event
+
+const h2 = document.querySelectorAll('h2')
+
+document.addEventListener('wheel', () => {
+  h2.forEach(x => {
+    x.style.background = 'yellow'
+    x.style.textAlign = 'center'
+    x.style.fontWeight = 'bold'
+
+  })
 })
