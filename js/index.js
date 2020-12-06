@@ -1,4 +1,4 @@
-// Code to Grab Elements: 
+// Code to Grab Elements: -------------------------------------------------------
 
 // logo heading
 const logo = document.querySelector("h1");
@@ -29,6 +29,10 @@ const introImg = intro.children[0];
 const introTitle = intro.children[1];
 // console.log("IntroTitle: ", introTitle);
 
+// destination image
+const destinationImg = document.querySelector(".content-destination img")
+// console.log(destinationImg);
+
 // buttons
 let destinations = document.querySelector(".content-pick");
 // console.log(destinations);
@@ -40,17 +44,17 @@ const buttonRight = destinations.children[2].children[2];
 // console.log("buttonMiddle: ", buttonMiddle);
 // console.log("buttonRight: ", buttonRight);
 
-// Code to Assign Event Listeners:
+// Code to Assign Event Listeners: ----------------------------------------------
 
 // event listener 1 - onmouseover on logo
 logo.onmouseover = (e) => {
-  console.log("event 1 triggered");
-  gsap.to(logo, {duration: 3, rotation: 360, scale: 2, x: 200});
+  console.log("event 1 triggered - onmouseover");
+  gsap.to(logo, {duration: 3, rotation: 360, scale: 2, x: 200, color: "orange"});
 };
 
 // event listener 2 - keydown on document
 document.addEventListener('keydown', (e) => {
-  console.log("event 2 triggered");
+  console.log("event 2 triggered - keydown");
   gsap.to("p", {
       duration: 1, 
       stagger: 0.5, // stagger start times
@@ -64,7 +68,7 @@ document.addEventListener('keydown', (e) => {
 introImg.addEventListener('wheel', zoom);
 
 function zoom(event) {
-  console.log("event 3 triggered");
+  console.log("event 3 triggered - wheel");
   event.preventDefault();
   scale += event.deltaY * -0.01;
   // Restrict scale
@@ -73,55 +77,113 @@ function zoom(event) {
   introImg.style.transform = `scale(${scale})`;
 };
 let scale = 1;
-introImg.onwheel = zoom;
 
 // event listener 4 - load on window
 window.addEventListener('load', greeting);
 
-  function greeting(event) {
-    console.log("event 4 triggered");
-    alert("Welcome!  You have triggered the 4th event!  The is a load event.  Have a great day!");
-  };
+function greeting(event) {
+  console.log("event 4 triggered - load");
+  alert("Welcome!  You have triggered the 4th event!  The is a load event.");
+};
 
-  // event listener 5 - focus
-  // event listener 6 - resize
-  // event listener 7 - scroll
-  // event listener 8 - select
-  // event listener 9 - dblclick
-  // event listener 8 - drag / drop
+// event listener 5 - focus on nav a tags
+home.addEventListener('focus', (e) => {
+  console.log("event 5 triggered - focus");
+  gsap.to(home, {
+      // duration: 1, 
+      borderRadius:"50% 100%",
+      backgroundColor: "pink",
+      padding: "3rem"
+  });
+});
+aboutUs.addEventListener('focus', (e) => {
+  console.log("event 5 triggered - focus");
+  gsap.to(aboutUs, {
+      // duration: 1, 
+      borderRadius:"100% 50%",
+      backgroundColor: "dodgerblue",
+      padding: "3rem"
+  });
+});
+blog.addEventListener('focus', (e) => {
+  console.log("event 5 triggered - focus");
+  gsap.to(blog, {
+      // duration: 1, 
+      borderRadius:"50% 100%",
+      backgroundColor: "yellow",
+      padding: "3rem"
+  });
+});
+contact.addEventListener('focus', (e) => {
+  console.log("event 5 triggered - focus");
+  gsap.to(contact, {
+      // duration: 1, 
+      borderRadius:"100% 50%",
+      backgroundColor: "lightgreen",
+      padding: "3rem"
+  });
+});
 
-// gsap.to(".selector", { // selector text, Array, or object
-//   x: 100, // any properties (not limited to CSS)
-//   backgroundColor: "red", // camelCase
-//   duration: 1, // seconds
-//   delay: 0.5,
-//   ease: "power2.inOut",
-//   stagger: 0.1, // stagger start times
-//   paused: true, // default is false
-//   overwrite: "auto", // default is false
-//   repeat: 2, // number of repeats (-1 for infinite)
-//   repeatDelay: 1, // seconds between repeats
-//   repeatRefresh: true, // invalidates on each repeat
-//   yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
-//   yoyoEase: true, // or ease like "power2"
-//   immediateRender: false,
-//   onComplete: myFunc,
+// NOTE:  These trigger the document listening event
+
+// event listener 6 - resize on window
+window.addEventListener('resize', (e) => {
+  console.log("event 6 triggered - resize");
+  gsap.to(navigation, {
+    opacity: .5,
+  });
+});
+
+// event listener 7 - scroll on document
+document.addEventListener('scroll', (e) => {
+  console.log("event 7 triggered - scroll");
+  gsap.to(introTitle, {
+    duration: 1,
+    fontSize: "5rem",
+    x: "150"
+  });
+});
+
+// event listener 8 - select
+const selectText = document.querySelector("#selectTextId");
+// console.log("selectText:", selectText);
+
+selectText.addEventListener('select', (e) => {
+  console.log("event 8 triggered - select");
+});
+
+// event listener 9 - dblclick on middle button
+buttonMiddle.addEventListener('dblclick', (e) => {
+  console.log("event 9 triggered - dblclick");
+  gsap.to(buttonMiddle, {
+    y: "-100",
+    scale: 2.5,
+    backgroundColor: "red"
+  });
+  buttonMiddle.textContent = "You did it!";
+});
+
+// event listener 10 - drag / drop
+destinationImg.addEventListener('drag', (e) => {
+  console.log("event 10 triggered - drag");
+});
+
+// need to use event.preventDefault() on dragenter and dragover 
+document.addEventListener('dragenter', (e) => {
+    e.preventDefault()
+});
+document.addEventListener('dragover', (e) => {
+  e.preventDefault()
+});
+
+document.addEventListener('drop', (e) => {
+  console.log("event 11 triggered - drop");
+  destinationImg.setAttribute("src", "https://cdn.pixabay.com/photo/2016/01/19/15/48/luggage-1149289_1280.jpg") 
+});
 
 
 
-
-/*
-
-
-### Task 2: Create listeners for 10 types of events
-For example you could change colors, animate objects, remove objects, etc. Here are some event types you could try to use:
-
-Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
-
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
-
-### Task 3: Stretch
-
-* [x] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
-*/
+// * [x] Stop the navigation items from refreshing the page 
+navigation.addEventListener('click', (e) => {
+  e.preventDefault();
+});
