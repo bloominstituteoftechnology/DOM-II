@@ -8,11 +8,10 @@
   * `focus`
   * `resize`
   * ✅scroll` 
-  * `select`
   * ✅`dblclick` 
-  * `drag / drop`
-    ✅`mouseout`
-    ✅`click`*/
+  * ✅`mouseout`
+  * ✅`keypress`
+  * ✅`click`*/
 
 
 
@@ -93,7 +92,6 @@ document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){
     esc.textContent = "You dont wanna miss this 🚌 ride"
   }
-
 })
 
 //mouse enter event
@@ -103,7 +101,6 @@ const zoomImg = document.querySelector('.content-section img')
   zoomImg.addEventListener("mouseenter", () => {
   zoomImg.style.transform = "scale(1.5)"
   
-
 })
 
 
@@ -135,4 +132,13 @@ document.getElementById("search").addEventListener("keypress", myFunction);
 function myFunction() {
   document.getElementById("search").style.backgroundColor = "purple"
   document.getElementById("search").style.color = "white";
+
 }
+
+
+//prevent default action to nav
+
+document.querySelector('nav').addEventListener('click', function (event) {
+  event.preventDefault()
+
+})
