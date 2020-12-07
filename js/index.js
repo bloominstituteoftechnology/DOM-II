@@ -72,35 +72,63 @@ navLinks.forEach(navLink => {
     });
 })
 
-//eventlistener 6 - resize: 
+//eventlistener 6 - resize:
+window.addEventListener('resize',(e)=> {
+    console.log("My window is resizing.");
+});
+
 //eventlistener 7 - scroll :
-//eventlistener 8 - select : 
+const body = document.querySelector('body');
+window.addEventListener('scroll', (e) => {
+    body.style.color = "green";
+})
 
-//eventlistner 9 - dblclick: mouse clicks twice on an element & also execute preventDefault() here
-
+//eventlistener 8 - classList:
 const signMeUpButtons = document.querySelectorAll('.btn');
 const islandGetawayButton = signMeUpButtons[2];
 
-islandGetawayButton.addEventListener('dblclick', (e) => {
-    eventIsFullyBooked(islandGetawayButton);  
+islandGetawayButton.addEventListener('click', (e) => {
+    window.alert("Sorry, this trip is at capacity.");
+    islandGetawayButton.classList.add('make-me-red');
 });
-
 
 function eventIsFullyBooked(element){
     window.alert("Sorry, this trip is at capacity.");
-    
 };
 
 
 
-//eventlistener 10 - drag/drop: 
+  
+
+// eventlistner 9 - dblclick: mouse clicks twice on an element 
+const page = document;
+page.addEventListener('dblclick', (evt) => {
+    window.alert('Why are you doubleclicking the page? Try the bus instead.');
+})
+
+const busImage = document.querySelector('header img');
+busImage.addEventListener('dblclick', (evt) => {
+    evt.stopPropagation();
+    window.alert('I\'m a bus! Doot! Doot!');
+});
 
 
-//e.preventDefault()
-const firstButton = signMeUpButtons[0];
-firstButton.addEventListener("click", (e) => {
-    alert("working");
-     e.preventDefault();
- });
+
+
+//eventlistener 10 - copy: 
+window.addEventListener('copy', (evt) => {
+    console.log('text copied');
+});
+
+
+// e.preventDefault()
+const navigationItems = document.querySelectorAll('a');
+
+navigationItems.forEach(navItem => {
+    navItem.addEventListener("click", (e) => {
+         e.preventDefault();
+         console.log('navigation prevented 🙌');
+     });
+})
 
 
