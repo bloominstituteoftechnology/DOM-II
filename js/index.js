@@ -49,3 +49,7 @@ scrollie.addEventListener("scroll", () =>{
 })
 
 const selecty = document.querySelector(".text-content h2")
+
+selecty.addEventListener("select", () =>{
+    console.log("hello")
+})
