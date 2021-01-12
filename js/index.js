@@ -16,3 +16,6 @@ window.addEventListener('resize', () => document.body.style.border = '5px solid 
 let busImg = document.querySelector('header img');
 busImg.addEventListener('drag', (event) => event.target.style.width = '100px');
 busImg.addEventListener('dragend', (event) => event.target.style.width = '100%');
+
+let navItems = document.querySelectorAll('nav-link');
+navItems.forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
