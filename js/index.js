@@ -2,9 +2,7 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const logoHeading = document.querySelector("h1");
 const secondaryTitles = document.querySelectorAll("h2");
-const busImg = document.querySelectorAll("img");
-
-
+const imgShift = document.querySelectorAll("img");
 
 logoHeading.addEventListener("click", function(e){
     let newColor = e.target.style.color
@@ -19,7 +17,10 @@ logoHeading.addEventListener("click", function(e){
 
 navLinks.forEach(item => {
     item.addEventListener("mouseover", function(e){
-        e.target.style.color = 'red'
+        e.target.style.color = 'red';
+        setTimeout(function(){
+            navLinks.style.color = "black"
+        },1000);
     });
 });
 
@@ -30,9 +31,11 @@ secondaryTitles.forEach(item => {
     });
 });
 
-busImg.forEach(item => {
-    item.addEventListener("mouseover", function(e){
-        e.target.style.marginRight = "0px";
-    });
-});
+// imgShift.forEach(item =>{
+//     item.addEventListener("hover", function(e){
+//         e.target. = "0px";
+//     });
+// });
+
+
 
