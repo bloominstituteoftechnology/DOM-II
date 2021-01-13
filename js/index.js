@@ -38,12 +38,16 @@ Array.from(signButton).forEach(elem => {
         item.addEventListener('mousemove', () => {
            item.style.opacity = '0.4';
         });
+        item.addEventListener('mouseout', () =>{
+            item.style.opacity = '1.0'
+        });
      });
 
      window.addEventListener('load', (event) => {
         console.log('page fully loaded');
     });
 
-    const heightOutput = document.querySelector();
-const widthOutput = document.querySelector();
+    window.addEventListener('resize', event =>{
+        console.log('window size');
+    })
 
