@@ -105,6 +105,7 @@ let footerText = footer.querySelector('p')
 console.log('footerText: ', footerText)
 
 //END OF SELECTORS
+
 function navClick(event){
      console.log('clicked on: ', event.target)
      if(event.target.style.color === 'red'){
@@ -118,12 +119,28 @@ function navDblClick(event){
      console.log('DOUBLE clicked on: ', event.target)
      event.target.style.border = '2px solid blue'
 }
+function dragEnlarge(event){
+     event.target.style.fontSize = '3rem'
+}
+function dragReset(event){
+     const navNames = ['Home', 'About Us', 'Blog', 'Contact']
+     event.target.style.fontSize = ''
+     for(let i = 0; i < navNames.length; i++){
+          navItems[i].textContent = navNames[i]
+     }
+}
+function dragTextChange(event){
+     event.target.textContent = 'I am being DRAGGED'
+}
 navItems.forEach(item => {
      item.addEventListener('click', navClick)
-})
-navItems.forEach(item => {
      item.addEventListener('dblclick', navDblClick)
+     item.addEventListener('dragstart', dragEnlarge)
+     item.addEventListener('dragend', dragReset)
+     item.addEventListener('drag', dragTextChange)
 })
+
+
 
 
 
