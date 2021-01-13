@@ -120,7 +120,7 @@ function navDblClick(event){
      event.target.style.border = '2px solid blue'
 }
 function dragEnlarge(event){
-     event.target.style.fontSize = '3rem'
+     event.target.style.fontSize = '2rem'
 }
 function dragReset(event){
      const navNames = ['Home', 'About Us', 'Blog', 'Contact']
@@ -140,9 +140,17 @@ navItems.forEach(item => {
      item.addEventListener('drag', dragTextChange)
 })
 
-
-
-
-
-
+function headerToggle(event){
+     
+     if (event.key === "Escape"){
+          console.log('Escape key pressed')
+          if (headerText.textContent === 'Fun Bus'){
+               headerText.textContent = 'WOAH'
+          } else if(headerText.textContent === 'WOAH') {
+               headerText.textContent = 'Fun Bus'
+          }
+     }
+     
+}
+document.addEventListener('keydown', headerToggle)
 
