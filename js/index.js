@@ -1,4 +1,6 @@
-// Your code goes here
+//START OF SELECTORS
+
+//Header bar at top of page
 let headerBar = document.querySelector('.nav-container')
 console.log('HeaderBar: ', headerBar)
 let headerText = document.querySelector('.logo-heading')
@@ -8,9 +10,11 @@ console.log('navBarList: ', navBarList)
 let navItems = document.querySelectorAll('.nav-link')
 console.log('navItems: ', navItems)
 
+//Full page
 let fullContainer = document.querySelector('.home')
 console.log('fullContainer: ', fullContainer)
 
+//Intro Section
 let intro = document.querySelector('.intro')
 console.log('intro: ', intro)
 let introImg = document.querySelector('.intro img')
@@ -20,6 +24,7 @@ console.log('introHead: ', introHead)
 let introText = document.querySelector('.intro p')
 console.log('introText: ', introText)
 
+//First Content Section
 let content = document.querySelector('.content-section')
 console.log('content: ', content)
 let contentAllText = document.querySelector('.text-content')
@@ -35,6 +40,7 @@ console.log('contentImgDiv: ', contentImgDiv)
 let contentImg = contentImgDiv.querySelector('img')
 console.log('contentImg: ', contentImg)
 
+//Inverse Content Section
 let inverseContent = document.querySelector('.inverse-content')
 console.log('inverseContent: ', inverseContent)
 let inverseContentAllText = inverseContent.querySelector('.text-content')
@@ -50,6 +56,7 @@ console.log('inverseContentImgDiv: ', inverseContentImgDiv)
 let inverseContentImg = inverseContentImgDiv.querySelector('img')
 console.log('inverseContentImg: ', inverseContentImg)
 
+//Destination content section
 let destination = document.querySelector('.content-destination')
 console.log('destination: ', destination)
 let destinationHeader = destination.querySelector('h2')
@@ -57,9 +64,11 @@ console.log('destinationHeader: ', destinationHeader)
 let destinationText = destinationHeader.nextElementSibling
 console.log('destinationText: ', destinationText)
 
+//Destination Picker Section
 let pickDestination = document.querySelector('.content-pick')
 console.log('pickDestination: ', pickDestination)
 
+//Destination1
 let destination1 = pickDestination.querySelector('.destination')
 console.log('destination1: ', destination1)
 let destination1Head = destination1.querySelector('h4')
@@ -69,6 +78,7 @@ console.log('destination1Text: ', destination1Text)
 let destination1Button = destination1Text.nextElementSibling
 console.log('destination1Button: ', destination1Button)
 
+//Destination 2
 let destination2 = destination1.nextElementSibling
 console.log('destination2: ', destination2)
 let destination2Head = destination2.querySelector('h4')
@@ -78,7 +88,7 @@ console.log('destination2Text: ', destination2Text)
 let destination2Button = destination2Text.nextElementSibling
 console.log('destination2Button: ', destination2Button)
 
-
+//Destination 3
 let destination3 = destination2.nextElementSibling
 console.log('destination3: ', destination3)
 let destination3Head = destination3.querySelector('h4')
@@ -88,10 +98,32 @@ console.log('destination3Text: ', destination3Text)
 let destination3Button = destination3Text.nextElementSibling
 console.log('destination3Button: ', destination3Button)
 
+//Footer
 let footer = document.querySelector('footer')
 console.log('footer: ', footer)
 let footerText = footer.querySelector('p')
 console.log('footerText: ', footerText)
+
+//END OF SELECTORS
+function navClick(event){
+     console.log('clicked on: ', event.target)
+     if(event.target.style.color === 'red'){
+          event.target.style.color = 'black'
+          return
+     } else {
+          event.target.style.color = 'red'
+     } 
+}
+function navDblClick(event){
+     console.log('DOUBLE clicked on: ', event.target)
+     event.target.style.border = '2px solid blue'
+}
+navItems.forEach(item => {
+     item.addEventListener('click', navClick)
+})
+navItems.forEach(item => {
+     item.addEventListener('dblclick', navDblClick)
+})
 
 
 
