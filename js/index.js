@@ -1,7 +1,12 @@
 // Your code goes here
-let headings = document.querySelector('h2');
-headings.addEventListener('mouseOver', function(event){
-headings.style.color = "red";
-})
-console.log(headings);
-debugger;
+let headings = document.querySelectorAll('h2, h4');
+Array.from(headings).forEach(function(head)
+{
+    head.addEventListener('mouseover', function(event){
+        head.style.color = "red";
+        })
+    head.addEventListener('mouseout', function(event){
+            head.style.color = "black";
+            })
+}
+)
