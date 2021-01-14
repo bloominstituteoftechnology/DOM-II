@@ -107,6 +107,8 @@ console.log('footerText: ', footerText)
 //END OF SELECTORS
 
 function navClick(event){
+     event.preventDefault()
+     event.stopImmediatePropagation()
      console.log('clicked on: ', event.target)
      if(event.target.style.color === 'red'){
           event.target.style.color = 'black'
@@ -130,6 +132,7 @@ function dragReset(event){
      }
 }
 function dragTextChange(event){
+     
      event.target.textContent = 'I am being DRAGGED'
 }
 navItems.forEach(item => {
@@ -139,6 +142,7 @@ navItems.forEach(item => {
      item.addEventListener('dragend', dragReset)
      item.addEventListener('drag', dragTextChange)
 })
+
 
 function headerToggle(event){
      
@@ -153,4 +157,27 @@ function headerToggle(event){
      
 }
 document.addEventListener('keydown', headerToggle)
+
+
+function navBarClick(event){
+     //stopImmediatePropogation ensures this only happens outside of the navBar
+     console.log('clicked: ', event.target)
+     
+}
+headerBar.addEventListener('click', navBarClick)
+
+window.addEventListener('beforeprint', () => {
+     alert('printing a webpage?')
+})
+window.addEventListener('afterprint', () => {
+     alert('Hope you found what you were looking for')
+})
+document.addEventListener('DOMContentLoaded', (event) => {
+     console.log('ms since load: ', event.timeStamp)
+})
+document.addEventListener('scroll', (event) => {
+     debugger
+     console.log(scrollX)
+     console.log(scrollY)
+})
 
