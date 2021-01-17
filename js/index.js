@@ -1,16 +1,26 @@
 // Your code goes here
 
-const text = document.querySelectorAll('p');
+const text = document.querySelectorAll('p').forEach(item => {
+    item.addEventListener('mouseover', event => { event.target.style.fontSize = '2rem'
+    })
+    item.addEventListener('mouseleave', event => {event.target.style.fontSize = 'initial'})
+})
 
 const navBar = document.querySelectorAll('a');
 
 const heads = document.querySelectorAll('h2');
 
-const pics = document.querySelectorAll('.image-content');
 
-const lilheads = document.querySelectorAll('h4');
+const pics = document.querySelectorAll('img').forEach(item => {
+    item.addEventListener('dblclick', event => { event.target.style.display = 'none'
+    })})
 
 
+//h4's
+
+const lilheads = document.querySelectorAll('.lilhead').forEach(item => {
+    item.addEventListener('dblclick', event => { event.target.style.background = 'green'
+    })})
 //H2's 
 
 heads[0].addEventListener('click', function(e){
@@ -58,9 +68,8 @@ navBar[3].addEventListener('mouseleave', function(e){
     e.target.style.color = 'aquamarine';
 })
 
-//H4's
 
-lilheads
 
-// paragraphs font size increase, lilheads should become bold or italic, images become opaque kinda see through.
+
+
 
