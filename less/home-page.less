@@ -35,6 +35,9 @@
     .img-content {
       width: 48%;
       padding-left: 1%;
+      transition-property: transform;
+      transition-duration: 2s;
+      transition-delay: 1s;
 
       @media @mobile {
         width: 100%;
@@ -49,6 +52,18 @@
         }
       }
     }
+  }
+
+  .img-content:hover{
+    transform: rotate(90deg);
+  }
+
+  .big{
+    font-size: xx-large;
+  }
+
+  .off{
+    display: none;
   }
 
   .inverse-content {
