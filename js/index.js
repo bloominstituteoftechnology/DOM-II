@@ -2,6 +2,7 @@
 
 window.onload = function(event) {
     console.log(`${event.type}`);
+    alert('Press the "D" key at anytime to enter DARK MODE');
 };
 
 const funBusImg = document.querySelector("#funBusImg");
@@ -67,6 +68,11 @@ boatRockImg.addEventListener('click', event=>{
 para.forEach(function(p){
     p.addEventListener('mousedown', event=>{
         p.style.fontSize = "24px"
+    })
+})
+para.forEach(function(p){
+    p.addEventListener('mouseup', event=>{
+        p.style.fontSize = "16px"
     })
 })
 document.addEventListener('keydown', event=>{
