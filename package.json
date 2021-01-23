@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel index.html",
-    "stretch": "parcel stretch-assignment/index.html"
+    "stretch": "parcel stretch-assignment/index.html",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,12 @@
   },
   "homepage": "https://github.com/LambdaSchool/DOM-II#readme",
   "devDependencies": {
+    "cypress": "^6.3.0",
     "eslint": "^7.6.0",
     "less": "^3.12.2",
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "e2e": "0.0.8"
   }
 }
