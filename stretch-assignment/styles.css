@@ -1,18 +1,17 @@
 body {
-  display: flex;
-  /*justify-content: center;*/
+  left: 10px;
 }
 
 .blocks {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
+  left: 10px;
 }
 
 .block {
+  position: relative;
   width: 100px;
   height: 100px;
   margin: 10px;
+  left: 10px;
 }
 
 .block--red {
@@ -21,16 +20,20 @@ body {
 
 .block--blue {
   background-color: blue;
+  left: 10px;
 }
 
 .block--green {
   background-color: green;
+  left: 10px;
 }
 
 .block--pink {
   background-color: pink;
+  left: 10px;
 }
 
 .block--gray {
   background-color: gray;
+  left: 10px;
 }

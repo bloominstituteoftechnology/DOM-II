@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/index.js" defer></script>
+    <title>DOM II</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events"
+          >Intro to events</a
+        >
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Events"
+          >Event reference</a
+        >
+      </nav>
+      <span>Hello, World! Ready to launch?</span>
+      <button id="launchButton">Launch!</button>
+      <button id="launchClear">Clear Launch!!!</button>
+      <div class="modal off">
+        <div class="modal-opacity"></div>
+        <div class="modal-dialog">
+          <h4>Are you sure?</h4>
+          <button id="confirmButton">Yes</button>
+          <button id="cancelButton">No</button>
+        </div>
+      </div>
+      <h1 class="report success off">Launched! Woot!</h1>
+      <h1 class="report failure off">Launch Cancelled! Boo!</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: beige;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(225, 236, 225);
+  opacity: 70%;
+}
+
+.modal-dialog {
+  position: relative;
+  background-color: white;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(180, 182, 180);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  margin-left: 8px;
+}
+
+.off {
+  display: none;
+}
+
+nav {
+  margin-bottom: 20px;
+}
