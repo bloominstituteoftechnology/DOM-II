@@ -12,7 +12,7 @@
 //     event.target.style.opacity = 1;
 // });
 
-
+//
 //Make title disappear
 const funBusTitle = document.querySelector("h1");
 console.log(funBusTitle);
