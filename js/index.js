@@ -17,6 +17,8 @@
 
 
  var header_img = document.querySelector(".intro img");
+ var letsGo_img = document.querySelector(".img-content img")
+ var adventure_img = document.querySelectorAll(".img-content img")[1];
 
 header_img.addEventListener('mouseover', function (event)  {
     event.target.style.border = "2px solid #000";
@@ -28,11 +30,66 @@ header_img.addEventListener('mouseleave', function (event)  {
 });
 header_img.addEventListener('mousedown', function (event)  {
     event.target.setAttribute('src', "https://picsum.photos/1000/300");
+    event.target.style.transform = "rotate(20deg)";
 });
  
 header_img.addEventListener('mouseup', function (event)  {
     event.target.setAttribute('src', "/fun-bus.927a34f2.jpg");
+    event.target.style.transform = "";
 });
+
+function wait(ms) {
+    var d = new Date();
+    var d2 = null;
+    do { d2 = new Date(); }
+    while(d2-d < ms);
+}
+function imgListener(event) {
+    
+    event.target.setAttribute('src', "https://picsum.photos/400/300");
+    event.target.style.borderRadius = "50%";
+    setTimeout(function() {
+        event.target.setAttribute('src', '/adventure.009d0496.jpg')
+        event.target.style.borderRadius = "";
+    },3000)
+}
+letsGo_img.addEventListener('click', imgListener);
+
+var spinContent = null;
+function spinAnimation(data) {
+    if (!spinContent) {
+        spinContent = document.createElement('style');
+        spinContent.type = 'text/css';
+        document.head.appendChild(spinContent);
+      }
+    
+      spinContent.sheet.insertRule(data, spinContent.length);
+}
+spinContent(`
+  @keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+  .spin {
+    animation-name: spinning;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+`);
+
+function spinListener(event){
+    console.log('🧭 current target', event.currentTarget);
+    event.target.style.transform = "rotate(90deg)";
+    wait(1000);
+    event.targt.style.transform = "rotate(-90deg)";
+    setTimeout(function() {
+        event.target.style.transform = "";
+    },5000)
+}
+
+adventure_img.addEventListener('click', spinListener);
+
 var button1 = document.querySelectorAll(".btn")[0];
 var button2 = document.querySelectorAll(".btn")[1];
 var button3 = document.querySelectorAll(".btn")[2];
@@ -56,6 +113,7 @@ function listener(event){
     
 
 content.addEventListener("click", listener);
+
 button1.addEventListener("click", (event) =>{
     event.preventDefault();
     listener(event);
@@ -69,7 +127,6 @@ button2.addEventListener("click", (event) =>{
 });
 button3.addEventListener("mousedown", (event) =>{
     event.preventDefault();
-    // event.stopPropagation();
     listener(event);
     console.log(`button 3 was clicked`);
     
