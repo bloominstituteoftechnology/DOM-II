@@ -4,12 +4,14 @@
 const funLogo = document.querySelector('.logo-heading');
 const funImg = document.querySelector('.intro Img');
 const destination = document.querySelector("content-destination");
-const destinationP = document.querySelector('.destination p');
-const button = document.querySelector('.btn');
+const destinationP = document.querySelectorAll('.destination p');
+const button = document.querySelectorAll('.btn');
 const footer = document.querySelector('.footer p');
 const head = document.querySelector('head');
-const navLinks = document.querySelectorAll('.nav')
-const body = document.querySelector('body')
+const navLinks = document.querySelectorAll('.nav');
+const body = document.querySelector('body') ;
+const form = document.querySelector('#form')
+const Images = document.querySelectorAll(".img-content")
 
 const pressed = [];
 const lucasCode = 'lucas';
@@ -18,13 +20,53 @@ let scale = 1;
 let x = 0;
 let hue = 0;
 
+function logSelection(event) {
+    const log = document.getElementById('log');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    log.textContent = `You selected: ${selection}`;
+  }
+  
+  const input = document.querySelector('input');
+  input.addEventListener('select', logSelection);
 
 
 
+    function allowDrop(e) {
+        e.preventDefault();
+      }
+      
+      function drag(e) {
+        e.dataTransfer.setData("text", ev.target.id);
+      }
+      
+      function drop(e) {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        e.target.appendChild(document.getElementById(data).cloneNode());
+      }
 
-destinationP.querySelector('select', (e) => {
-    const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
-    console.log(`You selected ${selection}`)
+
+destinationP.forEach(text => {
+    text.addEventListener('select', (e) => {
+        console.log('Text select')
+        const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
+        console.log(`You selected ${selection}`)
+    })
+})
+
+
+button.forEach((butt) => {
+    butt.addEventListener('click', () => {
+        butt.innerHTML = `<form id="form">
+        <input type="text" placeholder="text input">
+      </form>`
+
+      const form = document.querySelector('#form input')
+
+      form.addEventListener('focus', () => {
+          form.style.background = 'pink'
+      })
+    })
 })
 
 window.addEventListener('scroll', () => {
