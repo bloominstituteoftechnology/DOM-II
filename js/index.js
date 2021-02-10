@@ -45,7 +45,7 @@ function wait(ms) {
     while(d2-d < ms);
 }
 function imgListener(event) {
-    
+    console.log('🧭 current target', event.currentTarget);
     event.target.setAttribute('src', "https://picsum.photos/400/300");
     event.target.style.borderRadius = "50%";
     setTimeout(function() {
@@ -55,40 +55,23 @@ function imgListener(event) {
 }
 letsGo_img.addEventListener('click', imgListener);
 
-var spinContent = null;
-function spinAnimation(data) {
-    if (!spinContent) {
-        spinContent = document.createElement('style');
-        spinContent.type = 'text/css';
-        document.head.appendChild(spinContent);
-      }
-    
-      spinContent.sheet.insertRule(data, spinContent.length);
-}
-spinContent(`
-  @keyframes spinning {
-    from { transform: rotate(0deg) }
-    to { transform: rotate(360deg) }
-  }
-  .spin {
-    animation-name: spinning;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-`);
+var spin = 0;
 
-function spinListener(event){
-    console.log('🧭 current target', event.currentTarget);
-    event.target.style.transform = "rotate(90deg)";
-    wait(1000);
-    event.targt.style.transform = "rotate(-90deg)";
+function spinListener(event){ 
+    spin += 20;
+    adventure_img.style.transform = "rotate(" + (spin % 360) +"deg)";
     setTimeout(function() {
-        event.target.style.transform = "";
+        spin = null;
+        adventure_img.style.transform = "null";
+        adventure_img.style.transform = "rotate()";
     },5000)
 }
+function interval(event) {
+    event.target.style.borderRadius = "50%";
+    timer = setInterval(spinListener, 300);
+}
 
-adventure_img.addEventListener('click', spinListener);
+adventure_img.addEventListener('click', interval);
 
 var button1 = document.querySelectorAll(".btn")[0];
 var button2 = document.querySelectorAll(".btn")[1];
