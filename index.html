@@ -12,7 +12,7 @@
   <!-- If we omit the "defer" attribute, `index.js` will load and execute
   _before_ the rest of the HTML is parsed by the browser, which would be bad because
   the code inside `index.js` expects the page to be fully parsed (and the DOM fully built) -->
-  <script defer src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
   <!-- We will often see script tags placed right before the closing body tag,
   it's a way of getting around the problem above without the need for "defer" -->
 </head>
