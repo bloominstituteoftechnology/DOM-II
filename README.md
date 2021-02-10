@@ -30,7 +30,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
   * `keydown`
   * `wheel`
   * `load`
-  * `focus`
+  * `focus`p
   * `resize`
   * `scroll`
   * `select`
@@ -45,6 +45,8 @@ Note: Drag and drop is a bit more advanced than the others: it's not actually a 
 ### Task 3: Stretch
 
 * [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
+window.addEventListener("load", function() {
+  document.querySelector("#overlay-dimmer").addEventListener("click", hideOverlay);
 
 #### Stretch assignment
 
