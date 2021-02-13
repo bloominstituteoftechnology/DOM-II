@@ -78,3 +78,9 @@ headingTwo.forEach(e => {
     e.style.backgroundColor = 'black';
   });
 });
+
+//preventDefault
+
+navBar.addEventListener('click', e => {
+  e.preventDefault();
+});
