@@ -84,3 +84,20 @@ headingTwo.forEach(e => {
 navBar.addEventListener('click', e => {
   e.preventDefault();
 });
+
+// <header class="main-navigation">
+//   <div class="container nav-container">
+
+// <div onclick="alert('div')">DIV
+//   <p onclick="alert('p')">P</p>
+
+const header = document.querySelector('.main-navigation');
+const divInHeader = document.querySelector('.nav-container');
+
+header.addEventListener('click', () => {
+  alert('you clicked the header');
+  divInHeader.addEventListener('click', e => {
+    alert('you clicked the div');
+    e.stopPropagation();
+  });
+});
