@@ -85,11 +85,6 @@ navBar.addEventListener('click', e => {
   e.preventDefault();
 });
 
-// <header class="main-navigation">
-//   <div class="container nav-container">
-
-// <div onclick="alert('div')">DIV
-//   <p onclick="alert('p')">P</p>
 
 const header = document.querySelector('.main-navigation');
 const divInHeader = document.querySelector('.nav-container');
