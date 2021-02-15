@@ -1,2 +1,2 @@
 // Your code goes here
-selectelementbyid
+var a = document.getElementsByTagName("title");
