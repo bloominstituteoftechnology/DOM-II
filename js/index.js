@@ -87,7 +87,7 @@ document.querySelectorAll('p').forEach(item=>{
 
 //attempt 1
 // buttons.addEventListener('onmouseover', function(event){
-//   button.style.backgroundColor="red";
+//   button.style.backgroundColor="crimson";
 
 //});
 
