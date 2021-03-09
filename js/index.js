@@ -1,6 +1,6 @@
 // 10 Different Listener Events:
 
-//1. Mouse Event
+//1. Mouse Enter/MouseLeave
 const busPic = document.querySelector(".intro")
 
 busPic.addEventListener('mouseenter', () => {
@@ -61,15 +61,12 @@ window.addEventListener("load", () => {
     alert("Welcome To Our Website :(");
 });
 
-//8.  Double Click Event
-const changeColorTwo =
-    document.getElementsByTagName("h4");
-    changeColor.addEventListener('dblclick', () => {
-         h4.style.color = "hotpink";
+//8.  Click Event
+const textEvent =
+document.querySelector(".footer");
+textEvent.addEventListener ("click", (event) => {
+textEvent.style.color = "hotpink";
 });
-
-
-    
 
 //9.  Focus Event
 const aFocus = 
