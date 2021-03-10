@@ -26,16 +26,31 @@ navLinks.forEach(function(link){
     link.addEventListener("mouseout", function(event){
         event.target.style.color = "black";
     })
+
+    link.addEventListener("dblclick", function(event){
+        console.log(event);
+    })
 });
 
 document.addEventListener("keydown", function(event){
     if(event.code === "Escape"){
         console.log(event);
     }
-})
+});
 
 images.forEach(function(img){
     img.addEventListener("wheel", function(event){
         console.log(event.target);
     })
+});
+
+// why does window work but not document???
+window.addEventListener('load', (event) => {
+    console.log('page is loaded');
+    console.log(nav);
+});
+
+nav.addEventListener('focus', function(event){
+    console.log(event);
 })
+
