@@ -7,12 +7,12 @@
 // my events: 
 // 1) keypress - Escape key
 // 2) Click event - mouse clicks a button 🎯
-// 3) Mouse Over event on "home" Contact 🎯
-// 4) Mouse Leave event on "home" Contact
+// 3) Mouse Over event on nav bar text 🎯
+// 4) Mouse Leave event on nav bar text
 // 5) HTMLevent - pointerenter event
-// 6) scroll event up
+// 6) scroll event?  - having trouble making it initiate.
 // 7) 
-// 8) double click an image / media element and transform with CSS
+// 8) double click an image / media element 🎯
 // 9)
 // 10)
 
@@ -28,33 +28,45 @@ const body = document.querySelector('body')
         event.target.style.backgroundColor = "salmon"
 })
 
-
+// mouse over event for the nav
 const toUpperCase = document.querySelector('.nav')
   toUpperCase.addEventListener("mouseover", (event) => {
       event.target.style.textTransform = "uppercase"
 })
 
 
-// const pressR = document.querySelector('header img')
-//     pressR.addEventListener("keydown", (event) => {
-//         if (event.ctrlKey) {
-//            return event.style.transform = "rotate(0.5turn)"
-//         }
-// })
+// mout out event for the nav
+const capitalizeNav = document.querySelector('.nav')
+  capitalizeNav.addEventListener("mouseout", (event) => {
+      event.target.style.textTransform = "capitalize"
+})
+
+// enlarge the h2 element when
+const enlargeText = document.querySelector('.intro p')
+  enlargeText.addEventListener("select", (event) => {
+      event.target.style.fontSize = 14
+      event.stopPropagation();
+})
+
+
+const pressR = document.querySelector('header img')
+    pressR.addEventListener("keypress", (event) => {
+        if (event.key === "r") {
+           event.target.style.transform = "rotateZ(360deg)"
+        }
+})
 
 
 // double click the second image to make it rotate
 const adventureImg = document.querySelectorAll('img')[1]
-adventureImg.addEventListener('dblclick', (event)=>{
-event.target.style.transform = "rotateZ(360deg)";
-event.target.style.transition = "transform 1s";
+    adventureImg.addEventListener('dblclick', (event)=>{
+    event.target.style.transform = "rotateZ(360deg)";
+    event.target.style.transition = "transform 1s";
 })
 
-
-const logoScroll = document.querySelector('.logo-heading')
-    logoScroll.addEventListener("scroll", (event) => {
-    logoScroll.style.transform = "rotate(360deg)";
-    logoScroll.style.transition =   "transform .5s";
-})
-
-
+// can't figure out why this one wont work
+// const logoScroll = document.querySelector('.logo-heading')
+//     logoScroll.addEventListener("scroll", (event) => {
+//     logoScroll.style.transform = "rotate(360deg)";
+//     logoScroll.style.transition =   "transform .5s";
+// })
