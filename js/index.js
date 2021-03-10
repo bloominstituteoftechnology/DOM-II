@@ -1,10 +1,11 @@
 // Your code goes here
 
 // all selectors for elements
+let nav = document.querySelector("nav");
 let navLinks = document.querySelectorAll(".nav-link");
 // let navLinks = document.getElementsByClassName("nav-link");
 
-
+let images = document.querySelectorAll("img");
 
 
 
@@ -26,3 +27,14 @@ navLinks.forEach(function(link){
         event.target.style.color = "black";
     })
 });
+
+document.addEventListener("keydown", function(event){
+    if(event.code === "Escape"){
+        console.log(event);
+        console.log(images);
+    }
+})
+
+images.forEach(function(img){
+    
+})
