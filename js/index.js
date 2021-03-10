@@ -139,7 +139,7 @@ fourofh[2].addEventListener('mouseleave', () => {
 //dblclick again
 button[0].addEventListener('dblclick', () => {
     button[0].style.backgroundColor = 'black';
-    button[0].textContent = 'ADVERT';
+    button[0].textContent = 'AVERT';
     button[0].style.color = 'white';
 })
 button[1].addEventListener('dblclick', () => {
