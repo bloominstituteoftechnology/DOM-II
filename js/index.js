@@ -31,10 +31,11 @@ navLinks.forEach(function(link){
 document.addEventListener("keydown", function(event){
     if(event.code === "Escape"){
         console.log(event);
-        console.log(images);
     }
 })
 
 images.forEach(function(img){
-    
+    img.addEventListener("wheel", function(event){
+        console.log(event.target);
+    })
 })
