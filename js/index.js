@@ -35,24 +35,28 @@ const toUpperCase = document.querySelector('.nav')
 })
 
 
-// mout out event for the nav
+// mouse out event for the nav
 const capitalizeNav = document.querySelector('.nav')
   capitalizeNav.addEventListener("mouseout", (event) => {
       event.target.style.textTransform = "capitalize"
 })
 
-// enlarge the h2 element when
-const enlargeText = document.querySelector('.intro p')
+// enlarge the h2 element when selected -   NOT WORKING
+const enlargeText = document.querySelector('.intro h2')
   enlargeText.addEventListener("select", (event) => {
-      event.target.style.fontSize = 14
+      event.target.style.enlargeText = 2
       event.stopPropagation();
 })
 
-
-const pressR = document.querySelector('header img')
-    pressR.addEventListener("keypress", (event) => {
-        if (event.key === "r") {
-           event.target.style.transform = "rotateZ(360deg)"
+// top image rotates when you press lowercase "a" - NOT WORKING
+const pressA = document.querySelector('.intro img')
+// console.log(pressA);
+    pressA.addEventListener("keydown", (event) => {
+        console.log(event.key);
+        if (event.key === 65) { //key press of lowercase "a"
+            console.log(event.key);
+           event.target.style.transform = "rotateZ(360deg)";
+           event.target.style.transition = "transform 1s";
         }
 })
 
