@@ -16,11 +16,11 @@ function MouseOver(intro) {
 }
 
 //keydown 
-function escKey (event){
-    if (event.key === "Escape"){
-        intro.classList.add('off')
+document.addEventListener("keydown", function(event){
+    if (event.code =='KeyZ'){
+        alert('You pressed key Z')
     }
-}
+});
 
 document.addEventListener('keydown', escKey);
 
