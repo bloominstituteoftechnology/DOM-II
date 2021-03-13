@@ -1,5 +1,8 @@
 // Your code goes here
 const headerSection = document.querySelector(".main-navigation")
+headerSection.addEventListener("mouseover", (event)=> {event.target.style.backgroundColor = "purple";});
+
+
 const logoMessage = document.querySelector(".logo-heading");
 const navSection = document.querySelector(".nav");
 const h2Heading = Array.from(document.querySelectorAll('h2'));
@@ -21,7 +24,7 @@ const buttons = Array.from(document.querySelectorAll(".btn"));
  })
 
 
-headerSection.addEventListener("mouseover", (event)=> {event.target.style.backgroundColor = "purple";});
+
 navSection.addEventListener("click", (event)=> {event.target.style.backgroundColor = "blue";});
 
 navSection.classList.add("purple");
@@ -53,7 +56,12 @@ theButton.addEventListener("click", event => {
 })
 
 theButton.addEventListener('click', event => {
-    console.log("event")
+    console.log("about to change the DOM")
+    // event.target.style.backgroundColor = 'green'
 })
 
+function listener(event) {
+    console.log(`event passing through: ${event.currentTarget.nodeName}`)
+}
 
+theButton.addEventListener(`click`, listener);
