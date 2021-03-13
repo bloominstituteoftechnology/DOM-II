@@ -1,24 +1,35 @@
 // Your code goes here
 
 //mouseover 
-var navColor = document.querySelector("#nav-id");
-navColor.addEventListener('mouseover', turnPurple)
-function turnPurple(event) {
-    event.target.style.color = 'purple'
-    setTimeout(function () {
-        event.target.style.color = "";
-    }, 500);
-}
 
-//wheel 
-var image = document.querySelector("img[src='img/adventure.jpg']")
-image.onwheel = zoom
+let navItems = document.querySelectorAll('.nav-link')
+navItems.forEach(function (element) {
+    element.addEventListener('mouseover', turnPurple)
+    function turnPurple(event) {
+        event.target.style.color = 'purple'
+        setTimeout(function () {
+            event.target.style.color = "";
+        }, 500);
+    }
+})
 
-    // //load
-    // let imgLoad = document.querySelector('.img-content')
-    // imgLoad.load();
+//click
+let navClick = document.querySelectorAll('.btn')
+navClick.forEach(function (element) {
+    element.addEventListener('click', changeNavColor)
+    function changeNavColor(event) {
+        event.target.stlye.color = 'green'
+    }
+})
 
-    //focus
-    // focusButton = function getFocus() {
-    //     document.getElementsByClassName(".btn").focus();
-    // }
+//dblclick 
+let doubleClick = document.querySelectorAll('.btn')
+doubleClick.forEach(function (element) {
+    element.addEventListener('dblclick', changeColor)
+    function changeColor(event) {
+        event.target.style.color = 'yellow'
+    }
+})
+
+
+
