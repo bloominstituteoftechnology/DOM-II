@@ -5,12 +5,17 @@ const logoSection = document.querySelector('h1');
 const logoStan = document.createElement('img');
 const headerEl = document.querySelector('h1');
 const subHeadLine = document.createElement('h2');
-const imgIn = document.querySelector(".intro img");
-const imgOut = document.querySelector(".intro img");
-const signUpBtn = document.querySelector('.destination')
+const imgInHero = document.querySelector('.intro img');
+const imgOutHero = document.querySelector('.intro img');
+const imgInGo = document.querySelector('.img-content');
+const imgOutGo = document.querySelector('.img-content');
+const imgInAwaits = document.querySelector('.inverse-content img');
+const imgOutAwaits = document.querySelector('.inverse-content img');
+const signUpBtn = document.querySelector('.destination');
+
 
 // create a new LOGO element (IMAGE NOT SHOWING)
-logoStan.src = '/stan.png'
+logoStan.src = 'img/stan.png'
 // style the LOGO element 
 logoStan.style.marginTop = '40px';
 logoStan.style.marginRight = '20px';
@@ -22,89 +27,90 @@ logoSection.prepend(logoStan);
 
 
 // create a new H2 element (OK)
-subHeadLine.textContent = 'Another Headline'
+subHeadLine.textContent = 'Click the yellow bus'
 // style ...
-subHeadLine.style.fontSize = "3rem"
-subHeadLine.style.color = "slategrey"
+subHeadLine.style.fontSize = '2.5rem'
+subHeadLine.style.color = 'slategrey'
 subHeadLine.style.marginBottom = '20px';
 // append ...
 headerEl.appendChild(subHeadLine);
 
 
-// Window E V E N T S * * * 
+// change background color 
+const x = document.getElementsByClassName('destination');
+for (let i = 0; i < x.length; i++) {
+  x[i].style.backgroundColor = 'lightgrey';
+  x[i].style.padding = '10px';
+};
+
+
+// Change 'p' color when select
+const destination = document.querySelector('.content-destination p')
+destination.addEventListener('mousedown', () => {
+    destination.style.color = 'violet';
+})
+destination.addEventListener('mouseup', () => {
+    destination.style.color = 'blue'
+})
+
+
+// Window E V E N T  * * * 
 window.addEventListener('load', event => {
     console.log(`this page is loaded`)
 });
 
-let funBus = document.querySelector('h1, h2');
+
+// Alert on the bus
+let funBus = document.querySelector('.intro img');
 funBus.addEventListener('click', event => {
-    alert('CONGRATULATIONS... You clicked the LOGO!')
-})
+    alert('CONGRATULATIONS... You clicked the BUS!')
+});
 
-// Navigation event (cant make it work)
-// ____________________________________
-// const nav = document.querySelector('.main-navigation');
-// nav.addEventListener = function (event) {
-//     console.log(`${event.type} yellow`)
-// }
 
-// Hero banner transform (OK)
-imgIn.addEventListener("mouseenter", () => {
-    imgIn.style.transform = "scale(1.1)";
-    imgIn.style.transition = "all 0.5s";
-})
-imgOut.addEventListener("mouseleave", () => {
-    imgOut.style.transform = "scale(1)";
-})
+// // Hero banner img transform 
+imgInHero.addEventListener('mouseenter', () => {
+    imgInHero.style.transform = 'scale(1.1)';
+    imgInHero.style.transition = 'all 0.5s';
+});
+imgOutHero.addEventListener('mouseleave', () => {
+    imgOutHero.style.transform = 'scale(1)';
+});
 
-// .forEach to loop all img and apply transform * * * (can't make it work)
-// ________________________________________________
-// const advIn = document.querySelectorAll("img");
-// advIn.forEach("mouseenter", () => {
-//     advIn.style.transform = "scale(1.1)";
-//     advIn.style.transition = "all 0.5s";
-// })
-// const advOut = document.querySelectorAll("img");
-// advOut.forEach("mouseleave", () => {
-//     advOut.style.transform = "scale(1)";
-// })
 
-// Window scrolling + alert (VICTORY)
-// window.addEventListener("scroll", () => {
-//     console.log("window.scrollY", window.scrollY);
-//     if (window.scrollY >= 10000) {
-//       alert("Congratulations, you are a TOP SCROLLER");
-//     }
-//   });
+// Let's Go! img...
+imgInGo.addEventListener('mouseenter', () => {
+    imgInGo.style.transform = 'scale(1.1)';
+    imgInGo.style.transition = 'all 0.5s';
+});
+imgOutGo.addEventListener('mouseleave', () => {
+    imgOutGo.style.transform = 'scale(1)';
+});
 
-// Sign me up 
+
+// Adventure Awaits img...
+imgInAwaits.addEventListener('mouseenter', () => {
+    imgInAwaits.style.transform = 'scale(1.1)';
+    imgInAwaits.style.transition = 'all 0.5s';
+});
+imgOutAwaits.addEventListener('mouseleave', () => {
+    imgOutAwaits.style.transform = 'scale(1)';
+});
+
+
+// Sign me up buttons 
 signUpBtn.onclick = function () {
     console.log(`Fun in the sun`)
 }
-// .forEach all CTA buttons (cant make it work)
-// ____________________________________________
-// const signUpB = document.querySelectorAll('.content-pick')
-// signUpB.forEach = function (event) {
-//     console.log(`Fon ${event.type} in the sun`)
-// };
 
 
-// S K R E C H 
-// _____________________________
-// function simulateClick() {
-//     var evt = new MouseEvent("click", {
-//       bubbles: true,
-//       cancelable: true,
-//       view: window
-//     });
-//     var cb = document.getElement("destination"); //element to click on
-//     var canceled = !cb.dispatchEvent(evt);
-//     if(canceled) {
-//       // A handler called preventDefault
-//       alert("canceled");
-//     } else {
-//       // None of the handlers called preventDefault
-//       alert("not canceled");
-//     }
-//   }
-//   document.getElement(".btn").addEventListener('click', simulateClick);
+// Window scrolling + alert 
+window.addEventListener('scroll', () => {
+    console.log('window.scrollY', window.scrollY);
+    if (window.scrollY >= 1009) {
+        alert('Congratulations, you are a TOP SCROLLER');
+    }
+});
+
+
+//              S T R E C H 
+// ______________ No Time _______________
