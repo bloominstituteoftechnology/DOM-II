@@ -2,11 +2,25 @@
 // Your code goes here
 // first, let's select some things I want to interact with
 
-// signup button
-const signUp = document.querySelectorAll('#btn');
+console.log('This is working')
 
+function launchListner (event) {
+    console.log(`
+    event type: ${event.type}
+    `);
+}
+
+// signup button
+const signUp = document.querySelector('.btn');
+console.log(signUp)
 
 // listner 1: click on signUp button
+
+function clickSignUp () {
+    console.log('you are making a great choice!'); 
+}
+
+signUp.addEventListener('click', clickSignUp);
 
 // listner 2: keydown the esc key to leave the signup pop-up
 
