@@ -27,19 +27,44 @@ heads[0].addEventListener('click', function(e){
     e.target.style.color = 'orange';
     e.target.style.border = '2px dashed red'
 })
+heads[0].addEventListener('mouseover', function(e){
+    e.target.style.color = 'blue';
+    e.target.style.border = '2px dotted green'
+})
+
+
 heads[1].addEventListener('click', function(e){
     e.target.style.color = 'green';
     e.target.style.border = '2px dotted purple'
-    })
+})
+
+heads[1].addEventListener('mouseover', function(e){
+    e.target.style.color = 'red';
+    e.target.style.border = '2px solid black'
+})
+
+
 heads[2].addEventListener('click', function(e){
     e.target.style.color = 'blue';
     e.target.style.border = '2px dashed yellow'
 })
+
+heads[2].addEventListener('mouseover',function(e){
+e.target.style.color = 'purple';
+e.target.style.border ='2px dashed green';
+e.target.style.fontSize = '2rem'
+})
+
+
 heads[3].addEventListener('click', function(e){
     e.target.style.color = 'magenta';
     e.target.style.border = '2px dotted aquamarine'
 })
-
+heads[3].addEventListener('mouseover', function(e){
+e.target.style.color = 'indigo';
+e.target.style.fontSize = '2rem';
+e.target.style.border = '2px solid blue'
+})
 
 //NAV
 
