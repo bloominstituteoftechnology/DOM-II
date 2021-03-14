@@ -11,7 +11,7 @@ const imgInGo = document.querySelector('.img-content');
 const imgOutGo = document.querySelector('.img-content');
 const imgInAwaits = document.querySelector('.inverse-content img');
 const imgOutAwaits = document.querySelector('.inverse-content img');
-const signUpBtn = document.querySelector('.destination');
+const button = document.querySelectorAll('.btn');
 
 
 // create a new LOGO element (IMAGE NOT SHOWING)
@@ -39,8 +39,8 @@ headerEl.appendChild(subHeadLine);
 // change background color 
 const x = document.getElementsByClassName('destination');
 for (let i = 0; i < x.length; i++) {
-  x[i].style.backgroundColor = 'lightgrey';
-  x[i].style.padding = '10px';
+    x[i].style.backgroundColor = 'lightgrey';
+    x[i].style.padding = '10px';
 };
 
 
@@ -67,7 +67,7 @@ funBus.addEventListener('click', event => {
 });
 
 
-// // Hero banner img transform 
+// Hero banner img transform * * * ZOOM ZOOM
 imgInHero.addEventListener('mouseenter', () => {
     imgInHero.style.transform = 'scale(1.1)';
     imgInHero.style.transition = 'all 0.5s';
@@ -75,9 +75,7 @@ imgInHero.addEventListener('mouseenter', () => {
 imgOutHero.addEventListener('mouseleave', () => {
     imgOutHero.style.transform = 'scale(1)';
 });
-
-
-// Let's Go! img...
+// Let's Go! img... ZOOM ZOOM
 imgInGo.addEventListener('mouseenter', () => {
     imgInGo.style.transform = 'scale(1.1)';
     imgInGo.style.transition = 'all 0.5s';
@@ -85,9 +83,7 @@ imgInGo.addEventListener('mouseenter', () => {
 imgOutGo.addEventListener('mouseleave', () => {
     imgOutGo.style.transform = 'scale(1)';
 });
-
-
-// Adventure Awaits img...
+// Adventure Awaits img... ZOOM ZOOM
 imgInAwaits.addEventListener('mouseenter', () => {
     imgInAwaits.style.transform = 'scale(1.1)';
     imgInAwaits.style.transition = 'all 0.5s';
@@ -97,19 +93,22 @@ imgOutAwaits.addEventListener('mouseleave', () => {
 });
 
 
-// Sign me up buttons 
-signUpBtn.onclick = function () {
-    console.log(`Fun in the sun`)
-}
+// Sign me up buttons (take visitors to registration pages)
+for (let i = 0; i < x.length; i++)
+    button[i].addEventListener('click', event => {
+    button[i].textContent = `Click: ${event.detail}`;
+    console.log(`Fun Bus ${event.detail} in the sun`);
+    });
 
 
-// Window scrolling + alert 
-window.addEventListener('scroll', () => {
-    console.log('window.scrollY', window.scrollY);
-    if (window.scrollY >= 1009) {
-        alert('Congratulations, you are a TOP SCROLLER');
-    }
-});
+
+// Window scrolling + alert (can alert/award a visitor for reading the entire page)
+// window.addEventListener('scroll', () => {
+//     console.log('window.scrollY', window.scrollY);
+//     if (window.scrollY >= 1009) {
+//         alert('Congratulations, you are a TOP SCROLLER');
+//     }
+// });
 
 
 //              S T R E C H 
