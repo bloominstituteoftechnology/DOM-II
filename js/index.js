@@ -2,7 +2,17 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const images = document.querySelectorAll("img");
 const coordSpan = document.createElement("span");
+coordSpan.style.position = "fixed";
+coordSpan.innerText = "coord";
+coordSpan.style.top = "2em";
+coordSpan.style.left = "2em";
 const scrollSpan = document.createElement("span");
+scrollSpan.style.position = "fixed";
+scrollSpan.innerText = "scroll";
+scrollSpan.style.top = "2em";
+scrollSpan.style.right = "2em";
+document.querySelector("body").appendChild(coordSpan);
+document.querySelector("body").appendChild(scrollSpan);
 
 navLinks.forEach((link) => {
   link.addEventListener("mouseover", () => link.classList.add("zoom"));
@@ -14,9 +24,9 @@ navLinks.forEach((link) => {
     window.alert(`${e.target} clicked!`);
   });
 });
-
 images.forEach((image) => {
-  image.addEventListener("click", () => {
+  image.addEventListener("click", (e) => {
+    e.stopPropagation();
     document.fullscreenElement
       ? document.exitFullscreen()
       : image.requestFullscreen();
@@ -37,21 +47,9 @@ window.addEventListener("mousemove", (e) => {
   const yPos = e.clientY;
   coordSpan.innerText = `COORD\nX:${xPos}\nY:${yPos}`;
 });
-coordSpan.style.position = "fixed";
-coordSpan.innerText = "coord";
-coordSpan.style.top = "2em";
-coordSpan.style.left = "2em";
-document.querySelector("body").appendChild(coordSpan);
-
 window.addEventListener("load", () =>
   console.log("%cPage Loaded!", "color: limegreen")
 );
-
-scrollSpan.style.position = "fixed";
-scrollSpan.innerText = "scroll";
-scrollSpan.style.top = "2em";
-scrollSpan.style.right = "2em";
-document.querySelector("body").appendChild(scrollSpan);
 window.addEventListener("scroll", () => {
   scrollSpan.innerText = `SCROLL\nX:${scrollX}\nY:${scrollY}`;
 });
