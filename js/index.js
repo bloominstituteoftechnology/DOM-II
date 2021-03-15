@@ -1,10 +1,10 @@
 // Your code goes here
 
-let highlight = document.querySelector('container-home');
+let highlight = document.querySelector('destination');
 highlight.addEventListener('hover', (event) => {event.target.style.backgroundColor = "pink"; })
 
 
-// 1. for the nav info, changing th ecolors of the links.
+// 1. for the nav info, changing the colors of the links.
 
 const navigation = document.querySelector('.nav')
  navigation.addEventListener('mouseover', (event) => {
@@ -51,14 +51,7 @@ let button = document.querySelector('.content-section');
 
 // 5. scroll info in the window
 
-window.addEventListener('scroll', function() {
-	console.log('they see me scrollin);
-});
-// 6. 
-// const button = document.querySelector('btn');
-// button.addEventListener('mouseover', function(){
-//   alert('submit info')
-// })
+
 
 // 6.password blur/hide feature i added in
 
@@ -79,6 +72,14 @@ submitButton.addEventListener('click', (event) =>{
   alert("wooooah, mondo thanks bromosapien!!")
 })
 
-// 8.
+// 8.adds "welcome to fun bus" text
+
+document.addEventListener("click", function(){
+    document.getElementById("demo").innerHTML = "Welcome To Fun Bus!";
+  });
 
 
+//9. change background color on click.
+document.addEventListener("click", function(){
+    document.body.style.backgroundColor = "lavender";
+  });
