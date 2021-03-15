@@ -37,3 +37,7 @@ coordSpan.innerText = "testing";
 coordSpan.style.top = "2em";
 coordSpan.style.left = "2em";
 document.querySelector("body").appendChild(coordSpan);
+
+window.addEventListener("load", () =>
+  console.log("%cPage Loaded!", "color: limegreen")
+);
