@@ -47,3 +47,28 @@ Array.from(button).forEach(function(btn){
 document.addEventListener('pointerover', function (event){
     console.log('Pointover has occured');
 })
+
+// KEYUP
+
+document.addEventListener('keyup', function(event){
+    event.target.style.background = 'grey';
+})
+
+// ONCLICK
+
+const header = document.querySelectorAll('.main-navigation');
+
+Array.from(header).forEach(function (main){
+    main.addEventListener('click', function(event){
+        event.target.style.background = 'green';
+    })
+})
+
+const caps = document.querySelectorAll('.text-content h2');
+
+Array.from(caps).forEach(function (cap){
+    cap.addEventListener('mouseover', function(event){
+        event.target.style.background = 'grey';
+        event.target.style.color = 'white';
+    })
+})
