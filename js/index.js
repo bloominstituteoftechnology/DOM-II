@@ -4,3 +4,15 @@ const buttons = document.querySelectorAll(".btn");
     (event)=> {event.target.style.backgroundColor = 'red';});
 
     })
+
+    const links = document.querySelectorAll(".nav")
+    links.forEach(link => {link.addEventListener("mouseover",
+     (event) => { event.target.style.color = "red";});
+    })
+
+    const text = document.querySelector("p");
+    Array.from(text).forEach(Element => {
+        Element.addEventListener("dblclick", (event => {
+            event.target.style.backgroundColor = "pink";
+        }));
+    })
