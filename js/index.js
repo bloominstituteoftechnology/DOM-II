@@ -19,6 +19,7 @@ const header = document.querySelector('header');
 const destination = document.querySelector('.destination')
 const letsGoImage = document.querySelector('.content-section .img-content')
 const adventureSection = document.querySelector('.content-section.inverse-content')
+const letsGoText = document.querySelector('.text-content')
 
 body.addEventListener("keydown", event => {
     body.style.backgroundColor = 'cyan';
@@ -38,4 +39,11 @@ adventureSection.addEventListener("mouseenter", event => {
 
 adventureSection.addEventListener("mouseleave", event => {
     adventureSection.style.backgroundColor = ''
+})
+
+letsGoText.addEventListener('click', event => {
+    letsGoText.style.backgroundColor = "green"
+})
+letsGoText.addEventListener('dblclick', event => {
+    letsGoText.style.backgroundColor = "grey"
 })
