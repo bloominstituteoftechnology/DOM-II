@@ -23,3 +23,11 @@ document.addEventListener("keydown",function(event){
         paragraph.forEach(item => item.style.color = "white");
     }
 })
+
+// four
+document.addEventListener("keydown",function(event){
+    if(event.key === "b"){
+        console.log(paragraph);
+        paragraph.forEach(item => item.style.color = "black");
+    }
+})
