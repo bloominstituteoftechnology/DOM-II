@@ -4,7 +4,9 @@
 const signUpBtn = document.querySelector(".btn");
 const firstImg = document.querySelector('#first-img');
 const paragraph = document.querySelectorAll('p')
+const destinationImg = document.querySelector('.content-destination img')
 
+console.log(destinationImg);
 //One
 signUpBtn.addEventListener("click",function(event){
     signUpBtn.style.background = 'red';
@@ -31,3 +33,8 @@ document.addEventListener("keydown",function(event){
         paragraph.forEach(item => item.style.color = "black");
     }
 })
+
+//five
+destinationImg.addEventListener("mouseover",function(event){
+    destinationImg.style.filter = "grayscale(50%)";
+} )
