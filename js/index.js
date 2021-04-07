@@ -2,7 +2,7 @@
 const images = document.querySelector("img");
 const nav = document.querySelector("nav");
 const bodyText = document.querySelector("p");
-const containerImages = document.querySelector(".container > img");
+const containerHeaders = document.querySelector(".img-content");
 const button = document.querySelector('.btn')
 //--------------------------------------------------------------------------------
 
@@ -43,3 +43,23 @@ button.addEventListener('click', event => {
     button.style.backgroundColor = 'purple';
   });
 
+  containerHeaders.addEventListener('dblclick', function (event) {
+    containerHeaders.classList.toggle('large');
+  });
+  
+  document.addEventListener('copy', (event) => {
+    console.log('copy action initiated')
+});
+
+document.addEventListener('paste', (event) => {
+    console.log('paste action initiated')
+});
+
+
+document.addEventListener('selectionchange', () => {
+    console.log(document.getSelection());
+  });
+  
+  document.onselectionchange = () => {
+    console.log(document.getSelection());
+  };
