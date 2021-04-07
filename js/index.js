@@ -20,7 +20,8 @@ const destination = document.querySelector('.destination')
 const letsGoImage = document.querySelector('.content-section .img-content')
 const adventureSection = document.querySelector('.content-section.inverse-content')
 const letsGoText = document.querySelector('.text-content')
-
+const h2Thing = document.querySelectorAll('h2')
+console.log(h2Thing)
 body.addEventListener("keydown", event => {
     body.style.backgroundColor = 'cyan';
 })
@@ -46,4 +47,12 @@ letsGoText.addEventListener('click', event => {
 })
 letsGoText.addEventListener('dblclick', event => {
     letsGoText.style.backgroundColor = "grey"
+})
+
+h2Thing[0].addEventListener('mouseup', event => {
+    h2Thing[0].innerText = "im hungry"
+})
+
+h2Thing[1].addEventListener('mousedown', event => {
+    h2Thing[1].innerText = "im thirsty"
 })
