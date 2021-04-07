@@ -13,6 +13,7 @@
 // 10. contextmenu
 
 // variables
+
 const title = document.querySelector('title');
 const body = document.querySelector('body');
 const header = document.querySelector('header');
@@ -23,8 +24,9 @@ const letsGoText = document.querySelector('.text-content')
 const h2Thing = document.querySelectorAll('h2')
 const pickSection = document.querySelector('.content-destination')
 const navButtons = document.querySelectorAll(".nav-link")
-console.log(navButtons)
+
 //addEventListener functions
+
 body.addEventListener("keydown", event => {
     body.style.backgroundColor = 'cyan';
 })
@@ -66,21 +68,9 @@ pickSection.addEventListener('contextmenu', event => {
 
 // preventing the nav buttons from leaving the page
 
-
-// navButtons.forEach((element) => {
-//     element.addEventListener("click", event => {
-//             navButtons.innerText = "HAHAHA"
-//             event.preventDefault()
-// })
-// }
-
 navButtons.forEach((elem) => {
     elem.addEventListener("click", (event) => {
         navButtons.innerText = "HAHAHA"
         event.preventDefault()
     });
   });
-// navButtons.addEventListener("click", event => {
-//     navButtons.innerText = "HAHAHA"
-//     event.preventDefault()
-// })
