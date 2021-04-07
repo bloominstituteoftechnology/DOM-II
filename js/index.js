@@ -12,7 +12,7 @@
 // 9. mouseup
 // 10. contextmenu
 
-
+// variables
 const title = document.querySelector('title');
 const body = document.querySelector('body');
 const header = document.querySelector('header');
@@ -21,7 +21,9 @@ const letsGoImage = document.querySelector('.content-section .img-content')
 const adventureSection = document.querySelector('.content-section.inverse-content')
 const letsGoText = document.querySelector('.text-content')
 const h2Thing = document.querySelectorAll('h2')
-console.log(h2Thing)
+const pickSection = document.querySelector('.content-destination')
+
+//addEventListener functions
 body.addEventListener("keydown", event => {
     body.style.backgroundColor = 'cyan';
 })
@@ -55,4 +57,8 @@ h2Thing[0].addEventListener('mouseup', event => {
 
 h2Thing[1].addEventListener('mousedown', event => {
     h2Thing[1].innerText = "im thirsty"
+})
+
+pickSection.addEventListener('contextmenu', event => {
+    event.preventDefault()
 })
