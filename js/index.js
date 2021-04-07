@@ -3,8 +3,12 @@
 //Elements from the DOM
 const signUpBtn = document.querySelector(".btn");
 const firstImg = document.querySelector('#first-img');
-const paragraph = document.querySelectorAll('p')
-const destinationImg = document.querySelector('.content-destination img')
+const paragraph = document.querySelectorAll('p');
+const destinationImg = document.querySelector('.content-destination img');
+const adventureImg = document.querySelector('#adventureImg');
+const funImg = document.querySelector('#funImg');
+const img = document.querySelectorAll('img')
+
 
 console.log(destinationImg);
 //One
@@ -38,3 +42,19 @@ document.addEventListener("keydown",function(event){
 destinationImg.addEventListener("mouseover",function(event){
     destinationImg.style.filter = "grayscale(50%)";
 } )
+
+//six 
+adventureImg.addEventListener("mouseover",function(event){
+    adventureImg.style.filter = "grayscale(65%)";
+} )
+//seven
+funImg.addEventListener("mouseover",function(event){
+    funImg.style.filter = "grayscale(65%)";
+} )
+
+//eight
+document.addEventListener("keydown",function(event){
+    if(event.key === "i"){
+        img.forEach(item => item.style.filter = 'grayscale(0%)');
+    }
+})
