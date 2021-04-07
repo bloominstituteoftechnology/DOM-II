@@ -22,7 +22,8 @@ const adventureSection = document.querySelector('.content-section.inverse-conten
 const letsGoText = document.querySelector('.text-content')
 const h2Thing = document.querySelectorAll('h2')
 const pickSection = document.querySelector('.content-destination')
-
+const navButtons = document.querySelectorAll(".nav-link")
+console.log(navButtons)
 //addEventListener functions
 body.addEventListener("keydown", event => {
     body.style.backgroundColor = 'cyan';
@@ -62,3 +63,24 @@ h2Thing[1].addEventListener('mousedown', event => {
 pickSection.addEventListener('contextmenu', event => {
     event.preventDefault()
 })
+
+// preventing the nav buttons from leaving the page
+
+
+// navButtons.forEach((element) => {
+//     element.addEventListener("click", event => {
+//             navButtons.innerText = "HAHAHA"
+//             event.preventDefault()
+// })
+// }
+
+navButtons.forEach((elem) => {
+    elem.addEventListener("click", (event) => {
+        navButtons.innerText = "HAHAHA"
+        event.preventDefault()
+    });
+  });
+// navButtons.addEventListener("click", event => {
+//     navButtons.innerText = "HAHAHA"
+//     event.preventDefault()
+// })
