@@ -3,13 +3,11 @@
 //WELCOME H2 Change Color on click
 const welcome = document.getElementById('welcome');
 
-welcome.addEventListener('click', e => {
-    
+welcome.addEventListener('click', () => {
     welcome.style.color = "green"
-    if (welcome.style.color = "green") {
-        welcome.style.color = "black"
-    }
+
 })
+
 
 
 //preventDefault() Toggle Setup
@@ -72,6 +70,27 @@ window.addEventListener('dblclick', () => {
         item.style.fontSize = "4rem"
     })
 })
+
+
+// PointerOver
+
+const pinkLinks = document.querySelectorAll('.nav-link');
+
+pinkLinks.forEach(item => {
+    item.addEventListener('pointerover', () => {
+        item.style.color = "pink"
+    })
+})
+
+//pointerout 
+
+pinkLinks.forEach(item => {
+    item.addEventListener('pointerout', () => {
+        item.style.color = "black"
+    })
+})
+
+
 
 
 
