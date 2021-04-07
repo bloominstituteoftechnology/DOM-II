@@ -91,6 +91,23 @@ pinkLinks.forEach(item => {
 })
 
 
+//stop propogation 
+
+const parentNav = document.querySelector('.nav-container');
+
+const childLink = document.querySelector('nav a:nth-of-type(1)');
+
+parentNav.addEventListener('click', () => {
+    console.log('parent')
+})
+
+childLink.addEventListener('click', (e) => {
+    e.stopPropagation()
+    console.log('child')
+    
+})
+
+
 
 
 
