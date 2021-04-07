@@ -7,7 +7,8 @@ const paragraph = document.querySelectorAll('p');
 const destinationImg = document.querySelector('.content-destination img');
 const adventureImg = document.querySelector('#adventureImg');
 const funImg = document.querySelector('#funImg');
-const img = document.querySelectorAll('img')
+const img = document.querySelectorAll('img');
+const body = document.querySelector('body');
 
 
 console.log(destinationImg);
@@ -55,6 +56,19 @@ funImg.addEventListener("mouseover",function(event){
 //eight
 document.addEventListener("keydown",function(event){
     if(event.key === "i"){
-        img.forEach(item => item.style.filter = 'grayscale(0%)');
+        img.forEach(item => item.style.filteri = 'grayscale(0%)');
+    }
+})
+
+//nine
+document.addEventListener("keydown",function(event){
+    if(event.key === "q"){
+        body.style.backgroundColor = 'red';
+    }
+})
+//ten
+document.addEventListener("keydown",function(event){
+    if(event.key === "u"){
+        body.style.backgroundColor = 'white';
     }
 })
