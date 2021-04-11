@@ -50,7 +50,7 @@ funImg.addEventListener('mouseleave', (event) => {
 	event.target.style.transform = 'translateX(10px)';
 });
 
-//mouseover 
+//Mouseover 
 const headerDiv = document.querySelector('.intro');
 headerDiv.addEventListener('mouseover', event => {
     event.target.style.backgroundColor = 'blue'
@@ -72,4 +72,33 @@ button.forEach((element) => {
 		event.target.style.color = 'floralWhite';
 		event.stopPropagation();
 	});
+});
+
+//  Body Paragraph Editing
+const introText = document.querySelectorAll('body');
+
+introText.forEach((element) => {
+	element.addEventListener('click', (event) => {
+		event.target.style.color = 'green';
+	});
+});
+
+// H2 Styling to change color
+const headlines = document.querySelectorAll('body h2');
+console.log(headlines, 'Selecting headers');
+
+headlines.forEach((element) => {
+	element.addEventListener('click', (event) => {
+		event.target.style.color = 'steelBlue';
+		event.stopPropagation();
+	});
+});
+
+
+//Footer 
+const footerLoad = document.querySelector('.footer p');
+console.log(footerLoad, 'Selecting footer');
+footerLoad.addEventListener('load', (event) => {
+	event.target.innerHTML = 'It has been loaded!';
+	event.stopPropagation();
 });
