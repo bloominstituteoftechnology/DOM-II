@@ -25,26 +25,26 @@ function clockWise(event){
 
 //3rd event
 const resize = document.querySelectorAll('img')[0];
+resize.addEventListener('mouseover',sizeUp, false)
+resize.addEventListener('mouseout',sizeDown, false)
 
-resize.addEventListener('mouseover',function(event)
-{
-    event.target.style.transform = 'scale(1.1)'
-})
-
-resize.addEventListener('mouseout',function(event)
-{
-    event.target.style.transform = 'scale(1)'
-})
-
-//4th event
 const resize2 = document.querySelectorAll('img')[1]
+resize2.addEventListener('mouseover',sizeUp, false)
+resize2.addEventListener('mouseout',sizeDown, false)
 
-resize2.addEventListener('mouseover',function(event)
-{
-    event.target.style.transform = 'scale(1.1)'
-})
+const resize3 = document.querySelectorAll('img')[2]
+resize3.addEventListener('mouseover',sizeUp, false)
+resize3.addEventListener('mouseout',sizeDown, false)
 
-resize2.addEventListener('mouseout',function(event)
-{
+const resize4 = document.querySelectorAll('img')[3]
+resize4.addEventListener('mouseover',sizeUp)
+resize4.addEventListener('mouseout',sizeDown)
+
+function sizeUp(event){
+event.target.style.transform = 'scale(1.1)'
+}
+function sizeDown(event){
     event.target.style.transform = 'scale(1)'
-})
+}
+
+
