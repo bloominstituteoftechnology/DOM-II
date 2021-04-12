@@ -47,4 +47,24 @@ function sizeDown(event){
     event.target.style.transform = 'scale(1)'
 }
 
+const clickedOn = document.querySelectorAll('.btn')[0]
 
+clickedOn.addEventListener('click', selectedButton, false)
+clickedOn.addEventListener('click', selectedButton1, false)
+
+const clickedOn1 = document.querySelectorAll('.btn')[1]
+clickedOn1.addEventListener('click', selectedButton, false)
+clickedOn1.addEventListener('click', selectedButton1, false)
+
+const clickedOn2 = document.querySelectorAll('.btn')[2]
+clickedOn2.addEventListener('click', selectedButton, false)
+clickedOn2.addEventListener('click', selectedButton1, false)
+
+
+function selectedButton(event1){
+    event1.target.style.background = 'blue'    
+}
+
+function selectedButton1(event){
+    event.target.style.color = 'white'
+}
