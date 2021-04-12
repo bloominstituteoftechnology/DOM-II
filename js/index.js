@@ -23,3 +23,28 @@ function clockWise(event){
     event.target.style.transform = 'rotate(20deg)'
 }
 
+//3rd event
+const resize = document.querySelectorAll('img')[0];
+
+resize.addEventListener('mouseover',function(event)
+{
+    event.target.style.transform = 'scale(1.1)'
+})
+
+resize.addEventListener('mouseout',function(event)
+{
+    event.target.style.transform = 'scale(1)'
+})
+
+//4th event
+const resize2 = document.querySelectorAll('img')[1]
+
+resize2.addEventListener('mouseover',function(event)
+{
+    event.target.style.transform = 'scale(1.1)'
+})
+
+resize2.addEventListener('mouseout',function(event)
+{
+    event.target.style.transform = 'scale(1)'
+})
