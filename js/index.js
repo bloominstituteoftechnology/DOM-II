@@ -10,6 +10,6 @@ nav.addEventListener('mouseenter', (event) => {
 });
 
 nav.addEventListener('wheel', (event) => {
-    nav.style.color = 'red';
+    nav.style.color = 'blue';
 }); 
 
