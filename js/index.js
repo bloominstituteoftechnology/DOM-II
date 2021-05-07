@@ -14,14 +14,17 @@ allLinksArray.forEach(link => {
     link.addEventListener('mouseover', e => {
         link.style.color = "aqua";
     })
-})
 
-allLinksArray.forEach(link => {
     link.addEventListener('mouseout', e => {
         link.style.color = "black";
+    }) 
+
+    link.addEventListener('focus', e => {
+        link.style.backgroundColor = "#FFEBCD";
     })
 })
 
+     
 for(let i=0; i < image.length; i += 1){
 image[i].addEventListener('click', e => {
     image[i].style.borderRadius = "50%";
@@ -50,10 +53,3 @@ const navBorder = document.querySelector('.main-navigation');
 document.addEventListener('scroll', e => {
     navBorder.style.borderBottom = "2px solid #C0C0C0";
 })
-
-
-
-
-
-
-
