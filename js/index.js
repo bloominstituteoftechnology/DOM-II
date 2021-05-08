@@ -1,3 +1,22 @@
+//_______________ Dark Mode Toggle ________________
+
+
+const buttonClick = document.querySelector('#theButton');
+
+buttonClick.addEventListener("click", function() {
+    const color = document.body.style.backgroundColor;
+
+    if (color === 'rgb(193, 214, 226)') {
+        document.body.style.backgroundColor = "grey";
+    }
+    else {
+        document.body.style.backgroundColor = "rgb(193, 214, 226)";
+    }
+});
+
+
+//______________________________________________________________
+
 // _____ QSA = Nodelist of 4 ____ QS 1 whole element ____
 
 // const navLinks = document.querySelector('nav a'); 
@@ -62,6 +81,10 @@ const mainImage = document.querySelector('.intro img');
 // console.log(mainImage); // Image element.
 
 mainImage.style.borderRadius = "10px";
+
+
+
+
 
 
 //_________________ Sad Bus on click (header) ___________________
@@ -156,6 +179,10 @@ amlak.addEventListener('click', () => {
     amlak.textContent = 'Amlak';
     amlak.style.color = 'red';
 }); 
+
+
+
+
 
 
 
