@@ -5,14 +5,28 @@ const buttonClick = document.querySelector('#theButton');
 
 buttonClick.addEventListener("click", function() {
     const color = document.body.style.backgroundColor;
-
     if (color === 'rgb(193, 214, 226)') {
-        document.body.style.backgroundColor = "grey";
+        document.body.style.backgroundColor = "#272727";
+        document.body.style.color = "rgb(193, 214, 226)";
     }
     else {
         document.body.style.backgroundColor = "rgb(193, 214, 226)";
+        document.body.style.color = "black";
     }
 });
+
+
+
+
+// _______________ Amlaks _____________
+
+// const darkMode = document.querySelector('body')
+
+// darkMode.addEventListener('click', function(event) {
+//     event.target.style.color = 'lightblue';
+//     darkMode.style.backgroundColor ="#272727";
+// });
+
 
 
 //______________________________________________________________
@@ -34,7 +48,7 @@ const navLinks = document.querySelectorAll('nav a'); // Nodelist of 4.
 
 navLinks.forEach(link => {                           // Iterates over the Nodelist of 4.
     link.addEventListener('mouseenter', () => {      // Listens for a mouse enter.
-        link.style.transform ="scale(1.05)";         // Does something when something is heard.
+        // link.style.transform ="scale(1.05)";         // Does something when something is heard.
         // navLinks.style.transition = "all 0.8s"    // Have no clue why Dan used this!
         link.style.color = "blue";                   // Changes link color on hover.
     });
@@ -46,7 +60,7 @@ navLinks.forEach(link => {                           // Iterates over the Nodeli
 
 navLinks.forEach(link => {                           // Iterates over the Nodelist of 4.  
     link.addEventListener('mouseleave', () => {      // Listens for a mouse enter.
-        link.style.transform ="scale(1)";            // Does something when something is heard.
+        // link.style.transform ="scale(1)";            // Does something when something is heard.
         link.style.color  = "black";                 // Changes link color back.  
     });
 });
@@ -179,6 +193,8 @@ amlak.addEventListener('click', () => {
     amlak.textContent = 'Amlak';
     amlak.style.color = 'red';
 }); 
+
+//++++++++++++++++++++++++++++++++++++++++++
 
 
 
