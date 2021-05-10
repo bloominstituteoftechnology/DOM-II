@@ -1,4 +1,26 @@
 // Your code goes here
+const mainNav = document.querySelector('.main-navigation')
+mainNav.addEventListener('click', (event) => {
+
+    event.target.style.backgroundColor = "crimson";  
+    //event.style.transform = "scale(2.5)";
+    event.target.style.border = "5px solid blue";
+    event.target.style.transform = "scale(1.5)";
+    event.preventDefault()
+
+           });
+
+           mainNav.addEventListener('dblclick', (event) => {
+
+            event.target.style.backgroundColor = "white";  
+            //event.style.transform = "scale(2.5)";
+            event.target.style.border = "0px ";
+            event.target.style.transform = "scale(1)";
+            event.target.preventDefault()
+        
+                   });
+
+
 const legoHeading = document.querySelector('.logo-heading')
 legoHeading.addEventListener('click', (event) =>{
 event.target.style.backgroundColor = 'purple'
@@ -7,6 +29,13 @@ event.target.style.color = 'white'
 event.target.style.transform = "scale(2.5)"
 event.stopPropagation()
 })
+legoHeading.addEventListener('dblclick', (event) =>{
+    event.target.style.backgroundColor = 'white'
+    event.target.style.borderRadius = '1px'
+    event.target.style.color = 'black'
+    event.target.style.transform = "scale(1)"
+    event.stopPropagation()
+    })
 
 const navBar = document.querySelector('.nav')
 navBar.addEventListener('click', (event) =>{
@@ -17,6 +46,14 @@ navBar.addEventListener('click', (event) =>{
     event.target.style.transition = '2s'
     event.stopPropagation()
     })
+    navBar.addEventListener('dblclick', (event) =>{
+        event.target.style.backgroundColor = 'white'
+        event.target.style.borderRadius = '10px'
+        event.target.style.color = 'black'
+        
+        event.stopPropagation()
+        })
+
 const imgHeader = document.querySelector('.intro img')
 imgHeader.addEventListener('mouseenter', (event) =>{
     event.target.style.transform ='rotate(180deg)'
@@ -122,7 +159,7 @@ footer.addEventListener('click', (event) =>{
     event.target.style.backgroundColor ='green'
     
 })
-footer.addEventListener('load', (event) =>{
+footer.addEventListener('click', (event) =>{
     event.target.style.transform = 'scale(2.0)'
     event.target.style.transition ='transform 7s'
     event.target.style.backgroundColor ='red'
