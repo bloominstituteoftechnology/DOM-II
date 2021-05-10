@@ -14,6 +14,9 @@ scrollSpan.style.right = "2em";
 document.querySelector("body").appendChild(coordSpan);
 document.querySelector("body").appendChild(scrollSpan);
 
+const logEventToConsole = (event) =>
+  console.log(`${event.type} event detected. Target: ${event.target}`);
+
 const toggleZoom = (link) => {
   // destructure object provided as argument
   const { element, value } = link;
@@ -30,25 +33,29 @@ const toggleZoom = (link) => {
 
 const addEventListeners = (link) => {
   // enlarge button when moused over
-  link.addEventListener("mouseover", () =>
-    toggleZoom({ element: link, value: true })
-  );
+  link.addEventListener("mouseover", (event) => {
+    toggleZoom({ element: link, value: true });
+    logEventToConsole(event);
+  });
   // return to normal size when cursor moves away from element
-  link.addEventListener("mouseout", () =>
-    toggleZoom({ element: link, value: false })
-  );
+  link.addEventListener("mouseout", (event) => {
+    toggleZoom({ element: link, value: false });
+    logEventToConsole(event);
+  });
 
   // make button animate when clicked, keeping it small until you let the mouse button go
-  link.addEventListener("mousedown", () =>
-    toggleZoom({ element: link, value: false })
-  );
-  link.addEventListener("mouseup", () =>
-    toggleZoom({ element: link, value: true })
-  );
+  link.addEventListener("mousedown", (event) => {
+    toggleZoom({ element: link, value: false });
+    logEventToConsole(event);
+  });
+  link.addEventListener("mouseup", (event) => {
+    toggleZoom({ element: link, value: true });
+    logEventToConsole(event);
+  });
 
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(`${event.target} clicked!`);
+    logEventToConsole(event);
   });
 };
 
@@ -75,6 +82,7 @@ images.forEach((image) => {
 
 window.addEventListener("click", (event) => {
   event.preventDefault();
+  logEventToConsole(event);
   console.log(`You clicked X:${event.clientX}, Y:${event.clientY}`);
 });
 
@@ -84,10 +92,12 @@ window.addEventListener("mousemove", (event) => {
   coordSpan.innerText = `COORD\nX:${xPos}\nY:${yPos}`;
 });
 
-window.addEventListener("load", () =>
-  console.log("%cPage Loaded!", "color: limegreen")
-);
+window.addEventListener("load", (event) => {
+  logEventToConsole(event);
+  console.log("%cPage Loaded!", "color: limegreen");
+});
 
 window.addEventListener("scroll", () => {
   scrollSpan.innerText = `SCROLL\nX:${scrollX}\nY:${scrollY}`;
 });
+window.addEventListener("resize", logEventToConsole);
