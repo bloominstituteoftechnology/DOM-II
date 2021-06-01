@@ -10,6 +10,7 @@
 //   * `select`
 //   * `dblclick`-
 //   * `drag / drop`
+//      keydown
 
 //Selectors
 
@@ -30,15 +31,20 @@ const footerText = document.querySelector('.footer')
 
 //Event Listeners and Methods
 
+//keydown
+footerText.addEventListener('keydown', (event) => {
+    event.target.style.background = "red"
+})
+
 //Nav
 navButtons.addEventListener('mouseover', (event) => {
     event.target.style.color = "blue"
-    //event.target.style.font-size = 10px
+    event.target.style.fontSize = "small"
     //event.target.style.text-shadow = 2px 2px lightgrey
 });
 
 //HeaderImg
-let lastScrollPositionY = 0;
+const lastScrollPositionY = 0;
 topImage.addEventListener('scroll', (event) => {
     event.lastScrollPositionY = window.scrollY;
 });
@@ -47,13 +53,13 @@ function resize (event) {
    console.log("resize!")
 }
 
-topImage.addEventListener('resize', resize);
+topImage.addEventListener('click', resize);
 
 //letsGo
 
 letsGo.addEventListener('click', (event) => {
     event.target.style.color = 'red';
-    event.target.style.fontSize = 10;
+    event.target.style.fontSize = 'large';
 })
 
 
