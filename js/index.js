@@ -56,4 +56,15 @@ welcome.addEventListener('dblclick', event => {
         event.currentTarget.style.color = "black";
         isRed = false;
     }
+});
+
+let isBig = false
+document.addEventListener('keydown', event => {
+    if (isBig === false) {
+        document.querySelector('h1').style.fontSize = '5rem';
+    isBig = true;
+    } else {
+        document.querySelector('h1').style.fontSize = '3.2rem';
+    isBig = false;
+    }
 })
