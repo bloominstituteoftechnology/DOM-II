@@ -88,7 +88,7 @@ images.addEventListener('mouseleave', event => {
     event.target.style.boxShadow = "none";
 });
 
-let intropara = document.querySelector('.intro > p');
+const intropara = document.querySelector('.intro > p');
 intropara.addEventListener('copy', event => {
     event.clipboardData.setData('text/plain', "What do you think you're doing?");
     event.preventDefault();
@@ -99,5 +99,15 @@ navigation.addEventListener('click', event => {
     var jeopardy = document.createElement("AUDIO");
     jeopardy.src = "jeopardy.mp3"
     jeopardy.play();
+    setTimeout(function(){
+        jeopardy.pause();
+    }, 5000)
 }, {once:true});
 
+const destination = document.querySelector('.content-destination');
+destination.addEventListener('mouseenter', event => {
+    event.target.style.backgroundColor = "green";
+});
+destination.addEventListener('mouseleave', event => {
+    event.target.style.backgroundColor = "white";
+});
