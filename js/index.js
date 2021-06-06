@@ -1,6 +1,14 @@
 // Your code goes here
 const logo = document.querySelector('.logo-heading')
 let run = true;
+
+const content = document.querySelector('.content-section')
+const bus = document.createElement('img')
+bus.src = "bus.png"
+bus.setAttribute('id', 'bus')
+bus.setAttribute('style', 'display: none')
+content.appendChild(bus)
+
 logo.addEventListener('mouseover', event => {
     if (run === true) {
         let elem = document.getElementById("bus"),
@@ -28,9 +36,12 @@ logo.addEventListener('mouseover', event => {
     }
 });
 
-const busimg = document.querySelector('#sandbus');
+
+const intro = document.querySelector('.intro');
+const busimg = intro.querySelector('img');
 
 busimg.addEventListener('click', event => {
-    var honk = document.getElementById("honk");
+    var honk = document.createElement("AUDIO");
+    honk.src = "horn.mp3"
     honk.play();
 })
