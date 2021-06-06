@@ -33,7 +33,7 @@ logo.addEventListener('mouseover', event => {
             }
             elem.style.left = currentPos+"px";
         },30);
-    }
+    };
 });
 
 
@@ -44,4 +44,16 @@ busimg.addEventListener('click', event => {
     var honk = document.createElement("AUDIO");
     honk.src = "horn.mp3"
     honk.play();
+});
+
+const welcome = document.querySelector('.intro > h2');
+let isRed = false;
+welcome.addEventListener('dblclick', event => {
+    if (isRed === false) {
+        event.currentTarget.style.color = "red";
+        isRed = true;
+    } else {
+        event.currentTarget.style.color = "black";
+        isRed = false;
+    }
 })
