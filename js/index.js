@@ -26,22 +26,25 @@ logoImg.addEventListener('mouseout', () => {
 //add interactivity to nav bar upon clicks
 const  navItem = document.querySelectorAll('a')
 
-// navItem.preventDefault()
-   
+
 navItem[0].addEventListener("click", e => {
     e.target.style.fontSize = "4rem"
+    navItem.preventDefault()
 })
 
 navItem[1].addEventListener("click", e => {
     e.target.style.color = "green"
+    navItem.preventDefault()
 })
 
 navItem[2].addEventListener("click", e => {
     e.target.style.color = "pink"
+    navItem.preventDefault()
 })
 
 navItem[3].addEventListener("click", e => {
     e.target.style.color = "blue"
+    navItem.preventDefault()
 })
 
 //double click to remove image
@@ -60,12 +63,25 @@ bodyScreen.addEventListener("wheel" , () => {
     bodyScreen.style.color = "white"
     logoImg.style.color = "black"
     logoSub.style.color = "black"
-    // stopPropogation()
+    stopPropogation()
 })
+
+//resets the scroll event propagation when space is pressed
+bodyScreen.addEventListener('keypress', event => {
+    if (event.key == " ") {
+    event.preventDefault()
+    event.target.style.backgroundColor = "white"
+    event.target.style.color = "black"
+    }
+}) 
 
 //highlight the footer and change the text size upon mouseover
 const footerHigh = document.querySelector('.footer');
 footerHigh.addEventListener('mouseover', (event) => {event.target.style.backgroundColor = "green"; })
 footerHigh.addEventListener('mouseover', (event) => {event.target.style.fontSize = "3rem"; })
 
-
+//changes the "intro section class" to red when double clicked
+const intro = document.querySelector('.intro')
+intro.addEventListener('dblclick', event => {
+    event.target.style.backgroundColor = "orange"
+})
