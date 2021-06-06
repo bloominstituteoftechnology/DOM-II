@@ -25,6 +25,8 @@ logoImg.addEventListener('mouseout', () => {
 
 //add interactivity to nav bar upon clicks
 const  navItem = document.querySelectorAll('a')
+
+// navItem.preventDefault()
    
 navItem[0].addEventListener("click", e => {
     e.target.style.fontSize = "4rem"
@@ -60,3 +62,10 @@ bodyScreen.addEventListener("wheel" , () => {
     logoSub.style.color = "black"
     // stopPropogation()
 })
+
+//highlight the footer and change the text size upon mouseover
+const footerHigh = document.querySelector('.footer');
+footerHigh.addEventListener('mouseover', (event) => {event.target.style.backgroundColor = "green"; })
+footerHigh.addEventListener('mouseover', (event) => {event.target.style.fontSize = "3rem"; })
+
+
