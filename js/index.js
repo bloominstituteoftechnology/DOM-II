@@ -70,11 +70,20 @@ document.addEventListener('keydown', event => {
 });
 
 
-const mapImg = document.querySelector('nav')
+const navigation = document.querySelector('nav')
 document.addEventListener('wheel', event => {
     if (event.deltaY < 0) {
-        mapImg.style.opacity = '1'
+        navigation.style.opacity = 0;
     } else {
-        mapImg.style.opacity = '0'
+        navigation.style.opacity = 1;
     }
 })
+
+const images = document.querySelector('.img-content > img');
+images.addEventListener('mouseenter', event => {
+    event.target.style.boxShadow = "0 0 10px black";
+});
+
+images.addEventListener('mouseleave', event => {
+    event.target.style.boxShadow = "none";
+});
