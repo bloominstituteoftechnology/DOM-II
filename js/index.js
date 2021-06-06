@@ -67,4 +67,14 @@ document.addEventListener('keydown', event => {
         document.querySelector('h1').style.fontSize = '3.2rem';
     isBig = false;
     }
+});
+
+
+const mapImg = document.querySelector('nav')
+document.addEventListener('wheel', event => {
+    if (event.deltaY < 0) {
+        mapImg.style.opacity = '1'
+    } else {
+        mapImg.style.opacity = '0'
+    }
 })
