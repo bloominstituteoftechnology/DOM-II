@@ -73,9 +73,9 @@ document.addEventListener('keydown', event => {
 const navigation = document.querySelector('nav')
 document.addEventListener('wheel', event => {
     if (event.deltaY < 0) {
-        navigation.style.opacity = 0;
-    } else {
         navigation.style.opacity = 1;
+    } else {
+        navigation.style.opacity = 0;
     }
 })
 
@@ -87,3 +87,9 @@ images.addEventListener('mouseenter', event => {
 images.addEventListener('mouseleave', event => {
     event.target.style.boxShadow = "none";
 });
+
+let intropara = document.querySelector('.intro > p');
+intropara.addEventListener('copy', event => {
+    event.clipboardData.setData('text/plain', "What do you think you're doing?");
+    event.preventDefault();
+})
