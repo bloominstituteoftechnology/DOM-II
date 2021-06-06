@@ -93,3 +93,11 @@ intropara.addEventListener('copy', event => {
     event.clipboardData.setData('text/plain', "What do you think you're doing?");
     event.preventDefault();
 })
+
+
+navigation.addEventListener('click', event => {
+    var jeopardy = document.createElement("AUDIO");
+    jeopardy.src = "jeopardy.mp3"
+    jeopardy.play();
+}, {once:true});
+
