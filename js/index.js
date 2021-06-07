@@ -34,7 +34,7 @@ enlargeTitles.forEach((enlargeTitles) => {
             event.target.style.fontSize = '3rem'
         }, 2000)
     }, true);
-})
+});
 
 //creating variable and click event for footer buttons
 const button = document.querySelectorAll('.btn')
