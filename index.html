@@ -8,6 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="less/index.less" rel="stylesheet">
+  <link href="index.css" rel="stylesheet2">
 
   <!-- If we omit the "defer" attribute, `index.js` will load and execute
   _before_ the rest of the HTML is parsed by the browser, which would be bad because
@@ -23,13 +24,22 @@
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
       <nav class="nav">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Blog</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link hover" href="#">Home</a>
+        <a class="nav-link hover" href="#">About Us</a>
+        <a class="nav-link hover" href="#">Blog</a>
+        <a class="nav-link hover" href="#">Contact</a>
       </nav>
     </div>
   </header>
+
+  <div class="modal off">
+      <div class="modal-opacity"></div>
+      <div class="modal-dialog">
+        <h4>Are you sure?</h4>
+        <button id="confirmButton">Yes</button>
+        <button id="cancelButton">No</button>
+      </div>
+    </div>
      
   <div class="container home">
     <header class="intro">
@@ -37,6 +47,8 @@
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
+
+
     <section class="content-section">
       <div class="text-content">
         <h2>Let's Go!</h2>
