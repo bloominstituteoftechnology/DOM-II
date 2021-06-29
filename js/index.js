@@ -117,6 +117,8 @@ mFat.addEventListener("mouseleave", (event) => {
 
 // Text container 3 start
 destinations.forEach((destination) => {
+
+  // Text container 3
   destination.addEventListener("mouseenter", (event) => {
     event.target.style.backgroundColor = "crimson";
     event.target.style.color = "white";
