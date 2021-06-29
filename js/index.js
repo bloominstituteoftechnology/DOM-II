@@ -1,41 +1,151 @@
 // Your code goes here
 
 // Selectors
-const img = document.querySelectorAll("img");
-const footer = document.querySelector("footer");
+const mainHeader = document.querySelector(".main-navigation h1");
+const navBar = document.querySelectorAll("a");
 const body = document.querySelector("body");
-const intro = document.querySelector(".intro");
-const introImg = document.querySelectorAll(".intro > img");
-const introHeader = document.querySelector(".intro > h2");
-const introPara = document.querySelector(".intro > p");
-const navLinks = document.querySelector(".nav");
-const navContainer = document.querySelector(".nav-container");
-const content = document.querySelectorAll(".content-section");
-const destination = document.querySelectorAll(".destination");
+const destinations = document.querySelectorAll(".destination");
+const img = document.querySelectorAll("img");
+const secondHeading = document.querySelectorAll("h2");
+const aAwaits = document.querySelectorAll(".text-content");
+const panA = document.querySelector(".intro");
+const mFat = document.querySelector(".content-destination");
+const foot = document.querySelector(".footer");
 
-// Event listeners
 
-// Add link color event
-const allLinks = document.links;
-const allLinksArray = Array.from(allLinks);
+// Event Listeners
 
-allLinksArray.forEach((link) => {
-  link.addEventListener("mouseover", (event) => {
-    link.style.color = "crimson";
+// H1 Start
+mainHeader.addEventListener("click", (event) => {
+  alert("Welcome to the Fun Bus! You found an easter egg!");
+});
+
+// H1
+mainHeader.addEventListener("mouseenter", (event) => {
+  event.target.style.backgroundColor = "purple";
+  event.target.style.color = "white";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
+// H1 End
+mainHeader.addEventListener("mouseleave", (event) => {
+  event.target.style.backgroundColor = "white";
+  event.target.style.color = "black";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
+// Nav links Start
+navBar.forEach((nav) => {
+
+  // Nav links
+  nav.addEventListener("mouseover", (event) => {
+    event.target.style.borderBottom = "1px solid crimson";
+    event.target.style.color = "blue";
+  });
+
+  // Nav links
+  nav.addEventListener("mouseleave", (event) => {
+    event.target.style.border = "none";
+    event.target.style.color = "black";
+  });
+
+  // Nav links End
+  nav.addEventListener("click", (event) => {
+    event.preventDefault();
   });
 });
 
-allLinksArray.forEach((link) => {
-  link.addEventListener("mouseout", (event) => {
-    link.style.color = "green";
+// intro start
+panA.addEventListener("mouseenter", (event) => {
+  event.target.style.backgroundColor = "green";
+  event.target.style.color = "white";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
+// Intro end
+panA.addEventListener("mouseleave", (event) => {
+  event.target.style.backgroundColor = "white";
+  event.target.style.color = "black";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
+// Body
+body.addEventListener("keypress", (event) => {
+  alert("You pressed a Key! I will now turn the site dark grey");
+  event.target.style.backgroundColor = "grey";
+});
+
+// text container 1 start
+aAwaits.forEach((afat) => {
+
+  // text container 1
+  afat.addEventListener("mouseenter", (event) => {
+    event.target.style.backgroundColor = "blue";
+    event.target.style.color = "white";
+    event.target.style.borderRadius = "10px";
+    event.target.style.padding = "5px";
+  });
+
+  // text container 1 end
+  afat.addEventListener("mouseleave", (event) => {
+    event.target.style.backgroundColor = "white";
+    event.target.style.color = "black";
+    event.target.style.borderRadius = "10px";
+    event.target.style.padding = "5px";
   });
 });
 
-// Add all image click event
-for (let i = 0; img.length; i++) {
-  img[i].addEventListener("click", (event) => {
-    img[i].style.borderRadius = "50%";
-  });
-}
+// Text container 2 start
+mFat.addEventListener("mouseenter", (event) => {
+  event.target.style.backgroundColor = "pink";
+  event.target.style.color = "white";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
 
-// Add image scroll event
+// Text container 2 end
+mFat.addEventListener("mouseleave", (event) => {
+  event.target.style.backgroundColor = "white";
+  event.target.style.color = "black";
+  event.target.style.borderRadius = "10px";
+  event.target.secondHeading.padding = "5px";
+});
+
+// Text container 3 start
+destinations.forEach((destination) => {
+  destination.addEventListener("mouseenter", (event) => {
+    event.target.style.backgroundColor = "crimson";
+    event.target.style.color = "white";
+    event.target.style.borderRadius = "10px";
+    event.target.style.padding = "5px";
+  });
+
+  // Text container 3 end
+  destination.addEventListener("mouseleave", (event) => {
+    event.target.style.backgroundColor = "white";
+    event.target.style.color = "black";
+    event.target.style.borderRadius = "10px";
+    event.target.style.padding = "5px";
+  });
+});
+
+// Footer start
+foot.addEventListener("mouseenter", (event) => {
+  event.target.style.backgroundColor = "yellow";
+  event.target.style.color = "black";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
+// Footer end
+foot.addEventListener("mouseleave", (event) => {
+  event.target.style.backgroundColor = "white";
+  event.target.style.color = "black";
+  event.target.style.borderRadius = "10px";
+  event.target.style.padding = "5px";
+});
+
