@@ -11,7 +11,7 @@ const aAwaits = document.querySelectorAll(".text-content");
 const panA = document.querySelector(".intro");
 const mFat = document.querySelector(".content-destination");
 const foot = document.querySelector(".footer");
-
+const moot = document.querySelector("section > img");
 
 // Event Listeners
 
@@ -26,6 +26,9 @@ mainHeader.addEventListener("mouseenter", (event) => {
   event.target.style.color = "white";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
+  event.target.style.display = "flex"; // for text position
+  event.target.style.alignItems = "center"; // for text position
+  event.target.style.flexDirection = "column"; // for text position
 });
 
 // H1 End
@@ -59,7 +62,7 @@ navBar.forEach((nav) => {
 
 // intro start
 panA.addEventListener("mouseenter", (event) => {
-  event.target.style.backgroundColor = "#07b00d";
+  event.target.style.backgroundColor = "red";
   event.target.style.color = "white";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
@@ -79,9 +82,16 @@ body.addEventListener("keypress", (event) => {
 });
 
 // Body Container End
-body.addEventListener("wheel", (event) => {
-  body.style.background = 'linear-gradient(to bottom, #fff 50%, #bf25f7)';
-});
+body.addEventListener("mouseover", (event) => {
+  body.style.background = 'linear-gradient(to bottom, #fff 30%, #AFCBFF)';
+    panA.style.display = "flex"; // for text position
+    panA.style.flexDirection = "column"; // for text position
+    panA.style.alignItems = "center"; // for text position
+    img.style.width = "60%";
+    img.style.borderRadius = "50%";
+    panA.style.borderRadius = "15%";
+    panA.style.height = "20%";
+  });
 
 
 // Image Container start
@@ -102,6 +112,9 @@ aAwaits.forEach((afat) => {
     event.target.style.color = "white";
     event.target.style.borderRadius = "10px";
     event.target.style.padding = "5px";
+    event.target.style.alignItems = "center"; // for text position
+    event.target.style.display = "flex"; // for text position
+    event.target.style.flexDirection = "column"; // for text position
   });
 
   // text container 1 end
@@ -119,6 +132,9 @@ mFat.addEventListener("mouseenter", (event) => {
   event.target.style.color = "white";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
+  event.target.style.display = "flex"; // for text position
+  event.target.style.alignItems = "center"; // for text position
+  event.target.style.flexDirection = "column"; // for text position
 });
 
 // Text container 2 end
@@ -131,11 +147,16 @@ mFat.addEventListener("mouseleave", (event) => {
 
 // Text container 3 start
 destinations.forEach((destination) => {
+
+  // Text container 3
   destination.addEventListener("mouseenter", (event) => {
     event.target.style.backgroundColor = "crimson";
     event.target.style.color = "white";
     event.target.style.borderRadius = "10px";
     event.target.style.padding = "5px";
+    event.target.style.display = "flex"; // for text position
+    event.target.style.alignItems = "center"; // for text position
+    event.target.style.flexDirection = "column"; // for text position
   });
 
   // Text container 3 end
@@ -153,6 +174,9 @@ foot.addEventListener("mouseenter", (event) => {
   event.target.style.color = "black";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
+  event.target.style.display = "flex"; // for text position
+  event.target.style.alignItems = "center"; // for text position
+  event.target.style.flexDirection = "column"; // for text position
 });
 
 // Footer end
@@ -162,5 +186,8 @@ foot.addEventListener("mouseleave", (event) => {
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
 });
+
+
+
 
 
