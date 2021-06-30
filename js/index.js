@@ -59,7 +59,7 @@ navBar.forEach((nav) => {
 
 // intro start
 panA.addEventListener("mouseenter", (event) => {
-  event.target.style.backgroundColor = "green";
+  event.target.style.backgroundColor = "#07b00d";
   event.target.style.color = "white";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
@@ -73,10 +73,24 @@ panA.addEventListener("mouseleave", (event) => {
   event.target.style.padding = "5px";
 });
 
-// Body
+// Body Container Start
 body.addEventListener("keypress", (event) => {
-  alert("You pressed a Key! I will now turn the site dark grey");
-  event.target.style.backgroundColor = "grey";
+  alert("You pressed a Key that triggered this alert!");
+});
+
+// Body Container End
+body.addEventListener("wheel", (event) => {
+  body.style.background = 'linear-gradient(to bottom, #fff 50%, #bf25f7)';
+});
+
+
+// Image Container start
+img.forEach((aMan) => {
+
+  //Image Container end
+  aMan.addEventListener("dblclick", (event) => {
+    event.target.style.borderRadius = "50%";
+  });
 });
 
 // text container 1 start
@@ -101,7 +115,7 @@ aAwaits.forEach((afat) => {
 
 // Text container 2 start
 mFat.addEventListener("mouseenter", (event) => {
-  event.target.style.backgroundColor = "pink";
+  event.target.style.backgroundColor = "#F75D25";
   event.target.style.color = "white";
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
@@ -117,8 +131,6 @@ mFat.addEventListener("mouseleave", (event) => {
 
 // Text container 3 start
 destinations.forEach((destination) => {
-
-  // Text container 3
   destination.addEventListener("mouseenter", (event) => {
     event.target.style.backgroundColor = "crimson";
     event.target.style.color = "white";
@@ -150,4 +162,5 @@ foot.addEventListener("mouseleave", (event) => {
   event.target.style.borderRadius = "10px";
   event.target.style.padding = "5px";
 });
+
 
