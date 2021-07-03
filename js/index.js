@@ -41,6 +41,7 @@ console.log(divChild2);
 const messageSure = document.createElement('h4');
 messageSure.setAttribute('id', "youSure");
 divChild2.appendChild(messageSure);
+messageSure.textContent = "Are You Sure?";
 console.log(messageSure);
 
 //Add ConfirmationButton Yes & append to div dialog
