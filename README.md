@@ -56,5 +56,6 @@ Note: Drag and drop is a bit more advanced than the others: it's not actually a 
 
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
 
-TEST PUSH
-test push 2
+## Rick's Pull Request
+
+- [PUll request](https://github.com/LambdaSchool/DOM-II/pull/1305) https://github.com/LambdaSchool/DOM-II/pull/1305
