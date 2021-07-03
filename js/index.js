@@ -12,17 +12,15 @@ console.log(headerH1
     });
 
 //2 Keydown <h4> "Sign Me Up!" 
-//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. 
-
-//Isolate <section class="content-pick"> to add needed elements
-// const sectionContentPick = document.querySelector('content-pick');
-// console.log(sectionContentPick);
+//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. To make it easy for myself I added the ID "LaunchButton". 
+const signMeUpDivBtn = document.querySelector('.btn');
+signMeUpDivBtn.setAttribute('id', "launchButton");
+console.log(signMeUpDivBtn);
 
 // Next I set up a modal with a Parent div defaulted to off
 const newParentDivModal = document.createElement('div');
 newParentDivModal.classList.add('modal');
 newParentDivModal.classList.add('off');
-// sectionContentPick.appendChild(newParentDivModal);
 console.log(newParentDivModal);
 
 //added a child1 div for opacity 
