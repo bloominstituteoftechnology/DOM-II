@@ -13,9 +13,34 @@ console.log(headerH1
 
 //2 Keydown <h4> "Sign Me Up!" 
 //First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown e. To make it easy for myself I added the ID "LaunchButton". 
-const signMeUpDivBtn = document.querySelector('.btn');
-signMeUpDivBtn.setAttribute('id', "SignMeUpBtn");
-console.log(signMeUpDivBtn);
+const divBtns = document.querySelectorAll('div.btn');
+for (let i = 0; i<divBtns.length; i++){
+    divBtns[i].setAttribute('id', "signMeUpBtn");
+}
+// signMeUpDivBtn.setAttribute('id', "signMeUpBtn");
+console.log(`div btn`,divBtns);
+console.log(divBtns[1]);
+
+//Handle click events on signMeUpBtn
+//first step isolate all <buttons> with #signMeUpBtn ids
+const signMeUpBtn = document.querySelectorAll('#signMeUpBtn');
+console.log(`Sign Me Up ID's`,signMeUpBtn);
+console.log(`just one`, signMeUpBtn[1]);
+//next generic function when they are clicked
+signMeUpBtn.forEach(ele => {
+    ele.onclick = function (e) {
+    console.log(`${e.target.nodeName}`);
+};} );
+
+//this part is just for me to track bubbling
+// signMeUpBtn.addEventListener('click', function (e){
+//     console.log(`${e} NEW WAY `);
+//     console.log(`
+//     Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
+//     Event: Type ${e.type}, 
+//     Event: Target ${e.target.nodeName}
+//     `);
+// });
 
 // Next I set up a modal with a Parent div defaulted to off
 const newParentDivModal = document.createElement('div');
@@ -82,16 +107,4 @@ console.log(reportfailureOffh1);
 // signMeUph4[1].classList.add('message1');
 // signMeUph4[2].classList.add('message2');
 
-//Handle click events on signMeUpBtn
-signMeUpDivBtn.onclick = function (e) {
-    console.log(`${e.target.nodeName}`);
-};
-//this part is just for me to track bubbling
-signMeUpDivBtn.addEventListener('click', function (e){
-    console.log(`${e} NEW WAY --> this doesn't override anything`)
-    console.log(`
-    Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
-    Event: Type ${e.type}, 
-    Event: Target ${e.target.nodeName}
-    `);
-});
+
