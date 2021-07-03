@@ -97,7 +97,9 @@ const reportSuccessOffh1 = document.createElement('h1');
 reportSuccessOffh1.classList.add('report');
 reportSuccessOffh1.classList.add('success');
 reportSuccessOffh1.classList.add('off');
+reportSuccessOffh1.style = "display:none";
 reportSuccessOffh1.textContent = "Signed Up --> Coming Soon!";
+contentPick.appendChild(reportSuccessOffh1);
 console.log(reportSuccessOffh1);
 
 //Add <h1 class="report failure off">
@@ -105,6 +107,7 @@ const reportfailureOffh1 = document.createElement('h1');
 reportfailureOffh1.classList.add('report');
 reportfailureOffh1.classList.add('failure');
 reportfailureOffh1.classList.add('off');
+reportfailureOffh1.style = "display:none";
 reportfailureOffh1.textContent = "Process Canceled. You are NOT signed up!";
 console.log(reportfailureOffh1);
 
@@ -131,7 +134,7 @@ console.log(reportfailureOffh1);
 function launchModal() {
     //show modal
     newParentDivModal.classList.remove('off');
-    newParentDivModal.style = 'display:absolute';
+    newParentDivModal.style = 'display:block';
     //remove old success/failure message
     reportSuccessOffh1.classList.add('off');
     reportfailureOffh1.classList.add('off');
@@ -140,15 +143,40 @@ function launchModal() {
 signMeUpBtn[0].addEventListener('click', launchModal);
 
 //Funtion to confirm the Sign Up. 
-//SHould close the modal & Display success feedback
+//Should close the modal & Display success feedback
 //should be a listener for clicks on the confirmation button
-
 function confirmChoice() {
     newParentDivModal.classList.add('off');
-    newParentDivModal.style= 'display:none';
+    newParentDivModal.style= 'display:none';//HELPME
     reportSuccessOffh1.classList.remove('off');//HELPME
-    // reportSuccessOffh1.style = 'display:relative';
+    reportSuccessOffh1.style = 'display:block';
     // console.log(reportSuccessOffh1);
     // reportSuccessOffh1.style = 'display:absolute';//HELPME
 }
 buttonY.addEventListener('click', confirmChoice);
+
+//Function to cancel Sign Up
+// Should close the modal & display a failure report
+//Add it as a listener for clicks on the cancellation buttonN
+function cancelSignUp() {
+    newParentDivModal.classList.add('off');
+    newParentDivModal.style= 'display:none';//HELPME
+    reportfailureOffh1.classList.remove('off');//HELPME
+    reportfailureOffh1.style = 'display:block';
+}
+buttonN.addEventListener('click', cancelSignUp);
+
+//KEYDOWN
+// function that closes the modal if
+// the user hits the Escape key on their keyboard.
+// Add it as an event listener for 'keydown' events on document.
+//Find all keycodes http://keycode.info/ qqqq
+function escKey(e) {
+    if (e.keyCode === 27) { // escape key http://keycode.info/
+       newParentDivModal.classList.add('off');
+       newParentDivModal.style = 'display:none';
+    }
+}
+document.addEventListener('keydown', escKey);
+
+
