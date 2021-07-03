@@ -62,8 +62,16 @@ const reportSuccessOffh1 = document.createElement('h1');
 reportSuccessOffh1.classList.add('report');
 reportSuccessOffh1.classList.add('success');
 reportSuccessOffh1.classList.add('off');
+reportSuccessOffh1.textContent = "Signed Up --> Coming Soon!";
 console.log(reportSuccessOffh1);
 
+//Add <h1 class="report failure off">
+const reportfailureOffh1 = document.createElement('h1');
+reportfailureOffh1.classList.add('report');
+reportfailureOffh1.classList.add('failure');
+reportfailureOffh1.classList.add('off');
+reportfailureOffh1.textContent = "Process Canceled. You are NOT signed up!";
+console.log(reportfailureOffh1);
 
 // const signMeUph4 = document.querySelectorAll('h4');
 // console.log(signMeUph4);
