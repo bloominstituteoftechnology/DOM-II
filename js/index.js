@@ -13,13 +13,16 @@ console.log(headerH1
 
 //2 Keydown <h4> "Sign Me Up!" 
 //First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. 
+
 //Isolate <section class="content-pick"> to add needed elements
-const sectionContentPick = document.querySelector('content-pick');
-console.log(sectionContentPick);
+// const sectionContentPick = document.querySelector('content-pick');
+// console.log(sectionContentPick);
+
 // Next I set up a modal with a Parent div defaulted to off
 const newParentDivModal = document.createElement('div');
 newParentDivModal.classList.add('modal');
 newParentDivModal.classList.add('off');
+// sectionContentPick.appendChild(newParentDivModal);
 console.log(newParentDivModal);
 
 //added a child1 div for opacity 
@@ -53,6 +56,13 @@ buttonN.setAttribute('id', "cancelButton");
 buttonN.textContent = "No take me back";
 divChild2.appendChild(buttonN);
 console.log(buttonN);
+
+//Add <h1 class="report success off">
+const reportSuccessOffh1 = document.createElement('h1');
+reportSuccessOffh1.classList.add('report');
+reportSuccessOffh1.classList.add('success');
+reportSuccessOffh1.classList.add('off');
+console.log(reportSuccessOffh1);
 
 
 // const signMeUph4 = document.querySelectorAll('h4');
