@@ -4,15 +4,15 @@
 const headerH1 = document.querySelector('h1');
 console.log(headerH1
     );
-    headerH1.addEventListener('mouseover', event => {
-        event.target.style.backgroundColor = 'yellow'; 
+    headerH1.addEventListener('mouseover', e => {
+        e.target.style.backgroundColor = 'yellow'; 
     });
-    headerH1.addEventListener('mouseleave', event => {
-        event.target.style.backgroundColor = 'white';
+    headerH1.addEventListener('mouseleave', e => {
+        e.target.style.backgroundColor = 'white';
     });
 
 //2 Keydown <h4> "Sign Me Up!" 
-//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. To make it easy for myself I added the ID "LaunchButton". 
+//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown e. To make it easy for myself I added the ID "LaunchButton". 
 const signMeUpDivBtn = document.querySelector('.btn');
 signMeUpDivBtn.setAttribute('id', "SignMeUpBtn");
 console.log(signMeUpDivBtn);
@@ -83,15 +83,15 @@ console.log(reportfailureOffh1);
 // signMeUph4[2].classList.add('message2');
 
 //Handle click events on signMeUpBtn
-signMeUpDivBtn.onclick = function (event) {
-    console.log(`${event.target.nodeName}`);
+signMeUpDivBtn.onclick = function (e) {
+    console.log(`${e.target.nodeName}`);
 };
 //this part is just for me to track bubbling
 signMeUpDivBtn.addEventListener('click', function (e){
-    console.log(`${event} NEW WAY --> this doesn't override anything`)
+    console.log(`${e} NEW WAY --> this doesn't override anything`)
     console.log(`
-    Event: TimeStamp ${Math.floor(event.timeStamp / 1000)}, 
-    Event: Type ${event.type}, 
-    Event: Target ${event.target.nodeName}
+    Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
+    Event: Type ${e.type}, 
+    Event: Target ${e.target.nodeName}
     `);
 });
