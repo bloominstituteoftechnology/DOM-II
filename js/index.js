@@ -13,44 +13,46 @@ console.log(headerH1
 
 //2 Keydown <h4> "Sign Me Up!" 
 //First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. 
-
+//Isolate <section class="content-pick"> to add needed elements
+const sectionContentPick = document.querySelector('content-pick');
+console.log(sectionContentPick);
 // Next I set up a modal with a Parent div defaulted to off
 const newParentDivModal = document.createElement('div');
-console.log(newParentDivModal);
 newParentDivModal.classList.add('modal');
 newParentDivModal.classList.add('off');
+console.log(newParentDivModal);
 
 //added a child1 div for opacity 
 const divChild1 = document.createElement('div');
-console.log(divChild1);
 divChild1.classList.add('modal-opacity');
 newParentDivModal.appendChild(divChild1);
+console.log(divChild1);
 
 //Added a child2 div for modal dialog
 const divChild2 = document.createElement('div');
-console.log(divChild2);
 divChild2.classList.add('modal-dialog');
 newParentDivModal.appendChild(divChild2);
+console.log(divChild2);
 
 //Add h4 message "Are You Sure?" append to div dialog
 const messageSure = document.createElement('h4');
 messageSure.setAttribute('id', "youSure");
-console.log(messageSure);
 divChild2.appendChild(messageSure);
+console.log(messageSure);
 
 //Add ConfirmationButton Yes & append to div dialog
 const buttonY = document.createElement('button');
-console.log(buttonY);
 buttonY.setAttribute('id', "confirmationButton");
 buttonY.textContent= `Yes, let's rock`;
 divChild2.appendChild(buttonY);
+console.log(buttonY);
 
 //Add CancelButton No & AppendChild to div dialog
 const buttonN = document.createElement('button');
 buttonN.setAttribute('id', "cancelButton");
 buttonN.textContent = "No take me back";
-console.log(buttonN);
 divChild2.appendChild(buttonN);
+console.log(buttonN);
 
 
 // const signMeUph4 = document.querySelectorAll('h4');
