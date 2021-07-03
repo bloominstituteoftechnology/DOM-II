@@ -14,7 +14,7 @@ console.log(headerH1
 //2 Keydown <h4> "Sign Me Up!" 
 //First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown event. To make it easy for myself I added the ID "LaunchButton". 
 const signMeUpDivBtn = document.querySelector('.btn');
-signMeUpDivBtn.setAttribute('id', "launchButton");
+signMeUpDivBtn.setAttribute('id', "SignMeUpBtn");
 console.log(signMeUpDivBtn);
 
 // Next I set up a modal with a Parent div defaulted to off
@@ -72,6 +72,7 @@ reportfailureOffh1.classList.add('off');
 reportfailureOffh1.textContent = "Process Canceled. You are NOT signed up!";
 console.log(reportfailureOffh1);
 
+//MAY use this to set up separate messages
 // const signMeUph4 = document.querySelectorAll('h4');
 // console.log(signMeUph4);
 // signMeUph4.forEach((elem) => {
@@ -81,3 +82,16 @@ console.log(reportfailureOffh1);
 // signMeUph4[1].classList.add('message1');
 // signMeUph4[2].classList.add('message2');
 
+//Handle click events on signMeUpBtn
+signMeUpDivBtn.onclick = function (event) {
+    console.log(`${event.target.nodeName}`);
+};
+//this part is just for me to track bubbling
+signMeUpDivBtn.addEventListener('click', function (e){
+    console.log(`${event} NEW WAY --> this doesn't override anything`)
+    console.log(`
+    Event: TimeStamp ${Math.floor(event.timeStamp / 1000)}, 
+    Event: Type ${event.type}, 
+    Event: Target ${event.target.nodeName}
+    `);
+});
