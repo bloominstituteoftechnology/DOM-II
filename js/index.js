@@ -146,6 +146,9 @@ signMeUpBtn[0].addEventListener('click', launchModal);
 function confirmChoice() {
     newParentDivModal.classList.add('off');
     newParentDivModal.style= 'display:none';
-    reportSuccessOffh1.classList.remove('off');
+    reportSuccessOffh1.classList.remove('off');//HELPME
+    // reportSuccessOffh1.style = 'display:relative';
+    // console.log(reportSuccessOffh1);
+    // reportSuccessOffh1.style = 'display:absolute';//HELPME
 }
 buttonY.addEventListener('click', confirmChoice);
