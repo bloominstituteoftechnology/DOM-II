@@ -12,17 +12,18 @@ console.log(headerH1
     });
 
 //2 Keydown <h4> "Sign Me Up!" 
-//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave the modal as my Keydown e. To make it easy for myself I added the ID "LaunchButton". 
+//First note I'm using <div class="btn>Sign Me Up!</> as <button id = "launchButton">Launch!</button> from web guided project.I want to use "Esc" key 27 to leave/exit a modal as my Keydown e. To make it easy for myself I added the ID "LaunchButton".
+
+//So... isolate all <div class="btn"> and assign id="signMeUpBtn" 
 const divBtns = document.querySelectorAll('div.btn');
 for (let i = 0; i<divBtns.length; i++){
     divBtns[i].setAttribute('id', "signMeUpBtn");
 }
-// signMeUpDivBtn.setAttribute('id', "signMeUpBtn");
 console.log(`div btn`,divBtns);
 console.log(divBtns[1]);
 
 //Handle click events on signMeUpBtn
-//first step isolate all <buttons> with #signMeUpBtn ids
+//first step isolate all <buttons> with #signMeUpBtn ids just created above
 const signMeUpBtn = document.querySelectorAll('#signMeUpBtn');
 console.log(`Sign Me Up ID's`,signMeUpBtn);
 console.log(`just one`, signMeUpBtn[1]);
@@ -32,15 +33,28 @@ signMeUpBtn.forEach(ele => {
     console.log(`${e.target.nodeName}`);
 };} );
 
-//this part is just for me to track bubbling
-// signMeUpBtn.addEventListener('click', function (e){
-//     console.log(`${e} NEW WAY `);
-//     console.log(`
-//     Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
-//     Event: Type ${e.type}, 
-//     Event: Target ${e.target.nodeName}
-//     `);
-// });
+// this part is just for me to track bubbling
+signMeUpBtn.forEach(elem => {
+    elem.addEventListener('click', function (e){
+        console.log(`${e} NEW WAY `);
+        console.log(`
+        Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
+        Event: Type ${e.type}, 
+        Event: Target ${e.target.nodeName}
+        `);
+    });
+});
+
+// A -Buttons
+const confirmButton = document.querySelector('#confirmButton');
+const cancelButton = document.querySelector('#cancelButton');
+
+// B- MESSAGES
+const successMessage = document.querySelector('h1.success');
+const failureMessage = document.querySelector('h1.failure');
+
+// C- MODAL
+const modal = document.querySelector('div.modal');
 
 // Next I set up a modal with a Parent div defaulted to off
 const newParentDivModal = document.createElement('div');
@@ -107,4 +121,19 @@ console.log(reportfailureOffh1);
 // signMeUph4[1].classList.add('message1');
 // signMeUph4[2].classList.add('message2');
 
+document.addEventListener('click', function(event) {
+    if (event.target === signMeUpBtn) {
+        console.log('clicked on the launch button');
+    } else {
+        console.log('click somewhere else');
+    }
+});
+function launchModal() {
+    //show modal
+    modal.classList.remove('off');
+    //remove old success/failure message
+    successMessage.classList.add('off');
+    failureMessage.classList.add('off');
+}
 
+launchButton.addEventListener('click', launchModal);
