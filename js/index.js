@@ -33,33 +33,30 @@ signMeUpBtn.forEach(ele => {
     console.log(`${e.target.nodeName}`);
 };} );
 
-// this part is just for me to track bubbling
-signMeUpBtn.forEach(elem => {
-    elem.addEventListener('click', function (e){
-        console.log(`${e} NEW WAY `);
-        console.log(`
-        Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
-        Event: Type ${e.type}, 
-        Event: Target ${e.target.nodeName}
-        `);
-    });
-});
+// this part is just for me to track bubbling & Propagation
+// signMeUpBtn.forEach(elem => {
+//     elem.addEventListener('click', function (e){
+//         console.log(`${e} NEW WAY `);
+//         console.log(`
+//         Event: TimeStamp ${Math.floor(e.timeStamp / 1000)}, 
+//         Event: Type ${e.type}, 
+//         Event: Target ${e.target.nodeName}
+//         `);
+//     });
+// });
 
-// A -Buttons
-const confirmButton = document.querySelector('#confirmButton');
-const cancelButton = document.querySelector('#cancelButton');
-
-// B- MESSAGES
-const successMessage = document.querySelector('h1.success');
-const failureMessage = document.querySelector('h1.failure');
-
-// C- MODAL
-const modal = document.querySelector('div.modal');
-
-// Next I set up a modal with a Parent div defaulted to off
+// Next I set up a modal with a Parent div defaulted to off and appended it to the <section class="content-section"...>
+//Step 1 isolate the <section> desired
+const contentPick = document.querySelector(".content-pick");
+// contentPick.style('position:relative');
+console.log(`HERE IS THE CONTENT SECTION`,contentPick);
+//Step 2 create basic modal div
 const newParentDivModal = document.createElement('div');
 newParentDivModal.classList.add('modal');
 newParentDivModal.classList.add('off');
+newParentDivModal.style= 'display:none';
+//Step 3 append modal div to <section class="content-...>"
+contentPick.appendChild(newParentDivModal);
 console.log(newParentDivModal);
 
 //added a child1 div for opacity 
@@ -121,19 +118,34 @@ console.log(reportfailureOffh1);
 // signMeUph4[1].classList.add('message1');
 // signMeUph4[2].classList.add('message2');
 
-document.addEventListener('click', function(event) {
-    if (event.target === signMeUpBtn) {
-        console.log('clicked on the launch button');
-    } else {
-        console.log('click somewhere else');
-    }
-});
+//testing propagation
+// document.addEventListener('click', function(event) {
+//     if (event.target === signMeUpBtn) {
+//         console.log('clicked on the launch button');
+//     } else {
+//         console.log('click somewhere else');
+//     }
+// });
+
+//Generic Function to Launch Modal
 function launchModal() {
     //show modal
-    modal.classList.remove('off');
+    newParentDivModal.classList.remove('off');
+    newParentDivModal.style = 'display:absolute';
     //remove old success/failure message
-    successMessage.classList.add('off');
-    failureMessage.classList.add('off');
+    reportSuccessOffh1.classList.add('off');
+    reportfailureOffh1.classList.add('off');
 }
 
-launchButton.addEventListener('click', launchModal);
+signMeUpBtn[0].addEventListener('click', launchModal);
+
+//Funtion to confirm the Sign Up. 
+//SHould close the modal & Display success feedback
+//should be a listener for clicks on the confirmation button
+
+function confirmChoice() {
+    newParentDivModal.classList.add('off');
+    newParentDivModal.style= 'display:none';
+    reportSuccessOffh1.classList.remove('off');
+}
+buttonY.addEventListener('click', confirmChoice);
