@@ -182,17 +182,18 @@ document.addEventListener('keydown', escKey);
 
 // Wheel event to Toggle between images
 // 1) Create an id for existing img 1
-// 2) Create a second image, append to header, set to dispay:none
+// 2) Create a second image, style, set to dispay:none, append to .intro
 // 3) create helper function that counts events fired
 // 4) creat wheel event that sets display:on for img1 even numbered events (hiding second img) and sets display:off for odd number of events (revealing second img).
 
-//1) 
-const header = document.querySelector('header');
+//1) Create an id for existing img 1
+// const header = document.querySelector('header');
 const headerImg1 = document.querySelector('header img');
 headerImg1.setAttribute('id', "img1");
+headerImg1.style.display = "absolute";
 console.log(headerImg1);
 
-//2) 
+//2) Create a second image, style, set to dispay:none, append to .intro
 const intro = document.querySelector(".intro");
 console.log(intro);
 const headerImg2 = document.createElement('img');
@@ -201,10 +202,10 @@ headerImg2.setAttribute('alt', "Yellow VW Bus");
 headerImg2.setAttribute('id', "img2");
 headerImg2.style.height = "50px";
 headerImg2.style = ("align-items: center");
-headerImg2.style.display = "flex";
+headerImg2.style.display = "absolute";
 headerImg2.style = 'display:none';
 intro.prepend(headerImg2);
-console.log(headerImg2);
+console.log(`Here is headerImg2`, headerImg2);
 
 //3) Helper Function to count wheel events
 function countEvents () {
@@ -212,20 +213,25 @@ function countEvents () {
     intro.addEventListener("wheel", () => {
         eventCount++;
         //https://buff.ly/3jHZgjK --> for later I might display the counter on the browser 
+        console.log(eventCount);
+        
     });
     return eventCount;
 }
 //4) 
-    headerImg1.addEventListener('wheel', e => {
+const img1 = document.querySelector("#img1");
+console.log(`Here is Img1`,img1);
+    img1.addEventListener('wheel', e => {
         if((countEvents() % 2) === 1){//odd number
-            e.target.style = "display:on";
+            e.target.style = "display:absolute";
         } else {
             e.target.style = "display:none";
     }});
 
-    headerImg2.addEventListener('wheel', e => {
-        if((countEvents() %2) === 0){//even number
-            e.target.style = "display:on";
-        } else {
-            e.target.style = "display:none";
-    }});
+    // const img2 = document.querySelector("#img2");
+    // img2.addEventListener('wheel', e => {
+    //     if((countEvents() %2) === 0){//even number
+    //         e.target.style = "display:absolute";
+    //     } else {
+    //         e.target.style = "display:none";
+    // }});
