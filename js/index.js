@@ -180,32 +180,52 @@ function escKey(e) {
 document.addEventListener('keydown', escKey);
 
 
-// //1 Wheel <h1> yellow up
+// Wheel event to Toggle between images
+// 1) Create an id for existing img 1
+// 2) Create a second image, append to header, set to dispay:none
+// 3) create helper function that counts events fired
+// 4) creat wheel event that sets display:on for img1 even numbered events (hiding second img) and sets display:off for odd number of events (revealing second img).
+
+//1) 
 const header = document.querySelector('header');
 const headerImg1 = document.querySelector('header img');
 headerImg1.setAttribute('id', "img1");
-// headerImg1.setAttribute('src', "img/fun-bus.jpg");
 console.log(headerImg1);
 
+//2) 
+const intro = document.querySelector(".intro");
+console.log(intro);
 const headerImg2 = document.createElement('img');
 headerImg2.setAttribute('src', "https://buff.ly/2TxtE5y");
 headerImg2.setAttribute('alt', "Yellow VW Bus");
 headerImg2.setAttribute('id', "img2");
+headerImg2.style.height = "50px";
+headerImg2.style = ("align-items: center");
+headerImg2.style.display = "flex";
 headerImg2.style = 'display:none';
-header.appendChild(headerImg2);
-
+intro.prepend(headerImg2);
 console.log(headerImg2);
 
-
-    headerImg1.addEventListener('wheel', e => {
-        console.log(`Here is the image`,e.target.nodeName);
-        // if(e.target === headerImg1){
-        //     e.target.setAttribute('src', "img/fun-bus.jpg");
-        // } 
-        // else (
-        //     e.target.setAttribute('src', "https://images.unsplash.com/photo-1565346015502-bee2b63e735b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=914&q=80")
-        // );
+//3) Helper Function to count wheel events
+function countEvents () {
+    let eventCount = 0;
+    intro.addEventListener("wheel", () => {
+        eventCount++;
+        //https://buff.ly/3jHZgjK --> for later I might display the counter on the browser 
     });
-//     headerH1.addEventListener('mouseleave', e => {
-//         e.target.style.backgroundColor = 'white';
-//     });
+    return eventCount;
+}
+//4) 
+    headerImg1.addEventListener('wheel', e => {
+        if((countEvents() % 2) === 1){//odd number
+            e.target.style = "display:on";
+        } else {
+            e.target.style = "display:none";
+    }});
+
+    headerImg2.addEventListener('wheel', e => {
+        if((countEvents() %2) === 0){//even number
+            e.target.style = "display:on";
+        } else {
+            e.target.style = "display:none";
+    }});
