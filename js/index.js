@@ -231,8 +231,6 @@ const img1 = document.querySelector("#img1");
 console.log(`Here is Img1`,img1);
 
 let eventCount = 0;
-    img1.addEventListener('wheel', e => {
-        
 function countEvents (element, event) {
     element.addEventListener(event, () => {
         eventCount = eventCount + 1;
@@ -241,23 +239,29 @@ function countEvents (element, event) {
     });
     return eventCount;
 }
-        // let currentCount = (countEvents(intro, "wheel"));
-        console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
-        let wheelCount = countEvents(img1, "wheel");
+    // let wheelCount = countEvents(img1, "wheel");
+    // console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
+    
+    img1.addEventListener('wheel', e => {
+        let introCount = (countEvents(intro, "wheel"));
+        // console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
+        // let wheelCount = countEvents(img1, "wheel");
 
-        if((wheelCount %2) < 1) {//count = 0
+        if((introCount  %2) < 1) {//count = 0
             e.target.style.remove = "display:none";
             console.log('Count Zero img1 displayed');
         }
-        else if((wheelCount %2) === 1){//count = odd number
+        else if((introCount  %2) === 1){//count = odd number
             e.target.style = "display:none";
             console.log('Count is ODD img1 removed');
         } 
-        else if ((wheelCount %2) === 0){//count = even
+        else if ((introCount  %2) === 0){//count = even
             e.target.style.remove = "display:none";
             console.log('Count is EVEN img1 displayed');
         }
         });
+    
+
 // //4.b
 const img2 = document.querySelector('#img2');
 console.log(`Here is Img2`,img2);
