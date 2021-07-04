@@ -173,10 +173,39 @@ buttonN.addEventListener('click', cancelSignUp);
 //Find all keycodes http://keycode.info/ qqqq
 function escKey(e) {
     if (e.keyCode === 27) { // escape key http://keycode.info/
-       newParentDivModal.classList.add('off');
-       newParentDivModal.style = 'display:none';
+    newParentDivModal.classList.add('off');
+    newParentDivModal.style = 'display:none';
     }
 }
 document.addEventListener('keydown', escKey);
 
 
+// //1 Wheel <h1> yellow up
+const header = document.querySelector('header');
+const headerImg1 = document.querySelector('header img');
+headerImg1.setAttribute('id', "img1");
+// headerImg1.setAttribute('src', "img/fun-bus.jpg");
+console.log(headerImg1);
+
+const headerImg2 = document.createElement('img');
+headerImg2.setAttribute('src', "https://buff.ly/2TxtE5y");
+headerImg2.setAttribute('alt', "Yellow VW Bus");
+headerImg2.setAttribute('id', "img2");
+headerImg2.style = 'display:none';
+header.appendChild(headerImg2);
+
+console.log(headerImg2);
+
+
+    headerImg1.addEventListener('wheel', e => {
+        console.log(`Here is the image`,e.target.nodeName);
+        // if(e.target === headerImg1){
+        //     e.target.setAttribute('src', "img/fun-bus.jpg");
+        // } 
+        // else (
+        //     e.target.setAttribute('src', "https://images.unsplash.com/photo-1565346015502-bee2b63e735b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=914&q=80")
+        // );
+    });
+//     headerH1.addEventListener('mouseleave', e => {
+//         e.target.style.backgroundColor = 'white';
+//     });
