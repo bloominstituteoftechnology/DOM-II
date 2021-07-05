@@ -228,76 +228,45 @@ console.log(`Here is headerImg2`, headerImg2);
 
 //4) Wheel eventListner for each image
 const img1 = document.querySelector("#img1");
+const img2 = document.querySelector('#img2');
 console.log(`Here is Img1`,img1);
 
-//Notes
-//========================
-//Create a function to count the wheel events & 
-//Even results...use control flow to display img1
-//Odd results... use control flow to display img2
-
-//Generic Counting FUNCTION
-//=========================
 let eventCount = 0;
-function countEvents (element, event) {
-    element.addEventListener(event, () => {
-        eventCount = eventCount + 1;
+
+function countEvents (element, e) {
+    element.addEventListener(e, () => {
+
         //https://buff.ly/3jHZgjK --> for later I might display the counter on the browser 
         console.log(`inside the Function the count is `,eventCount);
-    });
-    return eventCount;
-}
-//DISPLAY
-// //=========================
-// let wheelCounter = countEvents(intro, "wheel");    
-// // // let wheelCount = countEvents(img1, "wheel");
-//     console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
-    const img2 = document.querySelector('#img2');
-    console.log(`Here is Img2`,img2);
-    img1.addEventListener('wheel', e => {
-        // let wheelCounter = countEvents(intro, "wheel");  
-        eventCount += 1;
-        console.log(eventCount);
-        // let introCount = (countEvents(intro, "wheel"));
-        // console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
-        // let wheelCount = countEvents(img1, "wheel");
+        eventCount = eventCount + 1;
 
-        if((eventCount %2) < 1) {//count = 0
-            e.target.style.remove = "display:none";
-            console.log('Count is Zero so img1 displayed');
+        if((eventCount <= 1)) {//count = 0
+           img1.style = "display:none";
+            console.log('Count Zero img1 displayed');
+            
         }
         else if((eventCount  %2) === 1){//count = odd number
-            e.target.style = "display:none";
-            img2.style.remove = "display:none";
+            img1.style = "display: none";
+            img2.style = "display:block";
             console.log('Count is ODD img1 removed');
+            
         } 
-        else if ((eventCount  %2) === 0){//count = even
-            e.target.style.remove = "display:none";
+        else {//count = even
+            img1.style = "display:block";
             img2.style = "display:none";
             console.log('Count is EVEN img1 displayed');
-        } 
-        //else {
-        //     e.target.style.remove = "display:none";
-        // }
-        });
-    
+            
+        }
+        
+    });
+}
 
-// //4.b
-// const img2 = document.querySelector('#img2');
-// console.log(`Here is Img2`,img2);
+    img1.addEventListener('wheel', e => {
+        const introCount = (countEvents(intro, "wheel"));
+         console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
+        // let wheelCount = countEvents(img1, "wheel");
+        console.log(`Here is Img2`,img2);
 
-// img2.addEventListener('wheel', e => {
-//     // let currentCount = (countEvents(intro, "wheel"));
-//     if((eventCount%2)<1) {//count = 0
-//         e.target.style = "display:none";
-//         console.log('Count is Zero');
-//     }
-//     else if((eventCount%2) === 1){//count = odd number
-//         e.target.style.remove = "display:none";
-//         console.log('Count is ODD');
-//     } 
-//     else if ((eventCount%2) === 0){//count = even
-//         e.target.style = "display:none";
-//         console.log('Count is EVEN');
-//     }
-//     });
+    });
+
+//LOAD========================
