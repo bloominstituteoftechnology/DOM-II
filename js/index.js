@@ -312,16 +312,67 @@ console.log(inputField);
 //2  The onfocus property of the GlobalEventHandlers mixin is an event handler that processes focus events on the given element.The focus event is raised when the user sets focus on an element.
 
 let input = document.querySelector('input');
-
 input.onblur = inputBlur;
 input.onfocus = inputFocus;
-
 function inputBlur() {
   input.value = 'Whoa, wait Email address?';
 }
-
 function inputFocus() {
   input.value = 'Email here';
 }
 
 
+//RESIZE EVENT ==================================
+//The resize event fires when the document view (window) has been resized.
+const divOne = document.createElement('div');
+divOne.classList.add('containerA');
+// console.log(sectionOne);
+intro.appendChild(divOne);
+console.log(intro);
+
+const sectionOne = document.createElement('section');
+sectionOne.classList.add('one');
+divOne.appendChild(sectionOne);
+
+const pOne = document.createElement('p');
+pOne.textContent = "ONE";
+sectionOne.appendChild(pOne);
+
+const sectionTwo = document.createElement('section');
+sectionTwo.classList.add('two');
+divOne.appendChild(sectionTwo);
+
+const pTwo = document.createElement('p');
+pTwo.textContent = "TWO";
+sectionTwo.appendChild(pTwo);
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     let resizer = new ResizeObserver(handleResize);
+//     resizer.observe(document.querySelector('.container home'));
+// });
+
+// function handleResize(entries) {
+//     console.log('resize called');
+//     let div = entries[0].target;
+//     if (entries[0].contentRect.width > 900) {
+//         //add oversized class
+//         div.classList.add('big');
+//         addphoto();
+//     } else {
+//         //remove oversized class
+//         div.classList.remove('big');
+//         removePhoto();
+//     }
+// }
+
+// function addPhoto() {
+//     if (!document.querySelector('.two img'));
+//     let img = document.createElement('img');
+//     let rand = Math.floor(Math.random() * 100 ) +100;
+//     img.scr = `https://i.picsum.photos/id/${rand}/400/300.jpg`;
+//     img.alt = 'Random Image';
+//     document.querySelector('.two p').appendChild(img);
+
+// }
