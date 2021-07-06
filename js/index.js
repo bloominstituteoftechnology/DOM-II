@@ -335,7 +335,7 @@ sectionOne.classList.add('one');
 divOne.appendChild(sectionOne);
 
 const pOne = document.createElement('p');
-pOne.textContent = "ONE";
+pOne.textContent = "Enlarge Window to See Pics";
 sectionOne.appendChild(pOne);
 
 const sectionTwo = document.createElement('section');
@@ -343,36 +343,43 @@ sectionTwo.classList.add('two');
 divOne.appendChild(sectionTwo);
 
 const pTwo = document.createElement('p');
-pTwo.textContent = "TWO";
+pTwo.textContent = "PIC";
 sectionTwo.appendChild(pTwo);
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     let resizer = new ResizeObserver(handleResize);
-//     resizer.observe(document.querySelector('.container home'));
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    let resizer = new ResizeObserver(handleResize);
+    // resizer.observe(document.querySelector('.container home'));
+    resizer.observe(divOne);
+});
 
-// function handleResize(entries) {
-//     console.log('resize called');
-//     let div = entries[0].target;
-//     if (entries[0].contentRect.width > 900) {
-//         //add oversized class
-//         div.classList.add('big');
-//         addphoto();
-//     } else {
-//         //remove oversized class
-//         div.classList.remove('big');
-//         removePhoto();
-//     }
-// }
+function handleResize(entries) {
+    console.log('resize called');
+    let div = entries[0].target;
+    if (entries[0].contentRect.width > 700) {
+        //add oversized class
+        div.classList.add('big');
+        addPhoto();
+    } else {
+        //remove oversized class
+        div.classList.remove('big');
+        removePhoto();
+    }
+}
 
-// function addPhoto() {
-//     if (!document.querySelector('.two img'));
-//     let img = document.createElement('img');
-//     let rand = Math.floor(Math.random() * 100 ) +100;
-//     img.scr = `https://i.picsum.photos/id/${rand}/400/300.jpg`;
-//     img.alt = 'Random Image';
-//     document.querySelector('.two p').appendChild(img);
-
-// }
+function addPhoto() {
+    if (!document.querySelector('.two img')){
+    let img = document.createElement('img');
+    // let rand = Math.floor(Math.random() * 100 ) +100;
+    // img.scr = `https://source.unsplash.com/random/300x200?sig=${rand}`;
+    img.setAttribute('src', `https://source.unsplash.com/collection/190727/400x300`);
+    img.alt = 'Random Image';
+    document.querySelector('.two p').appendChild(img);
+    // document.querySelector('.one p').appendChild(img);
+    }
+}
+function removePhoto() {
+    let img = document.querySelector('.two img');
+    img?.parentElement.removeChild(img);
+}
