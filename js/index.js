@@ -5,6 +5,8 @@ window.addEventListener("load", (_e) => {
 const buttons = document.querySelector(".btn")
 buttons.addEventListener("click", (_e) => {
     buttons.style.backgroundColor = "red"
+    button.stopPropagation()
+    buttons.style.color = "green"
 })
 buttons.addEventListener("dblclick", (_e) => {
     buttons.style.backgroundColor = "#17A2B8"
@@ -35,8 +37,7 @@ const cp = document.querySelector(".destination")
 window.addEventListener("scroll", (_e) => {
     cp.style.color = "green"
 })
-bodyText.addEventListener("select", (_e) => {
-    bodyText.style.color = "white"
-})
-// addEventListener("select")
 
+('nav a[href="#"]').click(function (event) {
+    event.preventDefault();
+  })
