@@ -383,3 +383,12 @@ function removePhoto() {
     let img = document.querySelector('.two img');
     img?.parentElement.removeChild(img);
 }
+
+//SCROLL EVENT=======================
+window.addEventListener('scroll', () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    if (scrolled === scrollable) {
+        alert(`You've reached the bottom!`);
+    }
+});
