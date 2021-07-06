@@ -34,7 +34,7 @@ intro.addEventListener("mouseout", function (event) {
 //5
 
 let text = document.querySelector(".text-content");
-text.addEventListener(`select`, function (event) {
+text.addEventListener("select", function (event) {
   text.style.color = `blue`;
 });
 
@@ -49,4 +49,28 @@ page.addEventListener("load", function (event) {
 
 text.addEventListener("click", function (event) {
   alert("Time for fun!");
+});
+
+//8
+let body = document.querySelector(".text-content");
+
+body.addEventListener("wheel", function (event) {
+  event.target.style.fontSize = "22px";
+});
+
+//9
+
+page.addEventListener("resize", function (event) {
+  console.log(`Window has been resized`);
+});
+
+//10
+
+const destination = document.querySelector(".content-pick");
+
+destination.addEventListener("mouseover", function (event) {
+  destination.style.color = "cyan";
+});
+destination.addEventListener("mouseout", function (event) {
+  destination.removeAttribute("style");
 });
