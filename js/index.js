@@ -295,3 +295,33 @@ reload.addEventListener('click', () => {
 window.onload = (event) => {
     console.log('page is fully loaded');
   };
+
+//ONFOCUS EVENT===================
+//Plan create focus event on a new form field. Perhaps for email capture or something. 
+//The focus event fires when an element has received focus. The main difference between this event and focusin is that focusin bubbles while focus does not.
+
+// 1)  create javascrip for the HTML <input type="text" value="CLICK HERE">
+const inputField = document.createElement('input');
+const headerH2 = document.querySelector('header h2');
+inputField.setAttribute('type', "text");
+inputField.setAttribute('value', "Click Here");
+headerH2.appendChild(inputField);
+inputField.style = "margin:2%";
+console.log(inputField);
+
+//2  The onfocus property of the GlobalEventHandlers mixin is an event handler that processes focus events on the given element.The focus event is raised when the user sets focus on an element.
+
+let input = document.querySelector('input');
+
+input.onblur = inputBlur;
+input.onfocus = inputFocus;
+
+function inputBlur() {
+  input.value = 'Whoa, wait Email address?';
+}
+
+function inputFocus() {
+  input.value = 'Email here';
+}
+
+
