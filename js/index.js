@@ -2,8 +2,7 @@
 
 //1 Mouseover <h1> yellow up
 const headerH1 = document.querySelector('h1');
-console.log(headerH1
-    );
+// console.log(headerH1);
     headerH1.addEventListener('mouseover', e => {
         e.target.style.backgroundColor = 'yellow'; 
     });
@@ -19,14 +18,14 @@ const divBtns = document.querySelectorAll('div.btn');
 for (let i = 0; i<divBtns.length; i++){
     divBtns[i].setAttribute('id', "signMeUpBtn");
 }
-console.log(`div btn`,divBtns);
-console.log(divBtns[1]);
+// console.log(`div btn`,divBtns);
+// console.log(divBtns[1]);
 
 //Handle click events on signMeUpBtn
 //first step isolate all <buttons> with #signMeUpBtn ids just created above
 const signMeUpBtn = document.querySelectorAll('#signMeUpBtn');
-console.log(`Sign Me Up ID's`,signMeUpBtn);
-console.log(`just one`, signMeUpBtn[1]);
+// console.log(`Sign Me Up ID's`,signMeUpBtn);
+// console.log(`just one`, signMeUpBtn[1]);
 //next generic function when they are clicked
 signMeUpBtn.forEach(ele => {
     ele.onclick = function (e) {
@@ -49,7 +48,7 @@ signMeUpBtn.forEach(ele => {
 //Step 1 isolate the <section> desired
 const contentPick = document.querySelector(".content-pick");
 // contentPick.style('position:relative');
-console.log(`HERE IS THE CONTENT SECTION`,contentPick);
+// console.log(`HERE IS THE CONTENT SECTION`,contentPick);
 //Step 2 create basic modal div
 const newParentDivModal = document.createElement('div');
 newParentDivModal.classList.add('modal');
@@ -57,40 +56,40 @@ newParentDivModal.classList.add('off');
 newParentDivModal.style= 'display:none';
 //Step 3 append modal div to <section class="content-...>"
 contentPick.appendChild(newParentDivModal);
-console.log(newParentDivModal);
+// console.log(newParentDivModal);
 
 //added a child1 div for opacity 
 const divChild1 = document.createElement('div');
 divChild1.classList.add('modal-opacity');
 newParentDivModal.appendChild(divChild1);
-console.log(divChild1);
+// console.log(divChild1);
 
 //Added a child2 div for modal dialog
 const divChild2 = document.createElement('div');
 divChild2.classList.add('modal-dialog');
 newParentDivModal.appendChild(divChild2);
-console.log(divChild2);
+// console.log(divChild2);
 
 //Add h4 message "Are You Sure?" append to div dialog
 const messageSure = document.createElement('h4');
 messageSure.setAttribute('id', "youSure");
 divChild2.appendChild(messageSure);
 messageSure.textContent = "Are You Sure?";
-console.log(messageSure);
+// console.log(messageSure);
 
 //Add ConfirmationButton Yes & append to div dialog
 const buttonY = document.createElement('button');
 buttonY.setAttribute('id', "confirmationButton");
 buttonY.textContent= `Yes, let's rock`;
 divChild2.appendChild(buttonY);
-console.log(buttonY);
+// console.log(buttonY);
 
 //Add CancelButton No & AppendChild to div dialog
 const buttonN = document.createElement('button');
 buttonN.setAttribute('id', "cancelButton");
 buttonN.textContent = "No take me back";
 divChild2.appendChild(buttonN);
-console.log(buttonN);
+// console.log(buttonN);
 
 //Add <h1 class="report success off">
 const reportSuccessOffh1 = document.createElement('h1');
@@ -100,7 +99,7 @@ reportSuccessOffh1.classList.add('off');
 reportSuccessOffh1.style = "display:none";
 reportSuccessOffh1.textContent = "Signed Up --> Coming Soon!";
 contentPick.appendChild(reportSuccessOffh1);
-console.log(reportSuccessOffh1);
+// console.log(reportSuccessOffh1);
 
 //Add <h1 class="report failure off">
 const reportfailureOffh1 = document.createElement('h1');
@@ -109,7 +108,7 @@ reportfailureOffh1.classList.add('failure');
 reportfailureOffh1.classList.add('off');
 reportfailureOffh1.style = "display:none";
 reportfailureOffh1.textContent = "Process Canceled. You are NOT signed up!";
-console.log(reportfailureOffh1);
+// console.log(reportfailureOffh1);
 
 //MAY use this to set up separate messages
 // const signMeUph4 = document.querySelectorAll('h4');
@@ -191,11 +190,11 @@ document.addEventListener('keydown', escKey);
 const headerImg1 = document.querySelector('header img');
 headerImg1.setAttribute('id', "img1");
 headerImg1.style.display = "absolute";
-console.log(headerImg1);
+// console.log(headerImg1);
 
 //2) Create a second image, style, set to dispay:none, append to .intro
 const intro = document.querySelector(".intro");
-console.log(intro);
+// console.log(intro);
 const headerImg2 = document.createElement('img');
 headerImg2.setAttribute('src', "https://buff.ly/2TxtE5y");
 headerImg2.setAttribute('alt', "Yellow VW Bus");
@@ -205,7 +204,7 @@ headerImg2.style = ("align-items: center");
 headerImg2.style.display = "absolute";
 headerImg2.style = 'display:none';
 intro.prepend(headerImg2);
-console.log(`Here is headerImg2`, headerImg2);
+// console.log(`Here is headerImg2`, headerImg2);
 
 //3) Helper Function to count wheel events
 // let eventCount = 0;
@@ -229,7 +228,7 @@ console.log(`Here is headerImg2`, headerImg2);
 //4) Wheel eventListner for each image
 const img1 = document.querySelector("#img1");
 const img2 = document.querySelector('#img2');
-console.log(`Here is Img1`,img1);
+// console.log(`Here is Img1`,img1);
 
 let eventCount = 0;
 
@@ -242,19 +241,19 @@ function countEvents (element, e) {
 
         if((eventCount <= 1)) {//count = 0
            img1.style = "display:none";
-            console.log('Count Zero img1 displayed');
+            // console.log('Count Zero img1 displayed');
             
         }
         else if((eventCount  %2) === 1){//count = odd number
             img1.style = "display: none";
             img2.style = "display:block";
-            console.log('Count is ODD img1 removed');
+            // console.log('Count is ODD img1 removed');
             
         } 
         else {//count = even
             img1.style = "display:block";
             img2.style = "display:none";
-            console.log('Count is EVEN img1 displayed');
+            // console.log('Count is EVEN img1 displayed');
             
         }
         
@@ -265,8 +264,34 @@ function countEvents (element, e) {
         const introCount = (countEvents(intro, "wheel"));
          console.log(`the current  wheel count is `, countEvents(img1, "Wheel"));
         // let wheelCount = countEvents(img1, "wheel");
-        console.log(`Here is Img2`,img2);
+        // console.log(`Here is Img2`,img2);
 
     });
 
-//LOAD========================
+//LOAD event ========================
+//Plan...add "Reload" to navigation option
+
+//1) create new <div> with class="controls" and append to <nav>
+const divControls = document.createElement('div');
+const nav = document.querySelector('nav');
+divControls.classList.add('controls');
+nav.appendChild(divControls);
+// console.log(divControls);
+
+//2) Create <button id="reload" type="button">Reload</button>
+const reloadBtn = document.createElement('button');
+divControls.appendChild(reloadBtn);
+reloadBtn.textContent = "Reload";
+reloadBtn.setAttribute('id', "reload");
+// console.log(reloadBtn);
+
+//3) isolate #reload button and add event listener
+const reload = document.querySelector('#reload');
+reload.addEventListener('click', () => {
+  window.setTimeout(() => {
+      window.location.reload(true);
+  }, 200);
+});
+window.onload = (event) => {
+    console.log('page is fully loaded');
+  };
