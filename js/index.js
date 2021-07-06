@@ -356,14 +356,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleResize(entries) {
     console.log('resize called');
-    let div = entries[0].target;
+    // let div = entries[0].target;
     if (entries[0].contentRect.width > 700) {
         //add oversized class
-        div.classList.add('big');
+        // div.classList.add('big');
         addPhoto();
     } else {
         //remove oversized class
-        div.classList.remove('big');
+        // div.classList.remove('big');
         removePhoto();
     }
 }
