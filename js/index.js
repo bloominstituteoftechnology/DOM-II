@@ -12,6 +12,9 @@ buttons.addEventListener("dblclick", (_e) => {
 header.addEventListener("mouseover", (_e) => {
     header.style.backgroundColor = "white"
 })
+header.addEventListener("mouseout", (_e) => {
+    header.style.backgroundColor = "mistyrose"
+})
 const welcome = document.querySelector(".intro h2")
 window.addEventListener("keydown", (event) => {
     if(event.keyCode === 90) {
@@ -32,8 +35,8 @@ const cp = document.querySelector(".destination")
 window.addEventListener("scroll", (_e) => {
     cp.style.color = "green"
 })
-window.addEventListener("select", (_e) => {
-    bodyText.style.color = "red"
+bodyText.addEventListener("select", (_e) => {
+    bodyText.style.color = "white"
 })
 // addEventListener("select")
 
