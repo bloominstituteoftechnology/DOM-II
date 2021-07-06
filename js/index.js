@@ -254,9 +254,7 @@ function countEvents (element, e) {
             img1.style = "display:block";
             img2.style = "display:none";
             // console.log('Count is EVEN img1 displayed');
-            
         }
-        
     });
 }
 
@@ -323,7 +321,7 @@ function inputFocus() {
 
 
 //RESIZE EVENT ==================================
-//The resize event fires when the document view (window) has been resized.
+//The resize event fires when the document view (window) has been resized.Reference https://www.youtube.com/watch?v=jxcoo5oM_oQ
 const divOne = document.createElement('div');
 divOne.classList.add('containerA');
 // console.log(sectionOne);
@@ -345,8 +343,6 @@ divOne.appendChild(sectionTwo);
 const pTwo = document.createElement('p');
 pTwo.textContent = "PIC";
 sectionTwo.appendChild(pTwo);
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     let resizer = new ResizeObserver(handleResize);
@@ -393,7 +389,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-//Select EVENT============================
+//The "Select" EVENT============================
 //Using https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect
 
 const divH2 = document.querySelector('h2');
