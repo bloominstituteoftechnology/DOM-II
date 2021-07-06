@@ -392,3 +392,18 @@ window.addEventListener('scroll', () => {
         alert(`You've reached the bottom!`);
     }
 });
+
+//Select EVENT============================
+//Using https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect
+
+const divH2 = document.querySelector('h2');
+
+function logSelection(event) {
+    // const divH2 = document.querySelector('h2');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    divH2.textContent = `You selected: ${selection}`;
+  }
+  const pSelect = document.createElement('p');
+  divH2.appendChild(pSelect);
+//   const textarea = document.querySelector('textarea');
+  divH2.onselect = logSelection;
