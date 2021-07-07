@@ -3,7 +3,7 @@
 const container = document.querySelector('.home');
 console.log(container);
 
-const button = document.querySelectorAll('section.content-pick .destination .btn')
+const button = document.querySelector('section.content-pick .destination .btn')
 
 
 function alert (){
@@ -23,11 +23,23 @@ text.addEventListener('click', (e) => {
     text.textContent = 'Lets Have Fun!'
 });
 
-const images = document.querySelectorAll('.img-content')
+const images = document.querySelector('.img-content')
 images.addEventListener('mouseenter', function(){
     images.style.transform = 'scale(1.6)';
     images.style.transition = 'transform 1s'
 })
+
+images.addEventListener('mouseleave', function(){
+    images.style.transform = 'scale (1)';
+})
+
+const body = document.querySelector('body');
+
+body.addEventListener('click', (e) =>{
+    body.style.backgroundColor = 'black';
+})
+
+const texts = document.querySelectorAll('p')
 
 
 const nav = document.querySelector('.nav');
