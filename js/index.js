@@ -27,66 +27,96 @@ window.addEventListener("load", () => { alert("Thanks for dropping in. \nPlease 
 
 //---2. Mouse Enter Event ---//
 //Event to change the text color of top bar when mouse enter occurs
-//I have coded the mouse enter and mouse leave events to emulate a mouseover effect
+//Query selector calls .main navigation, assigns it to mouseEnterHeader
 const mouseEnterHeader = document.querySelector(".main-navigation");
-//
+//Event listener added to mouseEnterHeader, changes header background to blue
 mouseEnterHeader.addEventListener("mouseenter", () => { mouseEnterHeader.style.backgroundColor = "blue"; });
 
 //---3. Mouse Leave Event---//
 //This event detects when the mouse pointer leaves the header and turns the background white again
-//I have coded the mouse enter and mouse leave events to emulate a mouseover effect
+//Query selector calls .main navigation, assigns it to mouseLeaveHeader
 const mouseLeaveHeader = document.querySelector(".main-navigation");
-//
+//Event listener added to mouseLeaveHeader, changes header background to white
 mouseLeaveHeader.addEventListener("mouseleave", () => { mouseLeaveHeader.style.backgroundColor = "white"; });
 
-
 //---4. keydown event--- Make this a switch case, do without arrow too //
-//Event listener to display an alert when a key 
-document.querySelector("body").addEventListener("keydown", (e) => { if (e.keyCode == "32")  {  alert("Space Bar!"); } });
+//Event listener to display an alert when the space bar is pressed.
+//Query selector calls body, assigns to keydownEvent
+const keydownEvent = document.querySelector("body");
+//Event listener added to keydownEvent. If space bar is pressed, display alert. 
+keydownEvent.addEventListener("keydown", (e) => { if (e.keyCode == "32")  {  alert("Space Bar!"); } });
 
 //---5. dblclick event---//
-//Event listener to display an alert when the bus image is doubleclicked
-const changeImage = document.querySelector(".intro img");
-//
-changeImage.addEventListener("dblclick", () =>  {alert("Let's take a ride on the Fun Bus!!");})
-
+//Event listener to display an alert when the bus image is double-clicked
+//Query selector calls .intro img, assigns it to changeImage
+const doubleClickImage = document.querySelector(".intro img");
+//Event listener added to doubleClickImage, displays this alert when picture is double clicked
+doubleClickImage.addEventListener("dblclick", () =>  {alert("Let's take a ride on the Fun Bus!!");})
 
 //---6. button click event---//
 //Event listener to display a message if the beach vacation button is clicked
-//
+//Query selector calls the photo img at this location, assigns to beachButtonClick
 const beachButtonClick = document.querySelector("section.content-pick > div:nth-child(1) > div");
-//
+//Event listener added to beachButtonClick, displays this alert when the picture is clicked
 beachButtonClick.addEventListener("click", () => { alert("Pack your sunscreen and swimsuit!");});
 
 //---7. Wheel Event ---//
-//
+//Event listener to change the background color on mouse wheel
+//Query selector calls body, assigns to bodyWheel
 const bodyWheel = document.querySelector("body");
-//
+//Event listener added to bodyWheel, body background changes to orange when wheel is used
 bodyWheel.addEventListener("wheel", () => { bodyWheel.style.backgroundColor = "orange"; });
 
 //---8. scroll event---//
 //Event listener to display a visitor scrolls the page
-//
-const bodyScroll = document.querySelector("html");
-//
-bodyScroll.addEventListener("scroll", () => { bodyScroll.style.backgroundColor = "blue"; });
+//>>>This event is commented out because it overtakes the other events. Uncomment to view effect.
+//window.addEventListener("scroll", () => { alert("Yo! Slow your scroll! ")});
 
 //---9. Mouse Down event---//
-//Event listener to display an alert when the visitor clicks on
+//Event listener to display an alert when the visitor clicks a mouse button over the "lets go" image
+//Query selector calls the image content, assigns to mouseDownEvent
 const mouseDownEvent =  document.querySelector(".img-content img");
-//
-mouseDownEvent.addEventListener("mousedown", () => 
+//Event listener added to mouseDownEvent, displays this alert message
+mouseDownEvent.addEventListener("mousedown", () => { alert("Are you ready for a vacation?"); });
+
+//---10. Mouse Up event--//
+//Event listener to display an alert when the visitor releases the mouse button over the "lets go" image, changes image
+//Query selector calls the image content, assigns to mouseUpEvent
+const mouseUpEvent =  document.querySelector(".img-content img");
+//Event listener added to mouseDownEvent
+mouseUpEvent.addEventListener("mousedown", () => 
 {
-  alert("Are you ready for a vacation?");
+  //mouseUpEvent changes the image
+  mouseUpEvent.src = "https://images.unsplash.com/photo-1596583164564-5d6e7a9e0c68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80";
+  //mouseUpEvent displays this alert message
+  alert("Congratulations; you've earned it!!! ");
 });
 
-//---10. Focus event---//
- //Event listener to display an alert when a key 
- document.querySelector("body").addEventListener("keydown", (e) => 
- {
-    if (e.keyCode == "32") alert("Space Bar!");
-  });
+/* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. 
+Remember not all event types bubble. */
+
+//---Nested mouse enter/leave event ---//
+//Event to change the text color of footer when mouse enter occurs
+//Query selector calls footer, assigns it to mouseEnterFooter
+const mouseEnterFooter = document.querySelector("footer");
+//Event listener added to mouseEnterFooter
+mouseEnterFooter.addEventListener("mouseenter", () => 
+{ 
+  //Changes footer background to yellow
+  mouseEnterFooter.style.backgroundColor = "yellow"; 
+  //Query selector calls footer, assigns it to mouseLeaveFooter
+  const mouseLeaveFooter = document.querySelector("footer");
+  //Event listener added to mouseLeaveFooter, changes header background to white
+  mouseLeaveFooter.addEventListener("mouseleave", () => { mouseLeaveFooter.style.backgroundColor = "white"; });
+
+});
 
 
-/* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
- * [ ] Stop the navigation items from refreshing the page by using `preventDefault()`*/
+/* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`*/
+
+//Query selector calls .nav-link, assign to preventIt
+const preventIt = document.querySelector(".nav-link");  
+//Event listener added to preventIt, calls preventDefault() function
+preventIt.addEventListener("click", (e) => e.preventDefault());
+
+npx live-server
