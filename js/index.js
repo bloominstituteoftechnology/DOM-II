@@ -19,7 +19,7 @@ mainmover.addEventListener("mouseover", function(event){
 
 },false)
 
-
+//dbclick event
 let kdown = document.querySelector('.main-navigation');
 
 kdown.addEventListener("dblclick", function (event){
@@ -57,7 +57,7 @@ navn.addEventListener('mouseover',function(e){
         logon.style.opacity = 0.5;
     }
 })
-
+//nav event back to normal with mouseout
 navn.addEventListener('mouseout',function(e){
     if(e.target.classList.contains('nav-link')){
         const link = e.target;
@@ -70,10 +70,95 @@ navn.addEventListener('mouseout',function(e){
         logon.target.style.opacity = 1;
     }
 })
+//scroll event 
+window.addEventListener('scroll', function(){
+
+    document.body.style.backgroundColor = "yellow";
+})
 
 
+//drag event
+var dragged;
 
+/* events fired on the draggable target */
+document.addEventListener("drag", function(event) {
+console.log('being dragged')
+}, false);
 
+document.addEventListener("dragstart", function(event) {
+  // store a ref. on the dragged elem
+  dragged = event.target;
+  // make it half transparent
+  event.target.style.opacity = 0;
+}, false);
+
+document.addEventListener("dragend", function(event) {
+  // reset the transparency
+  event.target.style.opacity = "";
+}, false);
+
+/* events fired on the drop targets */
+document.addEventListener("dragover", function(event) {
+  // prevent default to allow drop
+  event.preventDefault();
+}, false);
+
+document.addEventListener("dragenter", function(event) {
+  // highlight potential drop target when the draggable element enters it
+  if (event.target.className == "dropzone") {
+    event.target.style.backgroundColor = "purple";
+  }
+
+}, false);
+
+document.addEventListener("dragleave", function(event) {
+  // reset background of potential drop target when the draggable element leaves it
+  if (event.target.className == "dropzone") {
+    event.target.style.background = "";
+  }
+
+}, false);
+
+//drop event
+document.addEventListener("drop", function(event) {
+  // prevent default action (open as link for some elements)
+  event.preventDefault();
+  // move dragged elem to the selected drop target
+  if (event.target.className == "dropzone") {
+    event.target.style.opacity = 0.5;
+    dragged.parentNode.removeChild( dragged );
+    event.target.appendChild( dragged );
+  }
+}, false);
+
+//preventdefault
+
+document.querySelectorAll('.nav-link').forEach(function(el){
+    el.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.getAttribute('href');
+        console.log(id);
+    })
+})
+
+//stoppropagation
+const heading = document.querySelector('.img-content');
+const btn  = document.querySelector('.btn');
+
+heading.addEventListener('click', (e) => {
+    alert('The image was clicked');
+
+});
+btn.addEventListener('mouseover', (e) => {
+    alert('The sign me up  was clicked');
+
+});
+
+btn.addEventListener('mouseover', (e) => {
+    e.stopPropagation();
+    alert('The sign me up  was clicked');
+
+});
 
 
 
