@@ -1,5 +1,17 @@
 // Your code goes here
 
+const mouseOver = document.querySelector('.nav, a')
+console.log(mouseOver)
+
+
+mouseOver.addEventListener('mouseover', function( event ) {
+   event.target.style.color = 'blue';
+   setTimeout(function() {
+       event.target.style.color = ''
+   }, 500);
+
+}, false);
+
 //1 Mouseover <h1> yellow up
 const headerH1 = document.querySelector('h1');
 // console.log(headerH1);
