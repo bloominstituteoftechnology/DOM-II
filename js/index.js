@@ -13,6 +13,8 @@ images.forEach(function(img) {
     img.addEventListener('mouseleave', e => e.target.style.transform = 'scaleX(1)')
 })
 
+
+
 const title = document.querySelector('.logo-heading')
 const navBar = document.querySelector('.main-navigation')
 
@@ -28,6 +30,11 @@ const home = document.querySelector('.nav a:nth-of-type(1)')
 const about = document.querySelector('.nav a:nth-of-type(2)')
 const blog = document.querySelector('.nav a:nth-of-type(3)')
 const contact = document.querySelector('.nav a:nth-of-type(4)')
+
+home.addEventListener('click', event => event.preventDefault())
+about.addEventListener('click', e => e.preventDefault())
+blog.addEventListener('click', e => e.preventDefault())
+contact.addEventListener('click', e => e.preventDefault())
 
 home.addEventListener('mouseenter', () => home.style.color = 'purple')
 home.addEventListener('mouseenter', () => about.style.color = 'purple')
@@ -78,5 +85,3 @@ const islandButton = document.querySelector('.content-pick .destination:nth-of-t
 funButton.addEventListener('click', event => prompt('Enter Social Security Number'))
 mountainButton.addEventListener('click', event => prompt('Enter Social Security Number'))
 islandButton.addEventListener('click', event => prompt('Enter Social Security Number'))
-
-
