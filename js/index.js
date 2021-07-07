@@ -166,6 +166,7 @@ function cancelSignUp() {
 buttonN.addEventListener('click', cancelSignUp);
 
 //KEYDOWN
+//https://buff.ly/3dNUNbe
 // function that closes the modal if
 // the user hits the Escape key on their keyboard.
 // Add it as an event listener for 'keydown' events on document.
@@ -378,7 +379,7 @@ function addPhoto() {
 function removePhoto() {
     let img = document.querySelector('.two img');
     img?.parentElement.removeChild(img);
-}
+} //Turnary Operator for new Chrome https://buff.ly/3xnVe3I qqqq
 
 //SCROLL EVENT=======================
 window.addEventListener('scroll', () => {
@@ -390,16 +391,53 @@ window.addEventListener('scroll', () => {
 });
 
 //The "Select" EVENT============================
-//Using https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect
+//Using MDN https://buff.ly/3hH0OYA
 
-const divH2 = document.querySelector('h2');
+//1) isolate paragraphs of choice
+const pParentNL = document.querySelectorAll('.content-section p');
+console.log(pParentNL);//prints node list of paragraphs
 
-function logSelection(event) {
-    // const divH2 = document.querySelector('h2');
+//2) next convert that node list to a real array list of paragraphs
+ let pParentNLArray = Array.from(pParentNL);
+console.log(pParentNLArray)
+ //3) using the .forEach create new child paragraphs appended to each original paragraph and give those child paragraphs a class name of pChild
+
+  pParentNLArray.forEach(e => {
+     const pChild = document.createElement('p');
+     pChild.classList.add("pChild");
+      pChild.textContent = "TC:";
+     e.appendChild(pChild);
+     e.classList.add('pParent');
+    });
+    console.log(pParentNLArray);
+    
+    
+    // 4) Create a .onselct event for each element that fires off the associated helper fucntion/component below
+    // const newId = document.querySelectorAll('.pChild');
+    // console.log(newId);
+
+// newId[0].setAttribute('id', 'para1');
+// const blah1 = document.querySelector('#para1');
+// const blah2 = document.querySelector('#para1');
+// const blah3 = document.querySelector('#para1');
+// const blah4 = document.querySelector('#para1');
+
+//5)Creat a helpfer function/component that takes an event as an argument. (in this case the argument is going to be for the "onSelect" events). The function should isolate the text the user might select and then log or display that text back to them in the newly created paragraphs above. 
+
+// function selectText(event) {
+//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     pChild.textContent = `You selected: ${selection}`;
+//   }
+
+  function logSelection(event) {
     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    divH2.textContent = `You selected: ${selection}`;
+    const ids = document.querySelector(`.pParent .pChild`);
+    ids.textContent = `You selected: ${selection}`;
   }
-  const pSelect = document.createElement('p');
-  divH2.appendChild(pSelect);
+  const ya = document.querySelector(`.${pParentNL[0]} .pChild`);
+const ids = document.querySelector(`.pParent .pChild`);
+console.log(`Here is the child???`, ids);
+  console.log(`Here is my child for parent `, pParentNL[0]); 
+  pParentNL[0].onselect = logSelection;
 //   const textarea = document.querySelector('textarea');
-  divH2.onselect = logSelection;
+//   console.log(textarea.onselect = logSelection) 
