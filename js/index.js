@@ -3,19 +3,34 @@
 const container = document.querySelector('.home');
 console.log(container);
 
-const buttonAlert = document.querySelectorAll('section.content-pick .destination .btn')
+const button = document.querySelectorAll('section.content-pick .destination .btn')
 
 
 function alert (){
-    buttonAlert.addEventListener('click', alert);
     alert ('Signing Up!');
 }
 
-function alert (){
-    buttonAlert.addEventListener('click', function(){
-        this.style.backgroundColor='red';
-    })
+function buttonColor (){
+        button.style.backgroundColor='red';
 }
 
+button.addEventListener('click', alert);
+button.addEventListener('click', buttonColor);
+
+const text = document.querySelector('.intro h2');
+
+text.addEventListener('click', (e) => {
+    text.textContent = 'Lets Have Fun!'
+});
+
+const images = document.querySelectorAll('.img-content')
+images.addEventListener('mouseenter', function(){
+    images.style.transform = 'scale(1.6)';
+    images.style.transition = 'transform 1s'
+})
 
 
+const nav = document.querySelector('.nav');
+nav.addEventListener('click', (e) => {
+    e.preventDefault();
+})
