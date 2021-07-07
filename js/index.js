@@ -36,4 +36,28 @@ document.addEventListener("wheel", element => {
     }
 })
 
+let dest = document.querySelectorAll(".content-pick");
+dest.forEach(element => {    
+    element.addEventListener("focus", event => {
+        element.target.style.backgroundColor = "gray";
+    })
+        
+})
+
+let btn = document.querySelectorAll(".btn");
+btn.forEach(element => {
+    element.addEventListener("click", event => {
+        event.focus();
+    })
+    element.addEventListener("focus", event => {
+        event.target.style.backgroundColor = "yellow";
+    })
+})
+
+let anchor = document.querySelectorAll('a');
+anchor.forEach(element => {
+    element.addEventListener('click', e => {
+        e.preventDefault();
+    })
+})
 
