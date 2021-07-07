@@ -139,5 +139,8 @@ toTest.addEventListener(
   },
   false
 );
-
-nav = preventDefault();
+let navigationItems = document.getElementsByTagName("a");
+navigationItems.forEach(addEventListener)(
+  "click",
+  navigationItems.forEach(event)
+);
