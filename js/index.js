@@ -1,7 +1,8 @@
 // Your code goes here
 
-let highlight = document.querySelector('destination');
-highlight.addEventListener('hover', (event) => {event.target.style.backgroundColor = "pink"; })
+let highlight = document.querySelector('intro');
+highlight.addEventListener('hover', (event) => {
+  event.target.style.backgroundColor = "pink"; })
 
 
 
@@ -23,7 +24,7 @@ let button = document.querySelector('.content-section');
 
  const busPicture = document.querySelectorAll('img')[2]
  busPicture.addEventListener("mouseover", event =>{
-     event.target.style.transform = "skewy(360deg)";
+     event.target.style.transform = "rotate(0.5turn);";
      event.target.style.transition = "transform 0.5s";
  })
 
@@ -33,7 +34,7 @@ let button = document.querySelector('.content-section');
 const password = document.querySelector('input[type="password"]');
 
 password.addEventListener('focus', (event) => {
-  event.target.style.background = 'pink';
+  event.target.style.background = 'gray';
 });
 
 password.addEventListener('blur', (event) => {
@@ -65,7 +66,7 @@ document.addEventListener("click", function(){
   });
 
 
-//8. change background color on click.
+//9. change background color on click.
 document.addEventListener("click", function(){
     document.body.style.backgroundColor = "lavender";
   });
