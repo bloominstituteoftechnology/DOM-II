@@ -441,15 +441,15 @@ console.log(pParentNLArray)
 //     pChild.textContent = `You selected: ${selection}`;
 //   }
 
-  function logSelection(event) {
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    const ids = document.querySelector(`.pParent .pChild`);
-    ids.textContent = `You selected: ${selection}`;
-  }
-  const ya = document.querySelector(`.${pParentNL[0]} .pChild`);
-const ids = document.querySelector(`.pParent .pChild`);
-console.log(`Here is the child???`, ids);
-  console.log(`Here is my child for parent `, pParentNL[0]); 
-  pParentNL[0].onselect = logSelection;
+//   function logSelection(event) {
+//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     const ids = document.querySelector(`.pParent .pChild`);
+//     ids.textContent = `You selected: ${selection}`;
+//   }
+//   const ya = document.querySelector(`.${pParentNL[0]} .pChild`);
+// const ids = document.querySelector(`.pParent .pChild`);
+// console.log(`Here is the child???`, ids);
+//   console.log(`Here is my child for parent `, pParentNL[0]); 
+//   pParentNL[0].onselect = logSelection;
 //   const textarea = document.querySelector('textarea');
 //   console.log(textarea.onselect = logSelection) 
