@@ -1,4 +1,4 @@
-# DOM II - Event Exploration
+# DOM II - Event Exploration FUN BUS
 
 Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).
 
