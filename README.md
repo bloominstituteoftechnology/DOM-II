@@ -1,4 +1,4 @@
-# DOM II - Event Exploration
+# DOM II - Event Exploration FUN BUS
 
 Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).
 
@@ -55,3 +55,7 @@ Note: Drag and drop is a bit more advanced than the others: it's not actually a 
 **Follow these steps for completing your project.**
 
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+
+## Rick's Pull Request
+
+- [PUll request](https://github.com/LambdaSchool/DOM-II/pull/1305) https://github.com/LambdaSchool/DOM-II/pull/1305
