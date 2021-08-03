@@ -20,29 +20,39 @@ busImg.addEventListener('mouseleave', event => {
     event.stopPropagation();
 });
 
+
 // dblclick event on the 3 buttons at bottom of page
 // mouseleave event to revert to original button text
 const signMeUpBtns = document.querySelectorAll('.btn');
-const btnsArray = Array.from(signMeUpBtns); //convert node list to array
 
-btnsArray[0].addEventListener('dblclick', event => {
-    btnsArray[0].textContent = 'One Click Please';
+// signMeUpBtns.forEach(item => {
+//     item.addEventListener('dblclick', event => {
+//         item.textContet = 'One Click Please';
+//     })
+//     item.addEventListener('mouseleave', event => {
+//         item.textContent = 'Sign Me Up!';
+//     })
+// })
+
+signMeUpBtns[0].addEventListener('dblclick', event => {
+    signMeUpBtns[0].textContent = 'One Click Please';
 });
-btnsArray[1].addEventListener('dblclick', event => {
-    btnsArray[1].textContent = 'One Click Please';
+signMeUpBtns[1].addEventListener('dblclick', event => {
+    signMeUpBtns[1].textContent = 'One Click Please';
 });
-btnsArray[2].addEventListener('dblclick', event => {
-    btnsArray[2].textContent = 'One Click Please';
+signMeUpBtns[2].addEventListener('dblclick', event => {
+    signMeUpBtns[2].textContent = 'One Click Please';
 });
-btnsArray[0].addEventListener('mouseleave', event => {
-    btnsArray[0].textContent = 'Sign Me Up!';
+signMeUpBtns[0].addEventListener('mouseleave', event => {
+    signMeUpBtns[0].textContent = 'Sign Me Up!';
 });
-btnsArray[1].addEventListener('mouseleave', event => {
-    btnsArray[1].textContent = 'Sign Me Up!';
+signMeUpBtns[1].addEventListener('mouseleave', event => {
+    signMeUpBtns[1].textContent = 'Sign Me Up!';
 });
-btnsArray[2].addEventListener('mouseleave', event => {
-    btnsArray[2].textContent = 'Sign Me Up!';
+signMeUpBtns[2].addEventListener('mouseleave', event => {
+    signMeUpBtns[2].textContent = 'Sign Me Up!';
 });
+
 
 // keydown event on the 'd' and 'l' key 
 // toggles dark/light mode for page
@@ -56,6 +66,7 @@ document.addEventListener('keydown', event => {
         event.stopPropagation();
     }
 });
+
 
 // click key event on the last image
 // replaces h2 of last section to a random location name
@@ -92,13 +103,13 @@ destinationImg.addEventListener('click', event => {
     destinationH2.textContent = destinations[randomNumber()];
 });
 
-// draggable
+
+// drag and drop, 2 items and 2 targets
 const middleTwoImgs = document.querySelectorAll('.img-content img');
 middleTwoImgs[0].setAttribute('draggable', true);
 middleTwoImgs[1].draggable = true;
 middleTwoImgs[0].style.cursor = 'move';
 middleTwoImgs[1].style.cursor = 'move';
-
 const middleTwoDivs = document.querySelectorAll('.img-content');
 
 middleTwoImgs.forEach(item => {
@@ -109,7 +120,6 @@ middleTwoImgs.forEach(item => {
         item.style.opacity = '';
     })
 })
-
 middleTwoDivs.forEach(item => {
     item.addEventListener('dragover', event => {
         // event.preventDefault();
