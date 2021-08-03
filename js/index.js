@@ -38,6 +38,11 @@ const second = function(event){
 
 mainHeader.addEventListener('mouseout', second)
 
+const height = function(event){
+    mainHeader.style.color = "yellow";
+  }
+  mainHeader.addEventListener('mouseover',height);
+
 // swap image
 // const swap = function(event){
 
