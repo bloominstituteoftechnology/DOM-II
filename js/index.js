@@ -12,6 +12,8 @@ const mFat = document.querySelector(".content-destination");
 const foot = document.querySelector(".footer");
 const moot = document.querySelector("section > img");
 
+// change site background
+
 // Change site font color
 const onload = function(event){
     document.body.style.color = "green";
@@ -21,9 +23,9 @@ window.addEventListener('load',onload);
 const onset = function(event){
     document.body.style.color = "white";
 }
-window.addEventListener('dblclick', onset);
+window.addEventListener('scroll', onset);
 
-// Changing Title h1
+// Change Title h1
 const first = function(event){
     mainHeader.textContent = 'Hello World'
 }
@@ -31,7 +33,22 @@ const first = function(event){
 mainHeader.addEventListener('mouseover', first)
 
 const second = function(event){
-    mainHeader.textContent = 'Fun Bus'
+    mainHeader.textContent = 'Love Yourself Queens'
 }
 
-mainHeader.addEventListener('click', second)
+mainHeader.addEventListener('mouseout', second)
+
+// swap image
+// const swap = function(event){
+
+// }
+
+// img.addEventListener('dblclick', swap)
+
+// change width
+
+
+const clicker = function(event){
+    body.style.width = "100px";
+  }
+  body.addEventListener('dblclick',clicker);
