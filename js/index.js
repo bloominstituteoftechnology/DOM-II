@@ -73,11 +73,29 @@ window.addEventListener('load', () => {
     })
   });
 
-const pageWidth = () => {
+
+/*six*/
+const pageResolution = () => {
     alert(innerWidth);
 };
+document.addEventListener('resize', pageResolution);
+
+/*seven*/
+const paragraph = document.querySelectorAll('p');
+
+const textChange = () => {
+    paragraph.forEach((item) => {
+        item.style.fontWeight = '800';
+    })
+}
+
+document.addEventListener('dblclick', textChange);
+
+/*eight*/
 
 
-
-document.addEventListener('resize', pageWidth);
-
+const idvLinks = document.querySelector('a')
+console.log(idvLinks);
+// links.addEventListener('mouseenter', (event) => {
+//     event.target.style.color = 'gold';
+// });
