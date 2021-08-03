@@ -96,55 +96,24 @@ destinationImg.addEventListener('click', event => {
 const middleTwoImgs = document.querySelectorAll('.img-content img');
 middleTwoImgs[0].setAttribute('draggable', true);
 middleTwoImgs[1].draggable = true;
+middleTwoImgs[0].style.cursor = 'move';
+middleTwoImgs[1].style.cursor = 'move';
+
 const middleTwoDivs = document.querySelectorAll('.img-content');
 
-middleTwoImgs[0].addEventListener('drag', event => {
-}, false);
-middleTwoImgs[1].addEventListener('drag', event => {
-}, false);
-middleTwoImgs[0].addEventListener('dragstart', event => {
-    middleTwoImgs[0] = event.target;
-    middleTwoImgs[0].style.opacity = '0.4';
-}, false);
-middleTwoImgs[1].addEventListener('dragstart', event => {
-    middleTwoImgs[1] = event.target;
-    middleTwoImgs[1].style.opacity = '0.4';
-}, false);
-middleTwoImgs[0].addEventListener('dragend', event => {
-    middleTwoImgs[0].style.opacity = '';
-}, false);
-middleTwoImgs[1].addEventListener('dragend', event => {
-    middleTwoImgs[1].style.opacity = '';
-}, false);
-middleTwoImgs[0].addEventListener('dragover', event => {
-    event.preventDefault();
-}, false);
-middleTwoImgs[1].addEventListener('dragover', event => {
-    event.preventDefault();
-}, false);
-middleTwoImgs[0].addEventListener('dragenter', event => {
-    if (event.target.className == 'img-content') {
-        event.target.style.border = 'dashed red 5px';
-    }
-}, false);
-middleTwoImgs[1].addEventListener('dragenter', event => {
-    if (event.target.className == 'img-content') {
-        event.target.style.border = 'dashed red 5px';
-    }
-}, false);
-middleTwoImgs[0].addEventListener('drop', event => {
-    event.preventDefault();
-    if (event.target.className == 'img-content') {
-        event.target.style.background = '';
-        middleTwoImgs[0].parentNode.removeChild(middleTwoImgs[0]);
-        event.target.appendChild(middleTwoImgs[0]);
-    }
-}, false);
-middleTwoImgs[1].addEventListener('drop', event => {
-    event.preventDefault();
-    if (event.target.className == 'img-content') {
-        event.target.style.background = '';
-        middleTwoImgs[1].parentNode.removeChild(middleTwoImgs[1]);
-        event.target.appendChild(middleTwoImgs[1]);
-    }
-}, false);
+middleTwoImgs.forEach(item => {
+    item.addEventListener('dragstart', () => {
+        item.style.opacity = '0.5';
+    })
+    item.addEventListener('dragend', () => {
+        item.style.opacity = '';
+    })
+})
+
+middleTwoDivs.forEach(item => {
+    item.addEventListener('dragover', event => {
+        // event.preventDefault();
+        const draggable = document.querySelector('.img-content img')
+        item.appendChild(draggable)
+    })
+})
