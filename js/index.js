@@ -2,12 +2,11 @@
 // I believe that in order to change something I need to select it first so I will start by selecting 10 items which may or may not be the ones I end up creating listeners for
 const mainNav = document.querySelector('.main-navigation')
 const genNav = document.querySelector('nav')
-const signMeUpButtons = document.querySelectorAll('.btn')
+const firstSignMeUpButton = document.querySelector('.btn')
 const pickYour = document.querySelector('.content-destination')
-const destination = document.querySelectorAll('.destination')
-const intro = document.querySelector('.intro')
-
-const funBus = document.querySelector('.logo-heading')
+const destination = document.querySelector('.destination')
+const intro = document.querySelector('.intro')//used
+const funBus = document.querySelector('.logo-heading')//used
 console.log(funBus);
 
 //next going to create an event listener like we did in the guided project
@@ -29,3 +28,10 @@ window.addEventListener('load',  event => {
     console.log('The page loaded and your listener is working')
     intro.style.backgroundColor = 'beige'
 });
+
+function getExcited (){
+    console.log('any of the buttons have been clicked')
+    firstSignMeUpButton.textContent = 'GET EXCITED!'
+}
+
+firstSignMeUpButton.addEventListener('dblclick', getExcited)
