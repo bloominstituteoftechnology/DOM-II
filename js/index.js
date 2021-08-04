@@ -7,22 +7,32 @@ const pickYour = document.querySelector('.content-destination')
 const destination = document.querySelector('.destination')
 const intro = document.querySelector('.intro')//used
 const funBus = document.querySelector('.logo-heading')//used
-const mapImg = document.querySelector('.intro img')
+const mapImg = document.querySelector('.img-fluid')
 //console.log(mapImg)
 
 
-function changeTitle (){
+//1
+function changeTitle(){
     console.log('mouse over Fun Bus');
     funBus.textContent = 'The Funnest';
 };
 
 funBus.addEventListener('mouseover', changeTitle)
 
+//2
+function changeTitleBack() {
+    console.log('mouse over Fun Bus 2')
+    funBus.textContent = 'Fun Bus for the win'
+}
+funBus.addEventListener('mouseleave', changeTitleBack);
+
+//3
 window.addEventListener('load',  event => {
     console.log('The page loaded and your listener is working')
     intro.style.backgroundColor = 'beige'
 });
 
+//4
 function getExcited (){
     console.log('first of the buttons has been clicked')
     firstSignMeUpButton.textContent = 'GET EXCITED!'
@@ -30,25 +40,31 @@ function getExcited (){
 }
 
 firstSignMeUpButton.addEventListener('dblclick', getExcited)
+// want to ask or google how to get this to work on all/ any of the buttons and/or a button of my choosing
 
-// function changeImg(){
-//     console.log('testing image capture')
-//     mapImg.setAttribute(src,"img/destination.jpg")
-// }
-//
-// mapImg.addEventListener('mouseover', changeImg);
 
-//not working -  
+//5
+function changeImg(event){
+    console.log('testing image capture')
+    mapImg.style.border = '1px solid red'
+}
 
-const heightOutput = document.querySelector('.container');
-const widthOutput = document.querySelector('.container');
-function reportWindowSize() {
-    heightOutput.textContent = window.innerHeight;
-    widthOutput.textContent = window.innerWidth;
-  }
+mapImg.addEventListener('keydown', changeImg);
+//not working
+
+
+// const heightOutput = document.querySelector('body');
+// const widthOutput = document.querySelector('body');
+// function reportWindowSize() {
+//     heightOutput.textContent = window.innerHeight;
+//     widthOutput.textContent = window.innerWidth;
+//   }
   
-window.addEventListener('resize', reportWindowSize)
+// window.addEventListener('resize', reportWindowSize)
 
+// not working
+
+//6
 function zoom(event) {
     event.preventDefault();
   
