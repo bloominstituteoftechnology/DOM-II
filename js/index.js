@@ -81,7 +81,7 @@ window.addEventListener("load", function(){
   // //Fun in the sum paragraph and section content-pict formating
   let contentPick = document.querySelectorAll(".content-section");
   // contentPick[0].style.alignItems ="center"
-  contentPick[0].children[0].style.backgroundColor ="gray";
+  contentPick[0].children[0].style.backgroundColor ="blue";
   // contentPick[0].children[0].classList.add("funSun");
 
   //Sign ME up button added
@@ -111,36 +111,36 @@ window.addEventListener("load", function(){
 
   })
 
-    document.addEventListener("keydown", event=>{
+  document.addEventListener("keydown", event=>{
+    event.preventDefault;
+    let divOne = document.createElement("h4");
+    divOne.textContent = `${event.key}`
+   alert("You Press " + JSON.stringify(input))
+
+})
+document.body.addEventListener("mouseover", (event)=>{
+    document.body.style.backgroundColor="wheat";
+      event.defaultPrevented;
+    if(event.target.style.backgroundColor=="wheat"){
+        document.body.style.backgroundColor ="white"
+    }
+})
+function changeImage(event){
+   console.log(event.target);
       event.preventDefault;
-      let divOne = document.createElement("h4");
-      divOne.textContent = `${event.key}`
-     alert("You Press " + JSON.stringify(input))
+//    event.target.src ="https://source.unsplash.com/random"
+      event.target.src ="./img/barkon.jpeg"
+}
+let imageBus = document.querySelector("img");
+   imageBus.addEventListener("dblclick", changeImage)
 
-  })
-  document.body.addEventListener("mouseover", (event)=>{
-      document.body.style.backgroundColor="wheat";
-        event.defaultPrevented;
-      if(event.target.style.backgroundColor=="wheat"){
-          document.body.style.backgroundColor ="white"
-      }
-  })
-  function changeImage(event){
-     console.log(event.target);
-        event.preventDefault;
-  //    event.target.src ="https://source.unsplash.com/random"
-        event.target.src ="./img/barkon.jpeg"
-  }
-  let imageBus = document.querySelector("img");
-     imageBus.addEventListener("dblclick", changeImage)
+//dblclick on on the car image
+let keyPush = document.querySelector('body')
+console.log("keypush",keyPush)
+keyPush.addEventListener('dblclick', function(event) {
+    input = prompt("You sure you want to go to Google?");
+    event.target.style.color = 'pink';
+    keyPush.style.backgroundColor ="black";
+});   
 
-  //dblclick on on the car image
-  let keyPush = document.querySelector('body')
-  console.log("keypush",keyPush)
-  keyPush.addEventListener('dblclick', function(event) {
-      input = prompt("You sure you want to go to Google?");
-      event.target.style.color = 'pink';
-      keyPush.style.backgroundColor ="black";
-  });   
-
-   }) 
+ }) 
