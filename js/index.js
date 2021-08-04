@@ -5,6 +5,7 @@ const genNav = document.querySelector('nav')
 const signMeUpButtons = document.querySelectorAll('.btn')
 const pickYour = document.querySelector('.content-destination')
 const destination = document.querySelectorAll('.destination')
+const intro = document.querySelector('.intro')
 
 const funBus = document.querySelector('.logo-heading')
 console.log(funBus);
@@ -23,3 +24,8 @@ function changeTitle (){
 };
 
 funBus.addEventListener('mouseover', changeTitle)
+
+window.addEventListener('load',  event => {
+    console.log('The page loaded and your listener is working')
+    intro.style.backgroundColor = 'beige'
+});
