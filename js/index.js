@@ -31,10 +31,38 @@ function getExcited (){
 
 firstSignMeUpButton.addEventListener('dblclick', getExcited)
 
-function changeImg(){
-    console.log('testing image capture')
-    mapImg.setAttribute(src,"img/destination.jpg") 
-}
+// function changeImg(){
+//     console.log('testing image capture')
+//     mapImg.setAttribute(src,"img/destination.jpg")
+// }
+//
+// mapImg.addEventListener('mouseover', changeImg);
 
-mapImg.addEventListener('mouseover', changeImg);
+//not working -  
 
+const heightOutput = document.querySelector('.container');
+const widthOutput = document.querySelector('.container');
+function reportWindowSize() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+  }
+  
+window.addEventListener('resize', reportWindowSize)
+
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = document.querySelector('.img-content');
+  el.onwheel = zoom;
+
+  el.addEventListener('wheel', zoom);
