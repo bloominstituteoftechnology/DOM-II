@@ -1,28 +1,22 @@
-// Your code goes here
-
-// * `keydown`
-// * `wheel`
-// * `load`
-// * `focus`
-// * `resize`
-// * `select`
-//  * `drag / drop`
-
-
-const logo = document.querySelector(".intro img");
-const navLinks = document.querySelector('.nav-link');
 
 
 
+
+
+
+// --  1--------------scroll------------------------------
 window.addEventListener('scroll', function(event){
     // console.log('user has scrolled');
 })
 
-navLinks.addEventListener('dblclick', function(event){
-    console.log('We can attach as many as we want!!');
-})
 
 
+//--   2----------------------double click----------
+// navLinks.addEventListener('dblclick', function(event){
+//     console.log('We can attach as many as we want!!');
+// })
+
+//--   3------------------mouse enter----------------------------
 const test = document.querySelector('.intro h2')
 
 test.addEventListener("mouseenter", function( event ) {
@@ -35,6 +29,9 @@ test.addEventListener("mouseenter", function( event ) {
     }, 500);
 }, false);
 
+
+
+//--   4----------------keydown(not applicable)-------------
 
 //   window.addEventListener("keydown", event => {
 //     if (event.isComposing || event.keyCode === 229) {
@@ -49,11 +46,22 @@ test.addEventListener("mouseenter", function( event ) {
 //     console.log('We can want!!');
 // });
 
-// 
+
+
+
+//--   5-------------- focus in------------------
+
+
+
+
 
 // form.addEventListener('focusin', (event) => {
 //     event.target.style.background = 'pink';
 //   });
+
+
+
+//--  6-------------------wheel------------------------
 
 function zoom(event) {
     event.preventDefault();
@@ -74,12 +82,18 @@ el.onwheel = zoom;
   
 el.addEventListener('wheel', zoom);
 
+
+//-- 7-----------------blur (not applicable)-------------------------------
+
 // const form = document.querySelector('.hey')
 
 // form.addEventListener('blur', (event) => {
 //     event.target.style.background = '';
 //   }, true);
 
+
+
+//--  8 and 9-----------------------mouse enter and mouse leave --------------------------------
 var enterEventCount = 0;
 var leaveEventCount = 0;
 const mouseTarget = document.getElementById('mouseTarget');
@@ -110,3 +124,22 @@ function addListItem(text) {
   // Add the newly created list item to list
   unorderedList.appendChild(newListItem);
 }
+
+//--  10 -----------stop propagation and click---------------------------------
+
+const grandParent = document.querySelector('.grandparent');
+const parent = document.querySelector('.parent');
+const child = document.querySelector('.child');
+
+child.addEventListener('click', function (event) {
+    
+    console.log("child was clicked");
+});
+parent.addEventListener('click', function (event) {
+    event.stopPropagation();
+    console.log("parent was clicked");
+});
+    
+grandParent.addEventListener('click', function (event) {
+    console.log("grandparent was clicked");
+});
