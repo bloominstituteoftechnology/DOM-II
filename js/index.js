@@ -14,7 +14,9 @@ Using your [index.js file](js/index.js), create [event listeners](https://develo
 
 // Selector reference variables
 const header = document.querySelector("header");
-const buttonSignMeUp = document.querySelector(".btn");
+const siteButtons = document.querySelectorAll("div .btn");
+
+console.log(siteButtons);
 
 // Event Listener 1
 header.addEventListener("mouseover", (event) => {
@@ -31,12 +33,15 @@ header.addEventListener("mouseleave", (event) => {
 });
 
 // Event Listener 3
-buttonSignMeUp.addEventListener("click", (event) => {
-  if (buttonSignMeUp.style.backgroundColor === "orange") {
-    buttonSignMeUp.style.backgroundColor = "white";
-    buttonSignMeUp.style.color = "black";
-  } else {
-    buttonSignMeUp.style.backgroundColor = "orange";
-    buttonSignMeUp.style.color = "white";
-  }
+siteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (button.style.backgroundColor === "orange") {
+      button.style.backgroundColor = "white";
+      button.style.color = "black";
+    } else {
+      button.style.backgroundColor = "orange";
+      button.style.color = "white";
+    }
+    event.stopPropagation();
+  });
 });
