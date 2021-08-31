@@ -20,21 +20,21 @@ const siteBody = document.querySelector("body");
 
 console.log(siteButtons);
 
-// Event Listener 1
+// Event Listener 1 (Hover over header to make it grey)
 header.addEventListener("mouseover", (event) => {
   header.style.backgroundColor = "grey";
   header.style.color = "white";
   event.stopPropagation();
 });
 
-// Event Listener 2
+// Event Listener 2 (Remove your mouse from the header to make the header white)
 header.addEventListener("mouseleave", (event) => {
   header.style.backgroundColor = "white";
   header.style.color = "black";
   event.stopPropagation();
 });
 
-// Event Listener 3
+// Event Listener 3 (Click on a button to toggle between orange and white background)
 siteButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     if (button.style.backgroundColor === "orange") {
@@ -48,17 +48,17 @@ siteButtons.forEach((button) => {
   });
 });
 
-// Event Listener 4
+// Event Listener 4 (Press any key for an alert message)
 document.addEventListener("keydown", (event) => {
   alert("You pressed a key!");
 });
 
-// Event Listener 5
+// Event Listener 5 (Double click the bus photo for an alert message)
 busPhoto.addEventListener("dblclick", (event) => {
   alert("You double-clicked the bus photo!");
 });
 
-// Event Listener 6
+// Event Listener 6 (Scroll down from the top to make the background light yellow)
 document.addEventListener("scroll", (event) => {
   siteBody.style.transition = "1s";
   siteBody.style.backgroundColor = "lightyellow";
