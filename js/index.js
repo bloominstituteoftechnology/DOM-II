@@ -2,7 +2,7 @@
 //Brings up a window that welcomes you the website once the page fully loads
 
 window.addEventListener('load', (event) => {
-    alert
+    alert('Welcome to Fun Bus Travel')
 })
 
 // changes the color of the text in the nav when the mouse is over it and moves away
@@ -29,7 +29,18 @@ imgFun.addEventListener('mouseleave', function(event) {
 })
 
 
+// clicking on certain areas changes the color
 
-const topContentHead = document.querySelector('.content-section .text-content h2')
+const midConetent = document.querySelector('.middle-content')
 
-topContentHead.addEventListener
+midConetent.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = 'orange'
+})
+
+midConetent.addEventListener('dblclick', function(event) {
+    event.target.style.backgroundColor = 'white'
+})
+$('.intro').load(function() {
+    $('.intro').fadeIn(slow);
+
+})
