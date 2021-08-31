@@ -1,4 +1,3 @@
-
 //Brings up a window that welcomes you the website once the page fully loads
 
 window.addEventListener('load', (event) => {
@@ -40,7 +39,22 @@ midConetent.addEventListener('click', function(event) {
 midConetent.addEventListener('dblclick', function(event) {
     event.target.style.backgroundColor = 'white'
 })
-$('.intro').load(function() {
-    $('.intro').fadeIn(slow);
 
+
+
+
+
+
+
+
+
+
+
+
+
+click.stopPropagation()
+
+
+midConetent.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = 'orange'
 })
