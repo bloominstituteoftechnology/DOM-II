@@ -18,13 +18,13 @@ const siteButtons = document.querySelectorAll("div .btn");
 const busPhoto = document.querySelector(".intro img");
 const siteBody = document.querySelector("body");
 const paragraphs = document.querySelectorAll("p");
-
-console.log(siteButtons);
+const navLinks = document.querySelectorAll("nav a");
 
 // Event Listener 1 (Hover over header to make it grey)
 header.addEventListener("mouseover", (event) => {
   header.style.backgroundColor = "grey";
   header.style.color = "white";
+  // This event bubbles; the following prevents propagation
   event.stopPropagation();
 });
 
@@ -32,6 +32,7 @@ header.addEventListener("mouseover", (event) => {
 header.addEventListener("mouseleave", (event) => {
   header.style.backgroundColor = "white";
   header.style.color = "black";
+  // This event bubbles; the following prevents propagation
   event.stopPropagation();
 });
 
@@ -45,6 +46,7 @@ siteButtons.forEach((button) => {
       button.style.backgroundColor = "orange";
       button.style.color = "white";
     }
+    // This event bubbles; the following prevents propagation
     event.stopPropagation();
   });
 });
@@ -71,13 +73,13 @@ busPhoto.addEventListener("dblclick", (event) => {
 document.addEventListener("scroll", (event) => {
   siteBody.style.transition = "1s";
   siteBody.style.backgroundColor = "lightyellow";
-  event.stopPropagation();
+  // This event does not bubble
 });
 
 // Event Listener 8 (Alert the user when the site loads)
 window.addEventListener("load", (event) => {
   alert("The site has been loaded! Welcome!");
-  event.stopPropagation();
+  // This event does not bubble
 });
 
 // Event Listener 9 (Put a red border around the bus photo when hovered)
@@ -101,5 +103,12 @@ paragraphs.forEach((paragraph) => {
   paragraph.addEventListener("copy", (event) => {
     alert("copied text");
     event.stopPropagation();
+  });
+});
+
+// Prevent clicking links from 'refreshing' the page
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
   });
 });
