@@ -20,7 +20,7 @@ console.log(siteButtons);
 
 // Event Listener 1
 header.addEventListener("mouseover", (event) => {
-  header.style.backgroundColor = "black";
+  header.style.backgroundColor = "grey";
   header.style.color = "white";
   event.stopPropagation();
 });
@@ -44,4 +44,9 @@ siteButtons.forEach((button) => {
     }
     event.stopPropagation();
   });
+});
+
+// Event Listener 4
+document.addEventListener("keydown", (event) => {
+  alert("You pressed a key!");
 });
