@@ -16,6 +16,7 @@ Using your [index.js file](js/index.js), create [event listeners](https://develo
 const header = document.querySelector("header");
 const siteButtons = document.querySelectorAll("div .btn");
 const busPhoto = document.querySelector(".intro img");
+const siteBody = document.querySelector("body");
 
 console.log(siteButtons);
 
@@ -55,4 +56,10 @@ document.addEventListener("keydown", (event) => {
 // Event Listener 5
 busPhoto.addEventListener("dblclick", (event) => {
   alert("You double-clicked the bus photo!");
+});
+
+// Event Listener 6
+document.addEventListener("scroll", (event) => {
+  siteBody.style.transition = "1s";
+  siteBody.style.backgroundColor = "lightyellow";
 });
