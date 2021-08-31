@@ -72,10 +72,31 @@ function selectLog (event) {
 introInput2.addEventListener('selector', selectLog);
 
 //Event Listener 9 dblclick
+const dest = document.querySelector('.content-destination p');
+dest.addEventListener('dblclick', event => {
+    event.target.style.color = 'red';
+})
 
+//Event Listener 10 
+let divBelowFooter = document.createElement('div');
+const body = document.querySelector('body');
+body.appendChild(divBelowFooter);
+divBelowFooter.textContent = 'drop zone here';
 
 //nest two similar events and prevent event propagation
+const adventureP = document.querySelector('.container .inverse-content .text-content p:nth-of-type(1)');
 
+const adventureDiv = document.querySelector('.container .inverse-content .text-content');
+
+adventureP.addEventListener('click', event => {
+    event.target.style.background = 'purple';
+    event.stopPropagation();
+})
+
+adventureDiv.addEventListener('click', event => {
+    event.target.style.background = 'green';
+    event.stopPropagation();
+})
 
 //stop the nav items from refreshing the page
 let navLinks = document.querySelectorAll('.nav-link')
