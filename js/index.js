@@ -15,6 +15,7 @@ Using your [index.js file](js/index.js), create [event listeners](https://develo
 // Selector reference variables
 const header = document.querySelector("header");
 const siteButtons = document.querySelectorAll("div .btn");
+const busPhoto = document.querySelector(".intro img");
 
 console.log(siteButtons);
 
@@ -49,4 +50,9 @@ siteButtons.forEach((button) => {
 // Event Listener 4
 document.addEventListener("keydown", (event) => {
   alert("You pressed a key!");
+});
+
+// Event Listener 5
+busPhoto.addEventListener("dblclick", (event) => {
+  alert("You double-clicked the bus photo!");
 });
