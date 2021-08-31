@@ -63,3 +63,8 @@ document.addEventListener("scroll", (event) => {
   siteBody.style.transition = "1s";
   siteBody.style.backgroundColor = "lightyellow";
 });
+
+// Event Listener 7 (Alert the user when the site loads)
+window.addEventListener("load", (event) => {
+  alert("The site has been loaded! Welcome!");
+});
