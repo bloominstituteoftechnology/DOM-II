@@ -12,3 +12,16 @@ boddy[0].addEventListener("keydown", function(){
     boddy[0].style.color = "darkgray";
     console.log("your keydown works!")
 })
+
+//wheel
+const imgWheel = document.querySelector('.content-section img')
+
+function zoom(event){
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.300, scale), 1.3);
+    imgWheel.style.transform = `scale(${scale})`;    
+}
+let scale = 1;
+
+imgWheel.onwheel = zoom;
