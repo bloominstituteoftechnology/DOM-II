@@ -39,3 +39,28 @@ function blackBGHover (event) {
 funSunButton.addEventListener('mouseover', blackBGHover);
 mountainButton.addEventListener('mouseover', blackBGHover);
 islandButton.addEventListener('mouseover', blackBGHover);
+
+// 2 & 3.) Keyup and Keydown events create & disapper border
+
+document.addEventListener('keydown', event => {
+    if (event.keyCode === 56){
+    busImg.style.borderColor = "black"
+    busImg.style.borderWidth = "10px"
+    busImg.style.borderStyle = "solid"
+    }
+} )
+
+document.addEventListener('keyup', event => {
+    if (event.keyCode === 56) {
+    busImg.style.borderColor = "white"
+    busImg.style.borderWidth = "0px"
+    }
+} )
+
+// 4.) Scroll event
+
+window.addEventListener('scroll', function () {
+    funSunButton.style.color = "yellow"
+    mountainButton.style.color = "yellow"
+    islandButton.style.color = "yellow"
+})
