@@ -68,3 +68,11 @@ contact.addEventListener('mouseout', function(event){
 
 })
 
+//prevent default for all links
+Array.from(document.links).array.forEach(element => {
+    link.addEventListener('click',function(event){
+        event.preventDefault();
+    })
+});
+
+
