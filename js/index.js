@@ -29,3 +29,13 @@ const mountainButton = document.querySelector('.destination:nth-child(2) .btn')
 const islandButton = document.querySelector('.destination:nth-child(3) .btn')
 
 /*  Events  */
+
+// 1.) Mouseover changes button background colors
+
+function blackBGHover (event) {
+    event.target.style.backgroundColor = 'black'
+}
+
+funSunButton.addEventListener('mouseover', blackBGHover);
+mountainButton.addEventListener('mouseover', blackBGHover);
+islandButton.addEventListener('mouseover', blackBGHover);
