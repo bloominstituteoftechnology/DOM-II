@@ -11,24 +11,17 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 **Follow these steps to set up and work on your project:**
 
 * [x] Create a forked copy of this project.
-<<<<<<< HEAD
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
-=======
 * [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
 * [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 * [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 * [x] Push commits: git push origin `<firstName-lastName>`.
->>>>>>> 5420e5c5cab81ef8cc4e531a6c499f6847dec1d7
 
 #### Launch the project with npm
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [x] Navigate to the root of the project with your command line.
+* [x] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [x] Run `npm start` to compile your project and launch a development server.
+* [x] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
 ### Task 2: Create listeners for 10 types of events
 
