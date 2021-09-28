@@ -7,3 +7,10 @@ mouseOver.addEventListener('mouseover', function(event){
         event.target.style.color = "";
     }, 500);
 });
+
+window.addEventListener('load', (event) => {
+    console.log('The page has successfully loaded');
+  });
+
+
+
