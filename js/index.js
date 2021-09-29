@@ -31,7 +31,7 @@ document.head.appendChild(style)
 const user = {
     name: ''
 }
-console.log(letsGo)
+//console.log(letsGo)
 
 // Image toggle black and white
 let imageToggle = true
@@ -132,4 +132,13 @@ buttons.forEach((button) => {
 
 
 
+Array.from(document.links).forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+    })
+})
 
+document.addEventListener('click', function(event) {
+    console.log(' No more propagation!!');
+    event.stopPropagation();
+})
