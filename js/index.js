@@ -1,11 +1,12 @@
 // Your code goes here
-
+console.log('project is up')
 //mouseover
 Array.from(document.links).forEach(link => {
     link.addEventListener("mouseenter", function(event) {
+        console.log("nav link mouseenter event");
         event.target.style.color = "orange";
         setTimeout(function() {
-            event.target.style.color = "";
+            event.target.style.color = "white";
         }, 300);
     },false);
 })
@@ -24,4 +25,19 @@ navContent.addEventListener('mouseleave', function(event) {
     links.forEach(link => {
         link.style.color = 'white';
     })
+});
+
+//dbclick
+// const textContent = document.querySelectorAll('.text-content');
+
+// textContent.addEventListener('dbclick', function(event) {
+//     console.log('text-content dbclick color event');
+//     event.target.style.color = 'purple';
+// });
+
+//click
+const signUpBtn = document.querySelector('.btn');
+
+signUpBtn.addEventListener('click', function(event) {
+    alert("Thanks for signing up!");
 });
