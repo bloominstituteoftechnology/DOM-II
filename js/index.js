@@ -24,8 +24,9 @@ function zoom(event){
 let scale = 1;
 imgWheel.onwheel = zoom;
 
-//mouse leave
-const ml = document.querySelectorAll('.content-section p');
-ml.addEventListener('mouseleave', event2 => {
-    event2.style.color = 'red';
-})
+//mouse over
+const mouseLeaving = document.querySelector('header p');
+mouseLeaving.addEventListener('mouseover', function(){
+    mouseLeaving.innerText = 'mouseover works!';
+    mouseLeaving.style.backgroundColor = 'orange';
+},true);
