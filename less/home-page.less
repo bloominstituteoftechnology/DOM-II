@@ -50,7 +50,7 @@
       }
     }
   }
-
+  
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
@@ -100,12 +100,15 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      
 
       @media @mobile {
         width: 80%;
         margin: 0 auto 30px;
       }
-      
+      p{
+        border: 1px solid black;
+      }
       .btn {
         .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
       }
