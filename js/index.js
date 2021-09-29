@@ -58,4 +58,8 @@ doubleClickButton[0].addEventListener('dblclick', () =>{
     hideImage.style.display = 'none';
 })
 
-
+//select
+const textSelection = document.querySelector('.content-destination p');
+textSelection.addEventListener('select', ()=>{
+    textSelection.style.backgroundColor = 'pink';
+})
