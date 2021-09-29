@@ -2,7 +2,7 @@
 
 //mouse enter
 const mouseOverHeading = document.querySelector('header h2');
-mouseOverHeading.addEventListener('mouseenter', function(event){
+mouseOverHeading.addEventListener('mouseenter', function(){
     event.target.style.color = 'purple';
 })
 
@@ -28,18 +28,34 @@ const mouseOvering = document.querySelector('header p');
 mouseOvering.addEventListener('mouseover', function(){
     mouseOvering.innerText = 'mouseover works!';
     mouseOvering.style.backgroundColor = 'orange';
-},true);
+})
 
 //mouse leave
 const mouseLeaving = document.querySelectorAll('.text-content p');
 mouseLeaving[0].addEventListener('mouseleave', function(){
     mouseLeaving[0].innerText = 'mouseleave works!';
     mouseLeaving[0].style.backgroundColor = 'green';
-},true);
+})
 
 //click
 const footerClicking = document.querySelector('footer');
-footerClicking.addEventListener('click', event => {
+footerClicking.addEventListener('click', () => {
     footerClicking.innerText = 'YOUR CLICKING IS WORKING!';
     footerClicking.style.backgroundColor = 'blue';
 })
+
+//focus
+const textFocus = document.querySelectorAll('.text-content p');
+textFocus[2].addEventListener('focus', () =>{
+    textFocus[2].innerText = 'focus is working!';
+    textFocus[2].style.backgroundColor = 'brown';
+})
+
+//double click
+const hideImage = document.querySelector('.content-destination img');
+const doubleClickButton = document.querySelectorAll('.btn');
+doubleClickButton[0].addEventListener('dblclick', () =>{
+    hideImage.style.display = 'none';
+})
+
+
