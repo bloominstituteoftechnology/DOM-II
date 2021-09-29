@@ -33,13 +33,13 @@ const seconed = document.querySelector(".content-section h2").animate([
     iterations: 1
   });
 
-  // MouseEnter
+  // MouseEnter===============================
 const mouseTarget = document.querySelector('.content-destination');
 mouseTarget.addEventListener('mouseenter', e => {
 mouseTarget.style.border = '4px dotted blue'
 });
 
-// click
+// click================================
 
 const clicker = document.querySelector('.nav-link:nth-of-type(1)');
 
@@ -66,4 +66,16 @@ clicker4.addEventListener('click', event => {
 });
 
 
+// ============================== secret message
 
+const footer = document.querySelector('footer')
+footer.addEventListener('dblclick',function (e){
+    console.log('smelly foot :)');
+});
+
+
+Array.from(document.links).forEach(link =>{
+    link.addEventListener('click', function(event){
+        event.preventDefault();
+    })
+})
