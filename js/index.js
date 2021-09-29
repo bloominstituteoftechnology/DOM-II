@@ -34,6 +34,13 @@ text.addEventListener('dblclick', function(evt) {
 
 const smallImg = document.querySelector('.img-content');
 
-smallImg.addEventListener('click', function(evt) {
-    evt.target.style.opacity = "0.5";
-})
+// smallImg.addEventListener('click', function(evt) {
+//     evt.target.style.opacity = "0.5";
+// });
+
+document.querySelectorAll('img').forEach(item => {
+    item.addEventListener('click', event => {
+        event.target.style.opacity = "0.5";
+    })
+    
+  })
