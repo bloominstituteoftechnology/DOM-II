@@ -15,13 +15,17 @@ boddy[0].addEventListener("keydown", function(){
 
 //wheel
 const imgWheel = document.querySelector('.content-section img')
-
 function zoom(event){
     event.preventDefault();
     scale += event.deltaY * -0.01;
-    scale = Math.min(Math.max(.300, scale), 1.3);
+    scale = Math.min(Math.max(.400, scale), 2.0);
     imgWheel.style.transform = `scale(${scale})`;    
 }
 let scale = 1;
-
 imgWheel.onwheel = zoom;
+
+//mouse leave
+const ml = document.querySelectorAll('.content-section p');
+ml.addEventListener('mouseleave', event2 => {
+    event2.style.color = 'red';
+})
