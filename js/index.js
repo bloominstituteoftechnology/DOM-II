@@ -25,13 +25,13 @@ setTimeout(function() {
 false);
 
 // CLick 
-// const navLinksTop = document.querySelectorAll('a')
+const navLinksTop = document.querySelectorAll('nav a')
 
-// navLinksTop.onclick( function(event) {
-//     console.log("click")
-//     navLinks.target.style.backgroundColor = "black";
+navLinksTop.onclick( event=> {
+    console.log("click")
+    navLinksTop.target.style.background = "black";
     
-// })
+})
 // navLinks.addEventListener('click', (event) => {
 //     navLinks.textContent = `click count: ${event.detail}`;
 // })
@@ -64,9 +64,28 @@ window.addEventListener("load", event => {
     console.log("All resources finished loading!");
 });
 
+// removes image 
+const targetImage = document.querySelector('.img-content'); 
+targetImage.addEventListener("click", function(eventObject){ 
+	eventObject.target.style.display = "none"; 
+}); 
+//scroll
 
 
-//resize
-window.addEventListener("resize", function() {
-    document.querySelector("body").style.backgroundColor = 'pink'
+document.addEventListener("scroll", ()=> {
+    console.log("Don't scroll!");
+  
+  })
+
+  logoHeading.addEventListener('dblclick', (event) => {
+    event.target.style.fontSize = '100px';
+    console.log(logoHeading)
+
 })
+
+//select
+const textOpacity = document.querySelectorAll('p');
+console.log(textOpacity)
+textOpacity.forEach(item => item.addEventListener('select', event =>{
+  event.target.style.opacity = '0.8';
+}))
