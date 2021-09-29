@@ -37,4 +37,9 @@ mouseLeaving[0].addEventListener('mouseleave', function(){
     mouseLeaving[0].style.backgroundColor = 'green';
 },true);
 
-//
+//click
+const footerClicking = document.querySelector('footer');
+footerClicking.addEventListener('click', event => {
+    footerClicking.innerText = 'YOUR CLICKING IS WORKING!';
+    footerClicking.style.backgroundColor = 'blue';
+})
