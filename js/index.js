@@ -41,3 +41,16 @@ const signUpBtn = document.querySelector('.btn');
 signUpBtn.addEventListener('click', function(event) {
     alert("Thanks for signing up!");
 });
+
+//focus
+function getFocus() {
+    document.getElementsByClassName('nav-link').focus();
+}
+
+//select
+const select = document.createElement('select');
+const footer = document.querySelector('footer');
+
+select.textContent = 'select';
+footer.insertAdjacentElement('afterend', footer);
+
