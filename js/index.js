@@ -79,3 +79,19 @@ Array.from(document.links).forEach(link =>{
         event.preventDefault();
     })
 })
+
+// delete
+const bus = document.querySelector('.intro img')
+function escKey(event) {
+  if(event.key === 'Escape'){
+    bus.style.display = 'none';
+  }
+}
+document.addEventListener('keydown', escKey);
+
+
+Array.from(document.links).forEach(link => {
+  link.addEventListener('click', function(event){
+    event.preventDefault();
+  })
+})
