@@ -45,6 +45,7 @@ footerClicking.addEventListener('click', () => {
 })
 
 //focus
+//not working???
 const textFocus = document.querySelectorAll('.text-content p');
 textFocus[2].addEventListener('focus', () =>{
     textFocus[2].innerText = 'focus is working!';
@@ -59,7 +60,9 @@ doubleClickButton[0].addEventListener('dblclick', () =>{
 })
 
 //select
+//not working???
 const textSelection = document.querySelector('.content-destination p');
 textSelection.addEventListener('select', ()=>{
-    textSelection.style.backgroundColor = 'pink';
+    textSelection.innerText = 'Your selection has been erased!';
+    textSelection.style.backgroundColor = 'red';
 })
