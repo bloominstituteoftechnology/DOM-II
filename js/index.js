@@ -25,22 +25,28 @@ setTimeout(function() {
 false);
 
 // CLick 
-const navLinksTop = document.querySelectorAll('nav a')
+const navLinks = document.querySelectorAll('a')
 
-navLinksTop.onclick( event=> {
-    console.log("click")
-    navLinksTop.target.style.background = "black";
-    
+navLinks.forEach(navLink=>{
+    navLink.addEventListener('click', event =>{
+        event.target.style.color= 'red' 
+    })
 })
-// navLinks.addEventListener('click', (event) => {
-//     navLinks.textContent = `click count: ${event.detail}`;
-// })
+
+const buttonPress = document.querySelectorAll('.destination .btn')
+buttonPress.forEach(btn=>{
+    btn.addEventListener('click', event =>{
+        event.target.style.resize = 'both'
+
+    })
+})
 
 //Keydown
 
 document.addEventListener('keydown', (event) => {
     const keyName = event.key;
     console.log(`The key: ${keyName}`);
+
   }); 
 
 // wheel 
@@ -65,16 +71,20 @@ window.addEventListener("load", event => {
 });
 
 // removes image 
-const targetImage = document.querySelector('.img-content'); 
-targetImage.addEventListener("click", function(eventObject){ 
+const targetImage = document.querySelectorAll('.img-content'); 
+targetImage.forEach(press => {
+press.addEventListener("click", eventObject =>{ 
 	eventObject.target.style.display = "none"; 
-}); 
+    })
+})
 //scroll
 
 
-document.addEventListener("scroll", ()=> {
+document.addEventListener("scroll", event => {
     console.log("Don't scroll!");
-  
+        event. stopPropagation()
+        console.log('the scroll is activated')
+    
   })
 
   logoHeading.addEventListener('dblclick', (event) => {
@@ -86,6 +96,13 @@ document.addEventListener("scroll", ()=> {
 //select
 const textOpacity = document.querySelectorAll('p');
 console.log(textOpacity)
-textOpacity.forEach(item => item.addEventListener('select', event =>{
-  event.target.style.opacity = '0.8';
-}))
+for(let i = 0; i<textOpacity.length; i++){
+    textOpacity[i].style.opacity=0.8;
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', event=> {
+        event.preventDefault();
+        console.log("the links is clicked")
+    })
+})
