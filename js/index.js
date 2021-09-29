@@ -1,6 +1,6 @@
 // Your code goes here
 
-//mouse over
+//mouse enter
 const mouseOverHeading = document.querySelector('header h2');
 mouseOverHeading.addEventListener('mouseenter', function(event){
     event.target.style.color = 'purple';
@@ -10,7 +10,6 @@ mouseOverHeading.addEventListener('mouseenter', function(event){
 const boddy = document.querySelectorAll('body');
 boddy[0].addEventListener("keydown", function(){
     boddy[0].style.color = "darkgray";
-    console.log("your keydown works!")
 })
 
 //wheel
@@ -25,8 +24,17 @@ let scale = 1;
 imgWheel.onwheel = zoom;
 
 //mouse over
-const mouseLeaving = document.querySelector('header p');
-mouseLeaving.addEventListener('mouseover', function(){
-    mouseLeaving.innerText = 'mouseover works!';
-    mouseLeaving.style.backgroundColor = 'orange';
+const mouseOvering = document.querySelector('header p');
+mouseOvering.addEventListener('mouseover', function(){
+    mouseOvering.innerText = 'mouseover works!';
+    mouseOvering.style.backgroundColor = 'orange';
 },true);
+
+//mouse leave
+const mouseLeaving = document.querySelectorAll('.text-content p');
+mouseLeaving[0].addEventListener('mouseleave', function(){
+    mouseLeaving[0].innerText = 'mouseleave works!';
+    mouseLeaving[0].style.backgroundColor = 'green';
+},true);
+
+//
