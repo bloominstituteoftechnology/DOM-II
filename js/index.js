@@ -48,3 +48,17 @@ const doubleClick = document.querySelector('p');
 doubleClick.addEventListener('dblclick', function() {
     doubleClick.classList.toggle('.large');
 })
+
+const body = document.querySelector('body');
+
+body.style.background = "#69510a";
+body.style.border = "1rem solid #3b3a37";
+body.style.padding = "3rem";
+
+const navBar = document.querySelectorAll('a');
+navBar.forEach(nav => {
+    nav.style.textDecoration = "none";
+    nav.style.color = "#a9cfbd";
+    nav.style.fontSize = "2rem";
+    nav.style.padding = "2rem";
+});
