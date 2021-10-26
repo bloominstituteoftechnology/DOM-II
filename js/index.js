@@ -10,6 +10,7 @@ const navChange = document.querySelectorAll('.nav .nav-link');
  Array.from(navChange).forEach(change =>{
     change.addEventListener('click', function(evt) {
         evt.target.style.color = '#808080';
+        evt.preventDefault();// preventing the nav from refreshing the page
     });
  });
 
@@ -57,4 +58,12 @@ head.addEventListener('keydown', function(event) {
 //Event 10
 document.addEventListener('click', function() {
     console.log('Your clicking me');
+});
+
+
+
+const button = document.querySelector('.btn');
+button.addEventListener('click', function(evt) {
+    evt.stopPropagation();
+    // console.log('stop');
 })
