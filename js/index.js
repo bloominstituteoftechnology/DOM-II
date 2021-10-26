@@ -1,3 +1,7 @@
+const welcome = document.querySelector('.intro .h2');
+console.log(welcome);
+
+
 const button = document.querySelector('.destination .btn');
 
 button.addEventListener('click', function(){
