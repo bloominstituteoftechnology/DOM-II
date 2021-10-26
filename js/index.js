@@ -129,3 +129,10 @@ function insertInput(event) {
 function checkPropPropagation() {
     console.log('Header Clicked');
 }
+
+// resize
+const body = document.querySelector('body');
+
+window.addEventListener('resize', () => {
+    body.style.background = '#87CEFA';
+})
