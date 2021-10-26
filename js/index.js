@@ -64,7 +64,7 @@ nav4.addEventListener('mouseleave',(e) => e.target.style.color = 'black');
 
 //Content Section
 const text = content.querySelector(".text-content");
-text.addEventListener('copy', e => e.currentTarget.style.color = "red");
+text.addEventListener('copy', e => alert("Can't copy text"));
 
 
 sun.addEventListener('click', e => {
