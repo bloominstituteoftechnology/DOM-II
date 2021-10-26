@@ -44,8 +44,16 @@ h2Animation.forEach((element) => {
 });
 
 // keydown
-const newText = document.querySelector('.text-content, p');
+const newTextAdded = document.querySelector('.text-content, p');
 document.addEventListener('keydown', logKey);
 function logKey(e) {
-    newText.textContent += ` ${e.code}`;
+    newTextAdded.textContent += ` ${e.code}`;
 }
+
+// wheel
+const destinationImg = document.querySelector('.content-destination img');
+function zoom(event) {
+    event.preventDefault();
+    destinationImg.style.transform = 'scale(3)';
+}
+destinationImg.addEventListener('wheel', zoom);
