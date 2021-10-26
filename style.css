@@ -1,0 +1,40 @@
+
+.transition-color{
+    animation: color 3s infinite;
+}
+@keyframes color {
+    0% {background-color: thistle;}
+    25% {background-color: violet;}
+    50%{background-color:rgb(243, 243, 126);}
+    100%{background-color: lightblue}
+}
+
+
+.destination-sun{
+    font-size: 10%;
+    color: rgb(255, 94, 0);
+    background-color: yellow;
+    text-align: center;
+    padding: 1%;
+    border-radius: 2%;
+
+}
+.destination-mountain{
+    font-size: 10%;
+    color: rgba(182, 83, 26, 0.733);
+    background-color: rgb(241, 202, 117);
+    text-align: center;
+    padding: 1%;
+    border-radius: 2%;
+
+}
+.destination-island{
+    font-size: 10%;
+    color: rgb(0, 204, 78);
+    background-color: rgb(120, 235, 250);
+    text-align: center;
+    padding: 1%;
+    border-radius: 2%;
+
+}
+
