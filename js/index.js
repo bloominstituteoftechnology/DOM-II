@@ -22,7 +22,7 @@ const h4 = document.querySelectorAll('h4');
 // nav 
 
 window.addEventListener('scroll', function(e) {
-    mainNav.style.backgroundColor = '#C8C9D6';
+    mainNav.style.backgroundColor = '';
 
     setTimeout(function(e) {
         mainNav.style.backgroundColor = '#C8C9D6';
@@ -41,7 +41,7 @@ mainNav.addEventListener('mouseup', function(e){
     navBar.forEach(navBar => navBar.style.fontSize = '');;
 
 });
-
+// logo click
 logo.addEventListener("click", e => {
     document.querySelector("html").style.background = "#BCBEE7";
     document.querySelector("header").style.background = "";
@@ -57,15 +57,25 @@ logo.addEventListener("click", e => {
     for (i = 0; i < nav.length; i++) {
       nav[i].style.color = "white";
     }
+  //footer changes
+
+    footer.querySelector("p").style.color = "black";
+  })
+  footer.addEventListener('mouseover', function(e){
+    console.log(`WOOOHOOO!!`); 
+    e.stopPropagation();
+   });
   
-    footer.querySelector("p").style.color = "white";
-    
-    btn.addEventListener("wheel", e => {
-      for (i = 0; i < nav.length; i++) {
-        TweenMax.to(e.currentTarget, 1, { width: 250, ease: Bounce.easeOut });
-        btns[i].style.color = "orange";
-        btns[i].style.border = "5px solid pink";
-      }
-    });
-  });
-  
+//copy
+  window.addEventListener('copy', function() {
+    alert("YAY YOU JUST COPIED!!")
+})
+
+//paste
+addEventListener("paste", e => {
+  window.alert("PASTE was a sucsess!");
+});
+
+ddEventListener("cut", e => {
+  window.alert("DONE!");
+});
