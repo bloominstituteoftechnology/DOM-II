@@ -2,7 +2,7 @@
 const logoHeading = document.querySelector('.logo-heading');
 const links = document.querySelectorAll('a');
 const intro = document.querySelector('.intro');
-const container = document.querySelector('.container');
+const mainNav = document.querySelector(".main-navigation");
 
 let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 
@@ -30,5 +30,5 @@ function changeIntro(){
     randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     intro.style.backgroundColor = randomColor;
 }
-intro.addEventListener('mouseover', changeIntro);
+intro.addEventListener('wheel', changeIntro);
 
