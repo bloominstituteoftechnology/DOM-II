@@ -2,7 +2,8 @@
 const logoHeading = document.querySelector('.logo-heading');
 const links = document.querySelectorAll('a');
 const intro = document.querySelector('.intro');
-const mainNav = document.querySelector(".main-navigation");
+const h2 = document.querySelectorAll('h2');
+
 
 let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 
@@ -32,3 +33,10 @@ function changeIntro(){
 }
 intro.addEventListener('wheel', changeIntro);
 
+Array.from(h2).forEach(h2Txt => {
+function h2DblClick(){
+    randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    h2Txt.style.color = randomColor;
+}
+h2Txt.addEventListener('dblclick',h2DblClick)
+})
