@@ -1,5 +1,5 @@
 // Your code goes here
-// Random color to "Fun Bus" text when clicked
+// Random animation
 let headingAnimation = document.querySelector(".logo-heading");
 function colorGenerator() {
     let min = 0;
@@ -24,7 +24,7 @@ headingAnimation.addEventListener('click', () => {
     headingAnimation.style.color = colorGenerator();
 })
 
-//Add color to h2 headings when moused over
+// Mouseover
 let h2Animation = document.querySelectorAll('h2');
 
 h2Animation.forEach((element) => {
@@ -42,3 +42,10 @@ h2Animation.forEach((element) => {
         event.preventDefault()
     });
 });
+
+// keydown
+const newText = document.querySelector('.text-content, p');
+document.addEventListener('keydown', logKey);
+function logKey(e) {
+    newText.textContent += ` ${e.code}`;
+}
