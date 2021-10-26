@@ -136,3 +136,13 @@ const body = document.querySelector('body');
 window.addEventListener('resize', () => {
     body.style.background = '#87CEFA';
 })
+
+// double click
+const firstButton = document.querySelectorAll('.btn');
+firstButton[0].addEventListener('dblclick', event => {
+    event.target.style.border = '10px solid purple';
+
+    setTimeout(function() {
+        event.target.style.display = "";
+    }, 300);
+});
