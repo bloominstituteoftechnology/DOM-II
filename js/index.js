@@ -97,3 +97,35 @@ function alertLoaded(event) {
 }
 
 window.addEventListener('load', alertLoaded);
+
+// select
+const header = document.querySelector('.main-navigation');
+logoHeading = document.querySelector('.logo-heading');
+
+function insertInput(event) {
+    event.stopPropagation();
+    console.log('logo heading clicked');
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('value', 'FUN Bus!!!');
+
+    header.prepend(input);
+
+    function paragraphChange(event) {
+        const paragraphs = document.querySelectorAll('p');
+        selection = event.target.value.substring(
+            event.target.selectionStart,
+            event.target.selectionEnd
+        );
+
+        paragraphs.forEach(paragraph => {
+            paragraph.textContent = selection;
+        });
+    }
+
+    input.addEventListener('select', paragraphChange);
+}
+function checkPropPropagation() {
+    console.log('Header Clicked');
+}
