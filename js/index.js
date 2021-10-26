@@ -10,11 +10,6 @@ buttonClick[0].addEventListener('click', e => {
 });
 
 //! 3. Mouse Over
-const mouseOver2 = document.querySelector('.intro h2');
-mouseOver2.addEventListener('mouseover', e => {
-    e.target.style.color = 'blue';
-});
-
 const mouseOver = document.querySelector('.logo-heading');
 mouseOver.addEventListener('mouseover', event => {
     event.target.style.color = 'aquamarine';
@@ -23,39 +18,50 @@ mouseOver.addEventListener('mouseover', event => {
     }, 5000);
 });
 
-//! 4. Mouse Leave
+const mouseOver2 = document.querySelector('.intro h2');
+mouseOver2.addEventListener('mouseover', e => {
+    e.target.style.color = 'blue';
+});
+
+//! 4. Mouse Enter
+const mouseEnter = document.querySelector('.intro img');
+mouseEnter.addEventListener('mouseenter', e => {
+    e.target.style.border = '5px dotted red';
+});
+
+//! 5. Mouse Leave
 const mouseLeave = document.querySelector('.intro h2');
 mouseLeave.addEventListener('mouseleave', e => {
     e.target.style.color = 'black';
-})
+});
 
-//! 5. Key Down
+//! 6. Key Down
 const keyDown = document.querySelector('body');
 keyDown.addEventListener('keydown', e => {
     e.target.style.color = '#8899A6';
     e.target.style.backgroundColor = '#15202B';
 });
 
-//! 6. Key Up
+//! 7. Key Up
 const keyUp = document.querySelector('body');
 keyUp.addEventListener('keyup', e => {
     e.target.style.color = 'black';
     e.target.style.backgroundColor = 'white';
 });
 
-//! 7. Pointer Enter 
+//! 8. Pointer Enter 
 const pointerEnter = document.querySelector('.text-content h2');
 pointerEnter.addEventListener('pointerenter', e => {
     e.target.style.color = 'red';
 });
 
-//! 8 Pointer Leave
+//! 9. Pointer Leave
 const pointerLeave = document.querySelector('.text-content h2');
 pointerLeave.addEventListener('pointerleave', e => {
     e.target.style.color = 'black';
 });
 
-//! 9 Double Click
+//! 10. Double Click
 const doubleClick = document.querySelectorAll('.content-destination img');
 doubleClick[0].addEventListener('dblclick', () => {
     doubleClick[0].style.transform = 'scale(2.0)';
@@ -63,4 +69,6 @@ doubleClick[0].addEventListener('dblclick', () => {
         doubleClick[0].style.transform = 'scale(1)';
     }, 5000);
 });
+
+
 
