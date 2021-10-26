@@ -57,3 +57,36 @@ function zoom(event) {
     destinationImg.style.transform = 'scale(3)';
 }
 destinationImg.addEventListener('wheel', zoom);
+
+// drag and drop
+const imageContent = document.querySelectorAll('.img-content img');
+textContent = document.querySelectorAll('.text-content');
+contentSectionDiv = document.querySelectorAll('.content-section div');
+
+imageContent.forEach(img=> {
+    contentSectionDiv.forEach(item => {
+        function dragStart() {
+            item.style.border = 'none';
+        }
+
+        function dragEnter(event) {
+            event.preventDefault();
+            item.style.border = '5px dashed green';
+        }
+        function dragOver(event) {
+            event.preventDefault();
+            item.style.border = '5px dashed green';
+        }
+        function dragLeave() {
+            item.style.border = 'none';
+        }
+        function dragDrop() {
+            item.append(img);
+        }
+
+    item.addEventListener('drop', dragDrop);
+    item.addEventListener('dragstart', dragStart);
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('dragleave', dragLeave);
+    });
+});
