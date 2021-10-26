@@ -146,3 +146,21 @@ firstButton[0].addEventListener('dblclick', event => {
         event.target.style.display = "";
     }, 300);
 });
+
+// day/night mode
+const body = document.querySelector('body');
+body.addEventListener('dblclick', () => {
+    if (body.style.backgroundColor =='grey') {
+        body.style.backgroundColor = 'white';
+        nav.style.backgroundColor = 'white';
+        document.querySelector('header').style.backgroundColor = 'white';
+        body.style.color = 'black';
+        document.querySelector('header').style.color = 'black';
+    } else {
+        body.style.backgroundColor = 'grey';
+        nav.style.backgroundColor = 'grey';
+        document.querySelector('header').style.backgroundColor = 'grey';
+        body.style.color = 'white';
+        document.querySelector('header').style.color = 'white';
+    }
+});
