@@ -4,6 +4,7 @@ const links = document.querySelectorAll('a');
 const div = document.querySelectorAll('div');
 const h2 = document.querySelectorAll('h2');
 const header = document.querySelector('.main-navigation');
+const button = document.querySelectorAll('.btn');
 
 let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 
@@ -58,5 +59,11 @@ function getHeader(event){
 }
 document.addEventListener('keyup', getHeader)
 
-    
+Array.from(button).forEach(btn => {
+    function loaded(){
+        randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+        btn.style.backgroundColor = randomColor;
+    }
+     btn.onload=loaded();
+    })  
 
