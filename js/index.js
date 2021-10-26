@@ -11,6 +11,11 @@ document.querySelectorAll('.nav-link').forEach(elem => {
     })
 });
 
+//Stop propogation at nav
+document.querySelector('nav').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+
 //Make all h2s turn purple when moused over for a short period of time
 document.querySelectorAll('h2').forEach(elem => {
     elem.addEventListener('mouseover', function(e) {
@@ -37,16 +42,6 @@ function escKey(evt) {
 
 document.addEventListener('keydown', escKey);
 
-//Add listener to images that makes them zoom in and out with wheel
-const busImg = document.querySelector('.intro img')
-
-//Ensure the busImg will always be centered
-busImg.style.display = 'block';
-busImg.style.margin = '0 auto';
-
-//Trying to make the zoom function
-//Bro idk lmao moving on
-
 //Double-click boat image to shrink it
 const boatImg = document.querySelector('.content-destination img');
 
@@ -57,6 +52,11 @@ boatImg.style.margin = '0 auto';
 boatImg.addEventListener('dblclick', function(e) {
     boatImg.style.height = '100px';
     boatImg.style.width = 'auto';
+});
+
+//End propogation at div
+document.querySelector('div').addEventListener('click', function(e) {
+    e.stopPropagation();
 });
 
 //test to see if i selected it
@@ -102,15 +102,13 @@ let dragged;
 document.addEventListener('dragstart', function(e) {
     dragged = e.target;
     e.target.style.opacity = '0.25';
-    pageTitle.textContent = 'Give that back!'
+    pageTitle.textContent = 'Give that back!';
 }, false);
 
 document.addEventListener('dragend', function(e) {
     e.target.style.opacity = '';
-    pageTitle.textContent = 'Hmph!'
+    pageTitle.textContent = 'Hmph!';
     setTimeout(function() {
         pageTitle.textContent = 'Fun Bus';  
       }, 1000);
 }, false);
-
-//Make something goofy happen when you move the pointer

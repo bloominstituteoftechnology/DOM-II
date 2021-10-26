@@ -31,14 +31,14 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
   * [✔] `copy`
   * [✔] `drag`
   * [✔] `focus`
-  * `resize`
+  * [✔] `blur`
   * [✔] `scroll`
   * [✔] `select`
   * [✔] `dblclick`
 
 Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
+* [✔] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble. (I'll be honest not sure if I did this right)
 * [✔] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ### Task 3: Stretch
