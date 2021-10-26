@@ -3,7 +3,9 @@
 let navLinks = document.querySelectorAll('nav a');
 let navLinksArray = Array.from(navLinks);
 for(let i = 0; i < navLinksArray.length; i++){
-    navLinksArray[i].addEventListener('click', (event) => {event.target.style.color = 'red'; });
+    navLinksArray[i].addEventListener('click', (event) => {event.target.style.color = 'red'; 
+    event.preventDefault(); 
+});
 }
 for(let i = 0; i < navLinksArray.length; i++){
     navLinksArray[i].addEventListener('dblclick', (event) => {event.target.style.color = 'blue'; });
@@ -46,3 +48,16 @@ let h2Array = Array.from(h2);
 for(let i = 0; i < h2Array.length; i++){
     h2Array[i].addEventListener('focus', (event) => {event.target.style.background = 'orange'; });
 }
+
+//nested event with bubble prevention
+let textContent = document.querySelectorAll('.text-content');
+let textContentArray = Array.from(textContent);
+for(let i = 0; i < textContentArray.length; i++){
+    textContentArray[i].addEventListener('click', (event) => {event.target.style.color = 'purple'; });
+}
+let textContenth2 = document.querySelector('.text-content h2');
+textContenth2.addEventListener('click', (event) => {event.target.style.textTransform = "uppercase"; 
+event.stopPropagation();
+});
+
+//links don't refresh added in first event which is a click on nav links
