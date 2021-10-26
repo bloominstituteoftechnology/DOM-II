@@ -9,40 +9,30 @@ buttonClick[0].addEventListener('click', e => {
     buttonClick[0].textContent = `Hey, don't click me! ${e.detail}`
 });
 
-//! 3. MouseOver
-const mouseOver = document.querySelector('.logo-heading');
-mouseOver.addEventListener('mouseover', e => {
-    e.target.style.color = 'purple';
-    e.target.style.transitionDuration = '.3s';
-    setTimeout(function () {
-        e.target.style.color = '';
-    }, 5000);
+//! 3. Mouse Over
+const mouseOver2 = document.querySelector('.intro, h2, p');
+mouseOver2.addEventListener('mouseover', e => {
+    e.target.style.color = 'orange';
 });
 
-const busImg = document.querySelector('.intro img');
-busImg.classList.add('bus');
-busImg.addEventListener('mouseover', () => {
-    busImg.setAttribute('src', 'https://images.unsplash.com/photo-1476673160081-cf065607f449?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1172&q=80');
-});
+//! 4. Mouse Leave
+const mouseLeave = document.querySelector('.intro, h2, p');
+mouseLeave.addEventListener('mouseleave', e => {
+    e.target.style.color = 'black';
+})
 
-//! 4. Key Down
+//! 5. Key Down
 const keyDown = document.querySelector('body');
 keyDown.addEventListener('keydown', e => {
     e.target.style.color = '#8899A6';
     e.target.style.backgroundColor = '#15202B';
 });
 
-//! 5. Key Up
+//! 6. Key Up
 const keyUp = document.querySelector('body');
 keyUp.addEventListener('keyup', e => {
     e.target.style.color = 'black';
     e.target.style.backgroundColor = 'white';
-});
-
-//! 6. Mouse Leave
-const busImgReturn = document.querySelector('.intro img');
-busImgReturn.addEventListener('mouseleave', () => {
-    busImgReturn.setAttribute('src', 'img/fun-bus.jpg');
 });
 
 //! 7. Pointer Enter 
@@ -56,4 +46,5 @@ const pointerLeave = document.querySelector('.text-content p');
 pointerLeave.addEventListener('pointerleave', e => {
     e.target.style.color = 'black';
 });
+
 
