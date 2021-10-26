@@ -90,3 +90,10 @@ imageContent.forEach(img=> {
     item.addEventListener('dragleave', dragLeave);
     });
 });
+
+// load
+function alertLoaded(event) {
+    alert('Page Loaded!');
+}
+
+window.addEventListener('load', alertLoaded);
