@@ -46,14 +46,14 @@ busImgReturn.addEventListener('mouseleave', () => {
 });
 
 //! 7. Pointer Enter 
-const pointerEnter = document.querySelector('.img-content img');
-pointerEnter.addEventListener('pointerenter', () => {
-    pointerEnter.setAttribute('src', 'https://images.unsplash.com/photo-1478860409698-8707f313ee8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+const pointerEnter = document.querySelector('.text-content p');
+pointerEnter.addEventListener('pointerenter', e => {
+    e.target.style.color = 'red';
 });
 
 //! 8 Pointer Leave
-const pointerLeave = document.querySelector('.img-content img');
-pointerLeave.addEventListener('pointerleave', () => {
-    pointerLeave.setAttribute('src', 'img/adventure.jpg');
-})
+const pointerLeave = document.querySelector('.text-content p');
+pointerLeave.addEventListener('pointerleave', e => {
+    e.target.style.color = 'black';
+});
 
