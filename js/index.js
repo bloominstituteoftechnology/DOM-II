@@ -5,6 +5,7 @@ const nav = document.querySelector('.nav');
 const logo = document.querySelector(".logo-heading");
 const introImg = document.querySelector(".intro img");
 const introHeading = document.querySelector(".intro h2");
+const content = document.querySelector(".content-section");
 
 // const textContent = document.querySelector(".content-section .text-content");
 // const imgContent = document.querySelector(".content-section .img-content");
@@ -20,10 +21,14 @@ const island = destinations.querySelector(".content-pick .destination:nth-of-typ
 
 //Adding event listener
 body.addEventListener('wheel', e => body.classList.add('transition-color'));
-body.addEventListener('keydown', e => body.classList.remove('transition-color'))
+body.addEventListener('keydown', e => body.classList.remove('transition-color'));
+body.addEventListener('keypress', e => alert('Use your mouse to navigate through the page.'));
+body.addEventListener('keyup', e => e.target.style.backgroundColor = 'lightblue');
 
+//Fun bus image
 introImg.addEventListener('dblclick', e => e.target.style.border = "2px solid yellow");
 
+//navigation bar
 header.addEventListener('click', e =>  header.classList.add('transition-color'));
 
 nav1.addEventListener('click', e => {
@@ -55,6 +60,12 @@ nav3.addEventListener('mouseover', (e)=> e.target.style.color = 'yellow');
 nav3.addEventListener('mouseleave',(e) => e.target.style.color = 'black');
 nav4.addEventListener('mouseover', (e)=> e.target.style.color = 'red');
 nav4.addEventListener('mouseleave',(e) => e.target.style.color = 'black');
+
+
+//Content Section
+const text = content.querySelector(".text-content");
+text.addEventListener('copy', e => e.currentTarget.style.color = "red");
+
 
 sun.addEventListener('click', e => {
    sun.classList.add("destination-sun");

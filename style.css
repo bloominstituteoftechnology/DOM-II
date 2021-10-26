@@ -8,6 +8,14 @@
     50%{background-color:rgb(243, 243, 126);}
     100%{background-color: lightblue}
 }
+.transition-color2{
+    animation: color2 4s infinite;
+}
+@keyframes color2 {
+    0% {background-color:rgb(0, 234, 255) ;}
+    50%{background-color:rgb(10, 182, 173)}
+    100%{background-color: rgb(117, 202, 236)}
+}
 
 .destination-sun{
     font-size: 10%;
