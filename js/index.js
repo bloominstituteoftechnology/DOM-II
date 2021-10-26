@@ -17,3 +17,55 @@ const h2 = document.querySelectorAll('h2');
 const h4 = document.querySelectorAll('h4');
 
 
+
+
+// nav 
+
+window.addEventListener('scroll', function(e) {
+    mainNav.style.backgroundColor = '#C8C9D6';
+
+    setTimeout(function(e) {
+        mainNav.style.backgroundColor = '#C8C9D6';
+    }, 1000);
+});
+
+mainNav.addEventListener('mousedown', function(e){
+    mainNav.style.backgroundColor = '';
+    logo.style.fontSize = '3em';
+    navBar.forEach(navBar => navBar.style.fontSize = '2em');;
+});
+
+mainNav.addEventListener('mouseup', function(e){
+    mainNav.style.backgroundColor = '';
+    logo.style.fontSize = '4em';
+    navBar.forEach(navBar => navBar.style.fontSize = '');;
+
+});
+
+logo.addEventListener("click", e => {
+    document.querySelector("html").style.background = "#BCBEE7";
+    document.querySelector("header").style.background = "";
+    document.querySelector("html").style.color = "#E7995B";
+    document.querySelector("html").style.transitionDuration = "1s";
+    document.querySelector("header").style.transitionDuration = "1s";
+  
+
+  
+    logo.textContent = "Fun Bus!";
+    
+  
+    for (i = 0; i < nav.length; i++) {
+      nav[i].style.color = "white";
+    }
+  
+    footer.querySelector("p").style.color = "white";
+    
+    btn.addEventListener("wheel", e => {
+      for (i = 0; i < nav.length; i++) {
+        TweenMax.to(e.currentTarget, 1, { width: 250, ease: Bounce.easeOut });
+        btns[i].style.color = "orange";
+        btns[i].style.border = "5px solid pink";
+      }
+    });
+  });
+  
