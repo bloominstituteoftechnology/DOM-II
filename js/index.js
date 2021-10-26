@@ -70,5 +70,24 @@ doubleClick[0].addEventListener('dblclick', () => {
     }, 5000);
 });
 
+//* Event propagation section
+
+const navBar = document.querySelector('a');
+
+Array.from(navBar).forEach(nav => {
+    nav.addEventListener('click', e => {
+        console.log(e);
+        e.preventDefault();
+    });
+});
+
+document.addEventListener('click', e => {
+    console.log('clicked')
+});
+
+document.addEventListener('click', e => {
+    console.log('stopped')
+    e.stopPropagation();
+});
 
 
