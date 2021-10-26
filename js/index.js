@@ -27,4 +27,34 @@ window.addEventListener('load', function() {
  //Event 5
  document.body.addEventListener('wheel', function(evt) {
      evt.target.style.backgroundColor = "#DEB887";
- })
+ });
+
+ //Event 6
+ const img = document.querySelector('.img-content');
+ img.addEventListener('click', function(evt) {
+     evt.target.style.borderRadius = "999px";
+ });
+
+ //Event 7
+const bottomImg = document.querySelector('.content-destination img');
+bottomImg.addEventListener('mouseover', function(event){
+    event.target.style.border = '1px solid black'
+});
+
+//Event 8
+window.addEventListener('resize', function() {
+    console.log('screen resized');
+});
+
+// Event 9
+const head = document.querySelector('.main-navigation');
+head.addEventListener('keydown', function(event) {
+    if(event.key === 'Escape') {
+        event.target.style.color = '#fff';
+    }
+});
+
+//Event 10
+document.addEventListener('click', function() {
+    console.log('Your clicking me');
+})
