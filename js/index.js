@@ -5,9 +5,11 @@
 // })
 
 
-const button = document.querySelectorAll('.destination .btn');
+const button = document.querySelector('.destination .btn');
 
-button.addEventListener('click', function(){
-    button.textContent = ('hey you clicked me!');
+button.addEventListener('click', () => {
+    button.textContent = 'hey you clicked me!';
+    console.log(button);
+
     
 });
