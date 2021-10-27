@@ -30,7 +30,7 @@ window.addEventListener('scroll', function(e) {
 });
 
 mainNav.addEventListener('mousedown', function(e){
-    mainNav.style.backgroundColor = '';
+    mainNav.style.backgroundColor = '#F1B18C';
     logo.style.fontSize = '3em';
     navBar.forEach(navBar => navBar.style.fontSize = '2em');;
 });
@@ -44,7 +44,7 @@ mainNav.addEventListener('mouseup', function(e){
 // logo click
 logo.addEventListener("click", e => {
     document.querySelector("html").style.background = "#BCBEE7";
-    document.querySelector("header").style.background = "";
+    document.querySelector("header").style.background = "#BCBEE7";
     document.querySelector("html").style.color = "#E7995B";
     document.querySelector("html").style.transitionDuration = "1s";
     document.querySelector("header").style.transitionDuration = "1s";
