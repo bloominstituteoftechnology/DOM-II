@@ -19,6 +19,14 @@ function anyKey(){
     pageName.style.backgroundColor = "Yellow";
 }
 
+//keyup
+
+const title = document.querySelector("h1");
+document.addEventListener('keyup', enterKey);
+function enterKey(){
+    title.style.backgroundColor = "White";
+}
+
 //click
 const pageLand = document.querySelector(".intro h2");
 
@@ -39,7 +47,7 @@ elmDragged.forEach(item => item.addEventListener('drag', function(event){
 
 },false))
 
-//focus
+//dbl click
 
 const highlighted = document.querySelector(".btn");
 
