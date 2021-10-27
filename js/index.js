@@ -1,5 +1,5 @@
 // Your code goes here
-const navLinks = document.querySelectorAll('header .nav .nav-link')
+const navLink = document.querySelector('header .nav .nav-link')
 const logoHeading = document.querySelector('.logo-heading')
 const busImg = document.querySelector('.intro img')
 const h2Text = document.querySelectorAll('h2')
@@ -7,10 +7,10 @@ const imgContent = document.querySelector('.content-section img')
 const lastImg = document.querySelector('.content-destination img')
 
 //Adding events
-navLinks.addEventListener('mouseover', evt => {
-    navLinks.forEach(colors => {
-     colors.style.color = 'green';
-    });
+navLink.addEventListener('mouseover', evt => {
+    
+     navLink.style.color = 'green';
+   
 
 })
 logoHeading.addEventListener('mousedown', evt => {
@@ -32,3 +32,4 @@ window.addEventListener('scroll', () => {
         alert('You have reached the bottom of the Fun Bus baby!');
     }
 });
+imgContent.addEventListener('')
