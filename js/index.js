@@ -1,4 +1,5 @@
 // Your code goes here
+
 //onmouseOver
 const imgSelected = document.querySelector('.img-content');
 
@@ -49,11 +50,22 @@ elmDragged.forEach(item => item.addEventListener('drag', function(event){
 
 //dbl click
 
-const highlighted = document.querySelector(".btn");
-
 document.addEventListener('dblclick', doubleClick);
 function doubleClick(){
     console.log("No Sign ups here!")
     alert("This is just a mock-up");
 }
    
+//load
+window.addEventListener('load', function (event){
+    console.log("This site has been loaded fully!");
+    alert("This Site is up and running.");
+})
+
+const scrolling = false;
+
+//scroll
+window.addEventListener('scroll', function(){
+    if (scrolling !== 'false') 
+        console.log("Scrolling...");
+});
