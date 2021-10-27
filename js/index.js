@@ -81,6 +81,6 @@ addEventListener("paste", e => {
   window.alert("PASTE was a sucsess!");
 });
 // cut 
-ddEventListener("cut", e => {
+addEventListener("cut", e => {
   window.alert("DONE!");
 });
