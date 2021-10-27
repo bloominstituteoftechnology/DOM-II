@@ -65,6 +65,11 @@ logo.addEventListener("click", e => {
     console.log(`WOOOHOOO!!`); 
     e.stopPropagation();
    });
+
+   footer.addEventListener('wheel', function(e){
+    console.log(`OOPS I DID IT AGAIN :) ${e}`); 
+    e.stopPropagation();
+   });
   
 //copy
   window.addEventListener('copy', function() {
@@ -75,7 +80,7 @@ logo.addEventListener("click", e => {
 addEventListener("paste", e => {
   window.alert("PASTE was a sucsess!");
 });
-
+// cut 
 ddEventListener("cut", e => {
   window.alert("DONE!");
 });
