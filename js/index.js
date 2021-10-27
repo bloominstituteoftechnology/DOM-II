@@ -24,7 +24,7 @@ navAOne.addEventListener('mouseover', function(){
     navAOne.style.fontSize = '64rem';
 })
 
-//   * `keydown`  NEEDS WORK
+//   * mousemove done
 const keyDownImg = document.querySelector('h2');
 keyDownImg.addEventListener('mousemove', function(evt){
     keyDownImg.style.display =  'none';
@@ -81,9 +81,3 @@ divClick.addEventListener('click', function(){
     divClick.style.display = 'none'
 });
 
-
-
-//   * `resize`
-//   * `scroll`
-//   * `select`
-//   * `drag / drop` 
