@@ -7,15 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/DOM-II.git"
+    "url": "git+https://github.com/BloomInstituteOfTechnology/DOM-II.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LambdaSchool/DOM-II/issues"
+    "url": "https://github.com/BloomInstituteOfTechnology/DOM-II/issues"
   },
-  "homepage": "https://github.com/LambdaSchool/DOM-II#readme",
+  "homepage": "https://github.com/BloomInstituteOfTechnology/DOM-II#readme",
   "devDependencies": {
     "eslint": "^7.6.0",
     "less": "^3.12.2",
