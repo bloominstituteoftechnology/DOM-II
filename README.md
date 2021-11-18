@@ -1,57 +1,50 @@
-# DOM II - Event Exploration
+# DOM I
+
+## Project Description
 
 Fun Bus wants you to make their site more interactive. They are relying on you to provide 10 unique events to enhance their site. Explore the many events available to you by using the [MDN events reference](https://developer.mozilla.org/en-US/docs/Web/Events).
 
-## Instructions
-
-### Task 1: Project Set Up
-
-#### Set Up The Project With Git
-
-**Follow these steps to set up and work on your project:**
+## Git Setup
 
 * [ ] Create a forked copy of this project.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [ ] Clone your OWN version of the repository.
+* [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
+* [ ] Implement the project on your newly created branch, committing changes regularly.
+* [ ] Push commits: `git push origin <firstName-lastName>`.
 
-#### Launch the project with npm
+## Running the project
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+This project uses [Webpack and Babel](https://bloomtech-1.wistia.com/medias/bhi99dwr2x). Inside `src/index.html` you will notice there is no `script` tag linking the JavaScript, nor a `link` tag linking the styles. When the project starts, Webpack transcompiles the LESS into CSS, and injects the JavaScript and the styles into the HTML.
 
-### Task 2: Create listeners for 10 types of events
+Do not **move or rename any files** in this project. The website's source files live inside the `src` folder. Do not make changes inside any files outside of the `src` folder, unless it's new dependecies declared in the `package.json` due to installing NPM libraries (E.G. `npm i lodash`).
 
-* [ ] Using your [index.js file](js/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, remove objects, etc. Here are some event types you could try to use:
-  * `mouseover`
-  * `keydown`
-  * `wheel`
-  * `load`
-  * `focus`
-  * `resize`
-  * `scroll`
-  * `select`
-  * `dblclick`
-  * `drag / drop`
+* [ ] Run `npm install` to download the project's dependencies.
+* [ ] Run `npm start` to launch the website on `http://localhost:3000`.
 
-Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
+## MVP
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+### Create listeners of 10 types of events
 
-### Task 3: Stretch
+* [ ] Using your [index.js file](src/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, add DOM elements, remove them, etc.
 
-* [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
+* [ ] Here are some event types you could try to use:
+  * [ ] `mouseover`
+  * [ ] `keydown`
+  * [ ] `wheel`
+  * [ ] `load`
+  * [ ] `focus`
+  * [ ] `resize`
+  * [ ] `scroll`
+  * [ ] `select`
+  * [ ] `dblclick`
+  * [ ] `drag / drop`
 
-#### Stretch assignment
+Note: Drag and drop is a bit more advanced than the others. It's not actually a single type of event but several types that need to work together.
 
-* [ ] Take a look at the [stretch assignment](stretch-assignment) and follow the instructions in the read me file.
+### Use preventDefault
+
+* [ ] Find a usecase for preventDefault. For example, you could prevent a link from navigating when clicked, or to navigate somewhere surprising.
 
 ## Submission Format
 
-**Follow these steps for completing your project.**
-
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+* [ ] Submit a pull request to merge `<firstName-lastName>` Branch into `main`.
