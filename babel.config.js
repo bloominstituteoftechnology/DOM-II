@@ -6,11 +6,7 @@ module.exports = {
       ],
       presets: [
         [
-          '@babel/preset-env',
-          {
-            modules: 'commonjs',
-            debug: false
-          }
+          '@babel/preset-env', { targets: { chrome: 95 } }
         ]
       ]
     }
