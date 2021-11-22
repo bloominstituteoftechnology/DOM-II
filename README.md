@@ -16,7 +16,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 This project uses [Webpack and Babel](https://bloomtech-1.wistia.com/medias/bhi99dwr2x). Inside `src/index.html` you will notice there is no `script` tag linking the JavaScript, nor a `link` tag linking the styles. When the project starts, Webpack transcompiles the LESS into CSS, and injects the JavaScript and the styles into the HTML.
 
-Do not **move or rename any files** in this project. The website's source files live inside the `src` folder. Do not make changes inside any files outside of the `src` folder, unless it's new dependecies declared in the `package.json` due to installing NPM libraries (E.G. `npm i lodash`).
+Do not **move or rename any files** in this project. The website's source files live inside the `src` folder. Do not make changes to any files outside of the `src` folder, unless it's new dependecies declared in the `package.json` due to installing NPM libraries (E.G. `npm i lodash`).
 
 * [ ] Run `npm install` to download the project's dependencies.
 * [ ] Run `npm start` to launch the website on `http://localhost:3000`.
