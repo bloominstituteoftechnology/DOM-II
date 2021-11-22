@@ -3,6 +3,7 @@ const { screen } = require('@testing-library/dom')
 require('@testing-library/jest-dom/extend-expect')
 
 beforeAll(() => {
+  require('./src/index')
   server.listen()
 })
 afterAll(() => {
