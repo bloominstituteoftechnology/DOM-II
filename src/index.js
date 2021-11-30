@@ -46,11 +46,20 @@ function random_bg_color() {
  keyPress.style.backgroundColor = bgColor }
 
 const keyPress = document.querySelector("body")
-
-
-
 keyPress.addEventListener('keydown',random_bg_color)
 
-
 //5
+
+const heightOutput= document.querySelector(".text-content h2")
+console.log(heightOutput)
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+
+}
+window.onresize = reportWindowSize;
+
+//6
+
+
 
