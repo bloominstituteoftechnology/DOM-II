@@ -12,3 +12,13 @@ links.forEach(link => {
         }, 500);
     }, false);
 })
+
+//Trigger 2: Click
+links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.target.style.color = "red";
+            setTimeout(function() {
+                event.target.style.color = "";
+            }, 500);
+        }, false);
+    })
