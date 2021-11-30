@@ -5,7 +5,7 @@ const links = document.querySelectorAll("a");
 const title = document.querySelector('.logo-heading')
 const body = document.querySelector('body')
 const headImg = document.querySelector('img')
-const contentImg = document.querySelector('img-content');
+const contentH2 = document.querySelector('h2');
 const header = document.querySelector('div')
 //Trigger 1: Mouse Over
 links.forEach(link => {
@@ -76,6 +76,10 @@ function gKeyPress(event) {
 }
 document.addEventListener("keypress", gKeyPress);
 
-//Trigger 9:  
+//Trigger 9: DoubleClick
 
+function dblClickTitle(event) {
+    contentH2.textContent = 'Sub Nuf Ot Emoclew!'
+};
+document.addEventListener("dblclick", dblClickTitle);
 //Trigger 10:
