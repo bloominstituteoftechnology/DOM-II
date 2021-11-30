@@ -82,4 +82,11 @@ function dblClickTitle(event) {
     contentH2.textContent = 'Sub Nuf Ot Emoclew!'
 };
 document.addEventListener("dblclick", dblClickTitle);
-//Trigger 10:
+
+//Trigger 10: VisibilityChange
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === 'visible') {
+        header.style.backgroundColor = 'purple',
+        body.style.backgroundColor = 'purple';
+    }
+});
