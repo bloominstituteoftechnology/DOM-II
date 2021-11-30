@@ -15,3 +15,9 @@ navBar.addEventListener("mouseleave", function (ev) {
   ev.target.style.backgroundColor = "white";
   ev.target.style.fontStyle = "normal";
 });
+
+const topImage = document.querySelector(".intro img");
+topImage.addEventListener("wheel", function (e) {
+  e.target.src =
+    "https://www.colourbox.com/preview/15543391-city-bus-cartoon-style-vector-icon-silhouette.jpg";
+});
