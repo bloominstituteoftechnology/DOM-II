@@ -5,7 +5,8 @@ const links = document.querySelectorAll("a");
 const title = document.querySelector('.logo-heading')
 const body = document.querySelector('body')
 const headImg = document.querySelector('img')
-
+const contentImg = document.querySelector('img-content');
+const header = document.querySelector('div')
 //Trigger 1: Mouse Over
 links.forEach(link => {
     link.addEventListener("mouseover", function(event) {
@@ -39,6 +40,7 @@ title.addEventListener("mouseleave", function(event) {
 //Trigger 5: KeyDown  
 function sixKeyDown(event) {
     if (event.key === "6") {
+        header.style.backgroundColor = 'black';
         body.style.backgroundColor = 'black';
     }
 }
@@ -47,6 +49,7 @@ document.addEventListener("keydown", sixKeyDown);
 //Trigger 6: KeyUp
 function sixKeyUp(event) {
     if (event.key === "6") {
+        header.style.backgroundColor = 'white';
         body.style.backgroundColor = 'white';
     }
 }
@@ -63,7 +66,15 @@ function zoom(event) {
 }
 let scale = 1;
 headImg.onwheel = zoom;
-//Trigger 8:  
+
+//Trigger 8: KeyPress 
+function gKeyPress(event) {
+    if (event.key === "g") {
+        header.style.backgroundColor = 'orange';
+        body.style.backgroundColor = 'orange';
+    }
+}
+document.addEventListener("keypress", gKeyPress);
 
 //Trigger 9:  
 
