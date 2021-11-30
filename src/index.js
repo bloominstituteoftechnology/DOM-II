@@ -27,3 +27,8 @@ links.forEach(link => {
 title.addEventListener("mouseenter", function(event) {
         event.target.textContent = 'Bun Fus';
     });
+
+//Trigger 4: Mouse Leave
+title.addEventListener("mouseleave", function(event) {
+        event.target.textContent = 'Fun Bus';
+    });
