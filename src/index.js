@@ -8,23 +8,32 @@ const h2Text = document.querySelectorAll('h2')
 const imgContent = document.querySelector('.content-section img')
 const lastImg = document.querySelector('.content-destination img')
 
-navLink.addEventListener('mouseover', evt => {
-    
-    navLink.style.color = 'red';
-  
+//1
 
+navLink.addEventListener('mouseover', evt => {  
+    navLink.style.color = 'red';
 })
+
+//2
 logoHeading.addEventListener('mousedown', evt => {
-   
    logoHeading.style.backgroundColor = 'yellow';
 });
+
+//3
+
 logoHeading.addEventListener('mouseup', evt => {
    console.log('Mouse is up!');
    logoHeading.style.backgroundColor = 'red';
 });
+
+//4
+
 busImg.addEventListener('dblclick', evt => {
    busImg.style.opacity = '50%';
 });
+
+//5
+
 window.addEventListener('scroll', () => {
    const scrolls = document.documentElement.scrollHeight - window.innerHeight;
    const scrolling = window.scrollY;
@@ -33,4 +42,5 @@ window.addEventListener('scroll', () => {
        alert('You have reached the bottom of the Fun Bus baby!');
    }
 });
-imgContent.addEventListener('')
+
+
