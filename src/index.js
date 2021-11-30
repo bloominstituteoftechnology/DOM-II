@@ -48,18 +48,28 @@ function random_bg_color() {
 const keyPress = document.querySelector("body")
 keyPress.addEventListener('keydown',random_bg_color)
 
+// 5 
+const keyPressUp = document.querySelector("body");
+keyPressUp.addEventListener('keyup' , () =>{
+    keyPressUp.style.backgroundColor = null
+})
+
 //5
 
 const heightOutput= document.querySelector(".text-content h2")
-console.log(heightOutput)
+
 
 function reportWindowSize() {
-  heightOutput.textContent = window.innerHeight;
-
+  heightOutput.textContent = ` Window height is ${window.innerHeight}`;
 }
+
 window.onresize = reportWindowSize;
 
 //6
 
 
+const original= document.querySelector(".text-content h2")  
+original.addEventListener('dblclick'()=>{
+    original.textContent = "return"
+})
 
