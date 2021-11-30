@@ -23,4 +23,7 @@ links.forEach(link => {
         }, false);
     })
 
-    
+//Trigger 3: Mouse Enter
+title.addEventListener("mouseenter", function(event) {
+        event.target.textContent = 'Bun Fus';
+    });
