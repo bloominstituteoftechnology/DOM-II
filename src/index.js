@@ -35,10 +35,22 @@ function zoom(event) {
   let scale = 1;
 busPocc.addEventListener('wheel', zoom);
 
-//4
+//4 random color on key press in body
 
-const keyPress = 
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor);
+ keyPress.style.backgroundColor = bgColor }
 
-//logoHeading.addEventListener('blur', (event) => {
- //   event.target.innerHTML = 'xx';
-  //});
+const keyPress = document.querySelector("body")
+
+
+
+keyPress.addEventListener('keydown',random_bg_color)
+
+
+//5
+
