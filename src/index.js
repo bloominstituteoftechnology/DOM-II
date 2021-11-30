@@ -30,5 +30,33 @@ const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => {
     btn.style.fontSize = '55px';
 });
- 
-  
+//6 scroll to see teal text 
+const bodyText = document.querySelector('body');
+function changesBodyText() {
+  bodyText.style.color = 'teal';
+}
+window.addEventListener('scroll', changesBodyText);
+//7 logo hover fade in and out
+const bussy = document.querySelector('.logo-heading');
+bussy.addEventListener('mouseover', function() {
+    bussy.style.transform = "scale(1.5)";
+    bussy.style.transition = "all .3s ease-in-out";
+})
+bussy.addEventListener('mouseout', function() {
+    bussy.style.transform = "scale(1)";
+    bussy.style.transition = "all 1s ease-in-out";
+})
+//8 the bus song alert
+const busAlert = window.addEventListener('load', () => {
+    alert('The Wheels on the Bus go Round and Round!');
+})
+//9 yellow footer when hover
+const footer = document.querySelector('footer')
+footer.addEventListener('mouseover', (event) => {
+    footer.style.background = "yellow";
+})
+//10 yellow background when hover over destination
+const bground = document.querySelector('.content-destination')
+bground.addEventListener('mouseover', (event) => {
+    bground.style.background = "yellow";
+})
