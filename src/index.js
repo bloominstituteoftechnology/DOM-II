@@ -21,3 +21,19 @@ topImage.addEventListener("wheel", function (e) {
   e.target.src =
     "https://www.colourbox.com/preview/15543391-city-bus-cartoon-style-vector-icon-silhouette.jpg";
 });
+const log = document.querySelector(".content-destination h2");
+document.addEventListener("keydown", function (e) {
+  log.textContent = `"You are pressing ${e.key}"`;
+  log.style.color = "blue";
+});
+
+window.addEventListener("load", () => {
+  window.alert("Load event has been activated");
+});
+
+// const allImages = document.querySelectorAll("img");
+// allImages.forEach((e) => {
+//   e.addEventListener("dblclick", function (e) {
+//     e.target.display = "none";
+//   });
+// });
