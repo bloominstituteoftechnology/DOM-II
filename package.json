@@ -2,7 +2,7 @@
   "name": "dom-ii",
   "version": "0.0.1",
   "scripts": {
-    "start": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
+    "start": "concurrently \"npm:backend\" \"npm:frontend\"",
     "frontend": "webpack serve --open",
     "backend": "node mocks/api.js",
     "test": "cross-env NODE_ENV=testing jest --verbose"
