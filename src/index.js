@@ -12,25 +12,74 @@ function changeColor(){
 homeButton.addEventListener('click', changeColor);
 
 //double click event
-const welcomeFunBus = document.querySelector('.intro h2');
+const welcomeFunBus = document.querySelector('h2');
 
-function funBus (){
+function funBus(){
     welcomeFunBus.style.fontSize = '2rem';
 }
 
-//load event
+welcomeFunBus.addEventListener('dblclick', funBus);
 
+//DOMcontentloaded event
 
+window.addEventListener('DOMContentLoaded', (e) => {
+    console.log('DOM fully loaded and parsed');
+});
 
-//scroll event
+//keyup event
+const adventure = document.querySelector('.text-content:nth-of-type(2)');
+const adventureHeading = adventure.querySelector('h2');
+
+function colorChange(e){
+    if(e.code === 'KeyM') {
+     adventureHeading.style.color = 'purple';
+    } 
+ }
+ document.addEventListener('keyup', colorChange);
 
 
 
 //wheel event
+// const boat = document.querySelector('img');
 
+// function boatWheel(e){
+//     e.preventDefault();
+//     if(e.deltaY < 0){
+//         scale *= e.deltaY * -2;
+//     } else {
+//         scale/= e.deltaY * 2;
+//     }
+//     scale = Math.min(Math.max(.125, scale), 4);
+// }
 
+// let scale = 1;
 
-//blur event
+// boat.addEventListener('wheel', boatWheel);
+
+function zoom(event) {
+    event.preventDefault();
+  
+    if (event.deltaY < 0) {
+      // Zoom in
+      scale *= event.deltaY * -2;
+    }
+    else {
+      // Zoom out
+      scale /= event.deltaY * 2;
+    }
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = document.querySelector('div');
+  document.onwheel = zoom;
+
+//mousedown event
 
 
 
@@ -47,3 +96,11 @@ function funBus (){
 
 
 //keydown event
+const letsGo = document.querySelector('.text-content h2');
+
+function Color(e){
+    if(e.code === 'KeyJ') {
+     letsGo.style.color = 'blue';
+    } 
+ }
+ document.addEventListener('keydown', Color);
