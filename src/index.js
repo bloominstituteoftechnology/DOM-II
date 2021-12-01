@@ -53,7 +53,13 @@ menu.addEventListener('wheel', (event) =>{
     menu.style.backgroundColor = 'red'; 
 });
 
-
+//prevent default
+const links = document.querySelectorAll("a");
+links.forEach (link =>{
+    link.addEventListener("click", function(event){
+        event.preventDefault();  // prevents default behavior
+    })
+})
 
 
 
