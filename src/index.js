@@ -30,6 +30,12 @@ loading.addEventListener('load', (event) => {
     // console.log('page is fully loaded');
   });
 
+//   header img
+
+const headerImg = document.querySelector("header img");
+headerImg.addEventListener("click", (event) => {
+  newWindow = window.open("http://localhost:9000/img/fun-bus.jpg");
+});
 
 
 
