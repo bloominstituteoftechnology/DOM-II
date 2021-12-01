@@ -5,7 +5,8 @@ const navBar = document.querySelectorAll('.nav-link');
 const header = document.querySelector('header');
 const navLinks = document.querySelectorAll('nav a');
 const buttons = document.querySelectorAll('.btn');
-const footerr = document.querySelector('.footer p')
+const footerr = document.querySelector('.footer p');
+const imgs = document.querySelectorAll('img');
 
 const newLinks = Array.from(navLinks);
 
@@ -13,9 +14,26 @@ navBar.forEach(item => item.addEventListener('click', colorChange));
 
 buttons.forEach(item => item.addEventListener('click', buttonsPressed))
 
-function colorChange(item){
-    document.body.style.backgroundColor = 'grey';
+imgs.forEach(item => item.addEventListener('mouseover', opacityChanger))
 
+document.addEventListener('keypress', keyPressed);
+
+function opacityChanger(){
+    for (let img of imgs){
+        img.style.display = 'none'
+    }
+}
+
+function colorChange(item){
+    if(item.target.innerText === 'About Us'){
+        document.body.style.backgroundColor = 'blue';
+    }else if(item.target.innerText === 'Blog'){
+        document.body.style.backgroundColor = 'grey';
+    }else if(item.target.innerText === 'Home'){
+        document.body.style.backgroundColor = 'yellow';
+    }else if(item.target.innerText === 'Contact'){
+        document.body.style.backgroundColor = 'orange';
+    }
 }
 
 function scrollBy (){
@@ -51,6 +69,12 @@ function buttonsPressed(){
     const fontSizer = Math.floor(Math.random() * 5);
     footerr.style.color = colorsArr[randomColor];
     footerr.style.fontSize = `${fontSizer}rem`;
+}
+
+function keyPressed (event){
+    if(event.target.key = 'y'){
+        navBar.scrollToView()
+    }
 }
 
 
