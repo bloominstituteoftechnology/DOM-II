@@ -47,7 +47,13 @@ image1.addEventListener('mouseleave', (event) => {
     image1.style.filter = "blur(2px)";  
   });
 
-  
+//wheel
+menu.addEventListener('wheel', (event) =>{
+    console.log(event);
+    menu.style.backgroundColor = 'red'; 
+});
+
+
 
 
 
