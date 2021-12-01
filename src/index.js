@@ -41,3 +41,9 @@ el.onwheel = zoom;
 el.addEventListener('load', function(){
     alert('Page is loaded')
 })
+
+// focus
+const dest = document.querySelector('btn');
+dest.addEventListener('focus', (event) => {
+    event.target.style.background = 'pink';
+}, true);
