@@ -35,7 +35,7 @@ document.addEventListener("keydown", function (e) {
 //load event listener
 
 window.addEventListener("load", () => {
-  //   window.alert("Load event has been activated");
+  window.alert("Load event has been activated");
 });
 
 // window.addEventListener("load", () => {
