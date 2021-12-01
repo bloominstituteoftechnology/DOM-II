@@ -53,3 +53,27 @@ nav.forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault()
     e.target.setAttribute('href', '#HelloWorld')
 }) )
+
+// keydown
+
+document.addEventListener('keydown' , (e) => {
+    let mainTitle = document.querySelector('h1')
+    if(e.key === 'Backspace'){
+        mainTitle.textContent = 'Fun Bus'
+    } else if(e.key === ' ') {
+        mainTitle.textContent = `you selected: Space `
+    } else {
+        mainTitle.textContent = `you selected: ${e.key}`
+    }
+    console.log(e.key)
+})
+
+// scroll
+
+document.addEventListener('scroll', (e) => { 
+    let mainTitle = document.querySelector('h1')
+    mainTitle.textContent = 'I\'m scrolling!'
+    setTimeout(() => {
+        mainTitle.textContent = 'Fun Bus'
+    }, 600)
+})
