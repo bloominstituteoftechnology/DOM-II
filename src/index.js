@@ -3,27 +3,30 @@ import "./less/index.less";
 
 // Your code goes here!
 const funBusHeader = document.querySelector("h1");
+const navLinks = document.querySelectorAll("a");
 const busImage = document.querySelector("img:nth-of-type(1)");
 const openingParagraph = document.querySelector(".container .intro p");
 const contactLink = document.querySelector("a:nth-of-type(4)");
 
 const mainTitles = document.querySelectorAll("h2");
-mainTitles.forEach((title) => title);
 
 const signUpButton = document.querySelectorAll(".btn");
-signUpButton.forEach((button) => {
-  button;
-});
 
-const contentDestination = document.querySelector(".content-destination");
-
-const copyright = document.querySelector("footer p");
+const copyrightParagraph = document.querySelector("footer p");
 
 function mouseOnHeaderLogo() {
   funBusHeader.style.color = "gold";
 }
 function mouseNotHovering() {
   funBusHeader.style.color = "black";
+}
+
+function focusEffect(e) {
+  e.target.style.color = "Gold";
+}
+
+function blurEffect(e) {
+  e.target.style.color = "Black";
 }
 
 function changeBusImage() {
@@ -39,36 +42,30 @@ function boldParagraph(e) {
 }
 
 function titleSelected(e) {
-  e.target.style.backgroundColor = "grey";
+  console.log(e);
+  e.target.style.textDecoration = "underline";
 }
 
 function doubleClick(e) {
   e.target.style.fontWeight = "Bold";
-  e.target.style.border = "Black";
-}
-
-function scrollEffect() {
-  if (window.scroll >= 500) {
-    contentDestination.style.opacity = "1";
-    contentDestination.style.transition = "1s ease-in-out";
-  } else {
-    contentDestination.style.opacity = "0";
-    contentDestination.style.transform = "translateX(-50px";
-  }
+  e.target.style.borderColor = "Black";
 }
 
 function copyEffect() {
-  copyright.style.borderColor = "black";
+  copyrightParagraph.style.textDecoration = "underline";
 }
 
 funBusHeader.addEventListener("mouseover", mouseOnHeaderLogo);
 funBusHeader.addEventListener("mouseleave", mouseNotHovering);
+navLinks.forEach((anchorTag) =>
+  anchorTag.addEventListener("focus", focusEffect)
+);
+navLinks.forEach((anchorTag) => anchorTag.addEventListener("blur", blurEffect));
 busImage.addEventListener("click", changeBusImage);
 openingParagraph.addEventListener("mouseenter", boldParagraph);
 contactLink.addEventListener("keydown", contactLinkBackgroundColor);
-
-mainTitles.addEventListener("select", titleSelected);
-signUpButton.addEventListener("dblclick", doubleClick);
-contentDestination.addEventListener("scroll", scrollEffect);
-
-copyright.addEventListener("copy", copyEffect);
+mainTitles.forEach((title) => title.addEventListener("select", titleSelected));
+signUpButton.forEach((button) =>
+  button.addEventListener("dblclick", doubleClick)
+);
+copyrightParagraph.addEventListener("copy", copyEffect);
