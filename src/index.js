@@ -20,6 +20,11 @@ function scrollBy (){
     }
 }
 
-window.addEventListener('scroll', scrollBy);
+function alerted(){
+    alert('Welcome to FUN BUS :D')
+    
+}
 
+window.addEventListener('scroll', scrollBy);
+window.addEventListener('load', alerted)
 
