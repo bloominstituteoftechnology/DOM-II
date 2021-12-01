@@ -12,6 +12,8 @@ nav.addEventListener("mouseover", function( event ) {
     }, 200);
   }, false);
 
-nav.addEventListener('click', function(event){
-    button.textContent = `Click count: ${event.detail}`;
+const logo = document.querySelector('.logo-heading');
+logo.addEventListener('dblclick', function (e){
+    logo.classList.toggle('large');    
 });
+
