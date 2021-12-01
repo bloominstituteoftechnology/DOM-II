@@ -18,10 +18,8 @@ imgs.forEach(item => item.addEventListener('mouseover', opacityChanger))
 
 document.addEventListener('keypress', keyPressed);
 
-function opacityChanger(){
-    for (let img of imgs){
-        img.style.display = 'none'
-    }
+function opacityChanger(item){
+    item.style.opacity = '0';
 }
 
 function colorChange(item){
@@ -80,5 +78,5 @@ function keyPressed (event){
 
 window.addEventListener('animationend', annoyingAlert)
 window.addEventListener('scroll', scrollBy);
-// window.addEventListener('load', alerted);
+window.addEventListener('load', alerted);
 
