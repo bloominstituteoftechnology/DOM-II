@@ -40,14 +40,21 @@ window.addEventListener('scroll', event => {
 });
 
 // -------------------------Six-----------------------------
-const button = document.querySelector('.btn'); 
-button.addEventListener('mouseover', event => {
-    console.log(`${event.type} happened`);
-});
+const button = document.querySelectorAll('.btn'); 
+// button.addEventListener('mouseover', event => {
+//     console.log(`${event.type} happened`);
+// });
+
+button.forEach(button => {
+    button.addEventListener('mouseover', function(event) {
+        console.log(`${event.type} happened`);
+    })
+})
 
 // -------------------------Seven-----------------------------
-
-
+window.addEventListener('keydown', event => {
+    console.log(`${event.type} happened`);
+});
 // -------------------------Eight-----------------------------
 
 
