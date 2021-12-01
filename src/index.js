@@ -1,5 +1,7 @@
 // import './less/index.less'
 
+// const  body  = require("msw/lib/types/context");
+
 // Your code goes here!
 
 // change color on mouseover of logo heading
@@ -78,3 +80,36 @@ function shiftEscape(event) {
     } 
 }
 document.addEventListener("keypress", shiftEscape);
+
+// onMouseDown on lets go h2 change all text and background to black, change it to white onmouseup, revert settings onclick
+
+const letsGo = document.querySelector(".text-content h2");
+
+
+function whiteOut() {
+    letsGo.style.backgroundColor = "white";
+    letsGo.style.color = "white";
+}
+
+function blackOut() {
+    letsGo.style.backgroundColor = "black";
+    letsGo.style.color = "black";
+}
+
+letsGo.addEventListener("onMouseDown", whiteOut);
+letsGo.addEventListener("onMouseUp", blackOut);
+
+// prevent defaults
+
+const nav = document.querySelectorAll('header nav a');
+
+nav.forEach(link => link.addEventListener('click', (e) => {
+    e.preventDefault()
+    e.target.setAttribute('href', 'https://youtu.be/dQw4w9WgXcQ')
+}) )
+
+// DOM Content load event cause Im out of ideas
+
+window.addEventListener('DOMContentLoaded', (e) => {
+    console.log('swag');
+});
