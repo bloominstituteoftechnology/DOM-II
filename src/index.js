@@ -2,6 +2,7 @@
 import "./less/index.less";
 
 // Your code goes here!
+//mouseover logo
 const logo = document.querySelector(".logo-heading");
 logo.addEventListener("mouseover", function (event) {
   event.target.style.color = "green";
@@ -32,7 +33,34 @@ window.addEventListener("load", () => {
   window.alert("Load event has been activated");
 });
 
-const writeOnImage = document.querySelector(".img-content img");
-writeOnImage.addEventListener("dblclick", function (e) {
+// window.addEventListener("load", () => {
+//   setTimeout(() => {
+//     const paragraph = document.querySelectorAll("p");
+//     console.log(document.querySelectorAll("p"));
+//     paragraph.forEach((e) => {
+//       console.log(e);
+//       e.style.color = "peach";
+//     });
+//   }, 3000);
+// });
+
+const changeImage = document.querySelector(".img-content img");
+changeImage.addEventListener("dblclick", function (e) {
   e.target.src = "https://i.ebayimg.com/images/g/BAcAAOSwBLdZsViz/s-l300.jpg";
+});
+
+// const removeImg = document.querySelector(".inverse-content img");
+// removeImg.addEventListener("load", function (e) {
+//   e.target.src = "remove";
+// });
+const resizeWindow = (e) => {
+  //console.log(e.target.innerHeight);
+  e.target.innerHeight;
+  e.target.innerWidth;
+};
+window.addEventListener("resize", resizeWindow);
+
+const link = document.querySelector("nav a");
+link.addEventListener("click", function (e) {
+  e.preventDefault();
 });
