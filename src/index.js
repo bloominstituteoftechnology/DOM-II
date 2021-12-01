@@ -62,7 +62,7 @@ function pressFourForContact (evt) {
     }
 }
 
-//add push sign up popup
+//add push sign-up popup
 
 const popUp = document.querySelector('p.pop-up');
 const signUpButton = document.querySelector('#btn')
@@ -72,3 +72,43 @@ signUpButton.addEventListener('mouseenter', getPopUp)
 function getPopUp () {
    popUp.classList.remove('off');
 }
+//get rid of push sign-up popup
+
+signUpButton.addEventListener('mouseout', removePopUp)
+
+function removePopUp () {
+   popUp.classList.add('off');
+}
+
+//make pictures bigger or smaller with mouse wheel
+const busPicture = document.querySelector('.intro img');
+let scale = 1;
+
+function zoom(event) {
+
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    busPicture.style.transform = `scale(${scale})`;
+
+}
+
+busPicture.onwheel= zoom;
+
+//header background turns blue
+const input = document.querySelector('.input');
+
+input.addEventListener('focus', (event) => {
+    event.target.style.background = 'blue';
+});
+
+//doubleclick function
+
+const button1 = document.querySelector('.btn');
+
+button1.addEventListener('dblclick', (event) => {
+    event.target.textContent = 'you know you want to!'
+
+})
+
+//
