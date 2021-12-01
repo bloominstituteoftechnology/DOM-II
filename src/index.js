@@ -46,7 +46,11 @@ function annoyingAlert (){
 }
 
 function buttonsPressed(){
-//    footerr.style.font-size = 'green';
+    const colorsArr = ['green','blue','yellow','black','lightblue','pink','gold','white'];
+    const randomColor = Math.floor(Math.random() * colorsArr.length);
+    const fontSizer = Math.floor(Math.random() * 5);
+    footerr.style.color = colorsArr[randomColor];
+    footerr.style.fontSize = `${fontSizer}rem`;
 }
 
 
