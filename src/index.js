@@ -23,3 +23,8 @@ let h2Change = document.getElementsByTagName('h2');
 document.addEventListener('mouseover', function(h2Change) {
     h2Change.target.style.color = "green";
 });
+
+// ******** mouseout event 
+document.addEventListener('mouseout', function(h2Change) {
+    h2Change.target.style.color = "black";
+});
