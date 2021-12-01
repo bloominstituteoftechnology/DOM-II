@@ -1,3 +1,4 @@
+// import from "express";
 import "./less/index.less";
 
 // Your code goes here!
@@ -31,9 +32,7 @@ window.addEventListener("load", () => {
   window.alert("Load event has been activated");
 });
 
-// const allImages = document.querySelectorAll("img");
-// allImages.forEach((e) => {
-//   e.addEventListener("dblclick", function (e) {
-//     e.target.display = "none";
-//   });
-// });
+const writeOnImage = document.querySelector(".img-content img");
+writeOnImage.addEventListener("dblclick", function (e) {
+  e.target.src = "https://i.ebayimg.com/images/g/BAcAAOSwBLdZsViz/s-l300.jpg";
+});
