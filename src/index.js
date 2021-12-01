@@ -51,10 +51,22 @@ navItems.forEach(navItems => {
   })
 
 // -------------------------Eight-----------------------------
+// const h1Color = querySelectorAll('h1');
 
+// h1Color.forEach(h1Color => {
+//     h1Color.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       console.log(`The ${event.target.textContent} link is broken!`);
+//     })
+//   })
+// document.querySelectorAll('h1').style.color = 'teal';
+
+// document.getElementsByClassName('h1.logo-heading').style.color = 'teal';
 
 // -------------------------Nine-----------------------------
+// const biggerP = document.querySelectorAll('p').style.fontSize = '40px';
 
+// biggerP.addEventListener('40px', )
 
 // -------------------------Ten-----------------------------
 
