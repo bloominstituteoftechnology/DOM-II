@@ -2,7 +2,7 @@ import './less/index.less'
 
 // Your code goes here!
 
-// ******* keydown event
+// 1 ******* keydown event
 const logo = document.querySelector('.logo-heading');
 
 function fKey(evt) {
@@ -12,26 +12,51 @@ function fKey(evt) {
 };
 document.addEventListener('keydown', fKey);
 
-// *********  load event
+// 2 *********  load event
 window.addEventListener('load', (evt) => {
     alert('This page is loaded! Just like you will be on this Hella Fun Freakin Bus!');
 });
 
-// ******** mouseover event
-let h2Change = document.getElementsByTagName('h2');
+// 3 ******** mouseover event
+const h2Change = document.querySelector('h2');
 
-document.addEventListener('mouseover', function(h2Change) {
+h2Change.addEventListener('mouseover', function(h2Change) {
     h2Change.target.style.color = "green";
 });
 
-// ******** mouseout event 
-document.addEventListener('mouseout', function(h2Change) {
+// 4 ******** mouseout event 
+h2Change.addEventListener('mouseout', function(h2Change) {
     h2Change.target.style.color = "black";
 });
 
-// ********* scroll event 
+// 5 ********* click event 
 
-let words = document.querySelectorAll('p');
-window.addEventListener('scroll', function () {
-    words.textContent = 'Anything to make this thing work';
+const destChange = document.querySelector('h4');
+destChange.addEventListener('dblclick', function(evt) {
+    evt.target.textContent = 'Get on gittin!';
 });
+
+// 6 ********* click event  
+const paraElems = document.querySelectorAll('p');
+paraElems.forEach(p => p.addEventListener('click', evt => evt.target.textContent = 'Anything to make this thing work'));
+
+// //****** scroll event */
+// const bigWords = document.querySelector('nav a')
+// console.log(bigWords);
+// bigWords.addEventListener('scroll', evt => {
+//     evt.target.style.fontSize = '18px';
+//     console.log('It works!!!');
+// });
+
+
+// ****** preventDefault
+const noClick = document.querySelectorAll('nav a')
+noClick.forEach(function(evt) {
+    evt.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log('stop trying');
+    });
+});
+
+
+
