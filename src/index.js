@@ -3,6 +3,7 @@ import "./less/index.less";
 
 // Your code goes here!
 const funBusHeader = document.querySelector("h1");
+const busImage = document.querySelector("img:nth-of-type(1)");
 const openingParagraph = document.querySelector(".container .intro p");
 const contactLink = document.querySelector("a:nth-of-type(4)");
 
@@ -16,11 +17,17 @@ signUpButton.forEach((button) => {
 
 const contentDestination = document.querySelector(".content-destination");
 
+const copyright = document.querySelector("footer p");
+
 function mouseOnHeaderLogo() {
   funBusHeader.style.color = "gold";
 }
 function mouseNotHovering() {
   funBusHeader.style.color = "black";
+}
+
+function changeBusImage() {
+  busImage.src = "https://unsplash.com/photos/T5jzpRTVF1U";
 }
 
 function contactLinkBackgroundColor() {
@@ -41,7 +48,7 @@ function doubleClick(e) {
 }
 
 function scrollEffect() {
-  if (window.scroll >= 700) {
+  if (window.scroll >= 500) {
     contentDestination.style.opacity = "1";
     contentDestination.style.transition = "1s ease-in-out";
   } else {
@@ -50,12 +57,18 @@ function scrollEffect() {
   }
 }
 
+function copyEffect() {
+  copyright.style.borderColor = "black";
+}
+
 funBusHeader.addEventListener("mouseover", mouseOnHeaderLogo);
 funBusHeader.addEventListener("mouseleave", mouseNotHovering);
+busImage.addEventListener("click", changeBusImage);
 openingParagraph.addEventListener("mouseenter", boldParagraph);
 contactLink.addEventListener("keydown", contactLinkBackgroundColor);
 
 mainTitles.addEventListener("select", titleSelected);
 signUpButton.addEventListener("dblclick", doubleClick);
-
 contentDestination.addEventListener("scroll", scrollEffect);
+
+copyright.addEventListener("copy", copyEffect);
