@@ -40,22 +40,6 @@ function colorChange(e){
 
 
 //wheel event
-// const boat = document.querySelector('img');
-
-// function boatWheel(e){
-//     e.preventDefault();
-//     if(e.deltaY < 0){
-//         scale *= e.deltaY * -2;
-//     } else {
-//         scale/= e.deltaY * 2;
-//     }
-//     scale = Math.min(Math.max(.125, scale), 4);
-// }
-
-// let scale = 1;
-
-// boat.addEventListener('wheel', boatWheel);
-
 function zoom(event) {
     event.preventDefault();
   
@@ -80,19 +64,41 @@ function zoom(event) {
   document.onwheel = zoom;
 
 //mousedown event
+const busText = document.querySelector('p')
+function textColor(){
+  busText.style.color = 'orange';  
+}
 
+busText.addEventListener('mousedown', textColor);
 
 
 //mouseup event
+const image = document.querySelector('img')
+function imageGone(){
+  image.style.display = none;
+}
 
+image.addEventListener('mouseup', imageGone);
 
 
 //mouseover event
+const destination = document.querySelector('.content-destination')
+function colorSize(){
+  destination.style.color = 'green';  
+  destination.style.fontSize = '1rem';
+}
 
+destination.addEventListener('mouseover', colorSize);
 
 
 //mouseout event
+const footerCopy = document.querySelector('.footer p');
 
+function bold(){
+  footerCopy.style.fontWeight = 'bold';  
+}
+
+footerCopy.addEventListener('mouseout', bold);
 
 
 //keydown event
