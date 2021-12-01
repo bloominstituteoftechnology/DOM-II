@@ -1,4 +1,3 @@
-import { body } from 'msw/lib/types/context';
 import './less/index.less'
 
 // Your code goes here!
@@ -42,8 +41,12 @@ headerParagraph.addEventListener('wheel', function(e){
 
 headerParagraph.addEventListener('copy', e => {
     navigator.clipboard.writeText("please don't copy from this paragraph");
+    console.log('blocked paragraph from being copied');
 })
 
-document.body.addEventListener('online', function(e){
-    console.log('you are online!');
+headerParagraph.addEventListener('cut', e => {
+    navigator.clipboard.writeText("please don't cut from this paragraph");
+    console.log('blocked paragraph from being cut');
 })
+
+
