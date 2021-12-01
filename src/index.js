@@ -41,6 +41,14 @@ window.addEventListener('select', event => {
 });
 
 // -------------------------Seven-----------------------------
+const navItems = document.querySelectorAll('a')
+
+navItems.forEach(navItems => {
+    navItems.addEventListener("click", function(event) {
+      event.preventDefault();
+      console.log(`The ${event.target.textContent} link is broken!`);
+    })
+  })
 
 // -------------------------Eight-----------------------------
 
