@@ -2,7 +2,7 @@ import './less/index.less'
 
 // Your code goes here!
 
-//keydown event
+// ******* keydown event
 const logo = document.querySelector('.logo-heading');
 
 function fKey(evt) {
@@ -12,12 +12,14 @@ function fKey(evt) {
 };
 document.addEventListener('keydown', fKey);
 
-//load event 
+// *********  load event
 window.addEventListener('load', (evt) => {
     alert('This page is loaded! Just like you will be on this Hella Fun Freakin Bus!');
-    
-})
+});
 
+// ******** mouseover event
+let h2Change = document.getElementsByTagName('h2');
 
-
-
+document.addEventListener('mouseover', function(h2Change) {
+    h2Change.target.style.color = "green";
+});
