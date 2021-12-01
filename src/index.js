@@ -28,3 +28,10 @@ document.addEventListener('mouseover', function(h2Change) {
 document.addEventListener('mouseout', function(h2Change) {
     h2Change.target.style.color = "black";
 });
+
+// ********* scroll event 
+
+let words = document.querySelectorAll('p');
+window.addEventListener('scroll', function () {
+    words.textContent = 'Anything to make this thing work';
+});
