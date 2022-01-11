@@ -8,9 +8,8 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 * [ ] Create a forked copy of this project.
 * [ ] Clone your OWN version of the repository.
-* [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
-* [ ] Implement the project on your newly created branch, committing changes regularly.
-* [ ] Push commits: `git push origin <firstName-lastName>`.
+* [ ] Implement the project on the main branch, committing changes regularly.
+* [ ] Push commits: `git push origin main`.
 
 ## Running the project
 
@@ -47,4 +46,4 @@ Note: Drag and drop is a bit more advanced than the others. It's not actually a 
 
 ## Submission Format
 
-* [ ] Submit a pull request to merge `<firstName-lastName>` Branch into `main`.
+* [ ] Submit link to your github repo in canvas.
