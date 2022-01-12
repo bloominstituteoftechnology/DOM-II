@@ -23,3 +23,16 @@ window.addEventListener('copy', ()=>{
 document.body.addEventListener('click', evt =>{
     evt.target.classList.toggle('mirror')
 })
+
+// two click
+
+document.body.addEventListener('dblclick', evt =>{
+    evt.target.outerHTML = ""
+})
+
+// Keydown
+window.addEventListener('keydown', evt =>{
+  if (evt.key === 6){
+      document.body.innerHTML = "NO MORE FUN BUS"
+  }  
+})
