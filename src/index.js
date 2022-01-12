@@ -1,10 +1,25 @@
 import './less/index.less'
 
 // Your code goes here!
-const navLink = document.querySelector('.nav-link')
+window.onload = function (evt) {
+    console.log(`event ${evt.type} fired! Ready!`)
+}
+
+const heading = document.querySelector('h1')
+heading.textContent = "Fun Bus? More like Bun Bus!"
 
 
-navLink.addEventListener("onClick", function(event) {
-    event.target.style.color = "red"
+// copy
 
-});
+window.addEventListener('copy', ()=>{
+    navigator.clipboard.readText()
+    .then(text =>{
+    heading.textContent += text
+    })
+})
+
+// click
+
+document.body.addEventListener('click', evt =>{
+    evt.target.classList.toggle('mirror')
+})
