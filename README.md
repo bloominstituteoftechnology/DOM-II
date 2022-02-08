@@ -27,7 +27,7 @@ Do not **move or rename any files** in this project. The website's source files 
 * [ ] Using your [index.js file](src/index.js), create [event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) of at least 10 _different_ types. You must Use your creativity to make the Fun Bus site more interactive. For example you could change colors, animate objects, add DOM elements, remove them, etc.
 
 * [ ] Here are some event types you could try to use:
-  * [ ] `mouseover`
+  * [x] `mouseover`
   * [ ] `keydown`
   * [ ] `wheel`
   * [ ] `load`
