@@ -3,7 +3,8 @@ import './less/index.less'
 // Your code goes here!
 const welcome = document.querySelector('.intro h2');
 const words = document.querySelectorAll('p');
-
+const link = document.querySelectorAll('nav-link');
+const busImage = document.querySelector('.intro img');
 
 function mouseOver () {
     welcome.style.color = 'blue';
@@ -23,3 +24,19 @@ function oneKey (event) {
     }
 }
 document.addEventListener('keydown', oneKey);
+
+function copied () {
+    alert('You copied text!');
+}
+
+document.addEventListener('copy', copied);
+
+function hide () {
+    if(busImage.style.opacity > 0){
+    busImage.style.opacity = '0';
+    } else {
+        busImage.style.opacity = '1';
+    }
+}
+
+busImage.addEventListener('dblclick', hide);
