@@ -9,7 +9,8 @@ const zoom = document.querySelector("div.img-content")
 const mouseOver = document.querySelector("div.destination");
 const intro = document.querySelector('header p');
 const footer = document.querySelector("footer");
-const fun = document.querySelector("h4")
+const fun = document.querySelector(".content-destination h2")
+const bottomContent = document.querySelector(".content-destination p")
 
 letsGo.addEventListener('dblclick', evt => {
     letsGo.style.color = "blue" ;
@@ -67,4 +68,10 @@ footer.addEventListener('paste', function(event){
 })
 
 
-mousemove
+fun.addEventListener('click', function(event){
+    fun.style.color = "pink"
+})
+
+bottomContent.addEventListener('mouseenter', function(event){
+    bottomContent.style.backgroundColor = "purple"
+})
