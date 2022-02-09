@@ -3,6 +3,7 @@ import "./less/index.less";
 // Your code goes here!
 
 //These are my DOM selectors
+
 const busImg = document.querySelector(".container .intro img");
 const nav = document.querySelector(".nav");
 const placePicker = document.querySelector(".content-pick");
@@ -52,25 +53,35 @@ function selector(e) {
   e.target.style.fontWeight = "bold";
 }
 
-function byeBye (e){
-    if(placePicker.children[0].children[2].style.display === "none" && placePicker.children[1].children[2].style.display === "none" && placePicker.children[2].children[2].style.display === "none")
+function byeBye(e) {
+  if (
+    placePicker.children[0].children[2].style.display === "none" &&
+    placePicker.children[1].children[2].style.display === "none" &&
+    placePicker.children[2].children[2].style.display === "none"
+  )
     makeDisappear(e);
-    comeAgain();
+  comeAgain();
 }
 
-function comeAgain(){
-    if(title.style.display === "none"){
-        footer.children[0].textContent = "We Hope You Come Back Soon!";
-        footer.children[0].style.fontWeight = "bold";
-        footer.children[0].textAlign = "center";
-    }
+function comeAgain() {
+  if (title.style.display === "none") {
+    footer.children[0].textContent = "We Hope You Come Back Soon!";
+    footer.children[0].style.fontWeight = "bold";
+    footer.children[0].textAlign = "center";
+  }
+}
+
+function preventHome(e) {
+  e.preventDefault();
 }
 
 //1. Changes the body background Color when mousemove in bus image
 busImg.addEventListener("mousemove", locationBodyColor);
 
+//This is to test preventDefault
+nav.children[0].addEventListener("click", preventHome);
+
 //2. Changes the body font Color when clicking the nav links
-nav.children[0].addEventListener("click", randomBodyColor);
 nav.children[1].addEventListener("click", randomBodyColor);
 nav.children[2].addEventListener("click", randomBodyColor);
 nav.children[3].addEventListener("click", randomBodyColor);
@@ -88,9 +99,7 @@ placePicker.children[1].children[2].addEventListener("click", firstClick);
 placePicker.children[1].children[2].addEventListener("dblclick", clickTwice);
 
 //6. makes the middle sign me up button disappear on mouseout
-placePicker.children[1].children[2].addEventListener(
-    "mouseout", makeDisappear
-);
+placePicker.children[1].children[2].addEventListener("mouseout", makeDisappear);
 
 //7. Changes the last sign me up button background/font weight/color on mousedown
 placePicker.children[2].children[2].addEventListener("mousedown", selector);
@@ -118,4 +127,3 @@ nav.children[1].addEventListener("click", byeBye);
 nav.children[2].addEventListener("click", byeBye);
 nav.children[3].addEventListener("click", byeBye);
 title.addEventListener("mouseenter", byeBye);
-footer.preventDefault();("click", comeBack);
