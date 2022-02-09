@@ -22,22 +22,22 @@ navButtons.forEach(element => {
         event.target.style.backgroundColor = 'lightgrey';}
 )});
 
-// click
+// click - 1
 title.addEventListener('click', event => {
     title.textContent += ` Is Taking Off!!`;
 })
 
-// dblclick
+// dblclick - 2
 introImg.addEventListener('dblclick', function (event){
     introImg.style.border = '5rem';
 })
 
-//load on my own
+//load on my own - 3
 window.addEventListener('load', (event) => {
     console.log('Good job loading');
   });
 
-// keydown
+// keydown - 4
 window.addEventListener('keydown', evt => {
     if (evt.key == 6){
         document.body.innerHTML = '<h1>Sent to File 13<h1>'
@@ -49,7 +49,7 @@ window.onload = function (evt) {
     const heading = document.querySelector('h1')
     heading.textContent = 'READY TO GO'
 
-// Copy
+// Copy - 5
     window.addEventListener('copy', () => {
         navigator.clipboard.readText()
             .then(text => {
@@ -61,16 +61,16 @@ window.onload = function (evt) {
         evt.target.classList.toggle('mirror')
     })
 
-// mousemove
+// mousemove - 6
 
 document.body.addEventListener('mousemove', evt => {
     const {clientX, clientY} = evt
     console.log(`mouse is at ${clientX}, ${clientY}`)
 })
 
-// mouseenter
+// mouseenter - 7
 
-// mouseleave
+// mouseleave - 8
 
 const destinations = document.querySelectorAll('.destination')
 for (let destination of destinations) {
@@ -86,7 +86,7 @@ for (let destination of destinations) {
 }
 
 
-// Prevent Default
+// Prevent Default - 9
 
 Array.from(document.links).forEach(link => {
     link.addEventListener("click", function(evt) {
@@ -94,3 +94,14 @@ Array.from(document.links).forEach(link => {
         console.log(`The ${evt.target.textContent} link doesn't work, but I'm sure glad you came.`)
     })
 })
+
+
+// scroll - 10
+let last_known_scroll_position = 0;
+window.addEventListener('scroll', function(event) {
+    last_known_scroll_position = window.scrollY;
+    console.log(last_known_scroll_position)
+    if (last_known_scroll_position >= 950){
+        alert("That's All Folks")
+   }
+});
