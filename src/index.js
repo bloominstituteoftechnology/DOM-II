@@ -1,3 +1,4 @@
+
 import './less/index.less'
 
 // Your code goes here!
@@ -25,3 +26,18 @@ title.addEventListener('click', event => {
     title.textContent += ` Is Taking Off!!`;
 })
 
+introImg.addEventListener('dblclick', function (event){
+    introImg.style.border = '5rem';
+})
+
+window.addEventListener('load', (event) => {
+    console.log('Good job loading');
+  });
+
+const source = document.querySelector('div.source');
+
+source.addEventListener('copy', (event) => {
+    const selection = document.getSelection();
+    event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+    event.preventDefault();
+});
