@@ -1,18 +1,15 @@
 import './less/index.less'
 
 // Your code goes here!
-const hoverButton = document.querySelector("div.btn");
+const focusButton = document.querySelector("div.btn");
 const letsGo = document.querySelector("h1");
 const title =  document.querySelector("header h2")
 const nav = document.querySelector("header")
 const zoom = document.querySelector("div.img-content")
-
-
-function hover(){
-    hoverButton.classList.add("off");
-}
-
-hoverButton.addEventListener("click", hover)
+const mouseOver = document.querySelector("div.destination");
+const intro = document.querySelector('header p');
+const footer = document.querySelector("footer");
+const fun = document.querySelector("h4")
 
 letsGo.addEventListener('dblclick', evt => {
     letsGo.style.color = "blue" ;
@@ -41,7 +38,33 @@ function zoomIn(event) {
   
     zoom.style.transform = `scale(${scale})`;
   }
-   let scale = 1;
+let scale = 1;
  
 
-  zoom.addEventListener('wheel', zoomIn);
+zoom.addEventListener('wheel', zoomIn);
+
+
+  
+
+
+mouseOver.addEventListener("mouseover", function(event) {
+    event.target.style.color = "orange";
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 500);
+  }, false);
+
+focusButton.addEventListener('copy', function(event) {
+    focusButton.textContent = "yeet"
+});
+
+intro.addEventListener('cut', function(event){
+    intro.textContent = "I'm Batman"
+})
+
+footer.addEventListener('paste', function(event){
+    footer.textContent = "copyright Wayne INC 2020"
+})
+
+
+mousemove
