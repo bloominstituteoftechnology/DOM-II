@@ -1,5 +1,16 @@
 * {
   box-sizing: border-box;
+      //first rotation
+      transform: rotateY(0deg);
+      transition: transform 0.5s ease-in-out;
+  
+    &.mirror {
+      //second rotation
+      transform: rotateY(180deg);
+      transition: transform 0.5s ease-in-out;
+      //ease in out tells it to transition slowly (kind of like a fade)
+  
+    }
 }
 
 html {
@@ -9,6 +20,7 @@ html {
 html, body {
   font-family: 'Roboto', sans-serif;
 }
+
 
 h1, h2, h3, h4, h5 {
   font-family: 'Indie Flower', cursive;
