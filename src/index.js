@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
 
 //                  focus
 const home = document.querySelector('#link1');
-console.log(link1);
+console.log(home);
 
 
 home.addEventListener('focus', (event) => {
@@ -83,6 +83,25 @@ window.addEventListener('resize', reportWindowSize);
 
 
 
+
 //              scroll
+
+function logSelection(event) {
+  const log = document.querySelector('#scroll-log');
+  const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  log.textContent = `You selected: ${selection}`;
+}
+
 const aboutUs = document.querySelector('#link2');
-console.log(aboutUs);
+aboutUs.addEventListener('select', logSelection);
+
+
+
+
+//          dblclick
+
+const blog = document.querySelector('#link3');
+
+blog.addEventListener('dblclick', (event) => {
+  event.target.style.background = 'green';
+});
