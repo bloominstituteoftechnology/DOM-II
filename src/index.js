@@ -84,14 +84,22 @@ letsGoDiv.addEventListener('wheel', zoom);
 
 
 
-//
+//load
+window.onload = function (evt){
+    const headding = document.querySelector('h1')
+    headding.textContent = 'Ready';
+}
+
+//copy
+window.addEventListener('copy', () => {
+    navigator.clipboard.readText()
+        .then(text => {
+            heading.content += text
+        })
+});
 
 
-
-
-
-//
-
-
-
-//
+//mousemove
+document.body.addEventListener('mousemove', evt =>{
+    const {clientX, clientY} = evt
+}) 
