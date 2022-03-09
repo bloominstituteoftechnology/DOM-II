@@ -83,8 +83,7 @@ window.addEventListener('resize', reportWindowSize);
 
 
 
-
-//              scroll
+//              select
 
 function logSelection(event) {
   const log = document.querySelector('#scroll-log');
@@ -105,3 +104,11 @@ const blog = document.querySelector('#link3');
 blog.addEventListener('dblclick', (event) => {
   event.target.style.background = 'green';
 });
+
+
+
+//              prevent default
+document.querySelector("#link4").addEventListener("click", function(event) {
+  document.getElementById("rick-roll").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
+  event.preventDefault();
+}, false);
