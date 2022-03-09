@@ -4,6 +4,10 @@ import './less/index.less'
 
 let pancake = document.querySelector('.btn')
 
+let kp3 = document.querySelector("input")
+
+let kp4 = document.querySelector(".input")
+
 function canbake() {
     console.log("Click ^v^")
 }
@@ -66,7 +70,7 @@ function kdf() {
 }
 }
 
-document.onkeydown = kdf;
+kp3.onkeydown = kdf;
 
 let kp2 = document.querySelector("h1")
 
@@ -86,8 +90,6 @@ function loadio () {
 
 kp2.addEventListener('load', loadio)
 
-let kp3 = document.querySelector("input")
-
 function x () {
     kp3.style.backgroundColor = "#88ff88"
 }
@@ -99,3 +101,10 @@ function y () {
 }
 
 kp3.addEventListener('blur', y)
+
+function z () {
+    document.querySelector(".l").textContent = document.querySelector(".l").textContent + " ^v^"
+}
+
+kp4.addEventListener('change', z)
+
