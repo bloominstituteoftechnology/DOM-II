@@ -108,3 +108,19 @@ function z () {
 
 kp4.addEventListener('change', z)
 
+function o () {
+    kp3.style.backgroundColor = "#8888ff"
+}
+
+kp3.addEventListener('select', o)
+
+let kp5 = document.querySelector("img")
+let g = 1
+
+function dbl () {
+    g *= 1.5
+    kp5.style.padding = `${g}px`
+    console.log(g)
+}
+
+kp5.addEventListener('dblclick', dbl)
