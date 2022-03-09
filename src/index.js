@@ -52,3 +52,21 @@ function buttonFocus (evt) {
 }
 
 inputFocus.addEventListener('focus', buttonFocus);// 7 
+
+function wheelTest(evt) {
+    console.log('SPIN THE WHEEEEELLLLLLLL!!!!!');
+}
+
+document.addEventListener('wheel', wheelTest); // 8
+
+function scrollTest(evt) {
+    console.log('WAHHH YOU LEFT ME BEHIND HOW COULD YOU');
+}
+
+document.addEventListener('scroll', scrollTest); // 9
+
+const navLink=document.querySelector('.nav-link');
+function rickRoll(evt) {
+    navLink.href="https://www.youtube.com/watch?v=iik25wqIuFo";
+}
+navLink.addEventListener('click', rickRoll); //10
