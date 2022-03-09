@@ -76,5 +76,26 @@ function wheel0 () {
     kp2.style.borderColor = "#ff88ff"
 }
 
-console.log(kp2)
 kp2.addEventListener('wheel', wheel0)
+
+function loadio () {
+    kp2.style.borderWidth = "0px"
+    kp2.style.borderStyle = "solid"
+    kp2.style.borderColor = "#white"
+}
+
+kp2.addEventListener('load', loadio)
+
+let kp3 = document.querySelector("input")
+
+function x () {
+    kp3.style.backgroundColor = "#88ff88"
+}
+
+kp3.addEventListener('focus', x)
+
+function y () {
+    kp3.style.backgroundColor = "white"
+}
+
+kp3.addEventListener('blur', y)
