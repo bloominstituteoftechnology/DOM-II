@@ -38,27 +38,25 @@ function kdf() {
 
     let fun2 = Math.floor(Math.random() * 10)
     if (fun2 === 0) {
-        fun2 = "red"
+        fun2 = "fuchsia"
     } else if (fun2 === 1) {
-        fun2 = "lime"
+        fun2 = "hotpink"
     } else if (fun2 === 2) {
-        fun2 = "yellow"
+        fun2 = "orchid"
     } else if (fun2 === 3) {
         fun2 = "white"
     } else if (fun2 === 4) {
-        fun2 = "orange"
+        fun2 = "plum"
     } else if (fun2 === 5) {
         fun2 = "coral"
     } else if (fun2 === 6) {
-        fun2 = "tan"
+        fun2 = "violet"
     } else if (fun2 === 7) {
         fun2 = "pink"
     } else if (fun2 === 8) {
         fun2 = "salmon"
     } else if (fun2 === 9) {
         fun2 = "magenta"
-    } else {
-        fun = "blue"
     }
 
     
@@ -69,3 +67,14 @@ function kdf() {
 }
 
 document.onkeydown = kdf;
+
+let kp2 = document.querySelector("h1")
+
+function wheel0 () {
+    kp2.style.borderWidth = "5px"
+    kp2.style.borderStyle = "solid"
+    kp2.style.borderColor = "#ff88ff"
+}
+
+console.log(kp2)
+kp2.addEventListener('wheel', wheel0)
