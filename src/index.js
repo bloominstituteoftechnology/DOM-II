@@ -23,6 +23,7 @@ function tellWhatKeyPressed(evt) {
 document.addEventListener('keydown', tellWhatKeyPressed);//3
 
 const wholeDoc=document.querySelector('*');
+const button=document.querySelectorAll('.btn');
 
 function darkModeOn(evt) {
     wholeDoc.style.backgroundColor='black';
@@ -34,8 +35,20 @@ function darkModeOff(evt) {
     wholeDoc.style.color='black';
     console.log('Turned off dark mode!');
 }
+const introPic=document.querySelector('.intro')
+introPic.addEventListener('dblclick', darkModeOn); //4
+introPic.addEventListener('click', darkModeOff); //5 
 
-document.addEventListener('dblclick', darkModeOn); //4
-document.addEventListener('click', darkModeOff); //5 
-const intro = document.querySelector('.intro');
-console.log(intro);
+function loader() {
+    console.log('You made it, cool.');
+}
+
+window.addEventListener('load', loader) //6 
+
+const inputFocus=document.querySelector(".user-input");
+
+function buttonFocus (evt) {
+    inputFocus.style.backgroundColor='green';
+}
+
+inputFocus.addEventListener('focus', buttonFocus);// 7 
