@@ -3,12 +3,8 @@ import './less/index.less'
 //              Mouseover 
 
 let mouseover = document.querySelector("#mouseover");
-
-// This handler will be executed only once
 mouseover.addEventListener("mouseenter", function( event ) {
-  // highlight the mouseenter target
   event.target.style.color = "blue";
-  // reset the color after a short delay
   setTimeout(function() {
     event.target.style.color = "";
   }, 500);
@@ -30,13 +26,8 @@ document.addEventListener('keydown', logKey);
 
 function zoom(event) {
   event.preventDefault();
-
   scale += event.deltaY * -0.01;
-
-  // Restrict scale
   scale = Math.min(Math.max(.125, scale), 4);
-
-  // Apply scale transform
   mainPic.style.transform = `scale(${scale})`;
 }
 
@@ -60,6 +51,7 @@ window.addEventListener('load', () => {
 
 
 //                  focus
+
 const home = document.querySelector('#link1');
 console.log(home);
 
@@ -96,7 +88,6 @@ aboutUs.addEventListener('select', logSelection);
 
 
 
-
 //          dblclick
 
 const blog = document.querySelector('#link3');
@@ -106,8 +97,17 @@ blog.addEventListener('dblclick', (event) => {
 });
 
 
+const selectElement = document.querySelector('.ice-cream');
+
+selectElement.addEventListener('change', (event) => {
+  const result = document.querySelector('.result');
+  result.textContent = `You like ${event.target.value}`;
+});
+
+
 
 //              prevent default
+
 document.querySelector("#link4").addEventListener("click", function(event) {
   document.getElementById("rick-roll").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
   event.preventDefault();
