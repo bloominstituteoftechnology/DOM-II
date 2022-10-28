@@ -4,6 +4,7 @@
     padding: 90px 0 10px;
     border-bottom: 2px dashed @navigation-border;
 
+
     img {
       max-width: 100%;
       height: auto;
@@ -13,6 +14,14 @@
       margin-top: 20px;
     }
   }
+
+.transition-fade{
+  opacity: 1;
+  transform: 500ms;
+  transform: translateX(0);
+  transform-origin: left;
+}
+
 
   .content-section {
     margin: 30px 0;
@@ -106,9 +115,34 @@
         margin: 0 auto 30px;
       }
       
+
+
       .btn {
-        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);     
+        .button-creator(200px, 45px, @button-bg, @white, 1.8rem);   
+        transition-property: transform, background;  
+        transition-duration: 1s;
+        transition-delay: 100ms;
       }
+      .btn:hover {
+        transform: rotate(90deg);
+      }
+
+      .p1.active {
+        animation-duration: 2s;
+        animation-name: slidein;
+        animation-iteration-count: 2;
+      }
+
+      @keyframes slidein {
+        from {
+          transform: translateX(100%)
+        }
+        to {
+          transform: translateX(0); 
+        }
+      }
+
+
     }
   }
 }// home

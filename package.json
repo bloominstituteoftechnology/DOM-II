@@ -34,7 +34,8 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "swup": "^2.0.19"
   },
   "repository": {
     "type": "git",
