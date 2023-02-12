@@ -8,9 +8,12 @@ const navAnchor = document.querySelectorAll('.nav-link');
 // console.log('nav:', navAnchor);
 
 navAnchor.forEach(ele => {
-  ele.addEventListener('mouseover', function() {
+  ele.addEventListener('pointerover', function() {
     ele.classList.add('nav-link-mouse-over')
   })
+  ele.addEventListener('pointerout', function(){
+    ele.classList.remove('nav-link-mouse-over')
+  } )
 })
 
 
@@ -41,20 +44,20 @@ copyright.addEventListener('wheel', function() {
 })
 
 
-// // bttn click
-// const formSample = document.querySelector('.new-form off');
-// console.log(formSample);
-// const bttn = document.querySelectorAll('.btn');
-// bttn.forEach(ele => {
-//   console.log('fire');
-//   ele.addEventListener('click', function(){
-//     formSample.classList.remove('off');
-//   })
-// })
-// console.log('button:', bttn)
-// bttn.addEventListener('click', event => {
-//   event.forEach(ele => ele.classList.remove('off'))
-// })
+// bttn click
+const formSample = document.querySelector('div .new-form');
+console.log('formSample:', formSample);
+const bttn = document.querySelectorAll('.btn');
+bttn.forEach(ele => {
+  console.log('fire');
+  ele.addEventListener('click', function(){
+    formSample.classList.remove('off');
+  })
+})
+console.log('button:', bttn)
+bttn.addEventListener('click', event => {
+  event.forEach(ele => ele.classList.remove('off'))
+})
 
 //password focus & blur
 const password = document.querySelector('input[type="password"]');
@@ -70,7 +73,7 @@ password.addEventListener('blur', function() {
 
 // form esc
 const form = document.querySelector('form')
-console.log(form);
+console.log('form:', form);
 form.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     form.classList.add('off')
