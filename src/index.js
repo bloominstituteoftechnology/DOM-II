@@ -1,5 +1,6 @@
 import './less/index.less'
 
+document.addEventListener("DOMContentLoaded", function () { 
 //CLICK - 1
 document.querySelector('nav :nth-child(1)').addEventListener('click', evt => {
     evt.target.classList.toggle('mirror')
@@ -69,4 +70,6 @@ window.addEventListener('resize', () => {
 document.querySelector('nav :nth-child(2)').addEventListener('click', function(e){
     alert('This took forever to do')
     e.preventDefault();
+})
+
 })
